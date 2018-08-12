@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<h1>칵테일 상세 정보 화면</h1>
 
 
 </body>

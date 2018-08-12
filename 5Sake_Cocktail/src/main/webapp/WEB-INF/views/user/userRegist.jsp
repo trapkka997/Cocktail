@@ -7,7 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<h1>회원가입 화면</h1>
+<!-- 만약 이 페이지가 필요없다면 만들지않아도 됨 -->
 
 </body>
 </html>
