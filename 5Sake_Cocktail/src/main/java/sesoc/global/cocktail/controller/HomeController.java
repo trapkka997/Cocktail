@@ -44,7 +44,7 @@ public class HomeController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
-		return "home";
+		return "NewFile3";
 	}
 	@RequestMapping(value ="/test", method=RequestMethod.GET)
 	public @ResponseBody String test(Locale locale, Model model) throws IOException {
