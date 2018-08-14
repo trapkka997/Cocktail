@@ -1,5 +1,6 @@
 package sesoc.global.cocktail.controller;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -9,6 +10,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+import java.util.Set;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -87,5 +91,48 @@ public class HomeController {
 		 }
 		 return "tt";
 	}
+	@RequestMapping(value = "/vision", method = RequestMethod.GET)
+	public @ResponseBody String vision(Locale locale, Model model,HttpServletRequest servletRequest) throws IOException {
+		// Instantiates a client
+		 try (ImageAnnotatorClient vision = ImageAnnotatorClient.create()) {
+
+		   //상대경로확인
+			String jsonPath = servletRequest.getSession().getServletContext().getRealPath("/WEB-INF/resources/4k-wallpaper-berries-delicious-1266741.jpg");
+		   // The path to the image file to annotate
+		   String fileName = jsonPath;
+		   // Reads the image file into memory
+		   Path path = Paths.get(fileName);
+		   byte[] data = Files.readAllBytes(path);
+		   ByteString imgBytes = ByteString.copyFrom(data);
+
+		   // Builds the image annotation request
+		   List<AnnotateImageRequest> requests = new ArrayList<>();
+		   Image img = Image.newBuilder().setContent(imgBytes).build();
+		   Feature feat = Feature.newBuilder().setType(Type.LABEL_DETECTION).build();
+		   AnnotateImageRequest request = AnnotateImageRequest.newBuilder()
+		       .addFeatures(feat)
+		       .setImage(img)
+		       .build();
+		   requests.add(request);
+
+		   // Performs label detection on the image file
+		   BatchAnnotateImagesResponse response = vision.batchAnnotateImages(requests);
+		   List<AnnotateImageResponse> responses = response.getResponsesList();
+
+		   for (AnnotateImageResponse res : responses) {
+		     if (res.hasError()) {
+		       System.out.printf("Error: %s\n", res.getError().getMessage());
+		       return "error";
+		     }
+
+		     for (EntityAnnotation annotation : res.getLabelAnnotationsList()) {
+		       annotation.getAllFields().forEach((k, v) ->
+		           System.out.printf("%s : %s\n", k, v.toString()));
+		     }
+		   }
+		 }
+		return "success";
+	}
+	
 	
 }

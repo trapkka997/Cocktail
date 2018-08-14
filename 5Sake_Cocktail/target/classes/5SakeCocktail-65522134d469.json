@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "sakecocktail-213107",
+  "private_key_id": "65522134d469ba70b7b447f20ca02dbd0da24449",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCemgd3hHvfkPrG\nU2xAVox27ywIkqwm6Zy5sEVTVyMzVjlGJxiDOfaiuJm4Mkdd40bUi5IrsMPFbgIS\n7dqVQb0koYGdJJmM2bYbxGkZfmaxzuzplRhomgaSEQ6CxeuyVslrScf93b8wurY1\n6Nre+mYmW9TKOYDsuUw0vIKz3ShDovEHckdAnHMx7inc146rYywA9iMj6q5hh30N\n7OhloslW2EDnSV+48ZG5jJIXUuT2xPecpd+X3fpCJXYoNEWvo9SC55Xzda2QeFzl\nxgpMmbyqoIHmA5m2O23JFqroW48t9ol7mPLqcyoVCcdRXdp9HVpK3p7ctTTSnsKA\nKt6KviHfAgMBAAECggEAA+AstYl5w3VWA3mvaAUVaqSelVkMNuk3iLwbfZVgCVWe\nka3L5g0JD2Hmc79ayhsPNItyl3m61vzAtTi1wjb4icgelDn8PJpnXldW4CYcGVU+\nqdiYX5n/9hrPmXd/snx3cJU9e2ErVmQBpuCZVKCW1XIiCY0NLvu6NoGyyfVqEfkE\nA0/GejSzlfzYByLxaA6+Ptx0/vgk5NBj9DaLhBdYfp/0+n6M3U2vfP0T2hES+3GX\nqjgyV8xuVscEHBge4br0znHlhnK8QwGFdMsW/+r3lCPL+0rnu+aPODUAfdnxnj2j\nOpM/GxnS7Pe3/yPOTnS8cYHxibDR6vQeZ873gaTJtQKBgQDQW5+FU7FFIn5VaFC9\nQcPiP7Psyjcw6iMuSqmYitxbZq6EzXxNUvEKHYo9cxJz8EoLRuN/ja9AlbWFlOZX\nAA3CdYsvWCjgonos7ELtEsBW2V8doxIy/Lqi9+X+zgBzgqH7sAQ9tjeTeUkOI9lG\nbYFoFEBd+a25O4RdtHExR7ITewKBgQDC3ePlLOj5rdwLxDdyD9eqr/Zi4WQ577aq\n5lmngrhE3IJa63CfApE6NtA+PVHv8YciZPeYY0FTaoWyiTJxJb3Jk3FYkIxjJnRn\nEpntB6ldAjCCDytsMMjJGJuUjGtWdvBAtqT7zWFjfVu0KkXEDdgQ3ZmH1r5VgI7y\nb0W8MLJ77QKBgBEv3aLD2pWXWNB2wGI8MIpTMuZPb+oLBkflRMQegDrR54dw49YF\nB3kMIsEa4uTJZ3IysMVuzIwJTWXteGqoyHnH9Gk9XnHZNTbLbmHb8B255IyvTOsD\nyelzhXdVStg8aFw4ksD8bO0vTgVqk5upoMkTEpQt6lSjQjHwln24KkpNAoGAfOr5\nWMR9ZPFLCk/yqy/0tPqwG5sZQPqmQs//0R4/OgWRmu8q9wQSTRsuS3fLuuE+G5JW\nFl4qVmsG4fiJWXc0PrBCDOA83qKcJCcMfaJXs8PfjMBkuapcTG117rhFZtxAD3wG\nL1TthXWq/8fJiXDGfalQ7n9+7BjJiihCr+0XvdECgYEAzoTA2cDjRUxIZdFhz9uh\nfiMAOap+PZyIrOp+NDsHvhyRnAY9xlzafrdYHnm0aEJllNISK6W+ELigei2Wq4VU\nBdkwCzSJG86j9Q9F6JJ4okAfRD0cwYHD1nZVN4M/S7mMQiYwhy3DA6SIfOiOa9yx\n2qD1CWaY5xOBnK/G2CA0Lf8=\n-----END PRIVATE KEY-----\n",
+  "client_email": "visionservice@sakecocktail-213107.iam.gserviceaccount.com",
+  "client_id": "102702867033532374846",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/visionservice%40sakecocktail-213107.iam.gserviceaccount.com"
+}
