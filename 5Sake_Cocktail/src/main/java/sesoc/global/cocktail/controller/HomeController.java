@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.google.cloud.vision.v1.AnnotateImageRequest;
 import com.google.cloud.vision.v1.AnnotateImageResponse;
@@ -65,98 +66,7 @@ public class HomeController {
 		
 		return "NewFile3";
 	}
-	@RequestMapping(value ="/test", method=RequestMethod.GET)
-	public @ResponseBody String test(Locale locale, Model model) throws IOException {
-		 // Instantiates a client
-		 try (ImageAnnotatorClient vision = ImageAnnotatorClient.create()) {
-
-		   // The path to the image file to annotate
-		   String fileName = "/Users/hangyutae/Downloads/4k-wallpaper-berries-delicious-1266741.jpg";
-
-		   // Reads the image file into memory
-		   Path path = Paths.get(fileName);
-		   byte[] data = Files.readAllBytes(path);
-		   ByteString imgBytes = ByteString.copyFrom(data);
-
-		   // Builds the image annotation request
-		   List<AnnotateImageRequest> requests = new ArrayList<>();
-		   Image img = Image.newBuilder().setContent(imgBytes).build();
-		   Feature feat = Feature.newBuilder().setType(Type.LABEL_DETECTION).build();
-		   AnnotateImageRequest request = AnnotateImageRequest.newBuilder()
-		       .addFeatures(feat)
-		       .setImage(img)
-		       .build();
-		   requests.add(request);
-
-		   // Performs label detection on the image file
-		   BatchAnnotateImagesResponse response = vision.batchAnnotateImages(requests);
-		   List<AnnotateImageResponse> responses = response.getResponsesList();
-
-		   for (AnnotateImageResponse res : responses) {
-		     if (res.hasError()) {
-		       System.out.printf("Error: %s\n", res.getError().getMessage());
-		       return "Error";
-		     }
-
-		     for (EntityAnnotation annotation : res.getLabelAnnotationsList()) {
-		       annotation.getAllFields().forEach((k, v) ->
-		           System.out.printf("%s : %s\n", k, v.toString()));
-		     }
-		   }
-		 }
-		 return "tt";
-	}
 	
-	@RequestMapping(value = "/visionUpload", method = RequestMethod.GET)
-	public String home() {
-
-		return "visionUpload";
-	}
-	@RequestMapping(value = "/vision", method = RequestMethod.POST)
-	public @ResponseBody String vision(Locale locale, Model model,MultipartFile file,HttpServletRequest servletRequest) throws IOException {
-		System.out.println("vision...call");
-		String originalfile = file.getOriginalFilename();
-		System.out.println(originalfile);
-		// Instantiates a client
-		 try (ImageAnnotatorClient vision = ImageAnnotatorClient.create()) {
-
-		   //상대경로확인
-			String jsonPath = servletRequest.getSession().getServletContext().getRealPath("/WEB-INF/resources/4k-wallpaper-berries-delicious-1266741.jpg");
-		   // The path to the image file to annotate
-		   String fileName = jsonPath;
-		   // Reads the image file into memory
-		   Path path = Paths.get(fileName);
-		   byte[] data = Files.readAllBytes(path);
-		   ByteString imgBytes = ByteString.copyFrom(data);
-
-		   // Builds the image annotation request
-		   List<AnnotateImageRequest> requests = new ArrayList<>();
-		   Image img = Image.newBuilder().setContent(imgBytes).build();
-		   Feature feat = Feature.newBuilder().setType(Type.LABEL_DETECTION).build();
-		   AnnotateImageRequest request = AnnotateImageRequest.newBuilder()
-		       .addFeatures(feat)
-		       .setImage(img)
-		       .build();
-		   requests.add(request);
-
-		   // Performs label detection on the image file
-		   BatchAnnotateImagesResponse response = vision.batchAnnotateImages(requests);
-		   List<AnnotateImageResponse> responses = response.getResponsesList();
-
-		   for (AnnotateImageResponse res : responses) {
-		     if (res.hasError()) {
-		       System.out.printf("Error: %s\n", res.getError().getMessage());
-		       return "error";
-		     }
-
-		     for (EntityAnnotation annotation : res.getLabelAnnotationsList()) {
-		       annotation.getAllFields().forEach((k, v) ->
-		           System.out.printf("%s : %s\n", k, v.toString()));
-		     }
-		   }
-		 }
-		return "success";
-	}
 	
 	
 }

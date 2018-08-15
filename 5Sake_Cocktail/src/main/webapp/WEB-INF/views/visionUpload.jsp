@@ -335,30 +335,55 @@ body{background: rgb(225,225,225);}
 
     function uploadFile( file, item ) {
         if ( file.size <= settings.maxSize ) {
-             $.ajax( {
-                /* beforeSend: function ( xhr ) {
-                    xhr.setRequestHeader( 'Content-Type', 'multipart/form-data' );
+             /* $.ajax( {
+                    beforeSend: function ( xhr ) {
                     xhr.setRequestHeader( 'Cache-Control', 'no-cache' );
                     xhr.setRequestHeader( 'X_FILENAME', file.name );
                     xhr.setRequestHeader( 'X_FILESIZE', file.size );
                     xhr.setRequestHeader( 'X_TODO', settings.toDo );
-                }, */
+                },    
                 type: 'POST',
-                url: settings.url,
+                enctype:'multipart/form-data',
+                url: '/cocktail/uptest',
                 processData: false,
-                data: file,
+                data: formData,
                 success: function () {
+                	alert('success');
                     message( item, settings.successClass, 'File successfully uploaded.', 0 );
                 },
                 error: function () {
+                	alert('error');
                     message( item, settings.errorClass, 'Upload failed.', 0 );
                 }
-            } ); 
+            } );  */
+            var fd = new FormData();
+            fd.append("file", file);
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+            	if (this.readyState == 4 && this.status == 200) {
+            	      succFunction(this, item,xhr.response);
+            	      console.log(xhr.response);
+            	} else if(this.status == 500){
+            		failFunction(this,item,xhr.response);	
+            	} else if(this.status == 403){
+            		failFunction(this,item,xhr.response);	
+            	} else if(this.status == 404){
+            		failFunction(this,item,xhr.response);	
+            	} 
+            };
+            xhr.open("POST", "/cocktail/vision");
+            xhr.send(fd);
         	 
         } else {
             message( item, settings.errorClass, 'File is too large.', 0 );
         }
     }
+    function succFunction(xhttp, item, resp) {
+		message( item, settings.successClass, 'File successfully uploaded.', 0 );
+	}
+    function failFunction(xhttp, item, resp) {
+		message( item, settings.errorClass, 'Upload failed.', 0 );
+	}
 
     function findFiles( e, item ) {
         var files = e.originalEvent.dataTransfer.files;
@@ -410,6 +435,7 @@ $( document ).ready(
 </script>
 </head>
 <body>
+<form name="uploadForm" id="uploadForm" enctype="multipart/form-data" method="post">
 	<div class="dragAndUploadHolder">
   <div id="dragFile" class="dragAndUpload dragAndUp loadUploading">
 	  <span class="fa fa-file"></span>
@@ -422,6 +448,6 @@ $( document ).ready(
 	  Drag and drop file.
 	</div>
 </div>
-
+</form>
 </body>
 </html>
