@@ -66,6 +66,9 @@ public class FileUploadController {
 			String jsonPath = servletRequest.getSession().getServletContext().getRealPath("/WEB-INF/resources/"+savedFileName);
 			System.out.println(jsonPath);
 			File saveFile = new File(jsonPath);
+			if(!saveFile.exists()) {
+				saveFile.mkdirs();
+			}
 			try { 
 				mpf.transferTo(saveFile);
 			} catch (IOException e){
@@ -75,7 +78,6 @@ public class FileUploadController {
 			// Instantiates a client
 			 try (ImageAnnotatorClient vision = ImageAnnotatorClient.create()) {
 
-			   //상대경로확인
 			   // The path to the image file to annotate
 			   String fileName = jsonPath;
 			   // Reads the image file into memory
