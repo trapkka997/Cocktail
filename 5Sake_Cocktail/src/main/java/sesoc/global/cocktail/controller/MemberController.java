@@ -18,11 +18,6 @@ import sesoc.global.cocktail.vo.User;
 public class MemberController {
 	
 	@Autowired SqlSession sqlSession;
-	//메인
-		@RequestMapping(value="/", method = RequestMethod.GET)
-		public String home(Model model) {
-			return "home";
-		}
 		
 		//로그인 화면 넘어가기
 		@RequestMapping(value="/memberLogin", method = RequestMethod.GET)
@@ -38,13 +33,6 @@ public class MemberController {
 		//홈화면으로 돌아가기
 		@RequestMapping(value="/back", method = RequestMethod.GET)
 		public String mainHome(Model model) {
-			return "redirect:/";
-		}
-		
-		//회원가입후 메인화면
-		@RequestMapping(value="/back", method = RequestMethod.GET)
-		public String memberJoin(Model model,HttpSession httpsession,User vo) {
-			
 			return "redirect:/";
 		}
 		
