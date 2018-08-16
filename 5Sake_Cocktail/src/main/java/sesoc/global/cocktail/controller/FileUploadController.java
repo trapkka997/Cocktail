@@ -30,6 +30,8 @@ import org.springframework.web.servlet.view.json.MappingJackson2JsonView;
 import com.google.cloud.vision.v1.AnnotateImageRequest;
 import com.google.cloud.vision.v1.AnnotateImageResponse;
 import com.google.cloud.vision.v1.BatchAnnotateImagesResponse;
+import com.google.cloud.vision.v1.ColorInfo;
+import com.google.cloud.vision.v1.DominantColorsAnnotation;
 import com.google.cloud.vision.v1.EntityAnnotation;
 import com.google.cloud.vision.v1.Feature;
 import com.google.cloud.vision.v1.Image;
@@ -75,45 +77,106 @@ public class FileUploadController {
 				System.out.println(e.getMessage());
 				e.printStackTrace(); 
 			}
-			// Instantiates a client
-			 try (ImageAnnotatorClient vision = ImageAnnotatorClient.create()) {
-
-			   // The path to the image file to annotate
-			   String fileName = jsonPath;
-			   // Reads the image file into memory
-			   Path path = Paths.get(fileName);
-			   byte[] data = Files.readAllBytes(path);
-			   ByteString imgBytes = ByteString.copyFrom(data);
-
-			   // Builds the image annotation request
-			   List<AnnotateImageRequest> requests = new ArrayList<>();
-			   Image img = Image.newBuilder().setContent(imgBytes).build();
-			   Feature feat = Feature.newBuilder().setType(Type.LABEL_DETECTION).build();
-			   AnnotateImageRequest request = AnnotateImageRequest.newBuilder()
-			       .addFeatures(feat)
-			       .setImage(img)
-			       .build();
-			   requests.add(request);
-
-			   // Performs label detection on the image file
-			   BatchAnnotateImagesResponse response = vision.batchAnnotateImages(requests);
-			   List<AnnotateImageResponse> responses = response.getResponsesList();
-
-			   for (AnnotateImageResponse res : responses) {
-			     if (res.hasError()) {
-			       System.out.printf("Error: %s\n", res.getError().getMessage());
-			       return "error";
-			     }
-
-			     for (EntityAnnotation annotation : res.getLabelAnnotationsList()) {
-			       annotation.getAllFields().forEach((k, v) ->
-			           System.out.printf("%s : %s\n", k, v.toString()));
-			     }
-			   }
-			 }
+			if(!visionText(jsonPath)) {
+				return "error";
+			};
+			if(!visionColor(jsonPath)) {
+				return "error";
+			}
 			return "success";
-		} else{
+			} else{
 			return "fail";
 		}
+	}
+	
+	public boolean visionColor(String jsonPath) throws IOException {
+		// Instantiates a client
+		 try (ImageAnnotatorClient vision = ImageAnnotatorClient.create()) {
+
+		   // The path to the image file to annotate
+		   String fileName = jsonPath;
+		   // Reads the image file into memory
+		   Path path = Paths.get(fileName);
+		   byte[] data = Files.readAllBytes(path);
+		   ByteString imgBytes = ByteString.copyFrom(data);
+
+		   // Builds the image annotation request
+		   List<AnnotateImageRequest> requests = new ArrayList<>();
+		   Image img = Image.newBuilder().setContent(imgBytes).build();
+		   Feature feat = Feature.newBuilder().setType(Type.IMAGE_PROPERTIES).build();
+
+		   
+		   AnnotateImageRequest request = AnnotateImageRequest.newBuilder()
+		       .addFeatures(feat)
+		       .setImage(img)
+		       .build();
+		   requests.add(request);
+
+		   // Performs label detection on the image file
+		   BatchAnnotateImagesResponse response = vision.batchAnnotateImages(requests);
+		   List<AnnotateImageResponse> responses = response.getResponsesList();
+
+		   for (AnnotateImageResponse res : responses) {
+		     if (res.hasError()) {
+		       System.out.printf("Error: %s\n", res.getError().getMessage());
+		       return false;
+		     }
+
+		  // For full list of available annotations, see http://g.co/cloud/vision/docs
+		      DominantColorsAnnotation colors = res.getImagePropertiesAnnotation().getDominantColors();
+		      for (ColorInfo color : colors.getColorsList()) {
+		        System.out.printf(
+		            "fraction: %f\nr: %f, g: %f, b: %f\n",
+		            color.getPixelFraction(),
+		            color.getColor().getRed(),
+		            color.getColor().getGreen(),
+		            color.getColor().getBlue());
+		      }
+
+		   }
+		 }
+		 return true;
+	
+	}
+	public boolean visionText(String jsonPath) throws IOException {
+		// Instantiates a client
+		 try (ImageAnnotatorClient vision = ImageAnnotatorClient.create()) {
+
+		   // The path to the image file to annotate
+		   String fileName = jsonPath;
+		   // Reads the image file into memory
+		   Path path = Paths.get(fileName);
+		   byte[] data = Files.readAllBytes(path);
+		   ByteString imgBytes = ByteString.copyFrom(data);
+
+		   // Builds the image annotation request
+		   List<AnnotateImageRequest> requests = new ArrayList<>();
+		   Image img = Image.newBuilder().setContent(imgBytes).build();
+		   Feature feat = Feature.newBuilder().setType(Type.LABEL_DETECTION).build();
+		   
+		   AnnotateImageRequest request = AnnotateImageRequest.newBuilder()
+		       .addFeatures(feat)
+		       .setImage(img)
+		       .build();
+		   requests.add(request);
+
+		   // Performs label detection on the image file
+		   BatchAnnotateImagesResponse response = vision.batchAnnotateImages(requests);
+		   List<AnnotateImageResponse> responses = response.getResponsesList();
+
+		   for (AnnotateImageResponse res : responses) {
+		     if (res.hasError()) {
+		       System.out.printf("Error: %s\n", res.getError().getMessage());
+		       return false;
+		     }
+
+		     for (EntityAnnotation annotation : res.getLabelAnnotationsList()) {
+		       annotation.getAllFields().forEach((k, v) ->
+		           System.out.printf("%s : %s\n", k, v.toString()));
+		     }
+		   }
+		 }
+		 return true;
+	
 	}
 }
