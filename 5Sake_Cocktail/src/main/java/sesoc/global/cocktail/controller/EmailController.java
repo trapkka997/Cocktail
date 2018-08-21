@@ -61,7 +61,7 @@ public class EmailController {
 		dao.userAuth(user);
 		model.addAttribute("user_email", user_email);
 
-		return "emailConfirm";
+		return "email/emailConfirm";
 	}
 
 

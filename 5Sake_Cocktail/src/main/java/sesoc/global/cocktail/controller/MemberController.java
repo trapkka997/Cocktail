@@ -34,12 +34,12 @@ public class MemberController {
 					System.out.println("로그인 완료!!");
 				}else if(login.getUserAuth().equalsIgnoreCase("N")) {
 					System.out.println("이메일 인증 필요함");
-					return "notAuth";
+					return "user/notAuth";
 				}
 				
 				return "redirect:/";
 			} else {
-				return "loginFail";
+				return "user/loginFail";
 			}
 
 		}
@@ -49,7 +49,7 @@ public class MemberController {
 		public String logout(HttpSession httpSession) {
 			httpSession.invalidate();
 
-			return "home";
+			return "redirect:/";
 
 		}	
 }

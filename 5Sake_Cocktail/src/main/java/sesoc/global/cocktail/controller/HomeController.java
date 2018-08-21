@@ -19,7 +19,7 @@ public class HomeController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 	
-		return "login";
+		return "user/login";
 	}
 	@RequestMapping(value = "/weather", method = RequestMethod.GET)
 	public String weather(Locale locale, Model model) {
@@ -32,7 +32,7 @@ public class HomeController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
-		return "NewFile3";
+		return "test/NewFile3";
 	}
 	@RequestMapping(value = "/newC", method = RequestMethod.GET)
 	public String newC(Locale locale, Model model) {
@@ -45,11 +45,11 @@ public class HomeController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
-		return "home";
+		return "test/home";
 	}
 	@RequestMapping(value = "/newCc", method = RequestMethod.GET)
 	public String newCc(Locale locale, Model model) {
-		return "product";
+		return "cocktail/product";
 	}
 	
 }
