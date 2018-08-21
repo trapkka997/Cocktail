@@ -15,16 +15,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css">
     <link rel="stylesheet" href="./resources/assets/css/Basic-fancyBox-Gallery.css">
     <link rel="stylesheet" href="./resources/assets/css/Footer-Clean.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
-    <link rel="stylesheet" href="./resources/assets/css/modal/modal.css">
-    <link rel="stylesheet" href="./resources/assets/css/modaltest.css">
     <link rel="stylesheet" href="./resources/assets/css/Navbar-Fixed-Side.css">
     <link rel="stylesheet" href="./resources/assets/css/Navigation-with-Search.css">
     <link rel="stylesheet" href="./resources/assets/css/Registration-Form-with-Photo.css">
-    <link rel="stylesheet" href="./resources/assets/css/sidebar/custom.css">
-    <link rel="stylesheet" href="./resources/assets/css/sidebar/sidebar.css">
     <link rel="stylesheet" href="./resources/assets/css/style3.css">
     <link rel="stylesheet" href="./resources/assets/css/Video-Parallax-Background-v2.css">
     <link rel="stylesheet" href="./resources/assets/css/Video-Parallax-Background.css">
@@ -56,10 +49,16 @@
 	                </div>
 	                <div class="form-group"><input type="password" name="password-repeat" placeholder="Password (repeat)" class="form-control"></div>
 	
-	                <div class="form-group">
-	                  <div class="form-check"><label class="form-check-label"><input type="checkbox" class="form-check-input">I agree to the license terms.</label>
+	                <!-- <div class="form-group">
+	                	<input type="checkbox">
+	                  <div class="form-check">
+	                <label class="form-check-label">I agree to the license terms.</label> 
 	                  </div>
-	                </div>
+	                </div> -->
+
+	                	<input type="checkbox">
+
+	                <label class="form-check-label">I agree to the license terms.</label> 
 	
 	                <div class="form-group"><button class="btn btn-primary btn-block" type="submit" style="background-color:rgb(118,219,241);">Sign Up</button>
 	                </div>
@@ -74,7 +73,7 @@
 	                </div>
 	
 	                <div class="form-group">
-	                  <div class="form-check"><label class="form-check-label"><input type="checkbox" class="form-check-input">아이디를 기억하시겠습니까?</label>
+	                  <div class="form-check"><input type="checkbox"><label class="form-check-label">&nbsp;아이디를 기억하시겠습니까?</label>
 	                  </div>
 	                </div>
 	
