@@ -66,7 +66,10 @@ public class HomeController {
 		
 		return "NewFile3";
 	}
-	
+	@RequestMapping(value = "/newC", method = RequestMethod.GET)
+	public String newC(Locale locale, Model model) {
+		return "NewFile";
+	}
 	
 	
 }
