@@ -30,15 +30,16 @@ public class MemberController {
 			User login = dao.selectOne(vo);
 			if (login != null) {
 				if(login.getUserAuth().equalsIgnoreCase("Y")) {
+					httpSession.setAttribute("useremail", login.getUserEmail());
 					System.out.println("로그인 완료!!");
 				}else if(login.getUserAuth().equalsIgnoreCase("N")) {
 					System.out.println("이메일 인증 필요함");
+					return "notAuth";
 				}
-				httpSession.setAttribute("userid", login.getUserEmail());
+				
 				return "redirect:/";
 			} else {
-
-				return "redirect:/";
+				return "loginFail";
 			}
 
 		}

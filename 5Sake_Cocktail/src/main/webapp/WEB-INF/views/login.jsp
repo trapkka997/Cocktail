@@ -47,7 +47,7 @@
 	                </div>
 	                <div class="form-group"><input type="password" id="userPassword" name="userPassword" placeholder="Password" class="form-control">
 	                </div>
-	                <div class="form-group"><input type="password" id="password-repeat" name="password-repeat" placeholder="Password (repeat)" class="form-control"></div>
+	                <div class="form-group"><input type="password" id="asswordRepeat" name="password-repeat" placeholder="Password (repeat)" class="form-control"></div>
 	
 	                <!-- <div class="form-group">
 	                	<input type="checkbox">
@@ -113,10 +113,14 @@
     	function signup() {
     		var userEmail = document.getElementById('userEmail').value;
     		var userPassword = document.getElementById('userPassword').value;
-    		var repeat = document.getElementById('assword-repeat').value;
-    		
+    		var repeat = document.getElementById('asswordRepeat').value;
     		if(userEmail.length == 0 || userPassword.length ==0 || repeat.length ==0){
     			alert('모든 내용을 입력해주세요.');
+    			return false;
+    		}
+    		
+    		if(userPassword != repeat){
+    			alert('비밀번호 확인과 맞지 않습니다.')
     			return false;
     		}
 			return true;
