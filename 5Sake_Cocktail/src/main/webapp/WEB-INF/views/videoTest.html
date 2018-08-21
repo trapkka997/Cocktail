@@ -1,69 +1,93 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>back video</title>
-    <link rel="stylesheet" href="./resources/assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic">
-    <link rel="stylesheet" href="./resources/assets/fonts/font-awesome.min.css">
-    <link rel="stylesheet" href="./resources/assets/fonts/ionicons.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Andada">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css">
-    <link rel="stylesheet" href="./resources/assets/css/Basic-fancyBox-Gallery.css">
-    <link rel="stylesheet" href="./resources/assets/css/Footer-Clean.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
-    <link rel="stylesheet" href="./resources/assets/css/modal/modal.css">
-    <link rel="stylesheet" href="./resources/assets/css/modaltest.css">
-    <link rel="stylesheet" href="./resources/assets/css/Navbar-Fixed-Side.css">
-    <link rel="stylesheet" href="./resources/assets/css/Navigation-with-Search.css">
-    <link rel="stylesheet" href="./resources/assets/css/Registration-Form-with-Photo.css">
-    <link rel="stylesheet" href="./resources/assets/css/sidebar/custom.css">
-    <link rel="stylesheet" href="./resources/assets/css/sidebar/sidebar.css">
-    <link rel="stylesheet" href="./resources/assets/css/style3.css">
-    <link rel="stylesheet" href="./resources/assets/css/Video-Parallax-Background-v2.css">
-    <link rel="stylesheet" href="./resources/assets/css/Video-Parallax-Background.css">
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css?h=7e699e36af8492f3ff181fb81f3e0416">
+    <link rel="stylesheet" href="/assets/css/styles.css?h=d41d8cd98f00b204e9800998ecf8427e">
+    <link rel="stylesheet" href="/assets/css/video%20login%20CSS/Basic-fancyBox-Gallery.css?h=74c9bf794d90adc2229ec87f25b3096e">
+    <link rel="stylesheet" href="/assets/css/video%20login%20CSS/Registration-Form-with-Photo.css?h=0ff9e630333eee7ec494c9735d4670d0">
+    <link rel="stylesheet" href="/assets/css/video%20login%20CSS/style3.css?h=426c8f2cf8e40abe2a807a132dcfe544">
+    <link rel="stylesheet" href="/assets/css/video%20login%20CSS/Video-Parallax-Background-v2.css?h=6ff29297f54f125b0a4362721d504ab7">
+    <link rel="stylesheet" href="/assets/css/video%20login%20CSS/Video-Parallax-Background.css?h=bf3c435fc3d7d4c04ad17e0b69768b0f">
 </head>
 
-<body style="background-color:rgb(241,247,252);"><div class="container-fluid d-flex justify-content-center align-items-center align-content-center video-parallax-container">
-    <div class="col-6">
+<body><div class="container-fluid d-flex justify-content-center align-items-center align-content-center video-parallax-container">
+
+  <div class="col-6">
     <div class="register-photo" style="margin:-100px;">
-    <div class="form-container">
-        <div class="image-holder" style="background-image:url('assets/img/youtube_profile_image.png');background-size:cover;background-repeat:no-repeat;background-position:center;"></div>
-        <form method="post">
-            <h2 class="text-center"><strong>Create</strong>an account.</h2>
-            <div class="form-group"><input type="email" name="email" placeholder="Email" class="form-control" /></div>
-            <div class="form-group"><input type="password" name="password" placeholder="Password" class="form-control" /></div>
-            <div class="form-group"><input type="password" name="password-repeat" placeholder="Password (repeat)" class="form-control" /></div>
-            <div class="form-group">
-                <div class="form-check"><label class="form-check-label"><input type="checkbox" class="form-check-input" />I agree to the license terms.</label></div>
+      <div class="form-container">
+        <div class="image-holder" style="background-image:url('/assets/img/Login%20Images/youtube_profile_image.png?h=e51f1bd0fc1fb263ea708e0405cd5732');background-size:cover;background-repeat:no-repeat;background-position:center;">
+        </div>
+
+       
+          <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#signUp">Sign Up</a></li>
+            <li><a data-toggle="tab" href="#loginform">Login</a></li>
+          </ul>
+           <form method="post">
+          <div class="tab-content">
+            <div id="signUp" class="tab-pane fade in active">
+                <h2 class="text-center"><strong>Create</strong> account.</h2>
+                <div class="form-group"><input type="email" name="email" placeholder="Email" class="form-control">
+                </div>
+                <div class="form-group"><input type="password" name="password" placeholder="Password" class="form-control">
+                </div>
+                <div class="form-group"><input type="password" name="password-repeat" placeholder="Password (repeat)" class="form-control"></div>
+
+                <div class="form-group">
+                  <div class="form-check"><label class="form-check-label"><input type="checkbox" class="form-check-input">I agree to the license terms.</label>
+                  </div>
+                </div>
+
+                <div class="form-group"><button class="btn btn-primary btn-block" type="submit" style="background-color:rgb(118,219,241);">Sign Up</button>
+                </div>
+                <a href="#loginform" class="already">You already have an account? Login here.</a></form>
             </div>
-            <div class="form-group"><button class="btn btn-primary btn-block" type="submit" style="background-color:rgb(118,219,241);">Sign Up</button></div><a href="#" class="already">You already have an account? Login here.</a></form>
+
+            <div id="loginform" class="tab-pane fade">
+                <h2 class="text-center"><strong>Login</strong> here</h2>
+                <div class="form-group"><input type="email" name="email" placeholder="Email" class="form-control">
+                </div>
+                <div class="form-group"><input type="password" name="password" placeholder="Password" class="form-control">
+                </div>
+
+                <div class="form-group">
+                  <div class="form-check"><label class="form-check-label"><input type="checkbox" class="form-check-input">아이디를 기억하시겠습니까?</label>
+                  </div>
+                </div>
+
+                <div class="form-group"><button class="btn btn-primary btn-block" type="submit" style="background-color:rgb(118,219,241);">Login</button>
+                </div>
+            </div>
+        </div>
+      </div>
     </div>
+  </div>
+  <video muted="" loop="" controls="" autoplay="media"><source src="https://vimeo.com/user88648261" type="video/vimeo" wp-acf="[{'type':'url','name':'video','label':'Video','wrapper':{'width':30}}]" wp-attr="[{'target':'src','replace':'%1'}]"></video>
 </div>
 
-    </div><video muted loop controls autoplay = "media"><source src="bar3.mp4" type="video/mp4" wp-acf="[{&#39;type&#39;:&#39;url&#39;,&#39;name&#39;:&#39;video&#39;,&#39;label&#39;:&#39;Video&#39;,&#39;wrapper&#39;:{&#39;width&#39;:30}}]" wp-attr="[{&#39;target&#39;:&#39;src&#39;,&#39;replace&#39;:&#39;%1&#39;}]"></source></video></div>
-    <script src="./resources/assets/js/jquery.min.js"></script>
-    <script src="./resources/assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
-    <script src="./resources/assets/js/Basic-fancyBox-Gallery.js"></script>
-    <script src="./resources/assets/js/creative.js"></script>
-    <script src="./resources/assets/js/bs-animation.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-    <script src="./resources/assets/js/modal/modal.js"></script>
-    <script src="./resources/assets/js/modal/tab.js"></script>
-    <script src="./resources/assets/js/modaltest.js"></script>
-    <script src="./resources/assets/js/sidebar/sidebar.js"></script>
-    <script src="./resources/assets/js/Video-Parallax-Background-v2.js"></script>
-    <script src="./resources/assets/js/Video-Parallax-Background.js"></script>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+<script src="assets/js/Basic-fancyBox-Gallery.js"></script>
+<script src="assets/js/creative.js"></script>
+<script src="assets/js/bs-animation.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<script src="assets/js/modal/modal.js"></script>
+<script src="assets/js/modal/tab.js"></script>
+<script src="assets/js/modaltest.js"></script>
+<script src="assets/js/sidebar/sidebar.js"></script>
+<script src="assets/js/Video-Parallax-Background-v2.js"></script>
+<script src="assets/js/Video-Parallax-Background.js"></script>
+
+    <script src="/assets/js/jquery.min.js?h=f2f87b58be0d57ecf71ada8df361a2d9"></script>
+    <script src="/assets/bootstrap/js/bootstrap.min.js?h=e665caf5a91ebe9e287226a3dade0d69"></script>
 </body>
 
 </html>
