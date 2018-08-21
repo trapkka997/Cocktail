@@ -11,11 +11,15 @@ import com.google.cloud.vision.v1.Feature.Type;
 import com.google.cloud.vision.v1.Image;
 import com.google.cloud.vision.v1.ImageAnnotatorClient;
 import com.google.protobuf.ByteString;
+
+import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.junit.experimental.theories.Theories;
 
 public class QuickstartSample {
 public static void main(String... args) throws Exception {
@@ -23,8 +27,7 @@ public static void main(String... args) throws Exception {
  try (ImageAnnotatorClient vision = ImageAnnotatorClient.create()) {
 
    // The path to the image file to annotate
-   String fileName = "/Users/hangyutae/Downloads/4k-wallpaper-berries-delicious-1266741.jpg";
-
+   String fileName = "/webapp/WEB-INF/resources/4k-wallpaper-berries-delicious-1266741.jpg";
    // Reads the image file into memory
    Path path = Paths.get(fileName);
    byte[] data = Files.readAllBytes(path);
