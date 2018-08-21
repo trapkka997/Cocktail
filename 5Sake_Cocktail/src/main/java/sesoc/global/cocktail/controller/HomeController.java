@@ -47,6 +47,9 @@ public class HomeController {
 		
 		return "home";
 	}
-	
+	@RequestMapping(value = "/newCc", method = RequestMethod.GET)
+	public String newCc(Locale locale, Model model) {
+		return "product";
+	}
 	
 }
