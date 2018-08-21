@@ -5,6 +5,8 @@ import java.util.Locale;
 import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.session.SqlSession;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,7 +20,7 @@ import sesoc.global.cocktail.vo.User;
 public class MemberController {
 	
 	@Autowired SqlSession sqlSession;
-		
+	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 		//로그인 화면 넘어가기
 		@RequestMapping(value="/memberLogin", method = RequestMethod.GET)
 		public String login(Model model) {
@@ -46,7 +48,7 @@ public class MemberController {
 
 			if (login == null) {
 				System.out.println("회원가입성공");
-				httpSession.setAttribute("userid", vo.getUserId());// 회원가입된 로그인가능한 아이디
+				httpSession.setAttribute("userid", vo.getUserEmail());// 회원가입된 로그인가능한 아이디
 				return "home";
 			} else {
 				System.out.println("회원가입 불가");
@@ -62,7 +64,7 @@ public class MemberController {
 			MemberDAO dao = sqlSession.getMapper(MemberDAO.class);
 			User login = dao.selectOne(vo);
 			if (login != null) {
-				httpSession.setAttribute("userid", login.getUserId());
+				httpSession.setAttribute("userid", login.getUserEmail());
 				return "readyResume";
 			} else {
 

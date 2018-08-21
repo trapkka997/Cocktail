@@ -1,58 +1,52 @@
 package sesoc.global.cocktail.vo;
 
 public class User {
-	private String userSeq;
-	private String userId;
-	private String userPw;
-	private String userName;
-	private String email;
+	private String userEmail;
+	private String userPassword;
+	private String userAuthCode;
+	private String userAuth;
 	public User() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public User(String userSeq, String userId, String userPw, String userName, String email) {
+	public User(String userEmail, String userPassword, String userAuthCode, String userAuth) {
 		super();
-		this.userSeq = userSeq;
-		this.userId = userId;
-		this.userPw = userPw;
-		this.userName = userName;
-		this.email = email;
+		this.userEmail = userEmail;
+		this.userPassword = userPassword;
+		this.userAuthCode = userAuthCode;
+		this.userAuth = userAuth;
 	}
-	public String getUserSeq() {
-		return userSeq;
+	public String getUserEmail() {
+		return userEmail;
 	}
-	public void setUserSeq(String userSeq) {
-		this.userSeq = userSeq;
+	public void setUserEmail(String userEmail) {
+		this.userEmail = userEmail;
 	}
-	public String getUserId() {
-		return userId;
+	public String getUserPassword() {
+		return userPassword;
 	}
-	public void setUserId(String userId) {
-		this.userId = userId;
+	public void setUserPassword(String userPassword) {
+		this.userPassword = userPassword;
 	}
-	public String getUserPw() {
-		return userPw;
+	public String getUserAuthCode() {
+		return userAuthCode;
 	}
-	public void setUserPw(String userPw) {
-		this.userPw = userPw;
+	public void setUserAuthCode(String userAuthCode) {
+		this.userAuthCode = userAuthCode;
 	}
-	public String getUserName() {
-		return userName;
+	public String getUserAuth() {
+		return userAuth;
 	}
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
+	public void setUserAuth(String userAuth) {
+		this.userAuth = userAuth;
 	}
 	@Override
 	public String toString() {
-		return "User [userSeq=" + userSeq + ", userId=" + userId + ", userPw=" + userPw + ", userName=" + userName
-				+ ", email=" + email + "]";
+		return "User [userEmail=" + userEmail + ", userPassword=" + userPassword + ", userAuthCode=" + userAuthCode
+				+ ", userAuth=" + userAuth + "]";
 	}
+	
+	
 	
 	
 }

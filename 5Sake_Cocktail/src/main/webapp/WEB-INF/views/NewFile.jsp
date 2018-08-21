@@ -36,10 +36,10 @@
     <div class="register-photo" style="margin:-100px;">
     <div class="form-container">
         <div class="image-holder" style="background-image:url('./resources/assets/img/youtube_profile_image.png');background-size:cover;background-repeat:no-repeat;background-position:center;"></div>
-        <form method="post">
+        <form method="post" action="register" onsubmit="return signup()">
             <h2 class="text-center"><strong>Create</strong>an account.</h2>
-            <div class="form-group"><input type="email" name="email" placeholder="Email" class="form-control" /></div>
-            <div class="form-group"><input type="password" name="password" placeholder="Password" class="form-control" /></div>
+            <div class="form-group"><input type="email" name="userEmail" placeholder="Email" class="form-control" /></div>
+            <div class="form-group"><input type="password" name="userPassword" placeholder="Password" class="form-control" /></div>
             <div class="form-group"><input type="password" name="password-repeat" placeholder="Password (repeat)" class="form-control" /></div>
             <div class="form-group">
                 <div class="form-check"><label class="form-check-label"><input type="checkbox" class="form-check-input" />I agree to the license terms.</label></div>
@@ -66,6 +66,13 @@
     <script src="./resources/assets/js/sidebar/sidebar.js"></script>
     <script src="./resources/assets/js/Video-Parallax-Background-v2.js"></script>
     <script src="./resources/assets/js/Video-Parallax-Background.js"></script>
+    <script type="text/javascript">
+    	function signup() {
+    		alert('aa');
+    		
+			return true;
+		}
+    </script>
 </body>
 
 </html>
