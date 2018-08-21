@@ -42,7 +42,7 @@
 	        <div class="image-holder" style="background-image:url('./resources/assets/img/img123.png');background-size:cover;background-repeat:no-repeat;background-position:center;">
 	        </div>	         
 	          
-			  <form method="post">  			  
+			  <form method="post" action="register" onsubmit="return signup()">  			  
 			  <ul class="nav nav-tabs">
 	            <li class="active"><a data-toggle="tab" href="#signUp" class="active show">Sign Up</a></li>
 	            <li><a data-toggle="tab" href="#loginform">Login</a></li>
@@ -50,11 +50,11 @@
 	          <div class="tab-content">       	          
 	            <div id="signUp" class="tab-pane fade in active">
 	                <h2 class="text-center"><strong>Create</strong> account.</h2>
-	                <div class="form-group"><input type="email" name="email" placeholder="Email" class="form-control">
+	                <div class="form-group"><input type="email" id="userEmail" name="userEmail" placeholder="Email" class="form-control">
 	                </div>
-	                <div class="form-group"><input type="password" name="password" placeholder="Password" class="form-control">
+	                <div class="form-group"><input type="password" id="userPassword" name="userPassword" placeholder="Password" class="form-control">
 	                </div>
-	                <div class="form-group"><input type="password" name="password-repeat" placeholder="Password (repeat)" class="form-control"></div>
+	                <div class="form-group"><input type="password" id="password-repeat" name="password-repeat" placeholder="Password (repeat)" class="form-control"></div>
 	
 	                <div class="form-group">
 	                  <div class="form-check"><label class="form-check-label"><input type="checkbox" class="form-check-input">I agree to the license terms.</label>
@@ -63,23 +63,24 @@
 	
 	                <div class="form-group"><button class="btn btn-primary btn-block" type="submit" style="background-color:rgb(118,219,241);">Sign Up</button>
 	                </div>
-	                <a href="#loginform" class="already">You already have an account? Login here.</a></form>
+	                <a href="#loginform" class="already">You already have an account? Login here.</a>
+	                </form>
 	            </div>
-	
 	            <div id="loginform" class="tab-pane fade">
+	            <form action="login" onsubmit="return loginBtn()"method="post" class="formClass" style="padding: 0px">
 	                <h2 class="text-center"><strong>Login</strong> here</h2>
-	                <div class="form-group"><input type="email" name="email" placeholder="Email" class="form-control">
+	                <div class="form-group"><input type="email" id="loginEmail" name="userEmail" placeholder="Email" class="form-control">
 	                </div>
-	                <div class="form-group"><input type="password" name="password" placeholder="Password" class="form-control">
+	                <div class="form-group"><input type="password" id="loginPassword" name="userPassword" placeholder="Password" class="form-control">
 	                </div>
 	
 	                <div class="form-group">
 	                  <div class="form-check"><label class="form-check-label"><input type="checkbox" class="form-check-input">아이디를 기억하시겠습니까?</label>
 	                  </div>
 	                </div>
-	
-	                <div class="form-group"><button class="btn btn-primary btn-block" type="submit" style="background-color:rgb(118,219,241);">Login</button>
+	                <div class="form-group"><input class="btn btn-primary btn-block" type="submit" style="background-color:rgb(118,219,241);" value="Login">
 	                </div>
+	                </form>
 	            </div>
 	        </div>
 	      </div>
@@ -109,6 +110,28 @@
     <script src="./resources/assets/js/sidebar/sidebar.js"></script>
     <script src="./resources/assets/js/Video-Parallax-Background-v2.js"></script>
     <script src="./resources/assets/js/Video-Parallax-Background.js"></script>
+    <script type="text/javascript">
+    	function signup() {
+    		var userEmail = document.getElementById('userEmail').value;
+    		var userPassword = document.getElementById('userPassword').value;
+    		var repeat = document.getElementById('assword-repeat').value;
+    		
+    		if(userEmail.length == 0 || userPassword.length ==0 || repeat.length ==0){
+    			alert('모든 내용을 입력해주세요.');
+    			return false;
+    		}
+			return true;
+		}
+    	function loginBtn() {
+    		var loginEmail = document.getElementById('loginEmail').value;
+    		var loginPassword = document.getElementById('loginPassword').value;
+    		if(loginEmail.length == 0 || loginPassword.length ==0){
+    			alert('모든 내용을 입력해주세요.');
+    			return false;
+    		}
+    		return true;
+		}
+    </script>
 </body>
 
 </html>

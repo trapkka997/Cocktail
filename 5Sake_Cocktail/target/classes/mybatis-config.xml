@@ -8,5 +8,6 @@
 	</typeAliases>
 	<mappers>
 		<mapper resource="mappers/emailMapper.xml"/>
+		<mapper resource="mappers/memberMapper.xml"/>
 	</mappers>
 </configuration>
