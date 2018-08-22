@@ -4,10 +4,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>로그인 인증해</title>
 </head>
 <body>
-
+ <h1>이메일을 확인하여 로그인 인증하세요</h1>
 
 </body>
 </html>

@@ -4,7 +4,10 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
+		<typeAlias type="sesoc.global.cocktail.vo.User" alias="user"/>
 	</typeAliases>
 	<mappers>
+		<mapper resource="mappers/emailMapper.xml"/>
+		<mapper resource="mappers/memberMapper.xml"/>
 	</mappers>
 </configuration>

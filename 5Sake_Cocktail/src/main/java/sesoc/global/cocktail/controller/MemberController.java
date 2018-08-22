@@ -5,6 +5,8 @@ import java.util.Locale;
 import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.session.SqlSession;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,55 +20,26 @@ import sesoc.global.cocktail.vo.User;
 public class MemberController {
 	
 	@Autowired SqlSession sqlSession;
-		
-		//로그인 화면 넘어가기
-		@RequestMapping(value="/memberLogin", method = RequestMethod.GET)
-		public String login(Model model) {
-			return "signIn";
-		}
-		
-		//회원가입 화면 넘어가기
-		@RequestMapping(value="/memberSingup", method = RequestMethod.GET)
-		public String memberSign(Model model) {
-			return "signUp";
-		}
-		//홈화면으로 돌아가기
-		@RequestMapping(value="/back", method = RequestMethod.GET)
-		public String mainHome(Model model) {
-			return "redirect:/";
-		}
-		
-		//로그인후
-		// 회원가입후 홈화면으로 가기(아이디 중복안되게 유효성 검사 기능)
-		@RequestMapping(value = "/enrollmember", method = RequestMethod.POST)
-		public String memberJoin(Locale locale, Model model, User vo, HttpSession httpSession) {
-
-			MemberDAO dao = sqlSession.getMapper(MemberDAO.class);
-			User login = dao.selectOne(vo);
-
-			if (login == null) {
-				System.out.println("회원가입성공");
-				httpSession.setAttribute("userid", vo.getUserId());// 회원가입된 로그인가능한 아이디
-				return "home";
-			} else {
-				System.out.println("회원가입 불가");
-				model.addAttribute("loginCheck", "OK");
-				return "signUp";
-			}
-		}
+	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 
 		// 로그인후 화면 이동
 		@RequestMapping(value = "/login", method = RequestMethod.POST)
 		public String login(Locale locale, Model model, User vo, HttpSession httpSession) {
-
+			System.out.println(vo);
 			MemberDAO dao = sqlSession.getMapper(MemberDAO.class);
 			User login = dao.selectOne(vo);
 			if (login != null) {
-				httpSession.setAttribute("userid", login.getUserId());
-				return "readyResume";
+				if(login.getUserAuth().equalsIgnoreCase("Y")) {
+					httpSession.setAttribute("useremail", login.getUserEmail());
+					System.out.println("로그인 완료!!");
+				}else if(login.getUserAuth().equalsIgnoreCase("N")) {
+					System.out.println("이메일 인증 필요함");
+					return "user/notAuth";
+				}
+				
+				return "redirect:/";
 			} else {
-
-				return "login";
+				return "user/loginFail";
 			}
 
 		}
@@ -76,7 +49,7 @@ public class MemberController {
 		public String logout(HttpSession httpSession) {
 			httpSession.invalidate();
 
-			return "home";
+			return "redirect:/";
 
 		}	
 }
