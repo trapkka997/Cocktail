@@ -9,7 +9,7 @@
  FROM
  	USERS
  WHERE
- 	USEREMAIL = #{userEmail} AND USERPASSWORD = #{userPassword}
+ 	USEREMAIL = #{userEmail} AND USERPASSWORD = #{userPwd}
 
 </select>
 </mapper>

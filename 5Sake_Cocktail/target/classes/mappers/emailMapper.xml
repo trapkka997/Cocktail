@@ -5,7 +5,7 @@
 <mapper namespace="emailMapper">
 	<insert id = "insertUser" parameterType="user">
 		insert into USERS (useremail, userpassword)
-		values(#{userEmail}, #{userPassword})
+		values(#{userEmail}, #{userPwd})
 	</insert>
 	
 	<update id="createAuthKey" parameterType="user">

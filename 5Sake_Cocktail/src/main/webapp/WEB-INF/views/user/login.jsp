@@ -45,7 +45,7 @@
 	                <h2 class="text-center"><strong>Create</strong> account.</h2>
 	                <div class="form-group"><input type="email" id="userEmail" name="userEmail" placeholder="Email" class="form-control">
 	                </div>
-	                <div class="form-group"><input type="password" id="userPassword" name="userPassword" placeholder="Password" class="form-control">
+	                <div class="form-group"><input type="password" id="userPassword" name="userPwd" placeholder="Password" class="form-control">
 	                </div>
 	                <div class="form-group"><input type="password" id="asswordRepeat" name="password-repeat" placeholder="Password (repeat)" class="form-control"></div>
 	
@@ -70,7 +70,7 @@
 	                <h2 class="text-center"><strong>Login</strong> here</h2>
 	                <div class="form-group"><input type="email" id="loginEmail" name="userEmail" placeholder="Email" class="form-control">
 	                </div>
-	                <div class="form-group"><input type="password" id="loginPassword" name="userPassword" placeholder="Password" class="form-control">
+	                <div class="form-group"><input type="password" id="loginPassword" name="userPwd" placeholder="Password" class="form-control">
 	                </div>
 	
 	                <div class="form-group">

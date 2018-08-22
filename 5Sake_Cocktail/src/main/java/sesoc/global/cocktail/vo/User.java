@@ -2,17 +2,19 @@ package sesoc.global.cocktail.vo;
 
 public class User {
 	private String userEmail;
-	private String userPassword;
+	private String userPwd;
+	private String userNickname;
 	private String userAuthCode;
 	private String userAuth;
 	public User() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public User(String userEmail, String userPassword, String userAuthCode, String userAuth) {
+	public User(String userEmail, String userPwd, String userNickname, String userAuthCode, String userAuth) {
 		super();
 		this.userEmail = userEmail;
-		this.userPassword = userPassword;
+		this.userPwd = userPwd;
+		this.userNickname = userNickname;
 		this.userAuthCode = userAuthCode;
 		this.userAuth = userAuth;
 	}
@@ -22,11 +24,17 @@ public class User {
 	public void setUserEmail(String userEmail) {
 		this.userEmail = userEmail;
 	}
-	public String getUserPassword() {
-		return userPassword;
+	public String getUserPwd() {
+		return userPwd;
 	}
-	public void setUserPassword(String userPassword) {
-		this.userPassword = userPassword;
+	public void setUserPwd(String userPwd) {
+		this.userPwd = userPwd;
+	}
+	public String getUserNickname() {
+		return userNickname;
+	}
+	public void setUserNickname(String userNickname) {
+		this.userNickname = userNickname;
 	}
 	public String getUserAuthCode() {
 		return userAuthCode;
@@ -42,11 +50,10 @@ public class User {
 	}
 	@Override
 	public String toString() {
-		return "User [userEmail=" + userEmail + ", userPassword=" + userPassword + ", userAuthCode=" + userAuthCode
-				+ ", userAuth=" + userAuth + "]";
+		return "User [userEmail=" + userEmail + ", userPwd=" + userPwd + ", userNickname=" + userNickname
+				+ ", userAuthCode=" + userAuthCode + ", userAuth=" + userAuth + "]";
 	}
 	
-	
-	
+
 	
 }

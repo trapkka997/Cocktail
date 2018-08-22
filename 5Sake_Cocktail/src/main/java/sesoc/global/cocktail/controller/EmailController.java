@@ -44,7 +44,7 @@ public class EmailController {
 		MailHandler sendMail = new MailHandler(mailSender);
 		sendMail.setSubject("[ALMOM 서비스 이메일 인증]");
 		sendMail.setText(
-				new StringBuffer().append("<h1>메일인증</h1>").append("<a href='http://10.10.15.227:8888/cocktail/emailConfirm?user_email=").append(user.getUserEmail()).append("&key=").append(key).append("' target='_blenk'>이메일 인증 확인</a>").toString());
+				new StringBuffer().append("<h1>메일인증</h1>").append("<a href='http://10.10.12.189:8888/cocktail/emailConfirm?user_email=").append(user.getUserEmail()).append("&key=").append(key).append("' target='_blenk'>이메일 인증 확인</a>").toString());
 		sendMail.setFrom("trapkka997@gmail.com", "알몸개발자");
 		sendMail.setTo(user.getUserEmail());
 		sendMail.send();
