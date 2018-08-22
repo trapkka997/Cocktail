@@ -9,8 +9,13 @@
  FROM
  	USERS
  WHERE
+ 	<if test="userPwd != null">
  	USEREMAIL = #{userEmail} AND USERPASSWORD = #{userPwd}
-
+	</if>
+	<if test="userEmail == null">
+	USEREMAIL = #{userEmail}
+	</if>		 
+			 
 </select>
 </mapper>
 	

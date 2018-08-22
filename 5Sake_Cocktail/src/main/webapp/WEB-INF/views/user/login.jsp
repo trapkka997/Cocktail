@@ -43,9 +43,9 @@
 	          <div class="tab-content">       	          
 	            <div id="signUp" class="tab-pane fade in active">
 	                <h2 class="text-center"><strong>Create</strong> account.</h2>
-	                <div class="form-group"><input type="email" id="userEmail" name="userEmail" placeholder="Email" class="form-control">
+	                <div class="form-group"><input type="email" id="userEmail" placeholder="Email" class="form-control">
 	                </div>
-	                <div class="form-group"><input type="password" id="userPassword" name="userPwd" placeholder="Password" class="form-control">
+	                <div class="form-group"><input type="password" id="userPassword" placeholder="Password" class="form-control">
 	                </div>
 	                <div class="form-group"><input type="password" id="asswordRepeat" name="password-repeat" placeholder="Password (repeat)" class="form-control"></div>
 	
@@ -125,11 +125,9 @@
 					userPwd : userPassword
 				},
 				success: function(resp) {
-					if(resp ==1){
+					if(resp ==2){
 						document.getElementById('memberSign').innerHTML ="이미 가입된 이메일 계정입니다"; 
-					}else if(resp == 2){
-						document.getElementById('memberSign').innerHTML ="비밀번호가 일치하지 않습니다"; 
-					}else if(resp == 3){
+					}else if(resp == 1){
 						document.getElementById('memberSign').innerHTML ="가입완료. 인증메일을 확인해주세요"; 
 					}
 				},

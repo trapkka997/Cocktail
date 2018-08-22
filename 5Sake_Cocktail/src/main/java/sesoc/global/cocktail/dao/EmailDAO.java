@@ -4,7 +4,7 @@ import sesoc.global.cocktail.vo.User;
 
 public interface EmailDAO {
 
-	void insertUser(User vo);
+	public int insertUser(User vo);
 
 	void createAuthKey(User vo);
 

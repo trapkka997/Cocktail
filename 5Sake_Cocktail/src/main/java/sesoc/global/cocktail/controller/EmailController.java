@@ -3,6 +3,7 @@ package sesoc.global.cocktail.controller;
 import java.util.Locale;
 
 import javax.inject.Inject;
+import javax.mail.MessagingException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -38,7 +39,7 @@ public class EmailController {
 	@Autowired EmailRepository dao;
 
 
-	@Transactional
+/*	@Transactional
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public String RegisterPost(User user, Model model, RedirectAttributes rttr, HttpServletRequest request, HttpSession session) throws Exception {
 		logger.info("회원가입...");
@@ -59,7 +60,7 @@ public class EmailController {
 		sendMail.send();
 		rttr.addFlashAttribute("authmsg" , "가입시 사용한 이메일로 인증해주 3");
 		return "redirect:/";
-	}
+	}*/
 	
 	@RequestMapping(value = "/emailConfirm", method = RequestMethod.GET)
 	public String emailConfirm(String user_email, String key, Model model) throws Exception { // 이메일인증
@@ -72,22 +73,33 @@ public class EmailController {
 
 		return "email/emailConfirm";
 	}
-
+	
+	@Transactional
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
-	public @ResponseBody String register(Locale locale, Model model, User vo, HttpSession httpSession) {
-		MemberDAO dao = session.getMapper(MemberDAO.class);
-		User login = dao.selectOne(vo);
-		if (login != null) {
-			if(login.getUserAuth().equalsIgnoreCase("Y")) {
-				httpSession.setAttribute("useremail", login.getUserEmail());
+	public @ResponseBody String register(Locale locale, Model model, RedirectAttributes rttr, User vo, HttpSession httpSession) throws Exception {
+		EmailDAO emaiLDao = session.getMapper(EmailDAO.class);
+		MemberDAO memberDao = session.getMapper(MemberDAO.class);
+		System.out.println(vo);
+		User login = memberDao.selectOne(vo);
+		
+		if (login == null) {
+			emaiLDao.insertUser(vo);
+				String key = new TempKey().getKey(50, false); // 인증키 생성
+
+				dao.createAuthKey(vo.getUserEmail(), key); // 인증키 DB저장
+
+				MailHandler sendMail = new MailHandler(mailSender);
+				sendMail.setSubject("[ALMOM 서비스 이메일 인증]");
+				sendMail.setText(
+						new StringBuffer().append("<h1>메일인증</h1>").append("<a href='http://10.10.12.189:8888/cocktail/emailConfirm?user_email=").append(vo.getUserEmail()).append("&key=").append(key).append("' target='_blenk'>이메일 인증 확인</a>").toString());
+				sendMail.setFrom("trapkka997@gmail.com", "알몸개발자");
+				sendMail.setTo(vo.getUserEmail());
+				sendMail.send();
+				rttr.addFlashAttribute("authmsg" , "가입시 사용한 이메일로 인증해주 3");
+				httpSession.setAttribute("useremail", vo.getUserEmail());
 				return "1";
-			}else {
-				System.out.println("이메일 인증 필요함");
-				return "2";
-			}
-			
 		} else {
-			return "3";
+			return "2";
 		}
 	}
 
