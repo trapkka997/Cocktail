@@ -19,12 +19,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-<<<<<<< HEAD
 import sesoc.global.cocktail.dao.EmailDAO;
 import sesoc.global.cocktail.dao.MemberDAO;
-=======
 import sesoc.global.cocktail.dao.EmailRepository;
->>>>>>> branch 'master' of https://github.com/trapkka997/Cocktail
 import sesoc.global.cocktail.email.MailHandler;
 import sesoc.global.cocktail.email.TempKey;
 import sesoc.global.cocktail.vo.User;
@@ -92,7 +89,6 @@ public class EmailController {
 		} else {
 			return "3";
 		}
-           1=가입된 이메일 2=비밀번호일치 3=가입완료
 	}
 
 }
