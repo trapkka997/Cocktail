@@ -38,7 +38,8 @@ public class MemberController {
 					return "user/notAuth";
 				}
 				
-				return "redirect:/";
+				//return "redirect:/";
+				return "test/main";
 			} else {
 				return "user/loginFail";
 			}

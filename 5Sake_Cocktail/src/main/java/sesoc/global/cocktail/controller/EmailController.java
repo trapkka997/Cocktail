@@ -52,7 +52,7 @@ public class EmailController {
 		dao.createAuthKey(user.getUserEmail(), key); // 인증키 DB저장
 
 		MailHandler sendMail = new MailHandler(mailSender);
-		sendMail.setSubject("[ALMOM 서비스 이메일 인증]");
+		sendMail.setSubject("[5Sake 홈페이지 서비스 이메일 인증]");
 		sendMail.setText(
 				new StringBuffer().append("<h1>메일인증</h1>").append("<a href='http://10.10.12.189:8888/cocktail/emailConfirm?user_email=").append(user.getUserEmail()).append("&key=").append(key).append("' target='_blenk'>이메일 인증 확인</a>").toString());
 		sendMail.setFrom("trapkka997@gmail.com", "알몸개발자");
