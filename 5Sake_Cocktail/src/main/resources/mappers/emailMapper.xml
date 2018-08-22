@@ -2,10 +2,10 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="emailMapper">
+<mapper namespace="sesoc.global.cocktail.dao.EmailDAO">
 	<insert id = "insertUser" parameterType="user">
 		insert into USERS (useremail, userpassword)
-		values(#{userEmail}, #{userPassword})
+		values(#{userEmail}, #{userPwd})
 	</insert>
 	
 	<update id="createAuthKey" parameterType="user">

@@ -45,7 +45,7 @@
 	                <h2 class="text-center"><strong>Create</strong> account.</h2>
 	                <div class="form-group"><input type="email" id="userEmail" name="userEmail" placeholder="Email" class="form-control">
 	                </div>
-	                <div class="form-group"><input type="password" id="userPassword" name="userPassword" placeholder="Password" class="form-control">
+	                <div class="form-group"><input type="password" id="userPassword" name="userPwd" placeholder="Password" class="form-control">
 	                </div>
 	                <div class="form-group"><input type="password" id="asswordRepeat" name="password-repeat" placeholder="Password (repeat)" class="form-control"></div>
 	
@@ -60,26 +60,26 @@
 
 	                <label class="form-check-label">I agree to the license terms.</label> 
 	
-	                <div class="form-group"><button class="btn btn-primary btn-block" type="submit" style="background-color:rgb(118,219,241);">Sign Up</button>
+	                <div class="form-group"><input class="btn btn-primary btn-block" type="button" style="background-color:rgb(118,219,241);" value="Sign Up" onclick="signBtn()">
 	                </div>
+	                 <div id="memberSign"></div>
 	                <a href="#loginform" class="already">You already have an account? Login here.</a>
 	                </form>
 	            </div>
 	            <div id="loginform" class="tab-pane fade">
-	            <form action="login" onsubmit="return loginBtn()"method="post" class="formClass" style="padding: 0px">
 	                <h2 class="text-center"><strong>Login</strong> here</h2>
-	                <div class="form-group"><input type="email" id="loginEmail" name="userEmail" placeholder="Email" class="form-control">
+	                <div class="form-group"><input type="email" id="loginEmail" placeholder="Email" class="form-control">
 	                </div>
-	                <div class="form-group"><input type="password" id="loginPassword" name="userPassword" placeholder="Password" class="form-control">
+	                <div class="form-group"><input type="password" id="loginPwd" placeholder="Password" class="form-control">
 	                </div>
 	
 	                <div class="form-group">
 	                  <div class="form-check"><input type="checkbox"><label class="form-check-label">&nbsp;아이디를 기억하시겠습니까?</label>
 	                  </div>
 	                </div>
-	                <div class="form-group"><input class="btn btn-primary btn-block" type="submit" style="background-color:rgb(118,219,241);" value="Login">
+	                <div class="form-group"><input class="btn btn-primary btn-block" type="button" style="background-color:rgb(118,219,241);" value="Login" onclick="loginBtn()">
 	                </div>
-	                </form>
+	                <div id="message"></div>
 	            </div>
 	        </div>
 	      </div>
@@ -110,9 +110,41 @@
     <script src="./resources/assets/js/Video-Parallax-Background-v2.js"></script>
     <script src="./resources/assets/js/Video-Parallax-Background.js"></script>
     <script type="text/javascript">
-    	function signup() {
+    function signBtn() {
+		var userEmail = document.getElementById('userEmail').value;
+		var userPassword = document.getElementById('userPassword').value;
+		var asswordRepeat = document.getElementById('asswordRepeat').value;
+		if(userEmail.length == 0 || userPassword.length ==0 || asswordRepeat.length ==0 ){
+			alert('모든 내용을 입력해주세요.');
+		}else{
+			$.ajax({
+				method: 'post',
+				url: 'register',
+				data: {
+					userEmail : userEmail,
+					userPwd : userPassword
+				},
+				success: function(resp) {
+					if(resp ==1){
+						document.getElementById('memberSign').innerHTML ="이미 가입된 이메일 계정입니다"; 
+					}else if(resp == 2){
+						document.getElementById('memberSign').innerHTML ="비밀번호가 일치하지 않습니다"; 
+					}else if(resp == 3){
+						document.getElementById('memberSign').innerHTML ="가입완료. 인증메일을 확인해주세요"; 
+					}
+				},
+				error: function() {
+					
+				}
+			})
+		}
+		
+	}
+    /* function signup() {
     		var userEmail = document.getElementById('userEmail').value;
     		var userPassword = document.getElementById('userPassword').value;
+    		console.log(userEmail);
+    		console.log(userPassword);
     		var repeat = document.getElementById('asswordRepeat').value;
     		if(userEmail.length == 0 || userPassword.length ==0 || repeat.length ==0){
     			alert('모든 내용을 입력해주세요.');
@@ -124,8 +156,8 @@
     			return false;
     		}
 			return true;
-		}
-    	function loginBtn() {
+		} */
+/*     	function loginBtn() {
     		var loginEmail = document.getElementById('loginEmail').value;
     		var loginPassword = document.getElementById('loginPassword').value;
     		if(loginEmail.length == 0 || loginPassword.length ==0){
@@ -133,7 +165,38 @@
     			return false;
     		}
     		return true;
+		} */
+    	
+		function loginBtn() {
+    		var loginEmail = document.getElementById('loginEmail').value;
+    		var loginPassword = document.getElementById('loginPwd').value;
+    		if(loginEmail.length == 0 || loginPassword.length ==0){
+    			alert('모든 내용을 입력해주세요.');
+    		}else{
+    			$.ajax({
+    				method: 'post',
+    				url: 'loginAjax',
+    				data: {
+    					userEmail : loginEmail,
+    					userPwd : loginPassword
+    				},
+    				success: function(resp) {
+						if(resp ==1){
+							document.getElementById('message').innerHTML ="로그인 성공"; 
+						}else if(resp == 2){
+							document.getElementById('message').innerHTML ="이메일 인증필요"; 
+						}else if(resp == 3){
+							document.getElementById('message').innerHTML ="로그인 실패"; 
+						}
+					},
+					error: function() {
+						
+					}
+    			})
+    		}
+    		
 		}
+    	
     </script>
 </body>
 
