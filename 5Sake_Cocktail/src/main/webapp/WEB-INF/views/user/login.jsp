@@ -60,8 +60,9 @@
 
 	                <label class="form-check-label">I agree to the license terms.</label> 
 	
-	                <div class="form-group"><button class="btn btn-primary btn-block" type="submit" style="background-color:rgb(118,219,241);">Sign Up</button>
+	                <div class="form-group"><input class="btn btn-primary btn-block" type="button" style="background-color:rgb(118,219,241);" value="Sign Up" onclick="signBtn()">
 	                </div>
+	                 <div id="memberSign"></div>
 	                <a href="#loginform" class="already">You already have an account? Login here.</a>
 	                </form>
 	            </div>
@@ -109,7 +110,37 @@
     <script src="./resources/assets/js/Video-Parallax-Background-v2.js"></script>
     <script src="./resources/assets/js/Video-Parallax-Background.js"></script>
     <script type="text/javascript">
-    	function signup() {
+    function signBtn() {
+		var userEmail = document.getElementById('userEmail').value;
+		var userPassword = document.getElementById('userPassword').value;
+		var asswordRepeat = document.getElementById('asswordRepeat').value;
+		if(userEmail.length == 0 || userPassword.length ==0 || asswordRepeat.length ==0 ){
+			alert('모든 내용을 입력해주세요.');
+		}else{
+			$.ajax({
+				method: 'post',
+				url: 'register',
+				data: {
+					userEmail : userEmail,
+					userPwd : userPassword
+				},
+				success: function(resp) {
+					if(resp ==1){
+						document.getElementById('memberSign').innerHTML ="이미 가입된 이메일 계정입니다"; 
+					}else if(resp == 2){
+						document.getElementById('memberSign').innerHTML ="비밀번호가 일치하지 않습니다"; 
+					}else if(resp == 3){
+						document.getElementById('memberSign').innerHTML ="가입완료. 인증메일을 확인해주세요"; 
+					}
+				},
+				error: function() {
+					
+				}
+			})
+		}
+		
+	}
+    /* function signup() {
     		var userEmail = document.getElementById('userEmail').value;
     		var userPassword = document.getElementById('userPassword').value;
     		console.log(userEmail);
@@ -125,7 +156,7 @@
     			return false;
     		}
 			return true;
-		}
+		} */
 /*     	function loginBtn() {
     		var loginEmail = document.getElementById('loginEmail').value;
     		var loginPassword = document.getElementById('loginPassword').value;
@@ -135,7 +166,8 @@
     		}
     		return true;
 		} */
-    	function loginBtn() {
+    	
+		function loginBtn() {
     		var loginEmail = document.getElementById('loginEmail').value;
     		var loginPassword = document.getElementById('loginPwd').value;
     		if(loginEmail.length == 0 || loginPassword.length ==0){
