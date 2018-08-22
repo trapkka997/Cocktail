@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import sesoc.global.cocktail.dao.EmailDAO;
+import sesoc.global.cocktail.dao.EmailRepository;
 import sesoc.global.cocktail.email.MailHandler;
 import sesoc.global.cocktail.email.TempKey;
 import sesoc.global.cocktail.vo.User;
@@ -26,7 +26,7 @@ public class EmailController {
 	@Inject
 	private JavaMailSender mailSender;
 	
-	@Autowired EmailDAO dao;
+	@Autowired EmailRepository dao;
 
 
 	@Transactional

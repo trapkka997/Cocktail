@@ -10,7 +10,7 @@ import sesoc.global.cocktail.controller.HomeController;
 import sesoc.global.cocktail.vo.User;
 
 @Repository
-public class EmailDAO {
+public class EmailRepository {
 	@Autowired SqlSession sqlSession;
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	private static final String namespace = "emailMapper";
