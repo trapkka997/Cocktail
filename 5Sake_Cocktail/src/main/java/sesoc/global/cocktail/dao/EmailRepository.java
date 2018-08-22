@@ -19,7 +19,8 @@ public class EmailRepository {
 
 		logger.info("dao "+vo);
 		System.out.println("DAO 로그 : 회원가입 중");
-		sqlSession.insert(namespace +".insertUser", vo);
+		EmailDAO dao = sqlSession.getMapper(EmailDAO.class);
+		dao.insertUser(vo);
 //			System.out.println(vo.toString());
 	}
 
@@ -28,13 +29,14 @@ public class EmailRepository {
 		User vo = new User();
 		vo.setUserAuthCode(user_authCode);
 		vo.setUserEmail(user_email);
-
-		sqlSession.selectOne(namespace + ".createAuthKey", vo);
+		EmailDAO dao = sqlSession.getMapper(EmailDAO.class);
+		dao.createAuthKey(vo);
 	}
 	
 	public void userAuth(User user) throws Exception {
 		// TODO Auto-generated method stub
-		sqlSession.update(namespace + ".userAuth", user);
+		EmailDAO dao = sqlSession.getMapper(EmailDAO.class);
+		dao.userAuth(user);
 	}
 
 	
