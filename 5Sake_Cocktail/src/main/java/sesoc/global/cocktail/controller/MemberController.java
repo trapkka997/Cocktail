@@ -15,19 +15,19 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import sesoc.global.cocktail.dao.MemberDAO;
+import sesoc.global.cocktail.dao.MemberRepository;
 import sesoc.global.cocktail.vo.User;
 
 @Controller
 public class MemberController {
 	
-	@Autowired SqlSession sqlSession;
+	@Autowired MemberRepository dao;
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 
 		// 로그인후 화면 이동
 		@RequestMapping(value = "/login", method = RequestMethod.POST)
 		public String login(Locale locale, Model model, User vo, HttpSession httpSession) {
 			System.out.println(vo);
-			MemberDAO dao = sqlSession.getMapper(MemberDAO.class);
 			User login = dao.selectOne(vo);
 			if (login != null) {
 				if(login.getUserAuth().equalsIgnoreCase("Y")) {
@@ -47,7 +47,6 @@ public class MemberController {
 		@RequestMapping(value = "/loginAjax", method = RequestMethod.POST)
 		public @ResponseBody String loginAjax(Locale locale, Model model, User vo, HttpSession httpSession) {
 			System.out.println(vo);
-			MemberDAO dao = sqlSession.getMapper(MemberDAO.class);
 			User login = dao.selectOne(vo);
 			if (login != null) {
 				if(login.getUserAuth().equalsIgnoreCase("Y")) {
