@@ -51,5 +51,8 @@ public class HomeController {
 	public String newCc(Locale locale, Model model) {
 		return "cocktail/product";
 	}
-	
+	@RequestMapping(value = "/sidebar", method = RequestMethod.GET)
+	public String sidebar(Locale locale, Model model) {
+		return "test/sidebar";
+	}
 }
