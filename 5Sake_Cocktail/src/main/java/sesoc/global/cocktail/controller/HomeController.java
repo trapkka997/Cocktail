@@ -51,9 +51,13 @@ public class HomeController {
 	public String newCc(Locale locale, Model model) {
 		return "cocktail/product";
 	}
-	@RequestMapping(value = "/newCcc", method = RequestMethod.GET)
-	public String newCcc(Locale locale, Model model) {
-		return "cocktail/index";
+	@RequestMapping(value = "/main", method = RequestMethod.GET)
+	public String main(Locale locale, Model model) {
+		return "test/first";
+	}
+	@RequestMapping(value = "/main2", method = RequestMethod.GET)
+	public String main2(Locale locale, Model model) {
+		return "test/first+limocon";
 	}
 	@RequestMapping(value = "/newCccc", method = RequestMethod.GET)
 	public String newCccc(Locale locale, Model model) {
