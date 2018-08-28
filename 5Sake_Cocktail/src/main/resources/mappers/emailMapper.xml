@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sesoc.global.cocktail.dao.EmailDAO">
+	<insert id = "insertUser" parameterType="user">
+		insert into USERS (useremail, userpassword)
+		values(#{userEmail}, #{userPwd})
+	</insert>
+	
+	<update id="createAuthKey" parameterType="user">
+		update USERS set userauthCode = #{userAuthCode} where useremail = #{userEmail}
+	</update>
+		<update id="userAuth" parameterType="user">
+		update USERS set userAuth = 'Y' where useremail = #{userEmail} AND USERAUTHCODE = #{userAuthCode}
+	</update>
+	
+</mapper>
