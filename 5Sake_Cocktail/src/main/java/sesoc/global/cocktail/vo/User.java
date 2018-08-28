@@ -1,58 +1,40 @@
 package sesoc.global.cocktail.vo;
 
 public class User {
-	private String userSeq;
-	private String userId;
-	private String userPw;
-	private String userName;
-	private String email;
+	private String useremail; 
+	private String usernickname;
+	private String userpwd;
 	public User() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
-	public User(String userSeq, String userId, String userPw, String userName, String email) {
+	public User(String useremail, String usernickname, String userpwd) {
 		super();
-		this.userSeq = userSeq;
-		this.userId = userId;
-		this.userPw = userPw;
-		this.userName = userName;
-		this.email = email;
+		this.useremail = useremail;
+		this.usernickname = usernickname;
+		this.userpwd = userpwd;
 	}
-	public String getUserSeq() {
-		return userSeq;
+	
+	public String getUseremail() {
+		return useremail;
 	}
-	public void setUserSeq(String userSeq) {
-		this.userSeq = userSeq;
+	public void setUseremail(String useremail) {
+		this.useremail = useremail;
 	}
-	public String getUserId() {
-		return userId;
+	public String getUsernickname() {
+		return usernickname;
 	}
-	public void setUserId(String userId) {
-		this.userId = userId;
+	public void setUsernickname(String usernickname) {
+		this.usernickname = usernickname;
 	}
-	public String getUserPw() {
-		return userPw;
+	public String getUserpwd() {
+		return userpwd;
 	}
-	public void setUserPw(String userPw) {
-		this.userPw = userPw;
+	public void setUserpwd(String userpwd) {
+		this.userpwd = userpwd;
 	}
-	public String getUserName() {
-		return userName;
-	}
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
+	
 	@Override
 	public String toString() {
-		return "User [userSeq=" + userSeq + ", userId=" + userId + ", userPw=" + userPw + ", userName=" + userName
-				+ ", email=" + email + "]";
+		return "User [useremail=" + useremail + ", usernickname=" + usernickname + ", userpwd=" + userpwd + "]";
 	}
-	
-	
 }
