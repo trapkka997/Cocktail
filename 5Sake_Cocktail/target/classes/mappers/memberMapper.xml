@@ -5,12 +5,12 @@
 <mapper namespace="sesoc.global.cocktail.dao.MemberDAO">
 <select id="selectOne" parameterType="user" resultType="user">
  SELECT 
- 	USEREMAIL, USERPASSWORD, USERAUTHCODE, USERAUTH
+ 	USEREMAIL, USERPWD, USERAUTHCODE, USERAUTH
  FROM
- 	USERS
+ 	USERDETAIL
  WHERE
  	<if test="userPwd != null">
- 	USEREMAIL = #{userEmail} AND USERPASSWORD = #{userPwd}
+ 	USEREMAIL = #{userEmail} AND USERPWD = #{userPwd}
 	</if>
 	<if test="userEmail == null">
 	USEREMAIL = #{userEmail}
