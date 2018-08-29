@@ -8,7 +8,6 @@ public class User {
 	private String userAuth;
 	public User() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	public User(String userEmail, String userPwd, String userNickname, String userAuthCode, String userAuth) {
 		super();
@@ -53,7 +52,5 @@ public class User {
 		return "User [userEmail=" + userEmail + ", userPwd=" + userPwd + ", userNickname=" + userNickname
 				+ ", userAuthCode=" + userAuthCode + ", userAuth=" + userAuth + "]";
 	}
-	
 
-	
 }
