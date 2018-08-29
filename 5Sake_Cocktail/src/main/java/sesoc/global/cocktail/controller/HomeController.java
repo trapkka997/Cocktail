@@ -62,6 +62,10 @@ public class HomeController {
 	public String newCccc(Locale locale, Model model) {
 		return "cocktail/index-1";
 	}
+	@RequestMapping(value = "/instaTest", method = RequestMethod.GET)
+	public String instaTest(Locale locale, Model model) {
+		return "test/instaTest";
+	}
 	@RequestMapping(value = "/sidebar", method = RequestMethod.GET)
 	public String sidebar(Locale locale, Model model) {
 		return "test/sidebar";

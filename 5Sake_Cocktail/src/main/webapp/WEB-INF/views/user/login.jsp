@@ -24,15 +24,26 @@
 	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  <style>
+     @media screen and (max-width : 500px) {
+     	.image-holder{
+     		visibility: hidden;
+     	}
+     	.col-6{
+        	max-width:50%
+     	}
+	 }
+  </style>
 </head>
-
+<!--   style="flex: none; max-width: none;-m0s-flex:none;"-->
 <body>
 	<div class="container-fluid d-flex justify-content-center align-items-center align-content-center video-parallax-container">
 
 	  <div class="col-6">
 	    <div class="register-photo" style="margin:-100px;">
 	      <div class="form-container">
-	        <div class="image-holder" style="background-image:url('./resources/assets/img/img123.png');background-size:cover;background-repeat:no-repeat;background-position:center;">
+	        <div class="image-holder">
 	        </div>	         
 	          
 			  <form method="post" action="register" onsubmit="return signup()">  			  
@@ -132,7 +143,6 @@
 					}
 				},
 				error: function() {
-					
 				}
 			})
 		}

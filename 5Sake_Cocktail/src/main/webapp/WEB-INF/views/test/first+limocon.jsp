@@ -17,6 +17,11 @@
 	    });
     </script>
     <style>
+    	#btn{
+    		width : 1000px;
+    		text-align: center;
+    		padding-top: 45px;
+    	}
     	#wrap{
     		text-align:left;
     		margin:0 auto;
@@ -77,7 +82,7 @@
 	</nav>
 	<div class="container-wrap">
 		<aside id="fh5co-hero">
-			<div class="flexslider">
+			<div class="flexslider" style="z-index: 2;">
 				<ul class="slides">
 					<li style="background-image: url(images/img_bg_3.jpg);">
 						<div class="overlay-gradient"></div>
@@ -416,9 +421,12 @@
 							</ul>
 						</div>
 					</div>
-				</div><!-- box container end -->
-
-				<a href="#" id="loadMore">Load More</a>
+				</div>
+				<!-- box container end -->
+			
+				<div id="btn">
+					<a href="#" id="loadMore">Load More</a>
+				</div>
 				<!-- loadmore button -->
 
 			</div>
@@ -448,10 +456,6 @@
     </footer>
   </div>
 	<!-- END footer container-wrap -->
-</div>
-
-<div class="gototop js-top">
-	<a href="#" class="js-gotop"><i class="icon-arrow-up2"></i></a>
 </div>
 
 <!-- 리모콘 테스트 -->
