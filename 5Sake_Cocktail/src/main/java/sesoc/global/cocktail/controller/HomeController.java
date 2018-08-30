@@ -83,6 +83,10 @@ public class HomeController {
 	public String sidebar(Locale locale, Model model) {
 		return "test/sidebar";
 	}
+	@RequestMapping(value = "/photoLibrary", method = RequestMethod.GET)
+	public String photoLibrary(Locale locale, Model model) {
+		return "cocktail/photoLibrary";
+	}
 	@RequestMapping(value = "/writeBoard", method = RequestMethod.GET)
 	public String writeBoard() {
 		return "test/WriteBoard";

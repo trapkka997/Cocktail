@@ -55,7 +55,6 @@ class RGB{
 public class RGBTest {
 	
 	
-	
 	public static void main(String ...arg) {
 		int red = 0;
 		int green = 0 ;
