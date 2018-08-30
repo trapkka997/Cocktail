@@ -26,9 +26,14 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   
   <style>
-     @media screen and (max-width : 500px) {
+  	.col-6{
+        flex:none;
+        max-width:none;
+     }
+     @media screen and (max-width : 800px) {
      	.image-holder{
-     		visibility: hidden;
+     		/* visibility: hidden; */
+     		display: table;
      	}
      	.col-6{
         	max-width:50%
@@ -36,16 +41,12 @@
 	 }
   </style>
 </head>
-<!--   style="flex: none; max-width: none;-m0s-flex:none;"-->
 <body>
 	<div class="container-fluid d-flex justify-content-center align-items-center align-content-center video-parallax-container">
-
 	  <div class="col-6">
 	    <div class="register-photo" style="margin:-100px;">
 	      <div class="form-container">
-	        <div class="image-holder">
-	        </div>	         
-	          
+	        <div class="image-holder"></div>	         	          
 			  <form method="post" action="register" onsubmit="return signup()">  			  
 			  <ul class="nav nav-tabs">
 	            <li class="active"><a data-toggle="tab" href="#signUp" class="active show">Sign Up</a></li>
