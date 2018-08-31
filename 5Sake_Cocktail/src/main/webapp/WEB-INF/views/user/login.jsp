@@ -24,15 +24,29 @@
 	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  <style>
+  	.col-6{
+        flex:none;
+        max-width:none;
+     }
+     @media screen and (max-width : 800px) {
+     	.image-holder{
+     		display: table;
+     	}
+     	.col-6{
+        	max-width:50%
+     	}
+	 }
+  </style>
 </head>
-
 <body>
 	<div class="container-fluid d-flex justify-content-center align-items-center align-content-center video-parallax-container">
 
 	  <div class="col-6">
 	    <div class="register-photo" style="margin:-100px;">
 	      <div class="form-container">
-	        <div class="image-holder" style="background-image:url('./resources/assets/img/img123.png');background-size:cover;background-repeat:no-repeat;background-position:center;">
+	        <div class="image-holder">
 	        </div>	         
 	          
 			  <form method="post" action="register" onsubmit="return signup()">  			  
@@ -48,13 +62,6 @@
 	                <div class="form-group"><input type="password" id="userPassword" placeholder="Password" class="form-control">
 	                </div>
 	                <div class="form-group"><input type="password" id="asswordRepeat" name="password-repeat" placeholder="Password (repeat)" class="form-control"></div>
-	
-	                <!-- <div class="form-group">
-	                	<input type="checkbox">
-	                  <div class="form-check">
-	                <label class="form-check-label">I agree to the license terms.</label> 
-	                  </div>
-	                </div> -->
 
 	                	<input type="checkbox">
 
@@ -92,6 +99,7 @@
 		    </video>
 	    </div>
     
+    
     <script src="./resources/assets/js/jquery.min.js"></script>
     <script src="./resources/assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
@@ -103,10 +111,6 @@
     <script src="./resources/assets/js/bs-animation.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-    <script src="./resources/assets/js/modal/modal.js"></script>
-    <script src="./resources/assets/js/modal/tab.js"></script>
-    <script src="./resources/assets/js/modaltest.js"></script>
-    <script src="./resources/assets/js/sidebar/sidebar.js"></script>
     <script src="./resources/assets/js/Video-Parallax-Background-v2.js"></script>
     <script src="./resources/assets/js/Video-Parallax-Background.js"></script>
     <script type="text/javascript">
@@ -179,8 +183,13 @@
     				},
     				success: function(resp) {
 						if(resp ==1){
+<<<<<<< HEAD
 							document.getElementById('message').innerHTML ="로그인 성공";
 							location.href = "";
+=======
+							document.getElementById('message').innerHTML ="로그인 성공"; 
+							location.href = "http://localhost:8888/cocktail/index";
+>>>>>>> branch 'master' of https://github.com/trapkka997/Cocktail
 						}else if(resp == 2){
 							document.getElementById('message').innerHTML ="이메일 인증필요"; 
 						}else if(resp == 3){
