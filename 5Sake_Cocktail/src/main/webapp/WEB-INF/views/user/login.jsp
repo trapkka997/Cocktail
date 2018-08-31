@@ -32,7 +32,6 @@
      }
      @media screen and (max-width : 800px) {
      	.image-holder{
-     		/* visibility: hidden; */
      		display: table;
      	}
      	.col-6{
@@ -43,10 +42,13 @@
 </head>
 <body>
 	<div class="container-fluid d-flex justify-content-center align-items-center align-content-center video-parallax-container">
+
 	  <div class="col-6">
 	    <div class="register-photo" style="margin:-100px;">
 	      <div class="form-container">
-	        <div class="image-holder"></div>	         	          
+	        <div class="image-holder">
+	        </div>	         
+	          
 			  <form method="post" action="register" onsubmit="return signup()">  			  
 			  <ul class="nav nav-tabs">
 	            <li class="active"><a data-toggle="tab" href="#signUp" class="active show">Sign Up</a></li>
@@ -60,13 +62,6 @@
 	                <div class="form-group"><input type="password" id="userPassword" placeholder="Password" class="form-control">
 	                </div>
 	                <div class="form-group"><input type="password" id="asswordRepeat" name="password-repeat" placeholder="Password (repeat)" class="form-control"></div>
-	
-	                <!-- <div class="form-group">
-	                	<input type="checkbox">
-	                  <div class="form-check">
-	                <label class="form-check-label">I agree to the license terms.</label> 
-	                  </div>
-	                </div> -->
 
 	                	<input type="checkbox">
 
@@ -104,6 +99,7 @@
 		    </video>
 	    </div>
     
+    
     <script src="./resources/assets/js/jquery.min.js"></script>
     <script src="./resources/assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
@@ -115,10 +111,6 @@
     <script src="./resources/assets/js/bs-animation.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-    <script src="./resources/assets/js/modal/modal.js"></script>
-    <script src="./resources/assets/js/modal/tab.js"></script>
-    <script src="./resources/assets/js/modaltest.js"></script>
-    <script src="./resources/assets/js/sidebar/sidebar.js"></script>
     <script src="./resources/assets/js/Video-Parallax-Background-v2.js"></script>
     <script src="./resources/assets/js/Video-Parallax-Background.js"></script>
     <script type="text/javascript">
@@ -192,6 +184,7 @@
     				success: function(resp) {
 						if(resp ==1){
 							document.getElementById('message').innerHTML ="로그인 성공"; 
+							location.href = "http://localhost:8888/cocktail/index";
 						}else if(resp == 2){
 							document.getElementById('message').innerHTML ="이메일 인증필요"; 
 						}else if(resp == 3){
