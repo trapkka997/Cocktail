@@ -1,6 +1,7 @@
 package sesoc.global.cocktail.vo;
 
 public class UserPhoto {
+	private String userPhotoSeq;
 	private String userEmail;
 	private String title;
 	private String contents;
@@ -14,9 +15,10 @@ public class UserPhoto {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public UserPhoto(String userEmail, String title, String contents, String saveFileName, String originalFileName,
-			String writeDate, String hitcount, String likecount, String cocktailName) {
+	public UserPhoto(String userPhotoSeq, String userEmail, String title, String contents, String saveFileName,
+			String originalFileName, String writeDate, String hitcount, String likecount, String cocktailName) {
 		super();
+		this.userPhotoSeq = userPhotoSeq;
 		this.userEmail = userEmail;
 		this.title = title;
 		this.contents = contents;
@@ -26,6 +28,12 @@ public class UserPhoto {
 		this.hitcount = hitcount;
 		this.likecount = likecount;
 		this.cocktailName = cocktailName;
+	}
+	public String getUserPhotoSeq() {
+		return userPhotoSeq;
+	}
+	public void setUserPhotoSeq(String userPhotoSeq) {
+		this.userPhotoSeq = userPhotoSeq;
 	}
 	public String getUserEmail() {
 		return userEmail;
@@ -83,11 +91,11 @@ public class UserPhoto {
 	}
 	@Override
 	public String toString() {
-		return "UserPhoto [userEmail=" + userEmail + ", title=" + title + ", contents=" + contents + ", saveFileName="
-				+ saveFileName + ", originalFileName=" + originalFileName + ", writeDate=" + writeDate + ", hitcount="
-				+ hitcount + ", likecount=" + likecount + ", cocktailName=" + cocktailName + "]";
+		return "UserPhoto [userPhotoSeq=" + userPhotoSeq + ", userEmail=" + userEmail + ", title=" + title
+				+ ", contents=" + contents + ", saveFileName=" + saveFileName + ", originalFileName=" + originalFileName
+				+ ", writeDate=" + writeDate + ", hitcount=" + hitcount + ", likecount=" + likecount + ", cocktailName="
+				+ cocktailName + "]";
 	}
 	
 	
-
 }

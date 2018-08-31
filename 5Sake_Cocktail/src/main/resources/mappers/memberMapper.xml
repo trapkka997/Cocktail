@@ -17,6 +17,23 @@
 	</if>		 
 			 
 </select>
+<select id="selectUserPhoto" parameterType="user" resultType="userPhoto">
+	SELECT 
+		USERPHOTOSEQ,
+		USEREMAIL,
+		TITLE,
+		CONTENTS,
+		SAVEFILENAME,
+		ORIGINALFILENAME,
+		WRITEDATE,
+		HITCOUNT,
+		LIKECOUNT,
+		COCKTAILNAME
+	FROM
+		USERPHOTO
+	WHERE
+		USEREMAIL = #{userEmail}
+</select>
 </mapper>
 	
 	

@@ -1,7 +1,9 @@
 package sesoc.global.cocktail.controller;
 
+import java.util.List;
 import java.util.Locale;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.session.SqlSession;
@@ -17,6 +19,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import sesoc.global.cocktail.dao.MemberDAO;
 import sesoc.global.cocktail.dao.MemberRepository;
 import sesoc.global.cocktail.vo.User;
+import sesoc.global.cocktail.vo.UserPhoto;
 
 @Controller
 public class MemberController {
@@ -44,6 +47,7 @@ public class MemberController {
 			}
 
 		}
+		
 		@RequestMapping(value = "/loginAjax", method = RequestMethod.POST)
 		public @ResponseBody String loginAjax(Locale locale, Model model, User vo, HttpSession httpSession) {
 			System.out.println(vo);
@@ -62,7 +66,13 @@ public class MemberController {
 			}
 
 		}
-		
+		// 로그인 리다이렉트
+		@RequestMapping(value = "/login", method = RequestMethod.GET)
+		public String login() {
+
+			return "user/login";
+
+		}	
 		// 로그아웃 기능
 		@RequestMapping(value = "/logoutMember", method = RequestMethod.GET)
 		public String logout(HttpSession httpSession) {
@@ -71,4 +81,17 @@ public class MemberController {
 			return "redirect:/";
 
 		}	
+		//개인 사진 라이브러리
+		@RequestMapping(value = "/photoLibrary", method = RequestMethod.GET)
+		public String photoLibrary(Locale locale,HttpSession httpSession, Model model, User vo,HttpServletRequest servletRequest) {
+			String userEmail = (String) httpSession.getAttribute("useremail");
+			vo.setUserEmail(userEmail);
+			String path = servletRequest.getSession().getServletContext().getRealPath("resources");
+			List<UserPhoto> userPhotos = dao.selectUserPhoto(vo);
+			model.addAttribute("userPhotos", userPhotos);
+			model.addAttribute("path", "http://localhost:8888/cocktail/resources/");
+			
+			
+			return "cocktail/photoLibrary";
+		}
 }
