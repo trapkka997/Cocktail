@@ -21,16 +21,26 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 
+import sesoc.global.cocktail.dao.MemberRepository;
+import sesoc.global.cocktail.vo.User;
 import sesoc.global.cocktail.vo.UserPhoto;
 
 @Controller
 public class HomeController {
 	@Autowired SqlSession sqlSession;
+	@Autowired MemberRepository dao;
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
-	
+	//메인화면
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {	
-		return "user/login";
+	public String home(Locale locale, Model model,HttpSession httpSession, User vo,HttpServletRequest servletRequest) {
+		String userEmail = (String) httpSession.getAttribute("useremail");
+		vo.setUserEmail(userEmail);
+		String path = servletRequest.getSession().getServletContext().getRealPath("resources");
+		List<UserPhoto> userPhotos = dao.selectUserPhoto(vo);
+		model.addAttribute("userPhotos", userPhotos);
+		model.addAttribute("path", "http://localhost:8888/cocktail/resources/");
+		
+		return "cocktail/index-1";
 	}
 	@RequestMapping(value = "/weather", method = RequestMethod.GET)
 	public String weather(Locale locale, Model model) {
@@ -79,6 +89,7 @@ public class HomeController {
 	public String main2(Locale locale, Model model) {
 		return "test/first+limocon";
 	}
+
 	@RequestMapping(value = "/auto", method = RequestMethod.GET)
 	public String auto() {
 		return "test/outoscroll2";
@@ -91,10 +102,6 @@ public class HomeController {
 	public String sidebar(Locale locale, Model model) {
 		return "test/sidebar";
 	}
-	@RequestMapping(value = "/photoLibrary", method = RequestMethod.GET)
-	public String photoLibrary(Locale locale, Model model) {
-		return "cocktail/photoLibrary";
-	}
 	@RequestMapping(value = "/writeBoard", method = RequestMethod.GET)
 	public String writeBoard() {
 		return "test/WriteBoard";
@@ -105,7 +112,8 @@ public class HomeController {
 		String originalFileName = fileData.getOriginalFilename();
 		UUID uuid = UUID.randomUUID();
 		String savedFileName = uuid+"_"+originalFileName;
-		String path = servletRequest.getSession().getServletContext().getRealPath("resources"+savedFileName);
+		String path = servletRequest.getSession().getServletContext().getRealPath("resources/"+savedFileName);
+		System.out.println(path);
 		File saveFile = new File(path);
 		if(!saveFile.exists()) {
 			saveFile.mkdirs();

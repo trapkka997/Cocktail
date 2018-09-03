@@ -33,7 +33,7 @@
 		class="sesoc.global.cocktail.interceptor.LoginInterceptor"></beans:bean>
 	<interceptors>
 		<interceptor>
-			<mapping path="" />
+			<mapping path="/" />
 
 			<beans:ref bean="LoginInterceptor" />
 		</interceptor>
