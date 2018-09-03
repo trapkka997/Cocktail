@@ -19,7 +19,7 @@ import org.jsoup.nodes.Element;
 public class JsoupExample2 {
 	public static void main(String...arg) throws Exception {
 		ArrayList<String> urlList = new ArrayList<String>();
-		Document doc= Jsoup.connect("https://www.instagram.com/kyh693425/").get();
+		Document doc= Jsoup.connect("https://www.instagram.com/sikstaaa/").get();
 		Element table = doc.select("script").get(3);
 		String data = table.dataNodes().get(0).getWholeData();
 		String newData = data.substring(21, data.length()-1);

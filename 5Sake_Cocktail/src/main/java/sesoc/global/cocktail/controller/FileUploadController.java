@@ -42,6 +42,9 @@ import com.google.protobuf.ByteString;
 import com.google.protobuf.Descriptors.FieldDescriptor;
 import com.google.type.Color;
 
+import sesoc.global.cocktail.vo.RGB;
+
+
 @Controller
 public class FileUploadController {
 	@Autowired
@@ -118,7 +121,6 @@ public class FileUploadController {
 		   // Performs label detection on the image file
 		   BatchAnnotateImagesResponse response = vision.batchAnnotateImages(requests);
 		   List<AnnotateImageResponse> responses = response.getResponsesList();
-
 		   for (AnnotateImageResponse res : responses) {
 		     if (res.hasError()) {
 		       System.out.printf("Error: %s\n", res.getError().getMessage());
@@ -127,6 +129,11 @@ public class FileUploadController {
 
 		  // For full list of available annotations, see http://g.co/cloud/vision/docs
 		      DominantColorsAnnotation colors = res.getImagePropertiesAnnotation().getDominantColors();
+		      Color getColor = colors.getColorsList().get(0).getColor();
+		      int red = (int)getColor.getRed();
+		      int green = (int)getColor.getGreen();
+		      int blue = (int)getColor.getBlue();
+		      colorTest(red,green,blue);
 		      for (ColorInfo color : colors.getColorsList()) {
 		        System.out.printf(
 		            "fraction: %f\nr: %f, g: %f, b: %f\n",
@@ -166,7 +173,6 @@ public class FileUploadController {
 		   // Performs label detection on the image file
 		   BatchAnnotateImagesResponse response = vision.batchAnnotateImages(requests);
 		   List<AnnotateImageResponse> responses = response.getResponsesList();
-
 		   for (AnnotateImageResponse res : responses) {
 		     if (res.hasError()) {
 		       System.out.printf("Error: %s\n", res.getError().getMessage());
@@ -181,5 +187,66 @@ public class FileUploadController {
 		 }
 		 return true;
 	
+	}
+	
+	public void colorTest(int r, int g, int b) {
+		RGB e1 = new RGB("e1",r, g, b);
+		//yellow : FFFF00
+		RGB yellowColor = new RGB("yellowColor",255, 255, 0);
+		//red :: FF0000
+		RGB redColor = new RGB("redColor",255, 0, 0);
+		//rainbow :: 
+		//purple :: #800080
+		RGB purpleColor = new RGB("purpleColor",128, 0, 128);
+		//pink :: #FFC0CB
+		RGB pinkColor = new RGB("pinkColor",255, 192, 203);
+		//peach :: #FFDAB9
+		RGB peachColor = new RGB("peachColor",255, 218, 185);
+		//orange :: #FFA500
+		RGB orangeColor = new RGB("orangeColor",255, 165, 0);
+		//green :: #008000
+		RGB greenColor = new RGB("greenColor",0, 128, 0);
+		//clear 
+		//cream :: #F5FFFA
+		RGB creamColor = new RGB("creamColor",245, 255, 250);
+		// brown :: #A52A2A
+		RGB brownColor = new RGB("brownColor",165, 42, 42);
+		//blue :: #0000FF
+		RGB blueColor = new RGB("blueColor",0,0,255);
+		//black :: #000000
+		RGB blackColor = new RGB("blackColor",0, 0, 0);
+		ArrayList<RGB> rgbArray = new ArrayList<RGB>();
+		rgbArray.add(yellowColor);
+		rgbArray.add(redColor);
+		rgbArray.add(purpleColor);
+		rgbArray.add(pinkColor);
+		rgbArray.add(peachColor);
+		rgbArray.add(orangeColor);
+		rgbArray.add(greenColor);
+		rgbArray.add(creamColor);
+		rgbArray.add(brownColor);
+		rgbArray.add(blueColor);
+		rgbArray.add(blackColor);
+		
+		double temp = 99999.0;
+		String colorName = "";
+		for(RGB rgb : rgbArray) {
+			double data = ColourDistance(e1, rgb);
+			System.out.println(data);
+			if(temp > data) {
+				temp = data;
+				colorName = rgb.getColorName();
+			}
+		}
+		System.out.println(temp);
+		System.out.println(colorName);
+	}
+	double ColourDistance(RGB e1, RGB e2)
+	{
+	  long rmean = ( (long)e1.getRed() + (long)e2.getRed() ) / 2;
+	  long r = (long)e1.getRed() - (long)e2.getRed();
+	  long g = (long)e1.getGreen() - (long)e2.getGreen();
+	  long b = (long)e1.getBlue() - (long)e2.getBlue();
+	  return Math.sqrt((((512+rmean)*r*r)>>8) + 4*g*g + (((767-rmean)*b*b)>>8));
 	}
 }

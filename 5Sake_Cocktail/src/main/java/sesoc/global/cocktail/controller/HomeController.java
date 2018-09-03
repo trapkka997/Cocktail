@@ -32,7 +32,6 @@ public class HomeController {
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	//메인화면
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-<<<<<<< HEAD
 	public String home(Locale locale, Model model,HttpSession httpSession, User vo,HttpServletRequest servletRequest) {
 		String userEmail = (String) httpSession.getAttribute("useremail");
 		vo.setUserEmail(userEmail);
@@ -42,11 +41,8 @@ public class HomeController {
 		model.addAttribute("path", "http://localhost:8888/cocktail/resources/");
 		
 		return "cocktail/index-1";
-=======
-	public String home(Locale locale, Model model) {	
-		return "user/login";
->>>>>>> branch 'master' of https://github.com/trapkka997/Cocktail
 	}
+
 	@RequestMapping(value = "/weather", method = RequestMethod.GET)
 	public String weather(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
@@ -77,15 +73,6 @@ public class HomeController {
 	public String tag() {
 		return "test/tagcheck";
 	}
-	//로그인 후 첫 화면
-	@RequestMapping(value = "/index", method = RequestMethod.GET)
-	public String newCccc(Locale locale, Model model) {
-		return "cocktail/index-1";
-	}
-	@RequestMapping(value = "/newCc", method = RequestMethod.GET)
-	public String newCc(Locale locale, Model model) {
-		return "cocktail/product";
-	}
 	@RequestMapping(value = "/main", method = RequestMethod.GET)
 	public String main(Locale locale, Model model) {
 		return "test/first";
@@ -94,14 +81,9 @@ public class HomeController {
 	public String main2(Locale locale, Model model) {
 		return "test/first+limocon";
 	}
-<<<<<<< HEAD
-
-=======
-	@RequestMapping(value = "/auto", method = RequestMethod.GET)
 	public String auto() {
 		return "test/outoscroll2";
 	}
->>>>>>> branch 'master' of https://github.com/trapkka997/Cocktail
 	@RequestMapping(value = "/instaTest", method = RequestMethod.GET)
 	public String instaTest(Locale locale, Model model) {
 		return "test/instaTest";
@@ -152,6 +134,10 @@ public class HomeController {
 		model.addAttribute("userPhoto", userPhoto);
 		model.addAttribute("path", "resources/");
 		return "test/MyBoard";
+	}
+	@RequestMapping(value = "/test2", method = RequestMethod.GET)
+	public String test2() {
+		return "test/test2";
 	}
 	
 }

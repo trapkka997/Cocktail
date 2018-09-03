@@ -69,6 +69,7 @@ public class RGBTest {
 		System.out.println("blue 색 입력");
 		blue = sc.nextInt();
 		RGB e1 = new RGB("e1",red, green, blue);
+		RGB e2 = new RGB("e2", 255,255,255);
 		//yellow : FFFF00
 		RGB yellowColor = new RGB("yellowColor",255, 255, 0);
 		//red :: FF0000
@@ -94,6 +95,7 @@ public class RGBTest {
 		//black :: #000000
 		RGB blackColor = new RGB("blackColor",0, 0, 0);
 		ArrayList<RGB> rgbArray = new ArrayList<RGB>();
+		rgbArray.add(e2);
 		rgbArray.add(yellowColor);
 		rgbArray.add(redColor);
 		rgbArray.add(purpleColor);
@@ -123,8 +125,7 @@ public class RGBTest {
 	}
 	
 
-		double ColourDistance(RGB e1, RGB e2)
-		{
+		double ColourDistance(RGB e1, RGB e2){
 		  long rmean = ( (long)e1.getRed() + (long)e2.getRed() ) / 2;
 		  long r = (long)e1.getRed() - (long)e2.getRed();
 		  long g = (long)e1.getGreen() - (long)e2.getGreen();
