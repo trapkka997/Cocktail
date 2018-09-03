@@ -81,6 +81,8 @@ public class HomeController {
 	public String main2(Locale locale, Model model) {
 		return "test/first+limocon";
 	}
+
+	@RequestMapping(value = "/auto", method = RequestMethod.GET)
 	public String auto() {
 		return "test/outoscroll2";
 	}
