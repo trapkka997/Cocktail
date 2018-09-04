@@ -5,9 +5,14 @@
 <configuration>
 	<typeAliases>
 		<typeAlias type="sesoc.global.cocktail.vo.User" alias="user"/>
+		<typeAlias type="sesoc.global.cocktail.vo.UserPhoto" alias="userPhoto"/>
+		<typeAlias type="sesoc.global.cocktail.vo.Cocktail" alias="cocktail"/>
 	</typeAliases>
 	<mappers>
 		<mapper resource="mappers/emailMapper.xml"/>
 		<mapper resource="mappers/memberMapper.xml"/>
+		<mapper resource="mappers/testMapper.xml"/>
+		<mapper resource="mappers/cocktailMapper.xml"/>
+		
 	</mappers>
 </configuration>

@@ -19,7 +19,7 @@
 
 <body style="background-color:#ffffff;">
     <nav class="navbar navbar-light navbar-expand-md navigation-clean-search" style="background-color:rgba(218,232,243,0.45);width:1000px;padding:19px;margin:auto;margin-top:25px;height:102px;max-width:100%;">
-        <div class="container"><a class="navbar-brand" href="index.html">Company Name</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="container"><a class="navbar-brand" href="/cocktail/">5SAKE</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="nav navbar-nav">
                     <li class="nav-item" role="presentation"><a class="nav-link active" href="#">Link 1</a></li>
@@ -36,11 +36,11 @@
             <div class="container">
                 <div class="psd-line pos-rel" style="position:relative;margin:auto;">
                     <div class="row align-items-center" style="margin:auto;margin-top:120px;height:500px;background-color:rgba(255,255,255,0);width:938px;max-width:100%;">
-                        <div class="col-12 col-sm-6 d-flex flex-row justify-content-center align-items-center intro-card-1 p-5" style="background-image:url(./resources/assets/detail_img/20162045c7c2b4dc6468481e00cf481dcfa8.jpg);background-position:center;height:450px;background-size:contain;background-repeat:no-repeat;background-color:#ffffff;max-width:100%;">
+                        <div class="col-12 col-sm-6 d-flex flex-row justify-content-center align-items-center intro-card-1 p-5" style="background-image:url(${cocktail.imagerink });background-position:center;height:450px;background-size:contain;background-repeat:no-repeat;background-color:#ffffff;max-width:100%;">
                             <h2 class="grey-text d-none">Üyelik Tipini Seçerek Kayıt Olun</h2>
                         </div>
                         <div class="col-12 col-sm-6 offset-sm-0 d-flex flex-column justify-content-center p-5 psd-left1">
-                            <p class="m-0 text-center text-sm-left" style="max-width:100%;min-width:auto;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mi nibh, tristique et sagittis in, aliquet id metus. In eleifend et dolor eget tincidunt.<br></p>
+                            <p class="m-0 text-center text-sm-left" style="max-width:100%;min-width:auto;">${cocktail.receipe }<br></p>
                         </div>
                     </div>
                 </div>

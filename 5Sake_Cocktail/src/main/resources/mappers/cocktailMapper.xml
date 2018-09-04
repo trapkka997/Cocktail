@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sesoc.global.cocktail.dao.CocktailDAO">
+	<select id="getCocktailList" resultType="cocktail">
+		SELECT
+			COCKTAILNAME,
+			COCKTAILNAME_EN,
+			ALCOLE,
+			LIQUEUR,
+			MATERIAL,
+			RECEIPE,
+			IMAGERINK,
+			COLORVALUE
+		FROM
+			COCKTAIL
+	</select>
+	
+		<select id="selectCocktail" parameterType="string" resultType="cocktail">
+		SELECT
+			COCKTAILNAME,
+			COCKTAILNAME_EN,
+			ALCOLE,
+			LIQUEUR,
+			MATERIAL,
+			RECEIPE,
+			IMAGERINK,
+			COLORVALUE
+		FROM
+			COCKTAIL
+		WHERE
+			COCKTAILNAME = #{value}
+	</select>
+</mapper>
