@@ -50,7 +50,7 @@ public class FileUploadController {
 	@RequestMapping(value = "/visionUpload", method = RequestMethod.GET)
 	public String home() {
 
-		return "visionUpload";
+		return "test/visionUpload";
 	}
 	
 	@RequestMapping(value="vision", method=RequestMethod.POST, produces="text/plain")
