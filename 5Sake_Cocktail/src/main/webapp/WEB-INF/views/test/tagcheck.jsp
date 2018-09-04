@@ -24,20 +24,43 @@
     <div class="filter-block">
       <form class="form-horizontal" action="">
         <div class="col-sm-6 form-group tags categories">
-          <h1>Categories</h1>
-          <div class="checkbox"><label><input type="checkbox" rel="category-one"/> Category One</label></div>
-          <div class="checkbox"><label><input type="checkbox" rel="category-two"/> Category Two</label></div>
-          <div class="checkbox"><label><input type="checkbox" rel="category-three"/> Category Three</label></div>
-          <div class="checkbox"><label><input type="checkbox" rel="category-four"/> Category Four</label></div>
-          <div class="checkbox"><label><input type="checkbox" rel="category-five"/> Category Five</label></div>
+          <h1>베이스 알콜</h1>
+          <div class="checkbox"><label><input type="checkbox" rel="브랜디"/>브랜디</label></div>
+          <div class="checkbox"><label><input type="checkbox" rel="위스키"/>위스키</label></div>
+          <div class="checkbox"><label><input type="checkbox" rel="보드카"/>보드카</label></div>
+          <div class="checkbox"><label><input type="checkbox" rel="럼주"/>럼주</label></div>
+          <div class="checkbox"><label><input type="checkbox" rel="진"/>진</label></div>
+          <div class="checkbox"><label><input type="checkbox" rel="데킬라"/>데킬라</label></div>
         </div>
+        
         <div class="col-xs-12 col-sm-6 form-group tags topics">
           <h1>Topics</h1>
-          <div class="checkbox"><label><input type="checkbox" rel="topic-one" disabled/>Topic One</label></div>
-          <div class="checkbox"><label><input type="checkbox" rel="topic-two" disabled/>Topic Two</label></div>
-          <div class="checkbox"><label><input type="checkbox" rel="topic-three" disabled/>Topic Three</label></div>
-          <div class="checkbox"><label><input type="checkbox" rel="topic-four" disabled/>Topic Four</label></div>
-          <div class="checkbox"><label><input type="checkbox" rel="topic-five" disabled/>Topic Five</label></div>
+          <div class="checkbox"><label><input type="checkbox" rel="와인" disabled/>와인</label></div>
+          <div class="checkbox"><label><input type="checkbox" rel="비터스" disabled/>비터스</label></div>
+          <div class="checkbox"><label><input type="checkbox" rel="맥주" disabled/>맥주</label></div>
+          <div class="checkbox"><label><input type="checkbox" rel="리큐르" disabled/>리큐르</label></div>
+          <div class="checkbox"><label><input type="checkbox" rel="크레임 리큐르" disabled/>크레임 리큐르</label></div>
+          <div class="checkbox"><label><input type="checkbox" rel="베르무트" disabled/>베르무트</label></div>
+          <div class="checkbox"><label><input type="checkbox" rel="아마레또" disabled/>아마레또</label></div>
+        </div>
+        
+        <div class="col-xs-12 col-sm-6 form-group tags material">
+          <h1>재료</h1>
+          <div class="checkbox"><label><input type="checkbox" rel="레몬" disabled/>레몬</label></div>
+          <div class="checkbox"><label><input type="checkbox" rel="사과" disabled/>사과</label></div>
+          <div class="checkbox"><label><input type="checkbox" rel="체리" disabled/>체리</label></div>
+          <div class="checkbox"><label><input type="checkbox" rel="파인애플" disabled/>파인애플</label></div>
+          <div class="checkbox"><label><input type="checkbox" rel="라임" disabled/>라임</label></div>
+          <div class="checkbox"><label><input type="checkbox" rel="오렌지" disabled/>오렌지</label></div>
+          <div class="checkbox"><label><input type="checkbox" rel="코코넛" disabled/>코코넛</label></div>
+          <div class="checkbox"><label><input type="checkbox" rel="토마토" disabled/>토마토</label></div>
+          <div class="checkbox"><label><input type="checkbox" rel="자몽" disabled/>자몽</label></div>
+          <div class="checkbox"><label><input type="checkbox" rel="복숭아" disabled/>복숭아</label></div>
+          <div class="checkbox"><label><input type="checkbox" rel="라즈베리" disabled/>라즈베리</label></div>
+          <div class="checkbox"><label><input type="checkbox" rel="계란" disabled/>계란</label></div>
+          <div class="checkbox"><label><input type="checkbox" rel="설탕" disabled/>설탕</label></div>
+          <div class="checkbox"><label><input type="checkbox" rel="우유" disabled/>우유</label></div>
+          <div class="checkbox"><label><input type="checkbox" rel="진저에일" disabled/>진저에일</label></div>
         </div>
       </form>
     </div>
