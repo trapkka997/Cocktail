@@ -1,5 +1,6 @@
 package sesoc.global.cocktail.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
@@ -27,6 +28,8 @@ import sesoc.global.cocktail.dao.MemberDAO;
 import sesoc.global.cocktail.dao.EmailRepository;
 import sesoc.global.cocktail.email.MailHandler;
 import sesoc.global.cocktail.email.TempKey;
+import sesoc.global.cocktail.test.JsoupExample;
+import sesoc.global.cocktail.test.JsoupExample2;
 import sesoc.global.cocktail.vo.Cocktail;
 import sesoc.global.cocktail.vo.User;
 
@@ -50,7 +53,21 @@ public class CocktailController {
 		return "cocktail/product";
 	}
 	@RequestMapping(value = "/cocktailUpload", method = RequestMethod.GET)
-	public String cocktailUpload(Locale locale, Model model,String cocktailname) {
+	public String cocktailUpload(Locale locale, Model model,String cocktailname, HttpSession httpSession) {
+		String userEmail = (String)httpSession.getAttribute("useremail");
+		JsoupExample2 jsoup = new JsoupExample2();
+		ArrayList<String> urls = new ArrayList<>();
+		try {
+			ArrayList<String> urlList = jsoup.getImg();
+			for(String url : urlList) {
+				JsoupExample js = new JsoupExample();
+				urls.add(js.getImage(url));
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		model.addAttribute("urls",urls);
 		return "cocktail/cocktailUpload";
 	}	
 

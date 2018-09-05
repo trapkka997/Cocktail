@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
@@ -357,9 +358,9 @@ body{background: rgb(225,225,225);}
                 </div>
                 <div class="col-md-6">
                     <div>
-                        <img src="./resources/assets/img/123longislandicedtea.jpg">
-                        <img src="./resources/assets/img/20162045c7c2b4dc6468481e00cf481dcfa8.jpg">
-                        <img src="./resources/assets/img/2016420c7ad722e6ffb3c6f5cc1c2bba0396.jpg">
+                    <c:forEach var="url" items="${urls}">
+						<img src="${url}">
+					</c:forEach>
                     </div>
                 </div>
 
@@ -367,7 +368,21 @@ body{background: rgb(225,225,225);}
         </div>
     </div>
     </div>
-    
+    <div class="modal fade" role="dialog" tabindex="-1" id="getCocktailModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Modal Title</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                <div class="modal-body">
+                    <p>The content of your modal.</p>
+                    <div><img id="modalImgId"></div>
+                    <div><textarea></textarea></div>
+                </div>
+                <div class="modal-footer"><button class="btn btn-light" type="button" data-dismiss="modal">Close</button><button class="btn btn-primary" type="button">Save</button></div>
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#getCocktailModal">Button</button>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript">
@@ -441,7 +456,12 @@ body{background: rgb(225,225,225);}
         }
     }
     function succFunction(xhttp, item, resp) {
+    var arr = JSON.parse(resp);
     message( item, settings.successClass, 'File successfully uploaded.', 0 );
+    $('#modalImgId').attr("src",arr[0].imagerink);
+    $('#getCocktailModal').modal('show');
+    console.log(arr[0].imagerink);
+    
   }
     function failFunction(xhttp, item, resp) {
     message( item, settings.errorClass, 'Upload failed.', 0 );
