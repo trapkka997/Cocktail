@@ -152,7 +152,7 @@
 <body>
 <h1>Isotope - filtering &amp; sorting</h1>
 <h2>alcole</h2>
-<div id="alcole" class="button-group">  
+<div id="alcole" class="button-group" data-filter-group='alcole'>  
   <button class="button is-checked" data-filter="*">All</button>
   <button class="button" data-filter=".brandy">Brandy</button>
   <button class="button" data-filter=".whisky">Whisky</button>
@@ -163,8 +163,9 @@
   <button class="button" data-filter=".drysherry">Dry Sherry</button>
   <button class="button" data-filter=".cognac">Cognac</button>
 </div>
+
 <h2>liqueur</h2>
-<div id="liqueur" class="button-group">  
+<div id="liqueur" class="button-group" data-filter-group='liqueur'>  
   <button class="button is-checked" data-filter="*">All</button>
   <button class="button" data-filter=".wine">wine</button>
   <button class="button" data-filter=".bitters">Bitters</button>
@@ -173,13 +174,22 @@
   <button class="button" data-filter=".triplesec">triplesec</button>
 </div>
 <h2>material</h2>
-<div id="material" class="button-group">  
+<div id="material" class="button-group" data-filter-group='material'>  
   <button class="button is-checked" data-filter="*">All</button>
   <button class="button" data-filter=".lemon">lemon</button>
   <button class="button" data-filter=".cherry">cherry</button>
   <button class="button" data-filter=".pineapple">pineapple</button>
   <button class="button" data-filter=".lime">lime</button>
   <button class="button" data-filter=".orange">orange</button>
+</div>
+<h2>Sort</h2>
+<div id="sorts" class="button-group">  
+	<button class="button is-checked" data-sort-by="original-order">original order</button>
+  <button class="button" data-sort-by="wine">name</button>
+  <button class="button" data-sort-by="symbol">symbol</button>
+  <button class="button" data-sort-by="number">number</button>
+  <button class="button" data-sort-by="weight">weight</button>
+  <button class="button" data-sort-by="category">category</button>
 </div>
 <div class="grid">
   <div class="element-item brandy wine " data-category="brandy">
@@ -200,36 +210,6 @@
     <p class="number">83</p>
     <p class="weight">208.980</p>
   </div>
-  <div class="element-item post-transition metal " data-category="post-transition">
-    <h3 class="name">Lead</h3>
-    <p class="symbol">Pb</p>
-    <p class="number">82</p>
-    <p class="weight">207.2</p>
-  </div>
-  <div class="element-item transition metal " data-category="transition">
-    <h3 class="name">Gold</h3>
-    <p class="symbol">Au</p>
-    <p class="number">79</p>
-    <p class="weight">196.967</p>
-  </div>
-  <div class="element-item alkali metal " data-category="alkali">
-    <h3 class="name">Potassium</h3>
-    <p class="symbol">K</p>
-    <p class="number">19</p>
-    <p class="weight">39.0983</p>
-  </div>
-  <div class="element-item alkali metal " data-category="alkali">
-    <h3 class="name">Sodium</h3>
-    <p class="symbol">Na</p>
-    <p class="number">11</p>
-    <p class="weight">22.99</p>
-  </div>
-  <div class="element-item transition metal " data-category="transition">
-    <h3 class="name">Cadmium</h3>
-    <p class="symbol">Cd</p>
-    <p class="number">48</p>
-    <p class="weight">112.411</p>
-  </div>
   <script>
 		//external js: isotope.pkgd.js		
 		//init Isotope
@@ -247,6 +227,8 @@
 		 }
 		}
 		});		
+		// store filter for each group
+		var filters = {};
 		//filter functions
 		var filterFns = {
 		// show if number is greater than 50
@@ -262,24 +244,54 @@
 		};
 		//bind filter button click
 		$('#alcole').on( 'click', 'button', function() {
-			var filterValue = $( this ).attr('data-filter');
-			// use filterFn if matches value
-			filterValue = filterFns[ filterValue ] || filterValue;
-			$grid.isotope({ filter: filterValue });
+			var $this = $(this);
+			  // get group key
+			  var $buttonGroup = $this.parents('.button-group');
+			  var filterGroup = $buttonGroup.attr('data-filter-group');
+			  // set filter for group
+			  filters[ filterGroup ] = $this.attr('data-filter');
+			  // combine filters
+			  var filterValue = concatValues( filters );
+			  alert(filterValue);
+			  $grid.isotope({ filter: filterValue });
 		});
 		$('#liqueur').on( 'click', 'button', function() {
-			var filterValue = $( this ).attr('data-filter');
-			// use filterFn if matches value
-			filterValue = filterFns[ filterValue ] || filterValue;
-			$grid.isotope({ filter: filterValue });
+			var $this = $(this);
+			  // get group key
+			  var $buttonGroup = $this.parents('.button-group');
+			  var filterGroup = $buttonGroup.attr('data-filter-group');
+			  // set filter for group
+			  filters[ filterGroup ] = $this.attr('data-filter');
+			  // combine filters
+			  var filterValue = concatValues( filters );
+			  alert(filterValue);
+			  $grid.isotope({ filter: filterValue });
 		});
 		$('#material').on( 'click', 'button', function() {
-			var filterValue = $( this ).attr('data-filter');
+			/* var filterValue = $( this ).attr('data-filter');
 			// use filterFn if matches value
 			filterValue = filterFns[ filterValue ] || filterValue;
-			$grid.isotope({ filter: filterValue });
-			
+			$grid.isotope({ filter: filterValue }); */
+			var $this = $(this);
+			  // get group key
+			  var $buttonGroup = $this.parents('.button-group');
+			  var filterGroup = $buttonGroup.attr('data-filter-group');
+			  // set filter for group
+			  filters[ filterGroup ] = $this.attr('data-filter');
+			  // combine filters
+			  var filterValue = concatValues( filters );
+			  alert(filterValue);
+			  $grid.isotope({ filter: filterValue });
 		});
+
+		// flatten object by concatting values
+		function concatValues( obj ) {
+		  var value = '';
+		  for ( var prop in obj ) {
+		    value += obj[ prop ];
+		  }
+		  return value;
+		}
 		//change is-checked class on buttons
 			$('.button-group').each( function( i, buttonGroup ) {
 				var $buttonGroup = $( buttonGroup );

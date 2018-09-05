@@ -1,3 +1,5 @@
+ <%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en" >
 
@@ -78,8 +80,8 @@
         <li class="category-two topic-four">
           <a href="#">Category Two / Topic Four</a>
         </li>
-        <li class="category-two topic-five">
-          <a href="#">Category Two / Topic Five</a>
+        <li class="qmfosel windn fopahs cpfl">
+          <a href="#">더티오크</a>
         </li>
       </ul>
     </section>

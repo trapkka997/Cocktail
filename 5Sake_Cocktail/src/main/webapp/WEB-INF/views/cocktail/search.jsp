@@ -3,7 +3,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,7 +24,9 @@
     <link rel="stylesheet" href="./resources/assets/css/tag_search/tag_default.css?h=4dd1062002b011063b0fa886b1c86a20">
 </head>
 
-<body style="background-color:#ecf8f9;"><div class="fh5co-loader"></div>
+<body style="background-color:#ecf8f9;">
+<div class="fh5co-loader">
+</div>
 
 <div id="page">
   <nav class="fh5co-nav" role="navigation">
@@ -81,18 +82,13 @@
     </aside>
     <!-- 로고 -->
 
-
-    <div style="
-    padding-left: 20px;
-    padding-right: 20px;">
-
-      <div id = "tag_filter_title">
+	<div id = "tag_filter_title">
         <h1>Isotope - filtering &amp; sorting</h1>
-      </div>
-
+    </div>
+    <div id='toggle' style="padding-left: 20px; padding-right: 20px;">
       <div id="filter1">
         <h2>alcole</h2>
-        <div id="alcole" class="button-group">
+        <div id="alcole" class="button-group" data-filter-group='alcole'>
           <button class="button is-checked" data-filter="*">All</button>
           <button class="button" data-filter=".브랜디">Brandy</button>
           <button class="button" data-filter=".위스키">Whisky</button>
@@ -107,19 +103,19 @@
 
       <div id="filter2">
         <h2>liqueur</h2>
-        <div id="liqueur" class="button-group">
+        <div id="liqueur" class="button-group" data-filter-group='liqueur'>
           <button class="button is-checked" data-filter="*">All</button>
-          <button class="button" data-filter=".wine">wine</button>
-          <button class="button" data-filter=".bitters">Bitters</button>
-          <button class="button" data-filter=".beer">beer</button>
-          <button class="button" data-filter=".liqueur">liqueur</button>
-          <button class="button" data-filter=".triplesec">triplesec</button>
+          <button class="button" data-filter=".와인">wine</button>
+          <button class="button" data-filter=".비터스">Bitters</button>
+          <button class="button" data-filter=".맥주">beer</button>
+          <button class="button" data-filter=".리큐르">liqueur</button>
+          <button class="button" data-filter=".트리플섹">triplesec</button>
         </div>
       </div>
 
       <div id="filter3">
         <h2>material</h2>
-        <div id="material" class="button-group">
+        <div id="material" class="button-group" data-filter-group='material'>
           <button class="button is-checked" data-filter="*">All</button>
           <button class="button" data-filter=".레몬">lemon</button>
           <button class="button" data-filter=".체리">cherry</button>
@@ -133,7 +129,9 @@
         <c:forEach var="cocktail" items="${cocktailList}">
          <div class="element-item ${cocktail.alcole} ${cocktail.liqueur} ${cocktail.mateial}" data-category="brandy">
           <h3 class="name">${cocktail.cocktailname}</h3>
-          <a href="cocktailDetail?cocktailname=${cocktail.cocktailname }"><img src="${cocktail.imagerink }" height="100px" width="100px"></a>
+          <a href="cocktailDetail?cocktailname=${cocktail.cocktailname }">
+          	<img src="${cocktail.imagerink }" height="100px" width="100px">
+          </a>
         </div>
         
         </c:forEach>
@@ -173,7 +171,7 @@
   <div class="gototop js-top">
     <a href="#" class="js-gotop"><i class="icon-arrow-up2"></i></a>
   </div>
-
+	
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/js/bootstrap.bundle.min.js"></script>
     <script src="./resources/assets/js/page_default/jquery.countTo.js?h=0f48c1b00e0bc4c33ed8aacfba285409"></script>
@@ -186,7 +184,19 @@
     <script src="./resources/assets/js/page_default/modernizr-2.6.2.min.js?h=c3076c3133684f1acfb50014a2aa0876"></script>
     <script src="./resources/assets/js/page_default/respond.min.js?h=fda355038387a38685fb8213c2c2374b"></script>
     <script src="./resources/assets/js/tag_search/isotope.pkgd.js?h=8896e082b3fa1738e2e2f558a7fc1fa4"></script>
-    <script src="./resources/assets/js/tag_search/search_tag.js?h=2695122595a83980da2f110de76d3b2f"></script>
+    <script src="./resources/assets/js/tag_search/search_tag.js"></script>
+	<script>
+	        $("#tag_filter_title").click(function(){
+	        	//alert('aa');
+	           // $(this).next("div").toggleClass("hide");
+	            var submenu = $(this).next("div");
+	            if( submenu.is(":visible") ){
+	                submenu.slideUp("slow");
+	            }else{
+	                submenu.slideDown("slow");
+	            }
+	        });
+	</script>
 </body>
 
 </html>
