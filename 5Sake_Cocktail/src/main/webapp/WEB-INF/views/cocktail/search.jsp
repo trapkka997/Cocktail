@@ -93,11 +93,9 @@
           <button class="button" data-filter=".브랜디">Brandy</button>
           <button class="button" data-filter=".위스키">Whisky</button>
           <button class="button" data-filter=".보드카">Vodka</button>
-          <button class="button" data-filter=".럼">Rum</button>
+          <button class="button" data-filter=".럼주">Rum</button>
           <button class="button" data-filter=".드라이진">Dry Jin</button>
           <button class="button" data-filter=".테킬라">Tequila</button>
-          <button class="button" data-filter=".드라이셰리">Dry Sherry</button>
-          <button class="button" data-filter=".코냑">Cognac</button>
         </div>
       </div>
 
@@ -109,7 +107,9 @@
           <button class="button" data-filter=".비터스">Bitters</button>
           <button class="button" data-filter=".맥주">beer</button>
           <button class="button" data-filter=".리큐르">liqueur</button>
-          <button class="button" data-filter=".트리플섹">triplesec</button>
+          <button class="button" data-filter=".크레임 리큐르">cemeliqueur</button>
+          <button class="button" data-filter=".베르무트">Vermouth</button>
+          <button class="button" data-filter=".아마레또">Amaretto</button>
         </div>
       </div>
 
@@ -117,11 +117,25 @@
         <h2>material</h2>
         <div id="material" class="button-group" data-filter-group='material'>
           <button class="button is-checked" data-filter="*">All</button>
+          <button class="button" data-filter=".시럽">Syrup</button>
           <button class="button" data-filter=".레몬">lemon</button>
+          <button class="button" data-filter=".사과">apple</button>
           <button class="button" data-filter=".체리">cherry</button>
           <button class="button" data-filter=".파인애플">pineapple</button>
           <button class="button" data-filter=".라임">lime</button>
           <button class="button" data-filter=".오렌지">orange</button>
+          <button class="button" data-filter=".코코넛">coconut</button>
+          <button class="button" data-filter=".토마토">tomato</button>
+          <button class="button" data-filter=".자몽">Grapefruit</button>
+          <button class="button" data-filter=".라즈베리">raspberry</button>
+          <button class="button" data-filter=".계란">egg</button>
+          <button class="button" data-filter=".스파이시">Spicy</button>
+          <button class="button" data-filter=".설탕">sugar</button>
+          <button class="button" data-filter=".우유">milk</button>
+          <button class="button" data-filter=".복숭아">peach</button>
+          <button class="button" data-filter=".탄산수">soda</button>
+          <button class="button" data-filter=".진저에일">gingerale</button>
+          
         </div>
       </div>
 
