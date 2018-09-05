@@ -1,5 +1,6 @@
  <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -386,10 +387,15 @@ body{background: rgb(225,225,225);}
 	}
 
     function findFiles( e, item ) {
+    	console.log(e);
+    	console.log(item);
         var files = e.originalEvent.dataTransfer.files;
+        console.log(files);
         $( item ).addClass( settings.uploadingClass );
         $.each( files,
             function ( key, value ) {
+        	console.log(key);
+        	console.log(value);
                 uploadFile( value, item );
             }
         );
@@ -406,6 +412,8 @@ body{background: rgb(225,225,225);}
                 }
                 if ( e.type === 'drop' ) {
                     findFiles( e, item );
+                    console.log(e);
+                    console.log(item);
                 }
             }
         );
@@ -447,6 +455,11 @@ $( document ).ready(
 	<div id="dragAndUploadStatus">
 	  Drag and drop file.
 	</div>
+</div>
+<div id="instafeed">
+<c:forEach var="url" items="${urls}">
+	<img src="${url}">
+</c:forEach>
 </div>
 </form>
 </body>

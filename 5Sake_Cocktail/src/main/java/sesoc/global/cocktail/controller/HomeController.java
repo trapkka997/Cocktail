@@ -3,6 +3,7 @@ package sesoc.global.cocktail.controller;
 import java.io.File;
 import java.io.IOException;
 import java.text.DateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
@@ -22,6 +23,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 
 import sesoc.global.cocktail.dao.MemberRepository;
+import sesoc.global.cocktail.test.JsoupExample;
+import sesoc.global.cocktail.test.JsoupExample2;
 import sesoc.global.cocktail.vo.User;
 import sesoc.global.cocktail.vo.UserPhoto;
 
@@ -88,6 +91,20 @@ public class HomeController {
 	}
 	@RequestMapping(value = "/instaTest", method = RequestMethod.GET)
 	public String instaTest(Locale locale, Model model) {
+		JsoupExample2 jsoup = new JsoupExample2();
+		ArrayList<String> urls = new ArrayList<>();
+		try {
+			ArrayList<String> urlList = jsoup.getImg();
+			for(String url : urlList) {
+				JsoupExample js = new JsoupExample();
+				System.out.println(js.getImage(url));
+				urls.add(js.getImage(url));
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		model.addAttribute("urls",urls);
 		return "test/instaTest";
 	}
 	@RequestMapping(value = "/sidebar", method = RequestMethod.GET)
