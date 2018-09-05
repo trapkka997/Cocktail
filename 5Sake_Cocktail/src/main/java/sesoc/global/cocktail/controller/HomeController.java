@@ -76,10 +76,6 @@ public class HomeController {
 	public String tag() {
 		return "test/tagcheck";
 	}
-	@RequestMapping(value = "/main", method = RequestMethod.GET)
-	public String main(Locale locale, Model model) {
-		return "test/grid";
-	}
 	@RequestMapping(value = "/main2", method = RequestMethod.GET)
 	public String main2(Locale locale, Model model) {
 		return "test/first+limocon";

@@ -93,4 +93,14 @@ public class MemberController {
 			
 			return "cocktail/photoLibrary";
 		}
+		
+		@RequestMapping(value = "/gallery", method = RequestMethod.GET)
+		public String main(Locale locale, Model model,HttpServletRequest servletRequest) {
+			List<UserPhoto> userPhotos = dao.selectAllUserPhoto();
+			String path = servletRequest.getSession().getServletContext().getRealPath("resources");
+			System.out.println(path);
+			model.addAttribute("userPhotos", userPhotos);
+			model.addAttribute("path", "http://localhost:8888/cocktail/resources/");
+			return "test/grid";
+		}
 }

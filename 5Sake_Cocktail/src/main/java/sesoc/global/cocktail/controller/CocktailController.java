@@ -49,6 +49,9 @@ public class CocktailController {
 		model.addAttribute("cocktail", selectCocktail);
 		return "cocktail/product";
 	}
-	
+	@RequestMapping(value = "/cocktailUpload", method = RequestMethod.GET)
+	public String cocktailUpload(Locale locale, Model model,String cocktailname) {
+		return "cocktail/cocktailUpload";
+	}	
 
 }
