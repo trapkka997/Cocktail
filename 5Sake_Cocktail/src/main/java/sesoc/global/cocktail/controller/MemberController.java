@@ -69,7 +69,6 @@ public class MemberController {
 		// 로그인 리다이렉트
 		@RequestMapping(value = "/login", method = RequestMethod.GET)
 		public String login() {
-
 			return "user/login";
 
 		}	

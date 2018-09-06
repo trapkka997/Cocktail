@@ -42,6 +42,8 @@ import com.google.protobuf.ByteString;
 import com.google.protobuf.Descriptors.FieldDescriptor;
 import com.google.type.Color;
 
+import sesoc.global.cocktail.test.JsoupExample;
+import sesoc.global.cocktail.test.JsoupExample2;
 import sesoc.global.cocktail.vo.RGB;
 
 
@@ -54,8 +56,21 @@ public class FileUploadController {
 	
 	
 	@RequestMapping(value = "/visionUpload", method = RequestMethod.GET)
-	public String home() {
-
+	public String home(Model model) {
+//		JsoupExample2 jsoup = new JsoupExample2();
+//		ArrayList<String> urls = new ArrayList<>();
+//		try {
+//			ArrayList<String> urlList = jsoup.getImg();
+//			for(String url : urlList) {
+//				JsoupExample js = new JsoupExample();
+//				System.out.println(js.getImage(url));
+//				urls.add(js.getImage(url));
+//			}
+//		} catch (Exception e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		model.addAttribute("urls",urls);
 		return "test/visionUpload";
 	}
 	
