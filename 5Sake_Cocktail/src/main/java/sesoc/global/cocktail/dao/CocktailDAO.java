@@ -10,4 +10,6 @@ public interface CocktailDAO {
 
 	public Cocktail selectCocktail(String cocktailname);
 
+	public List<Cocktail> getCocktailByColor(String colorName);
+
 }

@@ -25,6 +25,13 @@ public class CocktailRepository {
 		result = dao.selectCocktail(cocktailname);
 		return result;
 	}
+
+	public List<Cocktail> getCocktailByColor(String colorName) {
+		List<Cocktail> result = null;
+		CocktailDAO dao = sqlSession.getMapper(CocktailDAO.class);
+		result = dao.getCocktailByColor(colorName);
+		return result;
+	}
 	
 	
 

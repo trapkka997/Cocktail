@@ -42,6 +42,10 @@ import com.google.protobuf.ByteString;
 import com.google.protobuf.Descriptors.FieldDescriptor;
 import com.google.type.Color;
 
+import sesoc.global.cocktail.dao.CocktailRepository;
+import sesoc.global.cocktail.test.JsoupExample;
+import sesoc.global.cocktail.test.JsoupExample2;
+import sesoc.global.cocktail.vo.Cocktail;
 import sesoc.global.cocktail.vo.RGB;
 
 
@@ -49,20 +53,36 @@ import sesoc.global.cocktail.vo.RGB;
 public class FileUploadController {
 	@Autowired
 	MappingJackson2JsonView jsonView;
+	
+	@Autowired
+	CocktailRepository cocktailRepository;
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
 	
 	
 	@RequestMapping(value = "/visionUpload", method = RequestMethod.GET)
-	public String home() {
-
+	public String home(Model model) {
+//		JsoupExample2 jsoup = new JsoupExample2();
+//		ArrayList<String> urls = new ArrayList<>();
+//		try {
+//			ArrayList<String> urlList = jsoup.getImg();
+//			for(String url : urlList) {
+//				JsoupExample js = new JsoupExample();
+//				System.out.println(js.getImage(url));
+//				urls.add(js.getImage(url));
+//			}
+//		} catch (Exception e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		model.addAttribute("urls",urls);
 		return "test/visionUpload";
 	}
 	
-	@RequestMapping(value="vision", method=RequestMethod.POST, produces="text/plain")
-	public @ResponseBody String vision(MultipartHttpServletRequest multipartRequest,HttpServletRequest servletRequest) throws Exception {
+	@RequestMapping(value="vision", method=RequestMethod.POST, produces="application/json")
+	public @ResponseBody List<Cocktail> vision(MultipartHttpServletRequest multipartRequest,HttpServletRequest servletRequest) throws Exception {
 		Iterator<String> itr = multipartRequest.getFileNames(); 
-		
+		String colorName = null;
 		if(itr.hasNext()) {
 			MultipartFile mpf = multipartRequest.getFile(itr.next());
 			System.out.println(mpf.getOriginalFilename() +" uploaded!"); 
@@ -84,18 +104,20 @@ public class FileUploadController {
 				e.printStackTrace(); 
 			}
 			if(!visionText(jsonPath)) {
-				return "error";
+				return null;
 			};
-			if(!visionColor(jsonPath)) {
-				return "error";
+			if((colorName = visionColor(jsonPath)).equals("fail")) {
+				return null;
 			}
-			return "success";
+			List<Cocktail> cocktailList = cocktailRepository.getCocktailByColor(colorName);
+			return cocktailList;
 			} else{
-			return "fail";
+			return null;
 		}
 	}
 	
-	public boolean visionColor(String jsonPath) throws IOException {
+	public String visionColor(String jsonPath) throws IOException {
+		String result = null;
 		// Instantiates a client
 		 try (ImageAnnotatorClient vision = ImageAnnotatorClient.create()) {
 
@@ -124,7 +146,7 @@ public class FileUploadController {
 		   for (AnnotateImageResponse res : responses) {
 		     if (res.hasError()) {
 		       System.out.printf("Error: %s\n", res.getError().getMessage());
-		       return false;
+		       return "fail";
 		     }
 
 		  // For full list of available annotations, see http://g.co/cloud/vision/docs
@@ -133,7 +155,7 @@ public class FileUploadController {
 		      int red = (int)getColor.getRed();
 		      int green = (int)getColor.getGreen();
 		      int blue = (int)getColor.getBlue();
-		      colorTest(red,green,blue);
+		      result  = colorTest(red,green,blue);
 		      for (ColorInfo color : colors.getColorsList()) {
 		        System.out.printf(
 		            "fraction: %f\nr: %f, g: %f, b: %f\n",
@@ -145,7 +167,7 @@ public class FileUploadController {
 
 		   }
 		 }
-		 return true;
+		 return result;
 	
 	}
 	public boolean visionText(String jsonPath) throws IOException {
@@ -189,7 +211,7 @@ public class FileUploadController {
 	
 	}
 	
-	public void colorTest(int r, int g, int b) {
+	public String colorTest(int r, int g, int b) {
 		RGB e1 = new RGB("e1",r, g, b);
 		//yellow : FFFF00
 		RGB yellowColor = new RGB("yellowColor",255, 255, 0);
@@ -240,6 +262,7 @@ public class FileUploadController {
 		}
 		System.out.println(temp);
 		System.out.println(colorName);
+		return colorName;
 	}
 	double ColourDistance(RGB e1, RGB e2)
 	{

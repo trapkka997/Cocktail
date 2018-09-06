@@ -32,7 +32,6 @@ public class JsoupExample {
 		JSONObject graphql = (JSONObject) postPage.get(0).get("graphql");
 		JSONObject shortcode_media = (JSONObject) graphql.get("shortcode_media");
 		String display_url = (String) shortcode_media.get("display_url");
-		System.out.println(display_url);
 		return display_url;
 	}
 	

@@ -1,12 +1,19 @@
- <%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-<style type="text/css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untitled</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+    <link rel="stylesheet" href="./resources/assets/css/Navigation-with-Button.css">
+    <link rel="stylesheet" href="./resources/assets/css/styles.css">
+    <link rel="stylesheet" href="./resources/assets/css/styles.min.css">
+     <style type="text/css">
 @import url("//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css");
 
 body{background: rgb(225,225,225);}
@@ -308,8 +315,77 @@ body{background: rgb(225,225,225);}
     }
 }
 </style>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript">
+</head>
+
+<body>
+    <div>
+        <nav class="navbar navbar-light navbar-expand-md navigation-clean-button">
+            <div class="container"><a class="navbar-brand" href="#">Company Name</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse"
+                    id="navcol-1">
+                    <ul class="nav navbar-nav mr-auto">
+                        <li class="nav-item" role="presentation"><a class="nav-link active" href="#">First Item</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="#">Second Item</a></li>
+                        <li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">Dropdown </a>
+                            <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Item</a><a class="dropdown-item" role="presentation" href="#">Second Item</a><a class="dropdown-item" role="presentation" href="#">Third Item</a></div>
+                        </li>
+                    </ul><span class="navbar-text actions"> <a href="#" class="login">Log In</a><a class="btn btn-light action-button" role="button" href="#">Sign Up</a></span></div>
+
+            </div>
+
+        </nav>
+    </div>
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div>
+                        <form name="uploadForm" id="uploadForm" enctype="multipart/form-data" method="post">
+                            <div class="dragAndUploadHolder">
+                                 <div id="dragFile" class="dragAndUpload dragAndUp loadUploading">
+                                    <span class="fa fa-file"></span>
+                                    <span class="fa fa-spin fa-cog"></span>
+                                    <span class="fa fa-arrow-up"></span>
+                                    <span class="fa fa-check"></span>
+                                    <span class="fa fa-frown-o"></span>
+                                 </div>
+                                 <div id="dragAndUploadStatus">
+                                     Drag and drop file.
+                                 </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div>
+                    <c:forEach var="url" items="${urls}">
+						<img src="${url}">
+					</c:forEach>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="getCocktailModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Modal Title</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                <div class="modal-body">
+                    <p>The content of your modal.</p>
+                    <div><img id="modalImgId"></div>
+                    <div><textarea></textarea></div>
+                </div>
+                <div class="modal-footer"><button class="btn btn-light" type="button" data-dismiss="modal">Close</button><button class="btn btn-primary" type="button">Save</button></div>
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#getCocktailModal">Button</button>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript">
 ; ( function ( $ ) {
     var settings = {
         url: '/cocktail/vision',
@@ -349,11 +425,11 @@ body{background: rgb(225,225,225);}
                 processData: false,
                 data: formData,
                 success: function () {
-                	alert('success');
+                  alert('success');
                     message( item, settings.successClass, 'File successfully uploaded.', 0 );
                 },
                 error: function () {
-                	alert('error');
+                  alert('error');
                     message( item, settings.errorClass, 'Upload failed.', 0 );
                 }
             } );  */
@@ -361,41 +437,46 @@ body{background: rgb(225,225,225);}
             fd.append("file", file);
             var xhr = new XMLHttpRequest();
             xhr.onreadystatechange = function() {
-            	if (this.readyState == 4 && this.status == 200) {
-            	      succFunction(this, item,xhr.response);
-            	      console.log(xhr.response);
-            	} else if(this.status == 500){
-            		failFunction(this,item,xhr.response);	
-            	} else if(this.status == 403){
-            		failFunction(this,item,xhr.response);	
-            	} else if(this.status == 404){
-            		failFunction(this,item,xhr.response);	
-            	} 
+              if (this.readyState == 4 && this.status == 200) {
+                    succFunction(this, item,xhr.response);
+                    console.log(xhr.response);
+              } else if(this.status == 500){
+                failFunction(this,item,xhr.response); 
+              } else if(this.status == 403){
+                failFunction(this,item,xhr.response); 
+              } else if(this.status == 404){
+                failFunction(this,item,xhr.response); 
+              } 
             };
             xhr.open("POST", "/cocktail/vision");
             xhr.send(fd);
-        	 
+           
         } else {
             message( item, settings.errorClass, 'File is too large.', 0 );
         }
     }
     function succFunction(xhttp, item, resp) {
-		message( item, settings.successClass, 'File successfully uploaded.', 0 );
-	}
+    var arr = JSON.parse(resp);
+    message( item, settings.successClass, 'File successfully uploaded.', 0 );
+    $('#modalImgId').attr("src",arr[0].imagerink);
+    $('#getCocktailModal').modal('show');
+    console.log(arr[0].imagerink);
+    
+  }
     function failFunction(xhttp, item, resp) {
-		message( item, settings.errorClass, 'Upload failed.', 0 );
-	}
+    message( item, settings.errorClass, 'Upload failed.', 0 );
+  }
 
     function findFiles( e, item ) {
-    	console.log(e);
-    	console.log(item);
+      console.log(e);
+      console.log(item);
         var files = e.originalEvent.dataTransfer.files;
         console.log(files);
         $( item ).addClass( settings.uploadingClass );
         $.each( files,
             function ( key, value ) {
-        	console.log(key);
-        	console.log(value);
+          console.log(key);
+          console.log(value);
                 uploadFile( value, item );
             }
         );
@@ -438,29 +519,9 @@ $( document ).ready(
   function () {
     // Uses default settings
     $("#dragFile").dragAndUpload();
-	}
+  }
 );
 </script>
-</head>
-<body>
-<form name="uploadForm" id="uploadForm" enctype="multipart/form-data" method="post">
-	<div class="dragAndUploadHolder">
-  <div id="dragFile" class="dragAndUpload dragAndUp loadUploading">
-	  <span class="fa fa-file"></span>
-		<span class="fa fa-spin fa-cog"></span>
-		<span class="fa fa-arrow-up"></span>
-		<span class="fa fa-check"></span>
-		<span class="fa fa-frown-o"></span>
-  </div>
-	<div id="dragAndUploadStatus">
-	  Drag and drop file.
-	</div>
-</div>
-<div id="instafeed">
-<c:forEach var="url" items="${urls}">
-	<img src="${url}">
-</c:forEach>
-</div>
-</form>
 </body>
+
 </html>

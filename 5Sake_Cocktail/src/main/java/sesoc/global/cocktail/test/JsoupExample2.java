@@ -16,8 +16,11 @@ import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 import org.jsoup.nodes.Element;
 
-public class JsoupExample2 {
-	public static void main(String...arg) throws Exception {
+public class JsoupExample2 {//	public static void main(String...arg) throws Exception {
+//		JsoupExample2 main = new JsoupExample2();
+//		main.getImg();
+//	}
+	public ArrayList<String> getImg() throws Exception {
 		ArrayList<String> urlList = new ArrayList<String>();
 		Document doc= Jsoup.connect("https://www.instagram.com/sikstaaa/").get();
 		Element table = doc.select("script").get(3);
@@ -38,10 +41,10 @@ public class JsoupExample2 {
 			String shortcode = (String) node.get("shortcode");
 			urlList.add("https://www.instagram.com/p/"+shortcode+"/?taken-by="+username);
 		}
-		for(String url : urlList) {
-			JsoupExample js = new JsoupExample();
-			System.out.println(js.getImage(url));
-		}
-		
+//		for(String url : urlList) {
+//			JsoupExample js = new JsoupExample();
+//			System.out.println(js.getImage(url));
+//		}
+		return urlList;
 	}
 }
