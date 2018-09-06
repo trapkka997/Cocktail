@@ -7,8 +7,8 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-		<title>Blueprint: Google Grid Gallery</title>
-		<meta name="description" content="Blueprint: Blueprint: Google Grid Gallery" />
+		<title>cocktail</title>
+		<meta name="description" content="Cocktail Gallery" />
 		<meta name="keywords" content="google getting started gallery, image gallery, image grid, template, masonry" />
 		<meta name="author" content="Codrops" />
 		<link rel="shortcut icon" href="../favicon.ico">
@@ -59,8 +59,8 @@
 </div>
 		<div class="container">
 			<header class="clearfix">
-				<span>Blueprint <span class="bp-icon bp-icon-about" data-content="The Blueprints are a collection of basic and minimal website concepts, components, plugins and layouts with minimal style for easy adaption and usage, or simply for inspiration."></span></span>
-				<h1>Google Grid Gallery</h1>
+				<span>5SAKE <span class="bp-icon bp-icon-about" data-content="The Blueprints are a collection of basic and minimal website concepts, components, plugins and layouts with minimal style for easy adaption and usage, or simply for inspiration."></span></span>
+				<h1>Cocktail Gallery</h1>
 				<nav>
 					<a href="http://tympanus.net/Blueprints/FullWidthTabs/" class="bp-icon bp-icon-prev" data-info="previous Blueprint"><span>Previous Blueprint</span></a>
 					<!--a href="" class="bp-icon bp-icon-next" data-info="next Blueprint"><span>Next Blueprint</span></a-->
