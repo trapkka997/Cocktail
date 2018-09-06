@@ -87,7 +87,7 @@
 			          <i class="fas fa-search"></i>
 			        </a>
 			        <a href="#" class="navbar-item is-avatar" @click.prevent="showProfilePanel">
-			          <img src="https://unsplash.it/200/200?image=1005" id="showRightPush" alt="Avatar"/>
+			          <img src="https://unsplash.it/200/200?image=1005" id="showRight" alt="Avatar"/>
 			        </a>
 			      </div>
 			    </div>
@@ -117,20 +117,18 @@
 		<script src="./resources/assets/push/js/classie.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 		<script src="./resources/assets/drop/js/cbpHorizontalMenu.min.js"></script>
-		<script>
-		
+		<script>		
 			var menuRight = document.getElementById( 'cbp-spmenu-s2' ),
-				showRightPush = document.getElementById( 'showRightPush' ),
+				showRight = document.getElementById( 'showRight' ),
 				body = document.body;
-			showRightPush.onclick = function() {
+			showRight.onclick = function() {
 				classie.toggle( this, 'active' );
-				classie.toggle( body, 'cbp-spmenu-push-toleft' );
 				classie.toggle( menuRight, 'cbp-spmenu-open' );
-				disableOther( 'showRightPush' );
+				disableOther( 'showRight' );
 			};
 			function disableOther( button ) {
-				if( button !== 'showRightPush' ) {
-					classie.toggle( showRightPush, 'disabled' );
+				if( button !== 'showRight' ) {
+					classie.toggle( showRight, 'disabled' );
 				}
 			}
 			$(function() {
