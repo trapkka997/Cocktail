@@ -32,4 +32,19 @@
 		WHERE
 			COCKTAILNAME = #{value}
 	</select>
+	<select id="getCocktailByColor" parameterType="string" resultType="cocktail">
+	SELECT
+			COCKTAILNAME,
+			COCKTAILNAME_EN,
+			ALCOLE,
+			LIQUEUR,
+			MATERIAL,
+			RECEIPE,
+			IMAGERINK,
+			COLORVALUE
+		FROM
+			COCKTAIL
+		WHERE
+			COLORVALUE = #{value}
+	</select>
 </mapper>

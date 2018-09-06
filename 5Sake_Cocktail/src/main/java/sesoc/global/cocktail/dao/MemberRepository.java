@@ -21,5 +21,10 @@ public class MemberRepository {
 		MemberDAO dao =sqlSession.getMapper(MemberDAO.class);
 		return dao.selectUserPhoto(vo);
 	}
+	public List<UserPhoto> selectAllUserPhoto() {
+		MemberDAO dao = sqlSession.getMapper(MemberDAO.class);
+		
+		return dao.selectAllUserPhoto();
+	}
 
 }

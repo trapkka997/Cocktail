@@ -34,6 +34,22 @@
 	WHERE
 		USEREMAIL = #{userEmail}
 </select>
+
+<select id="selectAllUserPhoto" resultType="userPhoto">
+SELECT 
+		USERPHOTOSEQ,
+		USEREMAIL,
+		TITLE,
+		CONTENTS,
+		SAVEFILENAME,
+		ORIGINALFILENAME,
+		WRITEDATE,
+		HITCOUNT,
+		LIKECOUNT,
+		COCKTAILNAME
+	FROM
+		USERPHOTO
+</select>
 </mapper>
 	
 	

@@ -11,5 +11,5 @@ public interface MemberDAO {
 	public User selectOne(User vo);
 	public List<User> selectAll();
 	public List<UserPhoto> selectUserPhoto(User vo);
-	
+	public List<UserPhoto> selectAllUserPhoto();	
 }
