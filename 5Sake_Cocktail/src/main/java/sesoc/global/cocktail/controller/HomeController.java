@@ -72,9 +72,9 @@ public class HomeController {
 		
 		return "test/home";
 	}
-	@RequestMapping(value = "/tag", method = RequestMethod.GET)
+	@RequestMapping(value = "/menu", method = RequestMethod.GET)
 	public String tag() {
-		return "test/tagcheck";
+		return "test/testmenu";
 	}
 	@RequestMapping(value = "/main2", method = RequestMethod.GET)
 	public String main2(Locale locale, Model model) {
