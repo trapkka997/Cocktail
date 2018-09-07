@@ -76,6 +76,10 @@ public class HomeController {
 	public String tag() {
 		return "test/testmenu";
 	}
+	@RequestMapping(value = "/menu2", method = RequestMethod.GET)
+	public String img() {
+		return "test/imgtest";
+	}
 	@RequestMapping(value = "/main2", method = RequestMethod.GET)
 	public String main2(Locale locale, Model model) {
 		return "test/first+limocon";
