@@ -27,13 +27,13 @@
 .cbp-hrmenu > ul > li > a {
 	font-weight: 700;
 	padding: 1em 2em;
-	color: #999;
+	/* color: #999; */
 	display: inline-block;
 }
 
-.cbp-hrmenu > ul > li > a:hover {
+/* .cbp-hrmenu > ul > li > a:hover {
 	color: #47a3da;
-}
+} */
 
 .cbp-hrmenu > ul > li.cbp-hropen a,
 .cbp-hrmenu > ul > li.cbp-hropen > a:hover {

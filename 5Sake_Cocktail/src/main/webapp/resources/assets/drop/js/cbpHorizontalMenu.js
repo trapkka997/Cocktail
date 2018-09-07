@@ -9,26 +9,22 @@
  * http://www.codrops.com
  */
 var cbpHorizontalMenu = (function() {
-
 	var $listItems = $( '#cbp-hrmenu > ul > li' ),
 		$menuItems = $listItems.children( 'a' ),
 		$body = $( 'body' ),
 		current = -1;
-
 	function init() {
 		$menuItems.on( 'click', open );
 		$listItems.on( 'click', function( event ) { event.stopPropagation(); } );
 	}
 
 	function open( event ) {
-
 		if( current !== -1 ) {
 			$listItems.eq( current ).removeClass( 'cbp-hropen' );
 		}
 
 		var $item = $( event.currentTarget ).parent( 'li' ),
 			idx = $item.index();
-
 		if( current === idx ) {
 			$item.removeClass( 'cbp-hropen' );
 			current = -1;
