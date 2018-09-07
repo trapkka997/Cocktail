@@ -87,7 +87,7 @@
     </div>
     <div id='toggle' style="padding-left: 20px; padding-right: 20px;">
       <div id="filter1">
-        <h2>alcole</h2>
+        <h2>BASE SPIRITS</h2>
         <div id="alcole" class="button-group" data-filter-group='alcole'>
           <button class="button is-checked" data-filter="*">All</button>
           <button class="button" data-filter=".브랜디">Brandy</button>
