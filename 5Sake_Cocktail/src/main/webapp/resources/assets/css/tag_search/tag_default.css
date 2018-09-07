@@ -15,6 +15,9 @@ body {
 	/* border-radius: 7px; */
 	background-image:
 		url(https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/10/17/11/wine-cheese-food-istock-scorpp.jpg);
+	background-position: auto;
+	background-size: contain;
+	background-repeat: no-repeat;
 	color: #444e3c;
 	font-family: sans-serif;
 	font-size: 21px;
@@ -60,14 +63,13 @@ body {
 	margin-right: 9px;
 }
 
-.button-group .button:first-child {
+/* .button-group .button:first-child {
 	border-radius: 0.5em 0 0 0.5em;
 }
 
 .button-group .button:last-child {
 	border-radius: 0 0.5em 0.5em 0;
-}
-
+} */
 .grid {
 	border: 1px solid #dbb4b4;
 }
