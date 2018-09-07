@@ -32,7 +32,7 @@
                   </a>
               <div class="cbp-hrsub">
                 <div class="cbp-hrsub-inner">
-                  <div>
+                  <div class ="col-sm-3 col-xs-12">
                     <h4>Learning &amp; Games</h4>
                     <ul>
                       <li><a href="#">Catch the Bullet</a></li>
@@ -43,7 +43,7 @@
                       <li><a href="#">Golf Pro</a></li>
                     </ul>
                   </div>
-                  <div>
+                  <div class ="col-sm-3 col-xs-12">
                     <h4>Utilities</h4>
                     <ul>
                       <li><a href="#">Gadget Finder</a></li>
@@ -53,7 +53,7 @@
                       <li><a href="#">Coolkid</a></li>
                     </ul>
                   </div>
-                  <div>
+                  <div class ="col-sm-3 col-xs-12">
                     <h4>Learning &amp; Games</h4>
                     <ul>
                       <li><a href="#">Catch the Bullet</a></li>
@@ -64,7 +64,7 @@
                       <li><a href="#">Golf Pro</a></li>
                     </ul>
                   </div>
-                  <div>
+                  <div class ="col-sm-3 col-xs-12">
                     <h4>Utilities</h4>
                     <ul>
                       <li><a href="#">Gadget Finder</a></li>
@@ -100,7 +100,7 @@
                   </a>
               <div class="cbp-hrsub">
                 <div class="cbp-hrsub-inner">
-                  <div>
+                  <div class ="col-sm-3 col-xs-12">
                     <h4>Learning &amp; Games</h4>
                     <ul>
                       <li><a href="#">Catch the Bullet</a></li>
@@ -111,7 +111,7 @@
                       <li><a href="#"><img src="./resources/bottle_wine.tif"/></a></li>
                     </ul>
                   </div>
-                  <div>
+                  <div class ="col-sm-3 col-xs-12">
                     <h4>Utilities</h4>
                     <ul>
                       <li><a href="#">Gadget Finder</a></li>
@@ -121,7 +121,7 @@
                       <li><a href="#">Coolkid</a></li>
                     </ul>
                   </div>
-          		  <div>
+          		  <div class ="col-sm-3 col-xs-12">
                     <h4>Learning &amp; Games</h4>
                     <ul>
                       <li><a href="#">Catch the Bullet</a></li>
@@ -132,7 +132,7 @@
                       <li><a href="#">Golf Pro</a></li>
                     </ul>
                   </div>
-                  <div>
+                  <div class ="col-sm-3 col-xs-12">
                     <h4>Utilities</h4>
                     <ul>
                       <li><a href="#">Gadget Finder</a></li>
