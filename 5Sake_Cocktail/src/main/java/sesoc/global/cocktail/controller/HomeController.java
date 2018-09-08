@@ -35,6 +35,14 @@ public class HomeController {
 		List<UserPhoto> userPhotos = dao.selectUserPhoto(vo);
 		model.addAttribute("userPhotos", userPhotos);
 		model.addAttribute("path", "http://localhost:8888/cocktail/resources/");
-		return "cocktail/index-1";
+		return "cocktail/index";
+	}
+	@RequestMapping(value = "/index", method = RequestMethod.GET)
+	public String pro() {
+		return "cocktail/index";
+	}
+	@RequestMapping(value = "/photo", method = RequestMethod.GET)
+	public String photo() {
+		return "cocktail/newgallery";
 	}
 }

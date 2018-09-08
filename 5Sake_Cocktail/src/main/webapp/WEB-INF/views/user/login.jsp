@@ -13,14 +13,14 @@
     <link rel="stylesheet" href="./resources/assets/fonts/ionicons.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Andada">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css">
-    <link rel="stylesheet" href="./resources/assets/css/Basic-fancyBox-Gallery.css">
-    <link rel="stylesheet" href="./resources/assets/css/Footer-Clean.css">
-    <link rel="stylesheet" href="./resources/assets/css/Navbar-Fixed-Side.css">
-    <link rel="stylesheet" href="./resources/assets/css/Navigation-with-Search.css">
-    <link rel="stylesheet" href="./resources/assets/css/Registration-Form-with-Photo.css">
-    <link rel="stylesheet" href="./resources/assets/css/style3.css">
-    <link rel="stylesheet" href="./resources/assets/css/Video-Parallax-Background-v2.css">
-    <link rel="stylesheet" href="./resources/assets/css/Video-Parallax-Background.css">
+    <link rel="stylesheet" href="./resources/assets/login/css/Basic-fancyBox-Gallery.css">
+    <link rel="stylesheet" href="./resources/assets/login/css/Footer-Clean.css">
+    <link rel="stylesheet" href="./resources/assets/login/css/Navbar-Fixed-Side.css">
+    <link rel="stylesheet" href="./resources/assets/login/css/Navigation-with-Search.css">
+    <link rel="stylesheet" href="./resources/assets/login/css/Registration-Form-with-Photo.css">
+    <link rel="stylesheet" href="./resources/assets/login/css/style3.css">
+    <link rel="stylesheet" href="./resources/assets/login/css/Video-Parallax-Background-v2.css">
+    <link rel="stylesheet" href="./resources/assets/login/css/Video-Parallax-Background.css">
 	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -100,20 +100,20 @@
 	    </div>
     
     
-    <script src="./resources/assets/js/jquery.min.js"></script>
+    <script src="./resources/assets/login/js/jquery.min.js"></script>
     <script src="./resources/assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
-    <script src="./resources/assets/js/Basic-fancyBox-Gallery.js"></script>
-    <script src="./resources/assets/js/creative.js"></script>
-    <script src="./resources/assets/js/bs-animation.js"></script>
+    <script src="./resources/assets/login/js/Basic-fancyBox-Gallery.js"></script>
+    <script src="./resources/assets/login/js/creative.js"></script>
+    <script src="./resources/assets/login/js/bs-animation.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-    <script src="./resources/assets/js/Video-Parallax-Background-v2.js"></script>
-    <script src="./resources/assets/js/Video-Parallax-Background.js"></script>
-    <script type="text/javascript">
+    <script src="./resources/assets/login/js/Video-Parallax-Background-v2.js"></script>
+    <script src="./resources/assets/login/js/Video-Parallax-Background.js"></script>
+    <script>
     function signBtn() {
 		var userEmail = document.getElementById('userEmail').value;
 		var userPassword = document.getElementById('userPassword').value;
@@ -195,11 +195,8 @@
 						
 					}
     			})
-    		}
-    		
-		}
-    	
+    		}    		
+		}    	
     </script>
 </body>
-
 </html>
