@@ -146,6 +146,32 @@ public class HomeController {
 		sqlSession.insert("testMapper.writeBoard",vo);
 		return "test/WriteBoard";
 	}
+	@RequestMapping(value = "/ajaxWriteBoard", method = RequestMethod.POST)
+	public String ajaxWriteBoard(HttpSession httpSession, UserPhoto vo, MultipartFile fileData,HttpServletRequest servletRequest) {
+		System.out.println(vo);
+		String originalFileName = fileData.getOriginalFilename();
+		UUID uuid = UUID.randomUUID();
+		String savedFileName = uuid+"_"+originalFileName;
+		String path = servletRequest.getSession().getServletContext().getRealPath("resources/"+savedFileName);
+		System.out.println(path);
+		File saveFile = new File(path);
+		if(!saveFile.exists()) {
+			saveFile.mkdirs();
+		}
+		try { 
+			fileData.transferTo(saveFile);
+		} catch (IOException e){
+			System.out.println(e.getMessage());
+			e.printStackTrace(); 
+		}
+		String userEmail = (String)httpSession.getAttribute("useremail");
+		vo.setUserEmail(userEmail);
+		vo.setOriginalFileName(originalFileName);
+		vo.setSaveFileName(savedFileName);
+		System.out.println(vo);
+		sqlSession.insert("testMapper.writeBoard",vo);
+		return "test/WriteBoard";
+	}
 	@RequestMapping(value = "/myBoard", method = RequestMethod.GET)
 	public String myBoard(HttpSession httpSession, Model model,HttpServletRequest servletRequest) {
 		String path = servletRequest.getSession().getServletContext().getRealPath("resources");
@@ -153,7 +179,6 @@ public class HomeController {
 		List<UserPhoto> userPhoto = sqlSession.selectList("testMapper.getBoard",userEmail);
 		for(UserPhoto photo : userPhoto) {
 			System.out.println(photo);
-			
 		}
 		model.addAttribute("userPhoto", userPhoto);
 		model.addAttribute("path", "resources/");
@@ -162,6 +187,10 @@ public class HomeController {
 	@RequestMapping(value = "/test2", method = RequestMethod.GET)
 	public String test2() {
 		return "test/test2";
+	}
+	@RequestMapping(value = "/googleMapsTest", method = RequestMethod.GET)
+	public String googleMapsTest() {
+		return "test/googleMapsTest";
 	}
 	
 }
