@@ -412,27 +412,6 @@ body{background: rgb(225,225,225);}
 
     function uploadFile( file, item ) {
         if ( file.size <= settings.maxSize ) {
-             /* $.ajax( {
-                    beforeSend: function ( xhr ) {
-                    xhr.setRequestHeader( 'Cache-Control', 'no-cache' );
-                    xhr.setRequestHeader( 'X_FILENAME', file.name );
-                    xhr.setRequestHeader( 'X_FILESIZE', file.size );
-                    xhr.setRequestHeader( 'X_TODO', settings.toDo );
-                },    
-                type: 'POST',
-                enctype:'multipart/form-data',
-                url: '/cocktail/uptest',
-                processData: false,
-                data: formData,
-                success: function () {
-                  alert('success');
-                    message( item, settings.successClass, 'File successfully uploaded.', 0 );
-                },
-                error: function () {
-                  alert('error');
-                    message( item, settings.errorClass, 'Upload failed.', 0 );
-                }
-            } );  */
             var fd = new FormData();
             fd.append("file", file);
             var xhr = new XMLHttpRequest();
@@ -460,8 +439,6 @@ body{background: rgb(225,225,225);}
     message( item, settings.successClass, 'File successfully uploaded.', 0 );
     $('#modalImgId').attr("src",arr[0].imagerink);
     $('#getCocktailModal').modal('show');
-    console.log(arr[0].imagerink);
-    
   }
     function failFunction(xhttp, item, resp) {
     message( item, settings.errorClass, 'Upload failed.', 0 );
