@@ -93,7 +93,7 @@
 	    </div>
 	  </div>
 		    <video muted loop autoplay = "media">
-			    <source src="./resources/bar3.mp4" type="video/mp4" 
+			    <source src="./resources/assets/login/bar3.mp4" type="video/mp4" 
 			    wp-acf="[{&#39;type&#39;:&#39;url&#39;,&#39;name&#39;:&#39;video&#39;,&#39;label&#39;:&#39;Video&#39;,&#39;wrapper&#39;:{&#39;width&#39;:30}}]" 
 			    wp-attr="[{&#39;target&#39;:&#39;src&#39;,&#39;replace&#39;:&#39;%1&#39;}]"></source>
 		    </video>
