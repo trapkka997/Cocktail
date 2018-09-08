@@ -128,7 +128,6 @@
 						</a>
 							<div class="cbp-hrsub">
 								<div class="cbp-hrsub-inner">
-
 									<div id='toggle'>
 										<div id="filter1">
 											<h2>alcole</h2>
@@ -142,7 +141,6 @@
 												<button class="button" data-filter=".드라이진">Dry Jin</button>
 												<button class="button" data-filter=".테킬라">Tequila</button>
 											</div>
-
 											<div class="col-sm-3 col-xs-12">
 												<h4>Learning &amp; Games</h4>
 												<ul>
@@ -151,8 +149,7 @@
 													<li><a href="#">Fallen Angel</a></li>
 													<li><a href="#">Sui Maker</a></li>
 													<li><a href="#">Wave Master</a></li>
-													<li><a href="#"><img
-															src="./resources/bottle_wine.tif" /></a></li>
+													<li><a href="#"><img src="./resources/bottle_wine.tif" /></a></li>
 												</ul>
 
 											</div>
@@ -218,13 +215,7 @@
 											</div>
 											<div class="col-sm-3 col-xs-12">
 												<h4>Utilities</h4>
-												<ul>
-													<li><a href="#">Gadget Finder</a></li>
-													<li><a href="#">Green Tree Express</a></li>
-													<li><a href="#">Green Tree Pro</a></li>
-													<li><a href="#">Wobbler 3.0</a></li>
-													<li><a href="#">Coolkid</a></li>
-												</ul>
+
 											</div>
 											<div class="col-sm-3 col-xs-12">
 												<h4>Learning &amp; Games</h4>
