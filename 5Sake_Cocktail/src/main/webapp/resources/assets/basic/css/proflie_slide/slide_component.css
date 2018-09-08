@@ -29,7 +29,7 @@
 }
 
 .cbp-spmenu-vertical {
-  width:240px;
+  width:400px;
   height:100%;
   top:0;
   z-index:1000;
@@ -66,7 +66,7 @@
 }
 
 .cbp-spmenu-right {
-  right:-240px;
+  right:-400px;
 }
 
 .cbp-spmenu-left.cbp-spmenu-open {

@@ -45,4 +45,26 @@ public class HomeController {
 	public String photo() {
 		return "cocktail/newgallery";
 	}
+	@RequestMapping(value = "/tag", method = RequestMethod.GET)
+	public String tag() {
+		return "cocktail/search2";
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
