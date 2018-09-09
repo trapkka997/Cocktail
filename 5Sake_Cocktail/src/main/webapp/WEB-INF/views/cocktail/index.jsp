@@ -77,7 +77,7 @@
 	                                      	<img src='./resources/assets/basic/img/カクテルアイコン5.png' class='img'/>
 	                                      </p>
 	                                      <div>
-	                                      	<label><h4>cocktailName</h4></label><p>
+	                                      <h4><label>cocktailName</label></h4><p>
 	                                      	<label class="tag">#태그명</label>
 	                                      	<label class="tag">#태그명</label>
 	                                      	<label class="tag">#태그명</label>
@@ -93,7 +93,7 @@
 	                                      	<img src='./resources/assets/basic/img/カクテルアイコン5.png' class='img'/>
 	                                      </p>
 	                                      <div>
-	                                      	<label><h4>cocktailName</h4></label><p>
+	                                      	<h4><label>cocktailName</label></h4><p>
 	                                      	<label class="tag">#태그명</label>
 	                                      	<label class="tag">#태그명</label>
 	                                      	<label class="tag">#태그명</label>
@@ -109,7 +109,7 @@
 	                                      	<img src='./resources/assets/basic/img/カクテルアイコン5.png' class='img'/>
 	                                      </p>
 	                                      <div>
-	                                      	<label><h4>cocktailName</h4></label><p>
+	                                      <h4><label>cocktailName</label></h4><p>
 	                                      	<label class="tag">#태그명</label>
 	                                      	<label class="tag">#태그명</label>
 	                                      	<label class="tag">#태그명</label>
@@ -131,7 +131,7 @@
 	                                      	<img src='./resources/assets/basic/img/カクテルアイコン5.png' class='img'/>
 	                                      </p>
 	                                      <div>
-	                                      	<label><h4>cocktailName</h4></label><p>
+	                                      <h4><label>cocktailName</label></h4><p>
 	                                      	<label class="tag">#태그명</label>
 	                                      	<label class="tag">#태그명</label>
 	                                      	<label class="tag">#태그명</label>
@@ -146,7 +146,7 @@
 	                                      	<img src='./resources/assets/basic/img/カクテルアイコン5.png' class='img'/>
 	                                      </p>
 	                                     <div>
-	                                      	<label><h4>cocktailName</h4></label><p>
+	                                      <h4><label>cocktailName</label></h4><p>
 	                                      	<label class="tag">#태그명</label>
 	                                      	<label class="tag">#태그명</label>
 	                                      	<label class="tag">#태그명</label>
@@ -161,7 +161,7 @@
 	                                      	<img src='./resources/assets/basic/img/カクテルアイコン5.png' class='img'/>
 	                                      </p>
 	                                     <div>
-	                                      	<label><h4>cocktailName</h4></label><p>
+	                                      <h4><label>cocktailName</label></h4><p>
 	                                      	<label class="tag">#태그명</label>
 	                                      	<label class="tag">#태그명</label>
 	                                      	<label class="tag">#태그명</label>
@@ -289,15 +289,6 @@
 									  	  <img src="${cocktail.imagerink }" height="100" width="100"> </a>
                         </div>
                       </c:forEach>
-
-                      <%--<c:forEach var="cocktail" items="${cocktailList}">
-						         <div class="element-item ${cocktail.alcole} ${cocktail.liqueur} ${cocktail.mateial}" data-category="brandy">
-						          <h3 class="name">${cocktail.cocktailname}</h3>
-						          <a href="cocktailDetail?cocktailname=${cocktail.cocktailname }">
-						          	<img src="${cocktail.imagerink }" height="100px" width="100px">
-						          </a>
-	      						  </div>
-				      	  </c:forEach> --%>
                     </div>
                   </div>
                   <!-- cocktail_Fliter -->
@@ -379,8 +370,8 @@
             </div>
           </div>
         </nav>
-        <!-- proflie_slideEnd -->
-
+        </div><!-- proflie_slideEnd -->
+		
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/js/bootstrap.bundle.min.js"></script>
