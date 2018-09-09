@@ -57,4 +57,8 @@ public class HomeController {
 	public String tag() {
 		return "cocktail/search2";
 	}
+	@RequestMapping(value = "/selfMaking", method = RequestMethod.GET)
+	public String selfMaking() {
+		return "cocktail/selfMaking";
+	}
 }
