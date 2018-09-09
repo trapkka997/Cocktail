@@ -51,9 +51,6 @@
 .tile {
    display: inline-block; 
    line-height: 100px; 
-  -webkit-perspective: 300px;
-  -moz-perspective: 300px;
-  -ms-perspective: 300px; 
 }
 .tile>div, .tile a {
 	width: 100%;
