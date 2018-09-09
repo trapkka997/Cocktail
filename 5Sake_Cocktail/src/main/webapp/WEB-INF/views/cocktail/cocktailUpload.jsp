@@ -359,7 +359,7 @@ body{background: rgb(225,225,225);}
                 <div class="col-md-6">
                     <div>
                     <c:forEach var="url" items="${urls}">
-						<img src="${url}">
+						<img src="${url}" height="100" width="100">
 					</c:forEach>
                     </div>
                 </div>
@@ -376,9 +376,9 @@ body{background: rgb(225,225,225);}
                 <div class="modal-body">
                     <p>The content of your modal.</p>
                     <div><img id="modalImgId"></div>
-                    <div><textarea></textarea></div>
+                    <div><textarea id="modalTextArea"></textarea></div>
                 </div>
-                <div class="modal-footer"><button class="btn btn-light" type="button" data-dismiss="modal">Close</button><button class="btn btn-primary" type="button">Save</button></div>
+                <div class="modal-footer"><button class="btn btn-light" type="button" data-dismiss="modal">Close</button><button class="btn btn-primary" type="button" data-dismiss="modal" onclick="saveBtn()">Save</button></div>
             </div>
         </div>
     </div>
@@ -386,6 +386,7 @@ body{background: rgb(225,225,225);}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript">
+    var cocktailList;
 ; ( function ( $ ) {
     var settings = {
         url: '/cocktail/vision',
@@ -436,6 +437,7 @@ body{background: rgb(225,225,225);}
     }
     function succFunction(xhttp, item, resp) {
     var arr = JSON.parse(resp);
+    cocktailList = arr;
     message( item, settings.successClass, 'File successfully uploaded.', 0 );
     $('#modalImgId').attr("src",arr[0].imagerink);
     $('#getCocktailModal').modal('show');
@@ -498,6 +500,29 @@ $( document ).ready(
     $("#dragFile").dragAndUpload();
   }
 );
+
+function saveBtn() {
+	var imgSource = $('#modalImgId').attr("src");
+	var textAreaSource = $('#modalTextArea').val();
+	console.log(imgSource);
+	console.log(textAreaSource);
+	alert(' 버튼 클릭 ');	
+	$.ajax({
+		method:'post',
+		url:'writeBoard',
+		data:{
+			contents:textAreaSource,
+			cocktailName: cocktailList[0].cocktailname,
+		},
+		dataType: 'text',
+		success: function(resp) {
+			alert("success");
+		},
+		error: function() {
+			alert('err');
+		}
+	})
+}
 </script>
 </body>
 

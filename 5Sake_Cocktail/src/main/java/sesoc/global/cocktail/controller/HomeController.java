@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import sesoc.global.cocktail.dao.CocktailRepository;
 import sesoc.global.cocktail.dao.MemberRepository;
+import sesoc.global.cocktail.vo.Cocktail;
 import sesoc.global.cocktail.vo.User;
 import sesoc.global.cocktail.vo.UserPhoto;
 
@@ -33,6 +34,8 @@ public class HomeController {
 		vo.setUserEmail(userEmail);
 		String path = servletRequest.getSession().getServletContext().getRealPath("resources");
 		List<UserPhoto> userPhotos = dao.selectUserPhoto(vo);
+		List<Cocktail> cocktailList = cocktailRepository.getCocktailList();
+		model.addAttribute("cocktailList", cocktailList);
 		model.addAttribute("userPhotos", userPhotos);
 		model.addAttribute("path", "http://localhost:8888/cocktail/resources/");
 		return "cocktail/index";
@@ -42,7 +45,12 @@ public class HomeController {
 		return "cocktail/index";
 	}
 	@RequestMapping(value = "/photo", method = RequestMethod.GET)
-	public String photo() {
+	public String photo(Model model, HttpServletRequest servletRequest) {
+		List<UserPhoto> userPhotos = dao.selectAllUserPhoto();
+		String path = servletRequest.getSession().getServletContext().getRealPath("resources");
+		System.out.println(path);
+		model.addAttribute("userPhotos", userPhotos);
+		model.addAttribute("path", "http://localhost:8888/cocktail/resources/");
 		return "cocktail/newgallery";
 	}
 	@RequestMapping(value = "/tag", method = RequestMethod.GET)
@@ -50,21 +58,3 @@ public class HomeController {
 		return "cocktail/search2";
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

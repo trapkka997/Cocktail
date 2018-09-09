@@ -33,6 +33,8 @@
 		USERPHOTO
 	WHERE
 		USEREMAIL = #{userEmail}
+	ORDER BY
+		WRITEDATE DESC
 </select>
 
 <select id="selectAllUserPhoto" resultType="userPhoto">
@@ -49,7 +51,21 @@ SELECT
 		COCKTAILNAME
 	FROM
 		USERPHOTO
+	ORDER BY
+		WRITEDATE DESC
 </select>
+
+<insert id="writeBoard" parameterType="userPhoto">
+	INSERT INTO USERPHOTO(
+		USERPHOTOSEQ, USEREMAIL, TITLE, CONTENTS, SAVEFILENAME, ORIGINALFILENAME,
+		WRITEDATE, HITCOUNT, LIKECOUNT, COCKTAILNAME
+	)
+	values(
+		USERPHOTOSEQ.nextVal, #{userEmail}, #{title}, #{contents}, #{saveFileName}, #{originalFileName},
+		SYSDATE, 0, 0, 'cocktailname'
+	)
+</insert>
+
 </mapper>
 	
 	

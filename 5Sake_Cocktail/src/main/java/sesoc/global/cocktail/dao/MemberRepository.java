@@ -26,5 +26,10 @@ public class MemberRepository {
 		
 		return dao.selectAllUserPhoto();
 	}
+	
+	public int writeBoard(UserPhoto vo) {
+		MemberDAO dao = sqlSession.getMapper(MemberDAO.class);
+		return dao.writeBoard(vo);
+	}
 
 }

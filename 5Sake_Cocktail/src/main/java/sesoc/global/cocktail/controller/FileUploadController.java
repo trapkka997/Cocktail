@@ -13,6 +13,7 @@ import java.util.Map;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.json.simple.JSONObject;
 import org.slf4j.Logger;
@@ -43,19 +44,43 @@ import com.google.protobuf.Descriptors.FieldDescriptor;
 import com.google.type.Color;
 
 import sesoc.global.cocktail.dao.CocktailRepository;
+import sesoc.global.cocktail.dao.MemberRepository;
 import sesoc.global.cocktail.test.JsoupExample;
 import sesoc.global.cocktail.test.JsoupExample2;
 import sesoc.global.cocktail.vo.Cocktail;
 import sesoc.global.cocktail.vo.RGB;
+import sesoc.global.cocktail.vo.UserPhoto;
 
 
 @Controller
 public class FileUploadController {
+	
+	private String originalFileName;
+	private String savedFileName;
+	
+	
+	public String getOriginalFileName() {
+		return originalFileName;
+	}
+
+	public void setOriginalFileName(String originalFileName) {
+		this.originalFileName = originalFileName;
+	}
+
+	public String getSavedFileName() {
+		return savedFileName;
+	}
+
+	public void setSavedFileName(String savedFileName) {
+		this.savedFileName = savedFileName;
+	}
 	@Autowired
 	MappingJackson2JsonView jsonView;
 	
 	@Autowired
 	CocktailRepository cocktailRepository;
+	@Autowired
+	MemberRepository memberRepository;
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
 	
@@ -86,12 +111,12 @@ public class FileUploadController {
 		if(itr.hasNext()) {
 			MultipartFile mpf = multipartRequest.getFile(itr.next());
 			System.out.println(mpf.getOriginalFilename() +" uploaded!"); 
-			String originalFilename = mpf.getOriginalFilename();
+			setOriginalFileName(mpf.getOriginalFilename());
 			int fileLength = mpf.getBytes().length;
 			System.out.println("file 크기 : " + fileLength);
 			UUID uuid = UUID.randomUUID();
-			String savedFileName = uuid+"_"+originalFilename;
-			String jsonPath = servletRequest.getSession().getServletContext().getRealPath("/WEB-INF/resources/"+savedFileName);
+			setSavedFileName(uuid+"_"+getOriginalFileName());
+			String jsonPath = servletRequest.getSession().getServletContext().getRealPath("/resources/"+getSavedFileName());
 			System.out.println(jsonPath);
 			File saveFile = new File(jsonPath);
 			if(!saveFile.exists()) {
@@ -113,6 +138,25 @@ public class FileUploadController {
 			return cocktailList;
 			} else{
 			return null;
+		}
+	}
+	//  UserPhoto에 업로드 함
+	// 유저 이미지, 글, 칵테일 이미지 모두 받아서 디비에 넣으며 된다
+	@RequestMapping(value="writeBoard", method=RequestMethod.POST, produces="application/json")
+	public @ResponseBody String writeBoard(String contents,String cocktailName, HttpSession httpSession) throws Exception {
+		UserPhoto userPhoto = new UserPhoto();
+		
+		userPhoto.setTitle(contents);
+		userPhoto.setContents(contents);
+		userPhoto.setOriginalFileName(originalFileName);
+		userPhoto.setSaveFileName(savedFileName);
+		userPhoto.setUserEmail((String)httpSession.getAttribute("useremail"));
+		userPhoto.setCocktailName(cocktailName);
+		int result = memberRepository.writeBoard(userPhoto);
+		if(result ==1) {
+			return "success";
+		}else {
+			return "fail";
 		}
 	}
 	
