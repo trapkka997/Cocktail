@@ -51,7 +51,7 @@ public class HomeController {
 		System.out.println(path);
 		model.addAttribute("userPhotos", userPhotos);
 		model.addAttribute("path", "http://localhost:8888/cocktail/resources/");
-		return "cocktail/newgallery";
+		return "cocktail/gallery";
 	}
 	@RequestMapping(value = "/tag", method = RequestMethod.GET)
 	public String tag() {

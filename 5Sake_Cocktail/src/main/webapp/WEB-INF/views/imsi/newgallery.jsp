@@ -8,17 +8,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NEWS FEED</title>
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
-<link rel="stylesheet"
-	href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+<link rel="stylesheet"	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
+<link rel="stylesheet"	href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
 <link rel="stylesheet" href="./resources/assets/gallery/css/gallery.css">
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
-<link rel="stylesheet"
-	href="./resources/assets/basic/css/navbar/navbar.css">
-<link rel="stylesheet"
-	href="./resources/assets/basic/css/proflie_slide/slide_component.css">
+<link rel="stylesheet"	href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
+<link rel="stylesheet"	href="./resources/assets/basic/css/navbar/navbar.css">
+<link rel="stylesheet"	href="./resources/assets/basic/css/proflie_slide/slide_component.css">
 </head>
 
 <body>
@@ -312,40 +307,18 @@
 			</div>
 		</div>
 	</div>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/js/bootstrap.bundle.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script	src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/js/bootstrap.bundle.min.js"></script>
 	<script src="./resources/assets/gallery/js/gallery/gallery_classie.js"></script>
-	<script
-		src="./resources/assets/gallery/js/gallery/gallery_modernizr.custom.js"></script>
+	<script	src="./resources/assets/gallery/js/gallery/gallery_modernizr.custom.js"></script>
 	<script src="./resources/assets/gallery/js/gallery/cbpGridGallery.js"></script>
-	<script
-		src="./resources/assets/gallery/js/gallery/imagesloaded.pkgd.min.js"></script>
+	<script	src="./resources/assets/gallery/js/gallery/imagesloaded.pkgd.min.js"></script>
 	<script src="./resources/assets/gallery/js/gallery/masonry.pkgd.min.js"></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
+	<script	src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
 	<script src="./resources/assets/basic/js/proflie_slide/classie.js"></script>
-	<script
-		src="./resources/assets/basic/js/proflie_slide/modernizr.custom.js"></script>
+	<script	src="./resources/assets/basic/js/proflie_slide/modernizr.custom.js"></script>
 	<script>
 		new CBPGridGallery(document.getElementById('grid-gallery'));
-	</script>
-	<script>
-		var menuRight = document.getElementById('cbp-spmenu-s2'), showRight = document
-				.getElementById('showRight'), body = document.body;
-
-		showRight.onclick = function() {
-			classie.toggle(this, 'active');
-			classie.toggle(menuRight, 'cbp-spmenu-open');
-			disableOther('showRight');
-		};
-
-		function disableOther(button) {
-			if (button !== 'showRight') {
-				classie.toggle(showRight, 'disabled');
-			}
-		}
 	</script>
 </body>
 

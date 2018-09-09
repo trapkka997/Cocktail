@@ -16,6 +16,10 @@
       <link rel="stylesheet" href="./resources/assets/basic/css/profile/default.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
       <link rel="stylesheet" href="./resources/assets/tag/css/tag_default.css">
+      <!-- gallery -->
+      <link rel="stylesheet" href="./resources/assets/gallery/css/uploadbutton.css">
+	  <link rel="stylesheet" href="./resources/assets/gallery/css/gallery.css">
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
       <style>
         .card {
           flex-direction: inherit;
@@ -371,13 +375,80 @@
           </div>
         </nav>
         </div><!-- proflie_slideEnd -->
-		
+		<div><!-- 갤러리 내용 -->
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12"></div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div id="grid-gallery" class="grid-gallery">
+						<section class="grid-wrap">
+							<ul class="grid" style="border: none;">
+								<li class="grid-sizer"></li>
+								<!-- for Masonry column width -->
+								<c:forEach var="userPhoto" items="${userPhotos }">
+									<li>
+										<figure>
+											<img src="${path }${userPhoto.saveFileName}" alt="img01" />
+											<figcaption>
+												<h3>${userPhoto.title }</h3>
+												<p>${userPhoto.contents }</p>
+											</figcaption>
+										</figure>
+									</li>
+								</c:forEach>
+
+							</ul>
+						</section>
+						<section class="slideshow">
+							<ul>
+								<c:forEach var="userPhoto" items="${userPhotos }">
+									<li>
+										<figure>
+											<figcaption>
+												<h3>${userPhoto.title }</h3>
+												<p>${userPhoto.contents }</p>
+											</figcaption>
+											<img src="${path }${userPhoto.saveFileName}" alt="img01" />
+										</figure>
+									</li>
+								</c:forEach>
+
+							</ul>
+							<nav>
+								<span class="icon nav-prev"></span> <span class="icon nav-next"></span>
+								<span class="icon nav-close"></span>
+							</nav>
+							<div class="info-keys icon">Navigate with arrow keys</div>
+						</section>
+						<div class="plus-button">+</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/js/bootstrap.bundle.min.js"></script>
         <script src="./resources/assets/basic/js/proflie_slide/classie.js"></script>
         <script src="./resources/assets/basic/js/proflie_slide/modernizr.custom.js"></script>
         <script src="./resources/assets/tag/js/search_tag.js"></script>
+        
+
+		<script src="./resources/assets/gallery/js/gallery/gallery_classie.js"></script>
+		<script	src="./resources/assets/gallery/js/gallery/gallery_modernizr.custom.js"></script>
+		<script src="./resources/assets/gallery/js/gallery/cbpGridGallery.js"></script>
+		<script	src="./resources/assets/gallery/js/gallery/imagesloaded.pkgd.min.js"></script>
+		<script src="./resources/assets/gallery/js/gallery/masonry.pkgd.min.js"></script>
+		
+		<script	src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
+		
+		<script src="./resources/assets/basic/js/proflie_slide/classie.js"></script>
+		<script	src="./resources/assets/basic/js/proflie_slide/modernizr.custom.js"></script>
+		<script>
+			new CBPGridGallery(document.getElementById('grid-gallery'));
+		</script>
         <script>
           var menuRight = document.getElementById('cbp-spmenu-s2'),
             showRight = document.getElementById('showRight'),
