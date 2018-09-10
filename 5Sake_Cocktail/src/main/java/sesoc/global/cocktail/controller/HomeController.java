@@ -44,8 +44,17 @@ public class HomeController {
 	public String pro() {
 		return "cocktail/index";
 	}
-	@RequestMapping(value = "/photo", method = RequestMethod.GET)
-	public String photo(Model model, HttpServletRequest servletRequest) {
+	@RequestMapping(value = "/userphoto", method = RequestMethod.GET)
+	public String userphoto(Model model, HttpServletRequest servletRequest) {
+		List<UserPhoto> userPhotos = dao.selectAllUserPhoto();
+		String path = servletRequest.getSession().getServletContext().getRealPath("resources");
+		System.out.println(path);
+		model.addAttribute("userPhotos", userPhotos);
+		model.addAttribute("path", "http://localhost:8888/cocktail/resources/");
+		return "cocktail/gallery";
+	}
+	@RequestMapping(value = "/cocktailphoto", method = RequestMethod.GET)
+	public String cocktailphoto(Model model, HttpServletRequest servletRequest) {
 		List<UserPhoto> userPhotos = dao.selectAllUserPhoto();
 		String path = servletRequest.getSession().getServletContext().getRealPath("resources");
 		System.out.println(path);

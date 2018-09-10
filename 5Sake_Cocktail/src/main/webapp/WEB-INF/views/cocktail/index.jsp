@@ -6,24 +6,18 @@
 
 <head>
 <title>NEWS FEED</title>
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
-<link rel="stylesheet"
-	href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
-<link rel="stylesheet"
-	href="./resources/assets/basic/css/navbar/navbar.css">
-<link rel="stylesheet"
-	href="./resources/assets/basic/css/proflie_slide/slide_component.css">
+<link rel="stylesheet"	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
+<link rel="stylesheet"	href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+<link rel="stylesheet"	href="./resources/assets/basic/css/navbar/navbar.css">
+<link rel="stylesheet"	href="./resources/assets/basic/css/proflie_slide/slide_component.css">
 <!--profile-->
-<link rel="stylesheet"
-	href="https://fonts.googleapis.com/css?family=Open+Sans">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-<link rel="stylesheet"
-	href="./resources/assets/basic/css/profile/default.css">
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
-<link rel="stylesheet" href="./resources/assets/tag/css/tag_default.css">
+<link rel="stylesheet"	href="https://fonts.googleapis.com/css?family=Open+Sans">
+<link rel="stylesheet"	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet"	href="./resources/assets/basic/css/profile/default.css">
+<link rel="stylesheet"	href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
+<link rel="stylesheet"  href="./resources/assets/tag/css/tag_default.css">
+<link rel="stylesheet"  href="./resources/assets/basic/css/photo_profile.css">
+	
 <style>
 .card {
 	flex-direction: inherit;
@@ -210,8 +204,7 @@
 				<div class="navbar-left">
 					<a class="navbar-toggle" data-toggle="dropdown"
 						aria-expanded="false" href="#"> <span></span> <span></span> <span></span>
-						<div id="recommend" class="dropdown-menu"
-							style="margin-left: 170px; margin-top: 0px; width: 1500px;">
+						<div id="recommend" class="dropdown-menu" style="margin-left: 170px; margin-top: 0px; width: 1500px;">
 							<div>
 								<div>
 									<button type="button" class="close" aria-label="Close">
@@ -361,12 +354,14 @@
 				</div>
 				<!-- navbar-left -->
 				<div class="navbar-center">
-					<a href="photo" class="navbar-item navbar-logo"> <i
-						class="fas fa-glass-martini icon"></i>
-					</a> <a href="photo" class="navbar-item navbar-logo"> <i
-						class="fab fa-microsoft icon"></i>
-					</a> <a href="photo" class="navbar-item navbar-logo"> <i
-						class="fas fa-user-alt"></i>
+					<a href="cocktailphoto" class="navbar-item navbar-logo"> 
+						<i	class="fas fa-glass-martini icon"></i>
+					</a> 
+					<a href="userphoto" class="navbar-item navbar-logo"> 
+						<i class="fab fa-microsoft icon"></i>
+					</a> 
+					<a href="selfMaking" class="navbar-item navbar-logo"> 
+						<i class="fas fa-user-alt"></i>
 					</a>
 				</div>
 				<!-- navbar-center -->
@@ -504,44 +499,22 @@
 
 		<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right"
 			id="cbp-spmenu-s2">
-			<div class="device">
-				<div id="exid_button">
-					<button type="button" class="close" aria-label="Close">
-						<span aria-hidden="true">×</span>
-					</button>
-				</div>
+			<div class="device">				
 				<div class="top">
-					<div class="device-overlay"></div>
-					<div class="editable">
-						<div class="editable__circle">
-							<div class="editable__rotater">
-								<div class="editable__rotater-item">
-									<i class="fa fa-camera"></i>
-								</div>
-							</div>
-							<div class="editable__rotater">
-								<div class="editable__rotater-item">
-									<i class="fa fa-comments"></i>
-								</div>
-							</div>
-							<div class="editable__rotater">
-								<div class="editable__rotater-item">
-									<i class="fa fa-video-camera"></i>
-								</div>
-							</div>
-							<div class="editable__rotater">
-								<div class="editable__rotater-item">
-									<i class="fa fa-user"></i>
-								</div>
-							</div>
-						</div>
-						<div class="editable__cont">
-							<img src="./resources/assets/gallery/img/test_image/large/3.png"
-								class="editable__cont-img"> <span
-								class="editable__cont-edit js-edit"> <i
-								class="fa fa-pencil-square-o"></i>
-							</span>
-						</div>
+					<div id="exid_button">
+						<button type="button" class="close" aria-label="Close">
+							<span aria-hidden="true">×</span>
+						</button>
+					</div>
+					<div class="avatar-upload">
+					  <div class="avatar-edit">
+					    <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
+					    <label for="imageUpload"></label>
+					  </div>
+					  <div class="avatar-preview">
+					    <div id="imagePreview" style="background-image: url(http://i.pravatar.cc/500?img=7);">
+					    </div>
+					  </div>
 					</div>
 				</div>
 				<div class="mid">
@@ -567,20 +540,15 @@
 		</nav>
 	</div>
 
-
 	
 	<!-- proflie_slideEnd -->
-
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script
-		src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/js/bootstrap.bundle.min.js"></script>
+	<script	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script	src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+	<script	src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/js/bootstrap.bundle.min.js"></script>
 	<script src="./resources/assets/basic/js/proflie_slide/classie.js"></script>
-	<script
-		src="./resources/assets/basic/js/proflie_slide/modernizr.custom.js"></script>
+	<script	src="./resources/assets/basic/js/proflie_slide/modernizr.custom.js"></script>
 	<script src="./resources/assets/tag/js/search_tag.js"></script>
+	<script	src="./resources/assets/basic/js/photo_profile.js"></script>
 	<script>
           var menuRight = document.getElementById('cbp-spmenu-s2'),
             showRight = document.getElementById('showRight'),

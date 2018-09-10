@@ -20,6 +20,11 @@
       <link rel="stylesheet" href="./resources/assets/gallery/css/uploadbutton.css">
 	  <link rel="stylesheet" href="./resources/assets/gallery/css/gallery.css">
 	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
+	  <!-- auto  -->
+	  <link rel="stylesheet" href="./resources/assets/gallery/css/style.css">
+	  <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">	
+	  <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+	  <script src="./resources/assets/gallery/js/script.js"></script>  
       <style>
         .card {
           flex-direction: inherit;
@@ -41,7 +46,6 @@
         }
       </style>
     </head>
-
     <body>
       <div class="navbar is-top-fixed">
         <div class="container-fluid">
@@ -182,17 +186,17 @@
 	        </a>
             </div>
             <!-- navbar-left -->
-            <div class="navbar-center">
-              <a href="#" class="navbar-item navbar-logo">
-	          <i class="fas fa-glass-martini icon"></i>
-	        </a>
-              <a href="#" class="navbar-item navbar-logo">
-	          <i class="fab fa-microsoft icon"></i>
-	        </a>
-              <a href="#" class="navbar-item navbar-logo">
-	          <i class="fas fa-user-alt"></i>
-	        </a>
-            </div>
+           <div class="navbar-center">
+				<a href="cocktailphoto" class="navbar-item navbar-logo"> 
+					<i	class="fas fa-glass-martini icon"></i>
+				</a> 
+				<a href="userphoto" class="navbar-item navbar-logo"> 
+					<i class="fab fa-microsoft icon"></i>
+				</a> 
+				<a href="selfMaking" class="navbar-item navbar-logo"> 
+					<i class="fas fa-user-alt"></i>
+				</a>
+				</div>
             <!-- navbar-center -->
             <div class="navbar-right">
               <a href="#" class="navbar-item" data-toggle="dropdown" aria-expanded="false" href="#">
@@ -398,7 +402,6 @@
 										</figure>
 									</li>
 								</c:forEach>
-
 							</ul>
 						</section>
 						<section class="slideshow">
@@ -433,19 +436,75 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/js/bootstrap.bundle.min.js"></script>
         <script src="./resources/assets/basic/js/proflie_slide/classie.js"></script>
         <script src="./resources/assets/basic/js/proflie_slide/modernizr.custom.js"></script>
-        <script src="./resources/assets/tag/js/search_tag.js"></script>
+        <script src="./resources/assets/tag/js/search_tag.js"></script>  
         
-
 		<script src="./resources/assets/gallery/js/gallery/gallery_classie.js"></script>
 		<script	src="./resources/assets/gallery/js/gallery/gallery_modernizr.custom.js"></script>
 		<script src="./resources/assets/gallery/js/gallery/cbpGridGallery.js"></script>
 		<script	src="./resources/assets/gallery/js/gallery/imagesloaded.pkgd.min.js"></script>
-		<script src="./resources/assets/gallery/js/gallery/masonry.pkgd.min.js"></script>
-		
-		<script	src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
+		<script src="./resources/assets/gallery/js/gallery/masonry.pkgd.min.js"></script>	
+			
+		<script	src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>		
 		
 		<script src="./resources/assets/basic/js/proflie_slide/classie.js"></script>
 		<script	src="./resources/assets/basic/js/proflie_slide/modernizr.custom.js"></script>
+		
+	<!-- 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
+		<script	src="https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.js"></script>
+		<script	src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
+		<script type="text/javascript">
+		//-------------------------------------//
+		// init Masonry
+
+		var $grid = $('.grid').masonry({
+		  itemSelector: 'none', // select none at first
+		  columnWidth: '.grid__col-sizer',
+		  gutter: '.grid__gutter-sizer',
+		  percentPosition: true,
+		  stagger: 30,
+		  // nicer reveal transition
+		  visibleStyle: { transform: 'translateY(0)', opacity: 1 },
+		  hiddenStyle: { transform: 'translateY(100px)', opacity: 0 },
+		});
+
+		// get Masonry instance
+		var msnry = $grid.data('masonry');
+
+		// initial items reveal
+		$grid.imagesLoaded( function() {
+		  $grid.removeClass('are-images-unloaded');
+		  $grid.masonry( 'option', { itemSelector: '.grid__item' });
+		  var $items = $grid.find('.grid__item');
+		  $grid.masonry( 'appended', $items );
+		});
+
+		//-------------------------------------//
+		// hack CodePen to load pens as pages
+
+		var nextPenSlugs = [
+		  '202252c2f5f192688dada252913ccf13',
+		  'a308f05af22690139e9a2bc655bfe3ee',
+		  '6c9ff23039157ee37b3ab982245eef28',
+		];
+
+		function getPenPath() {
+		  var slug = nextPenSlugs[ this.loadCount ];
+		  if ( slug ) {
+		    return 'https://s.codepen.io/desandro/debug/' + slug;
+		  }
+		}
+
+		//-------------------------------------//
+		// init Infinte Scroll
+
+		$grid.infiniteScroll({
+		  path: getPenPath,
+		  append: '.grid__item',
+		  outlayer: msnry,
+		  status: '.page-load-status',
+		});
+
+		</script>
 		<script>
 			new CBPGridGallery(document.getElementById('grid-gallery'));
 		</script>
