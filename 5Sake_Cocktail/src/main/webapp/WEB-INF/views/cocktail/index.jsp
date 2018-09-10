@@ -30,7 +30,7 @@
 .img {
 	width: 200px;
 	border: 20px solid black;
-	border-radius: 50%
+	border-radius: 50%;
 }
 
 .tag {
@@ -41,11 +41,11 @@
 @import url("https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz")
 	;
 
-
 .tile {
-   display: inline-block; 
-   line-height: 100px; 
+	display: inline-block;
+	line-height: 100px;
 }
+
 .tile>div, .tile a {
 	width: 100%;
 	color: #30261c;
@@ -87,7 +87,7 @@
 	transform: rotateX(0deg);
 }
 
-.flip:hover>div, .flip>a {
+.flip>a, .flip:hover>div {
 	-webkit-transition: 0.05s all linear 0;
 	-moz-transition: 0.05s all linear 0;
 	-o-transition: 0.05s all linear 0;
@@ -95,7 +95,7 @@
 	transition: 0.05s all linear 0;
 }
 
-.flip:hover>a, .flip>div {
+.flip>div, .flip:hover>a {
 	-webkit-transition: 0.05s all linear 0.05s;
 	-moz-transition: 0.05s all linear 0.05s;
 	-o-transition: 0.05s all linear 0.05s;
@@ -151,11 +151,11 @@
 
 .shutter>div {
 	z-index: 10;
-	-webkit-transform-origin: 0% 0%;
-	-moz-transform-origin: 0% 0%;
-	-o-transform-origin: 0% 0%;
-	-ms-transform-origin: 0% 0%;
-	transform-origin: 0% 0%;
+	-webkit-transform-origin: 0 0;
+	-moz-transform-origin: 0 0;
+	-o-transform-origin: 0 0;
+	-ms-transform-origin: 0 0;
+	transform-origin: 0 0;
 }
 
 .shutter:hover>div {
@@ -178,11 +178,11 @@
 
 .page>div {
 	z-index: 10;
-	-webkit-transform-origin: 0% 0%;
-	-moz-transform-origin: 0% 0%;
-	-o-transform-origin: 0% 0%;
-	-ms-transform-origin: 0% 0%;
-	transform-origin: 0% 0%;
+	-webkit-transform-origin: 0 0;
+	-moz-transform-origin: 0 0;
+	-o-transform-origin: 0 0;
+	-ms-transform-origin: 0 0;
+	transform-origin: 0 0;
 }
 
 .page:hover>div {
@@ -221,7 +221,9 @@
 														<img src='./resources/assets/basic/img/カクテルアイコン5.png'
 															class='img' />
 													</p>
-													<label><h2>UserID</h2></label>
+													<label>
+														<h2>UserID</h2>
+													</label>
 													<p>
 														<label>추천칵테일</label>
 												</div>
@@ -354,6 +356,7 @@
 				</div>
 				<!-- navbar-left -->
 				<div class="navbar-center">
+<<<<<<< HEAD
 					<a href="cocktailphoto" class="navbar-item navbar-logo"> 
 						<i	class="fas fa-glass-martini icon"></i>
 					</a> 
@@ -362,12 +365,20 @@
 					</a> 
 					<a href="selfMaking" class="navbar-item navbar-logo"> 
 						<i class="fas fa-user-alt"></i>
+=======
+					<a href="cocktailphoto" class="navbar-item navbar-logo"> <i
+						class="fas fa-glass-martini icon"></i>
+					</a> <a href="userphoto" class="navbar-item navbar-logo"> <i
+						class="fab fa-microsoft icon"></i>
+					</a> <a href="selfMaking" class="navbar-item navbar-logo"> <i
+						class="fas fa-user-alt"></i>
+>>>>>>> branch 'master' of https://github.com/trapkka997/Cocktail
 					</a>
 				</div>
 				<!-- navbar-center -->
 				<div class="navbar-right">
 					<a href="#" class="navbar-item" data-toggle="dropdown"
-						aria-expanded="false" href="#"> <i id="showRightPush"
+						aria-expanded="false"> <i id="showRightPush"
 						class="fas fa-search"></i>
 					</a>
 					<div id="search" class="dropdown-menu"
@@ -469,10 +480,10 @@
 											data-category="transition">
 											<div>
 												<img src="${cocktail.imagerink }" height="100" width="100">
-  											</div>
-  											<a href="cocktailDetail?cocktailname=${cocktail.cocktailname }">
-     											${cocktail.cocktailname }
-  											</a>
+											</div>
+											<a
+												href="cocktailDetail?cocktailname=${cocktail.cocktailname }">
+												${cocktail.cocktailname } </a>
 										</div>
 									</c:forEach>
 								</div>
@@ -481,7 +492,6 @@
 						</div>
 						<!-- dropdax_menu -->
 					</div>
-
 
 					<div class="navbar-avatar">
 						<a id='showRight' href="#" class="navbar-item is-avatar"
@@ -540,7 +550,10 @@
 		</nav>
 	</div>
 
+<<<<<<< HEAD
 	
+=======
+>>>>>>> branch 'master' of https://github.com/trapkka997/Cocktail
 	<!-- proflie_slideEnd -->
 	<script	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script	src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
@@ -550,62 +563,61 @@
 	<script src="./resources/assets/tag/js/search_tag.js"></script>
 	<script	src="./resources/assets/basic/js/photo_profile.js"></script>
 	<script>
-          var menuRight = document.getElementById('cbp-spmenu-s2'),
-            showRight = document.getElementById('showRight'),
-            body = document.body;
+		var menuRight = document.getElementById('cbp-spmenu-s2'), showRight = document
+				.getElementById('showRight'), body = document.body;
 
-          showRight.onclick = function() {
-            classie.toggle(this, 'active');
-            classie.toggle(menuRight, 'cbp-spmenu-open');
-            disableOther('showRight');
-          };
+		showRight.onclick = function() {
+			classie.toggle(this, 'active');
+			classie.toggle(menuRight, 'cbp-spmenu-open');
+			disableOther('showRight');
+		};
 
-          function disableOther(button) {
-            if (button !== 'showRight') {
-              classie.toggle(showRight, 'disabled');
-            }
-          }
-        </script>
+		function disableOther(button) {
+			if (button !== 'showRight') {
+				classie.toggle(showRight, 'disabled');
+			}
+		}
+	</script>
 	<script>
-          $(document).ready(function() {
-            var $editable = $(".editable");
-            var $overlay = $(".device-overlay");
-            var $circle = $(".editable__circle");
-            var circleTrans = 400;
-            var $item = $(".editable__rotater-item");
-            var $second = $(".second");
+		$(document).ready(function() {
+			var $editable = $(".editable");
+			var $overlay = $(".device-overlay");
+			var $circle = $(".editable__circle");
+			var circleTrans = 400;
+			var $item = $(".editable__rotater-item");
+			var $second = $(".second");
 
-            $(document).on("click", ".js-edit", function() {
-              $editable.addClass("clicked");
-              $overlay.addClass("active");
-            });
+			$(document).on("click", ".js-edit", function() {
+				$editable.addClass("clicked");
+				$overlay.addClass("active");
+			});
 
-            $(document).on("click", ".device-overlay", function() {
-              $editable.removeClass("clicked");
-              $overlay.removeClass("active");
-            });
+			$(document).on("click", ".device-overlay", function() {
+				$editable.removeClass("clicked");
+				$overlay.removeClass("active");
+			});
 
-            $(document).on("click", ".editable__rotater-item", function() {
-              $(this).parent().addClass("picked");
-              $circle.addClass("picked");
-              $second.addClass("picked");
-            });
+			$(document).on("click", ".editable__rotater-item", function() {
+				$(this).parent().addClass("picked");
+				$circle.addClass("picked");
+				$second.addClass("picked");
+			});
 
-            $(document).on("click", ".second__back", function() {
-              $(".editable__rotater").removeClass("picked");
-              $circle.addClass("instant");
-              $circle.css("top");
-              $circle.removeClass("picked");
-              $second.removeClass("picked");
-              $editable.removeClass("clicked");
-              $overlay.removeClass("active");
-              setTimeout(function() {
-                $circle.removeClass("instant");
-              }, circleTrans);
-            });
+			$(document).on("click", ".second__back", function() {
+				$(".editable__rotater").removeClass("picked");
+				$circle.addClass("instant");
+				$circle.css("top");
+				$circle.removeClass("picked");
+				$second.removeClass("picked");
+				$editable.removeClass("clicked");
+				$overlay.removeClass("active");
+				setTimeout(function() {
+					$circle.removeClass("instant");
+				}, circleTrans);
+			});
 
-          });
-        </script>
+		});
+	</script>
 </body>
 
 </html>
