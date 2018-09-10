@@ -1,5 +1,5 @@
 .plus-button {
-  position: absolute;
+  position: sticky;
   font-size: 2rem;
   line-height: 2rem;
   color: white;
