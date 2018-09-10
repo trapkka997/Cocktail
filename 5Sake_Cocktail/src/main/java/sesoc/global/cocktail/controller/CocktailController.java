@@ -45,12 +45,12 @@ public class CocktailController {
 		model.addAttribute("cocktailList", cocktailList);
 		return "cocktail/search";
 	}	
-	
+
 	@RequestMapping(value = "/cocktailDetail", method = RequestMethod.GET)
-	public String newCc(Locale locale, Model model,String cocktailname) {
+	public String cocktailDetail(Locale locale, Model model,String cocktailname) {
 		Cocktail selectCocktail = cocktailRepository.selectCocktail(cocktailname);
 		model.addAttribute("cocktail", selectCocktail);
-		return "cocktail/product";
+		return "cocktail/cocktailDetail";
 	}
 	@RequestMapping(value = "/cocktailUpload", method = RequestMethod.GET)
 	public String cocktailUpload(Locale locale, Model model,String cocktailname, HttpSession httpSession) {

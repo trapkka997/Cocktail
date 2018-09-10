@@ -1,0 +1,18 @@
+.plus-button {
+  position: absolute;
+  font-size: 2rem;
+  line-height: 2rem;
+  color: white;
+  text-align: center;
+  bottom: 30px;
+  right: 30px;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: #32AD53;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 2px 3px 3px #999;
+}
+.plus-button:hover {
+  background: #2c994a;
+}
