@@ -558,11 +558,11 @@
 				<div class="btm">
 					<h2 class="btm-text">Whatever</h2>
 				</div>
-				<div class="second">
-					<h2 class="second__h">Hello there!</h2>
-					<span class="second__back">Go back</span> <a
-						href="https://codepen.io/suez/public/" target="_blank"
-						class="second__other">My other demos</a>
+				
+				<div id="upload_button_to_gallery">
+					<button type="button" data-toggle="modal" data-target="#myModal">
+						Open Modal
+					</button>
 				</div>
 			</div>
 		</nav>
