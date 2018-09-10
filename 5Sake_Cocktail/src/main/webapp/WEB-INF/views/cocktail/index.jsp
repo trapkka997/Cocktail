@@ -1,384 +1,587 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-  <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-    <!DOCTYPE html>
-    <html>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html>
+<html>
 
-    <head>
-      <title>NEWS FEED</title>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
-      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
-      <link rel="stylesheet" href="./resources/assets/basic/css/navbar/navbar.css">
-      <link rel="stylesheet" href="./resources/assets/basic/css/proflie_slide/slide_component.css">
-      <!--profile-->
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-      <link rel="stylesheet" href="./resources/assets/basic/css/profile/default.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
-      <link rel="stylesheet" href="./resources/assets/tag/css/tag_default.css">
-      <style>
-        .card {
-          flex-direction: inherit;
-        }
+<head>
+<title>NEWS FEED</title>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+<link rel="stylesheet"
+	href="./resources/assets/basic/css/navbar/navbar.css">
+<link rel="stylesheet"
+	href="./resources/assets/basic/css/proflie_slide/slide_component.css">
+<!--profile-->
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Open+Sans">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+	href="./resources/assets/basic/css/profile/default.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
+<link rel="stylesheet" href="./resources/assets/tag/css/tag_default.css">
+<style>
+.card {
+	flex-direction: inherit;
+}
 
-        .card-body {
-          text-align: center;
-        }
+.card-body {
+	text-align: center;
+}
 
-        .img {
-          width: 200px;
-          border: 20px solid black;
-          border-radius: 50%
-        }
+.img {
+	width: 200px;
+	border: 20px solid black;
+	border-radius: 50%
+}
 
-        .tag {
-          background-color: #17a2b8;
-          border-radius: 10%;
-        }
-      </style>
-    </head>
+.tag {
+	background-color: #17a2b8;
+	border-radius: 10%;
+}
 
-    <body>
-      <div class="navbar is-top-fixed">
-        <div class="container-fluid">
-          <div class="container">
-            <div class="navbar-left">
-              <a class="navbar-toggle" data-toggle="dropdown" aria-expanded="false" href="#">
-	           <span></span>
-	           <span></span>
-	           <span></span>
-	           <div id="recommend" class="dropdown-menu"
-	           			style="margin-left:170px; margin-top:0px; width: 1500px;">
-	             <div>
-	               <div>
-	                 <button type="button" class="close" aria-label="Close">
-	                   <span aria-hidden="true">×</span>
-	                 </button>
-	               </div>
-	               <div class="row_drop_userRecommend">
-	                    <div class="col-md-12">
-	                         <div class="card-group">
-	                              <div class="card">
-	                                  <div class="card-body">
-	                                      <h4 class="card-title">Title</h4>
-	                                      <p class="card-text">
-	                                      	<img src='./resources/assets/basic/img/カクテルアイコン5.png' class='img'/>
-	                                      </p>
-	                                      	<label><h2>UserID</h2></label><p>
-	                                      	<label>추천칵테일</label>
-	                                      </div>
-	                                 </div>
-	                                 <!-- user picture here -->
-
-	                                 <div class="card">
-	                                     <div class="card-body">
-	                                         <h4 class="card-title">Alcohol</h4>
-	                                         <p class="card-text">
-	                                      	<img src='./resources/assets/basic/img/カクテルアイコン5.png' class='img'/>
-	                                      </p>
-	                                      <div>
-	                                      <h4><label>cocktailName</label></h4><p>
-	                                      	<label class="tag">#태그명</label>
-	                                      	<label class="tag">#태그명</label>
-	                                      	<label class="tag">#태그명</label>
-	                                      </div>
-	                                      </div>
-	                                 </div>
-	                                 <!-- randam cocktail -->
-
-	                                 <div class="card">
-	                                     <div class="card-body">
-	                                         <h4 class="card-title">Liqueur</h4>
-	                                         <p class="card-text">
-	                                      	<img src='./resources/assets/basic/img/カクテルアイコン5.png' class='img'/>
-	                                      </p>
-	                                      <div>
-	                                      	<h4><label>cocktailName</label></h4><p>
-	                                      	<label class="tag">#태그명</label>
-	                                      	<label class="tag">#태그명</label>
-	                                      	<label class="tag">#태그명</label>
-	                                      </div>
-	                                      </div>
-	                                 </div>
-	                                 <!-- randam cocktail -->
-
-	                                 <div class="card">
-	                                     <div class="card-body">
-	                                         <h4 class="card-title">Material</h4>
-	                                         <p class="card-text">
-	                                      	<img src='./resources/assets/basic/img/カクテルアイコン5.png' class='img'/>
-	                                      </p>
-	                                      <div>
-	                                      <h4><label>cocktailName</label></h4><p>
-	                                      	<label class="tag">#태그명</label>
-	                                      	<label class="tag">#태그명</label>
-	                                      	<label class="tag">#태그명</label>
-	                                      </div>
-	                                      </div>
-	                                 </div>
-	                                 <!-- randam cocktail -->
-	                             </div>
-	                           </div>
-	                       </div>
-	                       <!-- row_drop_userRecommend end -->
-	                       <div class="row_siterecommend">
-	                           <div class="col-md-12">
-	                               <div class="card-group">
-	                                   <div class="card">
-	                                       <div class="card-body">
-	                                           <h4 class="card-title">Title</h4>
-	                                            <p class="card-text">
-	                                      	<img src='./resources/assets/basic/img/カクテルアイコン5.png' class='img'/>
-	                                      </p>
-	                                      <div>
-	                                      <h4><label>cocktailName</label></h4><p>
-	                                      	<label class="tag">#태그명</label>
-	                                      	<label class="tag">#태그명</label>
-	                                      	<label class="tag">#태그명</label>
-	                                      </div>
-	                                      </div>
-	                                 </div>
-	                                   <!-- randam cocktail -->
-	                                   <div class="card">
-	                                       <div class="card-body">
-	                                           <h4 class="card-title">Title</h4>
-	                                            <p class="card-text">
-	                                      	<img src='./resources/assets/basic/img/カクテルアイコン5.png' class='img'/>
-	                                      </p>
-	                                     <div>
-	                                      <h4><label>cocktailName</label></h4><p>
-	                                      	<label class="tag">#태그명</label>
-	                                      	<label class="tag">#태그명</label>
-	                                      	<label class="tag">#태그명</label>
-	                                      </div>
-	                                      </div>
-	                                 </div>
-	                                   <!-- randam cocktail -->
-	                                   <div class="card">
-	                                       <div class="card-body">
-	                                           <h4 class="card-title">Title</h4>
-	                                           <p class="card-text">
-	                                      	<img src='./resources/assets/basic/img/カクテルアイコン5.png' class='img'/>
-	                                      </p>
-	                                     <div>
-	                                      <h4><label>cocktailName</label></h4><p>
-	                                      	<label class="tag">#태그명</label>
-	                                      	<label class="tag">#태그명</label>
-	                                      	<label class="tag">#태그명</label>
-	                                      </div>
-	                                      </div>
-	                                 </div>
-	                                   <!-- randam cocktail -->
-	                               </div>
-	                           </div>
-	                       </div>
-	                </div>
-	           </div>
-	           <!-- dropdax_menu -->
-	        </a>
-            </div>
-            <!-- navbar-left -->
-            <div class="navbar-center">
-              <a href="#" class="navbar-item navbar-logo">
-	          <i class="fas fa-glass-martini icon"></i>
-	        </a>
-              <a href="#" class="navbar-item navbar-logo">
-	          <i class="fab fa-microsoft icon"></i>
-	        </a>
-              <a href="#" class="navbar-item navbar-logo">
-	          <i class="fas fa-user-alt"></i>
-	        </a>
-            </div>
-            <!-- navbar-center -->
-            <div class="navbar-right">
-              <a href="#" class="navbar-item" data-toggle="dropdown" aria-expanded="false" href="#">
-	              <i id = "showRightPush" class="fas fa-search"></i>
-				</a>
-              <div id="search" class="dropdown-menu" style="margin-left: 150px;  margin-right: 150px;  margin-top: 0px;">
-                <div class="row_drop_search">
-                  <div id="exid_button">
-                    <button type="button" class="close" aria-label="Close">
-      	                   <span aria-hidden="true">×</span>
-      	                 </button>
-                  </div>
-                  <div class="col-md-12">
-                    <div class="card-group">
-                      <div class="card">
-                        <div class="card-body" id="filter1">
-                          <h4 class="card-title">BASE SPIRITS</h4>
-                          <div id="alcole" class="button-group" data-filter-group='alcole'>
-                            <button class="button is-checked" data-filter="*">All</button>
-                            <button class="button" data-filter=".브랜디">Brandy</button>
-                            <button class="button" data-filter=".위스키">Whisky</button>
-                            <button class="button" data-filter=".보드카">Vodka</button>
-                            <button class="button" data-filter=".럼">Rum</button>
-                            <button class="button" data-filter=".드라이진">Dry Jin</button>
-                            <button class="button" data-filter=".테킬라">Tequila</button>
-                          </div>
-                        </div>
-                      </div>
-                      <!-- user picture here -->
-
-                      <div class="card">
-                        <div class="card-body" id="filter2">
-                          <h4 class="card-title">liqueur</h4>
-                          <div id="liqueur" class="button-group" data-filter-group='liqueur'>
-                            <button class="button is-checked" data-filter="*">All</button>
-                            <button class="button" data-filter=".와인">Wine</button>
-                            <button class="button" data-filter=".비터스">Bitters</button>
-                            <button class="button" data-filter=".비어">Beer</button>
-                            <button class="button" data-filter=".리큐르">Liqueur</button>
-                            <button class="button" data-filter=".크레임">Cemeliqueur</button>
-                            <button class="button" data-filter=".쉐리">Sherry</button>
-                            <button class="button" data-filter=".베르무트">Vermouth</button>
-                            <button class="button" data-filter=".아마레또">Amaretto</button>
-                          </div>
-                        </div>
-                        <!-- randam cocktail -->
-                      </div>
-                      <div class="card">
-                        <div class="card-body" id="filter3">
-                          <h4 class="card-title">material</h4>
-                          <div id="material" class="button-group" data-filter-group='material'>
-                            <button class="button is-checked" data-filter="*">All</button>
-                            <button class="button" data-filter=".시럽">Syrup</button>
-                            <button class="button" data-filter=".레몬">Lemon</button>
-                            <button class="button" data-filter=".사과">Apple</button>
-                            <button class="button" data-filter=".체리">Cherry</button>
-                            <button class="button" data-filter=".파인애플">Pineapple</button>
-                            <button class="button" data-filter=".라임">Lime</button>
-                            <button class="button" data-filter=".오렌지">Orange</button>
-                            <button class="button" data-filter=".코코넛">Coconut</button>
-                            <button class="button" data-filter=".토마토">Tomato</button>
-                            <button class="button" data-filter=".자몽">Grapefruit</button>
-                            <button class="button" data-filter=".라즈베리">Raspberry</button>
-                            <button class="button" data-filter=".계란">Egg</button>
-                            <button class="button" data-filter=".스파이시">Spicy</button>
-                            <button class="button" data-filter=".설탕">Sugar</button>
-                            <button class="button" data-filter=".우유">Milk</button>
-                            <button class="button" data-filter=".복숭아">Peach</button>
-                            <button class="button" data-filter=".탄산수">Soda</button>
-                            <button class="button" data-filter=".진저에일">Gingerale</button>
-                          </div>
-                        </div>
-                        <!-- randam cocktail -->
-                      </div>
-                      <div class="card">
-                        <div class="card-body" id="filter4">
-                          <h4 class="card-title">Color</h4>
-                          <div id="color" class="button-group" data-filter-group='color'>
-                            <button class="button is-checked" data-filter="*">All</button>
-                            <button class="button" data-filter=".시럽">Red</button>
-                            <button class="button" data-filter=".레몬">Blue</button>
-                            <button class="button" data-filter=".사과">Green</button>
-                            <button class="button" data-filter=".체리">Pink</button>
-                            <button class="button" data-filter=".파인애플">Orenge</button>
-                            <button class="button" data-filter=".라임">Yellow</button>
-                          </div>
-                        </div>
-                        <!-- randam cocktail -->
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row_cocktail_fliter">
-                    <div class="grid">
-                      <c:forEach var="cocktail" items="${cocktailList }">
-                        <div class="element-item ${cocktail.alcole } ${cocktail.liqueur } ${cocktail.mateial }" data-category="transition">
-                          <h3 class="name">${cocktail.cocktailname }</h3>
-                          <a href="cocktailDetail?cocktailname=${cocktail.cocktailname }">
-						<img src="${cocktail.imagerink }" height="100" width="100"> </a>
-                        </div>
-                      </c:forEach>
-                    </div>
-                  </div>
-                  <!-- cocktail_Fliter -->
-                </div>
-                <!-- dropdax_menu -->
-              </div>
+@import url("https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz")
+	;
 
 
-              <div class="navbar-avatar">
-                <a id='showRight' href="#" class="navbar-item is-avatar" @click.prevent="showProfilePanel">
-	            <img src="https://unsplash.it/200/200?image=1005" alt="Avatar"/>
-	          </a>
-              </div>
-              <!-- navbar-right -->
+.tile {
+   display: inline-block; 
+   line-height: 100px; 
+}
+.tile>div, .tile a {
+	width: 100%;
+	color: #30261c;
+	background-color: #e4ecb9;
+	text-align: center;
+}
 
-            </div>
-          </div>
-          <!-- container -->
+.tile>a {
+	display: block;
+	text-decoration: none;
+	background-color: #d88e8f;
+}
+/* Flip effect */
+.flip>div, .flip a {
+	position: absolute;
+}
 
-        </div>
+.flip>a {
+	-webkit-transform: rotateX(-90deg);
+	-moz-transform: rotateX(-90deg);
+	-o-transform: rotateX(-90deg);
+	-ms-transform: rotateX(-90deg);
+	transform: rotateX(-90deg);
+}
 
-        <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
-          <div class="device">
-            <div id="exid_button">
-              <button type="button" class="close" aria-label="Close">
-	                   <span aria-hidden="true">×</span>
-	                 </button>
-            </div>
-            <div class="top">
-              <div class="device-overlay"></div>
-              <div class="editable">
-                <div class="editable__circle">
-                  <div class="editable__rotater">
-                    <div class="editable__rotater-item">
-                      <i class="fa fa-camera"></i>
-                    </div>
-                  </div>
-                  <div class="editable__rotater">
-                    <div class="editable__rotater-item">
-                      <i class="fa fa-comments"></i>
-                    </div>
-                  </div>
-                  <div class="editable__rotater">
-                    <div class="editable__rotater-item">
-                      <i class="fa fa-video-camera"></i>
-                    </div>
-                  </div>
-                  <div class="editable__rotater">
-                    <div class="editable__rotater-item">
-                      <i class="fa fa-user"></i>
-                    </div>
-                  </div>
-                </div>
-                <div class="editable__cont">
-                  <img src="./resources/assets/gallery/img/test_image/large/3.png" class="editable__cont-img">
-                  <span class="editable__cont-edit js-edit">
-		          <i class="fa fa-pencil-square-o"></i>
-		        </span>
-                </div>
-              </div>
-            </div>
-            <div class="mid">
-              <div class="mid-block">
-                <h2 class="mid-number">77</h2>
-                <h3 class="mid-text">Teams</h3>
-              </div>
-              <div class="mid-block">
-                <h2 class="mid-number">666</h2>
-                <h3 class="mid-text">Reports</h3>
-              </div>
-            </div>
-            <div class="btm">
-              <h2 class="btm-text">Whatever</h2>
-            </div>
-            <div class="second">
-              <h2 class="second__h">Hello there!</h2>
-              <span class="second__back">Go back</span>
-              <a href="https://codepen.io/suez/public/" target="_blank" class="second__other">My other demos</a>
-            </div>
-          </div>
-        </nav>
-        </div><!-- proflie_slideEnd -->
-		
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/js/bootstrap.bundle.min.js"></script>
-        <script src="./resources/assets/basic/js/proflie_slide/classie.js"></script>
-        <script src="./resources/assets/basic/js/proflie_slide/modernizr.custom.js"></script>
-        <script src="./resources/assets/tag/js/search_tag.js"></script>
-        <script>
+.flip:hover>div {
+	-webkit-transform: rotateX(90deg);
+	-moz-transform: rotateX(90deg);
+	-o-transform: rotateX(90deg);
+	-ms-transform: rotateX(90deg);
+	transform: rotateX(90deg);
+}
+
+.flip:hover>a {
+	-webkit-transform: rotateX(0deg);
+	-moz-transform: rotateX(0deg);
+	-o-transform: rotateX(0deg);
+	-ms-transform: rotateX(0deg);
+	transform: rotateX(0deg);
+}
+
+.flip:hover>div, .flip>a {
+	-webkit-transition: 0.05s all linear 0;
+	-moz-transition: 0.05s all linear 0;
+	-o-transition: 0.05s all linear 0;
+	-ms-transition: 0.05s all linear 0;
+	transition: 0.05s all linear 0;
+}
+
+.flip:hover>a, .flip>div {
+	-webkit-transition: 0.05s all linear 0.05s;
+	-moz-transition: 0.05s all linear 0.05s;
+	-o-transition: 0.05s all linear 0.05s;
+	-ms-transition: 0.05s all linear 0.05s;
+	transition: 0.05s all linear 0.05s;
+}
+/* Slide effect */
+.slide {
+	overflow: hidden;
+}
+
+.slide>div, .slide a {
+	-webkit-transition: 0.1s all linear;
+	-moz-transition: 0.1s all linear;
+	-o-transition: 0.1s all linear;
+	-ms-transition: 0.1s all linear;
+	transition: 0.1s all linear;
+	position: absolute;
+}
+
+.slide>a {
+	-webkit-transform: translate(200px, 0);
+	-moz-transform: translate(200px, 0);
+	-o-transform: translate(200px, 0);
+	-ms-transform: translate(200px, 0);
+	transform: translate(200px, 0);
+}
+
+.slide:hover>div {
+	-webkit-transform: translate(-200px, 0);
+	-moz-transform: translate(-200px, 0);
+	-o-transform: translate(-200px, 0);
+	-ms-transform: translate(-200px, 0);
+	transform: translate(-200px, 0);
+}
+
+.slide:hover>a {
+	-webkit-transform: translate(0, 0);
+	-moz-transform: translate(0, 0);
+	-o-transform: translate(0, 0);
+	-ms-transform: translate(0, 0);
+	transform: translate(0, 0);
+}
+/* Shutter effect */
+.shutter>div, .shutter a {
+	-webkit-transition: 0.1s all linear;
+	-moz-transition: 0.1s all linear;
+	-o-transition: 0.1s all linear;
+	-ms-transition: 0.1s all linear;
+	transition: 0.1s all linear;
+	position: absolute;
+}
+
+.shutter>div {
+	z-index: 10;
+	-webkit-transform-origin: 0% 0%;
+	-moz-transform-origin: 0% 0%;
+	-o-transform-origin: 0% 0%;
+	-ms-transform-origin: 0% 0%;
+	transform-origin: 0% 0%;
+}
+
+.shutter:hover>div {
+	-webkit-transform: rotateX(90deg);
+	-moz-transform: rotateX(90deg);
+	-o-transform: rotateX(90deg);
+	-ms-transform: rotateX(90deg);
+	transform: rotateX(90deg);
+}
+/* Page effect */
+.page>div, .page a {
+	-webkit-transition: 0.2s all linear;
+	-moz-transition: 0.2s all linear;
+	-o-transition: 0.2s all linear;
+	-ms-transition: 0.2s all linear;
+	transition: 0.2s all linear;
+	position: absolute;
+	z-index: 5;
+}
+
+.page>div {
+	z-index: 10;
+	-webkit-transform-origin: 0% 0%;
+	-moz-transform-origin: 0% 0%;
+	-o-transform-origin: 0% 0%;
+	-ms-transform-origin: 0% 0%;
+	transform-origin: 0% 0%;
+}
+
+.page:hover>div {
+	-webkit-transform: rotateX(360deg);
+	-moz-transform: rotateX(360deg);
+	-o-transform: rotateX(360deg);
+	-ms-transform: rotateX(360deg);
+	transform: rotateX(360deg);
+	z-index: 1;
+}
+</style>
+
+</head>
+
+<body>
+	<div class="navbar is-top-fixed">
+		<div class="container-fluid">
+			<div class="container">
+				<div class="navbar-left">
+					<a class="navbar-toggle" data-toggle="dropdown"
+						aria-expanded="false" href="#"> <span></span> <span></span> <span></span>
+						<div id="recommend" class="dropdown-menu"
+							style="margin-left: 170px; margin-top: 0px; width: 1500px;">
+							<div>
+								<div>
+									<button type="button" class="close" aria-label="Close">
+										<span aria-hidden="true">×</span>
+									</button>
+								</div>
+								<div class="row_drop_userRecommend">
+									<div class="col-md-12">
+										<div class="card-group">
+											<div class="card">
+												<div class="card-body">
+													<h4 class="card-title">Title</h4>
+													<p class="card-text">
+														<img src='./resources/assets/basic/img/カクテルアイコン5.png'
+															class='img' />
+													</p>
+													<label><h2>UserID</h2></label>
+													<p>
+														<label>추천칵테일</label>
+												</div>
+											</div>
+											<!-- user picture here -->
+
+											<div class="card">
+												<div class="card-body">
+													<h4 class="card-title">Alcohol</h4>
+													<p class="card-text">
+														<img src='./resources/assets/basic/img/カクテルアイコン5.png'
+															class='img' />
+													</p>
+													<div>
+														<h4>
+															<label>cocktailName</label>
+														</h4>
+														<p>
+															<label class="tag">#태그명</label> <label class="tag">#태그명</label>
+															<label class="tag">#태그명</label>
+													</div>
+												</div>
+											</div>
+											<!-- randam cocktail -->
+
+											<div class="card">
+												<div class="card-body">
+													<h4 class="card-title">Liqueur</h4>
+													<p class="card-text">
+														<img src='./resources/assets/basic/img/カクテルアイコン5.png'
+															class='img' />
+													</p>
+													<div>
+														<h4>
+															<label>cocktailName</label>
+														</h4>
+														<p>
+															<label class="tag">#태그명</label> <label class="tag">#태그명</label>
+															<label class="tag">#태그명</label>
+													</div>
+												</div>
+											</div>
+											<!-- randam cocktail -->
+
+											<div class="card">
+												<div class="card-body">
+													<h4 class="card-title">Material</h4>
+													<p class="card-text">
+														<img src='./resources/assets/basic/img/カクテルアイコン5.png'
+															class='img' />
+													</p>
+													<div>
+														<h4>
+															<label>cocktailName</label>
+														</h4>
+														<p>
+															<label class="tag">#태그명</label> <label class="tag">#태그명</label>
+															<label class="tag">#태그명</label>
+													</div>
+												</div>
+											</div>
+											<!-- randam cocktail -->
+										</div>
+									</div>
+								</div>
+								<!-- row_drop_userRecommend end -->
+								<div class="row_siterecommend">
+									<div class="col-md-12">
+										<div class="card-group">
+											<div class="card">
+												<div class="card-body">
+													<h4 class="card-title">Title</h4>
+													<p class="card-text">
+														<img src='./resources/assets/basic/img/カクテルアイコン5.png'
+															class='img' />
+													</p>
+													<div>
+														<h4>
+															<label>cocktailName</label>
+														</h4>
+														<p>
+															<label class="tag">#태그명</label> <label class="tag">#태그명</label>
+															<label class="tag">#태그명</label>
+													</div>
+												</div>
+											</div>
+											<!-- randam cocktail -->
+											<div class="card">
+												<div class="card-body">
+													<h4 class="card-title">Title</h4>
+													<p class="card-text">
+														<img src='./resources/assets/basic/img/カクテルアイコン5.png'
+															class='img' />
+													</p>
+													<div>
+														<h4>
+															<label>cocktailName</label>
+														</h4>
+														<p>
+															<label class="tag">#태그명</label> <label class="tag">#태그명</label>
+															<label class="tag">#태그명</label>
+													</div>
+												</div>
+											</div>
+											<!-- randam cocktail -->
+											<div class="card">
+												<div class="card-body">
+													<h4 class="card-title">Title</h4>
+													<p class="card-text">
+														<img src='./resources/assets/basic/img/カクテルアイコン5.png'
+															class='img' />
+													</p>
+													<div>
+														<h4>
+															<label>cocktailName</label>
+														</h4>
+														<p>
+															<label class="tag">#태그명</label> <label class="tag">#태그명</label>
+															<label class="tag">#태그명</label>
+													</div>
+												</div>
+											</div>
+											<!-- randam cocktail -->
+										</div>
+									</div>
+								</div>
+							</div>
+						</div> <!-- dropdax_menu -->
+					</a>
+				</div>
+				<!-- navbar-left -->
+				<div class="navbar-center">
+					<a href="photo" class="navbar-item navbar-logo"> <i
+						class="fas fa-glass-martini icon"></i>
+					</a> <a href="photo" class="navbar-item navbar-logo"> <i
+						class="fab fa-microsoft icon"></i>
+					</a> <a href="photo" class="navbar-item navbar-logo"> <i
+						class="fas fa-user-alt"></i>
+					</a>
+				</div>
+				<!-- navbar-center -->
+				<div class="navbar-right">
+					<a href="#" class="navbar-item" data-toggle="dropdown"
+						aria-expanded="false" href="#"> <i id="showRightPush"
+						class="fas fa-search"></i>
+					</a>
+					<div id="search" class="dropdown-menu"
+						style="margin-left: 150px; margin-right: 150px; margin-top: 0px;">
+						<div class="row_drop_search">
+							<div id="exid_button">
+								<button type="button" class="close" aria-label="Close">
+									<span aria-hidden="true">×</span>
+								</button>
+							</div>
+							<div class="col-md-12">
+								<div class="card-group">
+									<div class="card">
+										<div class="card-body" id="filter1">
+											<h4 class="card-title">BASE SPIRITS</h4>
+											<div id="alcole" class="button-group"
+												data-filter-group='alcole'>
+												<button class="button is-checked" data-filter="*">All</button>
+												<button class="button" data-filter=".브랜디">Brandy</button>
+												<button class="button" data-filter=".위스키">Whisky</button>
+												<button class="button" data-filter=".보드카">Vodka</button>
+												<button class="button" data-filter=".럼">Rum</button>
+												<button class="button" data-filter=".드라이진">Dry Jin</button>
+												<button class="button" data-filter=".테킬라">Tequila</button>
+											</div>
+										</div>
+									</div>
+									<!-- user picture here -->
+
+									<div class="card">
+										<div class="card-body" id="filter2">
+											<h4 class="card-title">liqueur</h4>
+											<div id="liqueur" class="button-group"
+												data-filter-group='liqueur'>
+												<button class="button is-checked" data-filter="*">All</button>
+												<button class="button" data-filter=".와인">Wine</button>
+												<button class="button" data-filter=".비터스">Bitters</button>
+												<button class="button" data-filter=".비어">Beer</button>
+												<button class="button" data-filter=".리큐르">Liqueur</button>
+												<button class="button" data-filter=".크레임">Cemeliqueur</button>
+												<button class="button" data-filter=".쉐리">Sherry</button>
+												<button class="button" data-filter=".베르무트">Vermouth</button>
+												<button class="button" data-filter=".아마레또">Amaretto</button>
+											</div>
+										</div>
+										<!-- randam cocktail -->
+									</div>
+									<div class="card">
+										<div class="card-body" id="filter3">
+											<h4 class="card-title">material</h4>
+											<div id="material" class="button-group"
+												data-filter-group='material'>
+												<button class="button is-checked" data-filter="*">All</button>
+												<button class="button" data-filter=".시럽">Syrup</button>
+												<button class="button" data-filter=".레몬">Lemon</button>
+												<button class="button" data-filter=".사과">Apple</button>
+												<button class="button" data-filter=".체리">Cherry</button>
+												<button class="button" data-filter=".파인애플">Pineapple</button>
+												<button class="button" data-filter=".라임">Lime</button>
+												<button class="button" data-filter=".오렌지">Orange</button>
+												<button class="button" data-filter=".코코넛">Coconut</button>
+												<button class="button" data-filter=".토마토">Tomato</button>
+												<button class="button" data-filter=".자몽">Grapefruit</button>
+												<button class="button" data-filter=".라즈베리">Raspberry</button>
+												<button class="button" data-filter=".계란">Egg</button>
+												<button class="button" data-filter=".스파이시">Spicy</button>
+												<button class="button" data-filter=".설탕">Sugar</button>
+												<button class="button" data-filter=".우유">Milk</button>
+												<button class="button" data-filter=".복숭아">Peach</button>
+												<button class="button" data-filter=".탄산수">Soda</button>
+												<button class="button" data-filter=".진저에일">Gingerale</button>
+											</div>
+										</div>
+										<!-- randam cocktail -->
+									</div>
+									<div class="card">
+										<div class="card-body" id="filter4">
+											<h4 class="card-title">Color</h4>
+											<div id="color" class="button-group"
+												data-filter-group='color'>
+												<button class="button is-checked" data-filter="*">All</button>
+												<button class="button" data-filter=".시럽">Red</button>
+												<button class="button" data-filter=".레몬">Blue</button>
+												<button class="button" data-filter=".사과">Green</button>
+												<button class="button" data-filter=".체리">Pink</button>
+												<button class="button" data-filter=".파인애플">Orenge</button>
+												<button class="button" data-filter=".라임">Yellow</button>
+											</div>
+										</div>
+										<!-- randam cocktail -->
+									</div>
+								</div>
+							</div>
+							<div class="row_cocktail_fliter">
+								<div class="grid">
+									<c:forEach var="cocktail" items="${cocktailList }">
+										<div
+											class="tile flip element-item ${cocktail.alcole } ${cocktail.liqueur } ${cocktail.mateial }"
+											data-category="transition">
+											<div>
+												<img src="${cocktail.imagerink }" height="100" width="100">
+  											</div>
+  											<a href="cocktailDetail?cocktailname=${cocktail.cocktailname }">
+     											${cocktail.cocktailname }
+  											</a>
+										</div>
+									</c:forEach>
+								</div>
+							</div>
+							<!-- cocktail_Fliter -->
+						</div>
+						<!-- dropdax_menu -->
+					</div>
+
+
+					<div class="navbar-avatar">
+						<a id='showRight' href="#" class="navbar-item is-avatar"
+							@click.prevent="showProfilePanel"> <img
+							src="https://unsplash.it/200/200?image=1005" alt="Avatar" />
+						</a>
+					</div>
+					<!-- navbar-right -->
+
+				</div>
+			</div>
+			<!-- container -->
+
+		</div>
+
+		<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right"
+			id="cbp-spmenu-s2">
+			<div class="device">
+				<div id="exid_button">
+					<button type="button" class="close" aria-label="Close">
+						<span aria-hidden="true">×</span>
+					</button>
+				</div>
+				<div class="top">
+					<div class="device-overlay"></div>
+					<div class="editable">
+						<div class="editable__circle">
+							<div class="editable__rotater">
+								<div class="editable__rotater-item">
+									<i class="fa fa-camera"></i>
+								</div>
+							</div>
+							<div class="editable__rotater">
+								<div class="editable__rotater-item">
+									<i class="fa fa-comments"></i>
+								</div>
+							</div>
+							<div class="editable__rotater">
+								<div class="editable__rotater-item">
+									<i class="fa fa-video-camera"></i>
+								</div>
+							</div>
+							<div class="editable__rotater">
+								<div class="editable__rotater-item">
+									<i class="fa fa-user"></i>
+								</div>
+							</div>
+						</div>
+						<div class="editable__cont">
+							<img src="./resources/assets/gallery/img/test_image/large/3.png"
+								class="editable__cont-img"> <span
+								class="editable__cont-edit js-edit"> <i
+								class="fa fa-pencil-square-o"></i>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="mid">
+					<div class="mid-block">
+						<h2 class="mid-number">77</h2>
+						<h3 class="mid-text">Teams</h3>
+					</div>
+					<div class="mid-block">
+						<h2 class="mid-number">666</h2>
+						<h3 class="mid-text">Reports</h3>
+					</div>
+				</div>
+				<div class="btm">
+					<h2 class="btm-text">Whatever</h2>
+				</div>
+				<div class="second">
+					<h2 class="second__h">Hello there!</h2>
+					<span class="second__back">Go back</span> <a
+						href="https://codepen.io/suez/public/" target="_blank"
+						class="second__other">My other demos</a>
+				</div>
+			</div>
+		</nav>
+	</div>
+
+
+	
+	<!-- proflie_slideEnd -->
+
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script
+		src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/js/bootstrap.bundle.min.js"></script>
+	<script src="./resources/assets/basic/js/proflie_slide/classie.js"></script>
+	<script
+		src="./resources/assets/basic/js/proflie_slide/modernizr.custom.js"></script>
+	<script src="./resources/assets/tag/js/search_tag.js"></script>
+	<script>
           var menuRight = document.getElementById('cbp-spmenu-s2'),
             showRight = document.getElementById('showRight'),
             body = document.body;
@@ -395,7 +598,7 @@
             }
           }
         </script>
-        <script>
+	<script>
           $(document).ready(function() {
             var $editable = $(".editable");
             var $overlay = $(".device-overlay");
@@ -435,6 +638,6 @@
 
           });
         </script>
-    </body>
+</body>
 
-    </html>
+</html>
