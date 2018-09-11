@@ -76,7 +76,7 @@
 
 .btm {
   position: relative;
-  height: 25.5rem;
+  height: 200px;
   background: #292931;
 }
 .btm-text {
@@ -84,7 +84,7 @@
   text-align: center;
   color: rgba(255, 255, 255, 0.3);
   text-transform: uppercase;
-  line-height: 21.5rem;
+  line-height: 200px;
 }
 
 .editable {
