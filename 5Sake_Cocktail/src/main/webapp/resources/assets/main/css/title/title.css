@@ -1,0 +1,32 @@
+h2.chapter {
+  text-align:center;
+  font-size:26px;
+  color:#666;
+  line-height:22px;
+  font-weight:400;
+  letter-spacing:2px;
+}
+
+h2.chapter small {
+  font-size:14px;
+  color:#999;
+  line-height:12px;
+  letter-spacing:4px;
+  display:block;
+  margin:0 0 10px;
+  font-weight:700;
+}
+
+i {
+  font-style:normal;
+}
+
+h2.chapter:after {
+  content:'';
+  display:block;
+  width:30px;
+  height:0;
+  margin:15px auto;
+  border-bottom:2px solid #666;
+}
+
