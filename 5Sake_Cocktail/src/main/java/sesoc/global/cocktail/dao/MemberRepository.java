@@ -31,5 +31,13 @@ public class MemberRepository {
 		MemberDAO dao = sqlSession.getMapper(MemberDAO.class);
 		return dao.writeBoard(vo);
 	}
+	public String getUserFollowNum(User vo) {
+		MemberDAO dao = sqlSession.getMapper(MemberDAO.class);
+		return dao.getUserFollowNum(vo);
+	}
+	public String selectUserPhotoNum(User vo) {
+		MemberDAO dao = sqlSession.getMapper(MemberDAO.class);
+		return dao.selectUserPhotoNum(vo);
+	}
 
 }

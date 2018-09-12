@@ -13,4 +13,6 @@ public interface MemberDAO {
 	public List<UserPhoto> selectUserPhoto(User vo);
 	public List<UserPhoto> selectAllUserPhoto();	
 	public int writeBoard(UserPhoto vo);
+	public String getUserFollowNum(User vo);
+	public String selectUserPhotoNum(User vo);
 }

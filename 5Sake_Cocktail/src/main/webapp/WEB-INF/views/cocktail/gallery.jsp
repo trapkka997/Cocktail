@@ -396,7 +396,7 @@
 											<img src="${path }${userPhoto.saveFileName}" alt="img01" />
 											<figcaption>
 												<h3>${userPhoto.title }</h3>
-												<p>${userPhoto.contents }</p>
+												<p>${userPhoto.userEmail }</p>
 											</figcaption>
 										</figure>
 									</li>
@@ -410,7 +410,7 @@
 										<figure>
 											<figcaption>
 												<h3>${userPhoto.title }</h3>
-												<p>${userPhoto.contents }</p>
+												<p>${userPhoto.userEmail }</p>
 											</figcaption>
 											<img src="${path }${userPhoto.saveFileName}" alt="img01" />
 										</figure>

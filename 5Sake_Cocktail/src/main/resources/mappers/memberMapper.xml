@@ -12,7 +12,7 @@
  	<if test="userPwd != null">
  	USEREMAIL = #{userEmail} AND USERPWD = #{userPwd}
 	</if>
-	<if test="userEmail == null">
+	<if test="userPwd == null">
 	USEREMAIL = #{userEmail}
 	</if>		 
 			 
@@ -36,6 +36,15 @@
 	ORDER BY
 		WRITEDATE DESC
 </select>
+<select id="selectUserPhotoNum" parameterType="user" resultType="String">
+	SELECT 
+		COUNT(*)
+	FROM
+		USERPHOTO
+	WHERE
+		USEREMAIL = #{userEmail}
+</select>
+
 
 <select id="selectAllUserPhoto" resultType="userPhoto">
 SELECT 
@@ -65,6 +74,16 @@ SELECT
 		SYSDATE, 0, 0, 'cocktailname'
 	)
 </insert>
+
+
+<select id="getUserFollowNum" parameterType="user" resultType="String">
+	SELECT 
+		COUNT(*)
+	FROM
+		USERFOLLOW
+	WHERE
+		USEREMAIL = '${userEmail}'
+</select>
 
 </mapper>
 	

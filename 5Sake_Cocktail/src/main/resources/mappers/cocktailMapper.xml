@@ -47,4 +47,24 @@
 		WHERE
 			COLORVALUE = #{value}
 	</select>
+	<select id="selectUserCocktail" parameterType="user" resultType="userCocktail">
+	SELECT
+		USERCOCKTAILSEQ,
+		USEREMAIL,
+		USERCOCKTAILNAME,
+		USERCOCKTAILNAME_EN,
+		USERALCOLE,
+		USERLIQUEUR,
+		USERMATERIAL														  
+ 		USERRECEIPE														    
+ 		SAVEFILENAME														   
+ 		ORIGINALFILENAME													   
+ 		USERCOLORVALUE 													   
+ 		USERHITCOUNT														  
+		USERRECOMMAND	
+	FROM
+		USERCOCKTAIL
+	WHERE
+		USEREMAIL = #{userEmail}
+	</select>
 </mapper>

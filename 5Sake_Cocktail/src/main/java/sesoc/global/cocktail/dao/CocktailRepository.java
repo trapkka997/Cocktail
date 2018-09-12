@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import sesoc.global.cocktail.vo.Cocktail;
+import sesoc.global.cocktail.vo.User;
+import sesoc.global.cocktail.vo.UserCocktail;
 
 @Repository
 public class CocktailRepository {
@@ -30,6 +32,13 @@ public class CocktailRepository {
 		List<Cocktail> result = null;
 		CocktailDAO dao = sqlSession.getMapper(CocktailDAO.class);
 		result = dao.getCocktailByColor(colorName);
+		return result;
+	}
+
+	public List<UserCocktail> selectUserCocktail(User vo) {
+		List<UserCocktail> result = null;
+		CocktailDAO dao = sqlSession.getMapper(CocktailDAO.class);
+		result = dao.selectUserCocktail(vo);
 		return result;
 	}
 	

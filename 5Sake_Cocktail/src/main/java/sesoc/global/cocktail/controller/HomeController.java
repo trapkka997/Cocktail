@@ -19,6 +19,7 @@ import sesoc.global.cocktail.dao.CocktailRepository;
 import sesoc.global.cocktail.dao.MemberRepository;
 import sesoc.global.cocktail.vo.Cocktail;
 import sesoc.global.cocktail.vo.User;
+import sesoc.global.cocktail.vo.UserCocktail;
 import sesoc.global.cocktail.vo.UserPhoto;
 
 @Controller
@@ -49,6 +50,8 @@ public class HomeController {
 		List<UserPhoto> userPhotos = dao.selectAllUserPhoto();
 		String path = servletRequest.getSession().getServletContext().getRealPath("resources");
 		System.out.println(path);
+		List<Cocktail> cocktailList = cocktailRepository.getCocktailList();
+		model.addAttribute("cocktailList", cocktailList);
 		model.addAttribute("userPhotos", userPhotos);
 		model.addAttribute("path", "http://localhost:8888/cocktail/resources/");
 		return "cocktail/gallery";
@@ -67,7 +70,33 @@ public class HomeController {
 		return "cocktail/search2";
 	}
 	@RequestMapping(value = "/selfMaking", method = RequestMethod.GET)
-	public String selfMaking() {
+	public String selfMaking(Model model, User vo) {
+//		List<UserCocktail> userCocktailList =  cocktailRepository.selectUserCocktail(vo);
+//		model.addAttribute("userCocktailList", userCocktailList);
 		return "cocktail/selfMaking";
 	}
+	@RequestMapping(value = "/main", method = RequestMethod.GET)
+	public String main() {
+		return "main";
+	}
+	@RequestMapping(value = "/recommend", method = RequestMethod.GET)
+	public String recommend() {
+		return "cocktail/recommend";
+	}
+	@RequestMapping(value = "/eachoneProfile", method = RequestMethod.GET)
+	public String eachoneprofile(Model model, User vo) {
+		// 유저 이메일을 받아서 유저 정보와 유저가 적은  userPhoto를 들고온다.
+		// 유저포토로 화면에 뿌려주면 됨.
+		User user = dao.selectOne(vo);
+		List<UserPhoto> photoList = dao.selectUserPhoto(vo);
+		String followNum = dao.getUserFollowNum(vo);
+		String postNum = dao.selectUserPhotoNum(vo);
+		model.addAttribute("user", user);
+		model.addAttribute("postNum", postNum);
+		model.addAttribute("followNum", followNum);
+		model.addAttribute("path", "http://localhost:8888/cocktail/resources/");
+		model.addAttribute("photoList", photoList);
+		return "user/eachoneProfile";
+	}
+	
 }
