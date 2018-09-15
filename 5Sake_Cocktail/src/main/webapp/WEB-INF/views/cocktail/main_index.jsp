@@ -53,8 +53,17 @@ h4 {
 </style>
 <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
     <script>
-      $( document ).ready( function() {
-        $( '#content' ).load( '/cocktail/imsi' );
+      $( document ).ready( function() {    	  
+        $( '#content' ).load( '/cocktail/main_p' );
+        $('#cock_gallery').on('click',function(){
+        	 $( '#content' ).load( '/cocktail/cock_gallery_body' );
+        });
+        $('#user_gallery').on('click',function(){
+       	 $( '#content' ).load( '/cocktail/self_Making_body' );
+       });
+        $('#self_making').on('click',function(){
+       	 $( '#content' ).load( '/cocktail/user_gallery_body' );
+       });
       });
     </script>
 </head>
@@ -63,7 +72,7 @@ h4 {
 		<div class="container-fluid">
 			<div class="container">
 			<div class="navabr-home">
-			<a href = "">
+			<a href = "index">
 			  <img src = './resources/assets/basic/img/navbar_home2.png' class = 'img'/>
 			  </a>
 			</div>
@@ -157,14 +166,9 @@ h4 {
 				</div>
 				<!-- navbar-left -->
 				<div class="navbar-center">
-					<a href="cocktailphoto" class="navbar-item navbar-logo"> <i
-						class="fas fa-glass-martini icon"></i>
-					</a> <a href="userphoto" class="navbar-item navbar-logo"
-						style="margin-left: 20px; margin-right: 20px;"> <i
-						class="fab fa-microsoft icon"></i>
-					</a> <a href="selfMaking" class="navbar-item navbar-logo"> <i
-						class="fas fa-user-alt"></i>
-					</a>
+					<i id='cock_gallery' class="fas fa-glass-martini icon"></i>
+					<i id='user_gallery' class="fab fa-microsoft icon" style="margin-left: 20px; margin-right: 20px;"></i>
+					<i id='self_making'	class="fas fa-user-alt"></i>
 				</div>
 				<!-- navbar-center -->
 				<div class="navbar-right">

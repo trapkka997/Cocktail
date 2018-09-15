@@ -121,4 +121,65 @@ body {
   top:76px;
   font-size:12px;
 }
+/* 내부 css였던 부분 */
+.tile {
+	display: inline-block;
+	line-height: 100px;
+}
 
+.tile>div, .tile a {
+	width: 100%;
+	color: #30261c;
+	background-color: #e4ecb9;
+	text-align: center;
+}
+
+.tile>a {
+	display: block;
+	text-decoration: none;
+	background-color: #d88e8f;
+}
+/* Flip effect */
+.flip>div, .flip a {
+	position: absolute;
+}
+
+.flip>a {
+	-webkit-transform: rotateX(-90deg);
+	-moz-transform: rotateX(-90deg);
+	-o-transform: rotateX(-90deg);
+	-ms-transform: rotateX(-90deg);
+	transform: rotateX(-90deg);
+}
+
+.flip:hover>div {
+	-webkit-transform: rotateX(90deg);
+	-moz-transform: rotateX(90deg);
+	-o-transform: rotateX(90deg);
+	-ms-transform: rotateX(90deg);
+	transform: rotateX(90deg);
+}
+
+.flip:hover>a {
+	-webkit-transform: rotateX(0deg);
+	-moz-transform: rotateX(0deg);
+	-o-transform: rotateX(0deg);
+	-ms-transform: rotateX(0deg);
+	transform: rotateX(0deg);
+}
+
+.flip>a, .flip:hover>div {
+	-webkit-transition: 0.05s all linear 0;
+	-moz-transition: 0.05s all linear 0;
+	-o-transition: 0.05s all linear 0;
+	-ms-transition: 0.05s all linear 0;
+	transition: 0.05s all linear 0;
+}
+
+.flip>div, .flip:hover>a {
+	-webkit-transition: 0.05s all linear 0.05s;
+	-moz-transition: 0.05s all linear 0.05s;
+	-o-transition: 0.05s all linear 0.05s;
+	-ms-transition: 0.05s all linear 0.05s;
+	transition: 0.05s all linear 0.05s;
+}
