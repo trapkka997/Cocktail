@@ -64,6 +64,7 @@ h4 {
         $('#self_making').on('click',function(){
        	 $( '#content' ).load( '/cocktail/user_gallery_body' );
        });
+        /* 네모 친 id를 가진 i 태그 클릭시 body부분을 로드해서 띄워줍니다.*/
       });
     </script>
 </head>

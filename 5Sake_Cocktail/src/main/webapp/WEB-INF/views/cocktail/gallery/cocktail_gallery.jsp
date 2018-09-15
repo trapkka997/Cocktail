@@ -25,13 +25,13 @@ profile
 	href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
 <link rel="stylesheet" href="./resources/assets/tag/css/tag_default.css">
  -->
-<link rel="stylesheet"
-	href="./resources/assets/selfmaking/css/button/button.css">
+<link rel="stylesheet"	href="./resources/assets/selfmaking/css/button/button.css">
 <link rel="stylesheet" href="./resources/assets/gallery/css/gallery.css">
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
-<link rel="stylesheet"
-	href="./resources/assets/gallery/css/uploadbutton.css">
+<link rel="stylesheet"	href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
+<link rel="stylesheet"	href="./resources/assets/gallery/css/uploadbutton.css">
+
+<link rel="stylesheet"	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 
 <body>
@@ -83,17 +83,27 @@ profile
 							<ul class="grid">
 								<li class="grid-sizer"></li>
 								<!-- for Masonry column width -->
-								<li>
+							<c:forEach begin="1" end='8' var='x'>
+								<li class="profilebox profilebox1">
 									<figure>
 										<img src="./resources/assets/basic/img/カクテルアイコン5.png"
-											alt="img01" />
+											alt="img0${x}" />
 										<figcaption>
 											<h3>Letterpress asymmetrical</h3>
 											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
 										</figcaption>
-									</figure>
+									</figure>	    
+									<div class="SocialIcons">
+									     <a href="#"><i class="fa fa-facebook"></i></a>
+									     <a href="#"><i class="fa fa-twitter"></i></a>
+									     <a href="#"><i class="fa fa-google-plus"></i></a>
+									</div>
+									<div class="profileInfo">
+									    <h3>Riccardo Cavallo</h3>
+									</div>
 								</li>
-								<li>
+							</c:forEach>
+<!-- 								<li>
 									<figure>
 										<img src="./resources/assets/basic/img/カクテルアイコン5.png"
 											alt="img02" />
@@ -169,7 +179,7 @@ profile
 												cleanse, Helvetica et enim nesciunt esse.</p>
 										</figcaption>
 									</figure>
-								</li>
+								</li> -->
 							</ul>
 						</section>
 						<section class="slideshow">
