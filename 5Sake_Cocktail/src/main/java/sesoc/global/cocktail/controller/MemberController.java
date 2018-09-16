@@ -1,7 +1,11 @@
 package sesoc.global.cocktail.controller;
 
+import java.io.File;
+import java.io.IOException;
+import java.io.Reader;
 import java.util.List;
 import java.util.Locale;
+import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -12,9 +16,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import sesoc.global.cocktail.dao.MemberDAO;
 import sesoc.global.cocktail.dao.MemberRepository;
@@ -103,4 +109,44 @@ public class MemberController {
 			model.addAttribute("path", "http://localhost:8888/cocktail/resources/");
 			return "test/grid";
 		}
+		
+		@RequestMapping(value = "/updateProfilePicture", method = RequestMethod.POST)
+		public String updateProfilePicture(Locale locale,MultipartFile file, Model model,HttpSession httpSession,User vo,HttpServletRequest servletRequest) {
+			System.out.println(file);
+			String userEmail = (String)httpSession.getAttribute("useremail");
+			vo.setUserEmail(userEmail);
+			String originalFilename = file.getOriginalFilename();
+			UUID uuid = UUID.randomUUID();
+			String savedFilename = uuid+"_"+originalFilename;
+			vo.setOriginalFilename(originalFilename);
+			vo.setSavedFilename(savedFilename);
+			String jsonPath = servletRequest.getSession().getServletContext().getRealPath("/resources/"+savedFilename);
+			File saveFile = new File(jsonPath);
+			if(!saveFile.exists()) {
+				saveFile.mkdirs();
+			}
+			try { 
+				dao.updateProfilePicture(vo);
+				file.transferTo(saveFile);
+			} catch (IOException e){
+				System.out.println(e.getMessage());
+				e.printStackTrace(); 
+			}
+			return "redirect:updateProfilePicture";
+		}
+		
+		@RequestMapping(value = "/updateProfilePicture", method = RequestMethod.GET)
+		public String updateProfilePicture(Model model, HttpSession httpSession, User vo) {
+			String userEmail = (String) httpSession.getAttribute("useremail");
+			vo.setUserEmail(userEmail);
+			String path = "http://localhost:8888/cocktail/resources/";
+			User user = dao.selectOne(vo);
+			System.out.println(user);
+			model.addAttribute("user", user);
+			model.addAttribute("path", path);
+			return "imsi/updateUserPicture";
+		}
+		
+		
+		
 }

@@ -5,7 +5,6 @@
 
 <head>
 <title>NEWS FEED</title>
-<<<<<<< HEAD
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
 <link rel="stylesheet"
@@ -34,6 +33,7 @@
 	href="./resources/assets/gallery/css/uploadbutton.css">
 <link rel="stylesheet"
 	href="./resources/assets/gallery/css/circluar_layout.css">
+<link rel="stylesheet"	href="./resources/assets/gallery/css/photo_fitter.css">
 <style>
 .card {
 	flex-direction: inherit;
@@ -211,14 +211,6 @@
 }
 </style>
 
-=======
-	<link rel="stylesheet"	href="./resources/assets/selfmaking/css/button/button.css">
-	<link rel="stylesheet" href="./resources/assets/gallery/css/gallery.css">
-	<link rel="stylesheet"	href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
-	<link rel="stylesheet"	href="./resources/assets/gallery/css/uploadbutton.css">
-	<link rel="stylesheet"	href="./resources/assets/gallery/css/circluar_layout.css">
-	<link rel="stylesheet"	href="./resources/assets/gallery/css/photo_fitter.css">
->>>>>>> branch 'master' of https://github.com/trapkka997/Cocktail
 </head>
 <body>
 	<div>
@@ -253,7 +245,7 @@
 						<section class="grid-wrap">
 						<div>
 							<div id="portfolio">
-							<!-- 	<c:foreach 로 반복>
+							 	<%-- <c:forEach var="" items="">
 									<figure class="tile2 scale-anm ${tag} all">
 										<img src="${imgsrc}" alt="" />
 										<figcaption>
@@ -261,8 +253,8 @@
 											<p>${content}</p>
 										</figcaption>
 									</figure> 
-									</c:foreach>
-								-->
+									</c:forEach> --%>
+								
 									<figure class="tile2 scale-anm brandy all">
 										<img src="http://demo.themerain.com/charm/wp-content/uploads/2015/04/2-mon_1092-300x234.jpg" alt="" />
 										<figcaption>

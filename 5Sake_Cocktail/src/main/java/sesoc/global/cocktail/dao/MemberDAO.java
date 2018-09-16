@@ -24,4 +24,5 @@ public interface MemberDAO {
 	public List<UserPhoto> getRecommandUserPhotoList();
 	public int insertUserLikeCocktail(UserLikeCocktail userLikeCocktail);
 	public UserLikeCocktail selectUserLikeCocktail(UserLikeCocktail userLikeCocktail);
+	public int updateProfilePicture(User vo);
 }

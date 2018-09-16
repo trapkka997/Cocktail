@@ -70,5 +70,9 @@ public class MemberRepository {
 		MemberDAO dao = sqlSession.getMapper(MemberDAO.class);
 		return dao.selectUserLikeCocktail(userLikeCocktail);	
 	}
+	public int updateProfilePicture(User vo) {
+		MemberDAO dao = sqlSession.getMapper(MemberDAO.class);
+		return dao.updateProfilePicture(vo);
+	}
 }
 
