@@ -17,7 +17,9 @@
     <link rel="stylesheet" href="./resources/assets/basic/css/proflie_slide/slide_component.css">
 </head>
 
-<body><div class="navbar is-top-fixed">
+<body>
+<input type="hidden" id="userEmail" name="userEmail" value="${user.userEmail }">
+<div class="navbar is-top-fixed">
   <div class="container-fluid">
     <div class="container">
 
@@ -228,7 +230,7 @@
 
         <h1 class="profile-user-name">${user.userEmail }</h1>
 
-        <button class="btn profile-edit-btn">Follow</button>
+        <button class="btn profile-edit-btn" onclick="followBtn()">Follow</button>
 
       </div>
 
@@ -236,8 +238,8 @@
 
         <ul>
           <li><span class="profile-stat-count">${postNum }</span> posts</li>
-          <li><span class="profile-stat-count">${followNum }</span> followers</li>
-          <li><span class="profile-stat-count">1${followerNum }</span> following</li>
+          <li><span class="profile-stat-count">${followerNum }</span> followers</li>
+          <li><span class="profile-stat-count">${followNum }</span> following</li>
         </ul>
 
       </div>
@@ -286,6 +288,31 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
     <script src="./resources/assets/basic/js/proflie_slide/proflieSlide_modernizr.custom.js?h=97989a57a1e8fb69eff65e5a62de7dfb"></script>
     <script src="./resources/assets/basic/js/proflie_slide/proflieSlide_slideclassie.js?h=723c75fde6dc7bb3ef0f7f12584655a0"></script>
+    <script type="text/javascript">
+    function followBtn() {
+		alert('follow btn click');
+		$.ajax({
+			method : "get",
+			url : "userFollow",
+			data : {
+				followUser : document.getElementById('userEmail').value
+			},
+			success : function(resp) {
+				if(resp === '1'){
+					alert('팔로우 완료');
+				}else if(resp === '2'){
+					alert('이미 팔로우 한 사람입니다.');
+				}else if(resp === '3'){
+					alert('본인은 팔로우 할 수 없습니다.');
+				}
+			},
+			error : function() {
+				alert('에러');
+			}
+		});
+	}
+    </script>
+    
 </body>
 
 </html>

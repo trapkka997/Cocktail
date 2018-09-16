@@ -25,6 +25,7 @@ import org.springframework.web.multipart.MultipartFile;
 import sesoc.global.cocktail.dao.MemberDAO;
 import sesoc.global.cocktail.dao.MemberRepository;
 import sesoc.global.cocktail.vo.User;
+import sesoc.global.cocktail.vo.UserFollow;
 import sesoc.global.cocktail.vo.UserPhoto;
 
 @Controller
@@ -195,7 +196,28 @@ public class MemberController {
 			model.addAttribute("path", path);
 			return "imsi/updateUserPicture";
 		}
-		
-		
+		/**
+		 * 유저 팔로우 기능
+		 * @param httpSession
+		 * @param vo [ followUser ]
+		 * @return 1 : 성공, 2: 이미 팔로우 한 사람인 경우, 3 : 본인 일 경우 
+		 */
+		@RequestMapping(value = "/userFollow", method = RequestMethod.GET)
+		public @ResponseBody String userFollow(HttpSession httpSession, UserFollow vo) {
+			String userEmail = (String) httpSession.getAttribute("useremail");
+			if(vo.getFollowUser().equals(userEmail)) {
+				return "3"; //본인 자신 경우
+			}
+			vo.setUserEmail(userEmail);
+			UserFollow uf = dao.getUserFollow(vo);
+			
+			if(uf != null) {
+				return "2"; //이미 팔로우 한 사람인 경우
+			}else {
+				dao.insertUserFollow(vo);
+				return "1"; //성공
+			}
+
+		}
 		
 }

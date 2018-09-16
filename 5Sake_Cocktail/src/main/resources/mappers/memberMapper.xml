@@ -192,6 +192,34 @@ SELECT
 	WHERE
 		USEREMAIL = #{userEmail}
 </update>
+<select id="getUserFollowerNum" parameterType="user" resultType="String">
+	SELECT 
+		COUNT(*)
+	FROM
+		USERFOLLOW
+	WHERE
+		FOLLOWUSER = '${userEmail}'
+</select>
+
+<select id="getUserFollow" parameterType="userFollow" resultType="userFollow">
+	SELECT
+		USEREMAIL,
+		FOLLOWUSER
+	FROM
+		USERFOLLOW
+	WHERE
+		USEREMAIL = #{userEmail} AND
+		FOLLOWUSER = #{followUser}
+</select>
+<insert id="insertUserFollow" parameterType="userFollow">
+	INSERT INTO USERFOLLOW(
+		USEREMAIL,
+		FOLLOWUSER
+	)VALUES(
+		#{userEmail},
+		#{followUser}
+	)
+</insert>
 </mapper>
 	
 	

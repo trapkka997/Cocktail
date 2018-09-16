@@ -164,10 +164,12 @@ public class HomeController {
 		User user = dao.selectOne(vo);
 		List<UserPhoto> photoList = dao.selectUserPhoto(vo);
 		String followNum = dao.getUserFollowNum(vo);
+		String followerNum = dao.getUserFollowerNum(vo);
 		String postNum = dao.selectUserPhotoNum(vo);
 		model.addAttribute("user", user);
 		model.addAttribute("postNum", postNum);
 		model.addAttribute("followNum", followNum);
+		model.addAttribute("followerNum", followerNum);
 		model.addAttribute("path", "http://localhost:8888/cocktail/resources/");
 		model.addAttribute("photoList", photoList);
 		return "user/eachoneProfile";
