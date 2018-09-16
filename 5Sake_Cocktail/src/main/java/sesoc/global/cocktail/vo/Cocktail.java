@@ -4,7 +4,7 @@ public class Cocktail {
 	private String cocktailSeq;
 	private String cocktailName;
 	private String cocktailNameEn;
-	private String Ingredient;
+	private String ingredient;
 	private String recipe;
 	private String imageRink;
 	private String colorValue;
@@ -20,18 +20,12 @@ public class Cocktail {
 		this.cocktailSeq = cocktailSeq;
 		this.cocktailName = cocktailName;
 		this.cocktailNameEn = cocktailNameEn;
-		Ingredient = ingredient;
+		this.ingredient = ingredient;
 		this.recipe = recipe;
 		this.imageRink = imageRink;
 		this.colorValue = colorValue;
 		this.recommand = recommand;
 		this.hitcount = hitcount;
-	}
-	@Override
-	public String toString() {
-		return "Cocktail2 [cocktailSeq=" + cocktailSeq + ", cocktailName=" + cocktailName + ", cocktailNameEn="
-				+ cocktailNameEn + ", Ingredient=" + Ingredient + ", recipe=" + recipe + ", imageRink=" + imageRink
-				+ ", colorValue=" + colorValue + ", recommand=" + recommand + ", hitcount=" + hitcount + "]";
 	}
 	public String getCocktailSeq() {
 		return cocktailSeq;
@@ -52,10 +46,10 @@ public class Cocktail {
 		this.cocktailNameEn = cocktailNameEn;
 	}
 	public String getIngredient() {
-		return Ingredient;
+		return ingredient;
 	}
 	public void setIngredient(String ingredient) {
-		Ingredient = ingredient;
+		this.ingredient = ingredient;
 	}
 	public String getRecipe() {
 		return recipe;
@@ -86,6 +80,12 @@ public class Cocktail {
 	}
 	public void setHitcount(String hitcount) {
 		this.hitcount = hitcount;
+	}
+	@Override
+	public String toString() {
+		return "Cocktail [cocktailSeq=" + cocktailSeq + ", cocktailName=" + cocktailName + ", cocktailNameEn="
+				+ cocktailNameEn + ", ingredient=" + ingredient + ", recipe=" + recipe + ", imageRink=" + imageRink
+				+ ", colorValue=" + colorValue + ", recommand=" + recommand + ", hitcount=" + hitcount + "]";
 	}
 	
 	

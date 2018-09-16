@@ -187,14 +187,14 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="product_wrapper" style="width:750px;">
-                        <div class="product-img" style="width:375px;"><img data-aos="fade-right" data-aos-duration="650" data-aos-once="true" class="product_detail-img" style="background-image:url(&quot;${cocktail.imagerink}&quot;);background-position:center;background-size:contain;width:375px;height:420px;color:rgb(120,133,147);background-color:rgba(255,255,255,0);"></div>
+                        <div class="product-img" style="width:375px;"><img data-aos="fade-right" data-aos-duration="650" data-aos-once="true" class="product_detail-img" style="background-image:url(&quot;${cocktail.imageRink}&quot;);background-position:center;background-size:contain;width:375px;height:420px;color:rgb(120,133,147);background-color:rgba(255,255,255,0);"></div>
                         <div
                             class="product-info">
                             <div class="product-text">
-                                <h1 class="cocktail_name" style="margin-top:-15px;padding-top:41px;font-family:'Alfa Slab One', cursive;">${cocktail.cocktailname}</h1>
+                                <h1 class="cocktail_name" style="margin-top:-15px;padding-top:41px;font-family:'Alfa Slab One', cursive;">${cocktail.cocktailName}</h1>
                                 <h2 style="font-size:15px;background-position:top;background-size:auto;background-repeat:no-repeat;margin-bottom:12px;">Making Yourself</h2>
                                 <div class="cocktail_detail" style="padding-bottom:0px;height:210px;">
-                                ${cocktail.receipe}
+                                ${cocktail.recipe}
 	</div>
                             </div><div class="product-savebutton">
     <button type="button">Save</button>

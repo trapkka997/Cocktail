@@ -65,7 +65,7 @@ public class HomeController {
 		model.addAttribute("cocktailList", cocktailList);
 		model.addAttribute("userPhotos", userPhotos);
 		model.addAttribute("path", "http://localhost:8888/cocktail/resources/");
-		return "cocktail/gallery";
+		return "cocktail/gallery/user_gallery";
 	}
 	@RequestMapping(value = "/cocktailphoto", method = RequestMethod.GET)
 	public String cocktailphoto(Model model, HttpServletRequest servletRequest) {
@@ -74,7 +74,7 @@ public class HomeController {
 		System.out.println(path);
 		model.addAttribute("userPhotos", userPhotos);
 		model.addAttribute("path", "http://localhost:8888/cocktail/resources/");
-		return "cocktail/gallery";
+		return "cocktail/gallery/cocktail_gallery";
 	}
 	@RequestMapping(value = "/tag", method = RequestMethod.GET)
 	public String tag() {
@@ -84,7 +84,7 @@ public class HomeController {
 	public String selfMaking(Model model, User vo) {
 //		List<UserCocktail> userCocktailList =  cocktailRepository.selectUserCocktail(vo);
 //		model.addAttribute("userCocktailList", userCocktailList);
-		return "cocktail/selfMaking";
+		return "cocktail/gallery/selfMaking";
 	}
 	@RequestMapping(value = "/main", method = RequestMethod.GET)
 	public String main() {

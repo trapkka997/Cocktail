@@ -505,14 +505,14 @@ h4 {
 								<div class="grid">
 									<c:forEach var="cocktail" items="${cocktailList }">
 										<div
-											class="tile flip element-item ${cocktail.alcole } ${cocktail.liqueur } ${cocktail.mateial }"
+											class="tile flip element-item ${cocktail.ingredient}"
 											data-category="transition">
 											<div>
-												<img src="${cocktail.imagerink }" height="100" width="100">
+												<img src="${cocktail.imageRink }" height="100" width="100">
 											</div>
 											<a
-												href="cocktailDetail?cocktailname=${cocktail.cocktailname }">
-												${cocktail.cocktailname } </a>
+												href="cocktailDetail?cocktailSeq=${cocktail.cocktailSeq }">
+												${cocktail.cocktailName } </a>
 										</div>
 									</c:forEach>
 								</div>
