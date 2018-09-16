@@ -38,7 +38,6 @@ public class CocktailController {
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	@Autowired CocktailRepository cocktailRepository;
 	
-	
 	@RequestMapping(value = "/search", method = RequestMethod.GET)
 	public String search(Model model) {
 		List<Cocktail> cocktailList = cocktailRepository.getCocktailList();
@@ -47,8 +46,8 @@ public class CocktailController {
 	}	
 
 	@RequestMapping(value = "/cocktailDetail", method = RequestMethod.GET)
-	public String cocktailDetail(Locale locale, Model model,String cocktailname) {
-		Cocktail selectCocktail = cocktailRepository.selectCocktail(cocktailname);
+	public String cocktailDetail(Locale locale, Model model,String cocktailseq) {
+		Cocktail selectCocktail = cocktailRepository.selectCocktail(cocktailseq);
 		model.addAttribute("cocktail", selectCocktail);
 		return "cocktail/cocktailDetail";
 	}

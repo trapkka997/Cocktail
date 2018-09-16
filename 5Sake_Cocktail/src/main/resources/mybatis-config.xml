@@ -8,6 +8,8 @@
 		<typeAlias type="sesoc.global.cocktail.vo.UserPhoto" alias="userPhoto"/>
 		<typeAlias type="sesoc.global.cocktail.vo.Cocktail" alias="cocktail"/>
 		<typeAlias type="sesoc.global.cocktail.vo.UserCocktail" alias="userCocktail"/>
+		<typeAlias type="sesoc.global.cocktail.vo.DirectMessage" alias="directMessage"/>
+		<typeAlias type="sesoc.global.cocktail.vo.UserFollow" alias="userFollow"/>
 	</typeAliases>
 	<mappers>
 		<mapper resource="mappers/emailMapper.xml"/>

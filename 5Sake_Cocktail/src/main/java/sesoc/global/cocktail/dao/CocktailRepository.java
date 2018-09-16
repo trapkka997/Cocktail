@@ -41,6 +41,13 @@ public class CocktailRepository {
 		result = dao.selectUserCocktail(vo);
 		return result;
 	}
+
+	public List<Cocktail> getRecommandCocktailList() {
+		List<Cocktail> result = null;
+		CocktailDAO dao = sqlSession.getMapper(CocktailDAO.class);
+		result = dao.getRecommandCocktailList();
+		return result;
+	}
 	
 	
 

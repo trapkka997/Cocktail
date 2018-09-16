@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import sesoc.global.cocktail.dao.CocktailRepository;
 import sesoc.global.cocktail.dao.MemberRepository;
 import sesoc.global.cocktail.vo.Cocktail;
+import sesoc.global.cocktail.vo.Cocktail;
 import sesoc.global.cocktail.vo.User;
 import sesoc.global.cocktail.vo.UserCocktail;
 import sesoc.global.cocktail.vo.UserPhoto;
@@ -36,6 +37,12 @@ public class HomeController {
 		String path = servletRequest.getSession().getServletContext().getRealPath("resources");
 		List<UserPhoto> userPhotos = dao.selectUserPhoto(vo);
 		List<Cocktail> cocktailList = cocktailRepository.getCocktailList();
+		for(Cocktail c : cocktailList) {
+			String ingre = c.getIngredient();
+			
+		}
+		List<Cocktail> RecommandCocktailList = cocktailRepository.getRecommandCocktailList();
+		model.addAttribute("RecommandCocktailList", RecommandCocktailList);
 		model.addAttribute("cocktailList", cocktailList);
 		model.addAttribute("userPhotos", userPhotos);
 		model.addAttribute("path", "http://localhost:8888/cocktail/resources/");

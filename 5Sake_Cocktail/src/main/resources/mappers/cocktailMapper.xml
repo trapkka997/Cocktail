@@ -4,48 +4,51 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="sesoc.global.cocktail.dao.CocktailDAO">
 	<select id="getCocktailList" resultType="cocktail">
-		SELECT
-			COCKTAILNAME,
+			SELECT
+			COCKTAIL_SEQ as cocktailseq,
+ 			COCKTAILNAME,
 			COCKTAILNAME_EN,
-			ALCOLE,
-			LIQUEUR,
-			MATERIAL,
-			RECEIPE,
-			IMAGERINK,
-			COLORVALUE
+ 			INGREDIENT,
+ 			RECIPE,
+ 			IMAGERINK,
+ 			COLORVALUE,
+ 			RECOMMAND,
+ 			HITCOUNT
 		FROM
-			COCKTAIL
+			COCKTAIL2
 	</select>
 	
 		<select id="selectCocktail" parameterType="string" resultType="cocktail">
 		SELECT
-			COCKTAILNAME,
+			COCKTAIL_SEQ  as cocktailseq,
+ 			COCKTAILNAME,
 			COCKTAILNAME_EN,
-			ALCOLE,
-			LIQUEUR,
-			MATERIAL,
-			RECEIPE,
-			IMAGERINK,
-			COLORVALUE
+ 			INGREDIENT,
+ 			RECIPE,
+ 			IMAGERINK,
+ 			COLORVALUE,	
+ 			RECOMMAND,
+ 			HITCOUNT
 		FROM
-			COCKTAIL
+			COCKTAIL2
 		WHERE
-			COCKTAILNAME = #{value}
+			COCKTAIL_SEQ = #{value}
 	</select>
 	<select id="getCocktailByColor" parameterType="string" resultType="cocktail">
 	SELECT
-			COCKTAILNAME,
-			COCKTAILNAME_EN,
-			ALCOLE,
-			LIQUEUR,
-			MATERIAL,
-			RECEIPE,
-			IMAGERINK,
-			COLORVALUE
-		FROM
-			COCKTAIL
-		WHERE
-			COLORVALUE = #{value}
+		COCKTAIL_SEQ  as cocktailseq,
+ 		COCKTAILNAME,
+		COCKTAILNAME_EN,
+ 		INGREDIENT,
+ 		RECIPE,
+ 		IMAGERINK,
+ 		COLORVALUE,
+ 		RECOMMAND,
+ 		HITCOUNT,
+	FROM
+		COCKTAIL2
+	WHERE
+		COLORVALUE = #{value}
 	</select>
 	<select id="selectUserCocktail" parameterType="user" resultType="userCocktail">
 	SELECT
@@ -67,4 +70,36 @@
 	WHERE
 		USEREMAIL = #{userEmail}
 	</select>
+	<select id="getRecommandCocktailList" resultType="cocktail">
+	SELECT
+		COCKTAIL_SEQ  as cocktailseq,
+ 		COCKTAILNAME,
+		COCKTAILNAME_EN,
+ 		INGREDIENT,
+ 		RECIPE,
+ 		IMAGERINK,
+ 		COLORVALUE,	
+ 		RECOMMAND,
+ 		HITCOUNT
+	FROM
+	(
+		SELECT
+			COCKTAIL_SEQ,
+ 			COCKTAILNAME,
+			COCKTAILNAME_EN,
+ 			INGREDIENT,
+ 			RECIPE,
+ 			IMAGERINK,
+ 			COLORVALUE,
+ 			RECOMMAND,
+ 			HITCOUNT
+		FROM
+			COCKTAIL2
+		ORDER BY
+			RECOMMAND DESC
+	)
+	WHERE
+		<![CDATA[ ROWNUM <= 10]]>
+	</select>
+	
 </mapper>
