@@ -6,7 +6,7 @@
 
 <head>
 <title>NEWS FEED</title>
-<!-- <link rel="stylesheet"
+<link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
 <link rel="stylesheet"
 	href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
@@ -14,7 +14,7 @@
 	href="./resources/assets/basic/css/navbar/navbar.css">
 <link rel="stylesheet"
 	href="./resources/assets/basic/css/proflie_slide/slide_component.css">
-profile
+<!--profile-->
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/css?family=Open+Sans">
 <link rel="stylesheet"
@@ -23,7 +23,7 @@ profile
 	href="./resources/assets/basic/css/profile/default.css">
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
-<link rel="stylesheet" href="./resources/assets/tag/css/tag_default.css"> -->
+<link rel="stylesheet" href="./resources/assets/tag/css/tag_default.css">
 
 <link rel="stylesheet"
 	href="./resources/assets/selfmaking/css/button/button.css">
@@ -32,6 +32,183 @@ profile
 	href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
 <link rel="stylesheet"
 	href="./resources/assets/gallery/css/uploadbutton.css">
+<style>
+.card {
+	flex-direction: inherit;
+}
+
+.card-body {
+	text-align: center;
+}
+
+.img {
+	width: 200px;
+	border: 20px solid black;
+	border-radius: 50%
+}
+
+.tag {
+	background-color: #17a2b8;
+	border-radius: 10%;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz")
+	;
+
+.tile {
+	display: inline-block;
+	line-height: 100px;
+}
+
+.tile>div, .tile a {
+	width: 100%;
+	color: #30261c;
+	background-color: #e4ecb9;
+	text-align: center;
+}
+
+.tile>a {
+	display: block;
+	text-decoration: none;
+	background-color: #d88e8f;
+}
+/* Flip effect */
+.flip>div, .flip a {
+	position: absolute;
+}
+
+.flip>a {
+	-webkit-transform: rotateX(-90deg);
+	-moz-transform: rotateX(-90deg);
+	-o-transform: rotateX(-90deg);
+	-ms-transform: rotateX(-90deg);
+	transform: rotateX(-90deg);
+}
+
+.flip:hover>div {
+	-webkit-transform: rotateX(90deg);
+	-moz-transform: rotateX(90deg);
+	-o-transform: rotateX(90deg);
+	-ms-transform: rotateX(90deg);
+	transform: rotateX(90deg);
+}
+
+.flip:hover>a {
+	-webkit-transform: rotateX(0deg);
+	-moz-transform: rotateX(0deg);
+	-o-transform: rotateX(0deg);
+	-ms-transform: rotateX(0deg);
+	transform: rotateX(0deg);
+}
+
+.flip:hover>div, .flip>a {
+	-webkit-transition: 0.05s all linear 0;
+	-moz-transition: 0.05s all linear 0;
+	-o-transition: 0.05s all linear 0;
+	-ms-transition: 0.05s all linear 0;
+	transition: 0.05s all linear 0;
+}
+
+.flip:hover>a, .flip>div {
+	-webkit-transition: 0.05s all linear 0.05s;
+	-moz-transition: 0.05s all linear 0.05s;
+	-o-transition: 0.05s all linear 0.05s;
+	-ms-transition: 0.05s all linear 0.05s;
+	transition: 0.05s all linear 0.05s;
+}
+/* Slide effect */
+.slide {
+	overflow: hidden;
+}
+
+.slide>div, .slide a {
+	-webkit-transition: 0.1s all linear;
+	-moz-transition: 0.1s all linear;
+	-o-transition: 0.1s all linear;
+	-ms-transition: 0.1s all linear;
+	transition: 0.1s all linear;
+	position: absolute;
+}
+
+.slide>a {
+	-webkit-transform: translate(200px, 0);
+	-moz-transform: translate(200px, 0);
+	-o-transform: translate(200px, 0);
+	-ms-transform: translate(200px, 0);
+	transform: translate(200px, 0);
+}
+
+.slide:hover>div {
+	-webkit-transform: translate(-200px, 0);
+	-moz-transform: translate(-200px, 0);
+	-o-transform: translate(-200px, 0);
+	-ms-transform: translate(-200px, 0);
+	transform: translate(-200px, 0);
+}
+
+.slide:hover>a {
+	-webkit-transform: translate(0, 0);
+	-moz-transform: translate(0, 0);
+	-o-transform: translate(0, 0);
+	-ms-transform: translate(0, 0);
+	transform: translate(0, 0);
+}
+/* Shutter effect */
+.shutter>div, .shutter a {
+	-webkit-transition: 0.1s all linear;
+	-moz-transition: 0.1s all linear;
+	-o-transition: 0.1s all linear;
+	-ms-transition: 0.1s all linear;
+	transition: 0.1s all linear;
+	position: absolute;
+}
+
+.shutter>div {
+	z-index: 10;
+	-webkit-transform-origin: 0% 0%;
+	-moz-transform-origin: 0% 0%;
+	-o-transform-origin: 0% 0%;
+	-ms-transform-origin: 0% 0%;
+	transform-origin: 0% 0%;
+}
+
+.shutter:hover>div {
+	-webkit-transform: rotateX(90deg);
+	-moz-transform: rotateX(90deg);
+	-o-transform: rotateX(90deg);
+	-ms-transform: rotateX(90deg);
+	transform: rotateX(90deg);
+}
+/* Page effect */
+.page>div, .page a {
+	-webkit-transition: 0.2s all linear;
+	-moz-transition: 0.2s all linear;
+	-o-transition: 0.2s all linear;
+	-ms-transition: 0.2s all linear;
+	transition: 0.2s all linear;
+	position: absolute;
+	z-index: 5;
+}
+
+.page>div {
+	z-index: 10;
+	-webkit-transform-origin: 0% 0%;
+	-moz-transform-origin: 0% 0%;
+	-o-transform-origin: 0% 0%;
+	-ms-transform-origin: 0% 0%;
+	transform-origin: 0% 0%;
+}
+
+.page:hover>div {
+	-webkit-transform: rotateX(360deg);
+	-moz-transform: rotateX(360deg);
+	-o-transform: rotateX(360deg);
+	-ms-transform: rotateX(360deg);
+	transform: rotateX(360deg);
+	z-index: 1;
+}
+</style>
+
 </head>
 
 <body>
