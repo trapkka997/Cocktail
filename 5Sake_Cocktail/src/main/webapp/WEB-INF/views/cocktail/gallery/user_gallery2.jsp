@@ -25,13 +25,14 @@
 									
 									<div id="alcole" class="button-group" data-filter-group='alcole' style="margin-top: 20px; margin-bottom: 20px;">
 															
-										<button class="btn fil-cat btn-outline-primary" href="" data-rel="all" >ALL</button>
-										<button class="btn fil-cat btn-outline-primary" href="" data-rel="brandy" >Brandy</button>
-										<button class="btn fil-cat btn-outline-primary" href="" data-rel="whisky" >Whisky</button>
-										<button class="btn fil-cat btn-outline-primary" href="" data-rel="vodka" >Vodka</button>
-										<button class="btn fil-cat btn-outline-primary" href="" data-rel="rum" >Rum</button>
-										<button class="btn fil-cat btn-outline-primary" href="" data-rel="dryjin" >Dry Jin</button>
-										<button class="btn fil-cat btn-outline-primary" href="" data-rel="tequila" >Tequila</button>
+										<button class="btn fil-cat" href="" data-rel="all" >ALL</button>
+										<button class="btn fil-cat" href="" data-rel="brandy" >Brandy</button>
+										<button class="btn fil-cat" href="" data-rel="whisky" >Whisky</button>
+										<button class="btn fil-cat" href="" data-rel="vodka" >Vodka</button>
+										<button class="btn fil-cat" href="" data-rel="rum" >Rum</button>
+										<button class="btn fil-cat" href="" data-rel="dryjin" >Dry Jin</button>
+										<button class="btn fil-cat" href="" data-rel="tequila" >Tequila</button>
+											
 									</div>
 								</div>
 							</div>
@@ -39,89 +40,101 @@
 					</div>
 				</div>
 			</div>
-			<div class="row">
+			<!-- <div class="row">
 				<div class="col-md-12">
 					<div id="grid-gallery" class="grid-gallery">
 						<section class="grid-wrap">
-						<div>
-							<div id="portfolio">
-							<!-- 	<c:foreach 로 반복>
-									<figure class="tile2 scale-anm ${tag} all">
-										<img src="${imgsrc}" alt="" />
+							<ul class="grid">
+								<li class="grid-sizer"></li>
+								for Masonry column width
+								<li>
+									<figure>
+										<img src="./resources/assets/basic/img/カクテルアイコン5.png"
+											alt="img01" />
 										<figcaption>
-											<h3>${title}</h3>
-											<p>${content}</p>
+											<h3>Letterpress asymmetrical</h3>
+											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
 										</figcaption>
-									</figure> 
-									</c:foreach>
-								-->
-									<figure class="tile2 scale-anm brandy all">
-										<img src="http://demo.themerain.com/charm/wp-content/uploads/2015/04/2-mon_1092-300x234.jpg" alt="" />
+									</figure>
+								</li>
+								<li>
+									<figure>
+										<img src="./resources/assets/basic/img/カクテルアイコン5.png"
+											alt="img02" />
 										<figcaption>
 											<h3>Vice velit chia</h3>
 											<p>Laborum tattooed iPhone, Schlitz irure nulla Tonx
 												retro 90's chia cardigan quis asymmetrical paleo.</p>
 										</figcaption>
 									</figure>
-									<figure class="tile2 scale-anm whisky all">
-										<img src="http://demo.themerain.com/charm/wp-content/uploads/2015/04/jti-icons_08-300x172.jpg" alt="" />										<figcaption>
+								</li>
+								<li>
+									<figure>
+										<img src="./resources/assets/basic/img/カクテルアイコン5.png"
+											alt="img03" />
 										<figcaption>
-											<h3>Vice velit chia</h3>
-											<p>Laborum tattooed iPhone, Schlitz irure nulla Tonx
-												retro 90's chia cardigan quis asymmetrical paleo.</p>
+											<h3>Brunch semiotics</h3>
+											<p>Ex disrupt cray yr, butcher pour-over magna umami
+												kitsch before they sold out commodo.</p>
 										</figcaption>
 									</figure>
-									<figure class="tile2 scale-anm vodka all">
-										<img src="http://demo.themerain.com/charm/wp-content/uploads/2015/04/emi_haze-300x201.jpg" alt="" />
+								</li>
+								<li>
+									<figure>
+										<img src="./resources/assets/basic/img/カクテルアイコン5.png"
+											alt="img04" />
 										<figcaption>
-											<h3>Vice velit chia</h3>
-											<p>Laborum tattooed iPhone, Schlitz irure nulla Tonx
-												retro 90's chia cardigan quis asymmetrical paleo.</p>
+											<h3>Chillwave nihil occupy</h3>
+											<p>In post-ironic gluten-free deserunt, PBR&amp;B non
+												pork belly cupidatat polaroid.</p>
 										</figcaption>
 									</figure>
-									<figure class="tile2 scale-anm rum all">
-										<img src="http://demo.themerain.com/charm/wp-content/uploads/2015/04/codystretch-300x270.jpg" alt="" />
+								</li>
+								<li>
+									<figure>
+										<img src="./resources/assets/basic/img/カクテルアイコン5.png"
+											alt="img05" />
 										<figcaption>
-											<h3>Vice velit chia</h3>
-											<p>Laborum tattooed iPhone, Schlitz irure nulla Tonx
-												retro 90's chia cardigan quis asymmetrical paleo.</p>
+											<h3>Kale chips lomo biodiesel</h3>
+											<p>Pariatur food truck street art consequat sustainable,
+												et kogi beard qui paleo.</p>
 										</figcaption>
 									</figure>
-									<figure class="tile2 scale-anm dryjin all">
-										<img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97190&w=350&h=190" alt="" />
+								</li>
+								<li>
+									<figure>
+										<img src="./resources/assets/basic/img/カクテルアイコン5.png"
+											alt="img06" />
 										<figcaption>
-											<h3>Vice velit chia</h3>
-											<p>Laborum tattooed iPhone, Schlitz irure nulla Tonx
-												retro 90's chia cardigan quis asymmetrical paleo.</p>
+											<h3>Exercitation occaecat</h3>
+											<p>Street chillwave hoodie ea gentrify.</p>
 										</figcaption>
 									</figure>
-									<figure class="tile2 scale-anm tequila all">
-										<img src="https://placeholdit.imgix.net/~text?txtsize=19&txt=200%C3%97290&w=200&h=290" alt="" />
+								</li>
+								<li>
+									<figure>
+										<img src="./resources/assets/basic/img/カクテルアイコン5.png"
+											alt="img01" />
 										<figcaption>
-											<h3>Vice velit chia</h3>
-											<p>Laborum tattooed iPhone, Schlitz irure nulla Tonx
-												retro 90's chia cardigan quis asymmetrical paleo.</p>
+											<h3>Selfies viral four</h3>
+											<p>Raw denim duis Tonx Shoreditch labore swag artisan
+												High Life cred, stumptown Schlitz quinoa flexitarian mollit
+												fanny pack.</p>
 										</figcaption>
 									</figure>
-									<figure class="tile2 scale-anm brandy all">
-										 <img src="http://demo.themerain.com/charm/wp-content/uploads/2015/04/jti-icons_08-300x172.jpg" alt="" />
+								</li>
+								<li>
+									<figure>
+										<img src="./resources/assets/basic/img/カクテルアイコン5.png"
+											alt="img02" />
 										<figcaption>
-											<h3>Vice velit chia</h3>
-											<p>Laborum tattooed iPhone, Schlitz irure nulla Tonx
-												retro 90's chia cardigan quis asymmetrical paleo.</p>
+											<h3>Photo booth skateboard</h3>
+											<p>Vinyl squid ex High Life. Paleo Neutra nulla master
+												cleanse, Helvetica et enim nesciunt esse.</p>
 										</figcaption>
 									</figure>
-									<figure class="tile2 scale-anm whisky all">
-										 <img src="http://demo.themerain.com/charm/wp-content/uploads/2015/04/transmission_01-300x300.jpg" alt="" />
-										<figcaption>
-											<h3>Vice velit chia</h3>
-											<p>Laborum tattooed iPhone, Schlitz irure nulla Tonx
-												retro 90's chia cardigan quis asymmetrical paleo.</p>
-										</figcaption>
-									</figure>
-								</div>		
-								</div>									
-							<!-- <div style="clear:both;"></div>   -->
+								</li>
+							</ul>
 						</section>
 						<section class="slideshow">
 							<ul>
@@ -222,14 +235,14 @@
 						</section>
 					</div>
 				</div>
-				<!-- modal -->
+				modal
 				<div class="plus-button" class="btn btn-primary" data-toggle="modal"
 					data-target="#myModal">+</div>
-				<!-- modal1_start -->
+				modal1_start
 				<div id="myModal" class="modal fade" role="dialog">
 					<div class="modal-dialog modal-lg">
 
-					<!-- 	Modal content -->
+						Modal content
 						<div class="modal-content">
 							<button type="button" class="close" data-dismiss="modal">&times;</button>
 							
@@ -393,9 +406,64 @@
 
 					</div>
 				</div>
-<!-- 				modal1_end
-				modal -->
-			</div> 
+				modal1_end
+				modal
+			</div> -->
+			<div id="portfolio">
+			  <div class="tile scale-anm web all">
+			        <img src="http://demo.themerain.com/charm/wp-content/uploads/2015/04/2-mon_1092-300x234.jpg" alt="" />
+			  </div>
+			  <div class="tile scale-anm bcards all">
+			    <img src="http://demo.themerain.com/charm/wp-content/uploads/2015/04/jti-icons_08-300x172.jpg" alt="" />
+			  </div>
+			  <div class="tile scale-anm web all">
+			    <img src="http://demo.themerain.com/charm/wp-content/uploads/2015/04/emi_haze-300x201.jpg" alt="" />
+			  </div>
+			  <div class="tile scale-anm web all">
+			            <img src="http://demo.themerain.com/charm/wp-content/uploads/2015/04/codystretch-300x270.jpg" alt="" />
+			  </div>
+			  <div class="tile scale-anm flyers all">
+			        <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97190&w=350&h=190" alt="" />
+			  </div>
+			  <div class="tile scale-anm bcards all">
+			            <img src="https://placeholdit.imgix.net/~text?txtsize=19&txt=200%C3%97290&w=200&h=290" alt="" />
+			  </div>
+			  <div class="tile scale-anm flyers all">
+			    <img src="http://demo.themerain.com/charm/wp-content/uploads/2015/04/jti-icons_08-300x172.jpg" alt="" />
+			  </div>
+			  <div class="tile scale-anm flyers all">
+			    <img src="http://demo.themerain.com/charm/wp-content/uploads/2015/04/transmission_01-300x300.jpg" alt="" />
+			  </div>
+			  <div class="tile scale-anm web all">
+			        <img src="https://placeholdit.imgix.net/~text?txtsize=19&txt=200%C3%97290&w=200&h=290" alt="" />
+			  </div>
+			  <div class="tile scale-anm flyers all">
+			           <img src="https://placeholdit.imgix.net/~text?txtsize=19&txt=200%C3%97290&w=200&h=290" alt="" /> 
+			  </div>
+			  <div class="tile scale-anm web all">
+			        <img src="http://demo.themerain.com/charm/wp-content/uploads/2015/04/the-ninetys-brand_02-300x300.jpg" alt="" />
+			  </div>
+			  <div class="tile scale-anm bcards all">
+			            <img src="http://demo.themerain.com/charm/wp-content/uploads/2015/04/15-dia_1092-1-300x300.jpg" alt="" />
+			  </div>
+			  <div class="tile scale-anm web all">
+			       <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97190&w=350&h=190" alt="" /> 
+			  </div>
+			  <div class="tile scale-anm bcards all">
+			          <img src="http://demo.themerain.com/charm/wp-content/uploads/2015/04/emi_haze-300x201.jpg" alt="" />  
+			  </div>
+			  <div class="tile scale-anm web all">
+			            <img src="http://demo.themerain.com/charm/wp-content/uploads/2015/04/transmission_01-300x300.jpg" alt="" />
+			  </div> 
+			  <div class="tile scale-anm web all">
+			      <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97190&w=350&h=190" alt="" />  
+			  </div> 
+			  <div class="tile scale-anm bcards all">     
+			            <img src="https://placeholdit.imgix.net/~text?txtsize=19&txt=200%C3%97290&w=200&h=290" alt="" />
+			  </div>
+			</div>
+			
+			<div style="clear:both;"></div>   
 		</div>
 	</div>
 	
