@@ -126,6 +126,7 @@ public class HomeController {
 	public String user_gallery_body() {
 		return "cocktail/gallery/user_gallery";
 	}
+	
 }
 
 

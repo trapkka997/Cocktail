@@ -5,220 +5,12 @@
 
 <head>
 <title>NEWS FEED</title>
-<<<<<<< HEAD
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
-<link rel="stylesheet"
-	href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
-<link rel="stylesheet"
-	href="./resources/assets/basic/css/navbar/navbar.css">
-<link rel="stylesheet"
-	href="./resources/assets/basic/css/proflie_slide/slide_component.css">
-<!--profile-->
-<link rel="stylesheet"
-	href="https://fonts.googleapis.com/css?family=Open+Sans">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-<link rel="stylesheet"
-	href="./resources/assets/basic/css/profile/default.css">
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
-<link rel="stylesheet" href="./resources/assets/tag/css/tag_default.css">
-
-<link rel="stylesheet"
-	href="./resources/assets/selfmaking/css/button/button.css">
-<link rel="stylesheet" href="./resources/assets/gallery/css/gallery.css">
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
-<link rel="stylesheet"
-	href="./resources/assets/gallery/css/uploadbutton.css">
-<link rel="stylesheet"
-	href="./resources/assets/gallery/css/circluar_layout.css">
-<style>
-.card {
-	flex-direction: inherit;
-}
-
-.card-body {
-	text-align: center;
-}
-
-.img {
-	width: 200px;
-	border: 20px solid black;
-	border-radius: 50%
-}
-
-.tag {
-	background-color: #17a2b8;
-	border-radius: 10%;
-}
-
-@import url("https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz")
-	;
-
-.tile {
-	display: inline-block;
-	line-height: 100px;
-}
-
-.tile>div, .tile a {
-	width: 100%;
-	color: #30261c;
-	background-color: #e4ecb9;
-	text-align: center;
-}
-
-.tile>a {
-	display: block;
-	text-decoration: none;
-	background-color: #d88e8f;
-}
-/* Flip effect */
-.flip>div, .flip a {
-	position: absolute;
-}
-
-.flip>a {
-	-webkit-transform: rotateX(-90deg);
-	-moz-transform: rotateX(-90deg);
-	-o-transform: rotateX(-90deg);
-	-ms-transform: rotateX(-90deg);
-	transform: rotateX(-90deg);
-}
-
-.flip:hover>div {
-	-webkit-transform: rotateX(90deg);
-	-moz-transform: rotateX(90deg);
-	-o-transform: rotateX(90deg);
-	-ms-transform: rotateX(90deg);
-	transform: rotateX(90deg);
-}
-
-.flip:hover>a {
-	-webkit-transform: rotateX(0deg);
-	-moz-transform: rotateX(0deg);
-	-o-transform: rotateX(0deg);
-	-ms-transform: rotateX(0deg);
-	transform: rotateX(0deg);
-}
-
-.flip:hover>div, .flip>a {
-	-webkit-transition: 0.05s all linear 0;
-	-moz-transition: 0.05s all linear 0;
-	-o-transition: 0.05s all linear 0;
-	-ms-transition: 0.05s all linear 0;
-	transition: 0.05s all linear 0;
-}
-
-.flip:hover>a, .flip>div {
-	-webkit-transition: 0.05s all linear 0.05s;
-	-moz-transition: 0.05s all linear 0.05s;
-	-o-transition: 0.05s all linear 0.05s;
-	-ms-transition: 0.05s all linear 0.05s;
-	transition: 0.05s all linear 0.05s;
-}
-/* Slide effect */
-.slide {
-	overflow: hidden;
-}
-
-.slide>div, .slide a {
-	-webkit-transition: 0.1s all linear;
-	-moz-transition: 0.1s all linear;
-	-o-transition: 0.1s all linear;
-	-ms-transition: 0.1s all linear;
-	transition: 0.1s all linear;
-	position: absolute;
-}
-
-.slide>a {
-	-webkit-transform: translate(200px, 0);
-	-moz-transform: translate(200px, 0);
-	-o-transform: translate(200px, 0);
-	-ms-transform: translate(200px, 0);
-	transform: translate(200px, 0);
-}
-
-.slide:hover>div {
-	-webkit-transform: translate(-200px, 0);
-	-moz-transform: translate(-200px, 0);
-	-o-transform: translate(-200px, 0);
-	-ms-transform: translate(-200px, 0);
-	transform: translate(-200px, 0);
-}
-
-.slide:hover>a {
-	-webkit-transform: translate(0, 0);
-	-moz-transform: translate(0, 0);
-	-o-transform: translate(0, 0);
-	-ms-transform: translate(0, 0);
-	transform: translate(0, 0);
-}
-/* Shutter effect */
-.shutter>div, .shutter a {
-	-webkit-transition: 0.1s all linear;
-	-moz-transition: 0.1s all linear;
-	-o-transition: 0.1s all linear;
-	-ms-transition: 0.1s all linear;
-	transition: 0.1s all linear;
-	position: absolute;
-}
-
-.shutter>div {
-	z-index: 10;
-	-webkit-transform-origin: 0% 0%;
-	-moz-transform-origin: 0% 0%;
-	-o-transform-origin: 0% 0%;
-	-ms-transform-origin: 0% 0%;
-	transform-origin: 0% 0%;
-}
-
-.shutter:hover>div {
-	-webkit-transform: rotateX(90deg);
-	-moz-transform: rotateX(90deg);
-	-o-transform: rotateX(90deg);
-	-ms-transform: rotateX(90deg);
-	transform: rotateX(90deg);
-}
-/* Page effect */
-.page>div, .page a {
-	-webkit-transition: 0.2s all linear;
-	-moz-transition: 0.2s all linear;
-	-o-transition: 0.2s all linear;
-	-ms-transition: 0.2s all linear;
-	transition: 0.2s all linear;
-	position: absolute;
-	z-index: 5;
-}
-
-.page>div {
-	z-index: 10;
-	-webkit-transform-origin: 0% 0%;
-	-moz-transform-origin: 0% 0%;
-	-o-transform-origin: 0% 0%;
-	-ms-transform-origin: 0% 0%;
-	transform-origin: 0% 0%;
-}
-
-.page:hover>div {
-	-webkit-transform: rotateX(360deg);
-	-moz-transform: rotateX(360deg);
-	-o-transform: rotateX(360deg);
-	-ms-transform: rotateX(360deg);
-	transform: rotateX(360deg);
-	z-index: 1;
-}
-</style>
-
-=======
 	<link rel="stylesheet"	href="./resources/assets/selfmaking/css/button/button.css">
 	<link rel="stylesheet" href="./resources/assets/gallery/css/gallery.css">
 	<link rel="stylesheet"	href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
 	<link rel="stylesheet"	href="./resources/assets/gallery/css/uploadbutton.css">
 	<link rel="stylesheet"	href="./resources/assets/gallery/css/circluar_layout.css">
 	<link rel="stylesheet"	href="./resources/assets/gallery/css/photo_fitter.css">
->>>>>>> branch 'master' of https://github.com/trapkka997/Cocktail
 </head>
 <body>
 	<div>
@@ -233,13 +25,14 @@
 									
 									<div id="alcole" class="button-group" data-filter-group='alcole' style="margin-top: 20px; margin-bottom: 20px;">
 															
-										<button class="btn fil-cat btn-outline-primary" href="" data-rel="all" >ALL</button>
-										<button class="btn fil-cat btn-outline-primary" href="" data-rel="brandy" >Brandy</button>
-										<button class="btn fil-cat btn-outline-primary" href="" data-rel="whisky" >Whisky</button>
-										<button class="btn fil-cat btn-outline-primary" href="" data-rel="vodka" >Vodka</button>
-										<button class="btn fil-cat btn-outline-primary" href="" data-rel="rum" >Rum</button>
-										<button class="btn fil-cat btn-outline-primary" href="" data-rel="dryjin" >Dry Jin</button>
-										<button class="btn fil-cat btn-outline-primary" href="" data-rel="tequila" >Tequila</button>
+										<button class="btn fil-cat" href="" data-rel="all" >ALL</button>
+										<button class="btn fil-cat" href="" data-rel="brandy" >Brandy</button>
+										<button class="btn fil-cat" href="" data-rel="whisky" >Whisky</button>
+										<button class="btn fil-cat" href="" data-rel="vodka" >Vodka</button>
+										<button class="btn fil-cat" href="" data-rel="rum" >Rum</button>
+										<button class="btn fil-cat" href="" data-rel="dryjin" >Dry Jin</button>
+										<button class="btn fil-cat" href="" data-rel="tequila" >Tequila</button>
+											
 									</div>
 								</div>
 							</div>
@@ -247,89 +40,101 @@
 					</div>
 				</div>
 			</div>
-			<div class="row">
+			<!-- <div class="row">
 				<div class="col-md-12">
 					<div id="grid-gallery" class="grid-gallery">
 						<section class="grid-wrap">
-						<div>
-							<div id="portfolio">
-							<!-- 	<c:foreach 로 반복>
-									<figure class="tile2 scale-anm ${tag} all">
-										<img src="${imgsrc}" alt="" />
+							<ul class="grid">
+								<li class="grid-sizer"></li>
+								for Masonry column width
+								<li>
+									<figure>
+										<img src="./resources/assets/basic/img/カクテルアイコン5.png"
+											alt="img01" />
 										<figcaption>
-											<h3>${title}</h3>
-											<p>${content}</p>
+											<h3>Letterpress asymmetrical</h3>
+											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
 										</figcaption>
-									</figure> 
-									</c:foreach>
-								-->
-									<figure class="tile2 scale-anm brandy all">
-										<img src="http://demo.themerain.com/charm/wp-content/uploads/2015/04/2-mon_1092-300x234.jpg" alt="" />
+									</figure>
+								</li>
+								<li>
+									<figure>
+										<img src="./resources/assets/basic/img/カクテルアイコン5.png"
+											alt="img02" />
 										<figcaption>
 											<h3>Vice velit chia</h3>
 											<p>Laborum tattooed iPhone, Schlitz irure nulla Tonx
 												retro 90's chia cardigan quis asymmetrical paleo.</p>
 										</figcaption>
 									</figure>
-									<figure class="tile2 scale-anm whisky all">
-										<img src="http://demo.themerain.com/charm/wp-content/uploads/2015/04/jti-icons_08-300x172.jpg" alt="" />										<figcaption>
+								</li>
+								<li>
+									<figure>
+										<img src="./resources/assets/basic/img/カクテルアイコン5.png"
+											alt="img03" />
 										<figcaption>
-											<h3>Vice velit chia</h3>
-											<p>Laborum tattooed iPhone, Schlitz irure nulla Tonx
-												retro 90's chia cardigan quis asymmetrical paleo.</p>
+											<h3>Brunch semiotics</h3>
+											<p>Ex disrupt cray yr, butcher pour-over magna umami
+												kitsch before they sold out commodo.</p>
 										</figcaption>
 									</figure>
-									<figure class="tile2 scale-anm vodka all">
-										<img src="http://demo.themerain.com/charm/wp-content/uploads/2015/04/emi_haze-300x201.jpg" alt="" />
+								</li>
+								<li>
+									<figure>
+										<img src="./resources/assets/basic/img/カクテルアイコン5.png"
+											alt="img04" />
 										<figcaption>
-											<h3>Vice velit chia</h3>
-											<p>Laborum tattooed iPhone, Schlitz irure nulla Tonx
-												retro 90's chia cardigan quis asymmetrical paleo.</p>
+											<h3>Chillwave nihil occupy</h3>
+											<p>In post-ironic gluten-free deserunt, PBR&amp;B non
+												pork belly cupidatat polaroid.</p>
 										</figcaption>
 									</figure>
-									<figure class="tile2 scale-anm rum all">
-										<img src="http://demo.themerain.com/charm/wp-content/uploads/2015/04/codystretch-300x270.jpg" alt="" />
+								</li>
+								<li>
+									<figure>
+										<img src="./resources/assets/basic/img/カクテルアイコン5.png"
+											alt="img05" />
 										<figcaption>
-											<h3>Vice velit chia</h3>
-											<p>Laborum tattooed iPhone, Schlitz irure nulla Tonx
-												retro 90's chia cardigan quis asymmetrical paleo.</p>
+											<h3>Kale chips lomo biodiesel</h3>
+											<p>Pariatur food truck street art consequat sustainable,
+												et kogi beard qui paleo.</p>
 										</figcaption>
 									</figure>
-									<figure class="tile2 scale-anm dryjin all">
-										<img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97190&w=350&h=190" alt="" />
+								</li>
+								<li>
+									<figure>
+										<img src="./resources/assets/basic/img/カクテルアイコン5.png"
+											alt="img06" />
 										<figcaption>
-											<h3>Vice velit chia</h3>
-											<p>Laborum tattooed iPhone, Schlitz irure nulla Tonx
-												retro 90's chia cardigan quis asymmetrical paleo.</p>
+											<h3>Exercitation occaecat</h3>
+											<p>Street chillwave hoodie ea gentrify.</p>
 										</figcaption>
 									</figure>
-									<figure class="tile2 scale-anm tequila all">
-										<img src="https://placeholdit.imgix.net/~text?txtsize=19&txt=200%C3%97290&w=200&h=290" alt="" />
+								</li>
+								<li>
+									<figure>
+										<img src="./resources/assets/basic/img/カクテルアイコン5.png"
+											alt="img01" />
 										<figcaption>
-											<h3>Vice velit chia</h3>
-											<p>Laborum tattooed iPhone, Schlitz irure nulla Tonx
-												retro 90's chia cardigan quis asymmetrical paleo.</p>
+											<h3>Selfies viral four</h3>
+											<p>Raw denim duis Tonx Shoreditch labore swag artisan
+												High Life cred, stumptown Schlitz quinoa flexitarian mollit
+												fanny pack.</p>
 										</figcaption>
 									</figure>
-									<figure class="tile2 scale-anm brandy all">
-										 <img src="http://demo.themerain.com/charm/wp-content/uploads/2015/04/jti-icons_08-300x172.jpg" alt="" />
+								</li>
+								<li>
+									<figure>
+										<img src="./resources/assets/basic/img/カクテルアイコン5.png"
+											alt="img02" />
 										<figcaption>
-											<h3>Vice velit chia</h3>
-											<p>Laborum tattooed iPhone, Schlitz irure nulla Tonx
-												retro 90's chia cardigan quis asymmetrical paleo.</p>
+											<h3>Photo booth skateboard</h3>
+											<p>Vinyl squid ex High Life. Paleo Neutra nulla master
+												cleanse, Helvetica et enim nesciunt esse.</p>
 										</figcaption>
 									</figure>
-									<figure class="tile2 scale-anm whisky all">
-										 <img src="http://demo.themerain.com/charm/wp-content/uploads/2015/04/transmission_01-300x300.jpg" alt="" />
-										<figcaption>
-											<h3>Vice velit chia</h3>
-											<p>Laborum tattooed iPhone, Schlitz irure nulla Tonx
-												retro 90's chia cardigan quis asymmetrical paleo.</p>
-										</figcaption>
-									</figure>
-								</div>		
-								</div>									
-							<!-- <div style="clear:both;"></div>   -->
+								</li>
+							</ul>
 						</section>
 						<section class="slideshow">
 							<ul>
@@ -430,14 +235,14 @@
 						</section>
 					</div>
 				</div>
-				<!-- modal -->
+				modal
 				<div class="plus-button" class="btn btn-primary" data-toggle="modal"
 					data-target="#myModal">+</div>
-				<!-- modal1_start -->
+				modal1_start
 				<div id="myModal" class="modal fade" role="dialog">
 					<div class="modal-dialog modal-lg">
 
-					<!-- 	Modal content -->
+						Modal content
 						<div class="modal-content">
 							<button type="button" class="close" data-dismiss="modal">&times;</button>
 							
@@ -601,9 +406,64 @@
 
 					</div>
 				</div>
-<!-- 				modal1_end
-				modal -->
-			</div> 
+				modal1_end
+				modal
+			</div> -->
+			<div id="portfolio">
+			  <div class="tile scale-anm web all">
+			        <img src="http://demo.themerain.com/charm/wp-content/uploads/2015/04/2-mon_1092-300x234.jpg" alt="" />
+			  </div>
+			  <div class="tile scale-anm bcards all">
+			    <img src="http://demo.themerain.com/charm/wp-content/uploads/2015/04/jti-icons_08-300x172.jpg" alt="" />
+			  </div>
+			  <div class="tile scale-anm web all">
+			    <img src="http://demo.themerain.com/charm/wp-content/uploads/2015/04/emi_haze-300x201.jpg" alt="" />
+			  </div>
+			  <div class="tile scale-anm web all">
+			            <img src="http://demo.themerain.com/charm/wp-content/uploads/2015/04/codystretch-300x270.jpg" alt="" />
+			  </div>
+			  <div class="tile scale-anm flyers all">
+			        <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97190&w=350&h=190" alt="" />
+			  </div>
+			  <div class="tile scale-anm bcards all">
+			            <img src="https://placeholdit.imgix.net/~text?txtsize=19&txt=200%C3%97290&w=200&h=290" alt="" />
+			  </div>
+			  <div class="tile scale-anm flyers all">
+			    <img src="http://demo.themerain.com/charm/wp-content/uploads/2015/04/jti-icons_08-300x172.jpg" alt="" />
+			  </div>
+			  <div class="tile scale-anm flyers all">
+			    <img src="http://demo.themerain.com/charm/wp-content/uploads/2015/04/transmission_01-300x300.jpg" alt="" />
+			  </div>
+			  <div class="tile scale-anm web all">
+			        <img src="https://placeholdit.imgix.net/~text?txtsize=19&txt=200%C3%97290&w=200&h=290" alt="" />
+			  </div>
+			  <div class="tile scale-anm flyers all">
+			           <img src="https://placeholdit.imgix.net/~text?txtsize=19&txt=200%C3%97290&w=200&h=290" alt="" /> 
+			  </div>
+			  <div class="tile scale-anm web all">
+			        <img src="http://demo.themerain.com/charm/wp-content/uploads/2015/04/the-ninetys-brand_02-300x300.jpg" alt="" />
+			  </div>
+			  <div class="tile scale-anm bcards all">
+			            <img src="http://demo.themerain.com/charm/wp-content/uploads/2015/04/15-dia_1092-1-300x300.jpg" alt="" />
+			  </div>
+			  <div class="tile scale-anm web all">
+			       <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97190&w=350&h=190" alt="" /> 
+			  </div>
+			  <div class="tile scale-anm bcards all">
+			          <img src="http://demo.themerain.com/charm/wp-content/uploads/2015/04/emi_haze-300x201.jpg" alt="" />  
+			  </div>
+			  <div class="tile scale-anm web all">
+			            <img src="http://demo.themerain.com/charm/wp-content/uploads/2015/04/transmission_01-300x300.jpg" alt="" />
+			  </div> 
+			  <div class="tile scale-anm web all">
+			      <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97190&w=350&h=190" alt="" />  
+			  </div> 
+			  <div class="tile scale-anm bcards all">     
+			            <img src="https://placeholdit.imgix.net/~text?txtsize=19&txt=200%C3%97290&w=200&h=290" alt="" />
+			  </div>
+			</div>
+			
+			<div style="clear:both;"></div>   
 		</div>
 	</div>
 	
