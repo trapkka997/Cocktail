@@ -20,6 +20,10 @@ public class TestController {
 	@Autowired
 	MemberRepository memberRepository;
 	
+	/**
+	 * 자신이 팔로우한 사람과 팔로워한 사람을 보는 화면으로 이동
+	 * @return
+	 */
 	@RequestMapping(value = "/viewFollow", method = RequestMethod.GET)
 	public String viewFollow(Model model,HttpSession httpSession) {
 		String userEmail = (String)httpSession.getAttribute("useremail");
@@ -30,7 +34,11 @@ public class TestController {
 		return "imsi/viewFollow";
 	}
 	
-	
+	/**
+	 * 채팅 화면으로 이동함
+	 * @param vo
+	 * @return
+	 */
 	@RequestMapping(value = "/socketTest", method = RequestMethod.GET)
 	public String socketTest(Model model,HttpSession httpSession,DirectMessage vo) {
 		String userEmail = (String)httpSession.getAttribute("useremail"); 
@@ -44,6 +52,12 @@ public class TestController {
 		return "imsi/socketTest";
 	}
 	
+	/**
+	 * 채팅 메시지를 데이터베이스에 올리는 기능
+	 * @param httpSession
+	 * @param vo
+	 * @return
+	 */
 	@RequestMapping(value = "/writeMessage", method = RequestMethod.GET)
 	public @ResponseBody int writeMessage(HttpSession httpSession, DirectMessage vo) {
 		String userEmail = (String)httpSession.getAttribute("useremail");

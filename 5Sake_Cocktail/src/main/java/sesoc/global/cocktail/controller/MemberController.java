@@ -33,7 +33,13 @@ public class MemberController {
 	@Autowired MemberRepository dao;
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 
-		// 로그인후 화면 이동
+		/**
+		 * 로그인후 화면 이동
+		 * 현재는 사용하지 않음
+		 * @param vo[ userEmail, userPwd ] 들어가있음
+		 * @return 화면이동
+		 * @author hangyutae
+		 */
 		@RequestMapping(value = "/login", method = RequestMethod.POST)
 		public String login(Locale locale, Model model, User vo, HttpSession httpSession) {
 			System.out.println(vo);
@@ -53,7 +59,13 @@ public class MemberController {
 			}
 
 		}
-		
+		/**
+		 * 로그인 기능
+		 * @param vo [ userEmail, userPwd ]
+		 * @param httpSession
+		 * @return 1 : 로그인 성공, 2 : 이메일 인증 실패, 3: 로그인 실패
+		 * @author hangyutae
+		 */
 		@RequestMapping(value = "/loginAjax", method = RequestMethod.POST)
 		public @ResponseBody String loginAjax(Locale locale, Model model, User vo, HttpSession httpSession) {
 			System.out.println(vo);
@@ -72,13 +84,24 @@ public class MemberController {
 			}
 
 		}
-		// 로그인 리다이렉트
+		
+		/**
+		 * 로그인 리다이렉트
+		 * @return login화면
+		 * @author hangyutae
+		 */
 		@RequestMapping(value = "/login", method = RequestMethod.GET)
 		public String login() {
 			return "user/login";
 
 		}	
-		// 로그아웃 기능
+		
+		
+		/**
+		 * 로그아웃 기능
+		 * @return 홈화면
+		 * @author hangyutae
+		 */
 		@RequestMapping(value = "/logoutMember", method = RequestMethod.GET)
 		public String logout(HttpSession httpSession) {
 			httpSession.invalidate();
@@ -86,7 +109,14 @@ public class MemberController {
 			return "redirect:/";
 
 		}	
-		//개인 사진 라이브러리
+		
+		/**
+		 * 개인 사진 라이브러리
+		 * 화면 안씀
+		 * @param vo [ userEmail ]
+		 * @return 라이브러리 화면 이동 
+		 * @author hangyutae
+		 */
 		@RequestMapping(value = "/photoLibrary", method = RequestMethod.GET)
 		public String photoLibrary(Locale locale,HttpSession httpSession, Model model, User vo,HttpServletRequest servletRequest) {
 			String userEmail = (String) httpSession.getAttribute("useremail");
@@ -97,9 +127,15 @@ public class MemberController {
 			model.addAttribute("path", "http://localhost:8888/cocktail/resources/");
 			
 			
-			return "cocktail/photoLibrary";
+			return "imsi/photoLibrary";
 		}
 		
+		/**
+		 * 갤러리 화면
+		 * 화면 안씀
+		 * @return 갤러리 화면 이동
+		 * @author hangyutae
+		 */
 		@RequestMapping(value = "/gallery", method = RequestMethod.GET)
 		public String main(Locale locale, Model model,HttpServletRequest servletRequest) {
 			List<UserPhoto> userPhotos = dao.selectAllUserPhoto();
@@ -110,6 +146,13 @@ public class MemberController {
 			return "test/grid";
 		}
 		
+		/**
+		 * 프로필 사진 업데이트 기능
+		 * @param file
+		 * @param vo []
+		 * @return redirect:updateProfilePicture
+		 * @author hangyutae
+		 */
 		@RequestMapping(value = "/updateProfilePicture", method = RequestMethod.POST)
 		public String updateProfilePicture(Locale locale,MultipartFile file, Model model,HttpSession httpSession,User vo,HttpServletRequest servletRequest) {
 			System.out.println(file);
@@ -135,6 +178,12 @@ public class MemberController {
 			return "redirect:updateProfilePicture";
 		}
 		
+		/**
+		 * 프로필 사진 업로드 화면으로 이동
+		 * @param vo
+		 * @return 프로필사진 화면 이동
+		 * @author hangyutae
+		 */
 		@RequestMapping(value = "/updateProfilePicture", method = RequestMethod.GET)
 		public String updateProfilePicture(Model model, HttpSession httpSession, User vo) {
 			String userEmail = (String) httpSession.getAttribute("useremail");
