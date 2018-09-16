@@ -44,7 +44,7 @@
  		IMAGERINK,
  		COLORVALUE,
  		RECOMMAND,
- 		HITCOUNT,
+ 		HITCOUNT
 	FROM
 		COCKTAIL2
 	WHERE
@@ -58,12 +58,12 @@
 		USERCOCKTAILNAME_EN,
 		USERALCOLE,
 		USERLIQUEUR,
-		USERMATERIAL														  
- 		USERRECEIPE														    
- 		SAVEFILENAME														   
- 		ORIGINALFILENAME													   
- 		USERCOLORVALUE 													   
- 		USERHITCOUNT														  
+		USERMATERIAL,														  
+ 		USERRECEIPE,													    
+ 		SAVEFILENAME,														   
+ 		ORIGINALFILENAME,													   
+ 		USERCOLORVALUE, 													   
+ 		USERHITCOUNT,														  
 		USERRECOMMAND	
 	FROM
 		USERCOCKTAIL
@@ -101,5 +101,13 @@
 	WHERE
 		<![CDATA[ ROWNUM <= 10]]>
 	</select>
+	<update id="recommandCocktail" parameterType="String">
+		UPDATE
+			COCKTAIL2
+		SET
+			RECOMMAND = RECOMMAND + 1
+		WHERE
+			COCKTAIL_SEQ = #{value}
+	</update>	
 	
 </mapper>

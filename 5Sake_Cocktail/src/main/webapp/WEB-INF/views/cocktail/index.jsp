@@ -524,7 +524,7 @@ h4 {
 
 					
 						<div class="navbar-avatar" style="margin-left: 19px;">
-							<a href="#" class="navbar-item is-avatar"
+							<a href="eachoneProfile?userEmail=${sessionScope.useremail }" class="navbar-item is-avatar"
 								@click.prevent="showProfilePanel"> <img
 								src="https://unsplash.it/200/200?image=1005" alt="Avatar" />
 							</a>
@@ -688,14 +688,10 @@ h4 {
 							</thead>
 							<tbody>
 								<tr>
-									<td><img src="./resources/assets/basic/img/カクテルアイコン5.png">
-									</td>
-									<td><img src="./resources/assets/basic/img/カクテルアイコン5.png">
-									</td>
-									<td><img src="./resources/assets/basic/img/カクテルアイコン5.png">
-									</td>
-									<td><img src="./resources/assets/basic/img/カクテルアイコン5.png">
-									</td>
+								<c:forEach var="recommandCocktail" items="${recommandCocktailList }">
+									<td><a href="cocktailDetail?cocktailSeq=${recommandCocktail.cocktailSeq }"><img src="${recommandCocktail.imageRink }">
+									</a></td>
+								</c:forEach>
 								</tr>
 							</tbody>
 						</table>
@@ -719,18 +715,10 @@ h4 {
 							</thead>
 							<tbody>
 								<tr>
-									<td><img
-										src="./resources/assets/gallery/img/test_image/large/1.png"></td>
-									<td><img
-										src="./resources/assets/gallery/img/test_image/large/1.png"></td>
-									<td><img
-										src="./resources/assets/gallery/img/test_image/large/1.png"></td>
-									<td><img
-										src="./resources/assets/gallery/img/test_image/large/1.png"></td>
-									<td><img
-										src="./resources/assets/gallery/img/test_image/large/1.png"></td>
-									<td><img
-										src="./resources/assets/gallery/img/test_image/large/1.png"></td>
+									<c:forEach var="recommandUserPhoto" items="${recommandUserPhotoList}">
+									<td><a href="eachoneProfile?userEmail=${recommandUserPhoto.userEmail }"><img
+										src="${path }${recommandUserPhoto.saveFileName}"></a></td>
+									</c:forEach>
 								</tr>
 							</tbody>
 						</table>

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import sesoc.global.cocktail.vo.DirectMessage;
 import sesoc.global.cocktail.vo.User;
+import sesoc.global.cocktail.vo.UserLikeCocktail;
 import sesoc.global.cocktail.vo.UserPhoto;
 
 @Repository
@@ -55,6 +56,19 @@ public class MemberRepository {
 	public List<String> viewFollower(String userEmail) {
 		MemberDAO dao = sqlSession.getMapper(MemberDAO.class);
 		return dao.viewFollower(userEmail);	
+	}
+	public List<UserPhoto> getRecommandUserPhotoList() {
+		MemberDAO dao = sqlSession.getMapper(MemberDAO.class);
+		return dao.getRecommandUserPhotoList();	
+	}
+	public int insertUserLikeCocktail(UserLikeCocktail userLikeCocktail) {
+		MemberDAO dao = sqlSession.getMapper(MemberDAO.class);
+		return dao.insertUserLikeCocktail(userLikeCocktail);	
+		
+	}
+	public UserLikeCocktail selectUserLikeCocktail(UserLikeCocktail userLikeCocktail) {
+		MemberDAO dao = sqlSession.getMapper(MemberDAO.class);
+		return dao.selectUserLikeCocktail(userLikeCocktail);	
 	}
 }
 

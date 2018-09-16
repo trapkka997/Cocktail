@@ -4,6 +4,7 @@ import java.util.List;
 
 import sesoc.global.cocktail.vo.DirectMessage;
 import sesoc.global.cocktail.vo.User;
+import sesoc.global.cocktail.vo.UserLikeCocktail;
 import sesoc.global.cocktail.vo.UserPhoto;
 
 public interface MemberDAO {
@@ -20,4 +21,7 @@ public interface MemberDAO {
 	public int writeMessage(DirectMessage vo);
 	public List<String> viewFollow(String userEmail);
 	public List<String> viewFollower(String userEmail);
+	public List<UserPhoto> getRecommandUserPhotoList();
+	public int insertUserLikeCocktail(UserLikeCocktail userLikeCocktail);
+	public UserLikeCocktail selectUserLikeCocktail(UserLikeCocktail userLikeCocktail);
 }

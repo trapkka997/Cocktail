@@ -26,6 +26,7 @@ import sesoc.global.cocktail.vo.UserPhoto;
 @Controller
 public class HomeController {
 	@Autowired CocktailRepository cocktailRepository;
+	@Autowired MemberRepository memberRepository;
 	@Autowired SqlSession sqlSession;
 	@Autowired MemberRepository dao;
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
@@ -41,8 +42,12 @@ public class HomeController {
 			String ingre = c.getIngredient();
 			
 		}
-		List<Cocktail> RecommandCocktailList = cocktailRepository.getRecommandCocktailList();
-		model.addAttribute("RecommandCocktailList", RecommandCocktailList);
+		List<Cocktail> recommandCocktailList = cocktailRepository.getRecommandCocktailList();
+		List<UserPhoto> recommandUserPhotoList = memberRepository.getRecommandUserPhotoList();
+		System.out.println(recommandCocktailList);
+		System.out.println(recommandUserPhotoList);
+		model.addAttribute("recommandUserPhotoList", recommandUserPhotoList);
+		model.addAttribute("recommandCocktailList", recommandCocktailList);
 		model.addAttribute("cocktailList", cocktailList);
 		model.addAttribute("userPhotos", userPhotos);
 		model.addAttribute("path", "http://localhost:8888/cocktail/resources/");

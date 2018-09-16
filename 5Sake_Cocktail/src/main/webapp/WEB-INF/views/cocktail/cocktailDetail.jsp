@@ -18,7 +18,9 @@
     <link rel="stylesheet" href="./resources/assets/product_detail/css/recommend/recommend_cocktail.css?h=9fdcb590092abd8e204c7b69a22c515a">
 </head>
 
-<body><div class="navbar is-top-fixed">
+<body>
+<input type="hidden" id="cocktailSeq" name="cocktailSeq" value="${cocktail.cocktailSeq}">
+<div class="navbar is-top-fixed">
   <div class="container-fluid">
     <div class="container">
 
@@ -197,7 +199,7 @@
                                 ${cocktail.recipe}
 	</div>
                             </div><div class="product-savebutton">
-    <button type="button">Save</button>
+    <button type="button" onclick="recommandBtn()">Save</button>
 </div></div>
                 </div>
             </div>
@@ -294,6 +296,28 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
     <script src="./resources/assets/basic/js/proflie_slide/classie.js?h=723c75fde6dc7bb3ef0f7f12584655a0"></script>
     <script src="./resources/assets/basic/js/proflie_slide/modernizr.custom.js?h=97989a57a1e8fb69eff65e5a62de7dfb"></script>
+    <script type="text/javascript">
+    	function recommandBtn() {
+    		var cocktailSeq = document.getElementById('cocktailSeq').value;
+			$.ajax({
+				method :  "GET",
+				url : "recommandCocktail",
+				data : {
+					cocktailSeq : cocktailSeq
+				},
+				success : function(resp) {
+					if(resp == 1){
+						alert('조아요 성공!!');
+					}else if(resp == 0){
+						 alert('이미 좋아요 하였습니다.');
+					}
+				},
+				error : function() {
+					alert('실패');
+				}
+			})
+		}
+    </script>
 </body>
 
 </html>

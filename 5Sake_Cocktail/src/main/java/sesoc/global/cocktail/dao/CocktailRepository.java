@@ -48,6 +48,13 @@ public class CocktailRepository {
 		result = dao.getRecommandCocktailList();
 		return result;
 	}
+
+	public int recommandCocktail(String cocktailSeq) {
+		int result = 0;
+		CocktailDAO dao = sqlSession.getMapper(CocktailDAO.class);
+		result = dao.recommandCocktail(cocktailSeq);
+		return result;
+	}
 	
 	
 

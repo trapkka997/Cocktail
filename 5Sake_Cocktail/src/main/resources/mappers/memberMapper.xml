@@ -132,6 +132,57 @@ SELECT
  		AND
  		uf.FOLLOWUSER = #{value}
 </select>
+<select id="getRecommandUserPhotoList" resultType="userPhoto">
+	SELECT
+		USERPHOTOSEQ,
+		USEREMAIL,
+		TITLE,
+		CONTENTS,
+		SAVEFILENAME,
+		ORIGINALFILENAME,
+		WRITEDATE,
+		HITCOUNT,
+		LIKECOUNT,
+		COCKTAILNAME
+	FROM
+	(
+	SELECT 
+		USERPHOTOSEQ,
+		USEREMAIL,
+		TITLE,
+		CONTENTS,
+		SAVEFILENAME,
+		ORIGINALFILENAME,
+		WRITEDATE,
+		HITCOUNT,
+		LIKECOUNT,
+		COCKTAILNAME
+	FROM
+		USERPHOTO
+	ORDER BY
+		 LIKECOUNT DESC
+	)
+	WHERE
+		<![CDATA[ ROWNUM <= 10]]>
+</select>
+<insert id="insertUserLikeCocktail" parameterType="userLikeCocktail">
+	INSERT INTO USERLIKECOCKTAIL(
+		USEREMAIL,
+		USERCOCKTAILSEQ
+	)VALUES(
+		#{userEmail},
+		#{userCocktailSeq}
+	)
+</insert>
+<select id="selectUserLikeCocktail" parameterType="userLikeCocktail" resultType="userLikeCocktail">
+	SELECT
+		USEREMAIL,
+		USERCOCKTAILSEQ
+	FROM
+		USERLIKECOCKTAIL
+	WHERE
+		USEREMAIL = #{userEmail} AND USERCOCKTAILSEQ = #{userCocktailSeq}
+</select>
 </mapper>
 	
 	

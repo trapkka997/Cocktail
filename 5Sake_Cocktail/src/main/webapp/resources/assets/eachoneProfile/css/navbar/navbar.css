@@ -1,0 +1,104 @@
+* {
+  /*box-sizing:border-box;*/
+}
+
+::-webkit-input-placeholder {
+  /*color:rgba(255, 255, 255, 0.6);*/
+}
+
+html {
+  /*-webkit-font-smoothing:antialiased;*/
+}
+
+.navbar {
+  position:relative;
+  background-color:#00bcd4;
+  height:74px;
+  color:#fff;
+  font-size:19px;
+}
+
+.navbar.is-top-fixed {
+  position:sticky;
+  top:0;
+  left:0;
+  right:0;
+  z-index:5;
+  /*box-shadow:0 2px 6px rgba(0, 0, 0, 0.35);*/
+}
+
+.navbar .container {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  height:60px;
+  width:72%;
+}
+
+.navbar-left, .navbar-center, .navbar-right {
+  display:flex;
+  width:40%;
+  align-items:center;
+}
+
+.navbar-center {
+  justify-content:center;
+}
+
+.navbar-right {
+  justify-content:flex-end;
+}
+
+.navbar-search .search-bar {
+  background-color:#00a5bb;
+  border-radius:20px;
+  padding:0;
+}
+
+.navbar-search .search-bar .input-search {
+  border:0 none;
+  background-color:transparent;
+  color:#fff;
+  padding:8px 14px;
+  outline:none;
+}
+
+.navbar-item {
+  padding:1rem 0.5rem;
+  color:#fff;
+  text-decoration:none;
+}
+
+.navbar-item.is-brand {
+  text-transform:uppercase;
+}
+
+.navbar-item.is-avatar {
+  padding:7%;
+}
+
+.navbar-item.is-avatar img {
+  border-radius:19%;
+  width:32px;
+  height:32px;
+  display:block;
+}
+
+.navbar-toggle {
+  margin-right:0.4rem;
+  display:block;
+  padding:0.2rem 10px;
+}
+
+.navbar-toggle span {
+  width:12px;
+  height:1px;
+  background-color:#fff;
+  display:block;
+}
+
+.navbar-toggle span:nth-child(2) {
+  width:8px;
+  margin:5px 0;
+}
+

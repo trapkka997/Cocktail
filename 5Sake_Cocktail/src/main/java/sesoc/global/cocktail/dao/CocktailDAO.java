@@ -18,4 +18,6 @@ public interface CocktailDAO {
 
 	public List<Cocktail> getRecommandCocktailList();
 
+	public int recommandCocktail(String cocktailSeq);
+
 }
