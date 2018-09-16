@@ -103,13 +103,13 @@
       <!-- navbar-left -->
 
       <div class="navbar-center">
-        <a href="#" class="navbar-item navbar-logo">
+        <a href="cocktailphoto" class="navbar-item navbar-logo">
           <i class="fas fa-glass-martini icon"></i>
         </a>
-        <a href="#" class="navbar-item navbar-logo">
+        <a href="userphoto" class="navbar-item navbar-logo">
           <i class="fab fa-microsoft icon"></i>
         </a>
-        <a href="#" class="navbar-item navbar-logo">
+        <a href="selfMaking" class="navbar-item navbar-logo">
           <i class="fas fa-user-alt"></i>
         </a>
       </div>
@@ -171,7 +171,7 @@
 
 
       <div class="navbar-avatar">
-        <a id="showRight" href="#" class="navbar-item is-avatar" @click.prevent="showProfilePanel">
+        <a id="showRight" href="eachoneProfile?userEmail=${sessionScope.useremail }" class="navbar-item is-avatar" @click.prevent="showProfilePanel">
             <img src="https://unsplash.it/200/200?image=1005" alt="Avatar"/>
           </a>
       </div>
