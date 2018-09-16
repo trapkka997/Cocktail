@@ -50,7 +50,11 @@ public class HomeController {
 	}
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
 	public String pro() {
-		return "cocktail/index";
+		return "cocktail/main_index";
+	}
+	@RequestMapping(value = "/main_p", method = RequestMethod.GET)
+	public String imsi() {
+		return "cocktail/main";
 	}
 	@RequestMapping(value = "/userphoto", method = RequestMethod.GET)
 	public String userphoto(Model model, HttpServletRequest servletRequest) {
@@ -105,5 +109,35 @@ public class HomeController {
 		model.addAttribute("photoList", photoList);
 		return "user/eachoneProfile";
 	}
-	
+	@RequestMapping(value = "/cock_gallery_body", method = RequestMethod.GET)
+	public String cock_gallery_body() {
+		return "cocktail/gallery/cocktail_gallery";
+	}
+	@RequestMapping(value = "/self_Making_body", method = RequestMethod.GET)
+	public String self_Making_body() {
+		return "cocktail/gallery/selfMaking";
+	}
+	@RequestMapping(value = "/user_gallery_body", method = RequestMethod.GET)
+	public String user_gallery_body() {
+		return "cocktail/gallery/user_gallery";
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,5 +1,5 @@
 .cbp-spmenu {
-  background:#47a3da;
+  background:#d7e1e8a8;
   position:fixed;
 }
 
@@ -29,7 +29,7 @@
 }
 
 .cbp-spmenu-vertical {
-  width:400px;
+  width:auto;
   height:100%;
   top:0;
   z-index:1000;

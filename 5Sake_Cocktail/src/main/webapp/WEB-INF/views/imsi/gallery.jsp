@@ -1,6 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-  <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     <!DOCTYPE html>
     <html>
 
@@ -24,6 +23,10 @@
 	  <link rel="stylesheet" href="./resources/assets/gallery/css/style.css">
 	  <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">	
 	  <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+      <!-- hover -->
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min">
+      
       <style>
         .card {
           flex-direction: inherit;
@@ -54,8 +57,7 @@
 	           <span></span>
 	           <span></span>
 	           <span></span>
-	           <div id="recommend" class="dropdown-menu"
-	           			style="margin-left:170px; margin-top:0px; width: 1500px;">
+	           <div id="recommend" class="dropdown-menu" style="margin-left:170px; margin-top:0px; width: 1500px;">
 	             <div>
 	               <div>
 	                 <button type="button" class="close" aria-label="Close">
@@ -433,6 +435,10 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/js/bootstrap.bundle.min.js"></script>
+              
+       <!-- hover -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+                
         <script src="./resources/assets/basic/js/proflie_slide/classie.js"></script>
         <script src="./resources/assets/basic/js/proflie_slide/modernizr.custom.js"></script>
         <script src="./resources/assets/tag/js/search_tag.js"></script>  
@@ -447,33 +453,33 @@
 		
 		<script src="./resources/assets/basic/js/proflie_slide/classie.js"></script>
 		<script	src="./resources/assets/basic/js/proflie_slide/modernizr.custom.js"></script>
-		
-	<!-- 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
+
 		<script	src="https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.js"></script>
 		<script	src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
 		<script type="text/javascript">
 		//-------------------------------------//
 		// init Masonry
 
-		var $grid = $('.grid'tor: 'none', // select none at first
-  columnWidth: '.grid__col-sizer',
-  gutter: '.grid__gutter-sizer',
-  percentPosition: true,
-  stagger: 30,
-  // nicer reveal transition
-  visibleStyle: { transform: 'translateY(0)', opacity: 1 },
-  hiddenStyle: { transform: 'translateY(100px)', opacity: 0 },
-});
-
+		var $grid = $('.grid').masonry({
+			  itemSelector: 'none', // select none at first
+			  columnWidth: '.grid__col-sizer',
+			  gutter: '.grid__gutter-sizer',
+			  percentPosition: true,
+			  stagger: 30,
+			  // nicer reveal transition
+			  visibleStyle: { transform: 'translateY(0)', opacity: 1 },
+			  hiddenStyle: { transform: 'translateY(100px)', opacity: 0 },
+			});
+		
 		// get Masonry instance
 		var msnry = $grid.data('masonry');
-
+		
 		// initial items reveal
 		$grid.imagesLoaded( function() {
-		  $grid.removeClass('are-images-unloaded');
-		  $grid.masonry( 'option', { itemSelector: '.grid__item' });
-		  var $items = $grid.find('.grid__item');
-		  $grid.masonry( 'appended', $items );
+			$grid.removeClass('are-images-unloaded');
+			$grid.masonry( 'option', { itemSelector: '.grid__item' });
+			var $items = $grid.find('.grid__item');
+			$grid.masonry( 'appended', $items );
 		});
 
 
