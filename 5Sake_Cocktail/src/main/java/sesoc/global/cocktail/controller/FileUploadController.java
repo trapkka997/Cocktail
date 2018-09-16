@@ -128,9 +128,9 @@ public class FileUploadController {
 				System.out.println(e.getMessage());
 				e.printStackTrace(); 
 			}
-			if(!visionText(jsonPath)) {
-				return null;
-			};
+//			if(!visionText(jsonPath)) {
+//				return null;
+//			};
 			if((colorName = visionColor(jsonPath)).equals("fail")) {
 				return null;
 			}

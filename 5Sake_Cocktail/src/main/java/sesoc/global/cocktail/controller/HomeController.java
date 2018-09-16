@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import sesoc.global.cocktail.dao.CocktailRepository;
 import sesoc.global.cocktail.dao.MemberRepository;
 import sesoc.global.cocktail.vo.Cocktail;
+import sesoc.global.cocktail.vo.Cocktail;
 import sesoc.global.cocktail.vo.User;
 import sesoc.global.cocktail.vo.UserCocktail;
 import sesoc.global.cocktail.vo.UserPhoto;
@@ -25,6 +26,7 @@ import sesoc.global.cocktail.vo.UserPhoto;
 @Controller
 public class HomeController {
 	@Autowired CocktailRepository cocktailRepository;
+	@Autowired MemberRepository memberRepository;
 	@Autowired SqlSession sqlSession;
 	@Autowired MemberRepository dao;
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
@@ -36,6 +38,16 @@ public class HomeController {
 		String path = servletRequest.getSession().getServletContext().getRealPath("resources");
 		List<UserPhoto> userPhotos = dao.selectUserPhoto(vo);
 		List<Cocktail> cocktailList = cocktailRepository.getCocktailList();
+		for(Cocktail c : cocktailList) {
+			String ingre = c.getIngredient();
+			
+		}
+		List<Cocktail> recommandCocktailList = cocktailRepository.getRecommandCocktailList();
+		List<UserPhoto> recommandUserPhotoList = memberRepository.getRecommandUserPhotoList();
+		System.out.println(recommandCocktailList);
+		System.out.println(recommandUserPhotoList);
+		model.addAttribute("recommandUserPhotoList", recommandUserPhotoList);
+		model.addAttribute("recommandCocktailList", recommandCocktailList);
 		model.addAttribute("cocktailList", cocktailList);
 		model.addAttribute("userPhotos", userPhotos);
 		model.addAttribute("path", "http://localhost:8888/cocktail/resources/");
@@ -58,7 +70,7 @@ public class HomeController {
 		model.addAttribute("cocktailList", cocktailList);
 		model.addAttribute("userPhotos", userPhotos);
 		model.addAttribute("path", "http://localhost:8888/cocktail/resources/");
-		return "cocktail/gallery";
+		return "cocktail/gallery/user_gallery";
 	}
 	@RequestMapping(value = "/cocktailphoto", method = RequestMethod.GET)
 	public String cocktailphoto(Model model, HttpServletRequest servletRequest) {
@@ -67,7 +79,7 @@ public class HomeController {
 		System.out.println(path);
 		model.addAttribute("userPhotos", userPhotos);
 		model.addAttribute("path", "http://localhost:8888/cocktail/resources/");
-		return "cocktail/gallery";
+		return "cocktail/gallery/cocktail_gallery";
 	}
 	@RequestMapping(value = "/tag", method = RequestMethod.GET)
 	public String tag() {
@@ -77,7 +89,7 @@ public class HomeController {
 	public String selfMaking(Model model, User vo) {
 //		List<UserCocktail> userCocktailList =  cocktailRepository.selectUserCocktail(vo);
 //		model.addAttribute("userCocktailList", userCocktailList);
-		return "cocktail/selfMaking";
+		return "cocktail/gallery/selfMaking";
 	}
 	@RequestMapping(value = "/main", method = RequestMethod.GET)
 	public String main() {

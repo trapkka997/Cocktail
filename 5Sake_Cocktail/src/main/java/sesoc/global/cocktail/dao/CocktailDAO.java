@@ -16,4 +16,8 @@ public interface CocktailDAO {
 
 	public List<UserCocktail> selectUserCocktail(User vo);
 
+	public List<Cocktail> getRecommandCocktailList();
+
+	public int recommandCocktail(String cocktailSeq);
+
 }

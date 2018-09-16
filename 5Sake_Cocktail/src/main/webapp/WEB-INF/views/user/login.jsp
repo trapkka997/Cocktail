@@ -184,7 +184,7 @@
     				success: function(resp) {
 						if(resp ==1){
 							document.getElementById('message').innerHTML ="로그인 성공"; 
-							location.href = "http://localhost:8888/cocktail/";
+							location.href = "/cocktail/";
 						}else if(resp == 2){
 							document.getElementById('message').innerHTML ="이메일 인증필요"; 
 						}else if(resp == 3){

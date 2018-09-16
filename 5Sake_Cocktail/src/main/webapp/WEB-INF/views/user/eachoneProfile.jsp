@@ -237,7 +237,7 @@
         <ul>
           <li><span class="profile-stat-count">${postNum }</span> posts</li>
           <li><span class="profile-stat-count">${followNum }</span> followers</li>
-          <li><span class="profile-stat-count">206</span> following</li>
+          <li><span class="profile-stat-count">1${followerNum }</span> following</li>
         </ul>
 
       </div>

@@ -84,7 +84,105 @@ SELECT
 	WHERE
 		USEREMAIL = '${userEmail}'
 </select>
+<select id="selectDirectMessage" parameterType="directMessage" resultType="directMessage">
+	SELECT
+		USEREMAIL,
+		TOUSEREMAIL,
+		MESSAGE
+	FROM
+		DIRECTMESSAGE
+	WHERE
+		(USEREMAIL = #{userEmail} AND TOUSEREMAIL = #{toUserEmail})
+		OR
+		(USEREMAIL = #{toUserEmail} AND TOUSEREMAIL = #{userEmail})
+</select>
+<insert id="writeMessage" parameterType="directMessage">
+	INSERT INTO DIRECTMESSAGE
+		(
+		USEREMAIL,
+		TOUSEREMAIL, 
+		MESSAGE
+		)
+	VALUES(
+		#{userEmail},
+		#{toUserEmail},
+		#{message}
+	)
 
+</insert>
+
+<select id="viewFollow" parameterType="String" resultType="String">
+	SELECT 
+		uf.followuser
+	FROM
+ 		USERDETAIL ud, USERFOLLOW uf
+ 	WHERE
+ 		ud.USEREMAIL = uf.USEREMAIL
+ 		AND
+ 		ud.USEREMAIL = #{value}
+</select>
+
+<select id="viewFollower" parameterType="String" resultType="String">
+	SELECT 
+		uf.followuser
+	FROM
+ 		USERDETAIL ud, USERFOLLOW uf
+ 	WHERE
+ 		ud.USEREMAIL = uf.USEREMAIL
+ 		AND
+ 		uf.FOLLOWUSER = #{value}
+</select>
+<select id="getRecommandUserPhotoList" resultType="userPhoto">
+	SELECT
+		USERPHOTOSEQ,
+		USEREMAIL,
+		TITLE,
+		CONTENTS,
+		SAVEFILENAME,
+		ORIGINALFILENAME,
+		WRITEDATE,
+		HITCOUNT,
+		LIKECOUNT,
+		COCKTAILNAME
+	FROM
+	(
+	SELECT 
+		USERPHOTOSEQ,
+		USEREMAIL,
+		TITLE,
+		CONTENTS,
+		SAVEFILENAME,
+		ORIGINALFILENAME,
+		WRITEDATE,
+		HITCOUNT,
+		LIKECOUNT,
+		COCKTAILNAME
+	FROM
+		USERPHOTO
+	ORDER BY
+		 LIKECOUNT DESC
+	)
+	WHERE
+		<![CDATA[ ROWNUM <= 10]]>
+</select>
+<insert id="insertUserLikeCocktail" parameterType="userLikeCocktail">
+	INSERT INTO USERLIKECOCKTAIL(
+		USEREMAIL,
+		USERCOCKTAILSEQ
+	)VALUES(
+		#{userEmail},
+		#{userCocktailSeq}
+	)
+</insert>
+<select id="selectUserLikeCocktail" parameterType="userLikeCocktail" resultType="userLikeCocktail">
+	SELECT
+		USEREMAIL,
+		USERCOCKTAILSEQ
+	FROM
+		USERLIKECOCKTAIL
+	WHERE
+		USEREMAIL = #{userEmail} AND USERCOCKTAILSEQ = #{userCocktailSeq}
+</select>
 </mapper>
 	
 	

@@ -18,7 +18,9 @@
     <link rel="stylesheet" href="./resources/assets/product_detail/css/recommend/recommend_cocktail.css?h=9fdcb590092abd8e204c7b69a22c515a">
 </head>
 
-<body><div class="navbar is-top-fixed">
+<body>
+<input type="hidden" id="cocktailSeq" name="cocktailSeq" value="${cocktail.cocktailSeq}">
+<div class="navbar is-top-fixed">
   <div class="container-fluid">
     <div class="container">
 
@@ -187,17 +189,17 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="product_wrapper" style="width:750px;">
-                        <div class="product-img" style="width:375px;"><img data-aos="fade-right" data-aos-duration="650" data-aos-once="true" class="product_detail-img" style="background-image:url(&quot;${cocktail.imagerink}&quot;);background-position:center;background-size:contain;width:375px;height:420px;color:rgb(120,133,147);background-color:rgba(255,255,255,0);"></div>
+                        <div class="product-img" style="width:375px;"><img data-aos="fade-right" data-aos-duration="650" data-aos-once="true" class="product_detail-img" style="background-image:url(&quot;${cocktail.imageRink}&quot;);background-position:center;background-size:contain;width:375px;height:420px;color:rgb(120,133,147);background-color:rgba(255,255,255,0);"></div>
                         <div
                             class="product-info">
                             <div class="product-text">
-                                <h1 class="cocktail_name" style="margin-top:-15px;padding-top:41px;font-family:'Alfa Slab One', cursive;">${cocktail.cocktailname}</h1>
+                                <h1 class="cocktail_name" style="margin-top:-15px;padding-top:41px;font-family:'Alfa Slab One', cursive;">${cocktail.cocktailName}</h1>
                                 <h2 style="font-size:15px;background-position:top;background-size:auto;background-repeat:no-repeat;margin-bottom:12px;">Making Yourself</h2>
                                 <div class="cocktail_detail" style="padding-bottom:0px;height:210px;">
-                                ${cocktail.receipe}
+                                ${cocktail.recipe}
 	</div>
                             </div><div class="product-savebutton">
-    <button type="button">Save</button>
+    <button type="button" onclick="recommandBtn()">Save</button>
 </div></div>
                 </div>
             </div>
@@ -294,6 +296,28 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
     <script src="./resources/assets/basic/js/proflie_slide/classie.js?h=723c75fde6dc7bb3ef0f7f12584655a0"></script>
     <script src="./resources/assets/basic/js/proflie_slide/modernizr.custom.js?h=97989a57a1e8fb69eff65e5a62de7dfb"></script>
+    <script type="text/javascript">
+    	function recommandBtn() {
+    		var cocktailSeq = document.getElementById('cocktailSeq').value;
+			$.ajax({
+				method :  "GET",
+				url : "recommandCocktail",
+				data : {
+					cocktailSeq : cocktailSeq
+				},
+				success : function(resp) {
+					if(resp == 1){
+						alert('조아요 성공!!');
+					}else if(resp == 0){
+						 alert('이미 좋아요 하였습니다.');
+					}
+				},
+				error : function() {
+					alert('실패');
+				}
+			})
+		}
+    </script>
 </body>
 
 </html>
