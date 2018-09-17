@@ -33,8 +33,9 @@
 		class="sesoc.global.cocktail.interceptor.LoginInterceptor"></beans:bean>
 	<interceptors>
 		<interceptor>
-			<mapping path="/" />
-
+			<mapping path="/*" />
+			<exclude-mapping path="/loginAjax"/>
+			<exclude-mapping path="/login"/>
 			<beans:ref bean="LoginInterceptor" />
 		</interceptor>
 	</interceptors>

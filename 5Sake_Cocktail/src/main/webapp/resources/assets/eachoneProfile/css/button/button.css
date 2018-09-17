@@ -1,0 +1,72 @@
+#selfMaking_tag_button1 {
+  background-image:url("/assets/img/spirits.jpg?h=241af82e3674c2a84a5bea3d2cb43fbc");
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-position:center;
+}
+
+#selfMaking_tag_button2 {
+  background-image:url("/assets/img/brandy.jpg?h=d70fe4ecad33f347a9dcbf19b207750d");
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-position:center;
+}
+
+#selfMaking_tag_button3 {
+  background-image:url("/assets/img/whisky.jpg?h=82370790507fe67effe49add7f1ef7b5");
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-position:center;
+}
+
+#selfMaking_tag_button4 {
+  background-image:url("/assets/img/vodka.jpg?h=d746d0e13823321c9e432bb5a002eb1b");
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-position:center;
+}
+
+#selfMaking_tag_button5 {
+  background-image:url("/assets/img/rum.jpg?h=fc80f37d17d71590054792015fcce5bc");
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-position:center;
+}
+
+#selfMaking_tag_button6 {
+  background-image:url("/assets/img/dry_jin.jpeg?h=e6a2ec6420d842f1a789dd85c0c1f5e2");
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-position:center;
+}
+
+#selfMaking_tag_button7 {
+  background-image:url("/assets/img/tequila.jpg?h=b849a5b27e1a61b00e2b720caeb20f35");
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-position:center;
+}
+
+.inner {
+  display:table-cell;
+  vertical-align:middle;
+  text-align:center;
+}
+
+.outer {
+  display:table;
+  width:100%;
+  height:100%;
+}
+
+.btn-outline-primary {
+  color:#212529;
+  background-color:transparent;
+  text-shadow:1px 1px hsl(0, 0%, 0%);
+  border-color:#007bff;
+}
+
+.btn {
+  font-size:x-large;
+}
+

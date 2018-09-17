@@ -202,6 +202,10 @@
     				success: function(resp) {
 						if(resp ==1){
 							document.getElementById('message').innerHTML ="로그인 성공"; 
+<<<<<<< HEAD
+=======
+							location.href = "/cocktail/";
+>>>>>>> branch 'master' of https://github.com/trapkka997/Cocktail
 						}else if(resp == 2){
 							document.getElementById('message').innerHTML ="이메일 인증필요"; 
 						}else if(resp == 3){

@@ -10,10 +10,9 @@
 
 .device {
   position: absolute;
-  left: 50%;
-  top: 50%;
+  left: 100%;
   margin-left: -12.5rem;
-  margin-top: -29.5rem;
+  /* margin-top: -29.5rem; */
   width: 25rem;
   background: #F1F1F5;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;

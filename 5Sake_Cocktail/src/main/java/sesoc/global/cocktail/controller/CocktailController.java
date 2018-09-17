@@ -25,6 +25,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import sesoc.global.cocktail.dao.CocktailRepository;
 import sesoc.global.cocktail.dao.EmailDAO;
 import sesoc.global.cocktail.dao.MemberDAO;
+import sesoc.global.cocktail.dao.MemberRepository;
 import sesoc.global.cocktail.dao.EmailRepository;
 import sesoc.global.cocktail.email.MailHandler;
 import sesoc.global.cocktail.email.TempKey;
@@ -32,28 +33,48 @@ import sesoc.global.cocktail.test.JsoupExample;
 import sesoc.global.cocktail.test.JsoupExample2;
 import sesoc.global.cocktail.vo.Cocktail;
 import sesoc.global.cocktail.vo.User;
+import sesoc.global.cocktail.vo.UserLikeCocktail;
 
 @Controller
 public class CocktailController {
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	@Autowired CocktailRepository cocktailRepository;
+	@Autowired MemberRepository memberRepository;
 	
-	
+	/**
+	 * 칵테일 검색화면으로 이동
+	 * 화면 안씀
+	 * @return search화면 
+	 * @author hangyutae
+	 */
 	@RequestMapping(value = "/search", method = RequestMethod.GET)
 	public String search(Model model) {
 		List<Cocktail> cocktailList = cocktailRepository.getCocktailList();
 		model.addAttribute("cocktailList", cocktailList);
-		return "cocktail/search";
+		return "imsi/search";
 	}	
-
+	
+	/**
+	 * 칵테일 디테일 화면으로 이동
+	 * @param cocktailSeq 칵테일 시퀀스
+	 * @return 칵테일 디테일 화면으로 이동
+	 * @author hangyutae
+	 */
 	@RequestMapping(value = "/cocktailDetail", method = RequestMethod.GET)
-	public String cocktailDetail(Locale locale, Model model,String cocktailname) {
-		Cocktail selectCocktail = cocktailRepository.selectCocktail(cocktailname);
+	public String cocktailDetail(Locale locale, Model model,String cocktailSeq) {
+		Cocktail selectCocktail = cocktailRepository.selectCocktail(cocktailSeq);
 		model.addAttribute("cocktail", selectCocktail);
 		return "cocktail/cocktailDetail";
 	}
+	
+	/**
+	 * 칵테일 업로드 화면 이동
+	 * 임시화면, 기능 구현
+	 * @return 화면이동
+	 * @author hangyutae
+	 */
 	@RequestMapping(value = "/cocktailUpload", method = RequestMethod.GET)
-	public String cocktailUpload(Locale locale, Model model,String cocktailname, HttpSession httpSession) {
+	public String cocktailUpload(Locale locale, Model model, HttpSession httpSession) {
 		String userEmail = (String)httpSession.getAttribute("useremail");
 		JsoupExample2 jsoup = new JsoupExample2();
 		ArrayList<String> urls = new ArrayList<>();
@@ -70,5 +91,33 @@ public class CocktailController {
 		model.addAttribute("urls",urls);
 		return "cocktail/cocktailUpload";
 	}	
-
+	
+	/**
+	 * 칵테일 좋아요 하는 기능
+	 * 유저가 좋아요 버튼을 누르면
+	 * 테이블 : USERLIKECOCKTAIL -> select ( 유저, 칵테일seq)
+	 * - 있으면 : @return 0  없으면 밑 진행
+	 * 테이블 : COCKTAIL2 -> update ( RECOMMAND = RECOMMAND + 1 )
+	 * 테이블 : USERLIKECOCKTAIL  ->  insert ( 유저, 칵테일seq ) 
+	 * @param cocktailSeq 칵테일 번호
+	 * @return 0 : 이미 유저가 좋아했던 칵테일 일때
+	 * 		   1 : 좋아요 성공
+	 * @author hangyutae
+	 */
+	@RequestMapping(value = "/recommandCocktail", method = RequestMethod.GET)
+	public @ResponseBody int recommandCocktail(String cocktailSeq, HttpSession httpSession) {
+		String userEmail = (String) httpSession.getAttribute("useremail");
+		UserLikeCocktail userLikeCocktail = new UserLikeCocktail();
+		userLikeCocktail.setUserEmail(userEmail);
+		userLikeCocktail.setUserCocktailSeq(cocktailSeq);
+		UserLikeCocktail likeCocktail = memberRepository.selectUserLikeCocktail(userLikeCocktail);
+		
+		if(likeCocktail !=null) {
+			return 0;
+		}else {
+			cocktailRepository.recommandCocktail(cocktailSeq);
+			memberRepository.insertUserLikeCocktail(userLikeCocktail);
+			return 1; 
+		}
+	}
 }
