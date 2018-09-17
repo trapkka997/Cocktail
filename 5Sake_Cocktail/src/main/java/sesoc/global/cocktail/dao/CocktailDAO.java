@@ -16,12 +16,8 @@ public interface CocktailDAO {
 
 	public List<UserCocktail> selectUserCocktail(User vo);
 
-<<<<<<< HEAD
-
-=======
 	public List<Cocktail> getRecommandCocktailList();
 
 	public int recommandCocktail(String cocktailSeq);
->>>>>>> branch 'master' of https://github.com/trapkka997/Cocktail
 
 }

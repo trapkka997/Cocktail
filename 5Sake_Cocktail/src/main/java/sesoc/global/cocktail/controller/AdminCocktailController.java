@@ -28,7 +28,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import sesoc.global.cocktail.dao.CocktailMapper;
 import sesoc.global.cocktail.dao.CocktailRepository;
-import sesoc.global.cocktail.vo.Cocktail2;
+import sesoc.global.cocktail.vo.Cocktail;
 
 /**
  * Handles requests for the application home page.
@@ -44,11 +44,6 @@ public class AdminCocktailController {
 	/**
 	 * Ssimply selects the home view to render by returning its name.
 	 */
-	
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {
-		return "home";
-	}
 
 	// 수정및 삭제게시판
 	@RequestMapping(value = "/revise", method = RequestMethod.GET)
@@ -66,7 +61,7 @@ public class AdminCocktailController {
 
 	// 칵테일 등록하기
 	@RequestMapping(value = "/cocktailInsert", method = RequestMethod.GET)
-	public String cocktailInsert(Cocktail2 vo) {
+	public String cocktailInsert(Cocktail vo) {
 		CocktailMapper dao = session.getMapper(CocktailMapper.class);
 		int result = dao.cocktailInsert(vo);
 		System.out.println(result);
@@ -87,7 +82,7 @@ public class AdminCocktailController {
 	public String Updatecock(Locale locale, Model model, String cocktailName, HttpSession httpSession) {
 		CocktailMapper dao = session.getMapper(CocktailMapper.class);
 		System.out.println("칵테일이름" + cocktailName);
-		Cocktail2 vo = new Cocktail2();
+		Cocktail vo = new Cocktail();
 		vo = dao.selectOne(cocktailName);
 
 		model.addAttribute("Cocktail", vo);
@@ -96,7 +91,7 @@ public class AdminCocktailController {
 
 	// 수정후 메인
 	@RequestMapping(value = "/cocktailUpdate", method = RequestMethod.GET)
-	public String cocktailUpdate(Locale locale, Model model, Cocktail2 vo, HttpSession httpSession) {
+	public String cocktailUpdate(Locale locale, Model model, Cocktail vo, HttpSession httpSession) {
 		CocktailMapper dao = session.getMapper(CocktailMapper.class);
 		int result = dao.cocktailUpdate(vo);
 
@@ -116,9 +111,9 @@ public class AdminCocktailController {
 
 	// 칵테일 전체 보여주기
 	@RequestMapping(value = "/selectCockList", method = RequestMethod.POST)
-	public @ResponseBody ArrayList<Cocktail2> selectCockList() {
+	public @ResponseBody ArrayList<Cocktail> selectCockList() {
 		CocktailMapper dao = session.getMapper(CocktailMapper.class);
-		ArrayList<Cocktail2> cockList = new ArrayList<>();
+		ArrayList<Cocktail> cockList = new ArrayList<>();
 		cockList = dao.select();
 
 		System.out.println(cockList.get(0).toString());
