@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="sesoc.global.cocktail.dao.CocktailMapper">
+  <insert id="cocktailInsert" parameterType="cocktail">
+  insert into cocktail2
+	(
+	cocktailSeq,
+	cocktailName,
+	cocktailNameEn,
+	Ingredient,
+	recipe,
+	imageRink,
+	colorValue
+	)
+	values(
+			cocktailSeq.nextval
+			,#{cocktailName}
+			,#{cocktailNameEn}
+			,#{Ingredient}
+			,#{recipe}
+			,#{imageRink}
+			,#{colorValue} 
+	)
+  
+  </insert>
+  
+  <select id="select" resultType="cocktail">
+  select *  from cocktail2
+  </select>
+  
+  <update id="cocktailUpdate" parameterType="String">
+  update
+  	cocktail2
+  set
+  		cocktailName=#{cocktailName}
+		,ccocktailNameEn=#{cocktailNameEn}
+		,Ingredient=#{Ingredient}
+		,recipe=#{recipe}
+		,imageRink=#{imageRink}
+		,colorValue=#{colorValue}
+  where
+  		cocktailSeq=#{cocktailSeq}		
+  </update>
+  
+ <delete id="cocktailDelete" parameterType="String">
+ delete
+    cocktail2
+ where
+     cocktailSeq = #{cocktailSeq}
+ </delete>
+ 
+ <select id="selectOne" parameterType="String" resultType="cocktail">
+ 	select * from cocktail where cocktailSeq = #{cocktailSeq}
+ </select>
+
+ <!--좋아요 +- -->
+<update id="userlike" parameterType="int">
+update
+  	cocktail2
+  set recommand  = recommand + 1
+where
+     cocktailSeq = #{cocktailSeq}  
+	
+</update>
+
+<update id="userhitcount" parameterType="int">
+update
+  	cocktail2
+  set hitcount  = hitcount + 1
+where
+     cocktailSeq = #{cocktailSeq}  
+</update>
+
+
+</mapper>

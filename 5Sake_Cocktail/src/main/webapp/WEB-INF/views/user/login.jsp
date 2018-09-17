@@ -115,11 +115,20 @@
     <script src="./resources/assets/login/js/Video-Parallax-Background.js"></script>
     <script>
     function signBtn() {
-		var userEmail = document.getElementById('userEmail').value;
+    	var userEmail = document.getElementById('userEmail').value;
 		var userPassword = document.getElementById('userPassword').value;
 		var asswordRepeat = document.getElementById('asswordRepeat').value;
-		if(userEmail.length == 0 || userPassword.length ==0 || asswordRepeat.length ==0 ){
+		
+		var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+		
+	    if(userEmail.length == 0 || userPassword.length ==0 || asswordRepeat.length ==0 ){
 			alert('모든 내용을 입력해주세요.');
+		}else if(userEmail == '' || !re.test(userEmail)){
+			alert("올바른 이메일 형식을 입력하세요");	
+		}else if(userPassword.length<6){
+			alert("비밀번호는 6자 이상으로 해주세요");
+		}else if(userPassword != asswordRepeat ){
+			document.getElementById('memberSign').innerHTML = '비밀번호가 틀렸습니다. 다시 입력해 주세요';
 		}else{
 			$.ajax({
 				method: 'post',
@@ -134,11 +143,14 @@
 					}else if(resp == 1){
 						document.getElementById('memberSign').innerHTML ="가입완료. 인증메일을 확인해주세요"; 
 					}
+					
 				},
 				error: function() {
 				}
 			})
 		}
+		
+		
 		
 	}
     /* function signup() {
@@ -171,8 +183,14 @@
 		function loginBtn() {
     		var loginEmail = document.getElementById('loginEmail').value;
     		var loginPassword = document.getElementById('loginPwd').value;
-    		if(loginEmail.length == 0 || loginPassword.length ==0){
+    		var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    		
+    	    if(loginEmail.length == 0 || loginPassword.length ==0 ){
     			alert('모든 내용을 입력해주세요.');
+    		}else if(loginEmail == '' || !re.test(loginEmail)){
+    			alert("올바른 이메일 형식을 입력하세요");	
+    		}else if(loginPassword.length<6){
+    			alert("비밀번호는 6자 이상으로 해주세요");
     		}else{
     			$.ajax({
     				method: 'post',
@@ -184,7 +202,6 @@
     				success: function(resp) {
 						if(resp ==1){
 							document.getElementById('message').innerHTML ="로그인 성공"; 
-							location.href = "http://localhost:8888/cocktail/";
 						}else if(resp == 2){
 							document.getElementById('message').innerHTML ="이메일 인증필요"; 
 						}else if(resp == 3){
@@ -195,8 +212,24 @@
 						
 					}
     			})
-    		}    		
-		}    	
+    		}
+    		
+		}
+		
+		function enterkey() {
+	        if (window.event.keyCode == 13) {
+	             // 엔터키가 눌렸을 때 실행할 내용
+	             signBtn();
+	        }
+	}
+		
+		function enterkey2() {
+	        if (window.event.keyCode == 13) {
+	             // 엔터키가 눌렸을 때 실행할 내용
+	             loginBtn();
+	        }
+	}
+	 
     </script>
 </body>
 </html>

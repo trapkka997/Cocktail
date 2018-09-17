@@ -6,14 +6,15 @@
 	<typeAliases>
 		<typeAlias type="sesoc.global.cocktail.vo.User" alias="user"/>
 		<typeAlias type="sesoc.global.cocktail.vo.UserPhoto" alias="userPhoto"/>
-		<typeAlias type="sesoc.global.cocktail.vo.Cocktail" alias="cocktail"/>
 		<typeAlias type="sesoc.global.cocktail.vo.UserCocktail" alias="userCocktail"/>
+		<typeAlias type="sesoc.global.cocktail.vo.Cocktail2" alias="cocktail"/> <!-- 관리자 -->
 	</typeAliases>
 	<mappers>
 		<mapper resource="mappers/emailMapper.xml"/>
 		<mapper resource="mappers/memberMapper.xml"/>
 		<mapper resource="mappers/testMapper.xml"/>
 		<mapper resource="mappers/cocktailMapper.xml"/>
-		
+		<mapper resource="mappers/cocktailMapper2.xml"/>
+		<mapper resource="mappers/userCocktailMapper.xml"/>
 	</mappers>
 </configuration>
