@@ -18,9 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import sesoc.global.cocktail.dao.CocktailRepository;
 import sesoc.global.cocktail.dao.MemberRepository;
 import sesoc.global.cocktail.vo.Cocktail;
-import sesoc.global.cocktail.vo.Cocktail;
 import sesoc.global.cocktail.vo.User;
-import sesoc.global.cocktail.vo.UserCocktail;
 import sesoc.global.cocktail.vo.UserPhoto;
 
 @Controller
