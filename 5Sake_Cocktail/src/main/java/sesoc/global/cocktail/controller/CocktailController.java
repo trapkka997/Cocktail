@@ -41,21 +41,40 @@ public class CocktailController {
 	@Autowired CocktailRepository cocktailRepository;
 	@Autowired MemberRepository memberRepository;
 	
+	/**
+	 * 칵테일 검색화면으로 이동
+	 * 화면 안씀
+	 * @return search화면 
+	 * @author hangyutae
+	 */
 	@RequestMapping(value = "/search", method = RequestMethod.GET)
 	public String search(Model model) {
 		List<Cocktail> cocktailList = cocktailRepository.getCocktailList();
 		model.addAttribute("cocktailList", cocktailList);
-		return "cocktail/search";
+		return "imsi/search";
 	}	
-
+	
+	/**
+	 * 칵테일 디테일 화면으로 이동
+	 * @param cocktailSeq 칵테일 시퀀스
+	 * @return 칵테일 디테일 화면으로 이동
+	 * @author hangyutae
+	 */
 	@RequestMapping(value = "/cocktailDetail", method = RequestMethod.GET)
 	public String cocktailDetail(Locale locale, Model model,String cocktailSeq) {
 		Cocktail selectCocktail = cocktailRepository.selectCocktail(cocktailSeq);
 		model.addAttribute("cocktail", selectCocktail);
 		return "cocktail/cocktailDetail";
 	}
+	
+	/**
+	 * 칵테일 업로드 화면 이동
+	 * 임시화면, 기능 구현
+	 * @return 화면이동
+	 * @author hangyutae
+	 */
 	@RequestMapping(value = "/cocktailUpload", method = RequestMethod.GET)
-	public String cocktailUpload(Locale locale, Model model,String cocktailname, HttpSession httpSession) {
+	public String cocktailUpload(Locale locale, Model model, HttpSession httpSession) {
 		String userEmail = (String)httpSession.getAttribute("useremail");
 		JsoupExample2 jsoup = new JsoupExample2();
 		ArrayList<String> urls = new ArrayList<>();
@@ -83,6 +102,7 @@ public class CocktailController {
 	 * @param cocktailSeq 칵테일 번호
 	 * @return 0 : 이미 유저가 좋아했던 칵테일 일때
 	 * 		   1 : 좋아요 성공
+	 * @author hangyutae
 	 */
 	@RequestMapping(value = "/recommandCocktail", method = RequestMethod.GET)
 	public @ResponseBody int recommandCocktail(String cocktailSeq, HttpSession httpSession) {

@@ -6,17 +6,21 @@
 	<typeAliases>
 		<typeAlias type="sesoc.global.cocktail.vo.User" alias="user"/>
 		<typeAlias type="sesoc.global.cocktail.vo.UserPhoto" alias="userPhoto"/>
-		<typeAlias type="sesoc.global.cocktail.vo.Cocktail" alias="cocktail"/>
 		<typeAlias type="sesoc.global.cocktail.vo.UserCocktail" alias="userCocktail"/>
+<<<<<<< HEAD
+		<typeAlias type="sesoc.global.cocktail.vo.Cocktail2" alias="cocktail"/> <!-- 관리자 -->
+=======
 		<typeAlias type="sesoc.global.cocktail.vo.DirectMessage" alias="directMessage"/>
 		<typeAlias type="sesoc.global.cocktail.vo.UserFollow" alias="userFollow"/>
 		<typeAlias type="sesoc.global.cocktail.vo.UserLikeCocktail" alias="userLikeCocktail"/>
+>>>>>>> branch 'master' of https://github.com/trapkka997/Cocktail
 	</typeAliases>
 	<mappers>
 		<mapper resource="mappers/emailMapper.xml"/>
 		<mapper resource="mappers/memberMapper.xml"/>
 		<mapper resource="mappers/testMapper.xml"/>
 		<mapper resource="mappers/cocktailMapper.xml"/>
-		
+		<mapper resource="mappers/cocktailMapper2.xml"/>
+		<mapper resource="mappers/userCocktailMapper.xml"/>
 	</mappers>
 </configuration>

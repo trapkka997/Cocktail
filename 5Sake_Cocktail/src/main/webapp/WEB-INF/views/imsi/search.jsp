@@ -142,10 +142,10 @@
 
       <div class="grid">
         <c:forEach var="cocktail" items="${cocktailList}">
-         <div class="element-item ${cocktail.alcole} ${cocktail.liqueur} ${cocktail.mateial}" data-category="brandy">
-          <h3 class="name">${cocktail.cocktailname}</h3>
-          <a href="cocktailDetail?cocktailname=${cocktail.cocktailname }">
-          	<img src="${cocktail.imagerink }" height="100px" width="100px">
+         <div class="element-item" data-category="brandy">
+          <h3 class="name">${cocktail.cocktailName}</h3>
+          <a href="cocktailDetail?cocktailname=${cocktail.cocktailName }">
+          	<img src="${cocktail.imageRink }" height="100px" width="100px">
           </a>
         </div>
         

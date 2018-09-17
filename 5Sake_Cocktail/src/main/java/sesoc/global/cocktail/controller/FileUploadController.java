@@ -83,27 +83,14 @@ public class FileUploadController {
 	MemberRepository memberRepository;
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
-	
-	
-	@RequestMapping(value = "/visionUpload", method = RequestMethod.GET)
-	public String home(Model model) {
-//		JsoupExample2 jsoup = new JsoupExample2();
-//		ArrayList<String> urls = new ArrayList<>();
-//		try {
-//			ArrayList<String> urlList = jsoup.getImg();
-//			for(String url : urlList) {
-//				JsoupExample js = new JsoupExample();
-//				System.out.println(js.getImage(url));
-//				urls.add(js.getImage(url));
-//			}
-//		} catch (Exception e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		model.addAttribute("urls",urls);
-		return "test/visionUpload";
-	}
-	
+	/**
+	 * 사진을 업로드 -> 색깔출력 -> 칵테일 리턴
+	 * @param multipartRequest
+	 * @param servletRequest
+	 * @return cocktailList : 성공,  null : 실패
+	 * @throws Exception
+	 * @author hangyutae
+	 */
 	@RequestMapping(value="vision", method=RequestMethod.POST, produces="application/json")
 	public @ResponseBody List<Cocktail> vision(MultipartHttpServletRequest multipartRequest,HttpServletRequest servletRequest) throws Exception {
 		Iterator<String> itr = multipartRequest.getFileNames(); 
@@ -140,8 +127,16 @@ public class FileUploadController {
 			return null;
 		}
 	}
-	//  UserPhoto에 업로드 함
-	// 유저 이미지, 글, 칵테일 이미지 모두 받아서 디비에 넣으며 된다
+	
+	/**
+	 * UserPhoto에 업로드 함
+	 * 유저 이미지, 글, 칵테일 이미지 모두 받아서 디비에 넣으며 된다
+	 * @param contents 글 내용
+	 * @param cocktailName 작성자
+	 * @return success : 성공 , fail : 실패
+	 * @throws Exception
+	 * @author hangyutae
+	 */
 	@RequestMapping(value="writeBoard", method=RequestMethod.POST, produces="application/json")
 	public @ResponseBody String writeBoard(String contents,String cocktailName, HttpSession httpSession) throws Exception {
 		UserPhoto userPhoto = new UserPhoto();
@@ -160,6 +155,13 @@ public class FileUploadController {
 		}
 	}
 	
+	/**
+	 * 구글api, 사진에서 색검출
+	 * @param jsonPath 사진 경로
+	 * @return colorTest() : 색 검출 , fail : 실패
+	 * @throws IOException
+	 * @author hangyutae
+	 */
 	public String visionColor(String jsonPath) throws IOException {
 		String result = null;
 		// Instantiates a client
@@ -214,6 +216,14 @@ public class FileUploadController {
 		 return result;
 	
 	}
+	
+	/**
+	 * 구글api 단어 검색
+	 * @param jsonPath 사진경로
+	 * @return true : 성공, false : 실패
+	 * @throws IOException
+	 * @author hangyutae
+	 */
 	public boolean visionText(String jsonPath) throws IOException {
 		// Instantiates a client
 		 try (ImageAnnotatorClient vision = ImageAnnotatorClient.create()) {
@@ -255,6 +265,13 @@ public class FileUploadController {
 	
 	}
 	
+	/**
+	 * 색깔을 받아서 근접한 색을 출력함
+	 * @param r 빨간색
+	 * @param g 녹색
+	 * @param b 파란색
+	 * @return 비슷한 색 출력
+	 */
 	public String colorTest(int r, int g, int b) {
 		RGB e1 = new RGB("e1",r, g, b);
 		//yellow : FFFF00
@@ -308,6 +325,13 @@ public class FileUploadController {
 		System.out.println(colorName);
 		return colorName;
 	}
+	
+	/**
+	 * 1번색과 2번색의 색거리 출력하는 함수
+	 * @param e1 1번색
+	 * @param e2 2번색
+	 * @return 색 거리
+	 */
 	double ColourDistance(RGB e1, RGB e2)
 	{
 	  long rmean = ( (long)e1.getRed() + (long)e2.getRed() ) / 2;
