@@ -55,7 +55,7 @@
 	            <li><a data-toggle="tab" href="#loginform">Login</a></li>
 	          </ul>	          
 	          <div class="tab-content">       	          
-	            <div id="signUp" class="tab-pane fade in active">
+	            <div id="signUp" class="tab-pane fade in active" input onkeyup="enterkey();" type="text">
 	                <h2 class="text-center"><strong>Create</strong> account.</h2>
 	                <div class="form-group"><input type="email" id="userEmail" placeholder="Email" class="form-control">
 	                </div>
@@ -73,7 +73,7 @@
 	                <a href="#loginform" class="already">You already have an account? Login here.</a>
 	                </form>
 	            </div>
-	            <div id="loginform" class="tab-pane fade">
+	            <div id="loginform" class="tab-pane fade" input onkeyup="enterkey2();" type="text">
 	                <h2 class="text-center"><strong>Login</strong> here</h2>
 	                <div class="form-group"><input type="email" id="loginEmail" placeholder="Email" class="form-control">
 	                </div>
