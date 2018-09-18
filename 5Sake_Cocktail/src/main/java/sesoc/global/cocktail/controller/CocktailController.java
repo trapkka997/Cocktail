@@ -138,7 +138,7 @@ public class CocktailController {
 	 */
 	@RequestMapping(value = "/cocktailTagSearch", method = RequestMethod.GET)
 	public @ResponseBody int cocktailTagSearch(String spilits, String liqueur, String material) {
-		List<Cocktail> cocktailList = cocktailRepositor11y.cocktailTagSearch();
+		//List<Cocktail> cocktailList = cocktailRepositor11y.cocktailTagSearch();
 		
 		return 0;
 	}

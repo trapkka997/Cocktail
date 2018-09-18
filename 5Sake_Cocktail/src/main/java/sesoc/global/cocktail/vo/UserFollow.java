@@ -29,5 +29,4 @@ public class UserFollow {
 		this.followUser = followUser;
 	}
 	
-	
 }

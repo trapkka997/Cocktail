@@ -19,9 +19,7 @@ import sesoc.global.cocktail.dao.CocktailRepository;
 import sesoc.global.cocktail.dao.MemberRepository;
 import sesoc.global.cocktail.vo.Cocktail;
 import sesoc.global.cocktail.vo.Ingredient;
-import sesoc.global.cocktail.vo.Cocktail;
 import sesoc.global.cocktail.vo.User;
-import sesoc.global.cocktail.vo.UserCocktail;
 import sesoc.global.cocktail.vo.UserPhoto;
 
 @Controller
