@@ -117,7 +117,29 @@ public class CocktailController {
 		}else {
 			cocktailRepository.recommandCocktail(cocktailSeq);
 			memberRepository.insertUserLikeCocktail(userLikeCocktail);
-			return 1; 
+			return 1;
 		}
+	}
+	/**
+	 * 태그검색
+	 * 파라미터의 값을 ('0','0','0') 으로 받아서
+	 * 
+	 * SELECT *
+	 * FROM TABLE
+	 * WHERE REGEXP_LIKE(STRING, 'S|T')
+	 * ===> 만약  STRING이  (1,2,3), (4,5,6) 이고 ('S|T')가 (2,4) 인 경우
+	 * 		2, 4가 최소 하나라도 포함이 되어 있는 둘 다 출력됨. 
+	 * 
+	 * 
+	 * @param spilits '0' :  기본베이스
+	 * @param liqueur '0' : 리큐
+	 * @param material '0' : 부재료
+	 * @return 
+	 */
+	@RequestMapping(value = "/cocktailTagSearch", method = RequestMethod.GET)
+	public @ResponseBody int cocktailTagSearch(String spilits, String liqueur, String material) {
+		//List<Cocktail> cocktailList = cocktailRepositor11y.cocktailTagSearch();
+		
+		return 0;
 	}
 }

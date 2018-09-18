@@ -42,13 +42,13 @@ public class UserCocktailController {
 	@RequestMapping(value = "/gotousermode", method = RequestMethod.GET)
 	public String gotousermode(Locale locale, Model model) {
 
-		return "userindex";
+		return "usercocktail/userindex";
 	}
 
 	@RequestMapping(value = "/userrevise", method = RequestMethod.GET)
 	public String userwrite(Locale locale, Model model) {
 
-		return "userrevise";
+		return "usercocktail/userrevise";
 	}
 
 	// 등록화면
