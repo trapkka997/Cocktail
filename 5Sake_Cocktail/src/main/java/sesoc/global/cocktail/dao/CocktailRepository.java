@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import sesoc.global.cocktail.vo.Cocktail;
+import sesoc.global.cocktail.vo.Ingredient;
 import sesoc.global.cocktail.vo.User;
 import sesoc.global.cocktail.vo.UserCocktail;
 
@@ -54,6 +55,26 @@ public class CocktailRepository {
 		CocktailDAO dao = sqlSession.getMapper(CocktailDAO.class);
 		result = dao.recommandCocktail(cocktailSeq);
 		return result;
+	}
+
+	public List<Ingredient> getIngredientByAlcole() {
+		CocktailDAO dao = sqlSession.getMapper(CocktailDAO.class);
+		return dao.getIngredientByAlcole();
+	}
+
+	public List<Ingredient> getIngredientByFruit() {
+		CocktailDAO dao = sqlSession.getMapper(CocktailDAO.class);
+		return dao.getIngredientByFruit();
+	}
+
+	public List<Ingredient> getIngredientByLiqueur() {
+		CocktailDAO dao = sqlSession.getMapper(CocktailDAO.class);
+		return dao.getIngredientByLiqueur();
+	}
+
+	public List<Ingredient> getIngredientByMaterial() {
+		CocktailDAO dao = sqlSession.getMapper(CocktailDAO.class);
+		return dao.getIngredientByMaterial();
 	}
 	
 	

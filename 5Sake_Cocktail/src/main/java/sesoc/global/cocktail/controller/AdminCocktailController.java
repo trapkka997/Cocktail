@@ -49,14 +49,14 @@ public class AdminCocktailController {
 	@RequestMapping(value = "/revise", method = RequestMethod.GET)
 	public String write(Locale locale, Model model) {
 
-		return "revise";
+		return "admincocktail/revise";
 	}
 
 	// 등록화면
 	@RequestMapping(value = "/admin", method = RequestMethod.GET)
 	public String enroll(Locale locale, Model model) {
 
-		return "admin";
+		return "admincocktail/admin";
 	}
 
 	// 칵테일 등록하기
@@ -86,7 +86,7 @@ public class AdminCocktailController {
 		vo = dao.selectOne(cocktailName);
 
 		model.addAttribute("Cocktail", vo);
-		return "revise";
+		return "admincocktail/revise";
 	}
 
 	// 수정후 메인

@@ -99,7 +99,7 @@
 			RECOMMAND DESC
 	)
 	WHERE
-		<![CDATA[ ROWNUM <= 10]]>
+		<![CDATA[ ROWNUM <= 3]]>
 	</select>
 	<update id="recommandCocktail" parameterType="String">
 		UPDATE
@@ -109,5 +109,52 @@
 		WHERE
 			COCKTAIL_SEQ = #{value}
 	</update>	
+	
+	<select id="getIngredientByAlcole" resultType="ingredient">
+		select 
+			INGREDIENT_SEQ as ingredientSeq,
+			INGREDIENT,
+			CLASSIFY
+		from 
+			ingredient 
+		where
+			CLASSIFY like 'A_' 
+		order by ingredient_seq
+	</select>
+	
+	<select id="getIngredientByFruit" resultType="ingredient">
+		select 
+			INGREDIENT_SEQ as ingredientSeq,
+			INGREDIENT,
+			CLASSIFY
+		from 
+			ingredient 
+		where
+			CLASSIFY like 'F_' 
+		order by ingredient_seq
+	</select>
+	
+	<select id="getIngredientByLiqueur" resultType="ingredient">
+		select 
+			INGREDIENT_SEQ as ingredientSeq,
+			INGREDIENT,
+			CLASSIFY
+		from 
+			ingredient 
+		where
+			CLASSIFY like 'L_' 
+		order by ingredient_seq
+	</select>
+	<select id="getIngredientByMaterial" resultType="ingredient">
+		select 
+			INGREDIENT_SEQ as ingredientSeq,
+			INGREDIENT,
+			CLASSIFY
+		from 
+			ingredient 
+		where
+			CLASSIFY like 'M_' 
+		order by ingredient_seq
+	</select>
 	
 </mapper>

@@ -36,6 +36,8 @@
 			<mapping path="/*" />
 			<exclude-mapping path="/loginAjax"/>
 			<exclude-mapping path="/login"/>
+			<exclude-mapping path="/register"/>
+			<exclude-mapping path="/emailConfirm"/>
 			<beans:ref bean="LoginInterceptor" />
 		</interceptor>
 	</interceptors>

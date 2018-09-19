@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import sesoc.global.cocktail.dao.CocktailRepository;
 import sesoc.global.cocktail.dao.MemberRepository;
 import sesoc.global.cocktail.vo.Cocktail;
+import sesoc.global.cocktail.vo.Ingredient;
 import sesoc.global.cocktail.vo.User;
 import sesoc.global.cocktail.vo.UserPhoto;
 
@@ -48,6 +49,14 @@ public class HomeController {
 		}
 		List<Cocktail> recommandCocktailList = cocktailRepository.getRecommandCocktailList();
 		List<UserPhoto> recommandUserPhotoList = memberRepository.getRecommandUserPhotoList();
+		List<Ingredient> ingredientByAlcoleList = cocktailRepository.getIngredientByAlcole();
+		List<Ingredient> ingredientByFruitList = cocktailRepository.getIngredientByFruit();
+		List<Ingredient> ingredientByLiqueurList = cocktailRepository.getIngredientByLiqueur();
+		List<Ingredient> ingredientByMaterialList = cocktailRepository.getIngredientByMaterial();
+		model.addAttribute("ingredientByAlcoleList", ingredientByAlcoleList);
+		model.addAttribute("ingredientByFruitList", ingredientByFruitList);
+		model.addAttribute("ingredientByLiqueurList", ingredientByLiqueurList);
+		model.addAttribute("ingredientByMaterialList", ingredientByMaterialList);
 		System.out.println(recommandCocktailList);
 		System.out.println(recommandUserPhotoList);
 		model.addAttribute("recommandUserPhotoList", recommandUserPhotoList);
@@ -114,7 +123,17 @@ public class HomeController {
 	 * @return
 	 */
 	@RequestMapping(value = "/tag", method = RequestMethod.GET)
-	public String tag() {
+	public String tag(Model model) {
+		List<Cocktail> cocktailList = cocktailRepository.getCocktailList();
+		List<Ingredient> ingredientByAlcoleList = cocktailRepository.getIngredientByAlcole();
+		List<Ingredient> ingredientByFruitList = cocktailRepository.getIngredientByFruit();
+		List<Ingredient> ingredientByLiqueurList = cocktailRepository.getIngredientByLiqueur();
+		List<Ingredient> ingredientByMaterialList = cocktailRepository.getIngredientByMaterial();
+		model.addAttribute("ingredientByAlcoleList", ingredientByAlcoleList);
+		model.addAttribute("ingredientByFruitList", ingredientByFruitList);
+		model.addAttribute("ingredientByLiqueurList", ingredientByLiqueurList);
+		model.addAttribute("ingredientByMaterialList", ingredientByMaterialList);
+		model.addAttribute("cocktailList", cocktailList);
 		return "imsi/search2";
 	}
 	

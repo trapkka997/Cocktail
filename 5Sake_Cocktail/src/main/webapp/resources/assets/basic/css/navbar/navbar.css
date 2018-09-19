@@ -113,3 +113,8 @@ i:hover {
 	width: 8px;
 	margin: 5px 0;
 }
+
+.nav_li {
+	display: inline;
+	
+}

@@ -1,0 +1,86 @@
+/* html,
+body {
+  width: 100%;
+  height: 100%;  
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+body {
+  box-sizing: border-box;
+  padding-top: 180px;
+  background: #ffffff;
+} */
+
+input {
+  display: none;
+}
+
+.color_button {
+  display: inline-block;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+  cursor: pointer;
+} 
+
+.color_button span {
+  display: block;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border-radius: 100%;
+  /* background: #eeeeee; */
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  transition: ease .3s;
+}
+
+.color_button span:hover {
+  padding: 10px;
+}
+
+.orange .color_button span {
+  background: #FF5722;
+}
+
+.amber .color_button span {
+  background: #FFC107;
+}
+
+.lime .color_button span {
+  background: #8BC34A;
+}
+
+.teal .color_button span {
+  background: #009688;
+}
+
+.blue .color_button span {
+  background: #2196F3;
+}
+
+.indigo .color_button span {
+  background: #3F51B5;
+}
+
+.color_layer {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: transparent;
+  /*transition: ease .3s;*/
+  z-index: -1;
+}
+
