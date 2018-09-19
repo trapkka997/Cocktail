@@ -174,8 +174,7 @@ public class HomeController {
 	}
 	
 	/**
-	 * 칵테일 갤러리로 이동
-	 * 현재사용안함
+	 * 칵테일 갤러리로 로드
 	 * @return
 	 */
 	@RequestMapping(value = "/cock_gallery_body", method = RequestMethod.GET)
@@ -184,8 +183,7 @@ public class HomeController {
 	}
 	
 	/**
-	 * 유저가 올린 칵테일 정보화면
-	 * 현재 사용 안함
+	 * 유저가 올린 칵테일 정보화면 로드
 	 * @return
 	 */
 	@RequestMapping(value = "/self_Making_body", method = RequestMethod.GET)
@@ -194,13 +192,21 @@ public class HomeController {
 	}
 	
 	/**
-	 * 유저 갤러리로 이동
-	 * 현재 사용안함
+	 * 유저 갤러리 로드
 	 * @return
 	 */
 	@RequestMapping(value = "/user_gallery_body", method = RequestMethod.GET)
 	public String user_gallery_body() {
 		return "cocktail/gallery/user_gallery";
+	}
+	
+	/**
+	 * css테스트용
+	 * @return
+	 */
+	@RequestMapping(value = "/test", method = RequestMethod.GET)
+	public String test() {
+		return "cocktail/gallery/cocktail_gallery";
 	}
 	
 }

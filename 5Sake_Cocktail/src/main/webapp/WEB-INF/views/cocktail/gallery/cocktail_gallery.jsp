@@ -1,37 +1,24 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 
 <head>
 <title>NEWS FEED</title>
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
-<link rel="stylesheet"
-	href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
-<link rel="stylesheet"
-	href="./resources/assets/basic/css/navbar/navbar.css">
-<link rel="stylesheet"
-	href="./resources/assets/basic/css/proflie_slide/slide_component.css">
-<!--profile-->
-<link rel="stylesheet"
-	href="https://fonts.googleapis.com/css?family=Open+Sans">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-<link rel="stylesheet"
-	href="./resources/assets/basic/css/profile/default.css">
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
-<link rel="stylesheet" href="./resources/assets/tag/css/tag_default.css">
+<link rel="stylesheet"	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
+<link rel="stylesheet"	href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+<!-- css가 깨질경우 주석을 푸른 후 다시 막고 실행해보세요. -->
+<!-- <link rel="stylesheet"	href="./resources/assets/basic/css/navbar/navbar.css"> -->
+<!-- <link rel="stylesheet"	href="./resources/assets/basic/css/proflie_slide/slide_component.css"> -->
 
-<link rel="stylesheet"
-	href="./resources/assets/selfmaking/css/button/button.css">
+<!-- <link rel="stylesheet"	href="./resources/assets/basic/css/profile/default.css"> -->
+<!-- <link rel="stylesheet"	href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css"> -->
+<!-- <link rel="stylesheet" href="./resources/assets/tag/css/tag_default.css"> -->
+
+<link rel="stylesheet"	href="./resources/assets/selfmaking/css/button/button.css">
 <link rel="stylesheet" href="./resources/assets/gallery/css/gallery.css">
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
-<link rel="stylesheet"
-	href="./resources/assets/gallery/css/uploadbutton.css">
+<link rel="stylesheet"	href="./resources/assets/gallery/css/uploadbutton.css">
+<link rel="stylesheet"	href="./resources/assets/gallery/css/hover.css">
 <style>
 .card {
 	flex-direction: inherit;
@@ -40,179 +27,9 @@
 .card-body {
 	text-align: center;
 }
-
-.img {
-	width: 200px;
-	border: 20px solid black;
-	border-radius: 50%
-}
-
-.tag {
-	background-color: #17a2b8;
-	border-radius: 10%;
-}
-
-@import url("https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz")
-	;
-
-.tile {
-	display: inline-block;
-	line-height: 100px;
-}
-
-.tile>div, .tile a {
-	width: 100%;
-	color: #30261c;
-	background-color: #e4ecb9;
-	text-align: center;
-}
-
-.tile>a {
-	display: block;
-	text-decoration: none;
-	background-color: #d88e8f;
-}
-/* Flip effect */
-.flip>div, .flip a {
-	position: absolute;
-}
-
-.flip>a {
-	-webkit-transform: rotateX(-90deg);
-	-moz-transform: rotateX(-90deg);
-	-o-transform: rotateX(-90deg);
-	-ms-transform: rotateX(-90deg);
-	transform: rotateX(-90deg);
-}
-
-.flip:hover>div {
-	-webkit-transform: rotateX(90deg);
-	-moz-transform: rotateX(90deg);
-	-o-transform: rotateX(90deg);
-	-ms-transform: rotateX(90deg);
-	transform: rotateX(90deg);
-}
-
-.flip:hover>a {
-	-webkit-transform: rotateX(0deg);
-	-moz-transform: rotateX(0deg);
-	-o-transform: rotateX(0deg);
-	-ms-transform: rotateX(0deg);
-	transform: rotateX(0deg);
-}
-
-.flip:hover>div, .flip>a {
-	-webkit-transition: 0.05s all linear 0;
-	-moz-transition: 0.05s all linear 0;
-	-o-transition: 0.05s all linear 0;
-	-ms-transition: 0.05s all linear 0;
-	transition: 0.05s all linear 0;
-}
-
-.flip:hover>a, .flip>div {
-	-webkit-transition: 0.05s all linear 0.05s;
-	-moz-transition: 0.05s all linear 0.05s;
-	-o-transition: 0.05s all linear 0.05s;
-	-ms-transition: 0.05s all linear 0.05s;
-	transition: 0.05s all linear 0.05s;
-}
-/* Slide effect */
-.slide {
-	overflow: hidden;
-}
-
-.slide>div, .slide a {
-	-webkit-transition: 0.1s all linear;
-	-moz-transition: 0.1s all linear;
-	-o-transition: 0.1s all linear;
-	-ms-transition: 0.1s all linear;
-	transition: 0.1s all linear;
-	position: absolute;
-}
-
-.slide>a {
-	-webkit-transform: translate(200px, 0);
-	-moz-transform: translate(200px, 0);
-	-o-transform: translate(200px, 0);
-	-ms-transform: translate(200px, 0);
-	transform: translate(200px, 0);
-}
-
-.slide:hover>div {
-	-webkit-transform: translate(-200px, 0);
-	-moz-transform: translate(-200px, 0);
-	-o-transform: translate(-200px, 0);
-	-ms-transform: translate(-200px, 0);
-	transform: translate(-200px, 0);
-}
-
-.slide:hover>a {
-	-webkit-transform: translate(0, 0);
-	-moz-transform: translate(0, 0);
-	-o-transform: translate(0, 0);
-	-ms-transform: translate(0, 0);
-	transform: translate(0, 0);
-}
-/* Shutter effect */
-.shutter>div, .shutter a {
-	-webkit-transition: 0.1s all linear;
-	-moz-transition: 0.1s all linear;
-	-o-transition: 0.1s all linear;
-	-ms-transition: 0.1s all linear;
-	transition: 0.1s all linear;
-	position: absolute;
-}
-
-.shutter>div {
-	z-index: 10;
-	-webkit-transform-origin: 0% 0%;
-	-moz-transform-origin: 0% 0%;
-	-o-transform-origin: 0% 0%;
-	-ms-transform-origin: 0% 0%;
-	transform-origin: 0% 0%;
-}
-
-.shutter:hover>div {
-	-webkit-transform: rotateX(90deg);
-	-moz-transform: rotateX(90deg);
-	-o-transform: rotateX(90deg);
-	-ms-transform: rotateX(90deg);
-	transform: rotateX(90deg);
-}
-/* Page effect */
-.page>div, .page a {
-	-webkit-transition: 0.2s all linear;
-	-moz-transition: 0.2s all linear;
-	-o-transition: 0.2s all linear;
-	-ms-transition: 0.2s all linear;
-	transition: 0.2s all linear;
-	position: absolute;
-	z-index: 5;
-}
-
-.page>div {
-	z-index: 10;
-	-webkit-transform-origin: 0% 0%;
-	-moz-transform-origin: 0% 0%;
-	-o-transform-origin: 0% 0%;
-	-ms-transform-origin: 0% 0%;
-	transform-origin: 0% 0%;
-}
-
-.page:hover>div {
-	-webkit-transform: rotateX(360deg);
-	-moz-transform: rotateX(360deg);
-	-o-transform: rotateX(360deg);
-	-ms-transform: rotateX(360deg);
-	transform: rotateX(360deg);
-	z-index: 1;
-}
 </style>
-
 </head>
-
 <body>
-
 	<div>
 		<div class="container">
 			<div class="row">
@@ -222,30 +39,15 @@
 							<div class="inner">
 								<div id="selfMaking_button">
 									<h1 style="margin-top: 20px;">spirits</h1>
-									<div id="alcole" class="button-group"
-										data-filter-group='alcole'
-										style="margin-top: 20px; margin-bottom: 20px;">
-										<button id="selfMaking_tag_button1"
-											class="btn btn-outline-primary" data-filter="*"
-											style="margin-left: 5px; margin-right: 5px;">ALL</button>
-										<button id="selfMaking_tag_button2"
-											class="btn btn-outline-primary" data-filter=".브랜디"
-											style="margin-left: 5px; margin-right: 5px;">Brandy</button>
-										<button id="selfMaking_tag_button3"
-											class="btn btn-outline-primary" data-filter=".위스키"
-											style="margin-left: 5px; margin-right: 5px;">Whisky</button>
-										<button id="selfMaking_tag_button4"
-											class="btn btn-outline-primary" data-filter=".보드카"
-											style="margin-left: 5px; margin-right: 5px;">Vodka</button>
-										<button id="selfMaking_tag_button5"
-											class="btn btn-outline-primary" data-filter=".럼"
-											style="margin-left: 5px; margin-right: 5px;">Rum</button>
-										<button id="selfMaking_tag_button6"
-											class="btn btn-outline-primary" data-filter=".드라이진"
-											style="margin-left: 5px; margin-right: 5px;">Dry Jin</button>
-										<button id="selfMaking_tag_button7"
-											class="btn btn-outline-primary" data-filter=".테킬라"
-											style="margin-left: 5px; margin-right: 5px;">Tequila</button>
+									<div id="alcole" class="button-group" data-filter-group='alcole' style="margin-top: 20px; margin-bottom: 20px;">
+															
+										<button class="btn fil-cat btn-outline-primary" href="" data-rel="all" >ALL</button>
+										<button class="btn fil-cat btn-outline-primary" href="" data-rel="brandy" >Brandy</button>
+										<button class="btn fil-cat btn-outline-primary" href="" data-rel="whisky" >Whisky</button>
+										<button class="btn fil-cat btn-outline-primary" href="" data-rel="vodka" >Vodka</button>
+										<button class="btn fil-cat btn-outline-primary" href="" data-rel="rum" >Rum</button>
+										<button class="btn fil-cat btn-outline-primary" href="" data-rel="dryjin" >Dry Jin</button>
+										<button class="btn fil-cat btn-outline-primary" href="" data-rel="tequila" >Tequila</button>
 									</div>
 								</div>
 							</div>
@@ -257,23 +59,39 @@
 				<div class="col-md-12">
 					<div id="grid-gallery" class="grid-gallery">
 						<section class="grid-wrap">
-							<ul class="grid">
-								<li class="grid-sizer"></li>
+						<div id="portfolio">
+						<%-- <c:forEach var="" items="">
+								<li>
+									<figure class="tile2 scale-anm ${tag} all">
+										<img src="${imgsrc}" alt="" />
+										<figcaption>
+											<h3>${title}</h3>
+											<p>${content}</p>
+										</figcaption>
+									</figure> 
+								</li>
+									</c:forEach> --%>
+								
+						<ul class="grid">
+							<li class="grid-sizer"></li>							
 								<!-- for Masonry column width -->
 								<li>
-									<figure>
-										<img src="./resources/assets/basic/img/カクテルアイコン5.png"
-											alt="img01" />
+									<figure class="tile2 scale-anm brandy all">
+										<div class="profilebox profilebox1">
+											<img src="./resources/assets/basic/img/カクテルアイコン5.png" 	alt="img01" />
+										   	 <div class="SocialIcons">
+										    	    <a href="#"><i class="fas fa-heartbeat"></i></a>
+										    	</div>
+											 </div>
 										<figcaption>
 											<h3>Letterpress asymmetrical</h3>
 											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
 										</figcaption>
-									</figure>
+									</figure>									
 								</li>
 								<li>
-									<figure>
-										<img src="./resources/assets/basic/img/カクテルアイコン5.png"
-											alt="img02" />
+									<figure class="tile2 scale-anm whisky all">
+										<img src="./resources/assets/basic/img/カクテルアイコン5.png" alt="img02" />
 										<figcaption>
 											<h3>Vice velit chia</h3>
 											<p>Laborum tattooed iPhone, Schlitz irure nulla Tonx
@@ -282,7 +100,7 @@
 									</figure>
 								</li>
 								<li>
-									<figure>
+									<figure  class="tile2 scale-anm vodka all">
 										<img src="./resources/assets/basic/img/カクテルアイコン5.png"
 											alt="img03" />
 										<figcaption>
@@ -293,7 +111,7 @@
 									</figure>
 								</li>
 								<li>
-									<figure>
+									<figure class="tile2 scale-anm rum all">
 										<img src="./resources/assets/basic/img/カクテルアイコン5.png"
 											alt="img04" />
 										<figcaption>
@@ -304,7 +122,7 @@
 									</figure>
 								</li>
 								<li>
-									<figure>
+									<figure class="tile2 scale-anm dryjin all">
 										<img src="./resources/assets/basic/img/カクテルアイコン5.png"
 											alt="img05" />
 										<figcaption>
@@ -315,7 +133,7 @@
 									</figure>
 								</li>
 								<li>
-									<figure>
+									<figure class="tile2 scale-anm tequila all"> 
 										<img src="./resources/assets/basic/img/カクテルアイコン5.png"
 											alt="img06" />
 										<figcaption>
@@ -325,7 +143,7 @@
 									</figure>
 								</li>
 								<li>
-									<figure>
+									<figure class="tile2 scale-anm brandy all">
 										<img src="./resources/assets/basic/img/カクテルアイコン5.png"
 											alt="img01" />
 										<figcaption>
@@ -337,7 +155,7 @@
 									</figure>
 								</li>
 								<li>
-									<figure>
+									<figure class="tile2 scale-anm whisky all">
 										<img src="./resources/assets/basic/img/カクテルアイコン5.png"
 											alt="img02" />
 										<figcaption>
@@ -346,10 +164,11 @@
 												cleanse, Helvetica et enim nesciunt esse.</p>
 										</figcaption>
 									</figure>
-								</li>
+								</li>		
 							</ul>
+							</div>
 						</section>
-						<section class="slideshow">
+						<!-- <section class="slideshow">
 							<ul>
 								<li>
 									<figure>
@@ -445,7 +264,7 @@
 								<span class="icon nav-close"></span>
 							</nav>
 							<div class="info-keys icon">Navigate with arrow keys</div>
-						</section>
+						</section> -->
 					</div>
 				</div>
 				<!-- modal -->
@@ -555,82 +374,33 @@
 		</div>
 	</div>
 
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script
-		src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/js/bootstrap.bundle.min.js"></script>
+<!-- 	<script	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script	src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+	<script	src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/js/bootstrap.bundle.min.js"></script>
 	<script src="./resources/assets/basic/js/proflie_slide/classie.js"></script>
-	<script
-		src="./resources/assets/basic/js/proflie_slide/modernizr.custom.js"></script>
+	<script	src="./resources/assets/basic/js/proflie_slide/modernizr.custom.js"></script>
 	<script src="./resources/assets/tag/js/search_tag.js"></script>
 	<script src="./resources/assets/gallery/js/gallery/gallery_classie.js"></script>
-	<script
-		src="./resources/assets/gallery/js/gallery/gallery_modernizr.custom.js"></script>
-	<script
-		src="./resources/assets/gallery/js/gallery/imagesloaded.pkgd.min.js"></script>
+	<script	src="./resources/assets/gallery/js/gallery/gallery_modernizr.custom.js"></script>
+	<script	src="./resources/assets/gallery/js/gallery/imagesloaded.pkgd.min.js"></script>
 	<script src="./resources/assets/gallery/js/gallery/masonry.pkgd.min.js"></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
-	<script src="./resources/assets/gallery/js/gallery/cbpGridGallery.js"></script>
-	<script>
-          var menuRight = document.getElementById('cbp-spmenu-s2'),
-            showRight = document.getElementById('showRight'),
-            body = document.body;
-
-          showRight.onclick = function() {
-            classie.toggle(this, 'active');
-            classie.toggle(menuRight, 'cbp-spmenu-open');
-            disableOther('showRight');
-          };
-
-          function disableOther(button) {
-            if (button !== 'showRight') {
-              classie.toggle(showRight, 'disabled');
-            }
-          }
-        </script>
-	<script>
-          $(document).ready(function() {
-            var $editable = $(".editable");
-            var $overlay = $(".device-overlay");
-            var $circle = $(".editable__circle");
-            var circleTrans = 400;
-            var $item = $(".editable__rotater-item");
-            var $second = $(".second");
-
-            $(document).on("click", ".js-edit", function() {
-              $editable.addClass("clicked");
-              $overlay.addClass("active");
-            });
-
-            $(document).on("click", ".device-overlay", function() {
-              $editable.removeClass("clicked");
-              $overlay.removeClass("active");
-            });
-
-            $(document).on("click", ".editable__rotater-item", function() {
-              $(this).parent().addClass("picked");
-              $circle.addClass("picked");
-              $second.addClass("picked");
-            });
-
-            $(document).on("click", ".second__back", function() {
-              $(".editable__rotater").removeClass("picked");
-              $circle.addClass("instant");
-              $circle.css("top");
-              $circle.removeClass("picked");
-              $second.removeClass("picked");
-              $editable.removeClass("clicked");
-              $overlay.removeClass("active");
-              setTimeout(function() {
-                $circle.removeClass("instant");
-              }, circleTrans);
-            });
-
-          });
-        </script>
+	<script	src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>	 
+	<script src="./resources/assets/gallery/js/gallery/cbpGridGallery.js"></script>-->
+	
+	
+	
+	<script src="./resources/assets/gallery/js/gallery/photo_fitter.js"></script>	
 </body>
-
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
