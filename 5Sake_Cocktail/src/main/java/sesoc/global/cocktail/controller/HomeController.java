@@ -49,6 +49,14 @@ public class HomeController {
 		}
 		List<Cocktail> recommandCocktailList = cocktailRepository.getRecommandCocktailList();
 		List<UserPhoto> recommandUserPhotoList = memberRepository.getRecommandUserPhotoList();
+		List<Ingredient> ingredientByAlcoleList = cocktailRepository.getIngredientByAlcole();
+		List<Ingredient> ingredientByFruitList = cocktailRepository.getIngredientByFruit();
+		List<Ingredient> ingredientByLiqueurList = cocktailRepository.getIngredientByLiqueur();
+		List<Ingredient> ingredientByMaterialList = cocktailRepository.getIngredientByMaterial();
+		model.addAttribute("ingredientByAlcoleList", ingredientByAlcoleList);
+		model.addAttribute("ingredientByFruitList", ingredientByFruitList);
+		model.addAttribute("ingredientByLiqueurList", ingredientByLiqueurList);
+		model.addAttribute("ingredientByMaterialList", ingredientByMaterialList);
 		System.out.println(recommandCocktailList);
 		System.out.println(recommandUserPhotoList);
 		model.addAttribute("recommandUserPhotoList", recommandUserPhotoList);

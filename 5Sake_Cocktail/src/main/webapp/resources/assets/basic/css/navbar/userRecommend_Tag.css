@@ -1,0 +1,11 @@
+.tag {
+	font-size: 17px;
+    background: #eceac0ad;
+    margin-right: 5px;
+    color: #0e0000;
+    padding: 4px 7px;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    /* border-top-left-radius: 7px; */
+    border-top-right-radius: 7px;
+}

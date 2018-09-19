@@ -99,7 +99,7 @@
 			RECOMMAND DESC
 	)
 	WHERE
-		<![CDATA[ ROWNUM <= 10]]>
+		<![CDATA[ ROWNUM <= 3]]>
 	</select>
 	<update id="recommandCocktail" parameterType="String">
 		UPDATE

@@ -1,0 +1,77 @@
+/* hide checkbox */
+input[type="checkbox"] {
+  display: none;
+}
+
+/* if checkbox is checked, then do these things */
+input[type="checkbox"]:checked + label {
+  color: #F15A24;
+}
+
+/* styles when hovering over options */
+label:hover {
+  color: #F15A24;
+  cursor: pointer;
+  
+  
+  /* transitions and animations */
+  -webkit-transition: color .5s ease;
+  -moz-transition: color .5s ease;
+  -ms-transition: color .5s ease;
+  -o-transition: color .5s ease;
+  transition: color .5s ease;
+}
+  
+input.button {
+  
+	width:130px;
+	height:50px;
+	margin: 20px 0 30px 0;
+	padding: 0px 20px 0px 20px;
+	background: #e6e6e6;
+	border-radius:5px;
+	border: 1px solid #ccc;
+
+	font-family: OpenSans, sans-serif;
+	font-size:16pt;
+	color:#444;
+}
+
+.button:hover {
+  background: #F15A24;
+  color: #ddd;
+}
+
+/* .row_checkBox{
+	display : contents;
+} */
+
+.label_liqueur{
+	font-size : 14px;
+	margin-bottom : 15px;
+}
+
+.CheckBox_wrapper_liqueur{
+	float:left;
+}
+
+.CheckBox_wrapper_liqueur2{
+	float:right;
+}
+
+.CheckBox_wrapper_material{
+	float:left;
+}
+
+.CheckBox_wrapper_material2{
+	float:left;
+}
+
+.CheckBox_wrapper_material3{
+	float:right;
+}
+
+.label_material{
+	font-size : 12px;
+	margin-bottom : 15px;
+}

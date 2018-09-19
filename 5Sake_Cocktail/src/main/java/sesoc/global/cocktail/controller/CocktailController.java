@@ -132,14 +132,14 @@ public class CocktailController {
 	 * 
 	 * 
 	 * @param spilits '0' :  기본베이스
-	 * @param liqueur '0' : 리큐
+	 * @param liqueur '0' : 리큐르
 	 * @param material '0' : 부재료
 	 * @return 
 	 */
 	@RequestMapping(value = "/cocktailTagSearch", method = RequestMethod.GET)
 	public @ResponseBody int cocktailTagSearch(String spilits, String liqueur, String material) {
 		//List<Cocktail> cocktailList = cocktailRepositor11y.cocktailTagSearch();
-		
+		 
 		return 0;
 	}
 }
