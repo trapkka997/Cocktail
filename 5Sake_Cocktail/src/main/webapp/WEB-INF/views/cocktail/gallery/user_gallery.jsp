@@ -5,35 +5,12 @@
 
 <head>
 <title>NEWS FEED</title>
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
-<link rel="stylesheet"
-	href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
-<link rel="stylesheet"
-	href="./resources/assets/basic/css/navbar/navbar.css">
-<link rel="stylesheet"
-	href="./resources/assets/basic/css/proflie_slide/slide_component.css">
-<!--profile-->
-<link rel="stylesheet"
-	href="https://fonts.googleapis.com/css?family=Open+Sans">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-<link rel="stylesheet"
-	href="./resources/assets/basic/css/profile/default.css">
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
-<link rel="stylesheet" href="./resources/assets/tag/css/tag_default.css">
-
-<link rel="stylesheet"
-	href="./resources/assets/selfmaking/css/button/button.css">
+<link rel="stylesheet"	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
+<link rel="stylesheet"	href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+<link rel="stylesheet"	href="./resources/assets/selfmaking/css/button/button.css">
 <link rel="stylesheet" href="./resources/assets/gallery/css/gallery.css">
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
-<link rel="stylesheet"
-	href="./resources/assets/gallery/css/uploadbutton.css">
-<link rel="stylesheet"
-	href="./resources/assets/gallery/css/circluar_layout.css">
-<link rel="stylesheet"	href="./resources/assets/gallery/css/photo_fitter.css">
+<link rel="stylesheet"	href="./resources/assets/gallery/css/uploadbutton.css">
+<link rel="stylesheet"	href="./resources/assets/gallery/css/hover.css">
 <style>
 .card {
 	flex-direction: inherit;
@@ -41,173 +18,6 @@
 
 .card-body {
 	text-align: center;
-}
-
-.img {
-	width: 200px;
-	border: 20px solid black;
-	border-radius: 50%
-}
-
-.tag {
-	background-color: #17a2b8;
-	border-radius: 10%;
-}
-
-@import url("https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz")
-	;
-
-.tile {
-	display: inline-block;
-	line-height: 100px;
-}
-
-.tile>div, .tile a {
-	width: 100%;
-	color: #30261c;
-	background-color: #e4ecb9;
-	text-align: center;
-}
-
-.tile>a {
-	display: block;
-	text-decoration: none;
-	background-color: #d88e8f;
-}
-/* Flip effect */
-.flip>div, .flip a {
-	position: absolute;
-}
-
-.flip>a {
-	-webkit-transform: rotateX(-90deg);
-	-moz-transform: rotateX(-90deg);
-	-o-transform: rotateX(-90deg);
-	-ms-transform: rotateX(-90deg);
-	transform: rotateX(-90deg);
-}
-
-.flip:hover>div {
-	-webkit-transform: rotateX(90deg);
-	-moz-transform: rotateX(90deg);
-	-o-transform: rotateX(90deg);
-	-ms-transform: rotateX(90deg);
-	transform: rotateX(90deg);
-}
-
-.flip:hover>a {
-	-webkit-transform: rotateX(0deg);
-	-moz-transform: rotateX(0deg);
-	-o-transform: rotateX(0deg);
-	-ms-transform: rotateX(0deg);
-	transform: rotateX(0deg);
-}
-
-.flip:hover>div, .flip>a {
-	-webkit-transition: 0.05s all linear 0;
-	-moz-transition: 0.05s all linear 0;
-	-o-transition: 0.05s all linear 0;
-	-ms-transition: 0.05s all linear 0;
-	transition: 0.05s all linear 0;
-}
-
-.flip:hover>a, .flip>div {
-	-webkit-transition: 0.05s all linear 0.05s;
-	-moz-transition: 0.05s all linear 0.05s;
-	-o-transition: 0.05s all linear 0.05s;
-	-ms-transition: 0.05s all linear 0.05s;
-	transition: 0.05s all linear 0.05s;
-}
-/* Slide effect */
-.slide {
-	overflow: hidden;
-}
-
-.slide>div, .slide a {
-	-webkit-transition: 0.1s all linear;
-	-moz-transition: 0.1s all linear;
-	-o-transition: 0.1s all linear;
-	-ms-transition: 0.1s all linear;
-	transition: 0.1s all linear;
-	position: absolute;
-}
-
-.slide>a {
-	-webkit-transform: translate(200px, 0);
-	-moz-transform: translate(200px, 0);
-	-o-transform: translate(200px, 0);
-	-ms-transform: translate(200px, 0);
-	transform: translate(200px, 0);
-}
-
-.slide:hover>div {
-	-webkit-transform: translate(-200px, 0);
-	-moz-transform: translate(-200px, 0);
-	-o-transform: translate(-200px, 0);
-	-ms-transform: translate(-200px, 0);
-	transform: translate(-200px, 0);
-}
-
-.slide:hover>a {
-	-webkit-transform: translate(0, 0);
-	-moz-transform: translate(0, 0);
-	-o-transform: translate(0, 0);
-	-ms-transform: translate(0, 0);
-	transform: translate(0, 0);
-}
-/* Shutter effect */
-.shutter>div, .shutter a {
-	-webkit-transition: 0.1s all linear;
-	-moz-transition: 0.1s all linear;
-	-o-transition: 0.1s all linear;
-	-ms-transition: 0.1s all linear;
-	transition: 0.1s all linear;
-	position: absolute;
-}
-
-.shutter>div {
-	z-index: 10;
-	-webkit-transform-origin: 0% 0%;
-	-moz-transform-origin: 0% 0%;
-	-o-transform-origin: 0% 0%;
-	-ms-transform-origin: 0% 0%;
-	transform-origin: 0% 0%;
-}
-
-.shutter:hover>div {
-	-webkit-transform: rotateX(90deg);
-	-moz-transform: rotateX(90deg);
-	-o-transform: rotateX(90deg);
-	-ms-transform: rotateX(90deg);
-	transform: rotateX(90deg);
-}
-/* Page effect */
-.page>div, .page a {
-	-webkit-transition: 0.2s all linear;
-	-moz-transition: 0.2s all linear;
-	-o-transition: 0.2s all linear;
-	-ms-transition: 0.2s all linear;
-	transition: 0.2s all linear;
-	position: absolute;
-	z-index: 5;
-}
-
-.page>div {
-	z-index: 10;
-	-webkit-transform-origin: 0% 0%;
-	-moz-transform-origin: 0% 0%;
-	-o-transform-origin: 0% 0%;
-	-ms-transform-origin: 0% 0%;
-	transform-origin: 0% 0%;
-}
-
-.page:hover>div {
-	-webkit-transform: rotateX(360deg);
-	-moz-transform: rotateX(360deg);
-	-o-transform: rotateX(360deg);
-	-ms-transform: rotateX(360deg);
-	transform: rotateX(360deg);
-	z-index: 1;
 }
 </style>
 
@@ -222,7 +32,6 @@
 							<div class="inner">
 								<div id="selfMaking_button">
 									<h1 style="margin-top: 20px;">spirits</h1>
-									
 									<div id="alcole" class="button-group" data-filter-group='alcole' style="margin-top: 20px; margin-bottom: 20px;">
 															
 										<button class="btn fil-cat btn-outline-primary" href="" data-rel="all" >ALL</button>
@@ -243,9 +52,9 @@
 				<div class="col-md-12">
 					<div id="grid-gallery" class="grid-gallery">
 						<section class="grid-wrap">
-						<div>
-							<div id="portfolio">
-							 	<%-- <c:forEach var="" items="">
+						<div id="portfolio">
+						<%-- <c:forEach var="" items="">
+								<li>
 									<figure class="tile2 scale-anm ${tag} all">
 										<img src="${imgsrc}" alt="" />
 										<figcaption>
@@ -253,77 +62,115 @@
 											<p>${content}</p>
 										</figcaption>
 									</figure> 
+								</li>
 									</c:forEach> --%>
 								
+						<ul class="grid">
+							<li class="grid-sizer"></li>							
+								<!-- for Masonry column width -->
+								<li>
 									<figure class="tile2 scale-anm brandy all">
-										<img src="http://demo.themerain.com/charm/wp-content/uploads/2015/04/2-mon_1092-300x234.jpg" alt="" />
+										<div class="profilebox profilebox1">
+											<img src="./resources/assets/basic/img/カクテルアイコン5.png" 	alt="img01" />
+										   	 <div class="SocialIcons">
+										    	    <a href="#"><i class="fas fa-heartbeat"></i></a>
+										     </div>
+									    </div>
+									    
 										<figcaption>
-											<h3>Vice velit chia</h3>
-											<p>Laborum tattooed iPhone, Schlitz irure nulla Tonx
-												retro 90's chia cardigan quis asymmetrical paleo.</p>
+										<div>
+											<h3>Letterpress asymmetrical</h3>
+											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
+											</div>
 										</figcaption>
-									</figure>
+										
+									</figure>									
+								</li>
+								<li>
 									<figure class="tile2 scale-anm whisky all">
-										<img src="http://demo.themerain.com/charm/wp-content/uploads/2015/04/jti-icons_08-300x172.jpg" alt="" />										<figcaption>
+										<div class="profilebox profilebox1">
+											<img src="./resources/assets/basic/img/カクテルアイコン5.png" 	alt="img01" />
+										   	 <div class="SocialIcons">
+										    	    <a href="#"><i class="fas fa-heartbeat"></i></a>
+										     </div>
+									    </div>
 										<figcaption>
 											<h3>Vice velit chia</h3>
 											<p>Laborum tattooed iPhone, Schlitz irure nulla Tonx
 												retro 90's chia cardigan quis asymmetrical paleo.</p>
 										</figcaption>
 									</figure>
-									<figure class="tile2 scale-anm vodka all">
-										<img src="http://demo.themerain.com/charm/wp-content/uploads/2015/04/emi_haze-300x201.jpg" alt="" />
+								</li>
+								<li>
+									<figure  class="tile2 scale-anm vodka all">
+										<img src="./resources/assets/basic/img/カクテルアイコン5.png"
+											alt="img03" />
 										<figcaption>
-											<h3>Vice velit chia</h3>
-											<p>Laborum tattooed iPhone, Schlitz irure nulla Tonx
-												retro 90's chia cardigan quis asymmetrical paleo.</p>
+											<h3>Brunch semiotics</h3>
+											<p>Ex disrupt cray yr, butcher pour-over magna umami
+												kitsch before they sold out commodo.</p>
 										</figcaption>
 									</figure>
+								</li>
+								<li>
 									<figure class="tile2 scale-anm rum all">
-										<img src="http://demo.themerain.com/charm/wp-content/uploads/2015/04/codystretch-300x270.jpg" alt="" />
+										<img src="./resources/assets/basic/img/カクテルアイコン5.png"
+											alt="img04" />
 										<figcaption>
-											<h3>Vice velit chia</h3>
-											<p>Laborum tattooed iPhone, Schlitz irure nulla Tonx
-												retro 90's chia cardigan quis asymmetrical paleo.</p>
+											<h3>Chillwave nihil occupy</h3>
+											<p>In post-ironic gluten-free deserunt, PBR&amp;B non
+												pork belly cupidatat polaroid.</p>
 										</figcaption>
 									</figure>
+								</li>
+								<li>
 									<figure class="tile2 scale-anm dryjin all">
-										<img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97190&w=350&h=190" alt="" />
+										<img src="./resources/assets/basic/img/カクテルアイコン5.png"
+											alt="img05" />
 										<figcaption>
-											<h3>Vice velit chia</h3>
-											<p>Laborum tattooed iPhone, Schlitz irure nulla Tonx
-												retro 90's chia cardigan quis asymmetrical paleo.</p>
+											<h3>Kale chips lomo biodiesel</h3>
+											<p>Pariatur food truck street art consequat sustainable,
+												et kogi beard qui paleo.</p>
 										</figcaption>
 									</figure>
-									<figure class="tile2 scale-anm tequila all">
-										<img src="https://placeholdit.imgix.net/~text?txtsize=19&txt=200%C3%97290&w=200&h=290" alt="" />
+								</li>
+								<li>
+									<figure class="tile2 scale-anm tequila all"> 
+										<img src="./resources/assets/basic/img/カクテルアイコン5.png"
+											alt="img06" />
 										<figcaption>
-											<h3>Vice velit chia</h3>
-											<p>Laborum tattooed iPhone, Schlitz irure nulla Tonx
-												retro 90's chia cardigan quis asymmetrical paleo.</p>
+											<h3>Exercitation occaecat</h3>
+											<p>Street chillwave hoodie ea gentrify.</p>
 										</figcaption>
 									</figure>
+								</li>
+								<li>
 									<figure class="tile2 scale-anm brandy all">
-										 <img src="http://demo.themerain.com/charm/wp-content/uploads/2015/04/jti-icons_08-300x172.jpg" alt="" />
+										<img src="./resources/assets/basic/img/カクテルアイコン5.png"
+											alt="img01" />
 										<figcaption>
-											<h3>Vice velit chia</h3>
-											<p>Laborum tattooed iPhone, Schlitz irure nulla Tonx
-												retro 90's chia cardigan quis asymmetrical paleo.</p>
+											<h3>Selfies viral four</h3>
+											<p>Raw denim duis Tonx Shoreditch labore swag artisan
+												High Life cred, stumptown Schlitz quinoa flexitarian mollit
+												fanny pack.</p>
 										</figcaption>
 									</figure>
+								</li>
+								<li>
 									<figure class="tile2 scale-anm whisky all">
-										 <img src="http://demo.themerain.com/charm/wp-content/uploads/2015/04/transmission_01-300x300.jpg" alt="" />
+										<img src="./resources/assets/basic/img/カクテルアイコン5.png"
+											alt="img02" />
 										<figcaption>
-											<h3>Vice velit chia</h3>
-											<p>Laborum tattooed iPhone, Schlitz irure nulla Tonx
-												retro 90's chia cardigan quis asymmetrical paleo.</p>
+											<h3>Photo booth skateboard</h3>
+											<p>Vinyl squid ex High Life. Paleo Neutra nulla master
+												cleanse, Helvetica et enim nesciunt esse.</p>
 										</figcaption>
 									</figure>
-								</div>		
-								</div>									
-							<!-- <div style="clear:both;"></div>   -->
+								</li>		
+							</ul>
+							</div>
 						</section>
-						<section class="slideshow">
+						<!-- <section class="slideshow">
 							<ul>
 								<li>
 									<figure>
@@ -419,7 +266,7 @@
 								<span class="icon nav-close"></span>
 							</nav>
 							<div class="info-keys icon">Navigate with arrow keys</div>
-						</section>
+						</section> -->
 					</div>
 				</div>
 				<!-- modal -->
