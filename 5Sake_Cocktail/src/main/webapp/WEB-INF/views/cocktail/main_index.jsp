@@ -1,24 +1,34 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>5Sake's Cocktail</title>
-	
-	<link rel="stylesheet"	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
-	<link rel="stylesheet"	href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
-	<link rel="stylesheet"	href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
-	<link rel="stylesheet"	href="./resources/assets/basic/css/navbar/navbar.css">
-	<!--profile-->
-	<link rel="stylesheet"	href="./resources/assets/basic/css/profile/default.css">
-	<link rel="stylesheet"  href="./resources/assets/tag/css/tag_default.css">
-	
-	<!-- navbar_핵심 -->
-	<link rel="stylesheet"	href="./resources/assets/basic/css/navbar/color_click.css">
-	<link rel="stylesheet"	href="./resources/assets/basic/css/navbar/spirits_icon.css">
-	<link rel="stylesheet"	href="./resources/assets/basic/css/navbar/check_list.css">
-	<link rel="stylesheet"	href="./resources/assets/basic/css/navbar/userRecommend_Tag.css">
-	<!-- navbar_핵심, 지우지마세여-->	
+<title>5Sake's Cocktail</title>
+
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
+<link rel="stylesheet"
+	href="./resources/assets/basic/css/navbar/navbar.css">
+<!--profile-->
+<link rel="stylesheet"
+	href="./resources/assets/basic/css/profile/default.css">
+<link rel="stylesheet" href="./resources/assets/tag/css/tag_default.css">
+
+<!-- navbar_핵심 -->
+<link rel="stylesheet"
+	href="./resources/assets/basic/css/navbar/color_click.css">
+<link rel="stylesheet"
+	href="./resources/assets/basic/css/navbar/spirits_icon.css">
+<link rel="stylesheet"
+	href="./resources/assets/basic/css/navbar/check_list.css">
+<link rel="stylesheet"
+	href="./resources/assets/basic/css/navbar/userRecommend_Tag.css">
+<!-- navbar_핵심, 지우지마세여-->
 <style>
 h2 {
 	font-family: fantasy;
@@ -40,6 +50,7 @@ h4 {
 .img {
 	width: 98px;
 }
+
 .p {
 	margin-top: 0;
 	width: 150px;
@@ -47,42 +58,48 @@ h4 {
 /*위치에 있던 .tile .flip css -> tag_default.css로 옮김 */
 </style>
 <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script>
-      $( document ).ready( function() {    	  
-        $( '#content' ).load( '/cocktail/main_p' );
-        $('#cock_gallery').on('click',function(){
-        	 $( '#content' ).load( '/cocktail/cocktailphoto' );
-        });
-        $('#user_gallery').on('click',function(){
-       	 $( '#content' ).load( '/cocktail/userphoto' );
-       });
-        $('#self_making').on('click',function(){
-       	 $( '#content' ).load( '/cocktail/selfMaking' );
-       });
-        /* 네모 친 id를 가진 i 태그 클릭시 body부분을 로드해서 띄워줍니다.*/
-      });
-    </script>
+<script>
+	$(document).ready(function() {
+		$('#content').load('/cocktail/main_p');
+		
+		$('#cock_gallery').on('click', function() {
+			$('#content').load('/cocktail/cocktailphoto');
+		});
+		$('#user_gallery').on('click', function() {
+			$('#content').load('/cocktail/userphoto');
+		});
+		$('#self_making').on('click', function() {
+			$('#content').load('/cocktail/selfMaking');
+		});
+		$('.navbar-avatar').on('click', function() {
+			$('#content').load('/cocktail/eachoneProfile');
+		});
+		/* 네모 친 id를 가진 i 태그 클릭시 body부분을 로드해서 띄워줍니다.*/
+	});
+</script>
 </head>
 <body>
 	<div class="navbar is-top-fixed">
 		<div class="container-fluid">
 			<div class="container">
 				<div class="navbar-home">
-					<a href="/"> 
-						<img src='./resources/assets/basic/img/navbar_home2.png' class='img' style="" />
+					<a href="/"> <img
+						src='./resources/assets/basic/img/navbar_home2.png' class='img'
+						style="" />
 					</a>
 				</div>
 				<!-- navbar-home_end -->
 				<div class="navbar-left" style="width: 390px;">
 					<a class="navbar-toggle" data-toggle="dropdown"
 						aria-expanded="false" href="#"> <span></span> <span></span> <span></span>
-						<div id="recommend" class="dropdown-menu" style="margin-left: 150px; margin-right: 150px; right: 0px;">
+						<div id="recommend" class="dropdown-menu"
+							style="margin-left: 150px; margin-right: 150px; right: 0px;">
 							<!-- exit_button -->
-							<button type="button" class="close"	aria-label="Close">
+							<button type="button" class="close" aria-label="Close">
 								<span aria-hidden="true">&times;</span>
 							</button>
 							<!-- exit_button_end -->
-							
+
 							<div class="row_drop_userRecommend">
 								<div class="col-md-12">
 									<div class="card-group">
@@ -90,7 +107,8 @@ h4 {
 											<div class="card-body"
 												style="border-right: 1px solid #e8dfdf6e;">
 												<p class="card-text">
-													<img src='./resources/assets/basic/img/カクテルアイコン5.png' 	class='img' />
+													<img src='./resources/assets/basic/img/カクテルアイコン5.png'
+														class='img' />
 												</p>
 												<label>
 													<h2>UserID</h2>
@@ -122,7 +140,8 @@ h4 {
 											<div class="card-body">
 												<h4 class="card-title">cocktailName</h4>
 												<p class="card-text">
-													<img src='./resources/assets/basic/img/カクテルアイコン5.png' class='img' />
+													<img src='./resources/assets/basic/img/カクテルアイコン5.png'
+														class='img' />
 												</p>
 												<div>
 
@@ -139,12 +158,12 @@ h4 {
 											<div class="card-body">
 												<h4 class="card-title">cocktailName</h4>
 												<p class="card-text">
-													<img src='./resources/assets/basic/img/カクテルアイコン5.png' class='img' />
+													<img src='./resources/assets/basic/img/カクテルアイコン5.png'
+														class='img' />
 												</p>
 												<div>
 													<p>
-														<label class="tag">#tag</label> 
-														<label class="tag">#tag</label>
+														<label class="tag">#tag</label> <label class="tag">#tag</label>
 														<label class="tag">#tag</label>
 													</p>
 												</div>
@@ -164,9 +183,12 @@ h4 {
 
 				<!-- navbar-center-->
 				<div class="navbar-center">
-					<i id='cock_gallery' class="fas fa-glass-martini icon" style="margin-right: 20px;"></i>
-					<i id='user_gallery' class="fab fa-microsoft icon" style="margin-left: 20px; margin-right: 20px;"></i>
-					<i id='self_making'	class="fas fa-user-alt" style="margin-left: 20px;"></i>
+					<i id='cock_gallery' class="fas fa-glass-martini icon"
+						style="margin-right: 20px;"></i> <i id='user_gallery'
+						class="fab fa-microsoft icon"
+						style="margin-left: 20px; margin-right: 20px;"></i> <i
+						id='self_making' class="fas fa-user-alt"
+						style="margin-left: 20px;"></i>
 					<!-- <nav class="slidemenu">
 
 						Item 1
@@ -210,12 +232,12 @@ h4 {
 						style="margin-left: 150px; margin-right: 150px; margin-top: 0px;">
 
 						<!-- exit_button -->
-							<div>
-								<button type="button" class="close" aria-label="Close">
-									<span aria-hidden="true">×</span>
-								</button>
-							</div>
-							<!-- exit_button_end -->
+						<div>
+							<button type="button" class="close" aria-label="Close">
+								<span aria-hidden="true">×</span>
+							</button>
+						</div>
+						<!-- exit_button_end -->
 
 
 						<div class="row_drop_search">
@@ -228,47 +250,40 @@ h4 {
 												<h4 class="card-title">BASE SPIRITS</h4>
 
 												<div style="float: left;">
-													<input class = "spirit_check" type='checkbox' name='all' value='valuable' id="all" />
-														<label for="all">  
-														 	<img class="spirits_img" src="./resources/assets/basic/img/spirit_icon/spirit_icon_gray/icon_all_cn.png" />
-														</label>
-														
-													<input class = "spirit_check" type='checkbox' name='brandy' value='valuable' id="brandy" /> 
-														<label for="brandy"> 
-															<img class="spirits_img" src="./resources/assets/basic/img/spirit_icon/spirit_icon_gray/icon_brandy_cn.png" />
-														</label> 
-														
-													<input class = "spirit_check" type='checkbox' name='whisky' value='valuable' id="whisky" /> 
-														<label for="whisky"> 
-															<img class="spirits_img" src="./resources/assets/basic/img/spirit_icon/spirit_icon_gray/icon_whisky_cn.png" />
-														</label>
-														
-														
-													<input class = "spirit_check" type='checkbox' name='vodka' value='valuable' id="vodka" /> 
-														<label for="vodka"> 
-															<img class="spirits_img" src="./resources/assets/basic/img/spirit_icon/spirit_icon_gray/icon_vodka_cn.png" />
-														</label> 
-														
-													<input class = "spirit_check" type='checkbox' name='rum' value='valuable' id="rum" /> 
-														<label for="rum"> 
-															<img class="spirits_img" src="./resources/assets/basic/img/spirit_icon/spirit_icon_gray/icon_rum_cn.png" />
-														</label> 
-														
-													<input class = "spirit_check" type='checkbox' name='jin' value='valuable' id="jin" /> 
-														<label for="jin"> 
-															<img class="spirits_img" src="./resources/assets/basic/img/spirit_icon/spirit_icon_gray/icon_jin_cn.png" />
-														</label> 
-														
-													<input class = "spirit_check" type='checkbox' name='tequila' value='valuable' id="tequila" /> 
-														<label for="tequila"> 
-															<img class="spirits_img" src="./resources/assets/basic/img/spirit_icon/spirit_icon_gray/icon_tequila_cn.png" />
-														</label> 
-														
-													<input class = "spirit_check" type='checkbox' name='ETC' value='valuable' id="ETC" /> 
-														<label for="ETC"> 
-															<img class="spirits_img" src="./resources/assets/basic/img/spirit_icon/spirit_icon_gray/icon_etc_cn.png" />
-														</label> 
-														
+													<input class="spirit_check" type='checkbox' name='all'
+														value='valuable' id="all" /> <label for="all"> <img
+														class="spirits_img"
+														src="./resources/assets/basic/img/spirit_icon/spirit_icon_gray/icon_all_cn.png" />
+													</label> <input class="spirit_check" type='checkbox' name='brandy'
+														value='valuable' id="brandy" /> <label for="brandy">
+														<img class="spirits_img"
+														src="./resources/assets/basic/img/spirit_icon/spirit_icon_gray/icon_brandy_cn.png" />
+													</label> <input class="spirit_check" type='checkbox' name='whisky'
+														value='valuable' id="whisky" /> <label for="whisky">
+														<img class="spirits_img"
+														src="./resources/assets/basic/img/spirit_icon/spirit_icon_gray/icon_whisky_cn.png" />
+													</label> <input class="spirit_check" type='checkbox' name='vodka'
+														value='valuable' id="vodka" /> <label for="vodka">
+														<img class="spirits_img"
+														src="./resources/assets/basic/img/spirit_icon/spirit_icon_gray/icon_vodka_cn.png" />
+													</label> <input class="spirit_check" type='checkbox' name='rum'
+														value='valuable' id="rum" /> <label for="rum"> <img
+														class="spirits_img"
+														src="./resources/assets/basic/img/spirit_icon/spirit_icon_gray/icon_rum_cn.png" />
+													</label> <input class="spirit_check" type='checkbox' name='jin'
+														value='valuable' id="jin" /> <label for="jin"> <img
+														class="spirits_img"
+														src="./resources/assets/basic/img/spirit_icon/spirit_icon_gray/icon_jin_cn.png" />
+													</label> <input class="spirit_check" type='checkbox' name='tequila'
+														value='valuable' id="tequila" /> <label for="tequila">
+														<img class="spirits_img"
+														src="./resources/assets/basic/img/spirit_icon/spirit_icon_gray/icon_tequila_cn.png" />
+													</label> <input class="spirit_check" type='checkbox' name='ETC'
+														value='valuable' id="ETC" /> <label for="ETC"> <img
+														class="spirits_img"
+														src="./resources/assets/basic/img/spirit_icon/spirit_icon_gray/icon_etc_cn.png" />
+													</label>
+
 												</div>
 												<!-- <div id="alcole" class="button-group"
 												data-filter-group='alcole'>
@@ -307,79 +322,63 @@ h4 {
 												<h4 class="card-title">Color</h4>
 
 												<div style="float: left;">
-																										
+
 													<label class="cream"> <input type="radio"
 														name="color" value="cream">
 														<div class="color_layer"></div>
 														<div class="color_button">
 															<span></span>
 														</div>
-													</label> 
-													
-													<label class="yellow"> <input type="radio"
+													</label> <label class="yellow"> <input type="radio"
 														name="color" value="yellow">
 														<div class="color_layer"></div>
 														<div class="color_button">
 															<span></span>
 														</div>
-													</label> 
-													
-													<label class="orange"> <input type="radio"
+													</label> <label class="orange"> <input type="radio"
 														name="color" value="orange">
 														<div class="layer"></div>
 														<div class="color_button">
 															<span></span>
 														</div>
-													</label>
-													
-													<label class="red"> <input type="radio"
+													</label> <label class="red"> <input type="radio"
 														name="color" value="red">
 														<div class="layer"></div>
 														<div class="color_button">
 															<span></span>
 														</div>
-													</label>
-													
-													<label class="brown"> <input type="radio"
+													</label> <label class="brown"> <input type="radio"
 														name="color" value="brown">
 														<div class="layer"></div>
 														<div class="color_button">
 															<span></span>
 														</div>
-													</label>
-													
-													<label class="green"> <input type="radio"
+													</label> <label class="green"> <input type="radio"
 														name="color" value="green">
 														<div class="layer"></div>
 														<div class="color_button">
 															<span></span>
 														</div>
-													</label>
-													
-													<label class="blue"> <input type="radio"
+													</label> <label class="blue"> <input type="radio"
 														name="color" value="blue">
 														<div class="color_layer"></div>
 														<div class="color_button">
 															<span></span>
 														</div>
-													</label> 
-													
-													<label class="pink"> <input type="radio"
+													</label> <label class="pink"> <input type="radio"
 														name="color" value="pink">
 														<div class="color_layer"></div>
 														<div class="color_button">
 															<span></span>
 														</div>
-													</label> 
-													
-													<label class="peach"> <input type="radio"
+													</label> <label class="peach"> <input type="radio"
 														name="color" value="peach">
 														<div class="color_layer"></div>
 														<div class="color_button">
 															<span></span>
 														</div>
-													</label> 
-													
+													</label>
+
 												</div>
 
 												<!-- <div id="color" class="button-group"
@@ -404,8 +403,9 @@ h4 {
 											<div class="card-body" id="filter2">
 												<h4 class="card-title">liqueur</h4>
 												<div class="row_checkBox">
-												
-													<div class="CheckBox_wrapper_liqueur" style="margin-left: 25px; margin-top: 10px;">
+
+													<div class="CheckBox_wrapper_liqueur"
+														style="margin-left: 25px; margin-top: 10px;">
 
 														<div>
 															<input type="checkbox" id="check_liqueur_all" /> <label
@@ -455,11 +455,13 @@ h4 {
 													<!-- CheckBox_wrapper_end -->
 
 
-													<div class="CheckBox_wrapper_liqueur2" style="margin-right: 15px; margin-top: 10px;">
+													<div class="CheckBox_wrapper_liqueur2"
+														style="margin-right: 15px; margin-top: 10px;">
 
 														<div>
-															<input type="checkbox" id="check_liqueur_cremeliqueur" /> <label
-																class="label_liqueur" for="check_liqueur_cremeliqueur">
+															<input type="checkbox" id="check_liqueur_cremeliqueur" />
+															<label class="label_liqueur"
+																for="check_liqueur_cremeliqueur">
 																<div>
 																	<i class="fa fa-check"></i>
 																</div>Creme liqueur
@@ -520,7 +522,8 @@ h4 {
 												<h4 class="card-title">material</h4>
 												<div class="row_checkBox">
 
-													<div class="CheckBox_wrapper_material" style="margin-top: 10px;margin-right: 27px;">
+													<div class="CheckBox_wrapper_material"
+														style="margin-top: 10px; margin-right: 27px;">
 
 														<div>
 															<input type="checkbox" id="check_material_all" /> <label
@@ -559,8 +562,9 @@ h4 {
 														</div>
 
 														<div>
-															<input type="checkbox" id="check_material_grapefruit" /> <label
-																class="label_material" for="check_material_grapefruit">
+															<input type="checkbox" id="check_material_grapefruit" />
+															<label class="label_material"
+																for="check_material_grapefruit">
 																<div>
 																	<i class="fa fa-check"></i>
 																</div>Grape Fruit
@@ -578,7 +582,8 @@ h4 {
 														<!-- CheckBox_wrapper1_end -->
 													</div>
 
-													<div class="CheckBox_wrapper_material2" style="margin-top: 10px;">
+													<div class="CheckBox_wrapper_material2"
+														style="margin-top: 10px;">
 														<div>
 															<input type="checkbox" id="check_material_lime" /> <label
 																class="label_material" for="check_material_lime">
@@ -589,8 +594,9 @@ h4 {
 														</div>
 
 														<div>
-															<input type="checkbox" id="check_material_raspberry" /> <label
-																class="label_material" for="check_material_raspberry">
+															<input type="checkbox" id="check_material_raspberry" />
+															<label class="label_material"
+																for="check_material_raspberry">
 																<div>
 																	<i class="fa fa-check"></i>
 																</div>Raspberry
@@ -616,8 +622,9 @@ h4 {
 														</div>
 
 														<div>
-															<input type="checkbox" id="check_material_pineapple" /> <label
-																class="label_material" for="check_material_pineapple">
+															<input type="checkbox" id="check_material_pineapple" />
+															<label class="label_material"
+																for="check_material_pineapple">
 																<div>
 																	<i class="fa fa-check"></i>
 																</div>Pineapple
@@ -637,7 +644,8 @@ h4 {
 													<!-- CheckBox_wrapper2_end -->
 
 
-													<div class="CheckBox_wrapper_material3" style="margin-top: 10px;">
+													<div class="CheckBox_wrapper_material3"
+														style="margin-top: 10px;">
 
 														<div>
 															<input type="checkbox" id="check_material_egg" /> <label
@@ -649,8 +657,9 @@ h4 {
 														</div>
 
 														<div>
-															<input type="checkbox" id="check_material_gingerale" /> <label
-																class="label_material" for="check_material_gingerale">
+															<input type="checkbox" id="check_material_gingerale" />
+															<label class="label_material"
+																for="check_material_gingerale">
 																<div>
 																	<i class="fa fa-check"></i>
 																</div>Gingerale
@@ -697,7 +706,7 @@ h4 {
 													<!-- CheckBox_wrapper3_end -->
 												</div>
 												<!-- checkbox_end -->
-												
+
 												<!-- <div id="material" class="button-group"
 													data-filter-group='material'>
 													<ul class="nav-list list-inline">
@@ -722,7 +731,7 @@ h4 {
 														<li class="button" data-filter=".진저에일">Gingerale</li>
 													</ul>
 												</div> -->
-												
+
 											</div>
 										</div>
 										<!--material-->
@@ -733,12 +742,14 @@ h4 {
 							<div class="row_cocktail_fliter">
 								<div class="grid">
 									<c:forEach var="cocktail" items="${cocktailList }">
-										<div class="tile flip element-item ${cocktail.alcole } ${cocktail.liqueur } ${cocktail.mateial }"
+										<div
+											class="tile flip element-item ${cocktail.alcole } ${cocktail.liqueur } ${cocktail.mateial }"
 											data-category="transition">
 											<div>
 												<img src="${cocktail.imagerink }" height="100" width="100">
 											</div>
-											<a href="cocktailDetail?cocktailname=${cocktail.cocktailname }">
+											<a
+												href="cocktailDetail?cocktailname=${cocktail.cocktailname }">
 												${cocktail.cocktailname } </a>
 										</div>
 									</c:forEach>
@@ -752,8 +763,8 @@ h4 {
 
 
 				<div class="navbar-avatar" style="margin-left: 19px;">
-					<a href="eachoneProfile" class="navbar-item is-avatar"
-						@click.prevent="showProfilePanel"> <img	src="https://unsplash.it/200/200?image=1005" alt="Avatar" />
+					<a href="" onclick="return false;" class="navbar-item is-avatar" @click.prevent="showProfilePanel"> 
+						<img src="https://unsplash.it/200/200?image=1005" alt="Avatar" />
 					</a>
 				</div>
 
@@ -762,11 +773,15 @@ h4 {
 		<!-- container -->
 	</div>
 	<div id="content"></div>
-	<script	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script	src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
-	<script	src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/js/bootstrap.bundle.min.js"></script>
-	<script	src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script
+		src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/js/bootstrap.bundle.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
 	<script src="./resources/assets/tag/js/search_tag.js"></script>
-	<script src="./resources/assets/basic/js/photo_profile.js"></script>	
+	<script src="./resources/assets/basic/js/photo_profile.js"></script>
 </body>
 </html>

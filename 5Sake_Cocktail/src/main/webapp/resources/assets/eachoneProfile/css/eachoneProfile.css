@@ -1,0 +1,102 @@
+container { background: #fff;}
+
+
+.userprofile_outer {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+.userprofile_inner {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    padding-left: 155px;
+   /*  padding-bottom: 30px; */
+}
+
+.userpic {
+    -ms-flex: 0 0 16.666667%;
+    flex: 0 0 16.666667%;
+    max-width: 16.666667%;
+    padding-top: 50px;
+}
+
+.avatar { 
+	border-radius: 100%;
+    display: inline-block;
+    margin: 0 0 2em 0;
+   
+    border: solid 1px rgba(255, 255, 255, 0.25);
+    background-color: rgba(30, 3, 3, 0.15);
+    width : 100%;
+}
+.avatar img { 
+
+    display: block;
+    border-radius: 100%;
+   /*  display: inline-block;
+    margin: 0 0 2em 0;
+    padding-top	: 50px; */
+    width : 100%;
+}
+
+@media (min-width: 768px) {
+	.user-info {
+		padding-left: 50px;
+		padding-top: 50px;
+	}
+}
+.user-info > div, .user-info ul {
+	margin-bottom: 10px;
+}
+.full-name  { 
+	display: inline-block;
+	margin-top: 0;
+	font-weight: bold;
+}
+
+.btn {
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    /* border-color: #555; */
+    font-size: 85%;
+    border-width: 1.5px;
+}
+ul.ach {
+	display: block;
+}
+ul.ach, ul.badges { 
+	padding-left: 0; 
+}
+ul.ach .ach-count {
+	font-weight: bold;
+}
+ul.ach .ach-label {
+	color: #777;
+}
+ul.ach li{
+	list-style: none;
+	display: inline-block;
+	padding: 0 5px;
+}
+
+ul.mfe { /* m(essage)f(ollow)e(dit) */
+	float: right;
+}
+ul.mfe li {
+	float: left;
+	list-style: none;
+	margin-right: 5px;
+}
+ul.badges li { 
+	list-style: none;
+	display: inline;
+	margin-right: 8px;
+}
+
+/* profile css_ end */
+
+/* */
