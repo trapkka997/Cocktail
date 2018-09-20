@@ -76,6 +76,11 @@ public class CocktailRepository {
 		CocktailDAO dao = sqlSession.getMapper(CocktailDAO.class);
 		return dao.getIngredientByMaterial();
 	}
+
+	public List<Cocktail> getIngredientOfCocktail(String color) {
+		CocktailDAO dao = sqlSession.getMapper(CocktailDAO.class);
+		return dao.getIngredientOfCocktail(color);
+	}
 	
 	
 

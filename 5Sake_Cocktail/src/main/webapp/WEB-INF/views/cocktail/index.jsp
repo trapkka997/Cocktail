@@ -500,9 +500,9 @@ h4 {
 													<label class="orange"> <input type="radio"
 														name="color" value="orange">
 														<div class="color_layer"></div>
-														<div class="color_button">
+													 	<div class="color_button">
 															<span></span>
-														</div>
+														</div> 
 													</label> 
 													
 													<label class="amber"> <input type="radio"
@@ -1001,7 +1001,11 @@ h4 {
 		});
 	</script> 
 	<!-- dropdown box not close -->
-	
+	<script>
+	$('.card-body label').on('click', function() {
+		console.log(this);
+	});
+	</script>
 	
 </body>
 

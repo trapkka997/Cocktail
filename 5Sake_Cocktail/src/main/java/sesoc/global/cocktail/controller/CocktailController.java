@@ -137,9 +137,11 @@ public class CocktailController {
 	 * @return 
 	 */
 	@RequestMapping(value = "/cocktailTagSearch", method = RequestMethod.GET)
-	public @ResponseBody int cocktailTagSearch(String spilits, String liqueur, String material) {
-		//List<Cocktail> cocktailList = cocktailRepositor11y.cocktailTagSearch();
-		
+	public @ResponseBody int cocktailTagSearch(String color, String spilits, String liqueur, String material) {
+		List<Cocktail> ingredientOfCocktailList = cocktailRepository.getIngredientOfCocktail(color);
+		for(Cocktail ingredientOfCocktail : ingredientOfCocktailList) {
+			System.out.println(ingredientOfCocktail);
+		}
 		return 0;
 	}
 }

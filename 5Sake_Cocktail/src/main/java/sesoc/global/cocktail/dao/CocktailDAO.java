@@ -29,4 +29,6 @@ public interface CocktailDAO {
 
 	public List<Ingredient> getIngredientByMaterial();
 
+	public List<Cocktail> getIngredientOfCocktail(String color);
+
 }
