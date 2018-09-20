@@ -48,28 +48,40 @@ input {
   padding: 10px;
 }
 
-.orange .color_button span {
-  background: #FF5722;
-}
-
-.amber .color_button span {
-  background: #FFC107;
-}
-
-.lime .color_button span {
-  background: #8BC34A;
-}
-
-.teal .color_button span {
-  background: #009688;
-}
-
 .blue .color_button span {
-  background: #2196F3;
+  background: #0000ff;
 }
 
-.indigo .color_button span {
-  background: #3F51B5;
+.pink .color_button span {
+  background: #ffc0cb;
+}
+
+.peach .color_button span {
+  background: #ffdab9;
+}
+
+.cream .color_button span {
+  background: #f5fffa;
+}
+
+.yellow .color_button span {
+  background: #ffff00;
+}
+
+.orange .color_button span {
+  background: #ffa500;
+}
+
+.red .color_button span {
+  background: #ff0000;
+}
+
+.brown .color_button span {
+  background: #a52a2a;
+}
+
+.green .color_button span {
+  background: #008000;
 }
 
 .color_layer {

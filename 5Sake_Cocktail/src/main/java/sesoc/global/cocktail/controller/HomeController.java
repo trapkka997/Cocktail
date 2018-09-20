@@ -31,22 +31,31 @@ public class HomeController {
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
 	/**
+	 * 고정 메뉴 
+	 */
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public String home() {
+		return "cocktail/main_index";
+	}
+	
+	/**
 	 * 메인화면
 	 * @param vo USER[]
 	 * @return 메인화면 이동
 	 * @author hangyutae
 	 */
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Locale locale, Model model,HttpSession httpSession, User vo,HttpServletRequest servletRequest) {
+	@RequestMapping(value = "/main_p", method = RequestMethod.GET)
+	public String imsi(Locale locale, Model model,HttpSession httpSession, User vo,HttpServletRequest servletRequest) {
 		String userEmail = (String) httpSession.getAttribute("useremail");
 		vo.setUserEmail(userEmail);
 		String path = servletRequest.getSession().getServletContext().getRealPath("resources");
 		List<UserPhoto> userPhotos = dao.selectUserPhoto(vo);
 		List<Cocktail> cocktailList = cocktailRepository.getCocktailList();
+		
 		for(Cocktail c : cocktailList) {
-			String ingre = c.getIngredient();
-			
+			String ingre = c.getIngredient();			
 		}
+		
 		List<Cocktail> recommandCocktailList = cocktailRepository.getRecommandCocktailList();
 		List<UserPhoto> recommandUserPhotoList = memberRepository.getRecommandUserPhotoList();
 		List<Ingredient> ingredientByAlcoleList = cocktailRepository.getIngredientByAlcole();
@@ -64,27 +73,7 @@ public class HomeController {
 		model.addAttribute("cocktailList", cocktailList);
 		model.addAttribute("userPhotos", userPhotos);
 		model.addAttribute("path", "http://localhost:8888/cocktail/resources/");
-		return "cocktail/index";
-	}
-	
-	/**
-	 * 인덱스로 이동
-	 * 안쓰는 화면
-	 * @return
-	 */
-	@RequestMapping(value = "/index", method = RequestMethod.GET)
-	public String pro() {
-		return "cocktail/main_index";
-	}
-	
-	/**
-	 * 인덱스로 이동
-	 * 안쓰는 화면
-	 * @return
-	 */
-	@RequestMapping(value = "/main_p", method = RequestMethod.GET)
-	public String imsi() {
-		return "cocktail/main";
+		return "cocktail/main_body";
 	}
 	
 	/**
@@ -191,42 +180,14 @@ public class HomeController {
 		model.addAttribute("photoList", photoList);
 		return "user/eachoneProfile";
 	}
-	
-	/**
-	 * 칵테일 갤러리로 로드
-	 * @return
-	 */
-	@RequestMapping(value = "/cock_gallery_body", method = RequestMethod.GET)
-	public String cock_gallery_body() {
-		return "cocktail/gallery/cocktail_gallery";
-	}
-	
-	/**
-	 * 유저가 올린 칵테일 정보화면 로드
-	 * @return
-	 */
-	@RequestMapping(value = "/self_Making_body", method = RequestMethod.GET)
-	public String self_Making_body() {
-		return "cocktail/gallery/selfMaking";
-	}
-	
-	/**
-	 * 유저 갤러리 로드
-	 * @return
-	 */
-	@RequestMapping(value = "/user_gallery_body", method = RequestMethod.GET)
-	public String user_gallery_body() {
-		return "cocktail/gallery/user_gallery";
-	}
-	
+
 	/**
 	 * css테스트용
 	 * @return
 	 */
 	@RequestMapping(value = "/test", method = RequestMethod.GET)
 	public String test() {
-		return "cocktail/gallery/cocktail_gallery";
+		return "cocktail/0919nabivar";
 	}
-	
 }
 

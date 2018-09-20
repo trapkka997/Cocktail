@@ -5,7 +5,8 @@
 <html>
 
 <head>
-<title>5Sake's Cocktail</title>
+<title>5Sake's Cocktail
+</title>
 <link rel="stylesheet"	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
 <link rel="stylesheet"	href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
 <link rel="stylesheet"	href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
@@ -13,6 +14,13 @@
 <!--profile-->
 <link rel="stylesheet"	href="./resources/assets/basic/css/profile/default.css">
 <link rel="stylesheet"  href="./resources/assets/tag/css/tag_default.css">
+
+<!-- navbar_핵심 -->
+<link rel="stylesheet"	href="./resources/assets/basic/css/navbar/color_click.css">
+<link rel="stylesheet"	href="./resources/assets/basic/css/navbar/spirits_icon.css">
+<link rel="stylesheet"	href="./resources/assets/basic/css/navbar/check_list.css">
+<link rel="stylesheet"	href="./resources/assets/basic/css/navbar/userRecommend_Tag.css">
+<!-- navbar_핵심, 지우지마세여-->	
 <style>
 h2 {
 	font-family: fantasy;
@@ -51,12 +59,6 @@ h4 {
 }
 /*위치에 있던 .tile .flip css -> tag_default.css로 옮김 */
 </style>
-<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script>
-      $( document ).ready( function() {
-        $( '#content' ).load( '/cocktail/imsi' );
-      });
-    </script>
 </head>
 <body>
 	<div class="navbar is-top-fixed">
@@ -292,11 +294,6 @@ h4 {
 			<!-- container -->
 		</div>
 	</div>
-	
-	<div id='content'></div>
-	
-	
-	
 	<script	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script	src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
 	<script	src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/js/bootstrap.bundle.min.js"></script>
