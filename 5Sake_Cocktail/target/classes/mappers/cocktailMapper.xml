@@ -157,12 +157,14 @@
 		order by ingredient_seq
 	</select>
 	
-	<select id="getIngredientOfCocktail" parameterType="String" resultType="ingredient">
+	<select id="getIngredientOfCocktail" parameterType="HashMap" resultType="ingredient">
 		select  i.COCKTAIL_SEQ, i.INGREDIENT
 			from(
-				select cocktail_seq, cocktailname from cocktail2 where colorvalue = ${value} 
-			) test, COCKTAIL_INGREDIENT i
-		where test.cocktail_seq = i.cocktail_seq
+				select cocktail_seq, cocktailname from cocktail2 where colorvalue = ${color} 
+		) test, COCKTAIL_INGREDIENT i
+		WHERE test.cocktail_seq = i.cocktail_seq
+	  	      AND
+      	REGEXP_LIKE(i.INGREDIENT, ${regexp})
 	</select>
 	
 </mapper>

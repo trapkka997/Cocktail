@@ -1,6 +1,7 @@
 package sesoc.global.cocktail.controller;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
@@ -64,6 +65,7 @@ public class CocktailController {
 	public String cocktailDetail(Locale locale, Model model,String cocktailSeq) {
 		Cocktail selectCocktail = cocktailRepository.selectCocktail(cocktailSeq);
 		model.addAttribute("cocktail", selectCocktail);
+	    	
 		return "cocktail/cocktailDetail";
 	}
 	
@@ -138,10 +140,70 @@ public class CocktailController {
 	 */
 	@RequestMapping(value = "/cocktailTagSearch", method = RequestMethod.GET)
 	public @ResponseBody int cocktailTagSearch(String color, String spilits, String liqueur, String material) {
-		List<Cocktail> ingredientOfCocktailList = cocktailRepository.getIngredientOfCocktail(color);
+		String regexp = "";
+		regexp = spilits+"|"+liqueur+"|"+material;
+		HashMap<String, String> map = new HashMap<>();
+		map.put("color", color);
+		map.put("regexp",regexp);
+		List<Cocktail> ingredientOfCocktailList = cocktailRepository.getIngredientOfCocktail(map);
+		///////////////////////////////////////
+		////////         RESULT	       ////////
+		///////////////////////////////////////		
+		//		COCKTAIL_SEQ INGREDIENT		 //
+		//		------------ ----------		 //
+		//			  16	     60			 //
+		//			  16	     40			 //
+		//			  16	    109			 //
+		//			  91	     17			 //
+		//			  91	     40			 //
+		//			  91	     60			 //
+		//			  91	     79			 //
+		//			  96	      9			 //
+		//			  96	     67			 //
+		//			  96	     84			 //
+		//			  99	     68			 //
+		//			  99	     75			 //
+		//			  99	     78			 //
+		///////////////////////////////////////
+		
+		//input : 60 	  -> 	return : 16, 91
+		//input : 60, 109 ->	return : 16
+		
+		// 한 라인 씩 읽어들여서 있는것들만 출력
+		// 모든 인풋 라인 만큼 반복 후
+		// 같은 시퀀스값의 개수가 인풋 개수와 같으면
+		// 결과 값 출력
+		
+		// input : 60 >>
+		///////////////////////////////////////
+		////////         RESULT	       ////////
+		///////////////////////////////////////		
+		//		COCKTAIL_SEQ INGREDIENT		 //
+		//		------------ ----------		 //
+		//			  16	     60			 //
+		//			  91	     60			 //
+		///////////////////////////////////////
+		// return : 16, 91
+		
+		// input 60, 109 >> 
+		///////////////////////////////////////
+		////////         RESULT	       ////////
+		///////////////////////////////////////		
+		//		COCKTAIL_SEQ INGREDIENT		 //
+		//		------------ ----------		 //
+		//			  16	     60			 //
+		//			  16	    109			 //
+		//			  91	     60			 //
+		///////////////////////////////////////
+		// return 60
+		
+		
 		for(Cocktail ingredientOfCocktail : ingredientOfCocktailList) {
 			System.out.println(ingredientOfCocktail);
+	
+			
 		}
+		
 		return 0;
 	}
 }

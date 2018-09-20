@@ -1,5 +1,6 @@
 package sesoc.global.cocktail.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -77,9 +78,9 @@ public class CocktailRepository {
 		return dao.getIngredientByMaterial();
 	}
 
-	public List<Cocktail> getIngredientOfCocktail(String color) {
+	public List<Cocktail> getIngredientOfCocktail(HashMap<String, String> map) {
 		CocktailDAO dao = sqlSession.getMapper(CocktailDAO.class);
-		return dao.getIngredientOfCocktail(color);
+		return dao.getIngredientOfCocktail(map);
 	}
 	
 	
