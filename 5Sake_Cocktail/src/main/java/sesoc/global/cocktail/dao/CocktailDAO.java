@@ -1,5 +1,6 @@
 package sesoc.global.cocktail.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import sesoc.global.cocktail.vo.Cocktail;
@@ -28,5 +29,7 @@ public interface CocktailDAO {
 	public List<Ingredient> getIngredientByLiqueur();
 
 	public List<Ingredient> getIngredientByMaterial();
+
+	public List<Cocktail> getIngredientOfCocktail(HashMap<String, String> map);
 
 }
