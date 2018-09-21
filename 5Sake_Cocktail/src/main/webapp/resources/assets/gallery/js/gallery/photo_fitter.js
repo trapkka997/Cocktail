@@ -9,7 +9,6 @@ $(function() {
     setTimeout(function() {
       $("."+selectedClass).fadeIn().addClass('scale-anm');
       $("#portfolio").fadeTo(300, 1);
-    }, 300); 
-		
+    }, 300); 		
 	});
 });

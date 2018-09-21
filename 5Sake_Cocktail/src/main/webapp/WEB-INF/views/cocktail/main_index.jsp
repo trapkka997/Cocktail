@@ -83,7 +83,7 @@ h4 {
 		<div class="container-fluid">
 			<div class="container">
 				<div class="navbar-home">
-					<a href="/"> <img
+					<a href="/cocktail/"> <img
 						src='./resources/assets/basic/img/navbar_home2.png' class='img'
 						style="" />
 					</a>
@@ -773,15 +773,17 @@ h4 {
 		<!-- container -->
 	</div>
 	<div id="content"></div>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script
-		src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/js/bootstrap.bundle.min.js"></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
+	<script	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script	src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+	<script	src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/js/bootstrap.bundle.min.js"></script>
+	<script	src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
 	<script src="./resources/assets/tag/js/search_tag.js"></script>
 	<script src="./resources/assets/basic/js/photo_profile.js"></script>
+	<script>
+		$('.dropdown-menu').on("click.bs.dropdown", function(e) {
+			e.stopPropagation();
+			/* e.preventDefault(); */
+		});
+	</script>
 </body>
 </html>
