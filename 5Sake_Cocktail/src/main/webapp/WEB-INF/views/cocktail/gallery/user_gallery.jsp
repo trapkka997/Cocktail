@@ -23,8 +23,17 @@
 .card-body {
 	text-align: center;
 }
+.cock_img {
+	left: 70%;
+    width: 300px;
+    bottom: -10%;
+    position: absolute;
+    border: 1px solid;
+}
+.cock_img > img {
+	width: inherit;
+}
 </style>
-
 </head>
 <body>
 	<div>
@@ -159,6 +168,9 @@
 									</figcaption>
 									<img src="./resources/assets/gallery/grid/img/large/1.png" alt="img01"/>
 								</figure>
+								<div class='cock_img'>
+									<img src="./resources/assets/gallery/grid/img/large/1.png" alt="img01"/>
+								</div>
 							</li>
 							<li>
 								<figure>
@@ -168,6 +180,9 @@
 									</figcaption>
 									<img src="./resources/assets/gallery/grid/img/large/2.png" alt="img02"/>
 								</figure>
+								<div class='cock_img'>
+									<img src="./resources/assets/eachoneProfile/img/brandy.jpg" alt="img01"/>
+								</div>
 							</li>
 							<li>
 								<figure>
