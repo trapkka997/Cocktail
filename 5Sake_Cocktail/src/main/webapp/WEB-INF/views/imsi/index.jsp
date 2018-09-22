@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
-<!-- 규센 인덱스  -->
+
 <head>
 <title>5Sake's Cocktail</title>
 <link rel="stylesheet"
@@ -246,7 +246,8 @@ h4 {
 		<div class="container-fluid">
 			<div class="container">
 				<div class="navbar-home">
-					<a href="index"> <img src='./resources/assets/basic/img/navbar_home2.png' class='img' />
+					<a href=""> <img
+						src='./resources/assets/basic/img/navbar_home2.png' class='img' />
 					</a>
 				</div>
 				<!-- navbar-home_end -->
@@ -499,9 +500,9 @@ h4 {
 													<label class="orange"> <input type="radio"
 														name="color" value="orange">
 														<div class="color_layer"></div>
-														<div class="color_button">
+													 	<div class="color_button">
 															<span></span>
-														</div>
+														</div> 
 													</label> 
 													
 													<label class="amber"> <input type="radio"
@@ -1000,7 +1001,11 @@ h4 {
 		});
 	</script> 
 	<!-- dropdown box not close -->
-	
+	<script>
+	$('.card-body label').on('click', function() {
+		console.log(this);
+	});
+	</script>
 	
 </body>
 
