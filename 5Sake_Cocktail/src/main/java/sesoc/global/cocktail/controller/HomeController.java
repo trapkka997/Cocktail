@@ -35,6 +35,11 @@ public class HomeController {
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home() {
+//		List<Cocktail> cocktailList = cocktailRepository.getCocktailList();
+//		for(Cocktail c : cocktailList) {
+//			String ingre = c.getIngredient();			
+//		}
+//		model.addAttribute("cocktailList", cocktailList);
 		return "cocktail/main_index";
 	}
 	
@@ -48,13 +53,7 @@ public class HomeController {
 	public String imsi(Locale locale, Model model,HttpSession httpSession, User vo,HttpServletRequest servletRequest) {
 		String userEmail = (String) httpSession.getAttribute("useremail");
 		vo.setUserEmail(userEmail);
-		String path = servletRequest.getSession().getServletContext().getRealPath("resources");
 		List<UserPhoto> userPhotos = dao.selectUserPhoto(vo);
-		List<Cocktail> cocktailList = cocktailRepository.getCocktailList();
-		
-		for(Cocktail c : cocktailList) {
-			String ingre = c.getIngredient();			
-		}
 		
 		List<Cocktail> recommandCocktailList = cocktailRepository.getRecommandCocktailList();
 		List<UserPhoto> recommandUserPhotoList = memberRepository.getRecommandUserPhotoList();
@@ -70,7 +69,6 @@ public class HomeController {
 		System.out.println(recommandUserPhotoList);
 		model.addAttribute("recommandUserPhotoList", recommandUserPhotoList);
 		model.addAttribute("recommandCocktailList", recommandCocktailList);
-		model.addAttribute("cocktailList", cocktailList);
 		model.addAttribute("userPhotos", userPhotos);
 		model.addAttribute("path", "http://localhost:8888/cocktail/resources/");
 		return "cocktail/main_body";

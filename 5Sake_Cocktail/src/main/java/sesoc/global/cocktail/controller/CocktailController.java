@@ -140,45 +140,77 @@ public class CocktailController {
 	 * @param material '0' : 부재료
 	 * @return 
 	 */
-	@RequestMapping(value = "/cocktailTagSearch", method = RequestMethod.GET)
-	public @ResponseBody List<HashMap<BigInteger,BigInteger>> cocktailTagSearch(String color, String[] spilits, String[] liqueur, String[] material) {
+	@RequestMapping(value = "/cocktailTagSearch", method = RequestMethod.POST)
+	public @ResponseBody List<HashMap<BigInteger,BigInteger>> cocktailTagSearch(String color, String[] spilits, String[] liqueur,String[] material, int num) {
+		for(int i=0; i<spilits.length; i++) {
+			System.out.println(spilits[i]);
+		}
 		String regexp = "";
-		String s = "";
-		for(String sTemp : spilits) {
-			s+= sTemp;
-			if(spilits[spilits.length-1].equals(sTemp)) {
-				
-			}else {
-				s+= "|";	
+		String s="";
+		color += "Color";
+		System.out.println("색깔 : "+ color);
+		if(spilits.length!=0) {
+			for(String sTemp : spilits) {
+				s+= sTemp;
+				if(spilits[spilits.length-1].equals(sTemp)) {
+					
+				}else {
+					s+= "|";	
+				}
 			}
 		}
-		System.out.println(s);
+		System.out.println("s, request  : " + s);
 		String l = "";
-		for(String lTemp : liqueur) {
-			l+= lTemp;
-			if(liqueur[liqueur.length-1].equals(lTemp)) {
-				
-			}else {
-				l+= "|";	
+		if(liqueur != null) {
+			for(String lTemp : liqueur) {
+				l+= lTemp;
+				if(liqueur[liqueur.length-1].equals(lTemp)) {
+					
+				}else {
+					l+= "|";	
+				}
 			}
 		}
-		System.out.println(l);
+		System.out.println("l, request  : " +l);
 		String m = "";		
-		for(String mTemp : material) {
-			m+= mTemp;
-			if(material[material.length-1].equals(mTemp)) {
-				
-			}else {
-				m+= "|";	
+		
+		if(material !=null) {
+			for(String mTemp : material) {
+				m+= mTemp;
+				if(material[material.length-1].equals(mTemp)) {
+					
+				}else {
+					m+= "|";	
+				}
 			}
 		}
-		System.out.println(l);
-		int length = spilits.length + liqueur.length + material.length;
-		System.out.println("길이 : "+ length);
-		if(spilits[0] == null) {
-		
+		System.out.println("m, request  : " +m);
+		if(spilits==null && liqueur==null && material==null) {
+			System.out.println("1111111");
+			regexp = "|";
+		}else if(spilits==null && liqueur==null) {
+			System.out.println("2222222");
+			regexp = m;
+		}else if(liqueur==null && material==null) {
+			System.out.println("33333333");
+			regexp = s;
+		}else if(spilits==null && material==null) {
+			System.out.println("44444444");
+			regexp =  l;
+		}else if(liqueur==null){
+			System.out.println("55555555");
+			regexp = s + "|" + m;
+		}else if(spilits==null) {
+			System.out.println("66666666666");
+			regexp = l + "|" + m;
+		}else if(material==null) {
+			System.out.println("7777777777");
+			regexp = s+"|"+l;
 		}
-		regexp = spilits+"|"+liqueur+"|"+material;
+		else {
+			System.out.println("888888888");
+			regexp = s+"|"+l+"|"+m;
+		}
 		// 1. spilits가 없을 때
 		//    | liqueur | material
 		// 2. liqueur가 없을 때
@@ -190,10 +222,7 @@ public class CocktailController {
 		// 6. spilits | |
 		// 7. | | |
 		
-		System.out.println(regexp);
-		//test
-		regexp = "17|23|68";
-		color = "peachColor";
+		System.out.println("regexp :: "+regexp);
 		HashMap<String, String> map = new HashMap<>();
 		map.put("color", color);
 		map.put("regexp",regexp);
@@ -271,5 +300,14 @@ public class CocktailController {
 //		}
 		
 		return ingredientOfCocktailList;
+	}
+	
+	@RequestMapping(value = "/getCocktail", method = RequestMethod.POST)
+	public @ResponseBody List<Cocktail> getCocktail() {
+		List<Cocktail> result = cocktailRepository.getCocktailList();
+		for(Cocktail c : result) {
+			String ingre = c.getIngredient();			
+		}
+	 return result;
 	}
 }

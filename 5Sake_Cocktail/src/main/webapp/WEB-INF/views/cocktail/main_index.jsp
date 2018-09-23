@@ -189,36 +189,7 @@ h4 {
 						style="margin-left: 20px; margin-right: 20px;"></i> <i
 						id='self_making' class="fas fa-user-alt"
 						style="margin-left: 20px;"></i>
-					<!-- <nav class="slidemenu">
-
-						Item 1
-						<input type="radio" name="slideItem" id="slide-item-1"
-							class="slide-toggle" checked /> <label for="slide-item-1"><p class="icon">♬</p>
-							<span>Home</span></label>
-
-						Item 2
-						<input type="radio" name="slideItem" id="slide-item-2"
-							class="slide-toggle" /> <label for="slide-item-2"><p class="icon">★</p>
-							<span>About</span></label>
-
-						Item 3
-						<input type="radio" name="slideItem" id="slide-item-3"
-							class="slide-toggle" /> <label for="slide-item-3"><p class="icon">✈</p>
-							<span>Folio</span></label>
-
-						Item 4
-						<input type="radio" name="slideItem" id="slide-item-4"
-							class="slide-toggle" /> <label for="slide-item-4"><p class="icon">✎</p>
-							<span>Blog</span></label>
-
-						<div class="clear"></div>
-
-						Bar
-						<div class="slider">
-							<div class="bar"></div>
-						</div>
-
-					</nav> -->
+				
 
 				</div>
 
@@ -285,32 +256,7 @@ h4 {
 													</label>
 
 												</div>
-												<!-- <div id="alcole" class="button-group"
-												data-filter-group='alcole'>
-												<ul class="nav-list list-inline">
-													<li class = "nav_li"><img src="">All</li>
-													<li class = "nav_li"><img src="">Brandy</li>
-													<li class = "nav_li"><img src="">Whisky</li>
-													<li class = "nav_li"><img src="">Vodka</li>
-												</ul>
-												<ul class="nav-list list-inline">
-													<li class = "nav_li"><img src="">Rum</li>
-													<li class = "nav_li"><img src="">Dry
-													<li class = "nav_li"><img src="">Jin</li>
-													<li class = "nav_li"><img src="">Tequila</li>
-												</ul>
-
-
-												<ul class="nav-list list-inline">
-													<li><button class="button is-checked" data-filter="*">All</button></li>
-													<li><button class="button" data-filter=".브랜디">Brandy</button></li>
-													<li><button class="button" data-filter=".위스키">Whisky</button></li>
-													<li><button class="button" data-filter=".보드카">Vodka</button></li>
-													<li><button class="button" data-filter=".럼">Rum</button></li>
-													<li><button class="button" data-filter=".드라이진">Dry
-															Jin</button></li>
-													<li><button class="button" data-filter=".테킬라">Tequila</button></li>
-												</ul> -->
+												
 											</div>
 
 										</div>
@@ -321,7 +267,7 @@ h4 {
 											<div class="card-body" id="filter4">
 												<h4 class="card-title">Color</h4>
 
-												<div style="float: left;">
+												<div class="recommandCocktail" style="float: left;">
 
 													<label class="cream"> <input type="radio"
 														name="color" value="cream">
@@ -741,18 +687,18 @@ h4 {
 
 							<div class="row_cocktail_fliter">
 								<div class="grid">
-									<c:forEach var="cocktail" items="${cocktailList }">
+									<%-- <c:forEach var="cocktail" items="${cocktailList }">
 										<div
-											class="tile flip element-item ${cocktail.alcole } ${cocktail.liqueur } ${cocktail.mateial }"
+											class="tile flip element-item ${cocktail.ingredient }"
 											data-category="transition">
 											<div>
-												<img src="${cocktail.imagerink }" height="100" width="100">
+												<img src="${cocktail.imageRink }" height="100" width="100">
 											</div>
 											<a
-												href="cocktailDetail?cocktailname=${cocktail.cocktailname }">
-												${cocktail.cocktailname } </a>
+												href="cocktailDetail?cocktailSeq=${cocktail.cocktailSeq }">
+												${cocktail.cocktailName } </a>
 										</div>
-									</c:forEach>
+									</c:forEach> --%>
 								</div>
 							</div>
 							<!-- cocktail_Fliter -->
@@ -784,6 +730,71 @@ h4 {
 			e.stopPropagation();
 			/* e.preventDefault(); */
 		});
+	</script>
+	<script type="text/javascript">
+		$.ajax({
+			method : "post",
+			url : "getCocktail",
+			success : function(resp) {
+				/* <div
+				class="tile flip element-item ${cocktail.ingredient }"
+				data-category="transition">
+				<div>
+					<img src="${cocktail.imageRink }" height="100" width="100">
+				</div>
+				<a 
+					href="cocktailDetail?cocktailSeq=${cocktail.cocktailSeq }">
+					${cocktail.cocktailName } </a>
+			</div>*/
+				var inner = "";
+				resp.forEach(function(value, index, resp) {
+					inner += '<div class="tile flip element-item" data-category="transition">';
+					inner += '<div>';
+					inner += '<img src="'+resp[index].imageRink+'" height="100" width="100">';
+					inner += '</div>';
+					inner += '<a href="cocktailDetail?cocktailSeq='+resp[index].cocktailSeq+'">';
+					inner += resp[index].cocktailName ;
+					inner += '</a>';
+					inner += '</div>';
+				});
+				console.log(resp);
+				$('.row_cocktail_fliter').children('.grid').html(inner); 
+			},
+			error : function(){
+				alert('error');
+			}
+		});
+	</script>
+	<script type="text/javascript">
+	$('.recommandCocktail').children('label').on('click', function() {
+		var num = 0;
+		var spilits = ['1','4'];
+		var liqueur = [];
+		var material = [];
+		var color = $(this).attr('class');
+		console.log(spilits);
+		console.log(JSON.stringify(spilits));
+
+		$.ajax({
+			method : "post",
+			url : "cocktailTagSearch",
+			traditional : true,
+			data : {
+				"num" : num,
+				"color" : color,
+				"spilits" : spilits,
+				"liqueur" : liqueur,
+				"material" : material
+			},
+			success : function(resp) {
+				console.log(resp);
+			},
+			error :  function() {
+				alert('error');
+			}
+			
+		})
+	});
 	</script>
 </body>
 </html>
