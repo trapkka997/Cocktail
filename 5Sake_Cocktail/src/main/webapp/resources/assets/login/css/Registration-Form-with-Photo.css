@@ -20,6 +20,10 @@
   background-color:#ffffff;
   padding:40px 60px;
   color:#505e6c;
+  border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
 }
 
 @media (max-width:991px) {
