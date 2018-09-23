@@ -72,7 +72,7 @@ h4 {
 			$('#content').load('/cocktail/selfMaking');
 		});
 		$('.navbar-avatar').on('click', function() {
-			$('#content').load('/cocktail/eachoneProfile');
+			$('#content').load('/cocktail/eachoneProfile?userEmail=${sessionScope.useremail}');
 		});
 		/* 네모 친 id를 가진 i 태그 클릭시 body부분을 로드해서 띄워줍니다.*/
 	});

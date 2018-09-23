@@ -165,7 +165,7 @@ public class HomeController {
 	 */
 	@RequestMapping(value = "/eachoneProfile", method = RequestMethod.GET)
 	public String eachoneprofile(Model model, User vo) {
-		/*User user = dao.selectOne(vo);
+		User user = dao.selectOne(vo);
 		List<UserPhoto> photoList = dao.selectUserPhoto(vo);
 		String followNum = dao.getUserFollowNum(vo);
 		String followerNum = dao.getUserFollowerNum(vo);
@@ -175,7 +175,7 @@ public class HomeController {
 		model.addAttribute("followNum", followNum);
 		model.addAttribute("followerNum", followerNum);
 		model.addAttribute("path", "http://localhost:8888/cocktail/resources/");
-		model.addAttribute("photoList", photoList);*/
+		model.addAttribute("photoList", photoList);
 		return "user/eachoneProfile";
 	}
 
