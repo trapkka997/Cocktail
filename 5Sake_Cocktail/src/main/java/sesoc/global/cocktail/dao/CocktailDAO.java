@@ -1,5 +1,7 @@
 package sesoc.global.cocktail.dao;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.HashMap;
 import java.util.List;
 
@@ -30,6 +32,6 @@ public interface CocktailDAO {
 
 	public List<Ingredient> getIngredientByMaterial();
 
-	public List<Cocktail> getIngredientOfCocktail(HashMap<String, String> map);
+	public List<HashMap<String,BigDecimal>> getIngredientOfCocktail(HashMap<String, String> map);
 
 }

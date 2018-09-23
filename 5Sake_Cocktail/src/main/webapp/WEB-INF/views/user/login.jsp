@@ -161,7 +161,30 @@
     		
     	    if(loginEmail.length == 0 || loginPassword.length ==0 ){
     			alert('모든 내용을 입력해주세요.');
-    		}else if(loginEmail == '' || !re.test(loginEmail)){
+    		}else if(loginEmail == 'admin123' || loginPassword == 'admin123'){
+    			$.ajax({
+    				method: 'post',
+    				url: 'loginAjax',
+    				data: {
+    					userEmail : loginEmail,
+    					userPwd : loginPassword
+    				},
+    				success: function(resp) {
+						if(resp ==1){
+							document.getElementById('message').innerHTML ="로그인 성공"; 
+							location.href = "/cocktail/";
+						}else if(resp == 2){
+							document.getElementById('message').innerHTML ="이메일 인증필요"; 
+						}else if(resp == 3){
+							document.getElementById('message').innerHTML ="로그인 실패"; 
+						}
+					},
+					error: function() {
+						
+					}
+    			})
+    		}
+    	    else if(loginEmail == '' || !re.test(loginEmail)){
     			alert("올바른 이메일 형식을 입력하세요");	
     		}else if(loginPassword.length<6){
     			alert("비밀번호는 6자 이상으로 해주세요");

@@ -1,9 +1,12 @@
 package sesoc.global.cocktail.controller;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 
 import javax.inject.Inject;
 import javax.mail.MessagingException;
@@ -138,14 +141,93 @@ public class CocktailController {
 	 * @param material '0' : 부재료
 	 * @return 
 	 */
-	@RequestMapping(value = "/cocktailTagSearch", method = RequestMethod.GET)
-	public @ResponseBody int cocktailTagSearch(String color, String spilits, String liqueur, String material) {
+	@RequestMapping(value = "/cocktailTagSearch", method = RequestMethod.POST)
+	public @ResponseBody List<HashMap<String,BigDecimal>> cocktailTagSearch(String color, String[] spilits, String[] liqueur,String[] material, int num) {
+		for(int i=0; i<spilits.length; i++) {
+			System.out.println(spilits[i]);
+		}
 		String regexp = "";
-		regexp = spilits+"|"+liqueur+"|"+material;
+		String s="";
+		color += "Color";
+		System.out.println("색깔 : "+ color);
+		if(spilits.length!=0) {
+			for(String sTemp : spilits) {
+				s+= sTemp;
+				if(spilits[spilits.length-1].equals(sTemp)) {
+					
+				}else {
+					s+= "|";	
+				}
+			}
+		}
+		System.out.println("s, request  : " + s);
+		String l = "";
+		if(liqueur != null) {
+			for(String lTemp : liqueur) {
+				l+= lTemp;
+				if(liqueur[liqueur.length-1].equals(lTemp)) {
+					
+				}else {
+					l+= "|";	
+				}
+			}
+		}
+		System.out.println("l, request  : " +l);
+		String m = "";		
+		
+		if(material !=null) {
+			for(String mTemp : material) {
+				m+= mTemp;
+				if(material[material.length-1].equals(mTemp)) {
+					
+				}else {
+					m+= "|";	
+				}
+			}
+		}
+		System.out.println("m, request  : " +m);
+		if(spilits==null && liqueur==null && material==null) {
+			System.out.println("1111111");
+			regexp = "|";
+		}else if(spilits==null && liqueur==null) {
+			System.out.println("2222222");
+			regexp = m;
+		}else if(liqueur==null && material==null) {
+			System.out.println("33333333");
+			regexp = s;
+		}else if(spilits==null && material==null) {
+			System.out.println("44444444");
+			regexp =  l;
+		}else if(liqueur==null){
+			System.out.println("55555555");
+			regexp = s + "|" + m;
+		}else if(spilits==null) {
+			System.out.println("66666666666");
+			regexp = l + "|" + m;
+		}else if(material==null) {
+			System.out.println("7777777777");
+			regexp = s+"|"+l;
+		}
+		else {
+			System.out.println("888888888");
+			regexp = s+"|"+l+"|"+m;
+		}
+		// 1. spilits가 없을 때
+		//    | liqueur | material
+		// 2. liqueur가 없을 때
+		//	  spilits | | material
+		// 3. material가 없을 때 
+		//	  spilits | liqueur |
+		// 4. | | material
+		// 5. | liqueur |
+		// 6. spilits | |
+		// 7. | | |
+		
+		System.out.println("regexp :: "+regexp);
 		HashMap<String, String> map = new HashMap<>();
 		map.put("color", color);
 		map.put("regexp",regexp);
-		List<Cocktail> ingredientOfCocktailList = cocktailRepository.getIngredientOfCocktail(map);
+		List<HashMap<String,BigDecimal>> ingredientOfCocktailList = cocktailRepository.getIngredientOfCocktail(map);
 		///////////////////////////////////////
 		////////         RESULT	       ////////
 		///////////////////////////////////////		
@@ -155,7 +237,7 @@ public class CocktailController {
 		//			  16	     40			 //
 		//			  16	    109			 //
 		//			  91	     17			 //
-		//			  91	     40			 //
+		//			  91	     40 		 //
 		//			  91	     60			 //
 		//			  91	     79			 //
 		//			  96	      9			 //
@@ -195,15 +277,39 @@ public class CocktailController {
 		//			  16	    109			 //
 		//			  91	     60			 //
 		///////////////////////////////////////
-		// return 60
+		// return 16
 		
 		
-		for(Cocktail ingredientOfCocktail : ingredientOfCocktailList) {
-			System.out.println(ingredientOfCocktail);
-	
+		// input 60, 109 >> 
+		///////////////////////////////////////
+		////////         RESULT	       ////////
+		///////////////////////////////////////		
+		//		COCKTAIL_SEQ COUNT(*)		 //
+		//		------------ ----------		 //
+		//			  16	     2			 //
+		//			  91	     1			 //
+		///////////////////////////////////////
+		// 만약 count(*)가 인풋 개수가 3일때,
+		// 그 값을 리턴
+		
+		System.out.println(ingredientOfCocktailList);
+		for(HashMap<String,BigDecimal> ingredient: ingredientOfCocktailList) {
+			System.out.println("COUNT = "+ingredient.get("COUNT"));
+			if(ingredient.get("COUNT").equals(num)) {
+				System.out.println("COCKTAIL_SEQ = "+ingredient.get("COCTAIL_SEQ"));
+			}
 			
 		}
 		
-		return 0;
+		return ingredientOfCocktailList;
+	}
+	
+	@RequestMapping(value = "/getCocktail", method = RequestMethod.POST)
+	public @ResponseBody List<Cocktail> getCocktail() {
+		List<Cocktail> result = cocktailRepository.getCocktailList();
+		for(Cocktail c : result) {
+			String ingre = c.getIngredient();			
+		}
+	 return result;
 	}
 }

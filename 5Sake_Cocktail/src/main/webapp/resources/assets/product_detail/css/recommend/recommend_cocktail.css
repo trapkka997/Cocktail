@@ -15,6 +15,7 @@
 
 .product-items .product-item:last-child {
   margin-right:0;
+  
 }
 
 .product-items .product-item:hover {
@@ -34,9 +35,10 @@
 }
 
 .product-items .product-item > .item-wrap img {
-  opacity:.9;
+  /* opacity:.9; */
   transition:.5s;
   -webkit-transition:.5s;
+  width: 150px;
 }
 
 .product-items .product-item:hover img {
@@ -86,4 +88,11 @@
   font-size:15px;
   color:#4DC3C7;
 }
+
+
+.container_cocktail {
+   
+    text-align: center;
+}
+
 

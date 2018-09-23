@@ -16,7 +16,7 @@ body {
   font-family:sans-serif;
 }
 
-i:hover {
+a:hover {
     color: #f30000;
 	text-decoration: ;
     clear: inherit;
