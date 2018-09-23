@@ -1,5 +1,6 @@
 package sesoc.global.cocktail.dao;
 
+import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.HashMap;
 import java.util.List;
@@ -79,7 +80,7 @@ public class CocktailRepository {
 		return dao.getIngredientByMaterial();
 	}
 
-	public List<HashMap<BigInteger,BigInteger>> getIngredientOfCocktail(HashMap<String, String> map) {
+	public List<HashMap<String,BigDecimal>> getIngredientOfCocktail(HashMap<String, String> map) {
 		CocktailDAO dao = sqlSession.getMapper(CocktailDAO.class);
 		return dao.getIngredientOfCocktail(map);
 	}

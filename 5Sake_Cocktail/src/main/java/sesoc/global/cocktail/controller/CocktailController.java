@@ -1,5 +1,6 @@
 package sesoc.global.cocktail.controller;
 
+import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -141,7 +142,7 @@ public class CocktailController {
 	 * @return 
 	 */
 	@RequestMapping(value = "/cocktailTagSearch", method = RequestMethod.POST)
-	public @ResponseBody List<HashMap<BigInteger,BigInteger>> cocktailTagSearch(String color, String[] spilits, String[] liqueur,String[] material, int num) {
+	public @ResponseBody List<HashMap<String,BigDecimal>> cocktailTagSearch(String color, String[] spilits, String[] liqueur,String[] material, int num) {
 		for(int i=0; i<spilits.length; i++) {
 			System.out.println(spilits[i]);
 		}
@@ -226,7 +227,7 @@ public class CocktailController {
 		HashMap<String, String> map = new HashMap<>();
 		map.put("color", color);
 		map.put("regexp",regexp);
-		List<HashMap<BigInteger,BigInteger>> ingredientOfCocktailList = cocktailRepository.getIngredientOfCocktail(map);
+		List<HashMap<String,BigDecimal>> ingredientOfCocktailList = cocktailRepository.getIngredientOfCocktail(map);
 		///////////////////////////////////////
 		////////         RESULT	       ////////
 		///////////////////////////////////////		
@@ -292,12 +293,13 @@ public class CocktailController {
 		// 그 값을 리턴
 		
 		System.out.println(ingredientOfCocktailList);
-//		for(Map.Entry<String, String> entry: ingredientOfCocktailList.entrySet()) {
-//			System.out.println(entry.getKey());
-//			System.out.println(entry.getValue());
-//	
-//			
-//		}
+		for(HashMap<String,BigDecimal> ingredient: ingredientOfCocktailList) {
+			System.out.println("COUNT = "+ingredient.get("COUNT"));
+			if(ingredient.get("COUNT").equals(num)) {
+				System.out.println("COCKTAIL_SEQ = "+ingredient.get("COCTAIL_SEQ"));
+			}
+			
+		}
 		
 		return ingredientOfCocktailList;
 	}
