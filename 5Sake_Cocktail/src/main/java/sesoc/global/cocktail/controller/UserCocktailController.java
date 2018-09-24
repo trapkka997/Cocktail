@@ -55,7 +55,7 @@ public class UserCocktailController {
 	@RequestMapping(value = "/useradmin", method = RequestMethod.GET)
 	public String userenroll(Locale locale, Model model) {
 
-		return "useradmin";
+		return "usercocktail/useradmin";
 	}
 
 	// 메인화면으로 돌아가기
@@ -72,7 +72,7 @@ public class UserCocktailController {
 		UserCocktail vo =repository.userselectOne(userCocktailSeq);
 		System.out.println(vo);
 		model.addAttribute("userCocktail", vo);
-		return "userrevise";
+		return "usercocktail/userrevise";
 	}
 
 	// 수정후 메인
@@ -81,7 +81,7 @@ public class UserCocktailController {
 		
 		int result = repository.usercocktailUpdate(vo);
 		System.out.println(result);
-		return "userindex";
+		return "usercocktail/userindex";
 
 	}
 
@@ -92,7 +92,7 @@ public class UserCocktailController {
 			dao.userhitcount(Integer.parseInt(userCocktailSeq));
 			UserCocktail result = dao.userselectOne(userCocktailSeq);
 			model.addAttribute("usercocktail", result);
-			return "userboarddetail";
+			return "usercocktail/userboarddetail";
 
 		}
 	
