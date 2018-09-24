@@ -48,8 +48,23 @@
 	href="./resources/assets/eachoneProfile/css/eachoneProfile_messageModal.css">
 <link rel="stylesheet"
 	href="./resources/assets/eachoneProfile/css/eachoneProfile_following_followerModal.css">
+<link rel="stylesheet"
+	href="./resources/assets/eachoneProfile/css/eachoneProfile_profile_editModal.css">
+	
 <!-- eachoneProfile_css 중요 -->
+<style>
+.modal-dialog .profile{
+    max-width: 500px;
+    height: 90%;
+}
 
+.modal-content .profile{
+    background-color: #fff0;
+    border: none;
+    display: unset;
+}
+
+</style>
 
 </head>
 
@@ -63,12 +78,22 @@
 					<div class="userprofile_outer">
 						<div class="userprofile_inner">
 							<!-- profile -->
-							<div class="container">
-								<div class="row">
+							<div class="container profile">
+								<div class="row profile">
 									<div class="col-xs-4 col-sm-2 col-md-offset-2 userpic">
-										<span class="avatar"> <img
-											src="./resources/assets/eachoneProfile/img/userpic/userpic_default2.jpg" />
+									
+										<div class="p-image">
+											<i class="fa fa-camera upload-button"></i> <input
+												class="file-upload" type="file" accept="image/*" />
+										</div>
+									
+										<span class="avatar"> 
+											
+											<img class ="profile-pic" src="./resources/assets/eachoneProfile/img/userpic/userpic_default2.jpg" />
+											
 										</span>
+
+										
 
 									</div>
 									<div class="col-xs-8 col-sm-10 col-md-8 user-info">
@@ -82,7 +107,7 @@
 													<button class="btn btn-default">Follow</button>
 												</li>
 												<li>
-													<button class="btn btn-default">Edit</button>
+													<button class="btn btn-default" data-toggle="modal" data-target="#profile_editModal">Edit</button>
 												</li>
 											</ul>
 										</div>
@@ -322,14 +347,39 @@
 				</div>
 			</div>
 			<!-- followingModal_end -->
+			
+			<!-- profile_editModal -->
+
+			<div class="modal fade" id="profile_editModal" tabindex="-1" aria-labelledby="output" role="dialog" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+
+						<form class="profile_edit_form">
+							<h1 class="profile_edit_h1">Edit information</h1>
+							<div class="question">
+								<input type="text" required /> <label>NickName</label>
+							</div>
+							<div class="question">
+								<input type="text" required /> <label>Instagram ID</label>
+							</div>
+							<div class="question">
+								<input type="text" required /> <label>Your Likes</label>
+							</div>
+
+							<button>Submit</button>
+						</form>
+
+					</div>
+				</div>
+			</div>
+			<!-- profile_editModal_end -->
 
 
 					<!-- tabMenu -->
 					<div class="wrapper_tabMenu">
 						<nav class="tabs_tabMenu">
 							<div class="selector_tabMenu"></div>
-							<a href="#" class="active_tabMenu">好き酒</a> <a href="#">好き写真</a> <a
-								href="#">好き方</a>
+							<a href="#" class="active_tabMenu">好き酒</a> <a href="#">好き写真</a> <a href="#">好き方</a>
 						</nav>
 					</div>
 					<!-- tabMenu_end -->
@@ -702,8 +752,7 @@
 				</div>
 			</div>
 
-			<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script
 		src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
 	<script
@@ -731,12 +780,34 @@
 	<script src="./resources/assets/eachoneProfile/js/messageModal.js"></script>
 	<!-- MessageModal -->
 
-	<!-- <script>
+	<!-- Profile_image change -->
+	<script>
 	
-		$('#messageModal').modal('hide')
-		
-	</script> -->
+		$(document).ready(function() {
 
+			var readURL = function(input) {
+				if (input.files && input.files[0]) {
+					var reader = new FileReader();
+
+					reader.onload = function(e) {
+						$('.profile-pic').attr('src', e.target.result);
+					}
+
+					reader.readAsDataURL(input.files[0]);
+				}
+			}
+
+			$(".file-upload").on('change', function() {
+				readURL(this);
+			});
+
+			$(".upload-button").on('click', function() {
+				$(".file-upload").click();
+			});
+		});
+	</script>
+	<!-- Profile_image change_end -->
+	
 </body>
 
 </html>
