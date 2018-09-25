@@ -55,7 +55,7 @@
 									</div>
 									<div class="col-xs-8 col-sm-10 col-md-8 user-info">
 										<div>
-											<h2 class="full-name">Ogbonna Justice</h2>
+											<h2 class="full-name">${user.userEmail }</h2>
 											<ul class="mfe">
 												<li>
 													<button class="btn btn-default">Message</button>
@@ -69,11 +69,11 @@
 											</ul>
 										</div>
 										<ul class="ach">
-											<li><span class="ach-count">0</span> <span
+											<li><span class="ach-count">${postNum }</span> <span
 												class="ach-label">Posts</span></li>
-											<li><span class="ach-count">0</span> <span
+											<li><span class="ach-count">${followerNum }</span> <span
 												class="ach-label">Followers</span></li>
-											<li><span class="ach-count">0</span> <span
+											<li><span class="ach-count">${followNum }</span> <span
 												class="ach-label">Following</span></li>
 										</ul>
 										<div>
@@ -111,185 +111,34 @@
 							<ul class="grid">
 								<li class="grid-sizer"></li>
 								<!-- for Masonry column width -->
+								<c:forEach var="userPhoto" items="${photoList }">
 								<li>
 									<figure>
-										<img src="./resources/assets/basic/img/カクテルアイコン5.png"
+										<img src="${path }${userPhoto.saveFileName}"
 											alt="img01" />
 										<figcaption>
-											<h3>Letterpress asymmetrical</h3>
-											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
+											<h3>${userPhoto.title }</h3>
+											<p>${userPhoto.contents }</p>
 										</figcaption>
 									</figure>
 								</li>
-								<li>
-									<figure>
-										<img src="./resources/assets/basic/img/カクテルアイコン5.png"
-											alt="img02" />
-										<figcaption>
-											<h3>Vice velit chia</h3>
-											<p>Laborum tattooed iPhone, Schlitz irure nulla Tonx
-												retro 90's chia cardigan quis asymmetrical paleo.</p>
-										</figcaption>
-									</figure>
-								</li>
-								<li>
-									<figure>
-										<img src="./resources/assets/basic/img/カクテルアイコン5.png"
-											alt="img03" />
-										<figcaption>
-											<h3>Brunch semiotics</h3>
-											<p>Ex disrupt cray yr, butcher pour-over magna umami
-												kitsch before they sold out commodo.</p>
-										</figcaption>
-									</figure>
-								</li>
-								<li>
-									<figure>
-										<img src="./resources/assets/basic/img/カクテルアイコン5.png"
-											alt="img04" />
-										<figcaption>
-											<h3>Chillwave nihil occupy</h3>
-											<p>In post-ironic gluten-free deserunt, PBR&amp;B non
-												pork belly cupidatat polaroid.</p>
-										</figcaption>
-									</figure>
-								</li>
-								<li>
-									<figure>
-										<img src="./resources/assets/basic/img/カクテルアイコン5.png"
-											alt="img05" />
-										<figcaption>
-											<h3>Kale chips lomo biodiesel</h3>
-											<p>Pariatur food truck street art consequat sustainable,
-												et kogi beard qui paleo.</p>
-										</figcaption>
-									</figure>
-								</li>
-								<li>
-									<figure>
-										<img src="./resources/assets/basic/img/カクテルアイコン5.png"
-											alt="img06" />
-										<figcaption>
-											<h3>Exercitation occaecat</h3>
-											<p>Street chillwave hoodie ea gentrify.</p>
-										</figcaption>
-									</figure>
-								</li>
-								<li>
-									<figure>
-										<img src="./resources/assets/basic/img/カクテルアイコン5.png"
-											alt="img01" />
-										<figcaption>
-											<h3>Selfies viral four</h3>
-											<p>Raw denim duis Tonx Shoreditch labore swag artisan
-												High Life cred, stumptown Schlitz quinoa flexitarian mollit
-												fanny pack.</p>
-										</figcaption>
-									</figure>
-								</li>
-								<li>
-									<figure>
-										<img src="./resources/assets/basic/img/カクテルアイコン5.png"
-											alt="img02" />
-										<figcaption>
-											<h3>Photo booth skateboard</h3>
-											<p>Vinyl squid ex High Life. Paleo Neutra nulla master
-												cleanse, Helvetica et enim nesciunt esse.</p>
-										</figcaption>
-									</figure>
-								</li>
+								</c:forEach>
 							</ul>
 						</section>
 						<section class="slideshow">
 							<ul>
-								<li>
-									<figure>
-										<figcaption>
-											<h3>Letterpress asymmetrical</h3>
-											<p>Kale chips lomo biodiesel stumptown Godard Tumblr,
-												mustache sriracha tattooed cray aute slow-carb placeat
-												delectus. Letterpress asymmetrical fanny pack art party est
-												pour-over skateboard anim quis, ullamco craft beer.</p>
-										</figcaption>
-										<img src="./resources/assets/basic/img/カクテルアイコン5.png"
-											alt="img01" />
-									</figure>
-								</li>
-								<li>
-									<figure>
-										<figcaption>
-											<h3>Vice velit chia</h3>
-											<p>Chillwave Echo Park Etsy organic Cosby sweater seitan
-												authentic pour-over. Occupy wolf selvage bespoke tattooed,
-												cred sustainable Odd Future hashtag butcher.</p>
-										</figcaption>
-										<img src="./resources/assets/basic/img/カクテルアイコン5.png"
-											alt="img02" />
-									</figure>
-								</li>
-								<li>
-									<figure>
-										<figcaption>
-											<h3>Brunch semiotics</h3>
-											<p>IPhone PBR polaroid before they sold out meh you
-												probably haven't heard of them leggings tattooed tote bag,
-												butcher paleo next level single-origin coffee photo booth.</p>
-										</figcaption>
-										<img src="./resources/assets/basic/img/カクテルアイコン5.png"
-											alt="img03" />
-									</figure>
-								</li>
-								<li>
-									<figure>
-										<figcaption>
-											<h3>Chillwave nihil occupy</h3>
-											<p>Vice cliche locavore mumblecore vegan wayfarers
-												asymmetrical letterpress hoodie mustache. Shabby chic lomo
-												polaroid, scenester 8-bit Portland Pitchfork VHS tote bag.</p>
-										</figcaption>
-										<img src="./resources/assets/basic/img/カクテルアイコン5.png"
-											alt="img04" />
-									</figure>
-								</li>
-								<li>
-									<figure>
-										<figcaption>
-											<h3>Kale chips lomo biodiesel</h3>
-											<p>Chambray Schlitz pug YOLO, PBR Tumblr semiotics.
-												Flexitarian YOLO ennui Blue Bottle, forage dreamcatcher
-												chillwave put a bird on it craft beer Etsy.</p>
-										</figcaption>
-										<img src="./resources/assets/basic/img/カクテルアイコン5.png"
-											alt="img05" />
-									</figure>
-								</li>
-								<li>
-									<figure>
-										<figcaption>
-											<h3>Exercitation occaecat</h3>
-											<p>Cosby sweater hella lomo Thundercats VHS occupy High
-												Life. Synth pop-up readymade single-origin coffee, fanny
-												pack tousled retro. Fingerstache mlkshk ugh hashtag,
-												church-key ethnic street art pug yr.</p>
-										</figcaption>
-										<img src="./resources/assets/basic/img/カクテルアイコン5.png"
-											alt="img06" />
-									</figure>
-								</li>
-								<li>
-									<figure>
-										<figcaption>
-											<h3>Selfies viral four</h3>
-											<p>Ethnic readymade pug, small batch XOXO Odd Future
-												normcore kogi food truck craft beer single-origin coffee
-												banh mi photo booth raw denim. XOXO messenger bag pug VHS.
-												Forage gluten-free polaroid, twee hoodie chillwave
-												Helvetica.</p>
-										</figcaption>
-										<img src="./resources/assets/basic/img/カクテルアイコン5.png"
-											alt="img01" />
-									</figure>
-								</li>
+								<c:forEach var="userPhoto" items="${photoList }">
+									<li>
+										<figure>
+											<figcaption>
+												<h3>${userPhoto.title }</h3>
+												<p>${userPhoto.contents }</p>
+											</figcaption>
+											<img src="${path }${userPhoto.saveFileName}"
+												alt="img01" />
+										</figure>
+									</li>
+								</c:forEach>
 							</ul>
 							<nav>
 								<span class="icon nav-prev"></span> <span class="icon nav-next"></span>
@@ -470,12 +319,11 @@
 			</div>
 		</div>
 	</div>
-
 	<script	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script	src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
 	<script	src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/js/bootstrap.bundle.min.js"></script>
 	<script src="./resources/assets/basic/js/proflie_slide/classie.js"></script>
 	<script	src="./resources/assets/basic/js/proflie_slide/modernizr.custom.js"></script>
+	<script	src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
 	<script src="./resources/assets/tag/js/search_tag.js"></script>
 	<script src="./resources/assets/gallery/js/gallery/gallery_classie.js"></script>
 	<script	src="./resources/assets/gallery/js/gallery/gallery_modernizr.custom.js"></script>

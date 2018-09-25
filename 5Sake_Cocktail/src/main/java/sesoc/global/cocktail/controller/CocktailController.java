@@ -142,15 +142,12 @@ public class CocktailController {
 	 * @return 
 	 */
 	@RequestMapping(value = "/cocktailTagSearch", method = RequestMethod.POST)
-	public @ResponseBody List<HashMap<String,BigDecimal>> cocktailTagSearch(String color, String[] spilits, String[] liqueur,String[] material, int num) {
-		for(int i=0; i<spilits.length; i++) {
-			System.out.println(spilits[i]);
-		}
+	public @ResponseBody ArrayList<Cocktail> cocktailTagSearch(String color, String[] spilits, String[] liqueur,String[] material, int num) {
 		String regexp = "";
 		String s="";
 		color += "Color";
 		System.out.println("색깔 : "+ color);
-		if(spilits.length!=0) {
+		if(spilits != null) {
 			for(String sTemp : spilits) {
 				s+= sTemp;
 				if(spilits[spilits.length-1].equals(sTemp)) {
@@ -187,29 +184,21 @@ public class CocktailController {
 		}
 		System.out.println("m, request  : " +m);
 		if(spilits==null && liqueur==null && material==null) {
-			System.out.println("1111111");
 			regexp = "|";
 		}else if(spilits==null && liqueur==null) {
-			System.out.println("2222222");
 			regexp = m;
 		}else if(liqueur==null && material==null) {
-			System.out.println("33333333");
 			regexp = s;
 		}else if(spilits==null && material==null) {
-			System.out.println("44444444");
 			regexp =  l;
 		}else if(liqueur==null){
-			System.out.println("55555555");
 			regexp = s + "|" + m;
 		}else if(spilits==null) {
-			System.out.println("66666666666");
 			regexp = l + "|" + m;
 		}else if(material==null) {
-			System.out.println("7777777777");
 			regexp = s+"|"+l;
 		}
 		else {
-			System.out.println("888888888");
 			regexp = s+"|"+l+"|"+m;
 		}
 		// 1. spilits가 없을 때
@@ -292,16 +281,17 @@ public class CocktailController {
 		// 만약 count(*)가 인풋 개수가 3일때,
 		// 그 값을 리턴
 		
-		System.out.println(ingredientOfCocktailList);
+		ArrayList<Cocktail> tempCockList = new ArrayList<Cocktail>();
 		for(HashMap<String,BigDecimal> ingredient: ingredientOfCocktailList) {
 			System.out.println("COUNT = "+ingredient.get("COUNT"));
-			if(ingredient.get("COUNT").equals(num)) {
-				System.out.println("COCKTAIL_SEQ = "+ingredient.get("COCTAIL_SEQ"));
+			if(ingredient.get("COUNT").intValue() >= num ) {
+				Cocktail tempCock = cocktailRepository.selectCocktail(ingredient.get("COCKTAIL_SEQ").toString());
+				tempCockList.add(tempCock);
 			}
 			
 		}
 		
-		return ingredientOfCocktailList;
+		return tempCockList;
 	}
 	
 	@RequestMapping(value = "/getCocktail", method = RequestMethod.POST)

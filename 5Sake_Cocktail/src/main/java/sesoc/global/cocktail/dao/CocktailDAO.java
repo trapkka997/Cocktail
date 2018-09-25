@@ -14,7 +14,7 @@ public interface CocktailDAO {
 
 	public List<Cocktail> getCocktailList();
 
-	public Cocktail selectCocktail(String cocktailname);
+	public Cocktail selectCocktail(String cocktailSeq);
 
 	public List<Cocktail> getCocktailByColor(String colorName);
 
