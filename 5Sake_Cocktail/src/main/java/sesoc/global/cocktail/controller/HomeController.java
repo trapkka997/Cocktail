@@ -185,7 +185,7 @@ public class HomeController {
 	 */
 	@RequestMapping(value = "/test", method = RequestMethod.GET)
 	public String test() {
-		return "imsi/gridtest";
+		return "imsi/scrolltest";
 	}
 }
 
