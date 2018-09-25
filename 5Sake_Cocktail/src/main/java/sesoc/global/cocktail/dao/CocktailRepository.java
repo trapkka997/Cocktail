@@ -25,10 +25,10 @@ public class CocktailRepository {
 		return result;
 	}
 
-	public Cocktail selectCocktail(String cocktailname) {
+	public Cocktail selectCocktail(String cocktailSeq) {
 		Cocktail result = null;
 		CocktailDAO dao = sqlSession.getMapper(CocktailDAO.class);
-		result = dao.selectCocktail(cocktailname);
+		result = dao.selectCocktail(cocktailSeq);
 		return result;
 	}
 

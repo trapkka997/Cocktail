@@ -732,49 +732,48 @@ h4 {
 		});
 	</script>
 	<script type="text/javascript">
+	function searchCocktail(resp){
+		var inner = "";
+		resp.forEach(function(value, index, resp) {
+			inner += '<div class="tile flip element-item" data-category="transition">';
+			inner += '<div>';
+			inner += '<img src="'+resp[index].imageRink+'" height="100" width="100">';
+			inner += '</div>';
+			inner += '<a href="cocktailDetail?cocktailSeq='+resp[index].cocktailSeq+'">';
+			inner += resp[index].cocktailName ;
+			inner += '</a>';
+			inner += '</div>';
+		});
+		console.log(resp);
+		$('.row_cocktail_fliter').children('.grid').html(inner); 
+	}
+	
+	
 		$.ajax({
 			method : "post",
 			url : "getCocktail",
-			success : function(resp) {
-				/* <div
-				class="tile flip element-item ${cocktail.ingredient }"
-				data-category="transition">
-				<div>
-					<img src="${cocktail.imageRink }" height="100" width="100">
-				</div>
-				<a 
-					href="cocktailDetail?cocktailSeq=${cocktail.cocktailSeq }">
-					${cocktail.cocktailName } </a>
-			</div>*/
-				var inner = "";
-				resp.forEach(function(value, index, resp) {
-					inner += '<div class="tile flip element-item" data-category="transition">';
-					inner += '<div>';
-					inner += '<img src="'+resp[index].imageRink+'" height="100" width="100">';
-					inner += '</div>';
-					inner += '<a href="cocktailDetail?cocktailSeq='+resp[index].cocktailSeq+'">';
-					inner += resp[index].cocktailName ;
-					inner += '</a>';
-					inner += '</div>';
-				});
-				console.log(resp);
-				$('.row_cocktail_fliter').children('.grid').html(inner); 
-			},
+			success : searchCocktail,
 			error : function(){
 				alert('error');
 			}
 		});
 	</script>
 	<script type="text/javascript">
+	
+	var num;
+	var spilits =[];
+	var liqueur =[];
+	var material =[];
+	var color;
 	$('.recommandCocktail').children('label').on('click', function() {
-		var num = 0;
-		var spilits = ['1','4'];
-		var liqueur = [];
-		var material = [];
-		var color = $(this).attr('class');
+		color = $(this).attr('class');
 		console.log(spilits);
 		console.log(JSON.stringify(spilits));
 
+		spilits = [];
+		liqueur = [];
+		material = [];
+		num = 0;
 		$.ajax({
 			method : "post",
 			url : "cocktailTagSearch",
@@ -786,15 +785,42 @@ h4 {
 				"liqueur" : liqueur,
 				"material" : material
 			},
-			success : function(resp) {
-				console.log(resp);
-			},
+			success : searchCocktail,
 			error :  function() {
 				alert('error');
 			}
 			
 		})
 	});
+	
+	$('.spirit_check').on('click', function(){
+		console.log(this);
+		console.log(spilits);
+		console.log(JSON.stringify(spilits));
+		spilits = [];
+		liqueur = [];
+		material = [];
+		num = 0;
+		$.ajax({
+			method : "post",
+			url : "cocktailTagSearch",
+			traditional : true,
+			data : {
+				"num" : num,
+				"color" : color,
+				"spilits" : spilits,
+				"liqueur" : liqueur,
+				"material" : material
+			},
+			success : searchCocktail,
+			error :  function() {
+				alert('error');
+			}
+			
+		})
+	});
+	
 	</script>
+	
 </body>
 </html>
