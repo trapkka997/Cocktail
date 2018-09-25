@@ -966,7 +966,7 @@ h4 {
 		
 		<div class="container">
 			<div class="slide_row" id="slideshow">
-				<div class="col-md-12" id="slideshow">
+				<div class="col-md-12" id="slideshow" style="margin-top: 30px;">
 					<div class="simple-slider">
 						<div class="swiper-container">
 							<div class="swiper-wrapper">
@@ -978,10 +978,11 @@ h4 {
 									style="background-image: url(./resources/assets/main/img/slideshow3.jpg?h=bf73d8424e46231796e3733202d61a4b)"></div>
 							</div>
 							<div class="swiper-pagination"></div>
-							<div class="swiper-button-prev"></div>
-							<div class="swiper-button-next"></div>
+							
 						</div>
 					</div>
+					<div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div>
 				</div>
 			</div>
 			

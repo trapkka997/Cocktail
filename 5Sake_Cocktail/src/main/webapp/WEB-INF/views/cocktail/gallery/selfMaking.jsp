@@ -32,26 +32,29 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
 <link rel="stylesheet"
 	href="./resources/assets/gallery/css/uploadbutton.css">
+
+	
+	
+	
 <link rel="stylesheet"
-	href="./resources/assets/gallery/css/circluar_layout.css">
-<link rel="stylesheet"
-	href="./resources/assets/gallery/css/modal_selfmaking.css">
+	href="./resources/assets/modal_makingCocktail/css/makingCocktail.css">
+
 <style>
 
 
 </style>
 
 <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
-<script>
+<!-- <script>
 	$(document).ready(function() {
 
 		$('.plus-button').on('click', function() {
-			$('.modal_inner').load('/cocktail/modal #myModal');
+			$('.modal_inner').load('/cocktail/modal #imageUpload');
 		});
 
 		/* 네모 친 id를 가진 i 태그 클릭시 body부분을 로드해서 띄워줍니다.*/
 	});
-</script>
+</script> -->
 
 </head>
 
@@ -293,13 +296,121 @@
 				
 				
 				<!-- modal -->
-				<div class="plus-button" class="btn btn-primary" data-toggle="modal"
-					data-target="#imageUpload">+
-					<div class = "modal_inner">
-					
+			<div class="plus-button" class="btn btn-primary" data-toggle="modal"
+				data-target="#imageUpload">+
+
+				<div class="modal-dialog">
+					<div class="modal-content">
+				
+					<!--  -->
+
+						<div id="imageUpload" class="modal fade" role="dialog">
+							<div class="modal-dialog modal-lg">
+
+
+								<div>
+									<aside class="draw-panel">
+										<ul class="tabs tabs-fixed-width custom-tabs">
+											<li class="tab"><a href="#styles">STYLES</a></li>
+										</ul>
+
+										<section class="panel-slide p-0" id="styles">
+											<ul class="collapsible no-shadow mt-0 bt-0"
+												data-collapsible="accordion">
+
+												<li class="bb-lg">
+													<div class="collapsible-header flex flex-spred">
+														<h6 class="c-default">Base spirits</h6>
+														<div class="flex flex-column">
+															<i class="material-icons mr-0 c-grey rotate-180 em-3-4">expand_less</i>
+															<i class="material-icons mr-0 c-grey rotate-180 em-3-4">expand_more</i>
+														</div>
+													</div>
+
+													<div class="collapsible-body b-0"></div>
+
+												</li>
+
+												<li class="bb-lg">
+													<div class="collapsible-header flex flex-spred">
+														<h6 class="c-default">Color</h6>
+														<div class="flex flex-column">
+															<i class="material-icons mr-0 c-grey rotate-180 em-3-4">expand_less</i>
+															<i class="material-icons mr-0 c-grey rotate-180 em-3-4">expand_more</i>
+														</div>
+													</div>
+													<div class="collapsible-body"></div>
+												</li>
+
+												<li class="bb-lg">
+													<div class="collapsible-header flex flex-spred">
+														<h6 class="c-default">Liqueur</h6>
+														<div class="flex flex-column">
+															<i class="material-icons mr-0 c-grey rotate-180 em-3-4">expand_less</i>
+															<i class="material-icons mr-0 c-grey rotate-180 em-3-4">expand_more</i>
+														</div>
+													</div>
+													<div class="collapsible-body"></div>
+												</li>
+
+												<li class="bb-lg">
+													<div class="collapsible-header flex flex-spred">
+														<h6 class="c-default">Material</h6>
+														<div class="flex flex-column">
+															<i class="material-icons mr-0 c-grey rotate-180 em-3-4">expand_less</i>
+															<i class="material-icons mr-0 c-grey rotate-180 em-3-4">expand_more</i>
+														</div>
+													</div>
+													<div class="collapsible-body"></div>
+												</li>
+
+											</ul>
+										</section>
+									</aside>
+
+									<div class="editor">
+
+
+										<header class="flex flex-spred editor-toolbar">
+
+											<ul class="flex">
+
+												<li class="hover hd-preview"><i
+													class="material-icons circle">undo</i></li>
+												<li class="hd-preview"><i class="material-icons circle"
+													disabled>redo</i></li>
+												<li><span class="header-vertical-rule"></span></li>
+
+												<li class="sh-preview js-preview"><a
+													class='btn btn-round indigo ml-375' href='#'>Update</a></li>
+												<li class="hd-preview"><span
+													class="btn-group ml-375 hd-preview"> <a
+														class='dropdown-button btn indigo' href='#'> Update </a> <a
+														class='dropdown-button btn indigo' href='#'
+														data-activates='publish-options'> <i
+															class="material-icons">expand_more</i>
+													</a>
+												</span>
+													<ul id='publish-options' class='dropdown-content custom'>
+														<li><a href="#!">Publish </a></li>
+														<li><a href="#!">Unpublish</a></li>
+													</ul></li>
+											</ul>
+										</header>
+										<main class="editor-canvas"> </main>
+									</div>
+								</div>
+
+
+
+							</div>
+						</div>
+						<!--  -->
+
 					</div>
 				</div>
-				<!-- modal1_start -->
+			</div>
+			<!-- modal1_start -->
 				
 				
 			</div>
