@@ -51,6 +51,7 @@
 	href="./resources/assets/basic/css/navbar/check_list.css">
 <link rel="stylesheet"
 	href="./resources/assets/basic/css/navbar/userRecommend_Tag.css">
+
 <!-- navbar_핵심, 지우지마세여-->	
 
 <style>
@@ -241,6 +242,7 @@ h4 {
 
 </head>
 
+	
 <body>
 	<div class="navbar is-top-fixed">
 		<div class="container-fluid">
@@ -942,14 +944,17 @@ h4 {
 					</div>
 				</div>
 
-
+				<!-- avatar -->
 				<div class="navbar-avatar" style="margin-left: 19px;">
+					
 					<a href="eachoneProfile" class="navbar-item is-avatar"
 						@click.prevent="showProfilePanel"> <img
 						src="https://unsplash.it/200/200?image=1005" alt="Avatar" />
 					</a>
 				</div>
-
+				<!-- avatar -->
+				
+			
 			</div>
 		</div>
 		<!-- container -->

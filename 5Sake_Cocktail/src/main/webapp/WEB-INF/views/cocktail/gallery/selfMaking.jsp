@@ -294,7 +294,7 @@
 				
 				<!-- modal -->
 				<div class="plus-button" class="btn btn-primary" data-toggle="modal"
-					data-target="#myModal">+
+					data-target="#imageUpload">+
 					<div class = "modal_inner">
 					
 					</div>
