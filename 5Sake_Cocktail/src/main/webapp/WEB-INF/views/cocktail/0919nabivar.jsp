@@ -764,8 +764,7 @@ h4 {
 		    var x = $(event.relatedTarget).text(); // Get the text of the element
 		    alert(x);
 		});
-	</script>
-	
+	</script>	
 </body>
 </html>
 
