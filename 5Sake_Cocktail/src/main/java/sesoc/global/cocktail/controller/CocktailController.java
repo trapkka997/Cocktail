@@ -31,9 +31,9 @@ public class CocktailController {
 	@Autowired MemberRepository memberRepository;
 	
 	/**
-	 * 칵테일 검색화면으로 이동
-	 * 화면 안씀
-	 * @return search화면 
+	 * 移듯뀒�씪 寃��깋�솕硫댁쑝濡� �씠�룞
+	 * �솕硫� �븞��
+	 * @return search�솕硫� 
 	 * @author hangyutae
 	 */
 	@RequestMapping(value = "/search", method = RequestMethod.GET)
@@ -44,23 +44,28 @@ public class CocktailController {
 	}	
 	
 	/**
-	 * 칵테일 디테일 화면으로 이동
-	 * @param cocktailSeq 칵테일 시퀀스
-	 * @return 칵테일 디테일 화면으로 이동
+	 * 移듯뀒�씪 �뵒�뀒�씪 �솕硫댁쑝濡� �씠�룞
+	 * @param cocktailSeq 移듯뀒�씪 �떆���뒪
+	 * @return 移듯뀒�씪 �뵒�뀒�씪 �솕硫댁쑝濡� �씠�룞
 	 * @author hangyutae
 	 */
 	@RequestMapping(value = "/cocktailDetail", method = RequestMethod.GET)
+
+	/*public String cocktailDetail(Locale locale, Model model,String cocktailname) {
+		Cocktail selectCocktail = cocktailRepository.selectCocktail(cocktailname);
+		model.addAttribute("cocktail", selectCocktail);*/
+
 	public String cocktailDetail(Locale locale, Model model,String cocktailSeq) {
 		Cocktail selectCocktail = cocktailRepository.selectCocktail(cocktailSeq);
 		model.addAttribute("cocktail", selectCocktail);
-	    	
+	   
 		return "cocktail/cocktailDetail";
 	}
 	
 	/**
-	 * 칵테일 업로드 화면 이동
-	 * 임시화면, 기능 구현
-	 * @return 화면이동
+	 * 移듯뀒�씪 �뾽濡쒕뱶 �솕硫� �씠�룞
+	 * �엫�떆�솕硫�, 湲곕뒫 援ы쁽
+	 * @return �솕硫댁씠�룞
 	 * @author hangyutae
 	 */
 	@RequestMapping(value = "/cocktailUpload", method = RequestMethod.GET)
@@ -83,15 +88,15 @@ public class CocktailController {
 	}	
 	
 	/**
-	 * 칵테일 좋아요 하는 기능
-	 * 유저가 좋아요 버튼을 누르면
-	 * 테이블 : USERLIKECOCKTAIL -> select ( 유저, 칵테일seq)
-	 * - 있으면 : @return 0  없으면 밑 진행
-	 * 테이블 : COCKTAIL2 -> update ( RECOMMAND = RECOMMAND + 1 )
-	 * 테이블 : USERLIKECOCKTAIL  ->  insert ( 유저, 칵테일seq ) 
-	 * @param cocktailSeq 칵테일 번호
-	 * @return 0 : 이미 유저가 좋아했던 칵테일 일때
-	 * 		   1 : 좋아요 성공
+	 * 移듯뀒�씪 醫뗭븘�슂 �븯�뒗 湲곕뒫
+	 * �쑀��媛� 醫뗭븘�슂 踰꾪듉�쓣 �늻瑜대㈃
+	 * �뀒�씠釉� : USERLIKECOCKTAIL -> select ( �쑀��, 移듯뀒�씪seq)
+	 * - �엳�쑝硫� : @return 0  �뾾�쑝硫� 諛� 吏꾪뻾
+	 * �뀒�씠釉� : COCKTAIL2 -> update ( RECOMMAND = RECOMMAND + 1 )
+	 * �뀒�씠釉� : USERLIKECOCKTAIL  ->  insert ( �쑀��, 移듯뀒�씪seq ) 
+	 * @param cocktailSeq 移듯뀒�씪 踰덊샇
+	 * @return 0 : �씠誘� �쑀��媛� 醫뗭븘�뻽�뜕 移듯뀒�씪 �씪�븣
+	 * 		   1 : 醫뗭븘�슂 �꽦怨�
 	 * @author hangyutae
 	 */
 	@RequestMapping(value = "/recommandCocktail", method = RequestMethod.GET)
@@ -111,19 +116,19 @@ public class CocktailController {
 		}
 	}
 	/**
-	 * 태그검색
-	 * 파라미터의 값을 ('0','0','0') 으로 받아서
+	 * �깭洹멸��깋
+	 * �뙆�씪誘명꽣�쓽 媛믪쓣 ('0','0','0') �쑝濡� 諛쏆븘�꽌
 	 * 
 	 * SELECT *
 	 * FROM TABLE
 	 * WHERE REGEXP_LIKE(STRING, 'S|T')
-	 * ===> 만약  STRING이  (1,2,3), (4,5,6) 이고 ('S|T')가 (2,4) 인 경우
-	 * 		2, 4가 최소 하나라도 포함이 되어 있는 둘 다 출력됨. 
+	 * ===> 留뚯빟  STRING�씠  (1,2,3), (4,5,6) �씠怨� ('S|T')媛� (2,4) �씤 寃쎌슦
+	 * 		2, 4媛� 理쒖냼 �븯�굹�씪�룄 �룷�븿�씠 �릺�뼱 �엳�뒗 �몮 �떎 異쒕젰�맖. 
 	 * 
 	 * 
-	 * @param spilits '0' :  기본베이스
-	 * @param liqueur '0' : 리큐르
-	 * @param material '0' : 부재료
+	 * @param spilits '0' :  湲곕낯踰좎씠�뒪
+	 * @param liqueur '0' : 由ы걧瑜�
+	 * @param material '0' : 遺��옱猷�
 	 * @return 
 	 */
 	@RequestMapping(value = "/cocktailTagSearch", method = RequestMethod.POST)
@@ -131,7 +136,7 @@ public class CocktailController {
 		String regexp = "";
 		String s="";
 		color += "Color";
-		System.out.println("색깔 : "+ color);
+		System.out.println("�깋源� : "+ color);
 		if(spilits != null) {
 			for(String sTemp : spilits) {
 				s+= sTemp;
@@ -186,11 +191,11 @@ public class CocktailController {
 		else {
 			regexp = s+"|"+l+"|"+m;
 		}
-		// 1. spilits가 없을 때
+		// 1. spilits媛� �뾾�쓣 �븣
 		//    | liqueur | material
-		// 2. liqueur가 없을 때
+		// 2. liqueur媛� �뾾�쓣 �븣
 		//	  spilits | | material
-		// 3. material가 없을 때 
+		// 3. material媛� �뾾�쓣 �븣 
 		//	  spilits | liqueur |
 		// 4. | | material
 		// 5. | liqueur |
@@ -224,10 +229,10 @@ public class CocktailController {
 		//input : 60 	  -> 	return : 16, 91
 		//input : 60, 109 ->	return : 16
 		
-		// 한 라인 씩 읽어들여서 있는것들만 출력
-		// 모든 인풋 라인 만큼 반복 후
-		// 같은 시퀀스값의 개수가 인풋 개수와 같으면
-		// 결과 값 출력
+		// �븳 �씪�씤 �뵫 �씫�뼱�뱾�뿬�꽌 �엳�뒗寃껊뱾留� 異쒕젰
+		// 紐⑤뱺 �씤�뭼 �씪�씤 留뚰겮 諛섎났 �썑
+		// 媛숈� �떆���뒪媛믪쓽 媛쒖닔媛� �씤�뭼 媛쒖닔�� 媛숈쑝硫�
+		// 寃곌낵 媛� 異쒕젰
 		
 		// input : 60 >>
 		///////////////////////////////////////
@@ -262,8 +267,8 @@ public class CocktailController {
 		//			  16	     2			 //
 		//			  91	     1			 //
 		///////////////////////////////////////
-		// 만약 count(*)가 인풋 개수가 3일때,
-		// 그 값을 리턴
+		// 留뚯빟 count(*)媛� �씤�뭼 媛쒖닔媛� 3�씪�븣,
+		// 洹� 媛믪쓣 由ы꽩
 		
 		ArrayList<Cocktail> tempCockList = new ArrayList<Cocktail>();
 		for(HashMap<String,BigDecimal> ingredient: ingredientOfCocktailList) {

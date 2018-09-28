@@ -1,24 +1,58 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>5Sake's Cocktail</title>
-	
-	<link rel="stylesheet"	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
-	<link rel="stylesheet"	href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
-	<link rel="stylesheet"	href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
-	<link rel="stylesheet"	href="./resources/assets/basic/css/navbar/navbar.css">
-	<!--profile-->
-	<link rel="stylesheet"	href="./resources/assets/basic/css/profile/default.css">
-	<link rel="stylesheet"  href="./resources/assets/tag/css/tag_default.css">
-	
-	<!-- navbar_핵심 -->
-	<link rel="stylesheet"	href="./resources/assets/basic/css/navbar/color_click.css">
-	<link rel="stylesheet"	href="./resources/assets/basic/css/navbar/spirits_icon.css">
-	<link rel="stylesheet"	href="./resources/assets/basic/css/navbar/check_list.css">
-	<link rel="stylesheet"	href="./resources/assets/basic/css/navbar/userRecommend_Tag.css">
-	<!-- navbar_핵심, 지우지마세여-->	
+<title>5Sake's Cocktail</title>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
+<link rel="stylesheet"
+	href="./resources/assets/basic/css/navbar/navbar.css">
+<link rel="stylesheet"
+	href="./resources/assets/basic/css/proflie_slide/slide_component.css">
+<!--profile-->
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Open+Sans">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+	href="./resources/assets/basic/css/profile/default.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
+<link rel="stylesheet" href="./resources/assets/tag/css/tag_default.css">
+<link rel="stylesheet"
+	href="./resources/assets/modal_makingCocktail/css/circle-progress-bar.css?h=a3fb9dca43f77251e0f00815d5fb05b2">
+<link rel="stylesheet"
+	href="./resources/assets/modal_makingCocktail/css/ninja-slider.css?h=36ca55b69bec564ac8a55b447db21f87">
+<link rel="stylesheet"
+	href="./resources/assets/modal_makingCocktail/css/thumbnail-slider.css?h=88ea8bccbed24d3703a2b324aaff99fd">
+<link rel="stylesheet"
+	href="./resources/assets/basic/css/modal.css?h=79846acf8bad6d3c01f5f6496c592036">
+<link rel="stylesheet"
+	href="./resources/assets/basic/css/photo_profile.css">
+<link rel="stylesheet"
+	href="./resources/assets/main/css/Simple-Slider.css?h=4617ba6673866be9ca12fcd9ef560578">
+<link rel="stylesheet"
+	href="./resources/assets/main/css/title/title.css?h=1a3fe257ec57297162763eee50f0dff7">
+<link rel="stylesheet" href="./resources/assets/basic/css/slideshow.css">
+
+<!-- navbar_핵심 -->
+<link rel="stylesheet"
+	href="./resources/assets/basic/css/navbar/color_click.css">
+<link rel="stylesheet"
+	href="./resources/assets/basic/css/navbar/spirits_icon.css">
+<link rel="stylesheet"
+	href="./resources/assets/basic/css/navbar/check_list.css">
+<link rel="stylesheet"
+	href="./resources/assets/basic/css/navbar/userRecommend_Tag.css">
+<!-- navbar_핵심, 지우지마세여-->	
+
 <style>
 h2 {
 	font-family: fantasy;
@@ -42,30 +76,190 @@ h4 {
 	/* border: 2px solid black;
 	border-radius: 50%; */
 }
+
 .p {
 	margin-top: 0;
 	width: 150px;
 }
-/*위치에 있던 .tile .flip css -> tag_default.css로 옮김 */
+
+.tile {
+	display: inline-block;
+	line-height: 100px;
+}
+
+.tile>div, .tile a {
+	width: 100%;
+	color: #30261c;
+	background-color: #e4ecb9;
+	text-align: center;
+}
+
+.tile>a {
+	display: block;
+	text-decoration: none;
+	background-color: #d88e8f;
+}
+/* Flip effect */
+/
+* .flip>div, .flip a {
+	position: absolute;
+}
+
+.flip>a {
+	-webkit-transform: rotateX(-90deg);
+	-moz-transform: rotateX(-90deg);
+	-o-transform: rotateX(-90deg);
+	-ms-transform: rotateX(-90deg);
+	transform: rotateX(-90deg);
+}
+
+.flip:hover>div {
+	-webkit-transform: rotateX(90deg);
+	-moz-transform: rotateX(90deg);
+	-o-transform: rotateX(90deg);
+	-ms-transform: rotateX(90deg);
+	transform: rotateX(90deg);
+}
+
+.flip:hover>a {
+	-webkit-transform: rotateX(0deg);
+	-moz-transform: rotateX(0deg);
+	-o-transform: rotateX(0deg);
+	-ms-transform: rotateX(0deg);
+	transform: rotateX(0deg);
+}
+
+.flip>a, .flip:hover>div {
+	-webkit-transition: 0.05s all linear 0;
+	-moz-transition: 0.05s all linear 0;
+	-o-transition: 0.05s all linear 0;
+	-ms-transition: 0.05s all linear 0;
+	transition: 0.05s all linear 0;
+}
+
+.flip>div, .flip:hover>a {
+	-webkit-transition: 0.05s all linear 0.05s;
+	-moz-transition: 0.05s all linear 0.05s;
+	-o-transition: 0.05s all linear 0.05s;
+	-ms-transition: 0.05s all linear 0.05s;
+	transition: 0.05s all linear 0.05s;
+}
+
+.slide {
+	overflow: hidden;
+}
+
+.slide>div, .slide a {
+	-webkit-transition: 0.1s all linear;
+	-moz-transition: 0.1s all linear;
+	-o-transition: 0.1s all linear;
+	-ms-transition: 0.1s all linear;
+	transition: 0.1s all linear;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+}
+
+.slide>a {
+	-webkit-transform: translate(200px, 0);
+	-moz-transform: translate(200px, 0);
+	-o-transform: translate(200px, 0);
+	-ms-transform: translate(200px, 0);
+	transform: translate(200px, 0);
+}
+
+.slide:hover>div {
+	-webkit-transform: translate(-200px, 0);
+	-moz-transform: translate(-200px, 0);
+	-o-transform: translate(-200px, 0);
+	-ms-transform: translate(-200px, 0);
+	transform: translate(-200px, 0);
+}
+
+.slide:hover>a {
+	-webkit-transform: translate(0, 0);
+	-moz-transform: translate(0, 0);
+	-o-transform: translate(0, 0);
+	-ms-transform: translate(0, 0);
+	transform: translate(0, 0);
+}
+
+.shutter>div, .shutter a {
+	-webkit-transition: 0.1s all linear;
+	-moz-transition: 0.1s all linear;
+	-o-transition: 0.1s all linear;
+	-ms-transition: 0.1s all linear;
+	transition: 0.1s all linear;
+	position: absolute;
+}
+
+.shutter>div {
+	z-index: 10;
+	-webkit-transform-origin: 0 0;
+	-moz-transform-origin: 0 0;
+	-o-transform-origin: 0 0;
+	-ms-transform-origin: 0 0;
+	transform-origin: 0 0;
+}
+
+.shutter:hover>div {
+	-webkit-transform: rotateX(90deg);
+	-moz-transform: rotateX(90deg);
+	-o-transform: rotateX(90deg);
+	-ms-transform: rotateX(90deg);
+	transform: rotateX(90deg);
+}
+
+.page>div, .page a {
+	-webkit-transition: 0.2s all linear;
+	-moz-transition: 0.2s all linear;
+	-o-transition: 0.2s all linear;
+	-ms-transition: 0.2s all linear;
+	transition: 0.2s all linear;
+	position: absolute;
+	z-index: 5;
+}
+
+.page>div {
+	z-index: 10;
+	-webkit-transform-origin: 0 0;
+	-moz-transform-origin: 0 0;
+	-o-transform-origin: 0 0;
+	-ms-transform-origin: 0 0;
+	transform-origin: 0 0;
+}
+
+.page:hover>div {
+	-webkit-transform: rotateX(360deg);
+	-moz-transform: rotateX(360deg);
+	-o-transform: rotateX(360deg);
+	-ms-transform: rotateX(360deg);
+	transform: rotateX(360deg);
+	z-index: 1;
+}
 </style>
+
 </head>
+
 <body>
 	<div class="navbar is-top-fixed">
 		<div class="container-fluid">
 			<div class="container">
 				<div class="navbar-home">
-					<a href="index"> 
-						<img src='./resources/assets/basic/img/navbar_home2.png' class='img' />
+					<a href=""> <img
+						src='./resources/assets/basic/img/navbar_home2.png' class='img' />
 					</a>
 				</div>
 				<!-- navbar-home_end -->
 				<div class="navbar-left" style="width: 390px;">
 					<a class="navbar-toggle" data-toggle="dropdown"
 						aria-expanded="false" href="#"> <span></span> <span></span> <span></span>
-						<div id="recommend" class="dropdown-menu" style="margin-left: 150px; margin-right: 150px; right: 0px;">
+						<div id="recommend" class="dropdown-menu"
+							style="margin-left: 150px; margin-right: 150px; right: 0px;">
+							
 							<!-- exit_button -->
 							<button type="button" class="close"	aria-label="Close">
-								<p aria-hidden="true">&times;</p>
+								<span aria-hidden="true">&times;</span>
 							</button>
 							<!-- exit_button_end -->
 							
@@ -76,7 +270,8 @@ h4 {
 											<div class="card-body"
 												style="border-right: 1px solid #e8dfdf6e;">
 												<p class="card-text">
-													<img src='./resources/assets/basic/img/カクテルアイコン5.png' 	class='img' />
+													<img src='./resources/assets/basic/img/カクテルアイコン5.png'
+														class='img' />
 												</p>
 												<label>
 													<h2>UserID</h2>
@@ -108,7 +303,8 @@ h4 {
 											<div class="card-body">
 												<h4 class="card-title">cocktailName</h4>
 												<p class="card-text">
-													<img src='./resources/assets/basic/img/カクテルアイコン5.png' class='img' />
+													<img src='./resources/assets/basic/img/カクテルアイコン5.png'
+														class='img' />
 												</p>
 												<div>
 
@@ -125,12 +321,13 @@ h4 {
 											<div class="card-body">
 												<h4 class="card-title">cocktailName</h4>
 												<p class="card-text">
-													<img src='./resources/assets/basic/img/カクテルアイコン5.png' class='img' />
+													<img src='./resources/assets/basic/img/カクテルアイコン5.png'
+														class='img' />
 												</p>
 												<div>
+
 													<p>
-														<label class="tag">#tag</label> 
-														<label class="tag">#tag</label>
+														<label class="tag">#tag</label> <label class="tag">#tag</label>
 														<label class="tag">#tag</label>
 													</p>
 												</div>
@@ -150,9 +347,14 @@ h4 {
 
 				<!-- navbar-center-->
 				<div class="navbar-center">
-					<i id='cock_gallery' class="fas fa-glass-martini icon"></i>
-					<i id='user_gallery' class="fab fa-microsoft icon" style="margin-left: 20px; margin-right: 20px;"></i>
-					<i id='self_making'	class="fas fa-user-alt"></i>
+					<a href="cocktailphoto" class="navbar-item navbar-logo"> <i
+						class="fas fa-glass-martini icon"></i>
+					</a> <a href="userphoto" class="navbar-item navbar-logo"
+						style="margin-left: 20px; margin-right: 20px;"> <i
+						class="fab fa-microsoft icon"></i>
+					</a> <a href="selfMaking" class="navbar-item navbar-logo"> <i
+						class="fas fa-user-alt"></i>
+					</a>
 
 
 					<!-- <nav class="slidemenu">
@@ -200,7 +402,7 @@ h4 {
 						<!-- exit_button -->
 							<div>
 								<button type="button" class="close" aria-label="Close">
-									<p aria-hidden="true">×</p>
+									<span aria-hidden="true">×</span>
 								</button>
 							</div>
 							<!-- exit_button_end -->
@@ -720,13 +922,15 @@ h4 {
 
 							<div class="row_cocktail_fliter">
 								<div class="grid">
-									<c:forEach var="cocktail" items="${cocktailList}">
-										<div class="tile flip element-item ${cocktail.alcole} ${cocktail.liqueur} ${cocktail.mateial }"
+									<c:forEach var="cocktail" items="${cocktailList }">
+										<div
+											class="tile flip element-item ${cocktail.alcole } ${cocktail.liqueur } ${cocktail.mateial }"
 											data-category="transition">
 											<div>
 												<img src="${cocktail.imagerink }" height="100" width="100">
 											</div>
-											<a href="cocktailDetail?cocktailname=${cocktail.cocktailname }">
+											<a
+												href="cocktailDetail?cocktailname=${cocktail.cocktailname }">
 												${cocktail.cocktailname } </a>
 										</div>
 									</c:forEach>
@@ -741,7 +945,8 @@ h4 {
 
 				<div class="navbar-avatar" style="margin-left: 19px;">
 					<a href="eachoneProfile" class="navbar-item is-avatar"
-						@click.prevent="showProfilePanel"> <img	src="https://unsplash.it/200/200?image=1005" alt="Avatar" />
+						@click.prevent="showProfilePanel"> <img
+						src="https://unsplash.it/200/200?image=1005" alt="Avatar" />
 					</a>
 				</div>
 
@@ -749,38 +954,201 @@ h4 {
 		</div>
 		<!-- container -->
 	</div>
-	<script	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script	src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
-	<script	src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/js/bootstrap.bundle.min.js"></script>
-	<script	src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
+
+
+	<!-- slideshow -->
+	<div>
+		
+		<!-- <div class="container">
+			<div class="slide_row" id="slideshow">
+				<div class="col-md-12" id="slideshow">
+					<div class="simple-slider">
+						<div class="swiper-container">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide"
+									style="background-image: url(./resources/assets/main/img/slideshow1.jpg?h=acd8c032b5252903d5531d2e4a227dcc)"></div>
+								<div class="swiper-slide"
+									style="background-image: url(./resources/assets/main/img/slideshow2.jpg?h=ca5b6de7017b0ae20ce9940097332a99)"></div>
+								<div class="swiper-slide"
+									style="background-image: url(./resources/assets/main/img/slideshow3.jpg?h=bf73d8424e46231796e3733202d61a4b)"></div>
+							</div>
+							<div class="swiper-pagination"></div>
+							<div class="swiper-button-prev"></div>
+							<div class="swiper-button-next"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			 -->
+			<!--  -->
+			
+			<div id="userEL2556136-carousel" class="carousel slide carousel-fade userEL2556136 el_0 element" data-ride="carousel" data-id="2556136" data-el="el_0" data-pos="1" data-name="userEL2556136" data-msny="false" data-type="showcase" data-type2="imgsize" data-mode="" data-width="0" data-overlap="0" style="font-family: Roboto, &quot;Nanum Gothic&quot;, Tahoma, Dotum, Verdana, Arial, &quot;Trebuchet MS&quot;, &quot;Nanum Gothic&quot;; margin-top: 0px; top: 0px;">
+		    <div class="container">
+		        <div class="row">
+		            <!-- Carousel items -->
+		            <div class="carousel-inner" data-loop="true" data-selector=".item">
+		                <div class="item">
+		                    <img src="//storage.googleapis.com/cr-resource/image/ca88a4ffad44d88281a70309eb5a61cd/kaa1910/1fbc195b9975b6ccce7b32533bdfe0dd.jpg" class="img-responsive" data-attach="true" data-pagespeed-url-hash="2902289004" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+		                </div>
+		                <div class="item">
+		                    <img src="//storage.googleapis.com/cr-resource/image/ca88a4ffad44d88281a70309eb5a61cd/kaa1910/2cf35c81f6dfae41bb37900660e004b8.jpg" class="img-responsive" data-attach="true" data-pagespeed-url-hash="1045650525" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+		                </div>
+		                <div class="item active">
+		                    <img src="//storage.googleapis.com/cr-resource/image/ca88a4ffad44d88281a70309eb5a61cd/kaa1910/00de1666c599d6adc24d0ff77d3821e5.jpg" class="img-responsive" data-attach="true" data-pagespeed-url-hash="1335854789" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+		                </div>
+		            </div>
+		            <!-- Carousel nav -->
+		            <div class="control-box left" data-selector=".control-box" data-background="true" data-title="content background">
+		                <a class="carousel-control left" href="#userEL2556136-carousel" data-slide="prev"><span></span></a>
+		            </div>
+		            <div class="control-box right" data-selector=".control-box" data-background="true" data-title="content background">
+		                <a class="carousel-control right" href="#userEL2556136-carousel" data-slide="next"><span></span></a>
+		            </div>
+		            <ol class="carousel-indicators" data-nav="true">
+		                <li data-target="#userEL925219-carousel" data-slide-to="0" class=""></li>
+		                <li data-target="#userEL925219-carousel" data-slide-to="1" class=""></li>
+		                <li data-target="#userEL925219-carousel" data-slide-to="2" class="active"></li>
+		            </ol>
+		        </div>
+		    </div>
+		</div>
+			
+			
+			
+			<div class="row" id="cocktails">
+				<div class="col-md-12" id="recommend_title">
+					<h2 class="chapter ng-binding">
+						<br> <small> <br> <i
+							class="js-filter-text ng-binding">Popular</i><br>
+						</small>Cocktails
+					</h2>
+				</div>
+				<div class="col-md-12" id="recommend">
+					<div class="table-responsive">
+						<table class="table">
+							<thead>
+								<tr></tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><img src="/resources/assets/basic/img/カクテルアイコン5.png">
+									</td>
+									<td><img src="/resources/assets/basic/img/カクテルアイコン5.png">
+									</td>
+									<td><img src="/resources/assets/basic/img/カクテルアイコン5.png">
+									</td>
+									<td><img src="/resources/assets/basic/img/カクテルアイコン5.png">
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="row" id="photos">
+				<div class="col-md-12" id="photo_title">
+					<h2 class="chapter ng-binding">
+						<br> <small> <br> <i
+							class="js-filter-text ng-binding">Popular</i><br>
+						</small>Photos
+					</h2>
+				</div>
+				<div class="col-md-12" id="recommend">
+					<div class="table-responsive">
+						<table class="table">
+							<thead>
+								<tr></tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><img
+										src="./resources/assets/gallery/img/test_image/large/1.png"></td>
+									<td><img
+										src="./resources/assets/gallery/img/test_image/large/1.png"></td>
+									<td><img
+										src="./resources/assets/gallery/img/test_image/large/1.png"></td>
+									<td><img
+										src="./resources/assets/gallery/img/test_image/large/1.png"></td>
+									<td><img
+										src="./resources/assets/gallery/img/test_image/large/1.png"></td>
+									<td><img
+										src="./resources/assets/gallery/img/test_image/large/1.png"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script
+		src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/js/bootstrap.bundle.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
+	<script
+		src="./resources/assets/modal_makingCocktail/js/ninja-slider.js"></script>
+	<script
+		src="./resources/assets/modal_makingCocktail/js/thumbnail-slider.js"></script>
 	<script src="./resources/assets/tag/js/search_tag.js"></script>
-	<script src="./resources/assets/basic/js/photo_profile.js"></script>	
+	<script src="./resources/assets/basic/js/photo_profile.js"></script>
+	<script src="./resources/assets/main/js/Simple-Slider.js"></script>
+	<!-- <script
+		src="./resources/assets/basic/js/proflie_slide/proflieSlide_slideclassie.js"></script> -->
+	<!-- <script
+		src="./resources/assets/basic/js/proflie_slide/proflieSlide_modernizr.custom.js"></script> -->
+
+
+	<script>
+		$(document).ready(function() {
+			var $editable = $(".editable");
+			var $overlay = $(".device-overlay");
+			var $circle = $(".editable__circle");
+			var circleTrans = 400;
+			var $item = $(".editable__rotater-item");
+			var $second = $(".second");
+			$(document).on("click", ".js-edit", function() {
+				$editable.addClass("clicked");
+				$overlay.addClass("active");
+			});
+			$(document).on("click", ".device-overlay", function() {
+				$editable.removeClass("clicked");
+				$overlay.removeClass("active");
+			});
+			$(document).on("click", ".editable__rotater-item", function() {
+				$(this).parent().addClass("picked");
+				$circle.addClass("picked");
+				$second.addClass("picked");
+			});
+			$(document).on("click", ".second__back", function() {
+				$(".editable__rotater").removeClass("picked");
+				$circle.addClass("instant");
+				$circle.css("top");
+				$circle.removeClass("picked");
+				$second.removeClass("picked");
+				$editable.removeClass("clicked");
+				$overlay.removeClass("active");
+				setTimeout(function() {
+					$circle.removeClass("instant");
+				}, circleTrans);
+			});
+		});
+	</script>
+
 	<script>
 		$('.dropdown-menu').on("click.bs.dropdown", function(e) {
 			e.stopPropagation();
-			/* e.preventDefault(); */ 
+			/* e.preventDefault(); */
 		});
-		$(".dropdown-menu").on("shown.bs.dropdown", function(event){
-		    var x = $(event.relatedTarget).text(); // Get the text of the element
-		    alert(x);
-		});
-	</script>	
+	</script>
+	<!-- dropdown box not close -->
+	
+	
 </body>
+
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

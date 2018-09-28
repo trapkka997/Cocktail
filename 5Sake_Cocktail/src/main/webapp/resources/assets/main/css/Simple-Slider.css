@@ -13,6 +13,7 @@
   width:50px;
   margin-left:20px;
   margin-right:20px;
+ 
 }
 
 @media (max-width:767px) {
@@ -25,5 +26,31 @@
   .simple-slider .swiper-slide {
     height:360px;
   }
+}
+
+
+.swiper-button-next, .swiper-button-prev {
+    
+    background-size: 12px 44px;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    background-color: #000000;
+    position: absolute;
+    top: 55%;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    z-index: 3;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.swiper-container {
+   
+    max-width: 95%;
 }
 

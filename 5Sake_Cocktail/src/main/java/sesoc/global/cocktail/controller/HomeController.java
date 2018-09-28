@@ -29,10 +29,14 @@ public class HomeController {
 	@Autowired SqlSession sqlSession;
 	@Autowired MemberRepository dao;
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+ 
+	//硫붿씤�솕硫�
+ 
 	
 	/**
 	 * 고정 메뉴 
 	 */
+ 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home() {
 //		List<Cocktail> cocktailList = cocktailRepository.getCocktailList();
@@ -87,7 +91,11 @@ public class HomeController {
 		model.addAttribute("cocktailList", cocktailList);
 		model.addAttribute("userPhotos", userPhotos);
 		model.addAttribute("path", "http://localhost:8888/cocktail/resources/");
-		return "cocktail/gallery/user_gallery";
+ 
+		return "cocktail/gallery/cocktail_gallery";
+ 
+		/*return "cocktail/gallery/user_gallery";
+ */
 	}
 	
 	/**
@@ -101,7 +109,11 @@ public class HomeController {
 		System.out.println(path);
 		model.addAttribute("userPhotos", userPhotos);
 		model.addAttribute("path", "http://localhost:8888/cocktail/resources/");
-		return "cocktail/gallery/cocktail_gallery";
+ 
+		return "cocktail/gallery/user_gallery";
+ 
+		/*return "cocktail/gallery/cocktail_gallery";*/
+ 
 	}
 	
 	/**
@@ -165,6 +177,11 @@ public class HomeController {
 	 */
 	@RequestMapping(value = "/eachoneProfile", method = RequestMethod.GET)
 	public String eachoneprofile(Model model, User vo) {
+ 
+		/*// �쑀�� �씠硫붿씪�쓣 諛쏆븘�꽌 �쑀�� �젙蹂댁� �쑀��媛� �쟻��  userPhoto瑜� �뱾怨좎삩�떎.
+		// �쑀���룷�넗濡� �솕硫댁뿉 肉뚮젮二쇰㈃ �맖.
+=======
+>>>>>>> branch 'master' of https://github.com/trapkka997/Cocktail
 		User user = dao.selectOne(vo);
 		List<UserPhoto> photoList = dao.selectUserPhoto(vo);
 		String followNum = dao.getUserFollowNum(vo);
@@ -175,17 +192,26 @@ public class HomeController {
 		model.addAttribute("followNum", followNum);
 		model.addAttribute("followerNum", followerNum);
 		model.addAttribute("path", "http://localhost:8888/cocktail/resources/");
-		model.addAttribute("photoList", photoList);
+		model.addAttribute("photoList", photoList);*/
 		return "user/eachoneProfile";
 	}
-
+ 
+	
+	@RequestMapping(value = "/modal", method = RequestMethod.GET)
+	public String modal() {
+		
+		return "cocktail/gallery/modal/modal";
+	}
+	
+ 
 	/**
 	 * css테스트용
 	 * @return
 	 */
 	@RequestMapping(value = "/test", method = RequestMethod.GET)
 	public String test() {
-		return "imsi/scrolltest";
+		return "cocktail/0919nabivar";
 	}
+ 
 }
 

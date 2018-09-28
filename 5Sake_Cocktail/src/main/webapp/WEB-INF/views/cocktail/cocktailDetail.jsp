@@ -17,6 +17,13 @@
     <link rel="stylesheet" href="./resources/assets/product_detail/css/recommend/cocktail_recommend_title.css?h=8ba319ea454a344c8bf43dd4d88bcbb9">
     <link rel="stylesheet" href="./resources/assets/product_detail/css/recommend/recommend_cocktail.css?h=9fdcb590092abd8e204c7b69a22c515a">
 </head>
+<style>
+[data-aos^=fade][data-aos^=fade].aos-animate {
+    opacity: 0;
+    transform: translate(0);
+}
+/* 사진 테투리 */
+</style>
 
 <body>
 <input type="hidden" id="cocktailSeq" name="cocktailSeq" value="${cocktail.cocktailSeq}">
@@ -184,6 +191,36 @@
 
 </div>
 
+<<<<<<< HEAD
+	<div class="cocktail_show">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="product_wrapper" style="width: 750px;">
+						<div class="product-img" style="width: 375px;" >
+							<img data-aos="fade-right" data-aos-duration="650"
+								data-aos-once="true" class="product_detail-img"
+								style="background-image:url(&quot;${cocktail.imagerink}&quot;);background-position:center;background-size:contain;width:375px;height:420px;color:rgb(120,133,147);background-color:rgba(255,255,255,0);">
+						</div>
+						<div class="product-info">
+							<div class="product-text">
+									<h1 style="margin-top: -15px; padding-top: 41px; font-family: 'Alfa Slab One', cursive;">${cocktail.cocktailname}</h1>
+								<h2
+									style="font-size: 15px; background-position: top; background-size: auto; background-repeat: no-repeat; margin-bottom: 12px;">Making
+									Yourself</h2>
+								<div class="cocktail_detail"
+									style="padding-bottom: 0px; height: 210px;">
+									${cocktail.receipe}</div>
+							</div>
+							<div class="product-savebutton">
+								<button type="button">Save</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+=======
     <div class="cocktail_show">
         <div class="container">
             <div class="row">
@@ -197,7 +234,109 @@
                                 <h2 style="font-size:15px;background-position:top;background-size:auto;background-repeat:no-repeat;margin-bottom:12px;">Making Yourself</h2>
                                 <div class="cocktail_detail" style="padding-bottom:0px;height:210px;">
                                 ${cocktail.recipe}
+>>>>>>> branch 'master' of https://github.com/trapkka997/Cocktail
 	</div>
+<<<<<<< HEAD
+	<div>
+		<div class="container_cocktail">
+			<div class="col">
+				<div class="cocktail_recommend_title">
+					<h2 class="C_R_title">${aa}와 어울리는 칵테일</h2>
+					<small class="C_R_small">당신을 위한 더 많은 칵테일 추천</small>
+				</div>
+			</div>
+			<div class="row" style="width: 80%; margin: 30px auto;">
+				<div class="product-items">
+					<div class="product-item">
+						<div class="item-wrap">
+							<img src="./resources/assets/product_detail/img/no_cocktail.jpg" />
+							<div class="wrap-qtt">
+								<div class="wrap-qtt-field-qtt"></div>
+							</div>
+						</div>
+						<div class="item-info">
+							<div class="item-title">Cocktail Name</div>
+							<div class="item-price" data-price="45">tag</div>
+						</div>
+					</div>
+					<div class="product-item">
+						<div class="item-wrap">
+							<img src="./resources/assets/product_detail/img/no_cocktail.jpg" />
+							<div class="wrap-qtt">
+								<div class="wrap-qtt-field-qtt"></div>
+							</div>
+						</div>
+						<div class="item-info">
+							<div class="item-title">Cocktail Name</div>
+							<div class="item-price" data-price="45">tag</div>
+						</div>
+					</div>
+					<div class="product-item">
+						<div class="item-wrap">
+							<img src="./resources/assets/product_detail/img/no_cocktail.jpg" />
+							<div class="wrap-qtt">
+								<div class="wrap-qtt-field-qtt"></div>
+							</div>
+						</div>
+						<div class="item-info">
+							<div class="item-title">Cocktail Name</div>
+							<div class="item-price" data-price="45">tag</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container_cocktail">
+			<div class="col">
+				<div class="cocktail_recommend_title">
+					<h2 class="C_R_title">${aa} 와 함께한 사람들</h2>
+					<small class="C_R_small">${aa} 와 함께한 사람들의 추억을 만나보세요</small>
+				</div>
+			</div>
+			<div class="row" style="width: 80%; margin: 30px auto;">
+				<div class="product-items">
+					<div class="product-item">
+						<div class="item-wrap">
+							<img src="./resources/assets/product_detail/img/no_cocktail.jpg" />
+							<div class="wrap-qtt">
+								<div class="wrap-qtt-field-qtt"></div>
+							</div>
+						</div>
+						<div class="item-info">
+							<div class="item-title">Cocktail Name</div>
+							<div class="item-price" data-price="45">tag</div>
+						</div>
+					</div>
+					<div class="product-item">
+						<div class="item-wrap">
+							<img src="./resources/assets/product_detail/img/no_cocktail.jpg" />
+							<div class="wrap-qtt">
+								<div class="wrap-qtt-field-qtt"></div>
+							</div>
+						</div>
+						<div class="item-info">
+							<div class="item-title">Cocktail Name</div>
+							<div class="item-price" data-price="45">tag</div>
+						</div>
+					</div>
+					<div class="product-item">
+						<div class="item-wrap">
+							<img src="./resources/assets/product_detail/img/no_cocktail.jpg" />
+							<div class="wrap-qtt">
+								<div class="wrap-qtt-field-qtt"></div>
+							</div>
+						</div>
+						<div class="item-info">
+							<div class="item-title">Cocktail Name</div>
+							<div class="item-price" data-price="45">tag</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+=======
                             </div><div class="product-savebutton">
     <button type="button" onclick="recommandBtn()">Save</button>
 </div></div>
@@ -291,6 +430,7 @@
 </div></div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+>>>>>>> branch 'master' of https://github.com/trapkka997/Cocktail
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/js/bootstrap.bundle.min.js"></script>
     <script src="./resources/assets/product_detail/js/bs-animation.js?h=cc4d20340936b09bec81533dd59db3a8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>

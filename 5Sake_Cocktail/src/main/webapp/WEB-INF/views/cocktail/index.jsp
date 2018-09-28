@@ -3,9 +3,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
+
 <head>
 <title>5Sake's Cocktail</title>
-
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
 <link rel="stylesheet"
@@ -14,10 +14,33 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
 <link rel="stylesheet"
 	href="./resources/assets/basic/css/navbar/navbar.css">
+<link rel="stylesheet"
+	href="./resources/assets/basic/css/proflie_slide/slide_component.css">
 <!--profile-->
 <link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Open+Sans">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet"
 	href="./resources/assets/basic/css/profile/default.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
 <link rel="stylesheet" href="./resources/assets/tag/css/tag_default.css">
+<link rel="stylesheet"
+	href="./resources/assets/modal_makingCocktail/css/circle-progress-bar.css?h=a3fb9dca43f77251e0f00815d5fb05b2">
+<link rel="stylesheet"
+	href="./resources/assets/modal_makingCocktail/css/ninja-slider.css?h=36ca55b69bec564ac8a55b447db21f87">
+<link rel="stylesheet"
+	href="./resources/assets/modal_makingCocktail/css/thumbnail-slider.css?h=88ea8bccbed24d3703a2b324aaff99fd">
+<link rel="stylesheet"
+	href="./resources/assets/basic/css/modal.css?h=79846acf8bad6d3c01f5f6496c592036">
+<link rel="stylesheet"
+	href="./resources/assets/basic/css/photo_profile.css">
+<link rel="stylesheet"
+	href="./resources/assets/main/css/Simple-Slider.css?h=4617ba6673866be9ca12fcd9ef560578">
+<link rel="stylesheet"
+	href="./resources/assets/main/css/title/title.css?h=1a3fe257ec57297162763eee50f0dff7">
+<link rel="stylesheet" href="./resources/assets/basic/css/slideshow.css">
 
 <!-- navbar_핵심 -->
 <link rel="stylesheet"
@@ -28,7 +51,9 @@
 	href="./resources/assets/basic/css/navbar/check_list.css">
 <link rel="stylesheet"
 	href="./resources/assets/basic/css/navbar/userRecommend_Tag.css">
-<!-- navbar_핵심, 지우지마세여-->
+
+<!-- navbar_핵심, 지우지마세여-->	
+
 <style>
 h2 {
 	font-family: fantasy;
@@ -48,44 +73,183 @@ h4 {
 }
 
 .img {
-	width: 98px;
+	width: 98px;;
+	/* border: 2px solid black;
+	border-radius: 50%; */
 }
 
 .p {
 	margin-top: 0;
 	width: 150px;
 }
-/*위치에 있던 .tile .flip css -> tag_default.css로 옮김 */
+
+.tile {
+	display: inline-block;
+	line-height: 100px;
+}
+
+.tile>div, .tile a {
+	width: 100%;
+	color: #30261c;
+	background-color: #e4ecb9;
+	text-align: center;
+}
+
+.tile>a {
+	display: block;
+	text-decoration: none;
+	background-color: #d88e8f;
+}
+/* Flip effect */
+/
+* .flip>div, .flip a {
+	position: absolute;
+}
+
+.flip>a {
+	-webkit-transform: rotateX(-90deg);
+	-moz-transform: rotateX(-90deg);
+	-o-transform: rotateX(-90deg);
+	-ms-transform: rotateX(-90deg);
+	transform: rotateX(-90deg);
+}
+
+.flip:hover>div {
+	-webkit-transform: rotateX(90deg);
+	-moz-transform: rotateX(90deg);
+	-o-transform: rotateX(90deg);
+	-ms-transform: rotateX(90deg);
+	transform: rotateX(90deg);
+}
+
+.flip:hover>a {
+	-webkit-transform: rotateX(0deg);
+	-moz-transform: rotateX(0deg);
+	-o-transform: rotateX(0deg);
+	-ms-transform: rotateX(0deg);
+	transform: rotateX(0deg);
+}
+
+.flip>a, .flip:hover>div {
+	-webkit-transition: 0.05s all linear 0;
+	-moz-transition: 0.05s all linear 0;
+	-o-transition: 0.05s all linear 0;
+	-ms-transition: 0.05s all linear 0;
+	transition: 0.05s all linear 0;
+}
+
+.flip>div, .flip:hover>a {
+	-webkit-transition: 0.05s all linear 0.05s;
+	-moz-transition: 0.05s all linear 0.05s;
+	-o-transition: 0.05s all linear 0.05s;
+	-ms-transition: 0.05s all linear 0.05s;
+	transition: 0.05s all linear 0.05s;
+}
+
+.slide {
+	overflow: hidden;
+}
+
+.slide>div, .slide a {
+	-webkit-transition: 0.1s all linear;
+	-moz-transition: 0.1s all linear;
+	-o-transition: 0.1s all linear;
+	-ms-transition: 0.1s all linear;
+	transition: 0.1s all linear;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+}
+
+.slide>a {
+	-webkit-transform: translate(200px, 0);
+	-moz-transform: translate(200px, 0);
+	-o-transform: translate(200px, 0);
+	-ms-transform: translate(200px, 0);
+	transform: translate(200px, 0);
+}
+
+.slide:hover>div {
+	-webkit-transform: translate(-200px, 0);
+	-moz-transform: translate(-200px, 0);
+	-o-transform: translate(-200px, 0);
+	-ms-transform: translate(-200px, 0);
+	transform: translate(-200px, 0);
+}
+
+.slide:hover>a {
+	-webkit-transform: translate(0, 0);
+	-moz-transform: translate(0, 0);
+	-o-transform: translate(0, 0);
+	-ms-transform: translate(0, 0);
+	transform: translate(0, 0);
+}
+
+.shutter>div, .shutter a {
+	-webkit-transition: 0.1s all linear;
+	-moz-transition: 0.1s all linear;
+	-o-transition: 0.1s all linear;
+	-ms-transition: 0.1s all linear;
+	transition: 0.1s all linear;
+	position: absolute;
+}
+
+.shutter>div {
+	z-index: 10;
+	-webkit-transform-origin: 0 0;
+	-moz-transform-origin: 0 0;
+	-o-transform-origin: 0 0;
+	-ms-transform-origin: 0 0;
+	transform-origin: 0 0;
+}
+
+.shutter:hover>div {
+	-webkit-transform: rotateX(90deg);
+	-moz-transform: rotateX(90deg);
+	-o-transform: rotateX(90deg);
+	-ms-transform: rotateX(90deg);
+	transform: rotateX(90deg);
+}
+
+.page>div, .page a {
+	-webkit-transition: 0.2s all linear;
+	-moz-transition: 0.2s all linear;
+	-o-transition: 0.2s all linear;
+	-ms-transition: 0.2s all linear;
+	transition: 0.2s all linear;
+	position: absolute;
+	z-index: 5;
+}
+
+.page>div {
+	z-index: 10;
+	-webkit-transform-origin: 0 0;
+	-moz-transform-origin: 0 0;
+	-o-transform-origin: 0 0;
+	-ms-transform-origin: 0 0;
+	transform-origin: 0 0;
+}
+
+.page:hover>div {
+	-webkit-transform: rotateX(360deg);
+	-moz-transform: rotateX(360deg);
+	-o-transform: rotateX(360deg);
+	-ms-transform: rotateX(360deg);
+	transform: rotateX(360deg);
+	z-index: 1;
+}
 </style>
-<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
-<script>
-	$(document).ready(function() {
-		$('#content').load('/cocktail/main_p');
-		
-		$('#cock_gallery').on('click', function() {
-			$('#content').load('/cocktail/cocktailphoto');
-		});
-		$('#user_gallery').on('click', function() {
-			$('#content').load('/cocktail/userphoto');
-		});
-		$('#self_making').on('click', function() {
-			$('#content').load('/cocktail/selfMaking');
-		});
-		$('.navbar-avatar').on('click', function() {
-			$('#content').load('/cocktail/eachoneProfile?userEmail=${sessionScope.useremail}');
-		});
-		/* 네모 친 id를 가진 i 태그 클릭시 body부분을 로드해서 띄워줍니다.*/
-	});
-</script>
+
 </head>
+
+	
 <body>
 	<div class="navbar is-top-fixed">
 		<div class="container-fluid">
 			<div class="container">
 				<div class="navbar-home">
-					<a href="/cocktail/"> <img
-						src='./resources/assets/basic/img/navbar_home2.png' class='img'
-						style="" />
+					<a href=""> <img
+						src='./resources/assets/basic/img/navbar_home2.png' class='img' />
 					</a>
 				</div>
 				<!-- navbar-home_end -->
@@ -94,12 +258,13 @@ h4 {
 						aria-expanded="false" href="#"> <span></span> <span></span> <span></span>
 						<div id="recommend" class="dropdown-menu"
 							style="margin-left: 150px; margin-right: 150px; right: 0px;">
+							
 							<!-- exit_button -->
-							<button type="button" class="close" aria-label="Close">
+							<button type="button" class="close"	aria-label="Close">
 								<span aria-hidden="true">&times;</span>
 							</button>
 							<!-- exit_button_end -->
-
+							
 							<div class="row_drop_userRecommend">
 								<div class="col-md-12">
 									<div class="card-group">
@@ -162,6 +327,7 @@ h4 {
 														class='img' />
 												</p>
 												<div>
+
 													<p>
 														<label class="tag">#tag</label> <label class="tag">#tag</label>
 														<label class="tag">#tag</label>
@@ -183,13 +349,46 @@ h4 {
 
 				<!-- navbar-center-->
 				<div class="navbar-center">
-					<i id='cock_gallery' class="fas fa-glass-martini icon"
-						style="margin-right: 20px;"></i> <i id='user_gallery'
-						class="fab fa-microsoft icon"
-						style="margin-left: 20px; margin-right: 20px;"></i> <i
-						id='self_making' class="fas fa-user-alt"
-						style="margin-left: 20px;"></i>
-				
+					<a href="cocktailphoto" class="navbar-item navbar-logo"> <i
+						class="fas fa-glass-martini icon"></i>
+					</a> <a href="userphoto" class="navbar-item navbar-logo"
+						style="margin-left: 20px; margin-right: 20px;"> <i
+						class="fab fa-microsoft icon"></i>
+					</a> <a href="selfMaking" class="navbar-item navbar-logo"> <i
+						class="fas fa-user-alt"></i>
+					</a>
+
+
+					<!-- <nav class="slidemenu">
+
+						Item 1
+						<input type="radio" name="slideItem" id="slide-item-1"
+							class="slide-toggle" checked /> <label for="slide-item-1"><p class="icon">♬</p>
+							<span>Home</span></label>
+
+						Item 2
+						<input type="radio" name="slideItem" id="slide-item-2"
+							class="slide-toggle" /> <label for="slide-item-2"><p class="icon">★</p>
+							<span>About</span></label>
+
+						Item 3
+						<input type="radio" name="slideItem" id="slide-item-3"
+							class="slide-toggle" /> <label for="slide-item-3"><p class="icon">✈</p>
+							<span>Folio</span></label>
+
+						Item 4
+						<input type="radio" name="slideItem" id="slide-item-4"
+							class="slide-toggle" /> <label for="slide-item-4"><p class="icon">✎</p>
+							<span>Blog</span></label>
+
+						<div class="clear"></div>
+
+						Bar
+						<div class="slider">
+							<div class="bar"></div>
+						</div>
+
+					</nav> -->
 
 				</div>
 
@@ -203,12 +402,12 @@ h4 {
 						style="margin-left: 150px; margin-right: 150px; margin-top: 0px;">
 
 						<!-- exit_button -->
-						<div>
-							<button type="button" class="close" aria-label="Close">
-								<span aria-hidden="true">×</span>
-							</button>
-						</div>
-						<!-- exit_button_end -->
+							<div>
+								<button type="button" class="close" aria-label="Close">
+									<span aria-hidden="true">×</span>
+								</button>
+							</div>
+							<!-- exit_button_end -->
 
 
 						<div class="row_drop_search">
@@ -221,42 +420,74 @@ h4 {
 												<h4 class="card-title">BASE SPIRITS</h4>
 
 												<div style="float: left;">
-													<input class="spirit_check" type='checkbox' name='all'
-														value='valuable' id="all" /> <label for="all"> <img
-														class="spirits_img"
-														src="./resources/assets/basic/img/spirit_icon/spirit_icon_gray/icon_all_cn.png" />
-													</label> <input class="spirit_check" type='checkbox' name='brandy'
-														value='valuable' id="brandy" /> <label for="brandy">
-														<img class="spirits_img"
-														src="./resources/assets/basic/img/spirit_icon/spirit_icon_gray/icon_brandy_cn.png" />
-													</label> <input class="spirit_check" type='checkbox' name='whisky'
-														value='valuable' id="whisky" /> <label for="whisky">
-														<img class="spirits_img"
-														src="./resources/assets/basic/img/spirit_icon/spirit_icon_gray/icon_whisky_cn.png" />
-													</label> <input class="spirit_check" type='checkbox' name='vodka'
-														value='valuable' id="vodka" /> <label for="vodka">
-														<img class="spirits_img"
-														src="./resources/assets/basic/img/spirit_icon/spirit_icon_gray/icon_vodka_cn.png" />
-													</label> <input class="spirit_check" type='checkbox' name='rum'
-														value='valuable' id="rum" /> <label for="rum"> <img
-														class="spirits_img"
-														src="./resources/assets/basic/img/spirit_icon/spirit_icon_gray/icon_rum_cn.png" />
-													</label> <input class="spirit_check" type='checkbox' name='jin'
-														value='valuable' id="jin" /> <label for="jin"> <img
-														class="spirits_img"
-														src="./resources/assets/basic/img/spirit_icon/spirit_icon_gray/icon_jin_cn.png" />
-													</label> <input class="spirit_check" type='checkbox' name='tequila'
-														value='valuable' id="tequila" /> <label for="tequila">
-														<img class="spirits_img"
-														src="./resources/assets/basic/img/spirit_icon/spirit_icon_gray/icon_tequila_cn.png" />
-													</label> <input class="spirit_check" type='checkbox' name='ETC'
-														value='valuable' id="ETC" /> <label for="ETC"> <img
-														class="spirits_img"
-														src="./resources/assets/basic/img/spirit_icon/spirit_icon_gray/icon_etc_cn.png" />
-													</label>
-
+													<input class = "spirit_check" type='checkbox' name='all' value='valuable' id="all" />
+														<label for="all">  
+														 	<img src="./resources/assets/basic/img/spirit_icon/spirit_icon_gray/icon_all_cn.png" />
+														</label>
+														
+													<input class = "spirit_check" type='checkbox' name='brandy' value='valuable' id="brandy" /> 
+														<label for="brandy"> 
+															<img src="./resources/assets/basic/img/spirit_icon/spirit_icon_gray/icon_brandy_cn.png" />
+														</label> 
+														
+													<input class = "spirit_check" type='checkbox' name='whisky' value='valuable' id="whisky" /> 
+														<label for="whisky"> 
+															<img src="./resources/assets/basic/img/spirit_icon/spirit_icon_gray/icon_whisky_cn.png" />
+														</label>
+														
+														
+													<input class = "spirit_check" type='checkbox' name='vodka' value='valuable' id="vodka" /> 
+														<label for="vodka"> 
+															<img src="./resources/assets/basic/img/spirit_icon/spirit_icon_gray/icon_vodka_cn.png" />
+														</label> 
+														
+													<input class = "spirit_check" type='checkbox' name='rum' value='valuable' id="rum" /> 
+														<label for="rum"> 
+															<img src="./resources/assets/basic/img/spirit_icon/spirit_icon_gray/icon_rum_cn.png" />
+														</label> 
+														
+													<input class = "spirit_check" type='checkbox' name='jin' value='valuable' id="jin" /> 
+														<label for="jin"> 
+															<img src="./resources/assets/basic/img/spirit_icon/spirit_icon_gray/icon_jin_cn.png" />
+														</label> 
+														
+													<input class = "spirit_check" type='checkbox' name='tequila' value='valuable' id="tequila" /> 
+														<label for="tequila"> 
+															<img src="./resources/assets/basic/img/spirit_icon/spirit_icon_gray/icon_tequila_cn.png" />
+														</label> 
+														
+													<input class = "spirit_check" type='checkbox' name='ETC' value='valuable' id="ETC" /> 
+														<label for="ETC"> 
+															<img src="./resources/assets/basic/img/spirit_icon/spirit_icon_gray/icon_etc_cn.png" />
+														</label> 
+														
 												</div>
-												
+												<!-- <div id="alcole" class="button-group"
+												data-filter-group='alcole'>
+												<ul class="nav-list list-inline">
+													<li class = "nav_li"><img src="">All</li>
+													<li class = "nav_li"><img src="">Brandy</li>
+													<li class = "nav_li"><img src="">Whisky</li>
+													<li class = "nav_li"><img src="">Vodka</li>
+												</ul>
+												<ul class="nav-list list-inline">
+													<li class = "nav_li"><img src="">Rum</li>
+													<li class = "nav_li"><img src="">Dry
+													<li class = "nav_li"><img src="">Jin</li>
+													<li class = "nav_li"><img src="">Tequila</li>
+												</ul>
+
+
+												<ul class="nav-list list-inline">
+													<li><button class="button is-checked" data-filter="*">All</button></li>
+													<li><button class="button" data-filter=".브랜디">Brandy</button></li>
+													<li><button class="button" data-filter=".위스키">Whisky</button></li>
+													<li><button class="button" data-filter=".보드카">Vodka</button></li>
+													<li><button class="button" data-filter=".럼">Rum</button></li>
+													<li><button class="button" data-filter=".드라이진">Dry
+															Jin</button></li>
+													<li><button class="button" data-filter=".테킬라">Tequila</button></li>
+												</ul> -->
 											</div>
 
 										</div>
@@ -267,64 +498,80 @@ h4 {
 											<div class="card-body" id="filter4">
 												<h4 class="card-title">Color</h4>
 
-												<div class="recommandCocktail" style="float: left;">
-
+												<div style="float: left;">
+																										
 													<label class="cream"> <input type="radio"
 														name="color" value="cream">
 														<div class="color_layer"></div>
 														<div class="color_button">
 															<span></span>
 														</div>
-													</label> <label class="yellow"> <input type="radio"
+													</label> 
+													
+													<label class="yellow"> <input type="radio"
 														name="color" value="yellow">
 														<div class="color_layer"></div>
 														<div class="color_button">
 															<span></span>
 														</div>
-													</label> <label class="orange"> <input type="radio"
+													</label> 
+													
+													<label class="orange"> <input type="radio"
 														name="color" value="orange">
 														<div class="layer"></div>
 														<div class="color_button">
 															<span></span>
 														</div>
-													</label> <label class="red"> <input type="radio"
+													</label>
+													
+													<label class="red"> <input type="radio"
 														name="color" value="red">
 														<div class="layer"></div>
 														<div class="color_button">
 															<span></span>
 														</div>
-													</label> <label class="brown"> <input type="radio"
+													</label>
+													
+													<label class="brown"> <input type="radio"
 														name="color" value="brown">
 														<div class="layer"></div>
 														<div class="color_button">
 															<span></span>
 														</div>
-													</label> <label class="green"> <input type="radio"
+													</label>
+													
+													<label class="green"> <input type="radio"
 														name="color" value="green">
 														<div class="layer"></div>
 														<div class="color_button">
 															<span></span>
 														</div>
-													</label> <label class="blue"> <input type="radio"
+													</label>
+													
+													<label class="blue"> <input type="radio"
 														name="color" value="blue">
 														<div class="color_layer"></div>
 														<div class="color_button">
 															<span></span>
 														</div>
-													</label> <label class="pink"> <input type="radio"
+													</label> 
+													
+													<label class="pink"> <input type="radio"
 														name="color" value="pink">
 														<div class="color_layer"></div>
 														<div class="color_button">
 															<span></span>
 														</div>
-													</label> <label class="peach"> <input type="radio"
+													</label> 
+													
+													<label class="peach"> <input type="radio"
 														name="color" value="peach">
 														<div class="color_layer"></div>
 														<div class="color_button">
 															<span></span>
 														</div>
-													</label>
-
+													</label> 
+													
 												</div>
 
 												<!-- <div id="color" class="button-group"
@@ -349,9 +596,8 @@ h4 {
 											<div class="card-body" id="filter2">
 												<h4 class="card-title">liqueur</h4>
 												<div class="row_checkBox">
-
-													<div class="CheckBox_wrapper_liqueur"
-														style="margin-left: 25px; margin-top: 10px;">
+												
+													<div class="CheckBox_wrapper_liqueur" style="margin-left: 25px; margin-top: 10px;">
 
 														<div>
 															<input type="checkbox" id="check_liqueur_all" /> <label
@@ -401,13 +647,11 @@ h4 {
 													<!-- CheckBox_wrapper_end -->
 
 
-													<div class="CheckBox_wrapper_liqueur2"
-														style="margin-right: 15px; margin-top: 10px;">
+													<div class="CheckBox_wrapper_liqueur2" style="margin-right: 15px; margin-top: 10px;">
 
 														<div>
-															<input type="checkbox" id="check_liqueur_cremeliqueur" />
-															<label class="label_liqueur"
-																for="check_liqueur_cremeliqueur">
+															<input type="checkbox" id="check_liqueur_cremeliqueur" /> <label
+																class="label_liqueur" for="check_liqueur_cremeliqueur">
 																<div>
 																	<i class="fa fa-check"></i>
 																</div>Creme liqueur
@@ -468,8 +712,7 @@ h4 {
 												<h4 class="card-title">material</h4>
 												<div class="row_checkBox">
 
-													<div class="CheckBox_wrapper_material"
-														style="margin-top: 10px; margin-right: 27px;">
+													<div class="CheckBox_wrapper_material" style="margin-top: 10px;margin-right: 27px;">
 
 														<div>
 															<input type="checkbox" id="check_material_all" /> <label
@@ -508,9 +751,8 @@ h4 {
 														</div>
 
 														<div>
-															<input type="checkbox" id="check_material_grapefruit" />
-															<label class="label_material"
-																for="check_material_grapefruit">
+															<input type="checkbox" id="check_material_grapefruit" /> <label
+																class="label_material" for="check_material_grapefruit">
 																<div>
 																	<i class="fa fa-check"></i>
 																</div>Grape Fruit
@@ -528,8 +770,7 @@ h4 {
 														<!-- CheckBox_wrapper1_end -->
 													</div>
 
-													<div class="CheckBox_wrapper_material2"
-														style="margin-top: 10px;">
+													<div class="CheckBox_wrapper_material2" style="margin-top: 10px;">
 														<div>
 															<input type="checkbox" id="check_material_lime" /> <label
 																class="label_material" for="check_material_lime">
@@ -540,9 +781,8 @@ h4 {
 														</div>
 
 														<div>
-															<input type="checkbox" id="check_material_raspberry" />
-															<label class="label_material"
-																for="check_material_raspberry">
+															<input type="checkbox" id="check_material_raspberry" /> <label
+																class="label_material" for="check_material_raspberry">
 																<div>
 																	<i class="fa fa-check"></i>
 																</div>Raspberry
@@ -568,9 +808,8 @@ h4 {
 														</div>
 
 														<div>
-															<input type="checkbox" id="check_material_pineapple" />
-															<label class="label_material"
-																for="check_material_pineapple">
+															<input type="checkbox" id="check_material_pineapple" /> <label
+																class="label_material" for="check_material_pineapple">
 																<div>
 																	<i class="fa fa-check"></i>
 																</div>Pineapple
@@ -590,8 +829,7 @@ h4 {
 													<!-- CheckBox_wrapper2_end -->
 
 
-													<div class="CheckBox_wrapper_material3"
-														style="margin-top: 10px;">
+													<div class="CheckBox_wrapper_material3" style="margin-top: 10px;">
 
 														<div>
 															<input type="checkbox" id="check_material_egg" /> <label
@@ -603,9 +841,8 @@ h4 {
 														</div>
 
 														<div>
-															<input type="checkbox" id="check_material_gingerale" />
-															<label class="label_material"
-																for="check_material_gingerale">
+															<input type="checkbox" id="check_material_gingerale" /> <label
+																class="label_material" for="check_material_gingerale">
 																<div>
 																	<i class="fa fa-check"></i>
 																</div>Gingerale
@@ -652,7 +889,7 @@ h4 {
 													<!-- CheckBox_wrapper3_end -->
 												</div>
 												<!-- checkbox_end -->
-
+												
 												<!-- <div id="material" class="button-group"
 													data-filter-group='material'>
 													<ul class="nav-list list-inline">
@@ -677,7 +914,7 @@ h4 {
 														<li class="button" data-filter=".진저에일">Gingerale</li>
 													</ul>
 												</div> -->
-
+												
 											</div>
 										</div>
 										<!--material-->
@@ -687,195 +924,18 @@ h4 {
 
 							<div class="row_cocktail_fliter">
 								<div class="grid">
-									<%-- <c:forEach var="cocktail" items="${cocktailList }">
+									<c:forEach var="cocktail" items="${cocktailList }">
 										<div
-											class="tile flip element-item ${cocktail.ingredient }"
+											class="tile flip element-item ${cocktail.alcole } ${cocktail.liqueur } ${cocktail.mateial }"
 											data-category="transition">
 											<div>
-												<img src="${cocktail.imageRink }" height="100" width="100">
+												<img src="${cocktail.imagerink }" height="100" width="100">
 											</div>
 											<a
-												href="cocktailDetail?cocktailSeq=${cocktail.cocktailSeq }">
-												${cocktail.cocktailName } </a>
+												href="cocktailDetail?cocktailname=${cocktail.cocktailname }">
+												${cocktail.cocktailname } </a>
 										</div>
-									</c:forEach> --%>
-									
-									
-									<!--  -->
-									<div class="wrapper_cocktailCard">
-										<div class="cols_cocktailCard">
-											<div class="col_cocktailCard"
-												ontouchstart="this.classList.toggle('hover');">
-												<div class="container_cocktailCard">
-													<div class="front_cocktailCard"
-														style="background-image: url(https://unsplash.it/500/500/)">
-														<div class="inner_cocktailCard">
-															<p class="p_cocktailCard">Cocktail Name</p>
-															<<!-- span class="span_cocktailCard">Cocktail </span> -->
-														</div>
-													</div>
-													<div class="back_cocktailCard">
-
-														<div class="inner_cocktailCard">
-
-															<p></p>
-
-														</div>
-													</div>
-												</div>
-											</div>
-											
-											<div class="col_cocktailCard"
-												ontouchstart="this.classList.toggle('hover');">
-												<div class="container_cocktailCard">
-													<div class="front_cocktailCard"
-														style="background-image: url(https://unsplash.it/500/500/)">
-														<div class="inner_cocktailCard">
-															<p class="p_cocktailCard">Cocktail Name</p>
-															<<!-- span class="span_cocktailCard">Cocktail </span> -->
-														</div>
-													</div>
-													<div class="back_cocktailCard">
-
-														<div class="inner_cocktailCard">
-
-															<p></p>
-
-														</div>
-													</div>
-												</div>
-											</div>
-											
-											<div class="col_cocktailCard"
-												ontouchstart="this.classList.toggle('hover');">
-												<div class="container_cocktailCard">
-													<div class="front_cocktailCard"
-														style="background-image: url(https://unsplash.it/500/500/)">
-														<div class="inner_cocktailCard">
-															<p class="p_cocktailCard">Cocktail Name</p>
-															<<!-- span class="span_cocktailCard">Cocktail </span> -->
-														</div>
-													</div>
-													<div class="back_cocktailCard">
-
-														<div class="inner_cocktailCard">
-
-															<p></p>
-
-														</div>
-													</div>
-												</div>
-											</div>
-											
-											<div class="col_cocktailCard"
-												ontouchstart="this.classList.toggle('hover');">
-												<div class="container_cocktailCard">
-													<div class="front_cocktailCard"
-														style="background-image: url(https://unsplash.it/500/500/)">
-														<div class="inner_cocktailCard">
-															<p class="p_cocktailCard">Cocktail Name</p>
-															<<!-- span class="span_cocktailCard">Cocktail </span> -->
-														</div>
-													</div>
-													<div class="back_cocktailCard">
-
-														<div class="inner_cocktailCard">
-
-															<p></p>
-
-														</div>
-													</div>
-												</div>
-											</div>
-											
-											<div class="col_cocktailCard"
-												ontouchstart="this.classList.toggle('hover');">
-												<div class="container_cocktailCard">
-													<div class="front_cocktailCard"
-														style="background-image: url(https://unsplash.it/500/500/)">
-														<div class="inner_cocktailCard">
-															<p class="p_cocktailCard">Cocktail Name</p>
-															<<!-- span class="span_cocktailCard">Cocktail </span> -->
-														</div>
-													</div>
-													<div class="back_cocktailCard">
-
-														<div class="inner_cocktailCard">
-
-															<p></p>
-
-														</div>
-													</div>
-												</div>
-											</div>
-											
-											<div class="col_cocktailCard"
-												ontouchstart="this.classList.toggle('hover');">
-												<div class="container_cocktailCard">
-													<div class="front_cocktailCard"
-														style="background-image: url(https://unsplash.it/500/500/)">
-														<div class="inner_cocktailCard">
-															<p class="p_cocktailCard">Cocktail Name</p>
-															<<!-- span class="span_cocktailCard">Cocktail </span> -->
-														</div>
-													</div>
-													<div class="back_cocktailCard">
-
-														<div class="inner_cocktailCard">
-
-															<p></p>
-
-														</div>
-													</div>
-												</div>
-											</div>
-											
-											<div class="col_cocktailCard"
-												ontouchstart="this.classList.toggle('hover');">
-												<div class="container_cocktailCard">
-													<div class="front_cocktailCard"
-														style="background-image: url(https://unsplash.it/500/500/)">
-														<div class="inner_cocktailCard">
-															<p class="p_cocktailCard">Cocktail Name</p>
-															<<!-- span class="span_cocktailCard">Cocktail </span> -->
-														</div>
-													</div>
-													<div class="back_cocktailCard">
-
-														<div class="inner_cocktailCard">
-
-															<p></p>
-
-														</div>
-													</div>
-												</div>
-											</div>
-											
-											<div class="col_cocktailCard"
-												ontouchstart="this.classList.toggle('hover');">
-												<div class="container_cocktailCard">
-													<div class="front_cocktailCard"
-														style="background-image: url(https://unsplash.it/500/500/)">
-														<div class="inner_cocktailCard">
-															<p class="p_cocktailCard">Cocktail Name</p>
-															<<!-- span class="span_cocktailCard">Cocktail </span> -->
-														</div>
-													</div>
-													<div class="back_cocktailCard">
-
-														<div class="inner_cocktailCard">
-
-															<p></p>
-
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<!--  -->
-									
-									
+									</c:forEach>
 								</div>
 							</div>
 							<!-- cocktail_Fliter -->
@@ -884,120 +944,214 @@ h4 {
 					</div>
 				</div>
 
-
+				<!-- avatar -->
 				<div class="navbar-avatar" style="margin-left: 19px;">
-					<a href="" onclick="return false;" class="navbar-item is-avatar" @click.prevent="showProfilePanel"> 
-						<img src="https://unsplash.it/200/200?image=1005" alt="Avatar" />
+					
+					<a href="eachoneProfile" class="navbar-item is-avatar"
+						@click.prevent="showProfilePanel"> <img
+						src="https://unsplash.it/200/200?image=1005" alt="Avatar" />
 					</a>
 				</div>
-
+				<!-- avatar -->
+				
+			
 			</div>
 		</div>
 		<!-- container -->
 	</div>
-	<div id="content"></div>
-	<script	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script	src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
-	<script	src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/js/bootstrap.bundle.min.js"></script>
-	<script	src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
+
+
+	<!-- slideshow -->
+	<div>
+		
+		<div class="container">
+			<div class="slide_row" id="slideshow">
+				<div class="col-md-12" id="slideshow" style="margin-top: 30px;">
+					<div class="simple-slider">
+						<div class="swiper-container">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide"
+									style="background-image: url(./resources/assets/main/img/slideshow1.jpg?h=acd8c032b5252903d5531d2e4a227dcc)"></div>
+								<div class="swiper-slide"
+									style="background-image: url(./resources/assets/main/img/slideshow2.jpg?h=ca5b6de7017b0ae20ce9940097332a99)"></div>
+								<div class="swiper-slide"
+									style="background-image: url(./resources/assets/main/img/slideshow3.jpg?h=bf73d8424e46231796e3733202d61a4b)"></div>
+							</div>
+							<div class="swiper-pagination"></div>
+							
+						</div>
+					</div>
+					<div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div>
+				</div>
+			</div>
+			
+			
+			<!-- line -->
+			<div class='userEL2556141'>
+			    <div class='container'>
+			        <div class='no-padding'>
+			            <div class='divider-box' data-divider='true' data-selector='.divider-box' data-title='divider width'>
+			                <hr data-selector='hr' data-border='true' data-title='line color'>
+			                <hr data-selector='hr' data-border='true' data-title='line color'>
+			            </div>
+			        </div>
+			    </div>
+			</div>
+			<!-- line -->
+
+			<div class="row" id="cocktails">
+				<div class="col-md-12" id="recommend_title">
+					<h2 class="chapter ng-binding">
+						<br> <small> <br> <i
+							class="js-filter-text ng-binding">Popular</i><br>
+						</small>Cocktails
+					</h2>
+				</div>
+				<div class="col-md-12" id="recommend">
+					<div class="table-responsive">
+						<table class="table">
+							<thead>
+								<tr></tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><img src="/resources/assets/basic/img/カクテルアイコン5.png">
+									</td>
+									<td><img src="/resources/assets/basic/img/カクテルアイコン5.png">
+									</td>
+									<td><img src="/resources/assets/basic/img/カクテルアイコン5.png">
+									</td>
+									<td><img src="/resources/assets/basic/img/カクテルアイコン5.png">
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			
+			
+			
+			
+			<!-- line -->
+			<div class='userEL2556141'>
+			    <div class='container'>
+			        <div class='no-padding'>
+			            <div class='divider-box' data-divider='true' data-selector='.divider-box' data-title='divider width'>
+			                <hr data-selector='hr' data-border='true' data-title='line color'>
+			                <hr data-selector='hr' data-border='true' data-title='line color'>
+			            </div>
+			        </div>
+			    </div>
+			</div>
+			<!-- line -->
+		
+			
+			<div class="row" id="photos">
+				<div class="col-md-12" id="photo_title">
+					<h2 class="chapter ng-binding">
+						<br> <small> <br> <i
+							class="js-filter-text ng-binding">Popular</i><br>
+						</small>Photos
+					</h2>
+				</div>
+				<div class="col-md-12" id="recommend">
+					<div class="table-responsive">
+						<table class="table">
+							<thead>
+								<tr></tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><img
+										src="./resources/assets/gallery/img/test_image/large/1.png"></td>
+									<td><img
+										src="./resources/assets/gallery/img/test_image/large/1.png"></td>
+									<td><img
+										src="./resources/assets/gallery/img/test_image/large/1.png"></td>
+									<td><img
+										src="./resources/assets/gallery/img/test_image/large/1.png"></td>
+									<td><img
+										src="./resources/assets/gallery/img/test_image/large/1.png"></td>
+									<td><img
+										src="./resources/assets/gallery/img/test_image/large/1.png"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script
+		src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/js/bootstrap.bundle.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
+	<script
+		src="./resources/assets/modal_makingCocktail/js/ninja-slider.js"></script>
+	<script
+		src="./resources/assets/modal_makingCocktail/js/thumbnail-slider.js"></script>
 	<script src="./resources/assets/tag/js/search_tag.js"></script>
 	<script src="./resources/assets/basic/js/photo_profile.js"></script>
+	<script src="./resources/assets/main/js/Simple-Slider.js"></script>
+	<!-- <script
+		src="./resources/assets/basic/js/proflie_slide/proflieSlide_slideclassie.js"></script> -->
+	<!-- <script
+		src="./resources/assets/basic/js/proflie_slide/proflieSlide_modernizr.custom.js"></script> -->
+
+
+	<script>
+		$(document).ready(function() {
+			var $editable = $(".editable");
+			var $overlay = $(".device-overlay");
+			var $circle = $(".editable__circle");
+			var circleTrans = 400;
+			var $item = $(".editable__rotater-item");
+			var $second = $(".second");
+			$(document).on("click", ".js-edit", function() {
+				$editable.addClass("clicked");
+				$overlay.addClass("active");
+			});
+			$(document).on("click", ".device-overlay", function() {
+				$editable.removeClass("clicked");
+				$overlay.removeClass("active");
+			});
+			$(document).on("click", ".editable__rotater-item", function() {
+				$(this).parent().addClass("picked");
+				$circle.addClass("picked");
+				$second.addClass("picked");
+			});
+			$(document).on("click", ".second__back", function() {
+				$(".editable__rotater").removeClass("picked");
+				$circle.addClass("instant");
+				$circle.css("top");
+				$circle.removeClass("picked");
+				$second.removeClass("picked");
+				$editable.removeClass("clicked");
+				$overlay.removeClass("active");
+				setTimeout(function() {
+					$circle.removeClass("instant");
+				}, circleTrans);
+			});
+		});
+	</script>
+
 	<script>
 		$('.dropdown-menu').on("click.bs.dropdown", function(e) {
 			e.stopPropagation();
 			/* e.preventDefault(); */
 		});
 	</script>
-	<script type="text/javascript">
-	function searchCocktail(resp){
-		var inner = "";
-		resp.forEach(function(value, index, resp) {
-			inner += '<div class="tile flip element-item" data-category="transition">';
-			inner += '<div>';
-			inner += '<img src="'+resp[index].imageRink+'" height="100" width="100">';
-			inner += '</div>';
-			inner += '<a href="cocktailDetail?cocktailSeq='+resp[index].cocktailSeq+'">';
-			inner += resp[index].cocktailName ;
-			inner += '</a>';
-			inner += '</div>';
-		});
-		console.log(resp);
-		$('.row_cocktail_fliter').children('.grid').html(inner); 
-	}
+	<!-- dropdown box not close -->
 	
-	
-	/* 	$.ajax({
-			method : "post",
-			url : "getCocktail",
-			success : searchCocktail,
-			error : function(){
-				alert('error');
-			}
-		}); */
-	</script>
-	<script type="text/javascript">
-	
-	var num;
-	var spilits =[];
-	var liqueur =[];
-	var material =[];
-	var color;
-	$('.recommandCocktail').children('label').on('click', function() {
-		color = $(this).attr('class');
-		console.log(spilits);
-		console.log(JSON.stringify(spilits));
-
-		spilits = [];
-		liqueur = [];
-		material = [];
-		num = 0;
-		$.ajax({
-			method : "post",
-			url : "cocktailTagSearch",
-			traditional : true,
-			data : {
-				"num" : num,
-				"color" : color,
-				"spilits" : spilits,
-				"liqueur" : liqueur,
-				"material" : material
-			},
-			success : searchCocktail,
-			error :  function() {
-				alert('error');
-			}
-			
-		})
-	});
-	
-	$('.spirit_check').on('click', function(){
-		console.log(this);
-		console.log(spilits);
-		console.log(JSON.stringify(spilits));
-		spilits = [];
-		liqueur = [];
-		material = [];
-		num = 0;
-		$.ajax({
-			method : "post",
-			url : "cocktailTagSearch",
-			traditional : true,
-			data : {
-				"num" : num,
-				"color" : color,
-				"spilits" : spilits,
-				"liqueur" : liqueur,
-				"material" : material
-			},
-			success : searchCocktail,
-			error :  function() {
-				alert('error');
-			}
-			
-		})
-	});
-	
-	</script>
 	
 </body>
+
 </html>
