@@ -185,7 +185,7 @@ public class HomeController {
 	 */
 	@RequestMapping(value = "/test", method = RequestMethod.GET)
 	public String test() {
-		return "imsi/scrolltest";
+		return "cocktail/0919nabivar";
 	}
 }
 

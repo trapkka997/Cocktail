@@ -65,7 +65,7 @@ h4 {
 						<div id="recommend" class="dropdown-menu" style="margin-left: 150px; margin-right: 150px; right: 0px;">
 							<!-- exit_button -->
 							<button type="button" class="close"	aria-label="Close">
-								<span aria-hidden="true">&times;</span>
+								<p aria-hidden="true">&times;</p>
 							</button>
 							<!-- exit_button_end -->
 							
@@ -200,7 +200,7 @@ h4 {
 						<!-- exit_button -->
 							<div>
 								<button type="button" class="close" aria-label="Close">
-									<span aria-hidden="true">×</span>
+									<p aria-hidden="true">×</p>
 								</button>
 							</div>
 							<!-- exit_button_end -->
@@ -755,5 +755,33 @@ h4 {
 	<script	src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
 	<script src="./resources/assets/tag/js/search_tag.js"></script>
 	<script src="./resources/assets/basic/js/photo_profile.js"></script>	
+	<script>
+		$('.dropdown-menu').on("click.bs.dropdown", function(e) {
+			e.stopPropagation();
+			/* e.preventDefault(); */ 
+		});
+		$(".dropdown-menu").on("shown.bs.dropdown", function(event){
+		    var x = $(event.relatedTarget).text(); // Get the text of the element
+		    alert(x);
+		});
+	</script>
+	
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
