@@ -720,8 +720,8 @@ h4 {
 
 							<div class="row_cocktail_fliter">
 								<div class="grid">
-									<c:forEach var="cocktail" items="${cocktailList }">
-										<div class="tile flip element-item ${cocktail.alcole } ${cocktail.liqueur } ${cocktail.mateial }"
+									<c:forEach var="cocktail" items="${cocktailList}">
+										<div class="tile flip element-item ${cocktail.alcole} ${cocktail.liqueur} ${cocktail.mateial }"
 											data-category="transition">
 											<div>
 												<img src="${cocktail.imagerink }" height="100" width="100">

@@ -699,6 +699,183 @@ h4 {
 												${cocktail.cocktailName } </a>
 										</div>
 									</c:forEach> --%>
+									
+									
+									<!--  -->
+									<div class="wrapper_cocktailCard">
+										<div class="cols_cocktailCard">
+											<div class="col_cocktailCard"
+												ontouchstart="this.classList.toggle('hover');">
+												<div class="container_cocktailCard">
+													<div class="front_cocktailCard"
+														style="background-image: url(https://unsplash.it/500/500/)">
+														<div class="inner_cocktailCard">
+															<p class="p_cocktailCard">Cocktail Name</p>
+															<<!-- span class="span_cocktailCard">Cocktail </span> -->
+														</div>
+													</div>
+													<div class="back_cocktailCard">
+
+														<div class="inner_cocktailCard">
+
+															<p></p>
+
+														</div>
+													</div>
+												</div>
+											</div>
+											
+											<div class="col_cocktailCard"
+												ontouchstart="this.classList.toggle('hover');">
+												<div class="container_cocktailCard">
+													<div class="front_cocktailCard"
+														style="background-image: url(https://unsplash.it/500/500/)">
+														<div class="inner_cocktailCard">
+															<p class="p_cocktailCard">Cocktail Name</p>
+															<<!-- span class="span_cocktailCard">Cocktail </span> -->
+														</div>
+													</div>
+													<div class="back_cocktailCard">
+
+														<div class="inner_cocktailCard">
+
+															<p></p>
+
+														</div>
+													</div>
+												</div>
+											</div>
+											
+											<div class="col_cocktailCard"
+												ontouchstart="this.classList.toggle('hover');">
+												<div class="container_cocktailCard">
+													<div class="front_cocktailCard"
+														style="background-image: url(https://unsplash.it/500/500/)">
+														<div class="inner_cocktailCard">
+															<p class="p_cocktailCard">Cocktail Name</p>
+															<<!-- span class="span_cocktailCard">Cocktail </span> -->
+														</div>
+													</div>
+													<div class="back_cocktailCard">
+
+														<div class="inner_cocktailCard">
+
+															<p></p>
+
+														</div>
+													</div>
+												</div>
+											</div>
+											
+											<div class="col_cocktailCard"
+												ontouchstart="this.classList.toggle('hover');">
+												<div class="container_cocktailCard">
+													<div class="front_cocktailCard"
+														style="background-image: url(https://unsplash.it/500/500/)">
+														<div class="inner_cocktailCard">
+															<p class="p_cocktailCard">Cocktail Name</p>
+															<<!-- span class="span_cocktailCard">Cocktail </span> -->
+														</div>
+													</div>
+													<div class="back_cocktailCard">
+
+														<div class="inner_cocktailCard">
+
+															<p></p>
+
+														</div>
+													</div>
+												</div>
+											</div>
+											
+											<div class="col_cocktailCard"
+												ontouchstart="this.classList.toggle('hover');">
+												<div class="container_cocktailCard">
+													<div class="front_cocktailCard"
+														style="background-image: url(https://unsplash.it/500/500/)">
+														<div class="inner_cocktailCard">
+															<p class="p_cocktailCard">Cocktail Name</p>
+															<<!-- span class="span_cocktailCard">Cocktail </span> -->
+														</div>
+													</div>
+													<div class="back_cocktailCard">
+
+														<div class="inner_cocktailCard">
+
+															<p></p>
+
+														</div>
+													</div>
+												</div>
+											</div>
+											
+											<div class="col_cocktailCard"
+												ontouchstart="this.classList.toggle('hover');">
+												<div class="container_cocktailCard">
+													<div class="front_cocktailCard"
+														style="background-image: url(https://unsplash.it/500/500/)">
+														<div class="inner_cocktailCard">
+															<p class="p_cocktailCard">Cocktail Name</p>
+															<<!-- span class="span_cocktailCard">Cocktail </span> -->
+														</div>
+													</div>
+													<div class="back_cocktailCard">
+
+														<div class="inner_cocktailCard">
+
+															<p></p>
+
+														</div>
+													</div>
+												</div>
+											</div>
+											
+											<div class="col_cocktailCard"
+												ontouchstart="this.classList.toggle('hover');">
+												<div class="container_cocktailCard">
+													<div class="front_cocktailCard"
+														style="background-image: url(https://unsplash.it/500/500/)">
+														<div class="inner_cocktailCard">
+															<p class="p_cocktailCard">Cocktail Name</p>
+															<<!-- span class="span_cocktailCard">Cocktail </span> -->
+														</div>
+													</div>
+													<div class="back_cocktailCard">
+
+														<div class="inner_cocktailCard">
+
+															<p></p>
+
+														</div>
+													</div>
+												</div>
+											</div>
+											
+											<div class="col_cocktailCard"
+												ontouchstart="this.classList.toggle('hover');">
+												<div class="container_cocktailCard">
+													<div class="front_cocktailCard"
+														style="background-image: url(https://unsplash.it/500/500/)">
+														<div class="inner_cocktailCard">
+															<p class="p_cocktailCard">Cocktail Name</p>
+															<<!-- span class="span_cocktailCard">Cocktail </span> -->
+														</div>
+													</div>
+													<div class="back_cocktailCard">
+
+														<div class="inner_cocktailCard">
+
+															<p></p>
+
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!--  -->
+									
+									
 								</div>
 							</div>
 							<!-- cocktail_Fliter -->
@@ -749,14 +926,14 @@ h4 {
 	}
 	
 	
-		$.ajax({
+	/* 	$.ajax({
 			method : "post",
 			url : "getCocktail",
 			success : searchCocktail,
 			error : function(){
 				alert('error');
 			}
-		});
+		}); */
 	</script>
 	<script type="text/javascript">
 	
