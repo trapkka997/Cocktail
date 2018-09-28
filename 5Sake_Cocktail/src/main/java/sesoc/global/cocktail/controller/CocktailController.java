@@ -1,42 +1,27 @@
 package sesoc.global.cocktail.controller;
 
 import java.math.BigDecimal;
-import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
-import java.util.Map;
 
-import javax.inject.Inject;
-import javax.mail.MessagingException;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import org.apache.ibatis.session.SqlSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Controller;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import sesoc.global.cocktail.dao.CocktailRepository;
-import sesoc.global.cocktail.dao.EmailDAO;
-import sesoc.global.cocktail.dao.MemberDAO;
 import sesoc.global.cocktail.dao.MemberRepository;
-import sesoc.global.cocktail.dao.EmailRepository;
-import sesoc.global.cocktail.email.MailHandler;
-import sesoc.global.cocktail.email.TempKey;
 import sesoc.global.cocktail.test.JsoupExample;
 import sesoc.global.cocktail.test.JsoupExample2;
 import sesoc.global.cocktail.vo.Cocktail;
-import sesoc.global.cocktail.vo.User;
 import sesoc.global.cocktail.vo.UserLikeCocktail;
 
 @Controller
@@ -211,8 +196,7 @@ public class CocktailController {
 		// 5. | liqueur |
 		// 6. spilits | |
 		// 7. | | |
-		
-		System.out.println("regexp :: "+regexp);
+		System.out.println("regexp : "+regexp);
 		HashMap<String, String> map = new HashMap<>();
 		map.put("color", color);
 		map.put("regexp",regexp);
@@ -283,7 +267,6 @@ public class CocktailController {
 		
 		ArrayList<Cocktail> tempCockList = new ArrayList<Cocktail>();
 		for(HashMap<String,BigDecimal> ingredient: ingredientOfCocktailList) {
-			System.out.println("COUNT = "+ingredient.get("COUNT"));
 			if(ingredient.get("COUNT").intValue() >= num ) {
 				Cocktail tempCock = cocktailRepository.selectCocktail(ingredient.get("COCKTAIL_SEQ").toString());
 				tempCockList.add(tempCock);
