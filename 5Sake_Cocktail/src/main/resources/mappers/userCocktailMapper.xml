@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="sesoc.global.cocktail.dao.userCocktailDAO">
+  <insert id="usercocktailInsert" parameterType="userCocktail">
+  insert into usercocktail
+   (
+    usercocktailseq
+    ,useremail
+    ,usercocktailname
+    ,usercocktailname_en
+    ,userIngredient
+    ,userreceipe
+    ,savefilename
+    ,originalfilename
+    ,usercolorvalue
+   )
+	values(
+			usercocktailseq.nextval
+			,#{useremail}
+			,#{usercocktailname}
+			,#{usercocktailname_en}
+			,#{useralcole}
+			,#{userliqueur}
+			,#{usermaterial}
+			,#{userreceipe}
+			,#{savefilename}
+			,#{originalfilename}
+			,#{usercolorvalue}
+	)
+  
+  </insert>
+  
+  <select id="userselect" resultType="userCocktail">
+  select *  from usercocktail
+  </select>
+  
+  <update id="usercocktailUpdate" parameterType="userCocktail">
+  update
+  	usercocktail
+  set
+  		usercocktailname=#{usercocktailname}
+		,usercocktailname_en=#{usercocktailname_en}
+		,useralcole=#{useralcole}
+		,userliqueur=#{userliqueur}
+		,usermaterial=#{usermaterial}
+		,userreceipe=#{userreceipe}
+		,usercolorvalue=#{usercolorvalue}
+  where
+  		usercocktailseq=#{userCocktailSeq}		
+  </update>
+  
+ <delete id="usercocktailDelete" parameterType="String">
+ delete
+    usercocktail
+ where
+     userCocktailSeq = #{userCocktailSeq}
+ </delete>
+ 
+ <select id="userselectOne" parameterType="String" resultType="userCocktail">
+ 	select * from usercocktail 
+ 	where userCocktailSeq=#{userCocktailSeq}
+ </select>
+
+ <!--좋아요 +- -->
+<update id="userlike" parameterType="int">
+update
+  	usercocktail
+  set userrecommand  = userrecommand + 1
+where
+     userCocktailSeq = #{userCocktailSeq}  
+	
+</update>
+
+<update id="userhitcount" parameterType="int">
+update
+  	usercocktail
+  set userhitcount  = userhitcount + 1
+where
+     userCocktailSeq = #{userCocktailSeq}  
+	
+</update>
+
+</mapper>

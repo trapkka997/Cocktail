@@ -38,39 +38,14 @@ public class EmailController {
 	
 	@Autowired EmailRepository dao;
 
-
-/*	@Transactional
-	@RequestMapping(value = "/register", method = RequestMethod.POST)
-	public String RegisterPost(User user, Model model, RedirectAttributes rttr, HttpServletRequest request, HttpSession session) throws Exception {
-		logger.info("�쉶�썝媛��엯...");
-		logger.info(user.toString());
-		System.out.println(user);
-		dao.insertUser(user); // �쉶�썝媛��엯 DAO
-
-		String key = new TempKey().getKey(50, false); // �씤利앺궎 �깮�꽦
-
-		dao.createAuthKey(user.getUserEmail(), key); // �씤利앺궎 DB���옣
-
-		MailHandler sendMail = new MailHandler(mailSender);
-<<<<<<< HEAD
-		sendMail.setSubject("[ALMOM �꽌鍮꾩뒪 �씠硫붿씪 �씤利�]");
-=======
-		sendMail.setSubject("[5Sake 홈페이지 서비스 이메일 인증]");
->>>>>>> branch 'master' of http://github.com/trapkka997/Cocktail
-		sendMail.setText(
-<<<<<<< HEAD
-				new StringBuffer().append("<h1>硫붿씪�씤利�</h1>").append("<a href='http://10.10.12.189:8888/cocktail/emailConfirm?user_email=").append(user.getUserEmail()).append("&key=").append(key).append("' target='_blenk'>�씠硫붿씪 �씤利� �솗�씤</a>").toString());
-		sendMail.setFrom("trapkka997@gmail.com", "�븣紐멸컻諛쒖옄");
-=======
-				new StringBuffer().append("<h1>메일인증</h1>").append("<a href='http://10.10.12.189:8888/cocktail/emailConfirm?user_email=").append(user.getUserEmail()).append("&key=").append(key).append("' target='_blenk'>이메일 인증 확인</a>").toString());
-		sendMail.setFrom("trapkka997@gmail.com", "알몸개발자");
->>>>>>> branch 'master' of http://github.com/trapkka997/Cocktail
-		sendMail.setTo(user.getUserEmail());
-		sendMail.send();
-		rttr.addFlashAttribute("authmsg" , "媛��엯�떆 �궗�슜�븳 �씠硫붿씪濡� �씤利앺빐二� 3");
-		return "redirect:/";
-	}*/
-	
+	/**
+	 * 이메일 인증을 받았을때 나오는 alert 화면
+	 * @param user_email
+	 * @param key
+	 * @return alert 창
+	 * @throws Exception
+	 * @author hangyutae
+	 */
 	@RequestMapping(value = "/emailConfirm", method = RequestMethod.GET)
 	public String emailConfirm(String user_email, String key, Model model) throws Exception { // �씠硫붿씪�씤利�
 		System.out.println(user_email);
@@ -83,6 +58,14 @@ public class EmailController {
 		return "email/emailConfirm";
 	}
 	
+	/**
+	 * 회원가입
+	 * @param vo USER[userEmail, userPwd]
+	 * @param httpSession
+	 * @return 1 : 성공, 2 : 실패
+	 * @throws Exception
+	 * @author hangyutae
+	 */
 	@Transactional
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public @ResponseBody String register(Locale locale, Model model, RedirectAttributes rttr, User vo, HttpSession httpSession) throws Exception {

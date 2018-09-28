@@ -28,16 +28,20 @@
 	<beans:bean id="jsonView" class="org.springframework.web.servlet.view.json.MappingJackson2JsonView">
 		<beans:property name="contentType" value="application/json;charset=UTF-8" />
 	</beans:bean>
-
+ 
 	<beans:bean id="LoginInterceptor"
 		class="sesoc.global.cocktail.interceptor.LoginInterceptor"></beans:bean>
 	<interceptors>
 		<interceptor>
-			<mapping path="/" />
-
+			<mapping path="/*" />
+			<exclude-mapping path="/loginAjax"/>
+			<exclude-mapping path="/login"/>
+			<exclude-mapping path="/register"/>
+			<exclude-mapping path="/emailConfirm"/>
 			<beans:ref bean="LoginInterceptor" />
 		</interceptor>
-	</interceptors>
+	</interceptors> 
+	
 	<context:component-scan
 		base-package="sesoc.global.cocktail" />
 

@@ -6,16 +6,24 @@ public class User {
 	private String userNickname;
 	private String userAuthCode;
 	private String userAuth;
+	private String userProfilePicture;
+	private String originalFilename;
+	private String savedFilename;
 	public User() {
 		super();
+		// TODO Auto-generated constructor stub
 	}
-	public User(String userEmail, String userPwd, String userNickname, String userAuthCode, String userAuth) {
+	public User(String userEmail, String userPwd, String userNickname, String userAuthCode, String userAuth,
+			String userProfilePicture, String originalFilename, String savedFilename) {
 		super();
 		this.userEmail = userEmail;
 		this.userPwd = userPwd;
 		this.userNickname = userNickname;
 		this.userAuthCode = userAuthCode;
 		this.userAuth = userAuth;
+		this.userProfilePicture = userProfilePicture;
+		this.originalFilename = originalFilename;
+		this.savedFilename = savedFilename;
 	}
 	public String getUserEmail() {
 		return userEmail;
@@ -47,10 +55,32 @@ public class User {
 	public void setUserAuth(String userAuth) {
 		this.userAuth = userAuth;
 	}
+	public String getUserProfilePicture() {
+		return userProfilePicture;
+	}
+	public void setUserProfilePicture(String userProfilePicture) {
+		this.userProfilePicture = userProfilePicture;
+	}
+	public String getOriginalFilename() {
+		return originalFilename;
+	}
+	public void setOriginalFilename(String originalFilename) {
+		this.originalFilename = originalFilename;
+	}
+	public String getSavedFilename() {
+		return savedFilename;
+	}
+	public void setSavedFilename(String savedFilename) {
+		this.savedFilename = savedFilename;
+	}
 	@Override
 	public String toString() {
 		return "User [userEmail=" + userEmail + ", userPwd=" + userPwd + ", userNickname=" + userNickname
-				+ ", userAuthCode=" + userAuthCode + ", userAuth=" + userAuth + "]";
+				+ ", userAuthCode=" + userAuthCode + ", userAuth=" + userAuth + ", userProfilePicture="
+				+ userProfilePicture + ", originalFilename=" + originalFilename + ", savedFilename=" + savedFilename
+				+ "]";
 	}
-
+	
+	
+	
 }

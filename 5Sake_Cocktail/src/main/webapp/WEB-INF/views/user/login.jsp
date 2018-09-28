@@ -55,7 +55,7 @@
 	            <li><a data-toggle="tab" href="#loginform">Login</a></li>
 	          </ul>	          
 	          <div class="tab-content">       	          
-	            <div id="signUp" class="tab-pane fade in active">
+	            <div id="signUp" class="tab-pane fade in active" input onkeyup="enterkey();" type="text">
 	                <h2 class="text-center"><strong>Create</strong> account.</h2>
 	                <div class="form-group"><input type="email" id="userEmail" placeholder="Email" class="form-control">
 	                </div>
@@ -73,7 +73,7 @@
 	                <a href="#loginform" class="already">You already have an account? Login here.</a>
 	                </form>
 	            </div>
-	            <div id="loginform" class="tab-pane fade">
+	            <div id="loginform" class="tab-pane fade" input onkeyup="enterkey2();" type="text">
 	                <h2 class="text-center"><strong>Login</strong> here</h2>
 	                <div class="form-group"><input type="email" id="loginEmail" placeholder="Email" class="form-control">
 	                </div>
@@ -115,11 +115,20 @@
     <script src="./resources/assets/login/js/Video-Parallax-Background.js"></script>
     <script>
     function signBtn() {
-		var userEmail = document.getElementById('userEmail').value;
+    	var userEmail = document.getElementById('userEmail').value;
 		var userPassword = document.getElementById('userPassword').value;
 		var asswordRepeat = document.getElementById('asswordRepeat').value;
-		if(userEmail.length == 0 || userPassword.length ==0 || asswordRepeat.length ==0 ){
+		
+		var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+		
+	    if(userEmail.length == 0 || userPassword.length ==0 || asswordRepeat.length ==0 ){
 			alert('모든 내용을 입력해주세요.');
+		}else if(userEmail == '' || !re.test(userEmail)){
+			alert("올바른 이메일 형식을 입력하세요");	
+		}else if(userPassword.length<6){
+			alert("비밀번호는 6자 이상으로 해주세요");
+		}else if(userPassword != asswordRepeat ){
+			document.getElementById('memberSign').innerHTML = '비밀번호가 틀렸습니다. 다시 입력해 주세요';
 		}else{
 			$.ajax({
 				method: 'post',
@@ -134,45 +143,51 @@
 					}else if(resp == 1){
 						document.getElementById('memberSign').innerHTML ="가입완료. 인증메일을 확인해주세요"; 
 					}
+					
 				},
 				error: function() {
 				}
 			})
 		}
 		
+		
+		
 	}
-    /* function signup() {
-    		var userEmail = document.getElementById('userEmail').value;
-    		var userPassword = document.getElementById('userPassword').value;
-    		console.log(userEmail);
-    		console.log(userPassword);
-    		var repeat = document.getElementById('asswordRepeat').value;
-    		if(userEmail.length == 0 || userPassword.length ==0 || repeat.length ==0){
-    			alert('모든 내용을 입력해주세요.');
-    			return false;
-    		}
-    		
-    		if(userPassword != repeat){
-    			alert('비밀번호 확인과 맞지 않습니다.')
-    			return false;
-    		}
-			return true;
-		} */
-/*     	function loginBtn() {
-    		var loginEmail = document.getElementById('loginEmail').value;
-    		var loginPassword = document.getElementById('loginPassword').value;
-    		if(loginEmail.length == 0 || loginPassword.length ==0){
-    			alert('모든 내용을 입력해주세요.');
-    			return false;
-    		}
-    		return true;
-		} */
     	
 		function loginBtn() {
     		var loginEmail = document.getElementById('loginEmail').value;
     		var loginPassword = document.getElementById('loginPwd').value;
-    		if(loginEmail.length == 0 || loginPassword.length ==0){
+    		var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    		
+    	    if(loginEmail.length == 0 || loginPassword.length ==0 ){
     			alert('모든 내용을 입력해주세요.');
+    		}else if(loginEmail == 'admin123' || loginPassword == 'admin123'){
+    			$.ajax({
+    				method: 'post',
+    				url: 'loginAjax',
+    				data: {
+    					userEmail : loginEmail,
+    					userPwd : loginPassword
+    				},
+    				success: function(resp) {
+						if(resp ==1){
+							document.getElementById('message').innerHTML ="로그인 성공"; 
+							location.href = "/cocktail/";
+						}else if(resp == 2){
+							document.getElementById('message').innerHTML ="이메일 인증필요"; 
+						}else if(resp == 3){
+							document.getElementById('message').innerHTML ="로그인 실패"; 
+						}
+					},
+					error: function() {
+						
+					}
+    			})
+    		}
+    	    else if(loginEmail == '' || !re.test(loginEmail)){
+    			alert("올바른 이메일 형식을 입력하세요");	
+    		}else if(loginPassword.length<6){
+    			alert("비밀번호는 6자 이상으로 해주세요");
     		}else{
     			$.ajax({
     				method: 'post',
@@ -184,7 +199,7 @@
     				success: function(resp) {
 						if(resp ==1){
 							document.getElementById('message').innerHTML ="로그인 성공"; 
-							location.href = "http://localhost:8888/cocktail/";
+							location.href = "/cocktail/";
 						}else if(resp == 2){
 							document.getElementById('message').innerHTML ="이메일 인증필요"; 
 						}else if(resp == 3){
@@ -195,8 +210,26 @@
 						
 					}
     			})
-    		}    		
-		}    	
+    		}
+    		
+		}
+		
+		function enterkey() {
+	        if (window.event.keyCode == 13) {
+	        	alert('회원ㄱ입');
+	             // 엔터키가 눌렸을 때 실행할 내용
+	             signBtn();
+	        }
+	}
+		
+		function enterkey2() {
+	        if (window.event.keyCode == 13) {
+	             // 엔터키가 눌렸을 때 실행할 내용
+	             alert('로그인');
+	             loginBtn();
+	        }
+	}
+	 
     </script>
 </body>
 </html>
