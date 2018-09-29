@@ -227,17 +227,22 @@
 							</li>					
 						</ul>
 						<nav>
-							<span class="icon nav-prev"></span>
-							<span class="icon nav-next"></span>
-							<span class="icon nav-close"></span>
+							<span class="nav-prev">
+								<i class="fas fa-angle-left" style="color: white;"></i>
+							</span>
+							<span class="nav-next">
+								<i class="fas fa-angle-right"></i>
+							</span>
+							<span class="nav-close">
+								<i class="fas fa-times"></i>
+							</span>
 						</nav>
-						<div class="info-keys icon">Navigate with arrow keys</div>
+						<!-- <div class="info-keys icon">Navigate with arrow keys</div> -->
 					</section><!-- // slideshow -->
 				</div>
 			</div>
 				<!-- modal -->
-				<div class="plus-button" class="btn btn-primary" data-toggle="modal"
-					data-target="#myModal">+</div>
+				<div class="plus-button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">+</div>
 				<!-- modal1_start -->
 				<div id="myModal" class="modal fade" role="dialog">
 					<div class="modal-dialog modal-lg">
@@ -322,10 +327,8 @@
 											</div>
 											<div class="col-md-4">
 
-												<button type="button"
-													class="btn btn-block btn-outline-warning">Upload</button>
-												<button type="button"
-													class="btn btn-block btn-outline-primary">Sharing</button>
+												<button type="button" class="btn btn-block btn-outline-warning">Upload</button>
+												<button type="button" class="btn btn-block btn-outline-primary">Sharing</button>
 											</div>
 										</div>
 									</div>
