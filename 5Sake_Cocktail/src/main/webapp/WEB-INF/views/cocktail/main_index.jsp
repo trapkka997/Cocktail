@@ -6,28 +6,19 @@
 <head>
 <title>5Sake's Cocktail</title>
 
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
-<link rel="stylesheet"
-	href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
-<link rel="stylesheet"
-	href="./resources/assets/basic/css/navbar/navbar.css">
+<link rel="stylesheet"	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
+<link rel="stylesheet"	href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+<link rel="stylesheet"	href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
+<link rel="stylesheet"	href="./resources/assets/basic/css/navbar/navbar.css">
 <!--profile-->
-<link rel="stylesheet"
-	href="./resources/assets/basic/css/profile/default.css">
+<link rel="stylesheet"	href="./resources/assets/basic/css/profile/default.css">
 <link rel="stylesheet" href="./resources/assets/tag/css/tag_default.css">
 
 <!-- navbar_핵심 -->
-<link rel="stylesheet"
-	href="./resources/assets/basic/css/navbar/color_click.css">
-<link rel="stylesheet"
-	href="./resources/assets/basic/css/navbar/spirits_icon.css">
-<link rel="stylesheet"
-	href="./resources/assets/basic/css/navbar/check_list.css">
-<link rel="stylesheet"
-	href="./resources/assets/basic/css/navbar/userRecommend_Tag.css">
+<link rel="stylesheet"	href="./resources/assets/basic/css/navbar/color_click.css">
+<link rel="stylesheet"	href="./resources/assets/basic/css/navbar/spirits_icon.css">
+<link rel="stylesheet"	href="./resources/assets/basic/css/navbar/check_list.css">
+<link rel="stylesheet"	href="./resources/assets/basic/css/navbar/userRecommend_Tag.css">
 <!-- navbar_핵심, 지우지마세여-->
 <style>
 h2 {
@@ -73,7 +64,7 @@ h4 {
 		});
 		$('.navbar-avatar').on('click', function() {
 			$('#content').load('/cocktail/eachoneProfile?userEmail=${sessionScope.useremail}');
-		});
+		});		
 		/* 네모 친 id를 가진 i 태그 클릭시 body부분을 로드해서 띄워줍니다.*/
 	});
 </script>
@@ -90,7 +81,7 @@ h4 {
 				</div>
 				<!-- navbar-home_end -->
 				<div class="navbar-left" style="width: 390px;">
-					<a class="navbar-toggle" data-toggle="dropdown"
+					<a class="navbar-toggle" data-toggle="down"
 						aria-expanded="false" href="#"> <span></span> <span></span> <span></span>
 						<div id="recommend" class="dropdown-menu"
 							style="margin-left: 150px; margin-right: 150px; right: 0px;">
@@ -686,18 +677,12 @@ h4 {
 							</div>
 
 							<div class="row_cocktail_fliter">
-								<div class="grid">
-								
-									
+								<div class="grid">										
 									<!--  -->
 									<div class="wrapper_cocktailCard">
-										<div class="cols_cocktailCard">
-											
-										</div>
+										<div class="cols_cocktailCard"></div>
 									</div>
 									<!--  -->
-									
-									
 								</div>
 							</div>
 							<!-- cocktail_Fliter -->
@@ -725,7 +710,8 @@ h4 {
 	<script src="./resources/assets/tag/js/search_tag.js"></script>
 	<script src="./resources/assets/basic/js/photo_profile.js"></script>
 	<script>
-		$('.dropdown-menu').on("click.bs.dropdown", function(e) {
+		$('.dropdown-menu').children('.row_drop_search').children('.col-md-12').on("click.bs.dropdown", function(e) {
+			/* console.log(this); */
 			e.stopPropagation();
 			/* e.preventDefault(); */
 		});
@@ -733,8 +719,8 @@ h4 {
 	<script type="text/javascript">
 	function searchCocktail(resp){
 		var inner = "";
-		resp.forEach(function(value, index, resp) {
-			inner += '<div class="col_cocktailCard" ontouchstart="this.classList.toggle(\'hover\');" onclick="location.href=\'cocktailDetail?cocktailSeq='+resp[index].cocktailSeq+'\';">';
+		resp.forEach(function(value, index, resp) {														
+			inner += '<div class="col_cocktailCard" ontouchstart="this.classList.toggle(\'hover\');" onclick="myF('+resp[index].cocktailSeq+')">';
 			inner += '<div class="container_cocktailCard">';
 			inner += '<div class="front_cocktailCard" style="background-image: url('+resp[index].imageRink+')">';
 			inner += '<div class="inner_cocktailCard">';
@@ -763,6 +749,9 @@ h4 {
 				alert('error');
 			}
 		}); 
+	 	function myF(num){
+			$("#content").load("/cocktail/cocktailDetail?cocktailSeq="+num);	
+		}
 	</script>
 	<script type="text/javascript">
 	

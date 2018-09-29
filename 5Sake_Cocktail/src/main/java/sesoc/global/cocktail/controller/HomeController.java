@@ -205,7 +205,7 @@ public class HomeController {
 	 */
 	@RequestMapping(value = "/test", method = RequestMethod.GET)
 	public String test() {
-		return "cocktail/0919nabivar";
+		return "cocktail/gallery/selfMaking";
 	}
  
 }
