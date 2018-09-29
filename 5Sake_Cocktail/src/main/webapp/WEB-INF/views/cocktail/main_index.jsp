@@ -81,7 +81,7 @@ h4 {
 				</div>
 				<!-- navbar-home_end -->
 				<div class="navbar-left" style="width: 390px;">
-					<a class="navbar-toggle" data-toggle="dropdown"
+					<a class="navbar-toggle" data-toggle="down"
 						aria-expanded="false" href="#"> <span></span> <span></span> <span></span>
 						<div id="recommend" class="dropdown-menu"
 							style="margin-left: 150px; margin-right: 150px; right: 0px;">
@@ -677,18 +677,12 @@ h4 {
 							</div>
 
 							<div class="row_cocktail_fliter">
-								<div class="grid">
-								
-									
+								<div class="grid">										
 									<!--  -->
 									<div class="wrapper_cocktailCard">
-										<div class="cols_cocktailCard">
-											
-										</div>
+										<div class="cols_cocktailCard"></div>
 									</div>
 									<!--  -->
-									
-									
 								</div>
 							</div>
 							<!-- cocktail_Fliter -->
@@ -716,7 +710,8 @@ h4 {
 	<script src="./resources/assets/tag/js/search_tag.js"></script>
 	<script src="./resources/assets/basic/js/photo_profile.js"></script>
 	<script>
-		$('.dropdown-menu').on("click.bs.dropdown", function(e) {
+		$('.dropdown-menu').children('.row_drop_search').children('.col-md-12').on("click.bs.dropdown", function(e) {
+			/* console.log(this); */
 			e.stopPropagation();
 			/* e.preventDefault(); */
 		});
