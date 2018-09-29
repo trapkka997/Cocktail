@@ -687,190 +687,12 @@ h4 {
 
 							<div class="row_cocktail_fliter">
 								<div class="grid">
-									<%-- <c:forEach var="cocktail" items="${cocktailList }">
-										<div
-											class="tile flip element-item ${cocktail.ingredient }"
-											data-category="transition">
-											<div>
-												<img src="${cocktail.imageRink }" height="100" width="100">
-											</div>
-											<a
-												href="cocktailDetail?cocktailSeq=${cocktail.cocktailSeq }">
-												${cocktail.cocktailName } </a>
-										</div>
-									</c:forEach> --%>
-									
+								
 									
 									<!--  -->
 									<div class="wrapper_cocktailCard">
 										<div class="cols_cocktailCard">
-											<div class="col_cocktailCard"
-												ontouchstart="this.classList.toggle('hover');">
-												<div class="container_cocktailCard">
-													<div class="front_cocktailCard"
-														style="background-image: url(https://unsplash.it/500/500/)">
-														<div class="inner_cocktailCard">
-															<p class="p_cocktailCard">Cocktail Name</p>
-															<<!-- span class="span_cocktailCard">Cocktail </span> -->
-														</div>
-													</div>
-													<div class="back_cocktailCard">
-
-														<div class="inner_cocktailCard">
-
-															<p></p>
-
-														</div>
-													</div>
-												</div>
-											</div>
 											
-											<div class="col_cocktailCard"
-												ontouchstart="this.classList.toggle('hover');">
-												<div class="container_cocktailCard">
-													<div class="front_cocktailCard"
-														style="background-image: url(https://unsplash.it/500/500/)">
-														<div class="inner_cocktailCard">
-															<p class="p_cocktailCard">Cocktail Name</p>
-															<<!-- span class="span_cocktailCard">Cocktail </span> -->
-														</div>
-													</div>
-													<div class="back_cocktailCard">
-
-														<div class="inner_cocktailCard">
-
-															<p></p>
-
-														</div>
-													</div>
-												</div>
-											</div>
-											
-											<div class="col_cocktailCard"
-												ontouchstart="this.classList.toggle('hover');">
-												<div class="container_cocktailCard">
-													<div class="front_cocktailCard"
-														style="background-image: url(https://unsplash.it/500/500/)">
-														<div class="inner_cocktailCard">
-															<p class="p_cocktailCard">Cocktail Name</p>
-															<<!-- span class="span_cocktailCard">Cocktail </span> -->
-														</div>
-													</div>
-													<div class="back_cocktailCard">
-
-														<div class="inner_cocktailCard">
-
-															<p></p>
-
-														</div>
-													</div>
-												</div>
-											</div>
-											
-											<div class="col_cocktailCard"
-												ontouchstart="this.classList.toggle('hover');">
-												<div class="container_cocktailCard">
-													<div class="front_cocktailCard"
-														style="background-image: url(https://unsplash.it/500/500/)">
-														<div class="inner_cocktailCard">
-															<p class="p_cocktailCard">Cocktail Name</p>
-															<<!-- span class="span_cocktailCard">Cocktail </span> -->
-														</div>
-													</div>
-													<div class="back_cocktailCard">
-
-														<div class="inner_cocktailCard">
-
-															<p></p>
-
-														</div>
-													</div>
-												</div>
-											</div>
-											
-											<div class="col_cocktailCard"
-												ontouchstart="this.classList.toggle('hover');">
-												<div class="container_cocktailCard">
-													<div class="front_cocktailCard"
-														style="background-image: url(https://unsplash.it/500/500/)">
-														<div class="inner_cocktailCard">
-															<p class="p_cocktailCard">Cocktail Name</p>
-															<<!-- span class="span_cocktailCard">Cocktail </span> -->
-														</div>
-													</div>
-													<div class="back_cocktailCard">
-
-														<div class="inner_cocktailCard">
-
-															<p></p>
-
-														</div>
-													</div>
-												</div>
-											</div>
-											
-											<div class="col_cocktailCard"
-												ontouchstart="this.classList.toggle('hover');">
-												<div class="container_cocktailCard">
-													<div class="front_cocktailCard"
-														style="background-image: url(https://unsplash.it/500/500/)">
-														<div class="inner_cocktailCard">
-															<p class="p_cocktailCard">Cocktail Name</p>
-															<<!-- span class="span_cocktailCard">Cocktail </span> -->
-														</div>
-													</div>
-													<div class="back_cocktailCard">
-
-														<div class="inner_cocktailCard">
-
-															<p></p>
-
-														</div>
-													</div>
-												</div>
-											</div>
-											
-											<div class="col_cocktailCard"
-												ontouchstart="this.classList.toggle('hover');">
-												<div class="container_cocktailCard">
-													<div class="front_cocktailCard"
-														style="background-image: url(https://unsplash.it/500/500/)">
-														<div class="inner_cocktailCard">
-															<p class="p_cocktailCard">Cocktail Name</p>
-															<<!-- span class="span_cocktailCard">Cocktail </span> -->
-														</div>
-													</div>
-													<div class="back_cocktailCard">
-
-														<div class="inner_cocktailCard">
-
-															<p></p>
-
-														</div>
-													</div>
-												</div>
-											</div>
-											
-											<div class="col_cocktailCard"
-												ontouchstart="this.classList.toggle('hover');">
-												<div class="container_cocktailCard">
-													<div class="front_cocktailCard"
-														style="background-image: url(https://unsplash.it/500/500/)">
-														<div class="inner_cocktailCard">
-															<p class="p_cocktailCard">Cocktail Name</p>
-															<<!-- span class="span_cocktailCard">Cocktail </span> -->
-														</div>
-													</div>
-													<div class="back_cocktailCard">
-
-														<div class="inner_cocktailCard">
-
-															<p></p>
-
-														</div>
-													</div>
-												</div>
-											</div>
 										</div>
 									</div>
 									<!--  -->
@@ -912,28 +734,35 @@ h4 {
 	function searchCocktail(resp){
 		var inner = "";
 		resp.forEach(function(value, index, resp) {
-			inner += '<div class="tile flip element-item" data-category="transition">';
-			inner += '<div>';
-			inner += '<img src="'+resp[index].imageRink+'" height="100" width="100">';
+			inner += '<div class="col_cocktailCard" ontouchstart="this.classList.toggle(\'hover\');" onclick="location.href=\'cocktailDetail?cocktailSeq='+resp[index].cocktailSeq+'\';">';
+			inner += '<div class="container_cocktailCard">';
+			inner += '<div class="front_cocktailCard" style="background-image: url('+resp[index].imageRink+')">';
+			inner += '<div class="inner_cocktailCard">';
+			inner += '<p class="p_cocktailCard">'+resp[index].cocktailName+'</p>';
 			inner += '</div>';
-			inner += '<a href="cocktailDetail?cocktailSeq='+resp[index].cocktailSeq+'">';
-			inner += resp[index].cocktailName ;
-			inner += '</a>';
 			inner += '</div>';
+			inner += '<div class="back_cocktailCard">';
+			inner += '<div class="inner_cocktailCard">';
+			inner += '<p></p>';
+			inner += '</div>';
+			inner += '</div>';
+			inner += '</div>';
+			inner += '</div>';
+
 		});
 		console.log(resp);
-		$('.row_cocktail_fliter').children('.grid').html(inner); 
+		$('.cols_cocktailCard').html(inner); 
 	}
 	
 	
-	/* 	$.ajax({
+	 	$.ajax({
 			method : "post",
 			url : "getCocktail",
 			success : searchCocktail,
 			error : function(){
 				alert('error');
 			}
-		}); */
+		}); 
 	</script>
 	<script type="text/javascript">
 	

@@ -50,11 +50,6 @@ public class CocktailController {
 	 * @author hangyutae
 	 */
 	@RequestMapping(value = "/cocktailDetail", method = RequestMethod.GET)
-
-	/*public String cocktailDetail(Locale locale, Model model,String cocktailname) {
-		Cocktail selectCocktail = cocktailRepository.selectCocktail(cocktailname);
-		model.addAttribute("cocktail", selectCocktail);*/
-
 	public String cocktailDetail(Locale locale, Model model,String cocktailSeq) {
 		Cocktail selectCocktail = cocktailRepository.selectCocktail(cocktailSeq);
 		model.addAttribute("cocktail", selectCocktail);

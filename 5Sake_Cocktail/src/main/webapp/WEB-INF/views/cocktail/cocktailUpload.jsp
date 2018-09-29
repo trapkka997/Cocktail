@@ -439,7 +439,7 @@ body{background: rgb(225,225,225);}
     var arr = JSON.parse(resp);
     cocktailList = arr;
     message( item, settings.successClass, 'File successfully uploaded.', 0 );
-    $('#modalImgId').attr("src",arr[0].imageRink);
+    $('#modalImgId').attr("src",arr[0].imagerink);
     $('#getCocktailModal').modal('show');
   }
     function failFunction(xhttp, item, resp) {

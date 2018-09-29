@@ -30,7 +30,6 @@ public class HomeController {
 	@Autowired MemberRepository dao;
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
  
-	//硫붿씤�솕硫�
  
 	
 	/**
@@ -178,10 +177,6 @@ public class HomeController {
 	@RequestMapping(value = "/eachoneProfile", method = RequestMethod.GET)
 	public String eachoneprofile(Model model, User vo) {
  
-		/*// �쑀�� �씠硫붿씪�쓣 諛쏆븘�꽌 �쑀�� �젙蹂댁� �쑀��媛� �쟻��  userPhoto瑜� �뱾怨좎삩�떎.
-		// �쑀���룷�넗濡� �솕硫댁뿉 肉뚮젮二쇰㈃ �맖.
-=======
->>>>>>> branch 'master' of https://github.com/trapkka997/Cocktail
 		User user = dao.selectOne(vo);
 		List<UserPhoto> photoList = dao.selectUserPhoto(vo);
 		String followNum = dao.getUserFollowNum(vo);
@@ -192,7 +187,7 @@ public class HomeController {
 		model.addAttribute("followNum", followNum);
 		model.addAttribute("followerNum", followerNum);
 		model.addAttribute("path", "http://localhost:8888/cocktail/resources/");
-		model.addAttribute("photoList", photoList);*/
+		model.addAttribute("photoList", photoList);
 		return "user/eachoneProfile";
 	}
  
