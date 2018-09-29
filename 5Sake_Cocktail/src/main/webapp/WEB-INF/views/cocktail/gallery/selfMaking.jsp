@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
@@ -13,7 +12,7 @@
 <link rel="stylesheet" href="./resources/assets/gallery/css/gallery.css">
 <link rel="stylesheet"	href="./resources/assets/gallery/css/uploadbutton.css">
 <link rel="stylesheet"	href="./resources/assets/gallery/css/hover.css">
-
+<link rel="./resources/assets/modal_makingCocktail/css/makingCocktail.css">
 <!-- photo상세 슬라이드 -->
 <script src="./resources/assets/gallery/grid/js/modernizr.custom.js"></script>
 <style>
@@ -240,143 +239,46 @@
 						<!-- <div class="info-keys icon">Navigate with arrow keys</div> -->
 					</section><!-- // slideshow -->
 				</div>
-<<<<<<< HEAD
-				
-				
-			<!-- modal -->
-				<div class="plus-button" class="btn btn-primary" data-toggle="modal"
-					data-target="#myModal">+
-					<div class = "modal_inner">
-					
-					</div>
-				</div>
-=======
 			</div>
->>>>>>> branch 'master' of https://github.com/trapkka997/Cocktail
 				<!-- modal -->
-<<<<<<< HEAD
-					
-=======
 				<div class="plus-button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">+</div>
->>>>>>> branch 'master' of https://github.com/trapkka997/Cocktail
+
 				<!-- modal1_start -->
 				<div id="myModal" class="modal fade" role="dialog">
 					<div class="modal-dialog modal-lg">
 
 						<!-- Modal content-->
 						<div class="modal-content">
-<<<<<<< HEAD
-							<!--  -->
-							<div class="container">
-								<div class="row">
-									<div class="col-md-12">
-										<h1>Uploading Your Image</h1>
-										<div class="product-image-manager">
-											<div class="image-container">
-												<div class="inner-image-container">
-													<div class="on-image-controls">
-														<div class="delete-confirm">Confirm deleting!</div>
-														<span class="fa fa-arrows"></span> <span
-															class="fa fa-check" data-toggle="tooltip"
-															data-placement="top" title="Pick as primary"></span> <span
-															class="fa fa-info-circle" data-toggle="tooltip"
-															data-placement="top" title="Image info"></span> <span
-															class="fa fa-times" data-toggle="tooltip"
-															data-placement="top" title="Delete image"></span>
-=======
 							<button type="button" class="close" data-dismiss="modal">&times;</button>
 							<!--  -->
 							<div class="container-fluid">
 								<div class="row">
 									<div class="col-md-12">
-										<h3 class="text-center text-info">My own cocktail</h3>
 										<div class="row">
-											<div class="col-md-3">
-												<div class="card bg-default">
-													<h5 class="card-header">Card title</h5>
-													<div class="card-body">
-														<p class="card-text">Card content</p>
-													</div>
-													<div class="card-footer">Card footer</div>
-												</div>
-												<div class="card">
-													<h5 class="card-header">Card title</h5>
-													<div class="card-body">
-														<p class="card-text">Card content</p>
-													</div>
-													<div class="card-footer">Card footer</div>
-												</div>
-											</div>
 											<div class="col-md-6">
-												<img alt="Bootstrap Image Preview"
-													src="https://www.layoutit.com/img/sports-q-c-140-140-3.jpg"
-													class="rounded-circle" />
-												<div class="card">
-													<h5 class="card-header">Card title</h5>
-													<div class="card-body">
-														<p class="card-text">Card content</p>
-													</div>
-													<div class="card-footer">Card footer</div>
-												</div>
 												<div class="row">
-													<div class="col-md-12">
-														<div class="card">
-															<h5 class="card-header">Card title</h5>
-															<div class="card-body">
-																<p class="card-text">Card content</p>
-															</div>
-															<div class="card-footer">Card footer</div>
-														</div>
->>>>>>> branch 'master' of https://github.com/trapkka997/Cocktail
-													</div>
-<<<<<<< HEAD
 													<div class="center-container">
-														<img
-															src="https://images.unsplash.com/photo-1446645681877-acde17e336a9?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=846&q=80&cs=tinysrgb">
-=======
-												</div>
-												<div class="progress">
-													<div
-														class="progress-bar w-75 progress-bar-striped progress-bar-animated">
->>>>>>> branch 'master' of https://github.com/trapkka997/Cocktail
+														<img src="https://images.unsplash.com/photo-1446645681877-acde17e336a9?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=846&q=80&cs=tinysrgb">
 													</div>
+												<div class="progress">
+													<div class="progress-bar w-75 progress-bar-striped progress-bar-animated"></div>
 												</div>
 											</div>
-<<<<<<< HEAD
 											<div class="image-container">
 												<div class="inner-image-container">
 													<div class="on-image-controls">
 														<div class="delete-confirm">Confirm deleting!</div>
-														<span class="fa fa-arrows"></span> <span
-															class="fa fa-check" data-toggle="tooltip"
-															data-placement="top" title="Pick as primary"></span> <span
-															class="fa fa-info-circle" data-toggle="tooltip"
-															data-placement="top" title="Image info"></span> <span
-															class="fa fa-times" data-toggle="tooltip"
+														<span class="fa fa-arrows"></span> 
+														<span class="fa fa-check" data-toggle="tooltip"
+															data-placement="top" title="Pick as primary"></span> 
+														<span class="fa fa-info-circle" data-toggle="tooltip"
+															data-placement="top" title="Image info"></span> 
+														<span class="fa fa-times" data-toggle="tooltip"
 															data-placement="top" title="Delete image"></span>
-=======
-											<div class="col-md-3">
-												<div class="card">
-													<h5 class="card-header">Card title</h5>
-													<div class="card-body">
-														<p class="card-text">Card content</p>
->>>>>>> branch 'master' of https://github.com/trapkka997/Cocktail
-													</div>
-<<<<<<< HEAD
 													<div class="center-container">
-														<img
-															src="https://images.unsplash.com/photo-1432139509613-5c4255815697?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=2265&q=80&cs=tinysrgb"
-															id="test">
-=======
-													<div class="card-footer">Card footer</div>
-												</div>
-												<div class="card">
-													<h5 class="card-header">Card title</h5>
-													<div class="card-body">
-														<p class="card-text">Card content</p>
->>>>>>> branch 'master' of https://github.com/trapkka997/Cocktail
+														<img src="https://images.unsplash.com/photo-1432139509613-5c4255815697?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=2265&q=80&cs=tinysrgb"
+																id="test">
 													</div>
-<<<<<<< HEAD
 												</div>
 											</div>
 											<div class="image-container">
@@ -523,13 +425,11 @@
 												</div>
 											</div>
 										</div>
-										<div id="dropzone" class="dropzone">Drop files here to
-											upload</div>
-=======
-													<div class="card-footer">Card footer</div>
-												</div>
-											</div>
+										<div id="dropzone" class="dropzone">Drop files here to upload</div>
+
 										</div>
+									</div>
+								</div>
 										<div class="row">
 											<div class="col-md-8">
 												<div class="row">
@@ -539,23 +439,18 @@
 												</div>
 											</div>
 											<div class="col-md-4">
-
 												<button type="button" class="btn btn-block btn-outline-warning">Upload</button>
 												<button type="button" class="btn btn-block btn-outline-primary">Sharing</button>
 											</div>
 										</div>
->>>>>>> branch 'master' of https://github.com/trapkka997/Cocktail
 									</div>
 								</div>
 							</div>
-<<<<<<< HEAD
-							<div class="modal fade" id="file-modal" tabindex="-1"
-								role="dialog">
+							<div class="modal fade" id="file-modal" tabindex="-1" role="dialog">
 								<div class="modal-dialog modal-lg" role="document">
 									<div class="modal-content">
 										<div class="modal-header">
-											<button type="button" class="close" data-dismiss="modal"
-												aria-label="Close">
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 												<span aria-hidden="true">&times;</span>
 											</button>
 											<h4 class="modal-title">Details for image</h4>
@@ -606,44 +501,33 @@
 														</div>
 													</form>
 													<div class="text-right">
-														<a href="" target="blank" id="full-image-link">Preview
-															on new tab</a> | <a href="#" class="text-danger"
-															id="delete-image">Delete image permantly</a>
+														<a href="" target="blank" id="full-image-link">Preview on new tab</a> | 
+														<a href="#" class="text-danger" id="delete-image">Delete image permantly</a>
 													</div>
 												</div>
 											</div>
 										</div>
 										<div class="modal-footer">
-											<button type="button" class="btn btn-default"
-												data-dismiss="modal">Close</button>
-											<button type="button" class="btn btn-primary">Save
-												Changes</button>
+											<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+											<button type="button" class="btn btn-primary">Save Changes</button>
 										</div>
 									</div>
 								</div>
 							</div>
-=======
->>>>>>> branch 'master' of https://github.com/trapkka997/Cocktail
-							<!--  -->
 						</div>
-
 					</div>
 				</div>
 				<!-- modal1_end -->
 				<!-- modal -->
-<<<<<<< HEAD
-				
-				
-=======
->>>>>>> branch 'master' of https://github.com/trapkka997/Cocktail
 			</div>
 		</div>
-	</div>
+<!-- 	</div> -->
 	<!-- 사진 상세 슬라이드 -->
 	<script src="./resources/assets/gallery/grid/js/imagesloaded.pkgd.min.js"></script>
 	<script src="./resources/assets/gallery/grid/js/masonry.pkgd.min.js"></script>
 	<script src="./resources/assets/gallery/grid/js/classie.js"></script>
 	<script src="./resources/assets/gallery/grid/js/cbpGridGallery.js"></script>
+	<script src="./resources/assets/modal_makingCocktail/js/modal_makingCocktail.js"></script>
 	<script>
 		new CBPGridGallery( document.getElementById( 'grid-gallery' ) );
 	</script>
