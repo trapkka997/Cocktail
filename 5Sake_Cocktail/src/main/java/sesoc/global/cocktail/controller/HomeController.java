@@ -28,14 +28,11 @@ public class HomeController {
 	@Autowired MemberRepository memberRepository;
 	@Autowired SqlSession sqlSession;
 	@Autowired MemberRepository dao;
-	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
- 
- 
+	private static final Logger logger = LoggerFactory.getLogger(HomeController.class); 
 	
 	/**
 	 * 고정 메뉴 
-	 */
- 
+	 */ 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home() {
 //		List<Cocktail> cocktailList = cocktailRepository.getCocktailList();
@@ -91,7 +88,7 @@ public class HomeController {
 		model.addAttribute("userPhotos", userPhotos);
 		model.addAttribute("path", "http://localhost:8888/cocktail/resources/");
  
-		return "cocktail/gallery/cocktail_gallery";
+		return "cocktail/gallery/user_gallery";
  
 		/*return "cocktail/gallery/user_gallery";
  */
@@ -109,7 +106,7 @@ public class HomeController {
 		model.addAttribute("userPhotos", userPhotos);
 		model.addAttribute("path", "http://localhost:8888/cocktail/resources/");
  
-		return "cocktail/gallery/user_gallery";
+		return "cocktail/gallery/cocktail_gallery";
  
 		/*return "cocktail/gallery/cocktail_gallery";*/
  
@@ -189,15 +186,12 @@ public class HomeController {
 		model.addAttribute("path", "http://localhost:8888/cocktail/resources/");
 		model.addAttribute("photoList", photoList);
 		return "user/eachoneProfile";
-	}
- 
+	} 
 	
 	@RequestMapping(value = "/modal", method = RequestMethod.GET)
-	public String modal() {
-		
+	public String modal() {		
 		return "cocktail/gallery/modal/modal";
-	}
-	
+	}	
  
 	/**
 	 * css테스트용
@@ -205,7 +199,7 @@ public class HomeController {
 	 */
 	@RequestMapping(value = "/test", method = RequestMethod.GET)
 	public String test() {
-		return "cocktail/gallery/selfMaking";
+		return "imsi/test";
 	}
  
 }

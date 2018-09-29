@@ -240,11 +240,17 @@
 							</li>					
 						</ul>
 						<nav>
-							<span class="icon nav-prev"></span>
-							<span class="icon nav-next"></span>
-							<span class="icon nav-close"></span>
+							<span class="nav-prev">
+								<i class="fas fa-angle-left" style="color: white;"></i>
+							</span>
+							<span class="nav-next">
+								<i class="fas fa-angle-right"></i>
+							</span>
+							<span class="nav-close">
+								<i class="fas fa-times"></i>
+							</span>
 						</nav>
-						<div class="info-keys icon">Navigate with arrow keys</div>
+						<!-- <div class="info-keys icon">Navigate with arrow keys</div> -->
 					</section><!-- // slideshow -->
 				</div>
 <<<<<<< HEAD

@@ -26,9 +26,11 @@
 .card {
 	flex-direction: inherit;
 }
-
 .card-body {
 	text-align: center;
+}
+.galleryPhoto{
+	margin-bottom: 20px;
 }
 </style>
 </head>
@@ -67,7 +69,7 @@
 								<li>
 									<figure class="tile2 scale-anm brandy all">
 										<div class="profilebox profilebox1">
-											<img src="./resources/assets/basic/img/カクテルアイコン5.png" alt="img01" />
+											<img class="galleryPhoto" src="./resources/assets/basic/img/カクテルアイコン5.png" alt="img01" />
 										   	 <div class="SocialIcons">
 										    	    <a href="#"><i class="fas fa-heartbeat"></i></a>
 										    </div>
@@ -77,82 +79,7 @@
 											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
 										</figcaption>
 									</figure>									
-								</li>
-								<li>
-									<figure class="tile2 scale-anm whisky all">
-										<img src="./resources/assets/basic/img/カクテルアイコン5.png" alt="img02" />
-										<figcaption>
-											<h3>Vice velit chia</h3>
-											<p>Laborum tattooed iPhone, Schlitz irure nulla Tonx
-												retro 90's chia cardigan quis asymmetrical paleo.</p>
-										</figcaption>
-									</figure>
-								</li>
-								<li>
-									<figure  class="tile2 scale-anm vodka all">
-										<img src="./resources/assets/basic/img/カクテルアイコン5.png" 	alt="img03" />
-										<figcaption>
-											<h3>Brunch semiotics</h3>
-											<p>Ex disrupt cray yr, butcher pour-over magna umami
-												kitsch before they sold out commodo.</p>
-										</figcaption>
-									</figure>
-								</li>
-								<li>
-									<figure class="tile2 scale-anm rum all">
-										<img src="./resources/assets/basic/img/カクテルアイコン5.png"
-											alt="img04" />
-										<figcaption>
-											<h3>Chillwave nihil occupy</h3>
-											<p>In post-ironic gluten-free deserunt, PBR&amp;B non
-												pork belly cupidatat polaroid.</p>
-										</figcaption>
-									</figure>
-								</li>
-								<li>
-									<figure class="tile2 scale-anm dryjin all">
-										<img src="./resources/assets/basic/img/カクテルアイコン5.png"
-											alt="img05" />
-										<figcaption>
-											<h3>Kale chips lomo biodiesel</h3>
-											<p>Pariatur food truck street art consequat sustainable,
-												et kogi beard qui paleo.</p>
-										</figcaption>
-									</figure>
-								</li>
-								<li>
-									<figure class="tile2 scale-anm tequila all"> 
-										<img src="./resources/assets/basic/img/カクテルアイコン5.png"
-											alt="img06" />
-										<figcaption>
-											<h3>Exercitation occaecat</h3>
-											<p>Street chillwave hoodie ea gentrify.</p>
-										</figcaption>
-									</figure>
-								</li>
-								<li>
-									<figure class="tile2 scale-anm brandy all">
-										<img src="./resources/assets/basic/img/カクテルアイコン5.png"
-											alt="img01" />
-										<figcaption>
-											<h3>Selfies viral four</h3>
-											<p>Raw denim duis Tonx Shoreditch labore swag artisan
-												High Life cred, stumptown Schlitz quinoa flexitarian mollit
-												fanny pack.</p>
-										</figcaption>
-									</figure>
-								</li>
-								<li>
-									<figure class="tile2 scale-anm whisky all">
-										<img src="./resources/assets/basic/img/カクテルアイコン5.png"
-											alt="img02" />
-										<figcaption>
-											<h3>Photo booth skateboard</h3>
-											<p>Vinyl squid ex High Life. Paleo Neutra nulla master
-												cleanse, Helvetica et enim nesciunt esse.</p>
-										</figcaption>
-									</figure>
-								</li>		
+								</li>	
 							</ul>
 						</section>
 						<section class="slideshow">
@@ -165,83 +92,25 @@
 									</figcaption>
 									<img src="./resources/assets/gallery/grid/img/large/1.png" alt="img01"/>
 								</figure>
-							</li>
-							<li>
-								<figure>
-									<figcaption>
-										<h3>Vice velit chia</h3>
-										<p>Chillwave Echo Park Etsy organic Cosby sweater seitan authentic pour-over. Occupy wolf selvage bespoke tattooed, cred sustainable Odd Future hashtag butcher.</p>
-									</figcaption>
-									<img src="./resources/assets/gallery/grid/img/large/2.png" alt="img02"/>
-								</figure>
-							</li>
-							<li>
-								<figure>
-									<figcaption>
-										<h3>Brunch semiotics</h3>
-										<p>IPhone PBR polaroid before they sold out meh you probably haven't heard of them leggings tattooed tote bag, butcher paleo next level single-origin coffee photo booth.</p>
-									</figcaption>
-									<img src="./resources/assets/gallery/grid/img/large/3.png" alt="img03"/>
-								</figure>
-							</li>
-							<li>
-								<figure>
-									<figcaption>
-										<h3>Chillwave nihil occupy</h3>
-										<p>Vice cliche locavore mumblecore vegan wayfarers asymmetrical letterpress hoodie mustache. Shabby chic lomo polaroid, scenester 8-bit Portland Pitchfork VHS tote bag.</p>
-									</figcaption>
-									<img src="./resources/assets/gallery/grid/img/large/4.png" alt="img04"/>
-								</figure>
-							</li>
-							<li>
-								<figure>
-									<figcaption>
-										<h3>Kale chips lomo biodiesel</h3>
-										<p>Chambray Schlitz pug YOLO, PBR Tumblr semiotics. Flexitarian YOLO ennui Blue Bottle, forage dreamcatcher chillwave put a bird on it craft beer Etsy.</p>
-									</figcaption>
-									<img src="./resources/assets/gallery/grid/img/large/5.png" alt="img05"/>
-								</figure>
-							</li>
-							<li>
-								<figure>
-									<figcaption>
-										<h3>Exercitation occaecat</h3>
-										<p>Cosby sweater hella lomo Thundercats VHS occupy High Life. Synth pop-up readymade single-origin coffee, fanny pack tousled retro. Fingerstache mlkshk ugh hashtag, church-key ethnic street art pug yr.</p>
-									</figcaption>
-									<img src="./resources/assets/gallery/grid/img/large/6.png" alt="img06"/>
-								</figure>
-							</li>
-							<li>
-								<figure>
-									<figcaption>
-										<h3>Selfies viral four</h3>
-										<p>Ethnic readymade pug, small batch XOXO Odd Future normcore kogi food truck craft beer single-origin coffee banh mi photo booth raw denim. XOXO messenger bag pug VHS. Forage gluten-free polaroid, twee hoodie chillwave Helvetica.</p>
-									</figcaption>
-									<img src="./resources/assets/gallery/grid/img/large/1.png" alt="img01"/>
-								</figure>
-							</li>
-							<li>
-								<figure>
-									<figcaption>
-										<h3>Photo booth skateboard</h3>
-										<p>Thundercats pour-over four loko skateboard Brooklyn, Etsy sriracha leggings dreamcatcher narwhal authentic 3 wolf moon synth Portland. Shabby chic photo booth Blue Bottle keffiyeh, McSweeney's roof party Carles.</p>
-									</figcaption>
-									<img src="./resources/assets/gallery/grid/img/large/2.png" alt="img02"/>
-								</figure>
-							</li>					
+							</li>				
 						</ul>
 						<nav>
-							<span class="icon nav-prev"></span>
-							<span class="icon nav-next"></span>
-							<span class="icon nav-close"></span>
+							<span class="nav-prev">
+								<i class="fas fa-angle-left" style="color: white;"></i>
+							</span>
+							<span class="nav-next">
+								<i class="fas fa-angle-right"></i>
+							</span>
+							<span class="nav-close">
+								<i class="fas fa-times"></i>
+							</span>
 						</nav>
-						<div class="info-keys icon">Navigate with arrow keys</div>
+						<!-- <div class="info-keys icon">Navigate with arrow keys</div> -->
 					</section><!-- // slideshow -->
 				</div>
 			</div>
 				<!-- modal -->
-				<div class="plus-button" class="btn btn-primary" data-toggle="modal"
-					data-target="#myModal">+</div>
+				<div class="plus-button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">+</div>
 				<!-- modal1_start -->
 				<div id="myModal" class="modal fade" role="dialog">
 					<div class="modal-dialog modal-lg">
@@ -358,11 +227,8 @@
 	<script src="./resources/assets/gallery/js/gallery/masonry.pkgd.min.js"></script>
 	<script	src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>	 
 	<script src="./resources/assets/gallery/js/gallery/cbpGridGallery.js"></script>-->	
-	
-<<<<<<< HEAD
-	
+
 	<script src="./resources/assets/modal_makingCocktail/js/modal_makingCocktail.js"></script>
-=======
 	<!-- 사진 상세 슬라이드 -->
 	<script src="./resources/assets/gallery/grid/js/imagesloaded.pkgd.min.js"></script>
 	<script src="./resources/assets/gallery/grid/js/masonry.pkgd.min.js"></script>
@@ -371,7 +237,6 @@
 	<script>
 		new CBPGridGallery( document.getElementById( 'grid-gallery' ) );
 	</script>
->>>>>>> branch 'master' of https://github.com/trapkka997/Cocktail
 </body>
 </html>
 

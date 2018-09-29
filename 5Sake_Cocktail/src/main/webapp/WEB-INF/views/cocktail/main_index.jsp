@@ -51,13 +51,13 @@ h4 {
 <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 <script>
 	$(document).ready(function() {
-		$('#content').load('/cocktail/main_p');
-		
+		$('#content').load('/cocktail/main_p');		
 		$('#cock_gallery').on('click', function() {
 			$('#content').load('/cocktail/cocktailphoto');
 		});
 		$('#user_gallery').on('click', function() {
 			$('#content').load('/cocktail/userphoto');
+			alert("삭제예정");
 		});
 		$('#self_making').on('click', function() {
 			$('#content').load('/cocktail/selfMaking');
@@ -174,14 +174,9 @@ h4 {
 
 				<!-- navbar-center-->
 				<div class="navbar-center">
-					<i id='cock_gallery' class="fas fa-glass-martini icon"
-						style="margin-right: 20px;"></i> <i id='user_gallery'
-						class="fab fa-microsoft icon"
-						style="margin-left: 20px; margin-right: 20px;"></i> <i
-						id='self_making' class="fas fa-user-alt"
-						style="margin-left: 20px;"></i>
-				
-
+					<i id='cock_gallery' class="fas fa-glass-martini icon"	style="margin-right: 20px;"></i> 
+					<i id='user_gallery' class="fab fa-microsoft icon" style="margin-left: 20px; margin-right: 20px;"></i> 
+					<i id='self_making' class="fas fa-user-alt"	style="margin-left: 20px;"></i>
 				</div>
 
 				<!-- navbar-right -->
