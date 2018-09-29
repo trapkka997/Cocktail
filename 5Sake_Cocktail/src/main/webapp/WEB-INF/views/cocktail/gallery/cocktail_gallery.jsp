@@ -301,7 +301,7 @@
 
 						<!-- Modal content-->
 						<div class="modal-content">
-							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							
 							<!--  -->
 							<div class="container">
 								<div class="row">
@@ -599,6 +599,8 @@
 	<script src="./resources/assets/gallery/js/gallery/cbpGridGallery.js"></script>
 	<script src="./resources/assets/gallery/js/circluar_layout.js"></script>
 	
+	
+	<script src="./resources/assets/modal_makingCocktail/js/modal_makingCocktail.js"></script>
 </body>
 
 </html>

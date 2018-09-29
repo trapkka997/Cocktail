@@ -278,92 +278,284 @@
 						</section>
 					</div>
 				</div>
-				<!-- modal -->
+				
+				
 				<!-- modal -->
 				<div class="plus-button" class="btn btn-primary" data-toggle="modal"
-					data-target="#myModal">+</div>
+					data-target="#myModal">+
+					<div class = "modal_inner">
+					
+					</div>
+				</div>
+				<!-- modal -->
+					
 				<!-- modal1_start -->
 				<div id="myModal" class="modal fade" role="dialog">
 					<div class="modal-dialog modal-lg">
 
 						<!-- Modal content-->
 						<div class="modal-content">
-							<button type="button" class="close" data-dismiss="modal">&times;</button>
 							<!--  -->
-							<div class="container-fluid">
+							<div class="container">
 								<div class="row">
 									<div class="col-md-12">
-										<h3 class="text-center text-info">My own cocktail</h3>
-										<div class="row">
-											<div class="col-md-3">
-												<div class="card bg-default">
-													<h5 class="card-header">Card title</h5>
-													<div class="card-body">
-														<p class="card-text">Card content</p>
+										<h1>Uploading Your Image</h1>
+										<div class="product-image-manager">
+											<div class="image-container">
+												<div class="inner-image-container">
+													<div class="on-image-controls">
+														<div class="delete-confirm">Confirm deleting!</div>
+														<span class="fa fa-arrows"></span> <span
+															class="fa fa-check" data-toggle="tooltip"
+															data-placement="top" title="Pick as primary"></span> <span
+															class="fa fa-info-circle" data-toggle="tooltip"
+															data-placement="top" title="Image info"></span> <span
+															class="fa fa-times" data-toggle="tooltip"
+															data-placement="top" title="Delete image"></span>
 													</div>
-													<div class="card-footer">Card footer</div>
-												</div>
-												<div class="card">
-													<h5 class="card-header">Card title</h5>
-													<div class="card-body">
-														<p class="card-text">Card content</p>
+													<div class="center-container">
+														<img
+															src="https://images.unsplash.com/photo-1446645681877-acde17e336a9?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=846&q=80&cs=tinysrgb">
 													</div>
-													<div class="card-footer">Card footer</div>
 												</div>
 											</div>
-											<div class="col-md-6">
-
-												<div class="row">
-													<div class="col-md-12">
-														<div class="card">
-															<h5 class="card-header">Card title</h5>
-															<div class="card-body">
-																<p class="card-text">Card content</p>
-															</div>
-															<div class="card-footer">Card footer</div>
-														</div>
+											<div class="image-container">
+												<div class="inner-image-container">
+													<div class="on-image-controls">
+														<div class="delete-confirm">Confirm deleting!</div>
+														<span class="fa fa-arrows"></span> <span
+															class="fa fa-check" data-toggle="tooltip"
+															data-placement="top" title="Pick as primary"></span> <span
+															class="fa fa-info-circle" data-toggle="tooltip"
+															data-placement="top" title="Image info"></span> <span
+															class="fa fa-times" data-toggle="tooltip"
+															data-placement="top" title="Delete image"></span>
+													</div>
+													<div class="center-container">
+														<img
+															src="https://images.unsplash.com/photo-1432139509613-5c4255815697?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=2265&q=80&cs=tinysrgb"
+															id="test">
 													</div>
 												</div>
-												
 											</div>
-											<div class="col-md-3">
-												<div class="card">
-													<h5 class="card-header">Card title</h5>
-													<div class="card-body">
-														<p class="card-text">Card content</p>
+											<div class="image-container">
+												<div class="inner-image-container">
+													<div class="on-image-controls">
+														<div class="delete-confirm">Confirm deleting!</div>
+														<span class="fa fa-arrows"></span> <span
+															class="fa fa-check" data-toggle="tooltip"
+															data-placement="top" title="Pick as primary"></span> <span
+															class="fa fa-info-circle" data-toggle="tooltip"
+															data-placement="top" title="Image info"></span> <span
+															class="fa fa-times" data-toggle="tooltip"
+															data-placement="top" title="Delete image"></span>
 													</div>
-													<div class="card-footer">Card footer</div>
+													<div class="center-container">
+														<img
+															src="https://images.unsplash.com/photo-1453831362806-3d5577f014a4?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=1016&q=80&cs=tinysrgb">
+													</div>
 												</div>
-												<div class="card">
-													<h5 class="card-header">Card title</h5>
-													<div class="card-body">
-														<p class="card-text">Card content</p>
+											</div>
+											<div class="image-container">
+												<div class="inner-image-container">
+													<div class="on-image-controls">
+														<div class="delete-confirm">Confirm deleting!</div>
+														<span class="fa fa-arrows"></span> <span
+															class="fa fa-check" data-toggle="tooltip"
+															data-placement="top" title="Pick as primary"></span> <span
+															class="fa fa-info-circle" data-toggle="tooltip"
+															data-placement="top" title="Image info"></span> <span
+															class="fa fa-times" data-toggle="tooltip"
+															data-placement="top" title="Delete image"></span>
 													</div>
-													<div class="card-footer">Card footer</div>
+													<div class="center-container">
+														<img
+															src="https://images.unsplash.com/photo-1441123285228-1448e608f3d5?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb">
+													</div>
+												</div>
+											</div>
+											<div class="image-container">
+												<div class="inner-image-container">
+													<div class="on-image-controls">
+														<div class="delete-confirm">Confirm deleting!</div>
+														<span class="fa fa-arrows"></span> <span
+															class="fa fa-check" data-toggle="tooltip"
+															data-placement="top" title="Pick as primary"></span> <span
+															class="fa fa-info-circle" data-toggle="tooltip"
+															data-placement="top" title="Image info"></span> <span
+															class="fa fa-times" data-toggle="tooltip"
+															data-placement="top" title="Delete image"></span>
+													</div>
+													<div class="center-container">
+														<img
+															src="https://images.unsplash.com/photo-1471943311424-646960669fbc?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=2250&q=80&cs=tinysrgb">
+													</div>
+												</div>
+											</div>
+											<div class="image-container">
+												<div class="inner-image-container">
+													<div class="on-image-controls">
+														<div class="delete-confirm">Confirm deleting!</div>
+														<span class="fa fa-arrows"></span> <span
+															class="fa fa-check" data-toggle="tooltip"
+															data-placement="top" title="Pick as primary"></span> <span
+															class="fa fa-info-circle" data-toggle="tooltip"
+															data-placement="top" title="Image info"></span> <span
+															class="fa fa-times" data-toggle="tooltip"
+															data-placement="top" title="Delete image"></span>
+													</div>
+													<div class="center-container">
+														<img
+															src="https://images.unsplash.com/photo-1432752641289-a25fc853fceb?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=996&q=80&cs=tinysrgb">
+													</div>
+												</div>
+											</div>
+											<div class="image-container">
+												<div class="inner-image-container">
+													<div class="on-image-controls">
+														<div class="delete-confirm">Confirm deleting!</div>
+														<span class="fa fa-arrows"></span> <span
+															class="fa fa-check" data-toggle="tooltip"
+															data-placement="top" title="Pick as primary"></span> <span
+															class="fa fa-info-circle" data-toggle="tooltip"
+															data-placement="top" title="Image info"></span> <span
+															class="fa fa-times" data-toggle="tooltip"
+															data-placement="top" title="Delete image"></span>
+													</div>
+													<div class="center-container">
+														<img
+															src="https://images.unsplash.com/photo-1471253387723-35c53c9f97ca?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=2250&q=80&cs=tinysrgb.jpg">
+													</div>
+												</div>
+											</div>
+											<div class="image-container">
+												<div class="inner-image-container">
+													<div class="on-image-controls">
+														<div class="delete-confirm">Confirm deleting!</div>
+														<span class="fa fa-arrows"></span> <span
+															class="fa fa-check" data-toggle="tooltip"
+															data-placement="top" title="Pick as primary"></span> <span
+															class="fa fa-info-circle" data-toggle="tooltip"
+															data-placement="top" title="Image info"></span> <span
+															class="fa fa-times" data-toggle="tooltip"
+															data-placement="top" title="Delete image"></span>
+													</div>
+													<div class="center-container">
+														<img
+															src="http://jextensions.com/wp-content/plugins/simple-share-buttons-adder/buttons/somacro/facebook.png">
+													</div>
+												</div>
+											</div>
+											<div class="image-container">
+												<div class="inner-image-container">
+													<div class="on-image-controls">
+														<div class="delete-confirm">Confirm deleting!</div>
+														<span class="fa fa-arrows"></span> <span
+															class="fa fa-check" data-toggle="tooltip"
+															data-placement="top" title="Pick as primary"></span> <span
+															class="fa fa-info-circle" data-toggle="tooltip"
+															data-placement="top" title="Image info"></span> <span
+															class="fa fa-times" data-toggle="tooltip"
+															data-placement="top" title="Delete image"></span>
+													</div>
+													<div class="center-container">
+														<img
+															src="https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678087-heart-128.png">
+													</div>
+												</div>
+											</div>
+											<div class="image-container">
+												<div class="inner-image-container">
+													<div class="on-image-controls">
+														<div class="delete-confirm">Confirm deleting!</div>
+														<span class="fa fa-arrows"></span> <span
+															class="fa fa-check" data-toggle="tooltip"
+															data-placement="top" title="Pick as primary"></span> <span
+															class="fa fa-info-circle" data-toggle="tooltip"
+															data-placement="top" title="Image info"></span> <span
+															class="fa fa-times" data-toggle="tooltip"
+															data-placement="top" title="Delete image"></span>
+													</div>
+													<div class="center-container">
+														<img src="http://bendtech.com/wp-content/uploads/Logo.png">
+													</div>
 												</div>
 											</div>
 										</div>
-										<div class="row">
-										
-											<div class="col-md-8">
-												<div class="row">
-													<div class='container'>
-														<div id='app'>
-															<div class='tagHere'></div>
-															<input type="text" autofocus />
+										<div id="dropzone" class="dropzone">Drop files here to
+											upload</div>
+									</div>
+								</div>
+							</div>
+							<div class="modal fade" id="file-modal" tabindex="-1"
+								role="dialog">
+								<div class="modal-dialog modal-lg" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal"
+												aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											</button>
+											<h4 class="modal-title">Details for image</h4>
+										</div>
+										<div class="modal-body">
+											<div id="image-preview-modal"></div>
+											<div class="row image-data-row">
+												<div class="col-sm-4 static-data">
+													<ul class="file-info-list">
+														<li><strong>File name:</strong> <span id="filename"></span></li>
+														<li><strong>File type:</strong> <span
+															id="file-extension"></span></li>
+														<li><strong>File size:</strong> <span id="filesize"></span></li>
+														<li><strong>Dimensions:</strong> <span
+															id="file-dimensions"></span></li>
+													</ul>
+													<ul class="file-info-list">
+														<li><strong>Uploaded by:</strong> <span id="uploader">Kasper</span></li>
+														<li><strong>Upload date:</strong> <span
+															id="upload-date">28. august 2016</span></li>
+														<li><strong>Uploaded to:</strong> <span
+															id="upload-folder">Images12</span></li>
+													</ul>
+												</div>
+												<div class="col-sm-8 dynamic-data">
+													<form class="form-horizontal">
+														<div class="form-group">
+															<label for="url" class="col-sm-2 control-label">URL</label>
+															<div class="col-sm-10">
+																<input type="text" class="form-control" id="url"
+																	disabled>
+															</div>
 														</div>
+														<div class="form-group">
+															<label for="title" class="col-sm-2 control-label">Titel</label>
+															<div class="col-sm-10">
+																<input type="password" class="form-control" id="title"
+																	placeholder="Titel">
+															</div>
+														</div>
+														<div class="form-group">
+															<label for="alt" class="col-sm-2 control-label">Alt
+																Texy</label>
+															<div class="col-sm-10">
+																<input type="password" class="form-control" id="alt"
+																	placeholder="Alt Text">
+															</div>
+														</div>
+													</form>
+													<div class="text-right">
+														<a href="" target="blank" id="full-image-link">Preview
+															on new tab</a> | <a href="#" class="text-danger"
+															id="delete-image">Delete image permantly</a>
 													</div>
-													<div class='note'>Use Tab to input a tag.</div>
 												</div>
 											</div>
-											
-											<div class="col-md-4">
-
-												<button type="button"
-													class="btn btn-block btn-outline-warning">Upload</button>
-												<button type="button"
-													class="btn btn-block btn-outline-primary">Sharing</button>
-											</div>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-default"
+												data-dismiss="modal">Close</button>
+											<button type="button" class="btn btn-primary">Save
+												Changes</button>
 										</div>
 									</div>
 								</div>
