@@ -9,12 +9,15 @@ public class User {
 	private String userProfilePicture;
 	private String originalFilename;
 	private String savedFilename;
+	private String userSentence;
+	private String userInsta;
 	public User() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	public User(String userEmail, String userPwd, String userNickname, String userAuthCode, String userAuth,
-			String userProfilePicture, String originalFilename, String savedFilename) {
+			String userProfilePicture, String originalFilename, String savedFilename, String userSentence,
+			String userInsta) {
 		super();
 		this.userEmail = userEmail;
 		this.userPwd = userPwd;
@@ -24,6 +27,15 @@ public class User {
 		this.userProfilePicture = userProfilePicture;
 		this.originalFilename = originalFilename;
 		this.savedFilename = savedFilename;
+		this.userSentence = userSentence;
+		this.userInsta = userInsta;
+	}
+	@Override
+	public String toString() {
+		return "User [userEmail=" + userEmail + ", userPwd=" + userPwd + ", userNickname=" + userNickname
+				+ ", userAuthCode=" + userAuthCode + ", userAuth=" + userAuth + ", userProfilePicture="
+				+ userProfilePicture + ", originalFilename=" + originalFilename + ", savedFilename=" + savedFilename
+				+ ", userSentence=" + userSentence + ", userInsta=" + userInsta + "]";
 	}
 	public String getUserEmail() {
 		return userEmail;
@@ -73,12 +85,17 @@ public class User {
 	public void setSavedFilename(String savedFilename) {
 		this.savedFilename = savedFilename;
 	}
-	@Override
-	public String toString() {
-		return "User [userEmail=" + userEmail + ", userPwd=" + userPwd + ", userNickname=" + userNickname
-				+ ", userAuthCode=" + userAuthCode + ", userAuth=" + userAuth + ", userProfilePicture="
-				+ userProfilePicture + ", originalFilename=" + originalFilename + ", savedFilename=" + savedFilename
-				+ "]";
+	public String getUserSentence() {
+		return userSentence;
+	}
+	public void setUserSentence(String userSentence) {
+		this.userSentence = userSentence;
+	}
+	public String getUserInsta() {
+		return userInsta;
+	}
+	public void setUserInsta(String userInsta) {
+		this.userInsta = userInsta;
 	}
 	
 	

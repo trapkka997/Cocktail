@@ -20,8 +20,8 @@ public interface MemberDAO {
 	public String selectUserPhotoNum(User vo);
 	public List<DirectMessage>  selectDirectMessage(DirectMessage vo);
 	public int writeMessage(DirectMessage vo);
-	public List<String> viewFollow(String userEmail);
-	public List<String> viewFollower(String userEmail);
+	public List<User> viewFollow(String userEmail);
+	public List<User> viewFollower(String userEmail);
 	public List<UserPhoto> getRecommandUserPhotoList();
 	public int insertUserLikeCocktail(UserLikeCocktail userLikeCocktail);
 	public UserLikeCocktail selectUserLikeCocktail(UserLikeCocktail userLikeCocktail);

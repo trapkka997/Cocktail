@@ -50,11 +50,11 @@ public class MemberRepository {
 		MemberDAO dao = sqlSession.getMapper(MemberDAO.class);
 		return dao.writeMessage(vo);
 	}
-	public List<String> viewFollow(String userEmail) {
+	public List<User> viewFollow(String userEmail) {
 		MemberDAO dao = sqlSession.getMapper(MemberDAO.class);
 		return dao.viewFollow(userEmail);
 	}
-	public List<String> viewFollower(String userEmail) {
+	public List<User> viewFollower(String userEmail) {
 		MemberDAO dao = sqlSession.getMapper(MemberDAO.class);
 		return dao.viewFollower(userEmail);	
 	}

@@ -27,10 +27,11 @@ public class TestController {
 	@RequestMapping(value = "/viewFollow", method = RequestMethod.GET)
 	public String viewFollow(Model model,HttpSession httpSession) {
 		String userEmail = (String)httpSession.getAttribute("useremail");
-		List<String> followList = memberRepository.viewFollow(userEmail);
-		List<String> followerList = memberRepository.viewFollower(userEmail);
+		List<User> followList = memberRepository.viewFollow(userEmail);
+		List<User> followerList = memberRepository.viewFollower(userEmail);
 		model.addAttribute("followMemberList",followList);
 		model.addAttribute("follwerMemberList",followerList);
+		
 		return "imsi/viewFollow";
 	}
 	

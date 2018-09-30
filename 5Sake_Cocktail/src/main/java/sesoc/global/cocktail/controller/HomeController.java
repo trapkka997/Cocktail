@@ -20,6 +20,7 @@ import sesoc.global.cocktail.dao.MemberRepository;
 import sesoc.global.cocktail.vo.Cocktail;
 import sesoc.global.cocktail.vo.Ingredient;
 import sesoc.global.cocktail.vo.User;
+import sesoc.global.cocktail.vo.UserCocktail;
 import sesoc.global.cocktail.vo.UserPhoto;
 
 @Controller
@@ -104,7 +105,7 @@ public class HomeController {
 		String path = servletRequest.getSession().getServletContext().getRealPath("resources");
 		System.out.println(path);
 		model.addAttribute("userPhotos", userPhotos);
-		model.addAttribute("path", "http://localhost:8888/cocktail/resources/");
+model.addAttribute("path", "http://localhost:8888/cocktail/resources/");
  
 		return "cocktail/gallery/cocktail_gallery";
  
@@ -138,9 +139,12 @@ public class HomeController {
 	 * @return
 	 */
 	@RequestMapping(value = "/selfMaking", method = RequestMethod.GET)
-	public String selfMaking(Model model, User vo) {
-//		List<UserCocktail> userCocktailList =  cocktailRepository.selectUserCocktail(vo);
-//		model.addAttribute("userCocktailList", userCocktailList);
+	public String selfMaking(Model model, User vo, HttpSession httpSession) {
+		String userEmail = (String)httpSession.getAttribute("useremail");
+		vo.setUserEmail(userEmail);
+		model.addAttribute("path", "http://localhost:8888/cocktail/resources/");
+		List<UserCocktail> userCocktailList =  cocktailRepository.selectUserCocktail(vo);
+		model.addAttribute("userCocktailList", userCocktailList);
 		return "cocktail/gallery/selfMaking";
 	}
 	
@@ -175,6 +179,8 @@ public class HomeController {
 	public String eachoneprofile(Model model, User vo) {
  
 		User user = dao.selectOne(vo);
+		List<User> followList = dao.viewFollow(vo.getUserEmail());
+		List<User> followerList = dao.viewFollower(vo.getUserEmail());
 		List<UserPhoto> photoList = dao.selectUserPhoto(vo);
 		String followNum = dao.getUserFollowNum(vo);
 		String followerNum = dao.getUserFollowerNum(vo);
@@ -185,6 +191,8 @@ public class HomeController {
 		model.addAttribute("followerNum", followerNum);
 		model.addAttribute("path", "http://localhost:8888/cocktail/resources/");
 		model.addAttribute("photoList", photoList);
+		model.addAttribute("followList", followList);
+		model.addAttribute("followerList", followerList);
 		return "user/eachoneProfile";
 	} 
 	

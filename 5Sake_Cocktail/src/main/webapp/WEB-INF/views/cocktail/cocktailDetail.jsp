@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="./resources/assets/product_detail/css/product_detail/product_detail.css?h=583a78a19df08ccbf1a3f2a89dccbf94">
     <link rel="stylesheet" href="./resources/assets/basic/css/proflie_slide/slide_component.css?h=c31784850592eda94811485f90318815">
     <link rel="stylesheet" href="./resources/assets/product_detail/css/recommend/cocktail_recommend_title.css?h=8ba319ea454a344c8bf43dd4d88bcbb9">
-    <link rel="stylesheet" href="./resources/assets/product_detail/css/recommend/recommend_cocktail.css?h=9fdcb590092abd8e204c7b69a22c515a">
+    <link rel="stylesheet" href="./resources/assets/product_detail/css/recommend/recommend_cocktail.css?h=9fdcb590092abd8e204c7b69a22c515a"> 
 </head>
 <style>
 [data-aos^=fade][data-aos^=fade].aos-animate {
@@ -157,7 +157,7 @@
     <script src="./resources/assets/product_detail/js/bs-animation.js?h=cc4d20340936b09bec81533dd59db3a8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
     <script src="./resources/assets/basic/js/proflie_slide/classie.js?h=723c75fde6dc7bb3ef0f7f12584655a0"></script>
-    <script src="./resources/assets/basic/js/proflie_slide/modernizr.custom.js?h=97989a57a1e8fb69eff65e5a62de7dfb"></script>
+    <script src="./resources/assets/basic/js/proflie_slide/modernizr.custom.js?h=97989a57a1e8fb69eff65e5a62de7dfb"></script> 
 </body>
 
 </html>

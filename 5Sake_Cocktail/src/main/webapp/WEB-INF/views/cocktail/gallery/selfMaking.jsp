@@ -62,6 +62,24 @@
 						<section class="grid-wrap">
 						<ul class="grid">
 							<li class="grid-sizer"></li>							
+							<c:forEach var="userCocktail" items="${userCocktailList}">
+									<li>
+										<figure class="tile2 scale-anm brandy all">
+											<div class="profilebox profilebox1">
+												<img class="galleryPhoto"
+													src="${path }${userCocktail.saveFileName}"
+													alt="img01" />
+												<div class="SocialIcons">
+													<a href="#"><i class="fas fa-heartbeat"></i></a>
+												</div>
+											</div>
+											<figcaption>
+												<h3>${userCocktail.title}</h3>
+												<p>${userCocktail.contents}</p>
+											</figcaption>
+										</figure>
+									</li>
+								</c:forEach>
 								<!-- for Masonry column width -->
 								<li>
 									<figure class="tile2 scale-anm brandy all">
