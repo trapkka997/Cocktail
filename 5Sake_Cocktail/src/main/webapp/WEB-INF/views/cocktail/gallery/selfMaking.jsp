@@ -15,19 +15,12 @@
 <link rel="stylesheet"	href="./resources/assets/gallery/css/hover.css">
 <link rel="stylesheet" href="./resources/assets/modal_makingCocktail/css/modal_makingCocktail.css">
 <link rel="stylesheet" href="./resources/assets/modal_makingCocktail/css/sumoselect.css">
-
-
 <!-- modal -->
 <link rel="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
 <!-- photo상세 슬라이드 -->
-<<<<<<< HEAD
 <script src="./resources/assets/gallery/grid/js/modernizr.custom.js"></script>
 
-
-
-=======
->>>>>>> branch 'master' of https://github.com/trapkka997/Cocktail
 <style>
 .card {
 	flex-direction: inherit;
@@ -337,13 +330,6 @@
 	<script src="./resources/assets/gallery/grid/js/masonry.pkgd.min.js"></script>
 	<script src="./resources/assets/gallery/grid/js/classie.js"></script>
 	<script src="./resources/assets/gallery/grid/js/cbpGridGallery.js"></script>
-<<<<<<< HEAD
-	<!-- modal -->
-	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-	
-	
 	<!-- Modal -->
 	<script src="./resources/assets/gallery/js/cbpGridGallery.js"></script>
 	<!-- Modal -->
@@ -365,9 +351,6 @@
 
 		});
 	</script>
-=======
-	
->>>>>>> branch 'master' of https://github.com/trapkka997/Cocktail
 	
 	<script>
 		new CBPGridGallery( document.getElementById( 'grid-gallery' ) );

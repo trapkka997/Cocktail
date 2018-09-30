@@ -6,20 +6,29 @@
 <head>
 <title>5Sake's Cocktail</title>
 
-<link rel="stylesheet"	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
-<link rel="stylesheet"	href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
-<link rel="stylesheet"	href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
-<link rel="stylesheet"	href="./resources/assets/basic/css/navbar/navbar.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
+<link rel="stylesheet"
+	href="./resources/assets/basic/css/navbar/navbar.css">
 <!-- profile -->
-<link rel="stylesheet"	href="./resources/assets/basic/css/profile/default.css">
+<link rel="stylesheet"
+	href="./resources/assets/basic/css/profile/default.css">
 <link rel="stylesheet" href="./resources/assets/tag/css/tag_default.css">
 
 
 <!-- navbar_핵심-->
-<link rel="stylesheet"	href="./resources/assets/basic/css/navbar/color_click.css">
-<link rel="stylesheet"	href="./resources/assets/basic/css/navbar/spirits_icon.css">
-<link rel="stylesheet"	href="./resources/assets/basic/css/navbar/check_list.css">
-<link rel="stylesheet"	href="./resources/assets/basic/css/navbar/userRecommend_Tag.css">
+<link rel="stylesheet"
+	href="./resources/assets/basic/css/navbar/color_click.css">
+<link rel="stylesheet"
+	href="./resources/assets/basic/css/navbar/spirits_icon.css">
+<link rel="stylesheet"
+	href="./resources/assets/basic/css/navbar/check_list.css">
+<link rel="stylesheet"
+	href="./resources/assets/basic/css/navbar/userRecommend_Tag.css">
 <!--  navbar_핵심, 지우지마세여 -->
 <style>
 h2 {
@@ -46,7 +55,7 @@ h4 {
 .p {
 	margin-top: 0;
 	width: 150px;
-} 
+}
 </style>
 <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 <script>
@@ -81,12 +90,12 @@ h4 {
 				</div>
 				<!-- navbar-home_end -->
 				<div class="navbar-left" style="width: 390px;">
-					<a class="navbar-toggle" data-toggle="down"
-						aria-expanded="false" href="#"> <span></span> <span></span> <span></span>
+					<a class="navbar-toggle" data-toggle="down" aria-expanded="false"
+						href="#"> <span></span> <span></span> <span></span>
 						<div id="recommend" class="dropdown-menu"
 							style="margin-left: 150px; margin-right: 150px; right: 0px;">
-							
-							
+
+
 							<!-- exit_button -->
 							<button type="button" class="close" aria-label="Close">
 								<span aria-hidden="true">&times;</span>
@@ -176,9 +185,11 @@ h4 {
 
 				<!-- navbar-center-->
 				<div class="navbar-center">
-					<i id='cock_gallery' class="fas fa-glass-martini icon"	style="margin-right: 20px;"></i> 
+					<i id='cock_gallery' class="fas fa-glass-martini icon"
+						style="margin-right: 20px;"></i>
 					<!-- <i id='user_gallery' class="fab fa-microsoft icon" style="margin-left: 20px; margin-right: 20px;"></i>  -->
-					<i id='self_making' class="fas fa-user-alt"	style="margin-left: 20px;"></i>
+					<i id='self_making' class="fas fa-user-alt"
+						style="margin-left: 20px;"></i>
 				</div>
 
 				<!-- navbar-right -->
@@ -244,7 +255,7 @@ h4 {
 													</label>
 
 												</div>
-												
+
 											</div>
 
 										</div>
@@ -315,19 +326,7 @@ h4 {
 
 												</div>
 
-												<!-- <div id="color" class="button-group"
-												data-filter-group='color'
-												style="border-right: 1px solid #e8dfdf6e;">
-												<ul class="nav-list list-inline">
-													<li><button class="button is-checked" data-filter="*">All</button></li>
-													<li><button class="button" data-filter=".시럽">Red</button></li>
-													<li><button class="button" data-filter=".레몬">Blue</button></li>
-													<li><button class="button" data-filter=".사과">Green</button></li>
-													<li><button class="button" data-filter=".체리">Pink</button></li>
-													<li><button class="button" data-filter=".파인애플">Orenge</button></li>
-													<li><button class="button" data-filter=".라임">Yellow</button></li>
-												</ul>
-											</div> -->
+
 
 											</div>
 											<!-- Color -->
@@ -433,20 +432,7 @@ h4 {
 
 												</div>
 
-												<!-- <div id="liqueur" class="button-group"
-													data-filter-group='liqueur'>
-													<ul class="nav-list list-inline">
-														<li><button class="button is-checked" data-filter="*">All</button></li>
-														<li><button class="button" data-filter=".와인">Wine</button></li>
-														<li><button class="button" data-filter=".비터스">Bitters</button></li>
-														<li><button class="button" data-filter=".비어">Beer</button></li>
-														<li><button class="button" data-filter=".리큐르">Liqueur</button></li>
-														<li><button class="button" data-filter=".크레임">Cemeliqueur</button></li>
-														<li><button class="button" data-filter=".쉐리">Sherry</button></li>
-														<li><button class="button" data-filter=".베르무트">Vermouth</button></li>
-														<li><button class="button" data-filter=".아마레또">Amaretto</button></li>
-													</ul>
-												</div> -->
+
 											</div>
 											<!-- liqueur -->
 										</div>
@@ -639,32 +625,7 @@ h4 {
 													</div>
 													<!-- CheckBox_wrapper3_end -->
 												</div>
-												<!-- checkbox_end -->
 
-												<!-- <div id="material" class="button-group"
-													data-filter-group='material'>
-													<ul class="nav-list list-inline">
-														
-														<li class="button" data-filter=".시럽">Syrup</li>
-														
-														
-														
-														<li class="button" data-filter=".파인애플">Pineapple</li>/
-														
-														
-														
-														<li class="button" data-filter=".토마토">Tomato</li>/
-														
-														
-														<li class="button" data-filter=".계란">Egg</li>
-														<li class="button" data-filter=".스파이시">Spicy</li>
-														<li class="button" data-filter=".설탕">Sugar</li>
-														<li class="button" data-filter=".우유">Milk</li>
-														
-														<li class="button" data-filter=".탄산수">Soda</li>
-														<li class="button" data-filter=".진저에일">Gingerale</li>
-													</ul>
-												</div> -->
 
 											</div>
 										</div>
@@ -674,7 +635,7 @@ h4 {
 							</div>
 
 							<div class="row_cocktail_fliter">
-								<div class="grid">										
+								<div class="grid">
 									<!--  -->
 									<div class="wrapper_cocktailCard">
 										<div class="cols_cocktailCard"></div>
@@ -690,8 +651,9 @@ h4 {
 
 
 				<div class="navbar-avatar" style="margin-left: 19px;">
-					<a href="" onclick="return false;" class="navbar-item is-avatar" @click.prevent="showProfilePanel"> 
-						<img src="https://unsplash.it/200/200?image=1005" alt="Avatar" />
+					<a href="" onclick="return false;" class="navbar-item is-avatar"
+						@click.prevent="showProfilePanel"> <img
+						src="https://unsplash.it/200/200?image=1005" alt="Avatar" />
 					</a>
 				</div>
 
@@ -700,11 +662,16 @@ h4 {
 		<!-- container -->
 	</div>
 	<div id="content"></div>
-	<script	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-	<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script> 
-	<script	src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/js/bootstrap.bundle.min.js"></script>
-	<script	src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+	<script
+		src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/js/bootstrap.bundle.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
 	<script src="./resources/assets/tag/js/search_tag.js"></script>
 	<script src="./resources/assets/basic/js/photo_profile.js"></script>
 	<script>
@@ -814,6 +781,6 @@ h4 {
 	});
 	
 	</script>
-	 
+
 </body>
 </html>

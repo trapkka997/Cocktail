@@ -135,13 +135,13 @@ SELECT
         where 
         	useremail in (
         		SELECT
-            		    uf.followuser
+            		    uf.useremail
         		FROM
             		    USERDETAIL ud, USERFOLLOW uf
         		WHERE
-            		    ud.USEREMAIL = uf.USEREMAIL
+            		    ud.USEREMAIL = uf.followuser
                	 		AND
-               	 		uf.FOLLOWUSER = #{value}
+               	 		uf.followuser = #{value}
         	)
 
 </select>

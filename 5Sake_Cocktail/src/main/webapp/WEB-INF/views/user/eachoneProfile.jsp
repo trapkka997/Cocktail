@@ -49,10 +49,6 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/css?family=Open+Sans">
-<link rel='stylesheet'
-	href='https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.3/jquery.mCustomScrollbar.min.css'>
-<link rel="stylesheet"
-	href="./resources/assets/eachoneProfile/css/eachoneProfile_messageModal.css">
 <!-- eachoneProfile_css 중요 -->
 <style>
 .modal-dialog .profile {
@@ -70,7 +66,8 @@
 </head>
 
 <body>
-	<input type="hidden" id="userEmail" name="userEmail" value="${user.userEmail }">
+	<input type="hidden" id="userEmail" name="userEmail"
+		value="${user.userEmail }">
 	<div>
 		<div class="container">
 			<div class="row">
@@ -139,27 +136,207 @@
 			<div class="modal fade" id="messageModal" tabindex="-1" role="dialog"
 				aria-labelledby="chat" aria-hidden="true">
 				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="chat">
-							<div class="chat-title">
-								<h1>Fabio Ottaviani</h1>
-								<h2>Supah</h2>
-								<figure class="avatar">
-									<img
-										src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/156381/profile/profile-80.jpg" />
-								</figure>
-							</div>
-							<div class="messages">
-								<div class="messages-content"></div>
-							</div>
-							<div class="message-box">
-								<textarea type="text" class="message-input"
-									placeholder="Type message..."></textarea>
-								<button type="submit" class="message-submit">Send</button>
-							</div>
+					<div class="modal__close">
+						<a href="#" class="modal__icon"> <i class="fa fa-times"
+							aria-hidden="true"></i>
+						</a> <span class="modal__note">Закрыть</span>
+					</div>
+					<div class="modal-content chat">
+						<div class="modal__main">
+							<div class="chatbox">
+								<div class="chatbox__row">
+									<div class="head">
+										<div class="head__avatar avatar avatar_larger">
+											<a href="#" class="avatar__wrap"> M </a>
+										</div>
+										<div class="head__title">MaximModus</div>
+									</div>
+								</div>
+								<div class="chatbox__row chatbox__row_fullheight">
+									<div class="chatbox__content">
+										<div class="message">
+											<div class="message__head">
+												<span class="message__note">Princess Murphy</span> <span
+													class="message__note">Вчера, 17:00</span>
+											</div>
+											<div class="message__base">
+												<div class="message__avatar avatar">
+													<a href="#" class="avatar__wrap"> <img
+														class="avatar__img" src="http://placehold.it/35x35"
+														width="35" height="35" alt="avatar image">
+													</a>
+												</div>
+												<div class="message__textbox">
+													<span class="message__text">Hello, Bogdan! Yes,
+														funny smiles</span> <img class="message__smiley"
+														src="http://www.pic4ever.com/images/14k8gag.gif"
+														border="0">
+												</div>
+											</div>
+										</div>
+										<div class="message">
+											<div class="message__head">
+												<span class="message__note">Princess Murphy</span> <span
+													class="message__note">Вчера, 17:00</span>
+											</div>
+											<div class="message__base">
+												<div class="message__avatar avatar">
+													<a href="#" class="avatar__wrap"> <img
+														class="avatar__img" src="http://placehold.it/35x35"
+														width="35" height="35" alt="avatar image">
+													</a>
+												</div>
+												<div class="message__textbox">
+													<span class="message__text">Hello, Bogdan! Yes,
+														funny smiles</span>
+												</div>
+											</div>
+										</div>
+										<div class="message">
+											<div class="message__head">
+												<span class="message__note">Princess Murphy</span> <span
+													class="message__note">Вчера, 17:00</span>
+											</div>
+											<div class="message__base">
+												<div class="message__avatar avatar">
+													<a href="#" class="avatar__wrap"> <img
+														class="avatar__img" src="http://placehold.it/35x35"
+														width="35" height="35" alt="avatar image">
+													</a>
+												</div>
+												<div class="message__textbox">
+													<span class="message__text">Hello, Bogdan! Yes,
+														funny smiles</span>
+												</div>
+											</div>
+										</div>
+										<div class="message">
+											<div class="message__head">
+												<span class="message__note">Princess Murphy</span> <span
+													class="message__note">Вчера, 17:00</span>
+											</div>
+											<div class="message__base">
+												<div class="message__avatar avatar">
+													<a href="#" class="avatar__wrap"> <img
+														class="avatar__img" src="http://placehold.it/35x35"
+														width="35" height="35" alt="avatar image">
+													</a>
+												</div>
+												<div class="message__textbox">
+													<span class="message__text">Hello, Bogdan! Yes,
+														funny smiles</span>
+												</div>
+											</div>
+										</div>
+										<div class="message">
+											<div class="message__head">
+												<span class="message__note">Princess Murphy</span> <span
+													class="message__note">Вчера, 17:00</span>
+											</div>
+											<div class="message__base">
+												<div class="message__avatar avatar">
+													<a href="#" class="avatar__wrap"> <img
+														class="avatar__img" src="http://placehold.it/35x35"
+														width="35" height="35" alt="avatar image">
+													</a>
+												</div>
+												<div class="message__textbox">
+													<span class="message__text">Hello, Bogdan! Yes,
+														funny smiles</span>
+												</div>
+											</div>
+										</div>
+										<div class="message">
+											<div class="message__head">
+												<span class="message__note">Princess Murphy</span> <span
+													class="message__note">Вчера, 17:00</span>
+											</div>
+											<div class="message__base">
+												<div class="message__avatar avatar">
+													<a href="#" class="avatar__wrap"> <img
+														class="avatar__img" src="http://placehold.it/35x35"
+														width="35" height="35" alt="avatar image">
+													</a>
+												</div>
+												<div class="message__textbox">
+													<span class="message__text">Hello, Bogdan! Yes,
+														funny smiles</span>
+												</div>
+											</div>
+										</div>
+										<div class="message">
+											<div class="message__head">
+												<span class="message__note">Princess Murphy</span> <span
+													class="message__note">Вчера, 17:00</span>
+											</div>
+											<div class="message__base">
+												<div class="message__avatar avatar">
+													<a href="#" class="avatar__wrap"> <img
+														class="avatar__img" src="http://placehold.it/35x35"
+														width="35" height="35" alt="avatar image">
+													</a>
+												</div>
+												<div class="message__textbox">
+													<span class="message__text">Hello, Bogdan! Yes,
+														funny smiles</span>
+												</div>
+											</div>
+										</div>
+										<div class="message">
+											<div class="message__head">
+												<span class="message__note">Princess Murphy</span> <span
+													class="message__note">Вчера, 17:00</span>
+											</div>
+											<div class="message__base">
+												<div class="message__avatar avatar">
+													<a href="#" class="avatar__wrap"> <img
+														class="avatar__img" src="http://placehold.it/35x35"
+														width="35" height="35" alt="avatar image">
+													</a>
+												</div>
+												<div class="message__textbox">
+													<span class="message__text">Hello, Bogdan! Yes,
+														funny smiles</span>
+												</div>
+											</div>
+										</div>
+										<div class="message">
+											<div class="message__head">
+												<span class="message__note">Princess Murphy</span> <span
+													class="message__note">Вчера, 17:00</span>
+											</div>
+											<div class="message__base">
+												<div class="message__avatar avatar">
+													<a href="#" class="avatar__wrap"> <img
+														class="avatar__img" src="http://placehold.it/35x35"
+														width="35" height="35" alt="avatar image">
+													</a>
+												</div>
+												<div class="message__textbox">
+													<span class="message__text">Hello, Bogdan! Yes,
+														funny smiles</span> <img class="message__smiley"
+														src="http://www.pic4ever.com/images/245.gif" border="0">
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="chatbox__row">
+									<div class="enter">
+										<div class="enter__submit">
+											<button class="button button_id_submit" type="submit">
+												<i class="fa fa-paper-plane" aria-hidden="true"></i>
+											</button>
+										</div>
+										<div class="enter__textarea">
+											<textarea name="enterMessage" id="enterMessage" cols="30"
+												rows="2" placeholder="Say message..."></textarea>
+										</div>
+									</div>
 
+								</div>
+							</div>
 						</div>
-						<div class="bg"></div>
 					</div>
 				</div>
 			</div>
@@ -474,10 +651,6 @@
 
 
 	<script
-		src='https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.3/jquery.mCustomScrollbar.concat.min.js'></script>
-	<!-- MessageModal -->
-	<script src="./resources/assets/eachoneProfile/js/messageModal.js"></script>
-	<script
 		src="./resources/assets/basic/js/proflie_slide/proflieSlide_slideclassie.js"></script>
 	<script
 		src="./resources/assets/basic/js/proflie_slide/proflieSlide_modernizr.custom.js"></script>
@@ -487,7 +660,8 @@
 	<script
 		src="./resources/assets/gallery/js/gallery/imagesloaded.pkgd.min.js"></script>
 	<script src="./resources/assets/gallery/js/gallery/masonry.pkgd.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
 	<script src="./resources/assets/gallery/js/gallery/cbpGridGallery.js"></script>
 	<script src="./resources/assets/gallery/js/circluar_layout.js"></script>
 	<script src="./resources/assets/eachoneProfile/js/tabMenu.js"></script>

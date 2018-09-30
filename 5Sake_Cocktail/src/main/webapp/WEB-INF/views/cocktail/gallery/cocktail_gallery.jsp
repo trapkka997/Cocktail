@@ -24,10 +24,7 @@
 <link rel="stylesheet"
 	href="./resources/assets/gallery/css/uploadbutton.css">
 <link rel="stylesheet" href="./resources/assets/gallery/css/hover.css">
-<<<<<<< HEAD
-=======
 <link rel="stylesheet" href="./resources/assets/gallery/css/pictureUpload.css">
->>>>>>> branch 'master' of https://github.com/trapkka997/Cocktail
 
 <!-- photo상세 슬라이드 -->
 <script src="./resources/assets/gallery/grid/js/modernizr.custom.js"></script>
@@ -449,13 +446,9 @@
 	<script	src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>	 
 	<script src="./resources/assets/gallery/js/gallery/cbpGridGallery.js"></script>-->
 
-<<<<<<< HEAD
 	<script
 		src="./resources/assets/modal_makingCocktail/js/modal_makingCocktail.js"></script>
 	<!-- 사진 상세 슬라이드 -->
-=======
-	
->>>>>>> branch 'master' of https://github.com/trapkka997/Cocktail
 	<script
 		src="./resources/assets/gallery/grid/js/imagesloaded.pkgd.min.js"></script>
 	<script src="./resources/assets/gallery/grid/js/masonry.pkgd.min.js"></script>
@@ -471,11 +464,7 @@
 	<!-- 사진 업로드 모달 끝 -->
 	
 	<script>
-<<<<<<< HEAD
-		new CBPGridGallery( document.getElementById( 'grid-gallery' ) );
-=======
 		new CBPGridGallery(document.getElementById('grid-gallery'));
->>>>>>> branch 'master' of https://github.com/trapkka997/Cocktail
 	</script>
 </body>
 </html>
