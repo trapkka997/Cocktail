@@ -33,7 +33,7 @@
 						<div class="product-img" style="width: 375px;" >
 							<img data-aos="fade-right" data-aos-duration="650"
 								data-aos-once="true" class="product_detail-img"
-								style="background-image:url(&quot;${cocktail.imageRink}&quot;);background-position:center;background-size:contain;width:375px;height:420px;color:rgb(120,133,147);background-color:rgba(255,255,255,0);">
+								style="opacity:9; background-repeat: no-repeat; background-image:url(&quot;${cocktail.imageRink}&quot;);background-position:center;background-size:contain;width:375px;height:420px;color:rgb(120,133,147);background-color:rgba(255,255,255,0);">
 						</div>
 						<div class="product-info">
 							<div class="product-text">

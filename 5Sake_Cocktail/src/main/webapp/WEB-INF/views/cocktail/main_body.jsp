@@ -8,6 +8,14 @@
 	<link rel="stylesheet"	href="./resources/assets/basic/css/proflie_slide/slide_component.css">
 	<link rel="stylesheet"	href="./resources/assets/main/css/Simple-Slider.css">
 	<link rel="stylesheet"	href="./resources/assets/main/css/title/title.css">
+	<script>
+	$(document).ready(function() {
+		$('.img_img').on('click', function() {
+			alert("aaa");
+			$("#content").load("/cocktail/cocktailDetail?cocktailSeq=2");
+		});	
+	});
+</script>
 </head>
 <body>
 	<div>		
@@ -51,9 +59,9 @@
 							<tbody>
 								<tr>
 									<c:forEach var="recommandCocktail" items="${ recommandCocktailList}">
-									<td>
-									<a href="cocktailDetail?cocktailSeq=${recommandCocktail.cocktailSeq }">
-										<img src="${recommandCocktail.imageRink }"></a>
+									<td >
+									<%-- <a href="cocktailDetail?cocktailSeq=${recommandCocktail.cocktailSeq }"> --%>
+										<img class="img_img" src="${recommandCocktail.imageRink }"><!-- </a> -->
 									</td>
 									</c:forEach>
 								</tr>

@@ -47,6 +47,19 @@ h4 {
 	width: 150px;
 }
 /*위치에 있던 .tile .flip css -> tag_default.css로 옮김 */
+.mCSB_scrollTools {
+  margin: 1px -3px 1px 0;
+  opacity: 0;
+}
+
+.mCSB_inside > .mCSB_container {
+  margin-right: 0px;
+  padding: 0 10px;
+}
+
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+  background-color: rgba(0, 0, 0, 0.5)!important;
+}
 </style>
 <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 <script>
@@ -54,10 +67,6 @@ h4 {
 		$('#content').load('/cocktail/main_p');		
 		$('#cock_gallery').on('click', function() {
 			$('#content').load('/cocktail/cocktailphoto');
-		});
-		$('#user_gallery').on('click', function() {
-			$('#content').load('/cocktail/userphoto');
-			alert("삭제예정");
 		});
 		$('#self_making').on('click', function() {
 			$('#content').load('/cocktail/selfMaking');
@@ -74,20 +83,16 @@ h4 {
 		<div class="container-fluid">
 			<div class="container">
 				<div class="navbar-home">
-					<a href="/cocktail/"> <img
-						src='./resources/assets/basic/img/navbar_home2.png' class='img'
-						style="" />
+					<a href="/cocktail/"> 
+					<img src='./resources/assets/basic/img/navbar_home2.png' class='img' style="" />
 					</a>
 				</div>
 				<!-- navbar-home_end -->
 				<div class="navbar-left" style="width: 390px;">
-					<a class="navbar-toggle" data-toggle="down"
+					<a class="navbar-toggle" data-toggle="dropdown"
 						aria-expanded="false" href="#"> <span></span> <span></span> <span></span>
-						<div id="recommend" class="dropdown-menu"
-							style="margin-left: 150px; margin-right: 150px; right: 0px;">
-							
-							
-							<!-- exit_button -->
+						<div id="recommend" class="dropdown-menu" style="margin-left: 150px; margin-right: 150px; right: 0px;">		
+					<!-- exit_button -->
 							<button type="button" class="close" aria-label="Close">
 								<span aria-hidden="true">&times;</span>
 							</button>
@@ -674,12 +679,29 @@ h4 {
 							</div>
 
 							<div class="row_cocktail_fliter">
-								<div class="grid">										
+								<div class="grid">		
+								<!-- scroll -->
+											 <div id="mCSB_1_scrollbar_vertical"
+												class="mCSB_scrollTools mCSB_1_scrollbar mCS-light mCSB_scrollTools_vertical"
+												style="display: block;">
+												<div class="mCSB_draggerContainer">
+													<div id="mCSB_1_dragger_vertical" class="mCSB_dragger"
+														style="position: absolute; min-height: 30px; top: 0px; height: 66px; display: block; max-height: 252px;"
+														oncontextmenu="return false;">
+														<div class="mCSB_dragger_bar" style="line-height: 30px;"></div>
+													</div>
+													<div class="mCSB_draggerRail"></div>
+												</div>
+											</div>
+											<!-- scroll_end -->								
 									<!--  -->
-									<div class="wrapper_cocktailCard">
-										<div class="cols_cocktailCard"></div>
+									<div class="wrapper_cocktailCard" >
+										<div class="cols_cocktailCard">
+											
+										</div>
 									</div>
 									<!--  -->
+									
 								</div>
 							</div>
 							<!-- cocktail_Fliter -->
@@ -736,9 +758,7 @@ h4 {
 		});
 		console.log(resp);
 		$('.cols_cocktailCard').html(inner); 
-	}
-	
-	
+	}	
 	 	$.ajax({
 			method : "post",
 			url : "getCocktail",
@@ -751,8 +771,7 @@ h4 {
 			$("#content").load("/cocktail/cocktailDetail?cocktailSeq="+num);	
 		}
 	</script>
-	<script type="text/javascript">
-	
+	<script type="text/javascript">	
 	var num;
 	var spilits =[];
 	var liqueur =[];
@@ -811,9 +830,7 @@ h4 {
 			}
 			
 		})
-	});
-	
-	</script>
-	
+	});	
+	</script>	
 </body>
 </html>
