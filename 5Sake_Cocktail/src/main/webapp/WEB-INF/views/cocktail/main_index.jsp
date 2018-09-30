@@ -56,6 +56,20 @@ h4 {
 	margin-top: 0;
 	width: 150px;
 }
+/*위치에 있던 .tile .flip css -> tag_default.css로 옮김 */
+.mCSB_scrollTools {
+	margin: 1px -3px 1px 0;
+	opacity: 0;
+}
+
+.mCSB_inside>.mCSB_container {
+	margin-right: 0px;
+	padding: 0 10px;
+}
+
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+	background-color: rgba(0, 0, 0, 0.5) !important;
+}
 </style>
 <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 <script>
@@ -76,6 +90,12 @@ h4 {
 		});		
 		/* 네모 친 id를 가진 i 태그 클릭시 body부분을 로드해서 띄워줍니다.*/
 	});
+	function updateScrollbar() {
+		  $messages.mCustomScrollbar("update").mCustomScrollbar('scrollTo', 'bottom', {
+		    scrollInertia: 10,
+		    timeout: 0
+		  });
+		}
 </script>
 </head>
 <body>
@@ -636,11 +656,24 @@ h4 {
 
 							<div class="row_cocktail_fliter">
 								<div class="grid">
-									<!--  -->
+									<!-- scroll -->
+									<div id="mCSB_1_scrollbar_vertical"
+										class="mCSB_scrollTools mCSB_1_scrollbar mCS-light mCSB_scrollTools_vertical"
+										style="display: block;">
+										<div class="mCSB_draggerContainer">
+											<div id="mCSB_1_dragger_vertical" class="mCSB_dragger"
+												style="position: absolute; min-height: 30px; top: 0px; height: 66px; display: block; max-height: 252px;"
+												oncontextmenu="return false;">
+												<div class="mCSB_dragger_bar" style="line-height: 30px;"></div>
+											</div>
+											<div class="mCSB_draggerRail"></div>
+										</div>
+									</div>
+									<!-- scroll_end -->
 									<div class="wrapper_cocktailCard">
 										<div class="cols_cocktailCard"></div>
 									</div>
-									<!--  -->
+
 								</div>
 							</div>
 							<!-- cocktail_Fliter -->
