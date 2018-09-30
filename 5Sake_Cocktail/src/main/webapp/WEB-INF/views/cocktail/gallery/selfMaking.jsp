@@ -12,10 +12,25 @@
 <link rel="stylesheet" href="./resources/assets/gallery/css/gallery.css">
 <link rel="stylesheet"	href="./resources/assets/gallery/css/uploadbutton.css">
 <link rel="stylesheet"	href="./resources/assets/gallery/css/hover.css">
+<link rel="stylesheet" href="./resources/assets/modal_makingCocktail/css/modal_makingCocktail.css">
+<link rel="stylesheet" href="./resources/assets/modal_makingCocktail/css/sumoselect.css">
+
+
 <!-- modal -->
 <link rel="stylesheet" href="./resources/assets/gallery/css/pictureUpload.css">
 <link rel="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/trapkka997/Cocktail
 <!-- photo상세 슬라이드 -->
+<<<<<<< HEAD
+<script src="./resources/assets/gallery/grid/js/modernizr.custom.js"></script>
+
+
+
+=======
+>>>>>>> branch 'master' of https://github.com/trapkka997/Cocktail
 <style>
 .card {
 	flex-direction: inherit;
@@ -26,12 +41,15 @@
 .galleryPhoto{
 	margin-bottom: 20px;
 }
+.modal-lg {
+    max-width: 70%;
+}
 </style>
 
 </head>
 
 <body>
-	<div>
+	
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
@@ -105,230 +123,194 @@
 					</section><!-- // slideshow -->
 				</div>
 			</div>
-				<!-- modal -->
-				<div class="plus-button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">+</div>
-
+			
+			
+			
+			
+				<div class="plus-button" class="btn btn-primary" data-toggle="modal"
+					data-target="#myModal">+</div>
 				<!-- modal1_start -->
 				<div id="myModal" class="modal fade" role="dialog">
 					<div class="modal-dialog modal-lg">
 
 						<!-- Modal content-->
 						<div class="modal-content">
-							<button type="button" class="close" data-dismiss="modal">&times;</button>
+
 							<!--  -->
-							<div class="container">
-							  <div class="row">
-							    <div class="col-md-12">
-							      <h1>Product image manager</h1>
-							      <div class="product-image-manager">
-							        <div class="image-container">
-							          <div class="inner-image-container">
-							            <div class="on-image-controls">
-							              <div class="delete-confirm">Confirm deleting!</div>
-							              <span class="fa fa-arrows"></span>
-							              <span class="fa fa-check" data-toggle="tooltip" data-placement="top" title="Pick as primary"></span>
-							              <span class="fa fa-info-circle" data-toggle="tooltip" data-placement="top" title="Image info"></span>
-							              <span class="fa fa-times" data-toggle="tooltip" data-placement="top" title="Delete image"></span>
-							            </div>
-							            <div class="center-container">
-							              <img src="https://images.unsplash.com/photo-1446645681877-acde17e336a9?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=846&q=80&cs=tinysrgb">
-							            </div>
-							          </div>
-							        </div>
-							        <div class="image-container">
-							          <div class="inner-image-container">
-							            <div class="on-image-controls">
-							              <div class="delete-confirm">Confirm deleting!</div>
-							              <span class="fa fa-arrows"></span>
-							              <span class="fa fa-check" data-toggle="tooltip" data-placement="top" title="Pick as primary"></span>
-							              <span class="fa fa-info-circle" data-toggle="tooltip" data-placement="top" title="Image info"></span>
-							              <span class="fa fa-times" data-toggle="tooltip" data-placement="top" title="Delete image"></span>
-							            </div>
-							            <div class="center-container">
-							              <img src="https://images.unsplash.com/photo-1432139509613-5c4255815697?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=2265&q=80&cs=tinysrgb" id="test">
-							            </div>
-							          </div>
-							        </div>
-							        <div class="image-container">
-							          <div class="inner-image-container">
-							            <div class="on-image-controls">
-							              <div class="delete-confirm">Confirm deleting!</div>
-							              <span class="fa fa-arrows"></span>
-							              <span class="fa fa-check" data-toggle="tooltip" data-placement="top" title="Pick as primary"></span>
-							              <span class="fa fa-info-circle" data-toggle="tooltip" data-placement="top" title="Image info"></span>
-							              <span class="fa fa-times" data-toggle="tooltip" data-placement="top" title="Delete image"></span>
-							            </div>
-							            <div class="center-container">
-							              <img src="https://images.unsplash.com/photo-1453831362806-3d5577f014a4?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=1016&q=80&cs=tinysrgb">
-							            </div>
-							          </div>
-							        </div>
-							        <div class="image-container">
-							          <div class="inner-image-container">
-							            <div class="on-image-controls">
-							              <div class="delete-confirm">Confirm deleting!</div>
-							              <span class="fa fa-arrows"></span>
-							              <span class="fa fa-check" data-toggle="tooltip" data-placement="top" title="Pick as primary"></span>
-							              <span class="fa fa-info-circle" data-toggle="tooltip" data-placement="top" title="Image info"></span>
-							              <span class="fa fa-times" data-toggle="tooltip" data-placement="top" title="Delete image"></span>
-							            </div>
-							            <div class="center-container">
-							              <img src="https://images.unsplash.com/photo-1441123285228-1448e608f3d5?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb">
-							            </div>
-							          </div>
-							        </div>
-							        <div class="image-container">
-							          <div class="inner-image-container">
-							            <div class="on-image-controls">
-							              <div class="delete-confirm">Confirm deleting!</div>
-							              <span class="fa fa-arrows"></span>
-							              <span class="fa fa-check" data-toggle="tooltip" data-placement="top" title="Pick as primary"></span>
-							              <span class="fa fa-info-circle" data-toggle="tooltip" data-placement="top" title="Image info"></span>
-							              <span class="fa fa-times" data-toggle="tooltip" data-placement="top" title="Delete image"></span>
-							            </div>
-							            <div class="center-container">
-							              <img src="https://images.unsplash.com/photo-1471943311424-646960669fbc?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=2250&q=80&cs=tinysrgb">
-							            </div>
-							          </div>
-							        </div>
-							        <div class="image-container">
-							          <div class="inner-image-container">
-							            <div class="on-image-controls">
-							              <div class="delete-confirm">Confirm deleting!</div>
-							              <span class="fa fa-arrows"></span>
-							              <span class="fa fa-check" data-toggle="tooltip" data-placement="top" title="Pick as primary"></span>
-							              <span class="fa fa-info-circle" data-toggle="tooltip" data-placement="top" title="Image info"></span>
-							              <span class="fa fa-times" data-toggle="tooltip" data-placement="top" title="Delete image"></span>
-							            </div>
-							            <div class="center-container">
-							              <img src="https://images.unsplash.com/photo-1432752641289-a25fc853fceb?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=996&q=80&cs=tinysrgb">
-							            </div>
-							          </div>
-							        </div>
-							        <div class="image-container">
-							          <div class="inner-image-container">
-							            <div class="on-image-controls">
-							              <div class="delete-confirm">Confirm deleting!</div>
-							              <span class="fa fa-arrows"></span>
-							              <span class="fa fa-check" data-toggle="tooltip" data-placement="top" title="Pick as primary"></span>
-							              <span class="fa fa-info-circle" data-toggle="tooltip" data-placement="top" title="Image info"></span>
-							              <span class="fa fa-times" data-toggle="tooltip" data-placement="top" title="Delete image"></span>
-							            </div>
-							            <div class="center-container">
-							              <img src="https://images.unsplash.com/photo-1471253387723-35c53c9f97ca?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=2250&q=80&cs=tinysrgb.jpg">
-							            </div>
-							          </div>
-							        </div>
-							        <div class="image-container">
-							          <div class="inner-image-container">
-							            <div class="on-image-controls">
-							              <div class="delete-confirm">Confirm deleting!</div>
-							              <span class="fa fa-arrows"></span>
-							              <span class="fa fa-check" data-toggle="tooltip" data-placement="top" title="Pick as primary"></span>
-							              <span class="fa fa-info-circle" data-toggle="tooltip" data-placement="top" title="Image info"></span>
-							              <span class="fa fa-times" data-toggle="tooltip" data-placement="top" title="Delete image"></span>
-							            </div>
-							            <div class="center-container">
-							              <img src="http://jextensions.com/wp-content/plugins/simple-share-buttons-adder/buttons/somacro/facebook.png">
-							            </div>
-							          </div>
-							        </div>
-							        <div class="image-container">
-							          <div class="inner-image-container">
-							            <div class="on-image-controls">
-							              <div class="delete-confirm">Confirm deleting!</div>
-							              <span class="fa fa-arrows"></span>
-							              <span class="fa fa-check" data-toggle="tooltip" data-placement="top" title="Pick as primary"></span>
-							              <span class="fa fa-info-circle" data-toggle="tooltip" data-placement="top" title="Image info"></span>
-							              <span class="fa fa-times" data-toggle="tooltip" data-placement="top" title="Delete image"></span>
-							            </div>
-							            <div class="center-container">
-							              <img src="https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678087-heart-128.png">
-							            </div>
-							          </div>
-							        </div>
-							        <div class="image-container">
-							          <div class="inner-image-container">
-							            <div class="on-image-controls">
-							              <div class="delete-confirm">Confirm deleting!</div>
-							              <span class="fa fa-arrows"></span>
-							              <span class="fa fa-check" data-toggle="tooltip" data-placement="top" title="Pick as primary"></span>
-							              <span class="fa fa-info-circle" data-toggle="tooltip" data-placement="top" title="Image info"></span>
-							              <span class="fa fa-times" data-toggle="tooltip" data-placement="top" title="Delete image"></span>
-							            </div>
-							            <div class="center-container">
-							              <img src="http://bendtech.com/wp-content/uploads/Logo.png">
-							            </div>
-							          </div>
-							        </div>
-							      </div>
-							      <div id="dropzone" class="dropzone">Drop files here to upload</div>
-							    </div>
-							  </div>
-							</div>
-							<div class="modal fade" id="file-modal" tabindex="-1" role="dialog">
-							  <div class="modal-dialog modal-lg" role="document">
-							    <div class="modal-content">
-							      <div class="modal-header">
-							        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-							        <h4 class="modal-title">Details for image</h4>
-							      </div>
-							      <div class="modal-body">
-							        <div id="image-preview-modal"></div>
-							        <div class="row image-data-row">
-							          <div class="col-sm-4 static-data">
-							            <ul class="file-info-list">
-							              <li><strong>File name:</strong> <span id="filename"></span></li>
-							              <li><strong>File type:</strong> <span id="file-extension"></span></li>
-							              <li><strong>File size:</strong> <span id="filesize"></span></li>
-							              <li><strong>Dimensions:</strong> <span id="file-dimensions"></span></li>
-							            </ul>
-							            <ul class="file-info-list">
-							              <li><strong>Uploaded by:</strong> <span id="uploader">Kasper</span></li>
-							              <li><strong>Upload date:</strong> <span id="upload-date">28. august 2016</span></li>
-							              <li><strong>Uploaded to:</strong> <span id="upload-folder">Images12</span></li>
-							            </ul>
-							          </div>
-							          <div class="col-sm-8 dynamic-data">
-							            <form class="form-horizontal">
-							              <div class="form-group">
-							                <label for="url" class="col-sm-2 control-label">URL</label>
-							                <div class="col-sm-10">
-							                  <input type="text" class="form-control" id="url" disabled>
-							                </div>
-							              </div>
-							              <div class="form-group">
-							                <label for="title" class="col-sm-2 control-label">Titel</label>
-							                <div class="col-sm-10">
-							                  <input type="password" class="form-control" id="title" placeholder="Titel">
-							                </div>
-							              </div>
-							              <div class="form-group">
-							                <label for="alt" class="col-sm-2 control-label">Alt Texy</label>
-							                <div class="col-sm-10">
-							                  <input type="password" class="form-control" id="alt" placeholder="Alt Text">
-							                </div>
-							              </div>
-							            </form>
-							            <div class="text-right">
-							              <a href="" target="blank" id="full-image-link">Preview on new tab</a> | <a href="#" class="text-danger" id="delete-image">Delete image permantly</a>
-							            </div>
-							          </div>
-							        </div>
-							      </div>
-							      <div class="modal-footer">
-							        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-							        <button type="button" class="btn btn-primary">Save Changes</button>
-							      </div>
-							    </div>
-							  </div>
-							</div>
+							<div class="container_makingCocktail">
+								<header class="header">
+									<h1 class = "cocktailMaker_h1">Cocktail Maker</h1>
+								</header>
+
+								<div class="column-wrapper">
+
+									<!-- input_box -->
+									<main>
+									<p>Separate your tags with a comma</p>
+									<div class="tags-input"></div>
+									<h1>
+										<span>Tags</span> Input
+									</h1>
+									</main>
+									<!-- input_box_end-->
+
+									<div class="color-picker">
+										<h2 class = "cocktailMaker_h2">Color</h2>
+										<label class="cream"> <input type="radio" name="color"
+											value="cream">
+											<div class="color_layer"></div>
+											<div class="color_button">
+												<span></span>
+											</div>
+										</label> <label class="yellow"> <input type="radio"
+											name="color" value="yellow">
+											<div class="color_layer"></div>
+											<div class="color_button">
+												<span></span>
+											</div>
+										</label> <label class="orange"> <input type="radio"
+											name="color" value="orange">
+											<div class="layer"></div>
+											<div class="color_button">
+												<span></span>
+											</div>
+										</label> <label class="red"> <input type="radio"
+											name="color" value="red">
+											<div class="layer"></div>
+											<div class="color_button">
+												<span></span>
+											</div>
+										</label> <label class="brown"> <input type="radio"
+											name="color" value="brown">
+											<div class="layer"></div>
+											<div class="color_button">
+												<span></span>
+											</div>
+										</label> <label class="green"> <input type="radio"
+											name="color" value="green">
+											<div class="layer"></div>
+											<div class="color_button">
+												<span></span>
+											</div>
+										</label> <label class="blue"> <input type="radio"
+											name="color" value="blue">
+											<div class="color_layer"></div>
+											<div class="color_button">
+												<span></span>
+											</div>
+										</label> <label class="pink"> <input type="radio"
+											name="color" value="pink">
+											<div class="color_layer"></div>
+											<div class="color_button">
+												<span></span>
+											</div>
+										</label> <label class="peach"> <input type="radio"
+											name="color" value="peach">
+											<div class="color_layer"></div>
+											<div class="color_button">
+												<span></span>
+											</div>
+										</label>
+									</div>
+
+									<div class="style-picker_liqueur">
+										<h2 class = "cocktailMaker_h2" style="margin-top: 20px;">BASE SPIRITS</h2>
+
+										<div class="SumoSelect sumo_somename4" tabindex="0"
+											role="button" aria-expanded="true">
+											<select multiple="multiple" name="somename4"
+												class="select1 SumoUnder" tabindex="-1">
+												<option value="volvo">Volvo</option>
+												<option value="saab">Saab</option>
+												<option disabled="disabled" value="mercedes">Mercedes</option>
+												<option value="audi">Audi</option>
+												<option value="bmw">BMW</option>
+												<option disabled="disabled" value="porsche">Porche</option>
+												<option selected="selected" value="ferrari">Ferrari</option>
+												<option selected="selected" value="hyundai">Hyundai</option>
+												<option value="mitsubishi">Mitsubishi</option>
+											</select>
+											<!-- <p class="CaptionCont SelectBox" title=" Ferrari, Hyundai ">
+												<span> Ferrari, Hyundai </span><label><i></i></label>
+											</p> -->
+											<div class="optWrapper okCancelInMulti selall multiple">
+												<p class="select-all partial">
+													<span><i></i></span><label>Select All</label>
+												</p>
+												<ul class="options">
+													<li class="opt"><span><i></i></span><label>Volvo</label></li>
+													<li class="opt"><span><i></i></span><label>Saab</label></li>
+													<li class="opt disabled"><span><i></i></span><label>Mercedes</label></li>
+													<li class="opt"><span><i></i></span><label>Audi</label></li>
+													<li class="opt"><span><i></i></span><label>BMW</label></li>
+													<li class="opt disabled"><span><i></i></span><label>Porche</label></li>
+													<li class="opt selected"><span><i></i></span><label>Ferrari</label></li>
+													<li class="opt selected"><span><i></i></span><label>Hyundai</label></li>
+													<li class="opt"><span><i></i></span><label>Mitsubishi</label></li>
+												</ul>
+												<div class="MultiControls">
+													<p tabindex="0" class="btnOk">OK</p>
+													<p tabindex="0" class="btnCancel">Cancel</p>
+												</div>
+											</div>
+										</div>
+
+									</div>
+									
+									<div class="style-picker_spirits">
+										<h2 class = "cocktailMaker_h2" style="margin-top: 20px;">Liqueur</h2>
+
+										<div class="SumoSelect sumo_somename4" tabindex="0"
+											role="button" aria-expanded="true">
+											<select multiple="multiple" name="somename4"
+												class="select1 SumoUnder" tabindex="-1">
+												<option value="volvo">Volvo</option>
+												<option value="saab">Saab</option>
+												<option disabled="disabled" value="mercedes">Mercedes</option>
+												<option value="audi">Audi</option>
+												<option value="bmw">BMW</option>
+												<option disabled="disabled" value="porsche">Porche</option>
+												<option selected="selected" value="ferrari">Ferrari</option>
+												<option selected="selected" value="hyundai">Hyundai</option>
+												<option value="mitsubishi">Mitsubishi</option>
+											</select>
+											<!-- <p class="CaptionCont SelectBox" title=" Ferrari, Hyundai ">
+												<span> Ferrari, Hyundai </span><label><i></i></label>
+											</p> -->
+											<div class="optWrapper okCancelInMulti selall multiple">
+												<p class="select-all partial">
+													<span><i></i></span><label>Select All</label>
+												</p>
+												<ul class="options">
+													<li class="opt"><span><i></i></span><label>Volvo</label></li>
+													<li class="opt"><span><i></i></span><label>Saab</label></li>
+													<li class="opt disabled"><span><i></i></span><label>Mercedes</label></li>
+													<li class="opt"><span><i></i></span><label>Audi</label></li>
+													<li class="opt"><span><i></i></span><label>BMW</label></li>
+													<li class="opt disabled"><span><i></i></span><label>Porche</label></li>
+													<li class="opt selected"><span><i></i></span><label>Ferrari</label></li>
+													<li class="opt selected"><span><i></i></span><label>Hyundai</label></li>
+													<li class="opt"><span><i></i></span><label>Mitsubishi</label></li>
+												</ul>
+												<div class="MultiControls">
+													<p tabindex="0" class="btnOk">OK</p>
+													<p tabindex="0" class="btnCancel">Cancel</p>
+												</div>
+											</div>
+										</div>
+
+									</div>
+									
+								</div>
+								<!-- /.column-wrapper -->
+
 							<!--  -->
 						</div>
+						<!-- Modal content_end -->
 					</div>
 				</div>
 				<!-- modal1_end -->
-				<!-- modal -->
+				
 			</div>
 		</div>
 	</div>
@@ -340,6 +322,41 @@
 	<script src="./resources/assets/gallery/grid/js/masonry.pkgd.min.js"></script>
 	<script src="./resources/assets/gallery/grid/js/classie.js"></script>
 	<script src="./resources/assets/gallery/grid/js/cbpGridGallery.js"></script>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+	<!-- modal -->
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+	
+	
+	<!-- Modal -->
+	<script src="./resources/assets/gallery/js/cbpGridGallery.js"></script>
+	<!-- Modal -->
+	
+	<!-- 칵테일 만들기 업로드 모달 -->
+	<script src="./resources/assets/modal_makingCocktail/js/modal_makingCocktail.js"></script>
+	<script src="./resources/assets/modal_makingCocktail/js/jquery.sumoselect.js"></script>
+	<!-- 칵테일 만들기 업로드 모달 끝 -->
+
+	<!-- Latest compiled and minified JavaScript -->
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+
+			$('.select1').SumoSelect({
+				okCancelInMulti : true,
+				selectAll : true
+			});
+
+		});
+	</script>
+=======
+	
+>>>>>>> branch 'master' of https://github.com/trapkka997/Cocktail
+	
+>>>>>>> branch 'master' of https://github.com/trapkka997/Cocktail
 	<script>
 		new CBPGridGallery( document.getElementById( 'grid-gallery' ) );
 	</script>

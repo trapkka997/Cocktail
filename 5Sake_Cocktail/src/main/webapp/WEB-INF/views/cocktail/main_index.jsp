@@ -104,6 +104,8 @@ h4 {
 						aria-expanded="false" href="#"> <span></span> <span></span> <span></span>
 						<div id="recommend" class="dropdown-menu"
 							style="margin-left: 150px; margin-right: 150px; right: 0px;">
+							
+							
 							<!-- exit_button -->
 							<button type="button" class="close" aria-label="Close">
 								<span aria-hidden="true">&times;</span>
@@ -194,7 +196,7 @@ h4 {
 				<!-- navbar-center-->
 				<div class="navbar-center">
 					<i id='cock_gallery' class="fas fa-glass-martini icon"	style="margin-right: 20px;"></i> 
-					<i id='user_gallery' class="fab fa-microsoft icon" style="margin-left: 20px; margin-right: 20px;"></i> 
+					<!-- <i id='user_gallery' class="fab fa-microsoft icon" style="margin-left: 20px; margin-right: 20px;"></i>  -->
 					<i id='self_making' class="fas fa-user-alt"	style="margin-left: 20px;"></i>
 				</div>
 

@@ -1,0 +1,2366 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700);
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  background: white;
+}
+
+/* inputbox */
+
+html, body, main {
+  height: 100%;
+}
+
+main {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 0 30px;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 300;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: #bbb;
+}
+h1 span {
+  border: 2px solid #dfdfdf;
+  padding: 3px 2px 3px 7px;
+  border-radius: 6px;
+  font-weight: 400;
+}
+
+p {
+  margin-top: 10px;
+  font-size: 10px;
+  font-weight: bold;
+  color: #71ccd5;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.tags-input {
+  border: 2px solid #dfdfdf;
+  border-radius: 40px;
+  height: 40px;
+  padding: 0 11px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  color: #888;
+}
+.tags-input span {
+  background: #bbb;
+  margin-right: 7px;
+  color: #fff;
+  padding: 4px 7px;
+  border-radius: 20px;
+}
+.tags-input span[data-selected] {
+  background: #71ccd5;
+}
+.tags-input::after {
+  content: "";
+  background: #888;
+  width: 1px;
+  height: 19px;
+  margin: -1px 0 0 -1px;
+  display: none;
+  -webkit-animation: blink 0.5s infinite alternate;
+          animation: blink 0.5s infinite alternate;
+}
+.tags-input:focus {
+  border-color: #71ccd5;
+  outline: none;
+}
+.tags-input:focus[data-cursor]::after {
+  display: block;
+}
+@media screen and (max-width: 736px) {
+  .tags-input:focus[data-cursor]::after {
+    display: none;
+  }
+}
+.tags-input:focus + h1 {
+  color: #71ccd5;
+}
+.tags-input:focus + h1 span {
+  border-color: #71ccd5;
+}
+
+@-webkit-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  49% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  49% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
+/* inputbox_end */
+
+
+/* autocomplete */
+
+.style-picker_liqueur{
+    width: 50%;
+    float: left;
+    margin-bottom: 10%;
+}
+
+.style-picker_spirits{
+    width: 50%;
+    float: left;
+    margin-bottom: 10%;
+}
+
+/* autocomplete_end */
+
+
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+.cocktailMaker_h1,
+.cocktailMaker_h2 {
+  margin: 0 0 10px 0;
+}
+
+.cocktailMaker_h1 {
+  font-size: 24px;
+}
+
+.cocktailMaker_h2 {
+  width: 100%;
+  float: left;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #aaa;
+}
+
+.container_makingCocktail_makingCocktail_makingCocktail, .column-wrapper, .color-picker,
+.style-picker,
+.size-picker, .buttons-wrapper {
+  zoom: 1;
+}
+.container_makingCocktail_makingCocktail:after, .column-wrapper:after, .color-picker:after,
+.style-picker:after,
+.size-picker:after, .buttons-wrapper:after, .container_makingCocktail_makingCocktail:before, .column-wrapper:before, .color-picker:before,
+.style-picker:before,
+.size-picker:before, .buttons-wrapper:before {
+  content: "";
+  display: table;
+}
+.container_makingCocktail_makingCocktail:after, .column-wrapper:after, .color-picker:after,
+.style-picker:after,
+.size-picker:after, .buttons-wrapper:after {
+  clear: both;
+}
+
+.button {
+  border: none;
+  border-image-source: none;
+  border-image-slice: none;
+  border-image-width: none;
+  border-image-outset: none;
+  border-image-repeat: none;
+}
+
+.button {
+  position: relative;
+  display: inline-block;
+  width: auto;
+  height: 30px;
+  padding: 0 10px;
+  font-size: 14px;
+  text-decoration: none;
+  line-height: 30px;
+  cursor: pointer;
+}
+.button:focus {
+  outline: 0;
+}
+.button:disabled, [disabled=disabled].button {
+  opacity: 0.4;
+}
+.button:disabled:hover, .button:disabled:active, [disabled=disabled].button:hover, [disabled=disabled].button:active {
+  cursor: default;
+}
+
+.button {
+  background: transparent;
+  color: #111;
+  margin: 0 10px 10px 0;
+  border: 0px solid transparent;
+}
+.button.uppercase {
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.button.icon {
+  padding: 0;
+}
+.button.icon svg {
+  width: 30px;
+  height: 30px;
+}
+
+.size-large .button {
+  font-size: 17px;
+  padding: 0 14px;
+  height: 40px;
+}
+.size-large .button.icon {
+  padding: 0;
+}
+.size-large .button.icon svg {
+  width: 40px;
+  height: 40px;
+}
+
+.size-extra-large .button {
+  font-size: 22px;
+  padding: 0 20px;
+  height: 50px;
+}
+.size-extra-large .button.icon {
+  padding: 0;
+}
+.size-extra-large .button.icon svg {
+  width: 50px;
+  height: 50px;
+}
+
+.color-light-grey .button {
+  background: #ccc;
+  color: #111;
+}
+.color-light-grey.style-one .button {
+  background: none;
+  color: #ccc;
+  text-shadow: none;
+  padding: 0;
+}
+.color-light-grey.style-one .button svg {
+  fill: #ccc;
+}
+.color-light-grey.style-one .button:hover {
+  color: #e6e6e6;
+}
+.color-light-grey.style-one .button:hover svg {
+  fill: #e6e6e6;
+}
+.color-light-grey.style-one .button:active {
+  color: #b3b3b3;
+}
+.color-light-grey.style-one .button:active svg {
+  fill: #b3b3b3;
+}
+.color-light-grey.style-two .button {
+  background: #ccc;
+  color: #111;
+}
+.color-light-grey.style-two .button svg {
+  fill: #111;
+}
+.color-light-grey.style-two .button:hover {
+  background: #e6e6e6;
+}
+.color-light-grey.style-two .button:active {
+  background: #b3b3b3;
+}
+.color-light-grey.style-three .button {
+  background: #ccc;
+  border-radius: 4px;
+  color: #111;
+}
+.color-light-grey.style-three .button svg {
+  fill: #111;
+}
+.color-light-grey.style-three .button:hover {
+  background: #e6e6e6;
+}
+.color-light-grey.style-three .button:active {
+  background: #b3b3b3;
+}
+.color-light-grey.style-four .button {
+  background: #ccc;
+  border-radius: 4px;
+  color: #111;
+  line-height: 28px;
+  border: 1px solid #b3b3b3;
+}
+.color-light-grey.style-four .button svg {
+  fill: #111;
+}
+.color-light-grey.style-four .button:hover {
+  background: #e6e6e6;
+}
+.color-light-grey.style-four .button:active {
+  background: #b3b3b3;
+}
+.color-light-grey.style-five .button {
+  background: #ccc;
+  border-radius: 4px;
+  color: #111;
+  line-height: 28px;
+  border: 1px solid #b3b3b3;
+  box-shadow: 2px 2px 3px rgba(17, 17, 17, 0.2);
+}
+.color-light-grey.style-five .button svg {
+  fill: #111;
+}
+.color-light-grey.style-five .button:hover {
+  background: #e6e6e6;
+}
+.color-light-grey.style-five .button:active {
+  background: #b3b3b3;
+}
+.color-light-grey.style-six .button {
+  background-color: #b3b3b3;
+  background-image: -moz-linear-gradient(#e6e6e6, #b3b3b3);
+  background-image: -o-linear-gradient(#e6e6e6, #b3b3b3);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #e6e6e6), color-stop(1, #b3b3b3));
+  background-image: -webkit-linear-gradient(#e6e6e6, #b3b3b3);
+  background-image: -ms-linear-gradient(#e6e6e6, #b3b3b3);
+  background-image: linear-gradient(#e6e6e6, #b3b3b3);
+  border-radius: 4px;
+  color: #111;
+  line-height: 28px;
+  border: 1px solid #b3b3b3;
+  box-shadow: 2px 2px 3px rgba(17, 17, 17, 0.2);
+}
+.color-light-grey.style-six .button svg {
+  fill: #111;
+}
+.color-light-grey.style-six .button:hover {
+  background-color: #ccc;
+  background-image: -moz-linear-gradient(white, #ccc);
+  background-image: -o-linear-gradient(white, #ccc);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, white), color-stop(1, #ccc));
+  background-image: -webkit-linear-gradient(white, #ccc);
+  background-image: -ms-linear-gradient(white, #ccc);
+  background-image: linear-gradient(white, #ccc);
+}
+.color-light-grey.style-six .button:active {
+  background-color: #ccc;
+  background-image: -moz-linear-gradient(#b3b3b3, #ccc);
+  background-image: -o-linear-gradient(#b3b3b3, #ccc);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #b3b3b3), color-stop(1, #ccc));
+  background-image: -webkit-linear-gradient(#b3b3b3, #ccc);
+  background-image: -ms-linear-gradient(#b3b3b3, #ccc);
+  background-image: linear-gradient(#b3b3b3, #ccc);
+}
+
+.color-mid-grey .button {
+  background: #aaa;
+  color: #111;
+}
+.color-mid-grey.style-one .button {
+  background: none;
+  color: #aaa;
+  text-shadow: none;
+  padding: 0;
+}
+.color-mid-grey.style-one .button svg {
+  fill: #aaa;
+}
+.color-mid-grey.style-one .button:hover {
+  color: #c4c4c4;
+}
+.color-mid-grey.style-one .button:hover svg {
+  fill: #c4c4c4;
+}
+.color-mid-grey.style-one .button:active {
+  color: #919191;
+}
+.color-mid-grey.style-one .button:active svg {
+  fill: #919191;
+}
+.color-mid-grey.style-two .button {
+  background: #aaa;
+  color: #111;
+}
+.color-mid-grey.style-two .button svg {
+  fill: #111;
+}
+.color-mid-grey.style-two .button:hover {
+  background: #c4c4c4;
+}
+.color-mid-grey.style-two .button:active {
+  background: #919191;
+}
+.color-mid-grey.style-three .button {
+  background: #aaa;
+  border-radius: 4px;
+  color: #111;
+}
+.color-mid-grey.style-three .button svg {
+  fill: #111;
+}
+.color-mid-grey.style-three .button:hover {
+  background: #c4c4c4;
+}
+.color-mid-grey.style-three .button:active {
+  background: #919191;
+}
+.color-mid-grey.style-four .button {
+  background: #aaa;
+  border-radius: 4px;
+  color: #111;
+  line-height: 28px;
+  border: 1px solid #919191;
+}
+.color-mid-grey.style-four .button svg {
+  fill: #111;
+}
+.color-mid-grey.style-four .button:hover {
+  background: #c4c4c4;
+}
+.color-mid-grey.style-four .button:active {
+  background: #919191;
+}
+.color-mid-grey.style-five .button {
+  background: #aaa;
+  border-radius: 4px;
+  color: #111;
+  line-height: 28px;
+  border: 1px solid #919191;
+  box-shadow: 2px 2px 3px rgba(17, 17, 17, 0.2);
+}
+.color-mid-grey.style-five .button svg {
+  fill: #111;
+}
+.color-mid-grey.style-five .button:hover {
+  background: #c4c4c4;
+}
+.color-mid-grey.style-five .button:active {
+  background: #919191;
+}
+.color-mid-grey.style-six .button {
+  background-color: #919191;
+  background-image: -moz-linear-gradient(#c4c4c4, #919191);
+  background-image: -o-linear-gradient(#c4c4c4, #919191);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #c4c4c4), color-stop(1, #919191));
+  background-image: -webkit-linear-gradient(#c4c4c4, #919191);
+  background-image: -ms-linear-gradient(#c4c4c4, #919191);
+  background-image: linear-gradient(#c4c4c4, #919191);
+  border-radius: 4px;
+  color: #111;
+  line-height: 28px;
+  border: 1px solid #919191;
+  box-shadow: 2px 2px 3px rgba(17, 17, 17, 0.2);
+}
+.color-mid-grey.style-six .button svg {
+  fill: #111;
+}
+.color-mid-grey.style-six .button:hover {
+  background-color: #aaa;
+  background-image: -moz-linear-gradient(#dddddd, #aaa);
+  background-image: -o-linear-gradient(#dddddd, #aaa);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #dddddd), color-stop(1, #aaa));
+  background-image: -webkit-linear-gradient(#dddddd, #aaa);
+  background-image: -ms-linear-gradient(#dddddd, #aaa);
+  background-image: linear-gradient(#dddddd, #aaa);
+}
+.color-mid-grey.style-six .button:active {
+  background-color: #aaa;
+  background-image: -moz-linear-gradient(#919191, #aaa);
+  background-image: -o-linear-gradient(#919191, #aaa);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #919191), color-stop(1, #aaa));
+  background-image: -webkit-linear-gradient(#919191, #aaa);
+  background-image: -ms-linear-gradient(#919191, #aaa);
+  background-image: linear-gradient(#919191, #aaa);
+}
+
+.color-dark-grey .button {
+  background: #666;
+  color: #eee;
+  text-shadow: 1px 1px 0 rgba(17, 17, 17, 0.2);
+}
+.color-dark-grey.style-one .button {
+  background: none;
+  color: #666;
+  text-shadow: none;
+  padding: 0;
+}
+.color-dark-grey.style-one .button svg {
+  fill: #666;
+}
+.color-dark-grey.style-one .button:hover {
+  color: gray;
+}
+.color-dark-grey.style-one .button:hover svg {
+  fill: gray;
+}
+.color-dark-grey.style-one .button:active {
+  color: #4d4d4d;
+}
+.color-dark-grey.style-one .button:active svg {
+  fill: #4d4d4d;
+}
+.color-dark-grey.style-two .button {
+  background: #666;
+  color: #eee;
+}
+.color-dark-grey.style-two .button svg {
+  fill: #eee;
+}
+.color-dark-grey.style-two .button:hover {
+  background: gray;
+}
+.color-dark-grey.style-two .button:active {
+  background: #4d4d4d;
+}
+.color-dark-grey.style-three .button {
+  background: #666;
+  border-radius: 4px;
+  color: #eee;
+}
+.color-dark-grey.style-three .button svg {
+  fill: #eee;
+}
+.color-dark-grey.style-three .button:hover {
+  background: gray;
+}
+.color-dark-grey.style-three .button:active {
+  background: #4d4d4d;
+}
+.color-dark-grey.style-four .button {
+  background: #666;
+  border-radius: 4px;
+  color: #eee;
+  line-height: 28px;
+  border: 1px solid #4d4d4d;
+}
+.color-dark-grey.style-four .button svg {
+  fill: #eee;
+}
+.color-dark-grey.style-four .button:hover {
+  background: gray;
+}
+.color-dark-grey.style-four .button:active {
+  background: #4d4d4d;
+}
+.color-dark-grey.style-five .button {
+  background: #666;
+  border-radius: 4px;
+  color: #eee;
+  line-height: 28px;
+  border: 1px solid #4d4d4d;
+  box-shadow: 2px 2px 3px rgba(17, 17, 17, 0.2);
+}
+.color-dark-grey.style-five .button svg {
+  fill: #eee;
+}
+.color-dark-grey.style-five .button:hover {
+  background: gray;
+}
+.color-dark-grey.style-five .button:active {
+  background: #4d4d4d;
+}
+.color-dark-grey.style-six .button {
+  background-color: #4d4d4d;
+  background-image: -moz-linear-gradient(gray, #4d4d4d);
+  background-image: -o-linear-gradient(gray, #4d4d4d);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, gray), color-stop(1, #4d4d4d));
+  background-image: -webkit-linear-gradient(gray, #4d4d4d);
+  background-image: -ms-linear-gradient(gray, #4d4d4d);
+  background-image: linear-gradient(gray, #4d4d4d);
+  border-radius: 4px;
+  color: #eee;
+  line-height: 28px;
+  border: 1px solid #4d4d4d;
+  box-shadow: 2px 2px 3px rgba(17, 17, 17, 0.2);
+}
+.color-dark-grey.style-six .button svg {
+  fill: #eee;
+}
+.color-dark-grey.style-six .button:hover {
+  background-color: #666;
+  background-image: -moz-linear-gradient(#999999, #666);
+  background-image: -o-linear-gradient(#999999, #666);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #999999), color-stop(1, #666));
+  background-image: -webkit-linear-gradient(#999999, #666);
+  background-image: -ms-linear-gradient(#999999, #666);
+  background-image: linear-gradient(#999999, #666);
+}
+.color-dark-grey.style-six .button:active {
+  background-color: #666;
+  background-image: -moz-linear-gradient(#4d4d4d, #666);
+  background-image: -o-linear-gradient(#4d4d4d, #666);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #4d4d4d), color-stop(1, #666));
+  background-image: -webkit-linear-gradient(#4d4d4d, #666);
+  background-image: -ms-linear-gradient(#4d4d4d, #666);
+  background-image: linear-gradient(#4d4d4d, #666);
+}
+
+.color-off-black .button {
+  background: #111;
+  color: #eee;
+  text-shadow: 1px 1px 0 rgba(17, 17, 17, 0.2);
+}
+.color-off-black.style-one .button {
+  background: none;
+  color: #111;
+  text-shadow: none;
+  padding: 0;
+}
+.color-off-black.style-one .button svg {
+  fill: #111;
+}
+.color-off-black.style-one .button:hover {
+  color: #2b2b2b;
+}
+.color-off-black.style-one .button:hover svg {
+  fill: #2b2b2b;
+}
+.color-off-black.style-one .button:active {
+  color: black;
+}
+.color-off-black.style-one .button:active svg {
+  fill: black;
+}
+.color-off-black.style-two .button {
+  background: #111;
+  color: #eee;
+}
+.color-off-black.style-two .button svg {
+  fill: #eee;
+}
+.color-off-black.style-two .button:hover {
+  background: #2b2b2b;
+}
+.color-off-black.style-two .button:active {
+  background: black;
+}
+.color-off-black.style-three .button {
+  background: #111;
+  border-radius: 4px;
+  color: #eee;
+}
+.color-off-black.style-three .button svg {
+  fill: #eee;
+}
+.color-off-black.style-three .button:hover {
+  background: #2b2b2b;
+}
+.color-off-black.style-three .button:active {
+  background: black;
+}
+.color-off-black.style-four .button {
+  background: #111;
+  border-radius: 4px;
+  color: #eee;
+  line-height: 28px;
+  border: 1px solid black;
+}
+.color-off-black.style-four .button svg {
+  fill: #eee;
+}
+.color-off-black.style-four .button:hover {
+  background: #2b2b2b;
+}
+.color-off-black.style-four .button:active {
+  background: black;
+}
+.color-off-black.style-five .button {
+  background: #111;
+  border-radius: 4px;
+  color: #eee;
+  line-height: 28px;
+  border: 1px solid black;
+  box-shadow: 2px 2px 3px rgba(17, 17, 17, 0.2);
+}
+.color-off-black.style-five .button svg {
+  fill: #eee;
+}
+.color-off-black.style-five .button:hover {
+  background: #2b2b2b;
+}
+.color-off-black.style-five .button:active {
+  background: black;
+}
+.color-off-black.style-six .button {
+  background-color: black;
+  background-image: -moz-linear-gradient(#2b2b2b, black);
+  background-image: -o-linear-gradient(#2b2b2b, black);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #2b2b2b), color-stop(1, black));
+  background-image: -webkit-linear-gradient(#2b2b2b, black);
+  background-image: -ms-linear-gradient(#2b2b2b, black);
+  background-image: linear-gradient(#2b2b2b, black);
+  border-radius: 4px;
+  color: #eee;
+  line-height: 28px;
+  border: 1px solid black;
+  box-shadow: 2px 2px 3px rgba(17, 17, 17, 0.2);
+}
+.color-off-black.style-six .button svg {
+  fill: #eee;
+}
+.color-off-black.style-six .button:hover {
+  background-color: #111;
+  background-image: -moz-linear-gradient(#444444, #111);
+  background-image: -o-linear-gradient(#444444, #111);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #444444), color-stop(1, #111));
+  background-image: -webkit-linear-gradient(#444444, #111);
+  background-image: -ms-linear-gradient(#444444, #111);
+  background-image: linear-gradient(#444444, #111);
+}
+.color-off-black.style-six .button:active {
+  background-color: #111;
+  background-image: -moz-linear-gradient(black, #111);
+  background-image: -o-linear-gradient(black, #111);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, black), color-stop(1, #111));
+  background-image: -webkit-linear-gradient(black, #111);
+  background-image: -ms-linear-gradient(black, #111);
+  background-image: linear-gradient(black, #111);
+}
+
+.color-red .button {
+  background: #ed1c24;
+  color: #eee;
+  text-shadow: 1px 1px 0 rgba(17, 17, 17, 0.2);
+}
+.color-red.style-one .button {
+  background: none;
+  color: #ed1c24;
+  text-shadow: none;
+  padding: 0;
+}
+.color-red.style-one .button svg {
+  fill: #ed1c24;
+}
+.color-red.style-one .button:hover {
+  color: #f14b52;
+}
+.color-red.style-one .button:hover svg {
+  fill: #f14b52;
+}
+.color-red.style-one .button:active {
+  color: #c61017;
+}
+.color-red.style-one .button:active svg {
+  fill: #c61017;
+}
+.color-red.style-two .button {
+  background: #ed1c24;
+  color: #eee;
+}
+.color-red.style-two .button svg {
+  fill: #eee;
+}
+.color-red.style-two .button:hover {
+  background: #f14b52;
+}
+.color-red.style-two .button:active {
+  background: #c61017;
+}
+.color-red.style-three .button {
+  background: #ed1c24;
+  border-radius: 4px;
+  color: #eee;
+}
+.color-red.style-three .button svg {
+  fill: #eee;
+}
+.color-red.style-three .button:hover {
+  background: #f14b52;
+}
+.color-red.style-three .button:active {
+  background: #c61017;
+}
+.color-red.style-four .button {
+  background: #ed1c24;
+  border-radius: 4px;
+  color: #eee;
+  line-height: 28px;
+  border: 1px solid #c61017;
+}
+.color-red.style-four .button svg {
+  fill: #eee;
+}
+.color-red.style-four .button:hover {
+  background: #f14b52;
+}
+.color-red.style-four .button:active {
+  background: #c61017;
+}
+.color-red.style-five .button {
+  background: #ed1c24;
+  border-radius: 4px;
+  color: #eee;
+  line-height: 28px;
+  border: 1px solid #c61017;
+  box-shadow: 2px 2px 3px rgba(17, 17, 17, 0.2);
+}
+.color-red.style-five .button svg {
+  fill: #eee;
+}
+.color-red.style-five .button:hover {
+  background: #f14b52;
+}
+.color-red.style-five .button:active {
+  background: #c61017;
+}
+.color-red.style-six .button {
+  background-color: #c61017;
+  background-image: -moz-linear-gradient(#f14b52, #c61017);
+  background-image: -o-linear-gradient(#f14b52, #c61017);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f14b52), color-stop(1, #c61017));
+  background-image: -webkit-linear-gradient(#f14b52, #c61017);
+  background-image: -ms-linear-gradient(#f14b52, #c61017);
+  background-image: linear-gradient(#f14b52, #c61017);
+  border-radius: 4px;
+  color: #eee;
+  line-height: 28px;
+  border: 1px solid #c61017;
+  box-shadow: 2px 2px 3px rgba(17, 17, 17, 0.2);
+}
+.color-red.style-six .button svg {
+  fill: #eee;
+}
+.color-red.style-six .button:hover {
+  background-color: #ed1c24;
+  background-image: -moz-linear-gradient(#f47b7f, #ed1c24);
+  background-image: -o-linear-gradient(#f47b7f, #ed1c24);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f47b7f), color-stop(1, #ed1c24));
+  background-image: -webkit-linear-gradient(#f47b7f, #ed1c24);
+  background-image: -ms-linear-gradient(#f47b7f, #ed1c24);
+  background-image: linear-gradient(#f47b7f, #ed1c24);
+}
+.color-red.style-six .button:active {
+  background-color: #ed1c24;
+  background-image: -moz-linear-gradient(#c61017, #ed1c24);
+  background-image: -o-linear-gradient(#c61017, #ed1c24);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #c61017), color-stop(1, #ed1c24));
+  background-image: -webkit-linear-gradient(#c61017, #ed1c24);
+  background-image: -ms-linear-gradient(#c61017, #ed1c24);
+  background-image: linear-gradient(#c61017, #ed1c24);
+}
+
+.color-orange .button {
+  background: #ff6600;
+  color: #eee;
+  text-shadow: 1px 1px 0 rgba(17, 17, 17, 0.2);
+}
+.color-orange.style-one .button {
+  background: none;
+  color: #ff6600;
+  text-shadow: none;
+  padding: 0;
+}
+.color-orange.style-one .button svg {
+  fill: #ff6600;
+}
+.color-orange.style-one .button:hover {
+  color: #ff8533;
+}
+.color-orange.style-one .button:hover svg {
+  fill: #ff8533;
+}
+.color-orange.style-one .button:active {
+  color: #cc5200;
+}
+.color-orange.style-one .button:active svg {
+  fill: #cc5200;
+}
+.color-orange.style-two .button {
+  background: #ff6600;
+  color: #eee;
+}
+.color-orange.style-two .button svg {
+  fill: #eee;
+}
+.color-orange.style-two .button:hover {
+  background: #ff8533;
+}
+.color-orange.style-two .button:active {
+  background: #cc5200;
+}
+.color-orange.style-three .button {
+  background: #ff6600;
+  border-radius: 4px;
+  color: #eee;
+}
+.color-orange.style-three .button svg {
+  fill: #eee;
+}
+.color-orange.style-three .button:hover {
+  background: #ff8533;
+}
+.color-orange.style-three .button:active {
+  background: #cc5200;
+}
+.color-orange.style-four .button {
+  background: #ff6600;
+  border-radius: 4px;
+  color: #eee;
+  line-height: 28px;
+  border: 1px solid #cc5200;
+}
+.color-orange.style-four .button svg {
+  fill: #eee;
+}
+.color-orange.style-four .button:hover {
+  background: #ff8533;
+}
+.color-orange.style-four .button:active {
+  background: #cc5200;
+}
+.color-orange.style-five .button {
+  background: #ff6600;
+  border-radius: 4px;
+  color: #eee;
+  line-height: 28px;
+  border: 1px solid #cc5200;
+  box-shadow: 2px 2px 3px rgba(17, 17, 17, 0.2);
+}
+.color-orange.style-five .button svg {
+  fill: #eee;
+}
+.color-orange.style-five .button:hover {
+  background: #ff8533;
+}
+.color-orange.style-five .button:active {
+  background: #cc5200;
+}
+.color-orange.style-six .button {
+  background-color: #cc5200;
+  background-image: -moz-linear-gradient(#ff8533, #cc5200);
+  background-image: -o-linear-gradient(#ff8533, #cc5200);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #ff8533), color-stop(1, #cc5200));
+  background-image: -webkit-linear-gradient(#ff8533, #cc5200);
+  background-image: -ms-linear-gradient(#ff8533, #cc5200);
+  background-image: linear-gradient(#ff8533, #cc5200);
+  border-radius: 4px;
+  color: #eee;
+  line-height: 28px;
+  border: 1px solid #cc5200;
+  box-shadow: 2px 2px 3px rgba(17, 17, 17, 0.2);
+}
+.color-orange.style-six .button svg {
+  fill: #eee;
+}
+.color-orange.style-six .button:hover {
+  background-color: #ff6600;
+  background-image: -moz-linear-gradient(#ffa366, #ff6600);
+  background-image: -o-linear-gradient(#ffa366, #ff6600);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #ffa366), color-stop(1, #ff6600));
+  background-image: -webkit-linear-gradient(#ffa366, #ff6600);
+  background-image: -ms-linear-gradient(#ffa366, #ff6600);
+  background-image: linear-gradient(#ffa366, #ff6600);
+}
+.color-orange.style-six .button:active {
+  background-color: #ff6600;
+  background-image: -moz-linear-gradient(#cc5200, #ff6600);
+  background-image: -o-linear-gradient(#cc5200, #ff6600);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #cc5200), color-stop(1, #ff6600));
+  background-image: -webkit-linear-gradient(#cc5200, #ff6600);
+  background-image: -ms-linear-gradient(#cc5200, #ff6600);
+  background-image: linear-gradient(#cc5200, #ff6600);
+}
+
+.color-yellow .button {
+  background: #ffcc00;
+  color: #111;
+}
+.color-yellow.style-one .button {
+  background: none;
+  color: #ffcc00;
+  text-shadow: none;
+  padding: 0;
+}
+.color-yellow.style-one .button svg {
+  fill: #ffcc00;
+}
+.color-yellow.style-one .button:hover {
+  color: #ffd633;
+}
+.color-yellow.style-one .button:hover svg {
+  fill: #ffd633;
+}
+.color-yellow.style-one .button:active {
+  color: #cca300;
+}
+.color-yellow.style-one .button:active svg {
+  fill: #cca300;
+}
+.color-yellow.style-two .button {
+  background: #ffcc00;
+  color: #111;
+}
+.color-yellow.style-two .button svg {
+  fill: #111;
+}
+.color-yellow.style-two .button:hover {
+  background: #ffd633;
+}
+.color-yellow.style-two .button:active {
+  background: #cca300;
+}
+.color-yellow.style-three .button {
+  background: #ffcc00;
+  border-radius: 4px;
+  color: #111;
+}
+.color-yellow.style-three .button svg {
+  fill: #111;
+}
+.color-yellow.style-three .button:hover {
+  background: #ffd633;
+}
+.color-yellow.style-three .button:active {
+  background: #cca300;
+}
+.color-yellow.style-four .button {
+  background: #ffcc00;
+  border-radius: 4px;
+  color: #111;
+  line-height: 28px;
+  border: 1px solid #cca300;
+}
+.color-yellow.style-four .button svg {
+  fill: #111;
+}
+.color-yellow.style-four .button:hover {
+  background: #ffd633;
+}
+.color-yellow.style-four .button:active {
+  background: #cca300;
+}
+.color-yellow.style-five .button {
+  background: #ffcc00;
+  border-radius: 4px;
+  color: #111;
+  line-height: 28px;
+  border: 1px solid #cca300;
+  box-shadow: 2px 2px 3px rgba(17, 17, 17, 0.2);
+}
+.color-yellow.style-five .button svg {
+  fill: #111;
+}
+.color-yellow.style-five .button:hover {
+  background: #ffd633;
+}
+.color-yellow.style-five .button:active {
+  background: #cca300;
+}
+.color-yellow.style-six .button {
+  background-color: #cca300;
+  background-image: -moz-linear-gradient(#ffd633, #cca300);
+  background-image: -o-linear-gradient(#ffd633, #cca300);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #ffd633), color-stop(1, #cca300));
+  background-image: -webkit-linear-gradient(#ffd633, #cca300);
+  background-image: -ms-linear-gradient(#ffd633, #cca300);
+  background-image: linear-gradient(#ffd633, #cca300);
+  border-radius: 4px;
+  color: #111;
+  line-height: 28px;
+  border: 1px solid #cca300;
+  box-shadow: 2px 2px 3px rgba(17, 17, 17, 0.2);
+}
+.color-yellow.style-six .button svg {
+  fill: #111;
+}
+.color-yellow.style-six .button:hover {
+  background-color: #ffcc00;
+  background-image: -moz-linear-gradient(#ffe066, #ffcc00);
+  background-image: -o-linear-gradient(#ffe066, #ffcc00);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #ffe066), color-stop(1, #ffcc00));
+  background-image: -webkit-linear-gradient(#ffe066, #ffcc00);
+  background-image: -ms-linear-gradient(#ffe066, #ffcc00);
+  background-image: linear-gradient(#ffe066, #ffcc00);
+}
+.color-yellow.style-six .button:active {
+  background-color: #ffcc00;
+  background-image: -moz-linear-gradient(#cca300, #ffcc00);
+  background-image: -o-linear-gradient(#cca300, #ffcc00);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #cca300), color-stop(1, #ffcc00));
+  background-image: -webkit-linear-gradient(#cca300, #ffcc00);
+  background-image: -ms-linear-gradient(#cca300, #ffcc00);
+  background-image: linear-gradient(#cca300, #ffcc00);
+}
+
+.color-forest-green .button {
+  background: #666600;
+  color: #eee;
+  text-shadow: 1px 1px 0 rgba(17, 17, 17, 0.2);
+}
+.color-forest-green.style-one .button {
+  background: none;
+  color: #666600;
+  text-shadow: none;
+  padding: 0;
+}
+.color-forest-green.style-one .button svg {
+  fill: #666600;
+}
+.color-forest-green.style-one .button:hover {
+  color: #999900;
+}
+.color-forest-green.style-one .button:hover svg {
+  fill: #999900;
+}
+.color-forest-green.style-one .button:active {
+  color: #333300;
+}
+.color-forest-green.style-one .button:active svg {
+  fill: #333300;
+}
+.color-forest-green.style-two .button {
+  background: #666600;
+  color: #eee;
+}
+.color-forest-green.style-two .button svg {
+  fill: #eee;
+}
+.color-forest-green.style-two .button:hover {
+  background: #999900;
+}
+.color-forest-green.style-two .button:active {
+  background: #333300;
+}
+.color-forest-green.style-three .button {
+  background: #666600;
+  border-radius: 4px;
+  color: #eee;
+}
+.color-forest-green.style-three .button svg {
+  fill: #eee;
+}
+.color-forest-green.style-three .button:hover {
+  background: #999900;
+}
+.color-forest-green.style-three .button:active {
+  background: #333300;
+}
+.color-forest-green.style-four .button {
+  background: #666600;
+  border-radius: 4px;
+  color: #eee;
+  line-height: 28px;
+  border: 1px solid #333300;
+}
+.color-forest-green.style-four .button svg {
+  fill: #eee;
+}
+.color-forest-green.style-four .button:hover {
+  background: #999900;
+}
+.color-forest-green.style-four .button:active {
+  background: #333300;
+}
+.color-forest-green.style-five .button {
+  background: #666600;
+  border-radius: 4px;
+  color: #eee;
+  line-height: 28px;
+  border: 1px solid #333300;
+  box-shadow: 2px 2px 3px rgba(17, 17, 17, 0.2);
+}
+.color-forest-green.style-five .button svg {
+  fill: #eee;
+}
+.color-forest-green.style-five .button:hover {
+  background: #999900;
+}
+.color-forest-green.style-five .button:active {
+  background: #333300;
+}
+.color-forest-green.style-six .button {
+  background-color: #333300;
+  background-image: -moz-linear-gradient(#999900, #333300);
+  background-image: -o-linear-gradient(#999900, #333300);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #999900), color-stop(1, #333300));
+  background-image: -webkit-linear-gradient(#999900, #333300);
+  background-image: -ms-linear-gradient(#999900, #333300);
+  background-image: linear-gradient(#999900, #333300);
+  border-radius: 4px;
+  color: #eee;
+  line-height: 28px;
+  border: 1px solid #333300;
+  box-shadow: 2px 2px 3px rgba(17, 17, 17, 0.2);
+}
+.color-forest-green.style-six .button svg {
+  fill: #eee;
+}
+.color-forest-green.style-six .button:hover {
+  background-color: #666600;
+  background-image: -moz-linear-gradient(#cccc00, #666600);
+  background-image: -o-linear-gradient(#cccc00, #666600);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #cccc00), color-stop(1, #666600));
+  background-image: -webkit-linear-gradient(#cccc00, #666600);
+  background-image: -ms-linear-gradient(#cccc00, #666600);
+  background-image: linear-gradient(#cccc00, #666600);
+}
+.color-forest-green.style-six .button:active {
+  background-color: #666600;
+  background-image: -moz-linear-gradient(#333300, #666600);
+  background-image: -o-linear-gradient(#333300, #666600);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #333300), color-stop(1, #666600));
+  background-image: -webkit-linear-gradient(#333300, #666600);
+  background-image: -ms-linear-gradient(#333300, #666600);
+  background-image: linear-gradient(#333300, #666600);
+}
+
+.color-green .button {
+  background: #51b848;
+  color: #eee;
+  text-shadow: 1px 1px 0 rgba(17, 17, 17, 0.2);
+}
+.color-green.style-one .button {
+  background: none;
+  color: #51b848;
+  text-shadow: none;
+  padding: 0;
+}
+.color-green.style-one .button svg {
+  fill: #51b848;
+}
+.color-green.style-one .button:hover {
+  color: #74c66d;
+}
+.color-green.style-one .button:hover svg {
+  fill: #74c66d;
+}
+.color-green.style-one .button:active {
+  color: #419439;
+}
+.color-green.style-one .button:active svg {
+  fill: #419439;
+}
+.color-green.style-two .button {
+  background: #51b848;
+  color: #eee;
+}
+.color-green.style-two .button svg {
+  fill: #eee;
+}
+.color-green.style-two .button:hover {
+  background: #74c66d;
+}
+.color-green.style-two .button:active {
+  background: #419439;
+}
+.color-green.style-three .button {
+  background: #51b848;
+  border-radius: 4px;
+  color: #eee;
+}
+.color-green.style-three .button svg {
+  fill: #eee;
+}
+.color-green.style-three .button:hover {
+  background: #74c66d;
+}
+.color-green.style-three .button:active {
+  background: #419439;
+}
+.color-green.style-four .button {
+  background: #51b848;
+  border-radius: 4px;
+  color: #eee;
+  line-height: 28px;
+  border: 1px solid #419439;
+}
+.color-green.style-four .button svg {
+  fill: #eee;
+}
+.color-green.style-four .button:hover {
+  background: #74c66d;
+}
+.color-green.style-four .button:active {
+  background: #419439;
+}
+.color-green.style-five .button {
+  background: #51b848;
+  border-radius: 4px;
+  color: #eee;
+  line-height: 28px;
+  border: 1px solid #419439;
+  box-shadow: 2px 2px 3px rgba(17, 17, 17, 0.2);
+}
+.color-green.style-five .button svg {
+  fill: #eee;
+}
+.color-green.style-five .button:hover {
+  background: #74c66d;
+}
+.color-green.style-five .button:active {
+  background: #419439;
+}
+.color-green.style-six .button {
+  background-color: #419439;
+  background-image: -moz-linear-gradient(#74c66d, #419439);
+  background-image: -o-linear-gradient(#74c66d, #419439);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #74c66d), color-stop(1, #419439));
+  background-image: -webkit-linear-gradient(#74c66d, #419439);
+  background-image: -ms-linear-gradient(#74c66d, #419439);
+  background-image: linear-gradient(#74c66d, #419439);
+  border-radius: 4px;
+  color: #eee;
+  line-height: 28px;
+  border: 1px solid #419439;
+  box-shadow: 2px 2px 3px rgba(17, 17, 17, 0.2);
+}
+.color-green.style-six .button svg {
+  fill: #eee;
+}
+.color-green.style-six .button:hover {
+  background-color: #51b848;
+  background-image: -moz-linear-gradient(#97d591, #51b848);
+  background-image: -o-linear-gradient(#97d591, #51b848);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #97d591), color-stop(1, #51b848));
+  background-image: -webkit-linear-gradient(#97d591, #51b848);
+  background-image: -ms-linear-gradient(#97d591, #51b848);
+  background-image: linear-gradient(#97d591, #51b848);
+}
+.color-green.style-six .button:active {
+  background-color: #51b848;
+  background-image: -moz-linear-gradient(#419439, #51b848);
+  background-image: -o-linear-gradient(#419439, #51b848);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #419439), color-stop(1, #51b848));
+  background-image: -webkit-linear-gradient(#419439, #51b848);
+  background-image: -ms-linear-gradient(#419439, #51b848);
+  background-image: linear-gradient(#419439, #51b848);
+}
+
+.color-teal .button {
+  background: #006666;
+  color: #eee;
+  text-shadow: 1px 1px 0 rgba(17, 17, 17, 0.2);
+}
+.color-teal.style-one .button {
+  background: none;
+  color: #006666;
+  text-shadow: none;
+  padding: 0;
+}
+.color-teal.style-one .button svg {
+  fill: #006666;
+}
+.color-teal.style-one .button:hover {
+  color: #009999;
+}
+.color-teal.style-one .button:hover svg {
+  fill: #009999;
+}
+.color-teal.style-one .button:active {
+  color: #003333;
+}
+.color-teal.style-one .button:active svg {
+  fill: #003333;
+}
+.color-teal.style-two .button {
+  background: #006666;
+  color: #eee;
+}
+.color-teal.style-two .button svg {
+  fill: #eee;
+}
+.color-teal.style-two .button:hover {
+  background: #009999;
+}
+.color-teal.style-two .button:active {
+  background: #003333;
+}
+.color-teal.style-three .button {
+  background: #006666;
+  border-radius: 4px;
+  color: #eee;
+}
+.color-teal.style-three .button svg {
+  fill: #eee;
+}
+.color-teal.style-three .button:hover {
+  background: #009999;
+}
+.color-teal.style-three .button:active {
+  background: #003333;
+}
+.color-teal.style-four .button {
+  background: #006666;
+  border-radius: 4px;
+  color: #eee;
+  line-height: 28px;
+  border: 1px solid #003333;
+}
+.color-teal.style-four .button svg {
+  fill: #eee;
+}
+.color-teal.style-four .button:hover {
+  background: #009999;
+}
+.color-teal.style-four .button:active {
+  background: #003333;
+}
+.color-teal.style-five .button {
+  background: #006666;
+  border-radius: 4px;
+  color: #eee;
+  line-height: 28px;
+  border: 1px solid #003333;
+  box-shadow: 2px 2px 3px rgba(17, 17, 17, 0.2);
+}
+.color-teal.style-five .button svg {
+  fill: #eee;
+}
+.color-teal.style-five .button:hover {
+  background: #009999;
+}
+.color-teal.style-five .button:active {
+  background: #003333;
+}
+.color-teal.style-six .button {
+  background-color: #003333;
+  background-image: -moz-linear-gradient(#009999, #003333);
+  background-image: -o-linear-gradient(#009999, #003333);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #009999), color-stop(1, #003333));
+  background-image: -webkit-linear-gradient(#009999, #003333);
+  background-image: -ms-linear-gradient(#009999, #003333);
+  background-image: linear-gradient(#009999, #003333);
+  border-radius: 4px;
+  color: #eee;
+  line-height: 28px;
+  border: 1px solid #003333;
+  box-shadow: 2px 2px 3px rgba(17, 17, 17, 0.2);
+}
+.color-teal.style-six .button svg {
+  fill: #eee;
+}
+.color-teal.style-six .button:hover {
+  background-color: #006666;
+  background-image: -moz-linear-gradient(#00cccc, #006666);
+  background-image: -o-linear-gradient(#00cccc, #006666);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #00cccc), color-stop(1, #006666));
+  background-image: -webkit-linear-gradient(#00cccc, #006666);
+  background-image: -ms-linear-gradient(#00cccc, #006666);
+  background-image: linear-gradient(#00cccc, #006666);
+}
+.color-teal.style-six .button:active {
+  background-color: #006666;
+  background-image: -moz-linear-gradient(#003333, #006666);
+  background-image: -o-linear-gradient(#003333, #006666);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #003333), color-stop(1, #006666));
+  background-image: -webkit-linear-gradient(#003333, #006666);
+  background-image: -ms-linear-gradient(#003333, #006666);
+  background-image: linear-gradient(#003333, #006666);
+}
+
+.color-blue .button {
+  background: #0090cb;
+  color: #eee;
+  text-shadow: 1px 1px 0 rgba(17, 17, 17, 0.2);
+}
+.color-blue.style-one .button {
+  background: none;
+  color: #0090cb;
+  text-shadow: none;
+  padding: 0;
+}
+.color-blue.style-one .button svg {
+  fill: #0090cb;
+}
+.color-blue.style-one .button:hover {
+  color: #00b4fe;
+}
+.color-blue.style-one .button:hover svg {
+  fill: #00b4fe;
+}
+.color-blue.style-one .button:active {
+  color: #006c98;
+}
+.color-blue.style-one .button:active svg {
+  fill: #006c98;
+}
+.color-blue.style-two .button {
+  background: #0090cb;
+  color: #eee;
+}
+.color-blue.style-two .button svg {
+  fill: #eee;
+}
+.color-blue.style-two .button:hover {
+  background: #00b4fe;
+}
+.color-blue.style-two .button:active {
+  background: #006c98;
+}
+.color-blue.style-three .button {
+  background: #0090cb;
+  border-radius: 4px;
+  color: #eee;
+}
+.color-blue.style-three .button svg {
+  fill: #eee;
+}
+.color-blue.style-three .button:hover {
+  background: #00b4fe;
+}
+.color-blue.style-three .button:active {
+  background: #006c98;
+}
+.color-blue.style-four .button {
+  background: #0090cb;
+  border-radius: 4px;
+  color: #eee;
+  line-height: 28px;
+  border: 1px solid #006c98;
+}
+.color-blue.style-four .button svg {
+  fill: #eee;
+}
+.color-blue.style-four .button:hover {
+  background: #00b4fe;
+}
+.color-blue.style-four .button:active {
+  background: #006c98;
+}
+.color-blue.style-five .button {
+  background: #0090cb;
+  border-radius: 4px;
+  color: #eee;
+  line-height: 28px;
+  border: 1px solid #006c98;
+  box-shadow: 2px 2px 3px rgba(17, 17, 17, 0.2);
+}
+.color-blue.style-five .button svg {
+  fill: #eee;
+}
+.color-blue.style-five .button:hover {
+  background: #00b4fe;
+}
+.color-blue.style-five .button:active {
+  background: #006c98;
+}
+.color-blue.style-six .button {
+  background-color: #006c98;
+  background-image: -moz-linear-gradient(#00b4fe, #006c98);
+  background-image: -o-linear-gradient(#00b4fe, #006c98);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #00b4fe), color-stop(1, #006c98));
+  background-image: -webkit-linear-gradient(#00b4fe, #006c98);
+  background-image: -ms-linear-gradient(#00b4fe, #006c98);
+  background-image: linear-gradient(#00b4fe, #006c98);
+  border-radius: 4px;
+  color: #eee;
+  line-height: 28px;
+  border: 1px solid #006c98;
+  box-shadow: 2px 2px 3px rgba(17, 17, 17, 0.2);
+}
+.color-blue.style-six .button svg {
+  fill: #eee;
+}
+.color-blue.style-six .button:hover {
+  background-color: #0090cb;
+  background-image: -moz-linear-gradient(#32c3ff, #0090cb);
+  background-image: -o-linear-gradient(#32c3ff, #0090cb);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #32c3ff), color-stop(1, #0090cb));
+  background-image: -webkit-linear-gradient(#32c3ff, #0090cb);
+  background-image: -ms-linear-gradient(#32c3ff, #0090cb);
+  background-image: linear-gradient(#32c3ff, #0090cb);
+}
+.color-blue.style-six .button:active {
+  background-color: #0090cb;
+  background-image: -moz-linear-gradient(#006c98, #0090cb);
+  background-image: -o-linear-gradient(#006c98, #0090cb);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #006c98), color-stop(1, #0090cb));
+  background-image: -webkit-linear-gradient(#006c98, #0090cb);
+  background-image: -ms-linear-gradient(#006c98, #0090cb);
+  background-image: linear-gradient(#006c98, #0090cb);
+}
+
+.color-cyan .button {
+  background: #00ccff;
+  color: #111;
+}
+.color-cyan.style-one .button {
+  background: none;
+  color: #00ccff;
+  text-shadow: none;
+  padding: 0;
+}
+.color-cyan.style-one .button svg {
+  fill: #00ccff;
+}
+.color-cyan.style-one .button:hover {
+  color: #33d6ff;
+}
+.color-cyan.style-one .button:hover svg {
+  fill: #33d6ff;
+}
+.color-cyan.style-one .button:active {
+  color: #00a3cc;
+}
+.color-cyan.style-one .button:active svg {
+  fill: #00a3cc;
+}
+.color-cyan.style-two .button {
+  background: #00ccff;
+  color: #111;
+}
+.color-cyan.style-two .button svg {
+  fill: #111;
+}
+.color-cyan.style-two .button:hover {
+  background: #33d6ff;
+}
+.color-cyan.style-two .button:active {
+  background: #00a3cc;
+}
+.color-cyan.style-three .button {
+  background: #00ccff;
+  border-radius: 4px;
+  color: #111;
+}
+.color-cyan.style-three .button svg {
+  fill: #111;
+}
+.color-cyan.style-three .button:hover {
+  background: #33d6ff;
+}
+.color-cyan.style-three .button:active {
+  background: #00a3cc;
+}
+.color-cyan.style-four .button {
+  background: #00ccff;
+  border-radius: 4px;
+  color: #111;
+  line-height: 28px;
+  border: 1px solid #00a3cc;
+}
+.color-cyan.style-four .button svg {
+  fill: #111;
+}
+.color-cyan.style-four .button:hover {
+  background: #33d6ff;
+}
+.color-cyan.style-four .button:active {
+  background: #00a3cc;
+}
+.color-cyan.style-five .button {
+  background: #00ccff;
+  border-radius: 4px;
+  color: #111;
+  line-height: 28px;
+  border: 1px solid #00a3cc;
+  box-shadow: 2px 2px 3px rgba(17, 17, 17, 0.2);
+}
+.color-cyan.style-five .button svg {
+  fill: #111;
+}
+.color-cyan.style-five .button:hover {
+  background: #33d6ff;
+}
+.color-cyan.style-five .button:active {
+  background: #00a3cc;
+}
+.color-cyan.style-six .button {
+  background-color: #00a3cc;
+  background-image: -moz-linear-gradient(#33d6ff, #00a3cc);
+  background-image: -o-linear-gradient(#33d6ff, #00a3cc);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #33d6ff), color-stop(1, #00a3cc));
+  background-image: -webkit-linear-gradient(#33d6ff, #00a3cc);
+  background-image: -ms-linear-gradient(#33d6ff, #00a3cc);
+  background-image: linear-gradient(#33d6ff, #00a3cc);
+  border-radius: 4px;
+  color: #111;
+  line-height: 28px;
+  border: 1px solid #00a3cc;
+  box-shadow: 2px 2px 3px rgba(17, 17, 17, 0.2);
+}
+.color-cyan.style-six .button svg {
+  fill: #111;
+}
+.color-cyan.style-six .button:hover {
+  background-color: #00ccff;
+  background-image: -moz-linear-gradient(#66e0ff, #00ccff);
+  background-image: -o-linear-gradient(#66e0ff, #00ccff);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #66e0ff), color-stop(1, #00ccff));
+  background-image: -webkit-linear-gradient(#66e0ff, #00ccff);
+  background-image: -ms-linear-gradient(#66e0ff, #00ccff);
+  background-image: linear-gradient(#66e0ff, #00ccff);
+}
+.color-cyan.style-six .button:active {
+  background-color: #00ccff;
+  background-image: -moz-linear-gradient(#00a3cc, #00ccff);
+  background-image: -o-linear-gradient(#00a3cc, #00ccff);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #00a3cc), color-stop(1, #00ccff));
+  background-image: -webkit-linear-gradient(#00a3cc, #00ccff);
+  background-image: -ms-linear-gradient(#00a3cc, #00ccff);
+  background-image: linear-gradient(#00a3cc, #00ccff);
+}
+
+.color-dark-cyan .button {
+  background: #00a3cc;
+  color: #eee;
+  text-shadow: 1px 1px 0 rgba(17, 17, 17, 0.2);
+}
+.color-dark-cyan.style-one .button {
+  background: none;
+  color: #00a3cc;
+  text-shadow: none;
+  padding: 0;
+}
+.color-dark-cyan.style-one .button svg {
+  fill: #00a3cc;
+}
+.color-dark-cyan.style-one .button:hover {
+  color: #00ccff;
+}
+.color-dark-cyan.style-one .button:hover svg {
+  fill: #00ccff;
+}
+.color-dark-cyan.style-one .button:active {
+  color: #007a99;
+}
+.color-dark-cyan.style-one .button:active svg {
+  fill: #007a99;
+}
+.color-dark-cyan.style-two .button {
+  background: #00a3cc;
+  color: #eee;
+}
+.color-dark-cyan.style-two .button svg {
+  fill: #eee;
+}
+.color-dark-cyan.style-two .button:hover {
+  background: #00ccff;
+}
+.color-dark-cyan.style-two .button:active {
+  background: #007a99;
+}
+.color-dark-cyan.style-three .button {
+  background: #00a3cc;
+  border-radius: 4px;
+  color: #eee;
+}
+.color-dark-cyan.style-three .button svg {
+  fill: #eee;
+}
+.color-dark-cyan.style-three .button:hover {
+  background: #00ccff;
+}
+.color-dark-cyan.style-three .button:active {
+  background: #007a99;
+}
+.color-dark-cyan.style-four .button {
+  background: #00a3cc;
+  border-radius: 4px;
+  color: #eee;
+  line-height: 28px;
+  border: 1px solid #007a99;
+}
+.color-dark-cyan.style-four .button svg {
+  fill: #eee;
+}
+.color-dark-cyan.style-four .button:hover {
+  background: #00ccff;
+}
+.color-dark-cyan.style-four .button:active {
+  background: #007a99;
+}
+.color-dark-cyan.style-five .button {
+  background: #00a3cc;
+  border-radius: 4px;
+  color: #eee;
+  line-height: 28px;
+  border: 1px solid #007a99;
+  box-shadow: 2px 2px 3px rgba(17, 17, 17, 0.2);
+}
+.color-dark-cyan.style-five .button svg {
+  fill: #eee;
+}
+.color-dark-cyan.style-five .button:hover {
+  background: #00ccff;
+}
+.color-dark-cyan.style-five .button:active {
+  background: #007a99;
+}
+.color-dark-cyan.style-six .button {
+  background-color: #007a99;
+  background-image: -moz-linear-gradient(#00ccff, #007a99);
+  background-image: -o-linear-gradient(#00ccff, #007a99);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #00ccff), color-stop(1, #007a99));
+  background-image: -webkit-linear-gradient(#00ccff, #007a99);
+  background-image: -ms-linear-gradient(#00ccff, #007a99);
+  background-image: linear-gradient(#00ccff, #007a99);
+  border-radius: 4px;
+  color: #eee;
+  line-height: 28px;
+  border: 1px solid #007a99;
+  box-shadow: 2px 2px 3px rgba(17, 17, 17, 0.2);
+}
+.color-dark-cyan.style-six .button svg {
+  fill: #eee;
+}
+.color-dark-cyan.style-six .button:hover {
+  background-color: #00a3cc;
+  background-image: -moz-linear-gradient(#33d6ff, #00a3cc);
+  background-image: -o-linear-gradient(#33d6ff, #00a3cc);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #33d6ff), color-stop(1, #00a3cc));
+  background-image: -webkit-linear-gradient(#33d6ff, #00a3cc);
+  background-image: -ms-linear-gradient(#33d6ff, #00a3cc);
+  background-image: linear-gradient(#33d6ff, #00a3cc);
+}
+.color-dark-cyan.style-six .button:active {
+  background-color: #00a3cc;
+  background-image: -moz-linear-gradient(#007a99, #00a3cc);
+  background-image: -o-linear-gradient(#007a99, #00a3cc);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #007a99), color-stop(1, #00a3cc));
+  background-image: -webkit-linear-gradient(#007a99, #00a3cc);
+  background-image: -ms-linear-gradient(#007a99, #00a3cc);
+  background-image: linear-gradient(#007a99, #00a3cc);
+}
+
+.color-midnight .button {
+  background: #002B38;
+  color: #eee;
+  text-shadow: 1px 1px 0 rgba(17, 17, 17, 0.2);
+}
+.color-midnight.style-one .button {
+  background: none;
+  color: #002B38;
+  text-shadow: none;
+  padding: 0;
+}
+.color-midnight.style-one .button svg {
+  fill: #002B38;
+}
+.color-midnight.style-one .button:hover {
+  color: #00526b;
+}
+.color-midnight.style-one .button:hover svg {
+  fill: #00526b;
+}
+.color-midnight.style-one .button:active {
+  color: #000405;
+}
+.color-midnight.style-one .button:active svg {
+  fill: #000405;
+}
+.color-midnight.style-two .button {
+  background: #002B38;
+  color: #eee;
+}
+.color-midnight.style-two .button svg {
+  fill: #eee;
+}
+.color-midnight.style-two .button:hover {
+  background: #00526b;
+}
+.color-midnight.style-two .button:active {
+  background: #000405;
+}
+.color-midnight.style-three .button {
+  background: #002B38;
+  border-radius: 4px;
+  color: #eee;
+}
+.color-midnight.style-three .button svg {
+  fill: #eee;
+}
+.color-midnight.style-three .button:hover {
+  background: #00526b;
+}
+.color-midnight.style-three .button:active {
+  background: #000405;
+}
+.color-midnight.style-four .button {
+  background: #002B38;
+  border-radius: 4px;
+  color: #eee;
+  line-height: 28px;
+  border: 1px solid #000405;
+}
+.color-midnight.style-four .button svg {
+  fill: #eee;
+}
+.color-midnight.style-four .button:hover {
+  background: #00526b;
+}
+.color-midnight.style-four .button:active {
+  background: #000405;
+}
+.color-midnight.style-five .button {
+  background: #002B38;
+  border-radius: 4px;
+  color: #eee;
+  line-height: 28px;
+  border: 1px solid #000405;
+  box-shadow: 2px 2px 3px rgba(17, 17, 17, 0.2);
+}
+.color-midnight.style-five .button svg {
+  fill: #eee;
+}
+.color-midnight.style-five .button:hover {
+  background: #00526b;
+}
+.color-midnight.style-five .button:active {
+  background: #000405;
+}
+.color-midnight.style-six .button {
+  background-color: #000405;
+  background-image: -moz-linear-gradient(#00526b, #000405);
+  background-image: -o-linear-gradient(#00526b, #000405);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #00526b), color-stop(1, #000405));
+  background-image: -webkit-linear-gradient(#00526b, #000405);
+  background-image: -ms-linear-gradient(#00526b, #000405);
+  background-image: linear-gradient(#00526b, #000405);
+  border-radius: 4px;
+  color: #eee;
+  line-height: 28px;
+  border: 1px solid #000405;
+  box-shadow: 2px 2px 3px rgba(17, 17, 17, 0.2);
+}
+.color-midnight.style-six .button svg {
+  fill: #eee;
+}
+.color-midnight.style-six .button:hover {
+  background-color: #002B38;
+  background-image: -moz-linear-gradient(#00799e, #002B38);
+  background-image: -o-linear-gradient(#00799e, #002B38);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #00799e), color-stop(1, #002B38));
+  background-image: -webkit-linear-gradient(#00799e, #002B38);
+  background-image: -ms-linear-gradient(#00799e, #002B38);
+  background-image: linear-gradient(#00799e, #002B38);
+}
+.color-midnight.style-six .button:active {
+  background-color: #002B38;
+  background-image: -moz-linear-gradient(#000405, #002B38);
+  background-image: -o-linear-gradient(#000405, #002B38);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #000405), color-stop(1, #002B38));
+  background-image: -webkit-linear-gradient(#000405, #002B38);
+  background-image: -ms-linear-gradient(#000405, #002B38);
+  background-image: linear-gradient(#000405, #002B38);
+}
+
+.color-indigo .button {
+  background: #2a1e5c;
+  color: #eee;
+  text-shadow: 1px 1px 0 rgba(17, 17, 17, 0.2);
+}
+.color-indigo.style-one .button {
+  background: none;
+  color: #2a1e5c;
+  text-shadow: none;
+  padding: 0;
+}
+.color-indigo.style-one .button svg {
+  fill: #2a1e5c;
+}
+.color-indigo.style-one .button:hover {
+  color: #3c2b82;
+}
+.color-indigo.style-one .button:hover svg {
+  fill: #3c2b82;
+}
+.color-indigo.style-one .button:active {
+  color: #181136;
+}
+.color-indigo.style-one .button:active svg {
+  fill: #181136;
+}
+.color-indigo.style-two .button {
+  background: #2a1e5c;
+  color: #eee;
+}
+.color-indigo.style-two .button svg {
+  fill: #eee;
+}
+.color-indigo.style-two .button:hover {
+  background: #3c2b82;
+}
+.color-indigo.style-two .button:active {
+  background: #181136;
+}
+.color-indigo.style-three .button {
+  background: #2a1e5c;
+  border-radius: 4px;
+  color: #eee;
+}
+.color-indigo.style-three .button svg {
+  fill: #eee;
+}
+.color-indigo.style-three .button:hover {
+  background: #3c2b82;
+}
+.color-indigo.style-three .button:active {
+  background: #181136;
+}
+.color-indigo.style-four .button {
+  background: #2a1e5c;
+  border-radius: 4px;
+  color: #eee;
+  line-height: 28px;
+  border: 1px solid #181136;
+}
+.color-indigo.style-four .button svg {
+  fill: #eee;
+}
+.color-indigo.style-four .button:hover {
+  background: #3c2b82;
+}
+.color-indigo.style-four .button:active {
+  background: #181136;
+}
+.color-indigo.style-five .button {
+  background: #2a1e5c;
+  border-radius: 4px;
+  color: #eee;
+  line-height: 28px;
+  border: 1px solid #181136;
+  box-shadow: 2px 2px 3px rgba(17, 17, 17, 0.2);
+}
+.color-indigo.style-five .button svg {
+  fill: #eee;
+}
+.color-indigo.style-five .button:hover {
+  background: #3c2b82;
+}
+.color-indigo.style-five .button:active {
+  background: #181136;
+}
+.color-indigo.style-six .button {
+  background-color: #181136;
+  background-image: -moz-linear-gradient(#3c2b82, #181136);
+  background-image: -o-linear-gradient(#3c2b82, #181136);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #3c2b82), color-stop(1, #181136));
+  background-image: -webkit-linear-gradient(#3c2b82, #181136);
+  background-image: -ms-linear-gradient(#3c2b82, #181136);
+  background-image: linear-gradient(#3c2b82, #181136);
+  border-radius: 4px;
+  color: #eee;
+  line-height: 28px;
+  border: 1px solid #181136;
+  box-shadow: 2px 2px 3px rgba(17, 17, 17, 0.2);
+}
+.color-indigo.style-six .button svg {
+  fill: #eee;
+}
+.color-indigo.style-six .button:hover {
+  background-color: #2a1e5c;
+  background-image: -moz-linear-gradient(#4d37a9, #2a1e5c);
+  background-image: -o-linear-gradient(#4d37a9, #2a1e5c);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #4d37a9), color-stop(1, #2a1e5c));
+  background-image: -webkit-linear-gradient(#4d37a9, #2a1e5c);
+  background-image: -ms-linear-gradient(#4d37a9, #2a1e5c);
+  background-image: linear-gradient(#4d37a9, #2a1e5c);
+}
+.color-indigo.style-six .button:active {
+  background-color: #2a1e5c;
+  background-image: -moz-linear-gradient(#181136, #2a1e5c);
+  background-image: -o-linear-gradient(#181136, #2a1e5c);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #181136), color-stop(1, #2a1e5c));
+  background-image: -webkit-linear-gradient(#181136, #2a1e5c);
+  background-image: -ms-linear-gradient(#181136, #2a1e5c);
+  background-image: linear-gradient(#181136, #2a1e5c);
+}
+
+.color-purple .button {
+  background: #66439a;
+  color: #eee;
+  text-shadow: 1px 1px 0 rgba(17, 17, 17, 0.2);
+}
+.color-purple.style-one .button {
+  background: none;
+  color: #66439a;
+  text-shadow: none;
+  padding: 0;
+}
+.color-purple.style-one .button svg {
+  fill: #66439a;
+}
+.color-purple.style-one .button:hover {
+  color: #7f59b7;
+}
+.color-purple.style-one .button:hover svg {
+  fill: #7f59b7;
+}
+.color-purple.style-one .button:active {
+  color: #4e3476;
+}
+.color-purple.style-one .button:active svg {
+  fill: #4e3476;
+}
+.color-purple.style-two .button {
+  background: #66439a;
+  color: #eee;
+}
+.color-purple.style-two .button svg {
+  fill: #eee;
+}
+.color-purple.style-two .button:hover {
+  background: #7f59b7;
+}
+.color-purple.style-two .button:active {
+  background: #4e3476;
+}
+.color-purple.style-three .button {
+  background: #66439a;
+  border-radius: 4px;
+  color: #eee;
+}
+.color-purple.style-three .button svg {
+  fill: #eee;
+}
+.color-purple.style-three .button:hover {
+  background: #7f59b7;
+}
+.color-purple.style-three .button:active {
+  background: #4e3476;
+}
+.color-purple.style-four .button {
+  background: #66439a;
+  border-radius: 4px;
+  color: #eee;
+  line-height: 28px;
+  border: 1px solid #4e3476;
+}
+.color-purple.style-four .button svg {
+  fill: #eee;
+}
+.color-purple.style-four .button:hover {
+  background: #7f59b7;
+}
+.color-purple.style-four .button:active {
+  background: #4e3476;
+}
+.color-purple.style-five .button {
+  background: #66439a;
+  border-radius: 4px;
+  color: #eee;
+  line-height: 28px;
+  border: 1px solid #4e3476;
+  box-shadow: 2px 2px 3px rgba(17, 17, 17, 0.2);
+}
+.color-purple.style-five .button svg {
+  fill: #eee;
+}
+.color-purple.style-five .button:hover {
+  background: #7f59b7;
+}
+.color-purple.style-five .button:active {
+  background: #4e3476;
+}
+.color-purple.style-six .button {
+  background-color: #4e3476;
+  background-image: -moz-linear-gradient(#7f59b7, #4e3476);
+  background-image: -o-linear-gradient(#7f59b7, #4e3476);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #7f59b7), color-stop(1, #4e3476));
+  background-image: -webkit-linear-gradient(#7f59b7, #4e3476);
+  background-image: -ms-linear-gradient(#7f59b7, #4e3476);
+  background-image: linear-gradient(#7f59b7, #4e3476);
+  border-radius: 4px;
+  color: #eee;
+  line-height: 28px;
+  border: 1px solid #4e3476;
+  box-shadow: 2px 2px 3px rgba(17, 17, 17, 0.2);
+}
+.color-purple.style-six .button svg {
+  fill: #eee;
+}
+.color-purple.style-six .button:hover {
+  background-color: #66439a;
+  background-image: -moz-linear-gradient(#9a7dc6, #66439a);
+  background-image: -o-linear-gradient(#9a7dc6, #66439a);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #9a7dc6), color-stop(1, #66439a));
+  background-image: -webkit-linear-gradient(#9a7dc6, #66439a);
+  background-image: -ms-linear-gradient(#9a7dc6, #66439a);
+  background-image: linear-gradient(#9a7dc6, #66439a);
+}
+.color-purple.style-six .button:active {
+  background-color: #66439a;
+  background-image: -moz-linear-gradient(#4e3476, #66439a);
+  background-image: -o-linear-gradient(#4e3476, #66439a);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #4e3476), color-stop(1, #66439a));
+  background-image: -webkit-linear-gradient(#4e3476, #66439a);
+  background-image: -ms-linear-gradient(#4e3476, #66439a);
+  background-image: linear-gradient(#4e3476, #66439a);
+}
+
+.container_makingCocktail {
+  width: 100%;
+  max-width: 1000px;
+  padding: 20px 30px 0;
+  height: auto;
+  margin: 0 auto;
+}
+
+.header {
+  width: 100%;
+  border-bottom: 2px solid #0090cb;
+  margin-bottom: 40px;
+}
+
+.column-wrapper {
+  width: 48%;
+  height: auto;
+  float: left;
+}
+.column-wrapper:nth-child(2) {
+  margin-right: 2%;
+}
+.column-wrapper:nth-child(3) {
+  margin-left: 2%;
+}
+
+.color-picker,
+.style-picker,
+.size-picker {
+  width: 100%;
+  height: auto;
+}
+
+.color {
+  width: 12.5%;
+  height: 30px;
+  color: transparent;
+  float: left;
+  border: 2px solid #eee;
+  transition: 200ms ease all;
+}
+.color.off-black {
+  background: #111;
+}
+.color.dark-grey {
+  background: #666;
+}
+.color.mid-grey {
+  background: #aaa;
+}
+.color.light-grey {
+  background: #ccc;
+}
+.color.red {
+  background: #ed1c24;
+}
+.color.orange {
+  background: #ff6600;
+}
+.color.yellow {
+  background: #ffcc00;
+}
+.color.forest-green {
+  background: #666600;
+}
+.color.green {
+  background: #51b848;
+}
+.color.teal {
+  background: #006666;
+}
+.color.blue {
+  background: #0090cb;
+}
+.color.cyan {
+  background: #00ccff;
+}
+.color.dark-cyan {
+  background: #00a3cc;
+}
+.color.midnight {
+  background: #002B38;
+}
+.color.indigo {
+  background: #2a1e5c;
+}
+.color.purple {
+  background: #66439a;
+}
+.color:hover {
+  cursor: pointer;
+  border: 0 solid #eee;
+}
+.color.color-selected {
+  border: 0 solid #eee;
+}
+
+.style {
+  width: 33.3333333333%;
+  height: auto;
+  padding: 7px 0 8px 0;
+  border: 2px solid #eee;
+  color: #111;
+  float: left;
+  background: #ccc;
+  text-align: center;
+  transition: 150ms ease all;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.style:hover {
+  cursor: pointer;
+  background: #b3b3b3;
+}
+.style.style-selected {
+  background: #0090cb;
+  color: #fff;
+}
+
+.size {
+  width: 33.3333333333%;
+  height: auto;
+  padding: 7px 0 8px 0;
+  border: 2px solid #eee;
+  color: #111;
+  float: left;
+  background: #ccc;
+  text-align: center;
+  transition: 150ms ease all;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.size:hover {
+  cursor: pointer;
+  background: #b3b3b3;
+}
+.size.size-selected {
+  background: #0090cb;
+  color: #fff;
+}
+
+.buttons-wrapper {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  padding: 40px;
+  background: #fff;
+}
