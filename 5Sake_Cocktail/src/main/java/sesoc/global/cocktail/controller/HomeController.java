@@ -201,6 +201,14 @@ public class HomeController {
 	public String test() {
 		return "imsi/test";
 	}
+	/**
+	 * loading
+	 * @return
+	 */
+	@RequestMapping(value = "/loading", method = RequestMethod.GET)
+	public String loading() {
+		return "loading/loadingPage";
+	}
  
 }
 

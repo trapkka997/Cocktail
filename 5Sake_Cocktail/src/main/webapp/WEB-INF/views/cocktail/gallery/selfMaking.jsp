@@ -21,10 +21,13 @@
 <link rel="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
 <!-- photo상세 슬라이드 -->
+<<<<<<< HEAD
 <script src="./resources/assets/gallery/grid/js/modernizr.custom.js"></script>
 
 
 
+=======
+>>>>>>> branch 'master' of https://github.com/trapkka997/Cocktail
 <style>
 .card {
 	flex-direction: inherit;
@@ -308,11 +311,15 @@
 			</div>
 		</div>
 	</div>
-	<!-- 사진 상세 슬라이드 -->
+	<!-- modal -->
+	<script src="./resources/assets/gallery/js/pictureUpload.js"></script>
+		<!-- 사진 상세 슬라이드 -->
+	<script src="./resources/assets/gallery/grid/js/modernizr.custom.js"></script>
 	<script src="./resources/assets/gallery/grid/js/imagesloaded.pkgd.min.js"></script>
 	<script src="./resources/assets/gallery/grid/js/masonry.pkgd.min.js"></script>
 	<script src="./resources/assets/gallery/grid/js/classie.js"></script>
 	<script src="./resources/assets/gallery/grid/js/cbpGridGallery.js"></script>
+<<<<<<< HEAD
 	<!-- modal -->
 	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -340,6 +347,9 @@
 
 		});
 	</script>
+=======
+	
+>>>>>>> branch 'master' of https://github.com/trapkka997/Cocktail
 	
 	<script>
 		new CBPGridGallery( document.getElementById( 'grid-gallery' ) );
