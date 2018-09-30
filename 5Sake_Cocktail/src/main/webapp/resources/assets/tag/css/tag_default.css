@@ -64,10 +64,10 @@ body {
   border-radius:0 0.5em 0.5em 0;
 }
 
-.grid {
+/* .grid {
   border:1px solid #dbb4b4;
 }
-
+ */
 .grid:after {
   content:'';
   display:block;
