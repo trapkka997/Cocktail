@@ -90,12 +90,6 @@ h4 {
 		});		
 		/* 네모 친 id를 가진 i 태그 클릭시 body부분을 로드해서 띄워줍니다.*/
 	});
-	function updateScrollbar() {
-		  $messages.mCustomScrollbar("update").mCustomScrollbar('scrollTo', 'bottom', {
-		    scrollInertia: 10,
-		    timeout: 0
-		  });
-		}
 </script>
 </head>
 <body>
@@ -103,13 +97,13 @@ h4 {
 		<div class="container-fluid">
 			<div class="container">
 				<div class="navbar-home">
-					<a href="/cocktail/"> <img
-						src='./resources/assets/basic/img/navbar_home2.png' class='img'
-						style="" />
+					<a href="/cocktail/"> 
+					<img src='./resources/assets/basic/img/navbar_home2.png' class='img' style="" />
 					</a>
 				</div>
 				<!-- navbar-home_end -->
 				<div class="navbar-left" style="width: 390px;">
+<<<<<<< HEAD
 					<a class="navbar-toggle" data-toggle="down" aria-expanded="false"
 						href="#"> <span></span> <span></span> <span></span>
 						<div id="recommend" class="dropdown-menu"
@@ -117,6 +111,12 @@ h4 {
 
 
 							<!-- exit_button -->
+=======
+					<a class="navbar-toggle" data-toggle="dropdown"
+						aria-expanded="false" href="#"> <span></span> <span></span> <span></span>
+						<div id="recommend" class="dropdown-menu" style="margin-left: 150px; margin-right: 150px; right: 0px;">		
+					<!-- exit_button -->
+>>>>>>> branch 'master' of https://github.com/trapkka997/Cocktail
 							<button type="button" class="close" aria-label="Close">
 								<span aria-hidden="true">&times;</span>
 							</button>
@@ -736,9 +736,7 @@ h4 {
 		});
 		console.log(resp);
 		$('.cols_cocktailCard').html(inner); 
-	}
-	
-	
+	}	
 	 	$.ajax({
 			method : "post",
 			url : "getCocktail",
@@ -751,8 +749,7 @@ h4 {
 			$("#content").load("/cocktail/cocktailDetail?cocktailSeq="+num);	
 		}
 	</script>
-	<script type="text/javascript">
-	
+	<script type="text/javascript">	
 	var num;
 	var spilits =[];
 	var liqueur =[];
@@ -811,9 +808,14 @@ h4 {
 			}
 			
 		})
+<<<<<<< HEAD
 	});
 	
 	</script>
 
+=======
+	});	
+	</script>	
+>>>>>>> branch 'master' of https://github.com/trapkka997/Cocktail
 </body>
 </html>
