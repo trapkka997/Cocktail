@@ -9,7 +9,7 @@ h1 {
   padding-bottom: 20px;
 }
 
-h1:after {
+/* h1:after {
   position: absolute;
   top: 100%;
   left: 50%;
@@ -18,7 +18,7 @@ h1:after {
   height: 2px;
   background-color: #333;
   content: '';
-}
+} */
 
 .product-image-manager:after {
 	display: block;

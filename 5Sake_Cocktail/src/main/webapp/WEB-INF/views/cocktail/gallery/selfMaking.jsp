@@ -19,15 +19,12 @@
 <!-- modal -->
 <link rel="stylesheet" href="./resources/assets/gallery/css/pictureUpload.css">
 <link rel="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-<<<<<<< HEAD
 
 <!-- photo상세 슬라이드 -->
 
 <script src="./resources/assets/gallery/grid/js/modernizr.custom.js"></script>
 
 
-=======
->>>>>>> branch 'master' of https://github.com/trapkka997/Cocktail
 <style>
 .card {
 	flex-direction: inherit;
@@ -596,14 +593,11 @@
 			</div>
 			
 			
-<<<<<<< HEAD
-				<div class="plus-button" class="btn btn-primary" data-toggle="modal"
-					data-target="#myModal">+</div>
-=======
+
 			<a href="#" id="load">Load More</a>
 			
 				<div class="plus-button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">+</div>
->>>>>>> branch 'master' of https://github.com/trapkka997/Cocktail
+
 				<!-- modal1_start -->
 				<div id="myModal" class="modal fade" role="dialog">
 					<div class="modal-dialog modal-lg">
@@ -834,21 +828,24 @@
 								</div>
 								<!-- /.column-wrapper -->
 								<div class="column-wrapper">
-								<div class="panel">
-									<div class="panel-content">
-										<label for="image">
-											<form action="" class="image-select" data-droppable="">
-												<input id="image" type="file" data-droppable-input="" /> <i
-													class="fa fa-camera fa-2x image-select__icon"></i>
-												<div class="image-select__message"></div>
-												<div class="bg-image aspect-square"
-													style="background-image: url('http://placekitten.com/g/300/300');"
-													data-droppable-image=""></div>
-											</form>
-										</label>
+									<div class="panel">
+										<div class="panel-content">
+											<label for="image" style="display: unset;">
+												<form action="" class="image-select" data-droppable="">
+													<input id="image" type="file" data-droppable-input="" /> <i
+														class="fa fa-camera fa-2x image-select__icon"></i>
+													<div class="image-select__message"></div>
+													<div class="bg-image aspect-square"
+														style="background-image: url('http://placekitten.com/g/300/300');"
+														data-droppable-image=""></div>
+												</form>
+											</label>
+										</div>
 									</div>
 								</div>
-							</div>
+
+
+							<button type="submit">Upload</button>
 							<!--  -->
 						</div>
 						<!-- Modal content_end -->
@@ -867,10 +864,8 @@
 	<script src="./resources/assets/gallery/grid/js/masonry.pkgd.min.js"></script>
 	<script src="./resources/assets/gallery/grid/js/classie.js"></script>
 	<script src="./resources/assets/gallery/grid/js/cbpGridGallery.js"></script>
-<<<<<<< HEAD
-
-=======
->>>>>>> branch 'master' of https://github.com/trapkka997/Cocktail
+	
+	
 	<!-- modal -->
 	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -910,11 +905,7 @@
 			});
 			});
 	</script>
-<<<<<<< HEAD
 
-	
-=======
->>>>>>> branch 'master' of https://github.com/trapkka997/Cocktail
 	<script>
 		new CBPGridGallery( document.getElementById( 'grid-gallery' ) );
 	</script>
