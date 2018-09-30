@@ -135,16 +135,247 @@ p {
 .style-picker_liqueur{
     width: 50%;
     float: left;
-    margin-bottom: 10%;
+    margin-bottom: 5%;
 }
 
 .style-picker_spirits{
     width: 50%;
     float: left;
-    margin-bottom: 10%;
+    margin-bottom: 5%;
+}
+
+.style-picker_material{
+    width: 50%;
+    float: left;
+    margin-bottom: 5%;
 }
 
 /* autocomplete_end */
+
+
+
+/* photo upload */
+
+
+.bg-image {
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.bg-image.aspect-square:before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+
+[data-droppable] * {
+  pointer-events: none;
+}
+
+.panel {
+  background: #f0f0f0;
+  color: #454547;
+  margin: 0 auto;
+  min-width: -webkit-fill-available;;
+  width: 33.333%;
+}
+
+.panel-head {
+  background-color: #5b7da2;
+  color: #fff;
+  font-variant: small-caps;
+  margin: 0;
+  padding: 0 1em 0.2em;
+}
+
+.panel-content {
+  padding: 2em 1em;
+}
+
+.image-select {
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.image-select input[type="file"] {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  bottom: 0;
+  top: 0;
+  cursor: pointer;
+  display: block;
+  opacity: 0;
+  z-index: 15;
+}
+
+.image-select__message:after {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  bottom: 0;
+  color: #fff;
+  content: "Browse for file...";
+  display: block;
+  font-weight: bold;
+  height: 3em;
+  line-height: 3em;
+  opacity: 0;
+  padding: 0 1em;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform: translateY(100%);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  z-index: 5;
+}
+
+.image-select:hover .image-select__message:after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.image-select__icon {
+  bottom: .25em;
+  color: #fff;
+  position: absolute;
+  right: .5em;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  z-index: 10;
+}
+
+.image-select:hover .image-select__icon {
+  transform: scale(0.8, 0.8);
+}
+
+.file-hover {
+  position: relative;
+}
+
+.file-hover:before {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  bottom: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  content: "";
+  display: block;
+  z-index: 30;
+}
+
+.file-hover:after {
+  font-family: FontAwesome;
+  animation: 1.5s bounce infinite;
+  color: #fff;
+  content: "";
+  font-size: 5em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -0.5em 0 0 -0.5em;
+  z-index: 35;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(25%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* photo upload_end */
+
+
+
+/* Upload button */
+button[type="submit"] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+button[type="submit"] {
+  width: 100px;
+  height: 50px;
+  background: transparent;
+  border-radius: 10px;
+  will-change: transform;
+  transition: all .2s ease;
+  border: 2px solid #FF5126;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 16px;
+  color: #FF5126;
+  outline: none;
+  text-align: center;
+  
+      float: right;
+    margin: 10px 0 10px 10px;
+}
+button[type="submit"]:hover {
+  background: #FF5126;
+  color: #ffffff;
+}
+button[type="submit"]:active {
+  font-size: 15px;
+  -webkit-transform: translateY(1px);
+          transform: translateY(1px);
+}
+button[type="submit"].active {
+  font-size: 0;
+  border-radius: 25px;
+  width: 50px;
+  background: transparent;
+}
+button[type="submit"].loader {
+  border-right: 2px solid #ffffff;
+  -webkit-animation: loader .4s linear infinite;
+          animation: loader .4s linear infinite;
+}
+button[type="submit"].success {
+  background: #3BB873;
+  border-color: #3BB873;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+@-webkit-keyframes loader {
+  0% {
+    -webkit-transform: rotateZ(0);
+            transform: rotateZ(0);
+  }
+  100% {
+    -webkit-transform: rotateZ(360deg);
+            transform: rotateZ(360deg);
+  }
+}
+
+@keyframes loader {
+  0% {
+    -webkit-transform: rotateZ(0);
+            transform: rotateZ(0);
+  }
+  100% {
+    -webkit-transform: rotateZ(360deg);
+            transform: rotateZ(360deg);
+  }
+}
+
+
+/* Upload button_end */
 
 
 

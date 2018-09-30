@@ -3,14 +3,15 @@
   background-repeat:no-repeat;
   background-size:cover;
   background-position:center;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  margin-top: 35px;
 }
 
 .simple-slider .swiper-button-next, .simple-slider .swiper-button-prev {
-  /* width:50px; */
+  
   margin-left:20px;
   margin-right:20px;
  
@@ -37,7 +38,7 @@
     
     background-color: #000000;
     position: absolute;
-    top: 55%;
+    top: 58%;
     display: inline-block;
     width: 60px;
     height: 60px;
@@ -51,6 +52,6 @@
 
 .swiper-container {
    
-    max-width: 95%;
+   max-width: 92%;
 }
 
