@@ -13,7 +13,8 @@
 <link rel="stylesheet" href="./resources/assets/gallery/css/gallery.css">
 <link rel="stylesheet"	href="./resources/assets/gallery/css/uploadbutton.css">
 <link rel="stylesheet"	href="./resources/assets/gallery/css/hover.css">
-<!-- <link rel="stylesheet" href="./resources/assets/modal_makingCocktail/css/modal_makingCocktail.css"> -->
+<link rel="stylesheet" href="./resources/assets/modal_makingCocktail/css/modal_makingCocktail.css">
+<link rel="stylesheet" href="./resources/assets/modal_makingCocktail/css/sumoselect.css">
 
 
 <!-- modal -->
@@ -21,6 +22,9 @@
 
 <!-- photo상세 슬라이드 -->
 <script src="./resources/assets/gallery/grid/js/modernizr.custom.js"></script>
+
+
+
 <style>
 .card {
 	flex-direction: inherit;
@@ -32,14 +36,14 @@
 	margin-bottom: 20px;
 }
 .modal-lg {
-    max-width: 95%;
+    max-width: 70%;
 }
 </style>
 
 </head>
 
 <body>
-	<div>
+	
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
@@ -127,244 +131,172 @@
 						<div class="modal-content">
 
 							<!--  -->
-							<aside class="draw-panel">
-								<ul class="tabs tabs-fixed-width custom-tabs">
-									<li class="tab"><a class="active" href="#insert">INSERT</a>
-									</li>
-									<li class="tab"><a href="#pages">PAGES</a></li>
-									<li class="tab"><a href="#styles">STYLES</a></li>
-								</ul>
-								<section class="panel-slide p-0" id="styles">
-									<ul class="collapsible no-shadow mt-0 bt-0"
-										data-collapsible="accordion">
-										<li class="bb-lg">
-											<div class="collapsible-header flex flex-spred">
-												<h6 class="c-default">Favicon</h6>
-												<div class="flex flex-column">
-													<i class="material-icons mr-0 c-grey rotate-180 em-3-4">expand_less</i>
-													<i class="material-icons mr-0 c-grey rotate-180 em-3-4">expand_more</i>
-												</div>
-											</div>
-											<div class="collapsible-body b-0"></div>
-										</li>
-										<li class="bb-lg">
-											<div class="collapsible-header flex flex-spred">
-												<h6 class="c-default">Global Styles</h6>
-												<div class="flex flex-column">
-													<i class="material-icons mr-0 c-grey rotate-180 em-3-4">expand_less</i>
-													<i class="material-icons mr-0 c-grey rotate-180 em-3-4">expand_more</i>
-												</div>
-											</div>
-											<div class="collapsible-body"></div>
-										</li>
-										<li class="bb-lg">
-											<div class="collapsible-header flex flex-spred">
-												<h6 class="c-default">Background</h6>
-												<div class="flex flex-column">
-													<i class="material-icons mr-0 c-grey rotate-180 em-3-4">expand_less</i>
-													<i class="material-icons mr-0 c-grey rotate-180 em-3-4">expand_more</i>
-												</div>
-											</div>
-											<div class="collapsible-body"></div>
-										</li>
-										<li class="bb-lg">
-											<div class="collapsible-header flex flex-spred">
-												<h6 class="c-default">Width</h6>
-												<div class="flex flex-column">
-													<i class="material-icons mr-0 c-grey rotate-180 em-3-4">expand_less</i>
-													<i class="material-icons mr-0 c-grey rotate-180 em-3-4">expand_more</i>
-												</div>
-											</div>
-											<div class="collapsible-body"></div>
-										</li>
-										<li class="bb-lg">
-											<div class="collapsible-header flex flex-spred">
-												<h6 class="c-default">Custom CSS</h6>
-												<div class="flex flex-column">
-													<i class="material-icons mr-0 c-grey rotate-180 em-3-4">expand_less</i>
-													<i class="material-icons mr-0 c-grey rotate-180 em-3-4">expand_more</i>
-												</div>
-											</div>
-											<div class="collapsible-body"></div>
-										</li>
-									</ul>
-								</section>
+							<div class="container_makingCocktail">
+								<header class="header">
+									<h1 class = "cocktailMaker_h1">Cocktail Maker</h1>
+								</header>
 
-								<section class="panel-slide" id="pages">
-									<ul class="collection">
-										<li class="collection-item page-item on-hover"
-											draggable="true"><i class="material-icons move">home</i>
-											<h6 class="page-title">How is your Credit Score...</h6> <i
-											class="material-icons hover-show">more_vert</i></li>
-									</ul>
-									<ul class="collection">
-										<li class="collection-item page-item on-hover"
-											draggable="true"><i class="material-icons move">class</i>
-											<h6 class="page-title">How is your Credit Score...</h6> <i
-											class="material-icons hover-show">more_vert</i></li>
-										<li class="collection-item page-item on-hover"
-											draggable="true"><i class="material-icons move pl-0-5">subdirectory_arrow_right</i>
-											<h6 class="page-title">How is your Credit Score...</h6> <i
-											class="material-icons hover-show">more_vert</i></li>
-										<li class="collection-item page-item on-hover"
-											draggable="true"><i class="material-icons move pl-0-5">subdirectory_arrow_right</i>
-											<h6 class="page-title">How is your Credit Score...</h6> <i
-											class="material-icons hover-show">more_vert</i></li>
-										<li class="collection-item page-item on-hover"
-											draggable="true"><i class="material-icons move pl-0-5">subdirectory_arrow_right</i>
-											<h6 class="page-title">How is your Credit Score...</h6> <i
-											class="material-icons hover-show">more_vert</i></li>
-									</ul>
+								<div class="column-wrapper">
 
-									<ul class="collection">
-										<li class="collection-item page-item on-hover"
-											draggable="true"><i class="material-icons move">folder_open</i>
-											<h6 class="page-title">How is your Credit Score...</h6> <i
-											class="material-icons hover-show">more_vert</i></li>
-										<li class="collection-item page-item on-hover"
-											draggable="true"><i class="material-icons move pl-0-5">subdirectory_arrow_right</i>
-											<h6 class="page-title">How is your Credit Score...</h6> <i
-											class="material-icons hover-show">more_vert</i></li>
-										<li class="collection-item page-item on-hover"
-											draggable="true"><i class="material-icons move pl-0-5">subdirectory_arrow_right</i>
-											<h6 class="page-title">How is your Credit Score...</h6> <i
-											class="material-icons hover-show">more_vert</i></li>
-										<li class="collection-item page-item on-hover"
-											draggable="true"><i class="material-icons move pl-0-5">subdirectory_arrow_right</i>
-											<h6 class="page-title">How is your Credit Score...</h6> <i
-											class="material-icons hover-show">more_vert</i></li>
-									</ul>
-									<div class="flex flex-center mt-2-5">
-										<a
-											class="btn-floating btn-large waves-effect waves-light grey">
-											<i class="material-icons">add</i>
-										</a>
+									<!-- input_box -->
+									<main>
+									<p>Separate your tags with a comma</p>
+									<div class="tags-input"></div>
+									<h1>
+										<span>Tags</span> Input
+									</h1>
+									</main>
+									<!-- input_box_end-->
+
+									<div class="color-picker">
+										<h2 class = "cocktailMaker_h2">Color</h2>
+										<label class="cream"> <input type="radio" name="color"
+											value="cream">
+											<div class="color_layer"></div>
+											<div class="color_button">
+												<span></span>
+											</div>
+										</label> <label class="yellow"> <input type="radio"
+											name="color" value="yellow">
+											<div class="color_layer"></div>
+											<div class="color_button">
+												<span></span>
+											</div>
+										</label> <label class="orange"> <input type="radio"
+											name="color" value="orange">
+											<div class="layer"></div>
+											<div class="color_button">
+												<span></span>
+											</div>
+										</label> <label class="red"> <input type="radio"
+											name="color" value="red">
+											<div class="layer"></div>
+											<div class="color_button">
+												<span></span>
+											</div>
+										</label> <label class="brown"> <input type="radio"
+											name="color" value="brown">
+											<div class="layer"></div>
+											<div class="color_button">
+												<span></span>
+											</div>
+										</label> <label class="green"> <input type="radio"
+											name="color" value="green">
+											<div class="layer"></div>
+											<div class="color_button">
+												<span></span>
+											</div>
+										</label> <label class="blue"> <input type="radio"
+											name="color" value="blue">
+											<div class="color_layer"></div>
+											<div class="color_button">
+												<span></span>
+											</div>
+										</label> <label class="pink"> <input type="radio"
+											name="color" value="pink">
+											<div class="color_layer"></div>
+											<div class="color_button">
+												<span></span>
+											</div>
+										</label> <label class="peach"> <input type="radio"
+											name="color" value="peach">
+											<div class="color_layer"></div>
+											<div class="color_button">
+												<span></span>
+											</div>
+										</label>
 									</div>
 
+									<div class="style-picker_liqueur">
+										<h2 class = "cocktailMaker_h2" style="margin-top: 20px;">BASE SPIRITS</h2>
 
-								</section>
-
-								<section class="panel-slide p-0" id="insert">
-									<ul class="flex m-0 b-0">
-										<li
-											class="flex flex-center flex-column flex-1 rad-25 p-1 pointer waves-effect waves-grey">
-											<i class="icon-headline"></i> <span>Heading</span>
-										</li>
-										<li
-											class="flex flex-center flex-column flex-1 rad-25 p-1 pointer waves-effect waves-grey">
-											<i class="material-icons">subject</i> <span>Text</span>
-										</li>
-									</ul>
-									<ul class="flex m-0 b-0">
-										<li
-											class="flex flex-center flex-column flex-1 rad-25 p-1 pointer waves-effect waves-grey">
-											<i class="material-icons">indeterminate_check_box</i> <span>Button</span>
-										</li>
-										<li
-											class="flex flex-center flex-column flex-1 rad-25 p-1 pointer waves-effect waves-grey">
-											<i class="material-icons">image</i> <span>Images</span>
-										</li>
-									</ul>
-									<ul class="collapsible no-shadow mt-0"
-										data-collapsible="accordion">
-										<li class="bb-lg">
-											<div class="collapsible-header flex flex-spred">
-												<h6 class="c-default">Components</h6>
-												<div class="flex flex-column">
-													<i class="material-icons mr-0 c-grey rotate-180 em-3-4">expand_less</i>
-													<i class="material-icons mr-0 c-grey rotate-180 em-3-4">expand_more</i>
+										<div class="SumoSelect sumo_somename4" tabindex="0"
+											role="button" aria-expanded="true">
+											<select multiple="multiple" name="somename4"
+												class="select1 SumoUnder" tabindex="-1">
+												<option value="volvo">Volvo</option>
+												<option value="saab">Saab</option>
+												<option disabled="disabled" value="mercedes">Mercedes</option>
+												<option value="audi">Audi</option>
+												<option value="bmw">BMW</option>
+												<option disabled="disabled" value="porsche">Porche</option>
+												<option selected="selected" value="ferrari">Ferrari</option>
+												<option selected="selected" value="hyundai">Hyundai</option>
+												<option value="mitsubishi">Mitsubishi</option>
+											</select>
+											<!-- <p class="CaptionCont SelectBox" title=" Ferrari, Hyundai ">
+												<span> Ferrari, Hyundai </span><label><i></i></label>
+											</p> -->
+											<div class="optWrapper okCancelInMulti selall multiple">
+												<p class="select-all partial">
+													<span><i></i></span><label>Select All</label>
+												</p>
+												<ul class="options">
+													<li class="opt"><span><i></i></span><label>Volvo</label></li>
+													<li class="opt"><span><i></i></span><label>Saab</label></li>
+													<li class="opt disabled"><span><i></i></span><label>Mercedes</label></li>
+													<li class="opt"><span><i></i></span><label>Audi</label></li>
+													<li class="opt"><span><i></i></span><label>BMW</label></li>
+													<li class="opt disabled"><span><i></i></span><label>Porche</label></li>
+													<li class="opt selected"><span><i></i></span><label>Ferrari</label></li>
+													<li class="opt selected"><span><i></i></span><label>Hyundai</label></li>
+													<li class="opt"><span><i></i></span><label>Mitsubishi</label></li>
+												</ul>
+												<div class="MultiControls">
+													<p tabindex="0" class="btnOk">OK</p>
+													<p tabindex="0" class="btnCancel">Cancel</p>
 												</div>
 											</div>
-											<div class="collapsible-body b-0"></div>
-										</li>
-										<li class="bb-lg">
-											<div class="collapsible-header flex flex-spred">
-												<h6 class="c-default">Placeholder</h6>
-												<div class="flex flex-column">
-													<i class="material-icons mr-0 c-grey rotate-180 em-3-4">expand_less</i>
-													<i class="material-icons mr-0 c-grey rotate-180 em-3-4">expand_more</i>
+										</div>
+
+									</div>
+									
+									<div class="style-picker_spirits">
+										<h2 class = "cocktailMaker_h2" style="margin-top: 20px;">Liqueur</h2>
+
+										<div class="SumoSelect sumo_somename4" tabindex="0"
+											role="button" aria-expanded="true">
+											<select multiple="multiple" name="somename4"
+												class="select1 SumoUnder" tabindex="-1">
+												<option value="volvo">Volvo</option>
+												<option value="saab">Saab</option>
+												<option disabled="disabled" value="mercedes">Mercedes</option>
+												<option value="audi">Audi</option>
+												<option value="bmw">BMW</option>
+												<option disabled="disabled" value="porsche">Porche</option>
+												<option selected="selected" value="ferrari">Ferrari</option>
+												<option selected="selected" value="hyundai">Hyundai</option>
+												<option value="mitsubishi">Mitsubishi</option>
+											</select>
+											<!-- <p class="CaptionCont SelectBox" title=" Ferrari, Hyundai ">
+												<span> Ferrari, Hyundai </span><label><i></i></label>
+											</p> -->
+											<div class="optWrapper okCancelInMulti selall multiple">
+												<p class="select-all partial">
+													<span><i></i></span><label>Select All</label>
+												</p>
+												<ul class="options">
+													<li class="opt"><span><i></i></span><label>Volvo</label></li>
+													<li class="opt"><span><i></i></span><label>Saab</label></li>
+													<li class="opt disabled"><span><i></i></span><label>Mercedes</label></li>
+													<li class="opt"><span><i></i></span><label>Audi</label></li>
+													<li class="opt"><span><i></i></span><label>BMW</label></li>
+													<li class="opt disabled"><span><i></i></span><label>Porche</label></li>
+													<li class="opt selected"><span><i></i></span><label>Ferrari</label></li>
+													<li class="opt selected"><span><i></i></span><label>Hyundai</label></li>
+													<li class="opt"><span><i></i></span><label>Mitsubishi</label></li>
+												</ul>
+												<div class="MultiControls">
+													<p tabindex="0" class="btnOk">OK</p>
+													<p tabindex="0" class="btnCancel">Cancel</p>
 												</div>
 											</div>
-											<div class="collapsible-body b-0"></div>
-										</li>
-										<li class="bb-lg">
-											<div class="collapsible-header flex flex-spred">
-												<h6 class="c-default">Placeholder</h6>
-												<div class="flex flex-column">
-													<i class="material-icons mr-0 c-grey rotate-180 em-3-4">expand_less</i>
-													<i class="material-icons mr-0 c-grey rotate-180 em-3-4">expand_more</i>
-												</div>
-											</div>
-											<div class="collapsible-body b-0"></div>
-										</li>
-									</ul>
-								</section>
-							</aside>
+										</div>
 
-							<div class="editor">
-								<a class="waves-effect waves-white center-round affixed top">
-									<i class="material-icons active">collections_bookmark</i>
-								</a>
-								<ul class="flex flex-column affixed bottom">
-									<li><a href="#" data-activates="help"
-										class="button-collapse"> <i
-											class="material-icons c-grey tooltipped"
-											data-position="right" data-tooltip="Notifactions">notifications</i>
-									</a></li>
-									<li><a href="#" data-activates="notifactions"
-										class="button-collapse"> <i
-											class="material-icons c-grey tooltipped"
-											data-position="right" data-tooltip="Help">help</i>
-									</a></li>
-									<li><a href="#"> <i
-											class="material-icons c-grey flip-horz tooltipped"
-											data-position="right" data-tooltip="Exit">exit_to_app</i>
-									</a></li>
-								</ul>
-								<header class="flex flex-spred editor-toolbar">
-									<h1 class="lesson-title mr-4">Are You Ready to Own a Home?</h1>
-									<ul class="flex">
-										<li class="hover sh-preview"><i
-											class="material-icons circle">phone_android</i></li>
-										<li class="sh-preview"><i class="material-icons circle">tablet_android</i>
-										</li>
-										<li class="hover sh-preview"><i
-											class="material-icons circle active">laptop_mac</i></li>
-										<li class="flex hd-preview"><small
-											class="c-grey align-center no-break">All changes
-												saved</small></li>
-										<li class="hover hd-preview"><i
-											class="material-icons circle">undo</i></li>
-										<li class="hd-preview"><i class="material-icons circle"
-											disabled>redo</i></li>
-										<li><span class="header-vertical-rule"></span></li>
-										<li class="hover js-preview hd-preview"><i
-											class="material-icons circle">remove_red_eye</i></li>
-										<li class="sh-preview js-preview"><a
-											class='btn btn-inverse btn-round indigo ml-375' href='#'>Exit
-												Preview</a></li>
-										<li class="sh-preview js-preview"><a
-											class='btn btn-round indigo ml-375' href='#'>Update</a></li>
-										<li class="hd-preview"><span
-											class="btn-group ml-375 hd-preview"> <a
-												class='dropdown-button btn indigo' href='#'> Update </a> <a
-												class='dropdown-button btn indigo' href='#'
-												data-activates='publish-options'> <i
-													class="material-icons">expand_more</i>
-											</a>
-										</span>
-											<ul id='publish-options' class='dropdown-content custom'>
-												<li><a href="#!">Publish Options...</a></li>
-												<li><a href="#!">View Published...</a></li>
-												<li><a href="#!">Unpublish...</a></li>
-											</ul></li>
-									</ul>
-								</header>
-								<main class="editor-canvas"></main>
-							</div>
-
-							<ul id="notifactions" class="side-nav"></ul>
-							<ul id="help" class="side-nav"></ul>
+									</div>
+									
+								</div>
+								<!-- /.column-wrapper -->
 
 							<!--  -->
 						</div>
@@ -393,7 +325,21 @@
 	
 	<!-- 칵테일 만들기 업로드 모달 -->
 	<script src="./resources/assets/modal_makingCocktail/js/modal_makingCocktail.js"></script>
+	<script src="./resources/assets/modal_makingCocktail/js/jquery.sumoselect.js"></script>
 	<!-- 칵테일 만들기 업로드 모달 끝 -->
+
+	<!-- Latest compiled and minified JavaScript -->
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+
+			$('.select1').SumoSelect({
+				okCancelInMulti : true,
+				selectAll : true
+			});
+
+		});
+	</script>
 	
 	<script>
 		new CBPGridGallery( document.getElementById( 'grid-gallery' ) );
