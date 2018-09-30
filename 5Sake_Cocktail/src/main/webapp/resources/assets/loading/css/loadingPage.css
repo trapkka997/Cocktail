@@ -1,0 +1,47 @@
+body {
+  margin: 0;
+}
+
+.container {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background: #efefed;
+}
+
+.center {
+  position: absolute;
+  font-size: 10em;
+  bottom: 15%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: white;
+}
+
+.header {
+  font-size: .3em;
+  font-family: 'Pacifico', cursive;
+  fill: #2d2a2a;
+  text-shadow: 4px 4px gray;
+}
+
+@keyframes bubble1 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.curvedHeader {
+  font-size: 55px;
+}
+
+path {
+  fill: transparent;
+}
+
+.loadingImg {
+  height: 500px;
+}

@@ -207,6 +207,14 @@ public class HomeController {
 	public String test() {
 		return "cocktail/0919nabivar";
 	}
+	/**
+	 * loading
+	 * @return
+	 */
+	@RequestMapping(value = "/loading", method = RequestMethod.GET)
+	public String loading() {
+		return "loading/loadingPage";
+	}
  
 }
 
