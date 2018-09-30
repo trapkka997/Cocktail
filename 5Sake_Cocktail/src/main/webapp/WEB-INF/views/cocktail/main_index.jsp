@@ -68,10 +68,6 @@ h4 {
 		$('#cock_gallery').on('click', function() {
 			$('#content').load('/cocktail/cocktailphoto');
 		});
-		$('#user_gallery').on('click', function() {
-			$('#content').load('/cocktail/userphoto');
-			alert("삭제예정");
-		});
 		$('#self_making').on('click', function() {
 			$('#content').load('/cocktail/selfMaking');
 		});
