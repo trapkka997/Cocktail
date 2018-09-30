@@ -725,7 +725,7 @@ h4 {
 			inner += '<p class="p_cocktailCard">'+resp[index].cocktailName+'</p>';
 			inner += '</div>';
 			inner += '</div>';
-			inner += '<div class="back_cocktailCard">';
+			inner += '<div class="back_cocktailCard" style="background-image: url('+resp[index].imageRink+')" size: contain;>';
 			inner += '<div class="inner_cocktailCard">';
 			inner += '<p></p>';
 			inner += '</div>';

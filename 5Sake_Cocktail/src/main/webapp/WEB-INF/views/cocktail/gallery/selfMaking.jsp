@@ -21,13 +21,10 @@
 <link rel="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
 <!-- photo상세 슬라이드 -->
-<<<<<<< HEAD
+
 <script src="./resources/assets/gallery/grid/js/modernizr.custom.js"></script>
 
 
-
-=======
->>>>>>> branch 'master' of https://github.com/trapkka997/Cocktail
 <style>
 .card {
 	flex-direction: inherit;
@@ -120,8 +117,6 @@
 					</section><!-- // slideshow -->
 				</div>
 			</div>
-			
-			
 			
 			
 				<div class="plus-button" class="btn btn-primary" data-toggle="modal"
@@ -217,15 +212,13 @@
 											role="button" aria-expanded="true">
 											<select multiple="multiple" name="somename4"
 												class="select1 SumoUnder" tabindex="-1">
-												<option value="volvo">Volvo</option>
-												<option value="saab">Saab</option>
-												<option disabled="disabled" value="mercedes">Mercedes</option>
-												<option value="audi">Audi</option>
-												<option value="bmw">BMW</option>
-												<option disabled="disabled" value="porsche">Porche</option>
-												<option selected="selected" value="ferrari">Ferrari</option>
-												<option selected="selected" value="hyundai">Hyundai</option>
-												<option value="mitsubishi">Mitsubishi</option>
+												<option value="Brandy">Brandy</option>
+												<option value="Wiskey">Wiskey</option>
+												<option value="Vodka">Vodka</option>
+												<option value="Rum">Rum</option>
+												<option value="Jin">Jin</option>
+												<option value="Tequila">Tequila</option>
+												
 											</select>
 											<!-- <p class="CaptionCont SelectBox" title=" Ferrari, Hyundai ">
 												<span> Ferrari, Hyundai </span><label><i></i></label>
@@ -235,15 +228,12 @@
 													<span><i></i></span><label>Select All</label>
 												</p>
 												<ul class="options">
-													<li class="opt"><span><i></i></span><label>Volvo</label></li>
-													<li class="opt"><span><i></i></span><label>Saab</label></li>
-													<li class="opt disabled"><span><i></i></span><label>Mercedes</label></li>
-													<li class="opt"><span><i></i></span><label>Audi</label></li>
-													<li class="opt"><span><i></i></span><label>BMW</label></li>
-													<li class="opt disabled"><span><i></i></span><label>Porche</label></li>
-													<li class="opt selected"><span><i></i></span><label>Ferrari</label></li>
-													<li class="opt selected"><span><i></i></span><label>Hyundai</label></li>
-													<li class="opt"><span><i></i></span><label>Mitsubishi</label></li>
+													<li class="opt"><span><i></i></span><label>Brandy</label></li>
+													<li class="opt"><span><i></i></span><label>Wiskey</label></li>
+													<li class="opt"><span><i></i></span><label>Vodka</label></li>
+													<li class="opt"><span><i></i></span><label>Rum</label></li>
+													<li class="opt"><span><i></i></span><label>Jin</label></li>
+													<li class="opt"><span><i></i></span><label>Tequila</label></li>
 												</ul>
 												<div class="MultiControls">
 													<p tabindex="0" class="btnOk">OK</p>
@@ -261,15 +251,15 @@
 											role="button" aria-expanded="true">
 											<select multiple="multiple" name="somename4"
 												class="select1 SumoUnder" tabindex="-1">
-												<option value="volvo">Volvo</option>
-												<option value="saab">Saab</option>
-												<option disabled="disabled" value="mercedes">Mercedes</option>
-												<option value="audi">Audi</option>
-												<option value="bmw">BMW</option>
-												<option disabled="disabled" value="porsche">Porche</option>
-												<option selected="selected" value="ferrari">Ferrari</option>
-												<option selected="selected" value="hyundai">Hyundai</option>
-												<option value="mitsubishi">Mitsubishi</option>
+												<option value="Wine">Wine</option>
+												<option value="Bitters">Bitters</option>
+												<option value="Beer">Beer</option>
+												<option value="Liqueur">Liqueur</option>
+												<option value="Creme_liqueur">Creme liqueur</option>
+												<option value="Sherry">Sherry</option>
+												<option value="Vermouth">Vermouth</option>
+												<option value="Amaretto">Amaretto</option>
+												
 											</select>
 											<!-- <p class="CaptionCont SelectBox" title=" Ferrari, Hyundai ">
 												<span> Ferrari, Hyundai </span><label><i></i></label>
@@ -279,15 +269,14 @@
 													<span><i></i></span><label>Select All</label>
 												</p>
 												<ul class="options">
-													<li class="opt"><span><i></i></span><label>Volvo</label></li>
-													<li class="opt"><span><i></i></span><label>Saab</label></li>
-													<li class="opt disabled"><span><i></i></span><label>Mercedes</label></li>
-													<li class="opt"><span><i></i></span><label>Audi</label></li>
-													<li class="opt"><span><i></i></span><label>BMW</label></li>
-													<li class="opt disabled"><span><i></i></span><label>Porche</label></li>
-													<li class="opt selected"><span><i></i></span><label>Ferrari</label></li>
-													<li class="opt selected"><span><i></i></span><label>Hyundai</label></li>
-													<li class="opt"><span><i></i></span><label>Mitsubishi</label></li>
+													<li class="opt"><span><i></i></span><label>Wine</label></li>
+													<li class="opt"><span><i></i></span><label>Bitters</label></li>
+													<li class="opt"><span><i></i></span><label>Beer</label></li>
+													<li class="opt"><span><i></i></span><label>Liqueur</label></li>
+													<li class="opt"><span><i></i></span><label>Creme liqueur</label></li>
+													<li class="opt"><span><i></i></span><label>Sherry</label></li>
+													<li class="opt"><span><i></i></span><label>Vermouth</label></li>
+													<li class="opt"><span><i></i></span><label>Amaretto</label></li>
 												</ul>
 												<div class="MultiControls">
 													<p tabindex="0" class="btnOk">OK</p>
@@ -298,9 +287,85 @@
 
 									</div>
 									
+									
+									<div class="style-picker_material">
+										<h2 class = "cocktailMaker_h2" style="margin-top: 20px;">Material</h2>
+
+										<div class="SumoSelect sumo_somename4" tabindex="0"
+											role="button" aria-expanded="true">
+											<select multiple="multiple" name="somename4"
+												class="select1 SumoUnder" tabindex="-1">
+												<option value="Apple">Apple</option>
+												<option value="Cherry">Cherry</option>
+												<option value="Coconut">Coconut</option>
+												<option value="Grape_Fruit">Grape Fruit</option>
+												<option value="Lemon">Lemon</option>
+												<option value="Lime">Lime</option>
+												<option value="Raspberry">Raspberry</option>
+												<option value="Orange">Orange</option>
+												<option value="Peach">Peach</option>
+												<option value="Pineapple">Pineapple</option>
+												<option value="Tomato">Tomato</option>
+												<option value="Egg">Egg</option>
+												<option value="Gingerale">Gingerale</option>
+												<option value="Milk">Milk</option>
+												<option value="Sugar">Sugar</option>
+												<option value="Spicy">Spicy</option>
+												<option value="Syrup">Syrup</option>
+												
+											</select>
+											<!-- <p class="CaptionCont SelectBox" title=" Ferrari, Hyundai ">
+												<span> Ferrari, Hyundai </span><label><i></i></label>
+											</p> -->
+											<div class="optWrapper okCancelInMulti selall multiple">
+												<p class="select-all partial">
+													<span><i></i></span><label>Select All</label>
+												</p>
+												<ul class="options">
+													<li class="opt"><span><i></i></span><label>Apple</label></li>
+													<li class="opt"><span><i></i></span><label>Cherry</label></li>
+													<li class="opt"><span><i></i></span><label>Coconut</label></li>
+													<li class="opt"><span><i></i></span><label>Grape Fruit</label></li>
+													<li class="opt"><span><i></i></span><label>Lemon</label></li>
+													<li class="opt"><span><i></i></span><label>Lime</label></li>
+													<li class="opt"><span><i></i></span><label>Orange</label></li>
+													<li class="opt"><span><i></i></span><label>Peach</label></li>
+													<li class="opt"><span><i></i></span><label>Pineapple</label></li>
+													<li class="opt"><span><i></i></span><label>Tomato</label></li>
+													<li class="opt"><span><i></i></span><label>Egg</label></li>
+													<li class="opt"><span><i></i></span><label>Gingerale</label></li>
+													<li class="opt"><span><i></i></span><label>Milk</label></li>
+													<li class="opt"><span><i></i></span><label>Sugar</label></li>
+													<li class="opt"><span><i></i></span><label>Spicy</label></li>
+													<li class="opt"><span><i></i></span><label>Syrup</label></li>
+												</ul>
+												<div class="MultiControls">
+													<p tabindex="0" class="btnOk">OK</p>
+													<p tabindex="0" class="btnCancel">Cancel</p>
+												</div>
+											</div>
+										</div>
+
+									</div>
+
 								</div>
 								<!-- /.column-wrapper -->
-
+								<div class="column-wrapper">
+								<div class="panel">
+									<div class="panel-content">
+										<label for="image">
+											<form action="" class="image-select" data-droppable="">
+												<input id="image" type="file" data-droppable-input="" /> <i
+													class="fa fa-camera fa-2x image-select__icon"></i>
+												<div class="image-select__message"></div>
+												<div class="bg-image aspect-square"
+													style="background-image: url('http://placekitten.com/g/300/300');"
+													data-droppable-image=""></div>
+											</form>
+										</label>
+									</div>
+								</div>
+							</div>
 							<!--  -->
 						</div>
 						<!-- Modal content_end -->
@@ -319,7 +384,7 @@
 	<script src="./resources/assets/gallery/grid/js/masonry.pkgd.min.js"></script>
 	<script src="./resources/assets/gallery/grid/js/classie.js"></script>
 	<script src="./resources/assets/gallery/grid/js/cbpGridGallery.js"></script>
-<<<<<<< HEAD
+
 	<!-- modal -->
 	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -347,12 +412,13 @@
 
 		});
 	</script>
-=======
-	
->>>>>>> branch 'master' of https://github.com/trapkka997/Cocktail
+
 	
 	<script>
 		new CBPGridGallery( document.getElementById( 'grid-gallery' ) );
 	</script>
+	
+	
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </body>
 </html>

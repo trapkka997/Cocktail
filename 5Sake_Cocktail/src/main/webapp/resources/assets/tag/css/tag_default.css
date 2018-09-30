@@ -137,9 +137,10 @@ h1_cocktailCard{
 }
 
 .wrapper_cocktailCard{
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
   max-width: 80rem;
+  background-color: #00000052;
 }
 
 .cols_cocktailCard{
@@ -168,7 +169,7 @@ h1_cocktailCard{
 
 .front_cocktailCard,
 .back_cocktailCard{
-  background-size: cover;
+    background-size: cover;
 	background-position: center;
 	-webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
 	transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
@@ -183,6 +184,8 @@ h1_cocktailCard{
 	border-radius: 10px;
 	color: #fff;
 	font-size: 1.5rem;
+	size: contain;
+	repeat : no-repeat;
 }
 
 .back_cocktailCard{
@@ -201,7 +204,7 @@ h1_cocktailCard{
     height: 100%;
     content: '';
     display: block;
-    opacity: .6;
+    opacity: .2;
     background-color: #000;
     -webkit-backface-visibility: hidden;
             backface-visibility: hidden;
@@ -221,6 +224,9 @@ h1_cocktailCard{
     top: 0;
     left: 0;
     width: 100%;
+    height: 100%;
+    background-size: contain;
+    
 }
 
 .inner_cocktailCard{
