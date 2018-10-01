@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>5sake's cocktail</title>
+<title>5sake's Cocktail</title>
 <link rel="stylesheet"	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
 <link rel="stylesheet"	href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
 
@@ -44,6 +44,13 @@
     left: 400px;
     top: 350px;
 }
+
+.selfMaking_h1 {
+    position: relative;
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
 </style>
 </head>
 <body>
@@ -54,7 +61,7 @@
 					<div class="outer">
 							<div class="inner">
 								<div id="selfMaking_button">
-									<h1 style="margin-top: 20px;">spirits</h1>
+									<h1 class = "selfMaking_h1" style="margin-top: 20px;">spirits</h1>
 									<div id="alcole" class="button-group" data-filter-group='alcole' style="margin-top: 20px; margin-bottom: 20px;">
 										<button class="btn fil-cat btn-outline-primary" href="" data-rel="all" >ALL</button>
 										<button class="btn fil-cat btn-outline-primary" href="" data-rel="brandy" >Brandy</button>
@@ -139,16 +146,16 @@
 							<!--  -->
 							<div class="container_makingCocktail">
 								<header class="header">
-									<h1 class = "cocktailMaker_h1">Cocktail Maker</h1>
+									<h1 class = "cocktailMaker_h1" style="font-size: 32px;">Cocktail Maker</h1>
 								</header>
 
 								<div class="column-wrapper">
 
 									<!-- input_box -->
-									<main style="margin-bottom: 50px;">
-									<p>Separate your tags with a comma</p>
+									<main style="margin-bottom: 20px;">
+									<p class = "cocktailMaker_p">Separate your tags with a comma</p>
 									<div class="tags-input"></div>
-									<h1 class="h1">
+									<h1 class="cocktailMaker_h1">
 										<span>Tags</span> Input
 									</h1>
 									</main>

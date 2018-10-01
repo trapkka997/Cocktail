@@ -5,7 +5,7 @@
 <html>
 
 <head>
-<title>NEWS FEED</title>
+<title>5sake's cocktail</title>
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
 <link rel="stylesheet"
