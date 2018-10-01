@@ -92,12 +92,7 @@ h4 {
 					<a class="navbar-toggle" data-toggle="dropdown"
 						aria-expanded="false" href="#"> <span></span> <span></span> <span></span>
 						<div id="recommend" class="dropdown-menu" style="margin-left: 150px; margin-right: 150px; right: 0px;">		
-					<!-- exit_button -->
-							<button type="button" class="close" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
-							<!-- exit_button_end -->
-
+					
 							<div class="row_drop_userRecommend">
 								<div class="col-md-12">
 									<div class="card-group">

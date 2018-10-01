@@ -5,7 +5,7 @@
 <html>
 
 <head>
-<title>NEWS FEED</title>
+<title>5sake's Cocktail</title>
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
 <link rel="stylesheet"
@@ -28,6 +28,11 @@
 
 <!-- photo상세 슬라이드 -->
 <script src="./resources/assets/gallery/grid/js/modernizr.custom.js"></script>
+
+<script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js'></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
+
 <style>
 .card {
 	flex-direction: inherit;
@@ -142,8 +147,8 @@
 							<div class="container">
 							  <div class="row">
 							    <div class="col-md-12">
-							      <h1>Uploading Pictures</h1>
-							      <div class="product-image-manager" style="text-align: center;">
+							      <h1>Product image manager</h1>
+							      <div class="product-image-manager">
 							        <div class="image-container">
 							          <div class="inner-image-container">
 							            <div class="on-image-controls">
@@ -285,9 +290,9 @@
 							          </div>
 							        </div>
 							      </div>
-							       <div id="dropzone" class="dropzone">Drop files here to upload</div>
+							      <div id="dropzone" class="dropzone">Drop files here to upload</div>
 							    </div>
-							   
+							    
 							  </div>
 							</div>
 							<div class="modal fade" id="file-modal" tabindex="-1" role="dialog">
@@ -372,6 +377,8 @@
 	<script src="./resources/assets/gallery/js/gallery/cbpGridGallery.js"></script>-->
 
 	
+		
+	<!-- 사진 상세 슬라이드 -->
 	<script
 		src="./resources/assets/gallery/grid/js/imagesloaded.pkgd.min.js"></script>
 	<script src="./resources/assets/gallery/grid/js/masonry.pkgd.min.js"></script>
@@ -388,6 +395,13 @@
 	
 	<script>
 		new CBPGridGallery(document.getElementById('grid-gallery'));
+	</script>
+	
+	
+	<script>
+		$('#innerModalClose').click(function(){
+			$('#file-modal').modal('toggle');
+		});
 	</script>
 </body>
 </html>
