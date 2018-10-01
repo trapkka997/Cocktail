@@ -292,6 +292,7 @@
 							      </div>
 							      <div id="dropzone" class="dropzone">Drop files here to upload</div>
 							    </div>
+							    
 							  </div>
 							</div>
 							<div class="modal fade" id="file-modal" tabindex="-1" role="dialog">

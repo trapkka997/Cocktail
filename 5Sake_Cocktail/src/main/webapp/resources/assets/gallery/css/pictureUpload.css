@@ -31,8 +31,10 @@ h1 {
 .product-image-manager > .image-container {
   display: inline-block;
   margin: 0 -1.8px;
-	padding: 8px;
-	vertical-align: top;
+  padding: 8px;
+  vertical-align: top;
+  width: 150px;
+  height: 150px;
 }
 
 .product-image-manager > .image-container.image-placeholder {
@@ -178,6 +180,7 @@ h1 {
 	-ms-transform: translateX(-50%) translateY(-50%);
 	transform: translateX(-50%) translateY(-50%);
 	z-index: 2;
+	width: 100%;
 }
 
 .product-image-manager > .image-container.landscape > .inner-image-container > .center-container > img {
