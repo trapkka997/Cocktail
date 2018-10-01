@@ -32,4 +32,5 @@ public interface MemberDAO {
 	public int insertUserFollow(UserFollow vo);
 	public List<Cocktail> selectAllUserLikeCocktail(String userEmail);
 	public List<UserPhoto> selectAllUserLikePhoto(String userEmail);
+	public int updateUser(User vo);
 }

@@ -38,11 +38,7 @@ public class HomeController {
 	public String home(Model model) {
 		List<Cocktail> worldBestList = cocktailRepository.selectWorldBest();
 		model.addAttribute("worldBestList", worldBestList);
-//		List<Cocktail> cocktailList = cocktailRepository.getCocktailList();
-//		for(Cocktail c : cocktailList) {
-//			String ingre = c.getIngredient();			
-//		}
-//		model.addAttribute("cocktailList", cocktailList);
+
 		return "cocktail/main_index";
 	}
 	

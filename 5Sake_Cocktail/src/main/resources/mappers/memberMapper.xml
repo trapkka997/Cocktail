@@ -279,6 +279,15 @@ SELECT
 		AND
 		p.USEREMAIL = #{value}
 </select>
+<update id="updateUser" parameterType="user">
+	UPDATE
+		USERDETAIL
+	SET
+		USERNICKNAME=#{userNickname},
+		USERINSTA=#{userInsta}
+	where
+		USEREMAIL= #{userEmail}
+</update>
 <!-- <select id="selectUserPhotoLikeByUserEmail" parameterType="String" resultType="userPhoto">
 	SELECT 
 </select>

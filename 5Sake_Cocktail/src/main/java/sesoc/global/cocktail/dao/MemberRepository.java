@@ -97,5 +97,9 @@ public class MemberRepository {
 		MemberDAO dao = sqlSession.getMapper(MemberDAO.class);
 		return dao.selectAllUserLikePhoto(userEmail);
 	}
+	public int updateUser(User vo) {
+		MemberDAO dao = sqlSession.getMapper(MemberDAO.class);
+		return dao.updateUser(vo);
+	}
 }
 

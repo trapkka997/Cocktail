@@ -102,14 +102,16 @@
 												<li>
 													<button class="btn btn-default" onclick="followBtn()">Follow</button>
 												</li>
-												<li>
-													<button class="btn btn-default" data-toggle="modal"
-														data-target="#profile_editModal">Edit</button>
-												</li>
+												<c:if test="${sessionScope.useremail eq  user.userEmail}">
+													<li>
+														<button class="btn btn-default" data-toggle="modal"
+															data-target="#profile_editModal">Edit</button>
+													</li>
+												</c:if>
 											</ul>
 										</div>
 										<ul class="ach">
-											<li><span class="ach-count">${postNum }</span> <span
+											<li><span class="ach-count" onclick="postBtn()">${postNum }</span> <span
 												class="ach-label">Posts</span></li>
 											<li><span class="ach-count">${followerNum }</span> <span
 												class="ach-label" data-toggle="modal"
@@ -406,19 +408,19 @@
 				<div class="modal-dialog">
 					<div class="modal-content">
 
-						<form class="profile_edit_form">
+						<form class="profile_edit_form" action="updateUser" method="post">
 							<h1 class="profile_edit_h1">Edit information</h1>
 							<div class="question">
-								<input type="text" required /> <label>NickName</label>
+								<input type="text" id="updateNickname" name="userNickname" required /> <label>NickName</label>
 							</div>
 							<div class="question">
-								<input type="text" required /> <label>Instagram ID</label>
+								<input type="text" id="updateInstagramID" name="userInsta" required /> <label>Instagram ID</label>
 							</div>
 							<div class="question">
-								<input type="text" required /> <label>Your Likes</label>
+								<input type="text" id="updateYourLikes" name="updateYourLikes" required /> <label>Your Likes</label>
 							</div>
 
-							<button>Submit</button>
+							<button >수 정</button>
 						</form>
 
 					</div>
@@ -662,31 +664,32 @@
 		$(document).ready(function() {
 			var followUser = document.getElementById('userEmail').value;
 			$.ajax({
-				method : "post",
-				url : "sukiSake",
-				data : {
-					userEmail : followUser
-				},
-				success : function(resp) {
-					$('.grid-sizer').nextAll().empty();
-					var text = "";
-					resp.forEach(function(value, index, resp) {	
-						text += '<li>';
-						text += '<figure>';
-						text += '<figcaption>';
-						text += '<h3>'+resp[index].cocktailName+'</h3>';
-						text += '<p>'+resp[index].cocktailName+'</p>';
-						text += '</figcaption>';
-						text += '<img src="'+resp[index].imageRink+'" alt="img01" />';
-						text += '</figure>';
-						text += '</li>'
-					});
-					$('.grid-sizer').after(text);
-				},
-				error : function() {
-					alert('err');
-				}
-			});
+						method : "post",
+						url : "selectUserPhoto",
+						data : {
+							userEmail : followUser
+						},
+						success : function(resp) {
+							$('.grid-sizer').nextAll().empty();
+							console.log(resp);
+							var text = "";
+							resp.forEach(function(value, index, resp) {	
+								text += '<li>';
+								text += '<figure>';
+								text += '<figcaption>';
+								text += '<h3>'+resp[index].contents+'</h3>';
+								text += '<p>'+resp[index].contents+'</p>';
+								text += '</figcaption>';
+								text += '<img src=${path}"'+resp[index].saveFileName+'" alt="img01" />';
+								text += '</figure>';
+								text += '</li>'
+							});
+							$('.grid-sizer').after(text);
+						},
+						error : function() {
+							alert('err');
+						}
+					});	
 			
 			
 			var readURL = function(input) {
@@ -800,7 +803,34 @@
 			var followUser = document.getElementById('userEmail').value;
 			$.ajax({
 						method : "post",
-						url : "sukiSake",
+						url : "userselectCockList",
+						success : function(resp) {
+							$('.grid-sizer').nextAll().empty();
+							console.log(resp);
+							var text = "";
+							resp.forEach(function(value, index, resp) {	
+								text += '<li>';
+								text += '<figure>';
+								text += '<figcaption>';
+								text += '<h3>'+resp[index].usercocktailname+'</h3>';
+								text += '<p>'+resp[index].usercocktailname+'</p>';
+								text += '</figcaption>';
+								text += '<img src=${path}"'+resp[index].savefilename+'" alt="img01" />';
+								text += '</figure>';
+								text += '</li>'
+							});
+							$('.grid-sizer').after(text);
+						},
+						error : function() {
+							alert('err');
+						}
+					});
+		}
+		function postBtn() {
+			var followUser = document.getElementById('userEmail').value;
+			$.ajax({
+						method : "post",
+						url : "selectUserPhoto",
 						data : {
 							userEmail : followUser
 						},
@@ -812,10 +842,10 @@
 								text += '<li>';
 								text += '<figure>';
 								text += '<figcaption>';
-								text += '<h3>'+resp[index].cocktailName+'</h3>';
-								text += '<p>'+resp[index].cocktailName+'</p>';
+								text += '<h3>'+resp[index].contents+'</h3>';
+								text += '<p>'+resp[index].contents+'</p>';
 								text += '</figcaption>';
-								text += '<img src="'+resp[index].imageRink+'" alt="img01" />';
+								text += '<img src=${path}"'+resp[index].saveFileName+'" alt="img01" />';
 								text += '</figure>';
 								text += '</li>'
 							});
@@ -826,7 +856,37 @@
 						}
 					});
 		}
+		function updateBtn() {
+			$.ajax({
+						method : "post",
+						url : "selectUserPhoto",
+						data : {
+							userEmail : followUser
+						},
+						success : function(resp) {
+							$('.grid-sizer').nextAll().empty();
+							console.log(resp);
+							var text = "";
+							resp.forEach(function(value, index, resp) {	
+								text += '<li>';
+								text += '<figure>';
+								text += '<figcaption>';
+								text += '<h3>'+resp[index].contents+'</h3>';
+								text += '<p>'+resp[index].contents+'</p>';
+								text += '</figcaption>';
+								text += '<img src=${path}"'+resp[index].saveFileName+'" alt="img01" />';
+								text += '</figure>';
+								text += '</li>'
+							});
+							$('.grid-sizer').after(text);
+						},
+						error : function() {
+							alert('err');
+						}
+					});;
+		}
 	</script>
+	
 
 </body>
 

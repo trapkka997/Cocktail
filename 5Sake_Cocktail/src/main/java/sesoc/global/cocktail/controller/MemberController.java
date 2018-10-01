@@ -21,6 +21,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.multipart.MultipartFile;
 
 import sesoc.global.cocktail.dao.MemberDAO;
@@ -220,6 +221,17 @@ public class MemberController {
 			}
 
 		}
-	
+		@RequestMapping(value = "/selectUserPhoto", method = RequestMethod.POST)
+		public @ResponseBody List<UserPhoto> selectUserPhoto(User vo) {
+			List<UserPhoto> photoList = dao.selectUserPhoto(vo);
+			return photoList;
+		}
+		@RequestMapping(value = "/updateUser", method = RequestMethod.POST)
+		public String updateUser(User vo, HttpSession httpSession) {
+			String userEmail = (String) httpSession.getAttribute("useremail");
+			vo.setUserEmail(userEmail);
+			int result = dao.updateUser(vo);
+			return "redirect:/";
+		}
 		
 }
