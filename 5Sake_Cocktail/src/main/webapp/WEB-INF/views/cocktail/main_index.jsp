@@ -183,7 +183,7 @@ h4 {
 				<div class="navbar-center">
 					<i id='cock_gallery' class="fas fa-glass-martini icon"	style="margin-right: 20px;"></i> 
 					<!-- <i id='user_gallery' class="fab fa-microsoft icon" style="margin-left: 20px; margin-right: 20px;"></i>  -->
-					<i id='self_making' class="fas fa-user-alt"	style="margin-left: 20px;"></i>
+					<i id='self_making' class="fas fa-user-alt"	style="margin-left: 20px; margin-right: 30px;"></i>
 				</div>
 
 				<!-- navbar-right -->
