@@ -614,7 +614,7 @@
 								<div class="column-wrapper">
 
 									<!-- input_box -->
-									<main>
+									<main style="margin-bottom: 50px;">
 									<p>Separate your tags with a comma</p>
 									<div class="tags-input"></div>
 									<h1>
@@ -623,61 +623,61 @@
 									</main>
 									<!-- input_box_end-->
 
-									<div class="color-picker">
+									<div class="color-picker" style="text-align: center; margin-bottom: 40px;">
 										<h2 class = "cocktailMaker_h2">Color</h2>
 										<label class="cream"> <input type="radio" name="color"
 											value="cream">
 											<div class="color_layer"></div>
-											<div class="color_button">
-												<span></span>
+											<div class="color_button" style="width: 20px; height: 20px;">
+												<span style="width: 30px; height: 30px;"></span>
 											</div>
 										</label> <label class="yellow"> <input type="radio"
 											name="color" value="yellow">
 											<div class="color_layer"></div>
-											<div class="color_button">
-												<span></span>
+											<div class="color_button" style="width: 20px; height: 20px;">
+												<span style="width: 30px; height: 30px;"></span>
 											</div>
 										</label> <label class="orange"> <input type="radio"
 											name="color" value="orange">
 											<div class="layer"></div>
-											<div class="color_button">
-												<span></span>
+											<div class="color_button" style="width: 20px; height: 20px;">
+												<span style="width: 30px; height: 30px;"></span>
 											</div>
 										</label> <label class="red"> <input type="radio"
 											name="color" value="red">
 											<div class="layer"></div>
-											<div class="color_button">
-												<span></span>
+											<div class="color_button" style="width: 20px; height: 20px;">
+												<span style="width: 30px; height: 30px;"></span>
 											</div>
 										</label> <label class="brown"> <input type="radio"
 											name="color" value="brown">
 											<div class="layer"></div>
-											<div class="color_button">
-												<span></span>
+											<div class="color_button" style="width: 20px; height: 20px;">
+												<span style="width: 30px; height: 30px;"></span>
 											</div>
 										</label> <label class="green"> <input type="radio"
 											name="color" value="green">
 											<div class="layer"></div>
-											<div class="color_button">
-												<span></span>
+											<div class="color_button" style="width: 20px; height: 20px;">
+												<span style="width: 30px; height: 30px;"></span>
 											</div>
 										</label> <label class="blue"> <input type="radio"
 											name="color" value="blue">
 											<div class="color_layer"></div>
-											<div class="color_button">
-												<span></span>
+											<div class="color_button" style="width: 20px; height: 20px;">
+												<span style="width: 30px; height: 30px;"></span>
 											</div>
 										</label> <label class="pink"> <input type="radio"
 											name="color" value="pink">
 											<div class="color_layer"></div>
-											<div class="color_button">
-												<span></span>
+											<div class="color_button" style="width: 20px; height: 20px;">
+												<span style="width: 30px; height: 30px;"></span>
 											</div>
 										</label> <label class="peach"> <input type="radio"
 											name="color" value="peach">
 											<div class="color_layer"></div>
-											<div class="color_button">
-												<span></span>
+											<div class="color_button" style="width: 20px; height: 20px;">
+												<span style="width: 30px; height: 30px;"></span>
 											</div>
 										</label>
 									</div>
