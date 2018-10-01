@@ -700,7 +700,7 @@ h4 {
 		$('.cols_cocktailCard').html(inner); 
 	}
 	
-	
+			
 	 	$.ajax({
 			method : "post",
 			url : "getCocktail",
