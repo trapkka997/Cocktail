@@ -25,9 +25,7 @@
 
 
 <style>
-/* li{
-	display: none;
-} */
+
 .card {
 	flex-direction: inherit;
 }
@@ -151,7 +149,7 @@
 									<main>
 									<p>Separate your tags with a comma</p>
 									<div class="tags-input"></div>
-									<h1>
+									<h1 class="h1">
 										<span>Tags</span> Input
 									</h1>
 									</main>
