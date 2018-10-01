@@ -79,7 +79,6 @@ h4 {
 				<div class="navbar-left" style="width: 390px;">
 					<a class="navbar-toggle" data-toggle="dropdown"
 						aria-expanded="false" href="#"> <span></span> <span></span> <span></span>
-<<<<<<< HEAD
 						<div id="recommend" class="dropdown-menu"
 							style="margin-left: 150px; margin-right: 150px; right: 0px;">
 							
@@ -90,10 +89,6 @@ h4 {
 							</button>
 							<!-- exit_button_end -->
 
-=======
-						<div id="recommend" class="dropdown-menu" style="margin-left: 150px; margin-right: 150px; right: 0px;">		
-					
->>>>>>> branch 'master' of https://github.com/trapkka997/Cocktail
 							<div class="row_drop_userRecommend">
 								<div class="col-md-12">
 									<div class="card-group">
