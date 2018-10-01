@@ -212,35 +212,35 @@ h4 {
 													<input class="spirit_check" type='checkbox' name='all'
 														value='valuable' id="all" /> <label for="all"> <img
 														class="spirits_img"
-														src="./resources/assets/basic/img/spirit_icon/spirit_icon_gray/icon_all_cn.png" />
+														src="./resources/assets/basic/img/spirit_icon/icon_all.png" />
 													</label> <input class="spirit_check" type='checkbox' name='brandy'
 														value='valuable' id="brandy" /> <label for="brandy">
 														<img class="spirits_img"
-														src="./resources/assets/basic/img/spirit_icon/spirit_icon_gray/icon_brandy_cn.png" />
+														src="./resources/assets/basic/img/spirit_icon/icon_brandy.png" />
 													</label> <input class="spirit_check" type='checkbox' name='whisky'
 														value='valuable' id="whisky" /> <label for="whisky">
 														<img class="spirits_img"
-														src="./resources/assets/basic/img/spirit_icon/spirit_icon_gray/icon_whisky_cn.png" />
+														src="./resources/assets/basic/img/spirit_icon/icon_whisky.png" />
 													</label> <input class="spirit_check" type='checkbox' name='vodka'
 														value='valuable' id="vodka" /> <label for="vodka">
 														<img class="spirits_img"
-														src="./resources/assets/basic/img/spirit_icon/spirit_icon_gray/icon_vodka_cn.png" />
+														src="./resources/assets/basic/img/spirit_icon/icon_vodka.png" />
 													</label> <input class="spirit_check" type='checkbox' name='rum'
 														value='valuable' id="rum" /> <label for="rum"> <img
 														class="spirits_img"
-														src="./resources/assets/basic/img/spirit_icon/spirit_icon_gray/icon_rum_cn.png" />
+														src="./resources/assets/basic/img/spirit_icon/icon_rum.png" />
 													</label> <input class="spirit_check" type='checkbox' name='jin'
 														value='valuable' id="jin" /> <label for="jin"> <img
 														class="spirits_img"
-														src="./resources/assets/basic/img/spirit_icon/spirit_icon_gray/icon_jin_cn.png" />
+														src="./resources/assets/basic/img/spirit_icon/icon_jin.png" />
 													</label> <input class="spirit_check" type='checkbox' name='tequila'
 														value='valuable' id="tequila" /> <label for="tequila">
 														<img class="spirits_img"
-														src="./resources/assets/basic/img/spirit_icon/spirit_icon_gray/icon_tequila_cn.png" />
+														src="./resources/assets/basic/img/spirit_icon/icon_tequila.png" />
 													</label> <input class="spirit_check" type='checkbox' name='ETC'
 														value='valuable' id="ETC" /> <label for="ETC"> <img
 														class="spirits_img"
-														src="./resources/assets/basic/img/spirit_icon/spirit_icon_gray/icon_etc_cn.png" />
+														src="./resources/assets/basic/img/spirit_icon/icon_etc.png" />
 													</label>
 
 												</div>

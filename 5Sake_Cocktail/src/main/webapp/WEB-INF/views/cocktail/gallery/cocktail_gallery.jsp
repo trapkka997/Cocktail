@@ -146,11 +146,9 @@
 							      <div class="product-image-manager" style="text-align: center;">
 							        <div class="image-container">
 							          <div class="inner-image-container">
-							            <div class="on-image-controls">
+							           	<div class="on-image-controls">
 							              <div class="delete-confirm">Confirm deleting!</div>
-							              <span class="fa fa-arrows"></span>
-							              <span class="fa fa-check" data-toggle="tooltip" data-placement="top" title="Pick as primary"></span>
-							              <span class="fa fa-info-circle" data-toggle="tooltip" data-placement="top" title="Image info"></span>
+							              
 							              <span class="fa fa-times" data-toggle="tooltip" data-placement="top" title="Delete image"></span>
 							            </div>
 							            <div class="center-container">
@@ -162,9 +160,7 @@
 							          <div class="inner-image-container">
 							            <div class="on-image-controls">
 							              <div class="delete-confirm">Confirm deleting!</div>
-							              <span class="fa fa-arrows"></span>
-							              <span class="fa fa-check" data-toggle="tooltip" data-placement="top" title="Pick as primary"></span>
-							              <span class="fa fa-info-circle" data-toggle="tooltip" data-placement="top" title="Image info"></span>
+							              
 							              <span class="fa fa-times" data-toggle="tooltip" data-placement="top" title="Delete image"></span>
 							            </div>
 							            <div class="center-container">
@@ -176,9 +172,7 @@
 							          <div class="inner-image-container">
 							            <div class="on-image-controls">
 							              <div class="delete-confirm">Confirm deleting!</div>
-							              <span class="fa fa-arrows"></span>
-							              <span class="fa fa-check" data-toggle="tooltip" data-placement="top" title="Pick as primary"></span>
-							              <span class="fa fa-info-circle" data-toggle="tooltip" data-placement="top" title="Image info"></span>
+							              
 							              <span class="fa fa-times" data-toggle="tooltip" data-placement="top" title="Delete image"></span>
 							            </div>
 							            <div class="center-container">
@@ -190,9 +184,7 @@
 							          <div class="inner-image-container">
 							            <div class="on-image-controls">
 							              <div class="delete-confirm">Confirm deleting!</div>
-							              <span class="fa fa-arrows"></span>
-							              <span class="fa fa-check" data-toggle="tooltip" data-placement="top" title="Pick as primary"></span>
-							              <span class="fa fa-info-circle" data-toggle="tooltip" data-placement="top" title="Image info"></span>
+							              
 							              <span class="fa fa-times" data-toggle="tooltip" data-placement="top" title="Delete image"></span>
 							            </div>
 							            <div class="center-container">
@@ -204,9 +196,7 @@
 							          <div class="inner-image-container">
 							            <div class="on-image-controls">
 							              <div class="delete-confirm">Confirm deleting!</div>
-							              <span class="fa fa-arrows"></span>
-							              <span class="fa fa-check" data-toggle="tooltip" data-placement="top" title="Pick as primary"></span>
-							              <span class="fa fa-info-circle" data-toggle="tooltip" data-placement="top" title="Image info"></span>
+							              
 							              <span class="fa fa-times" data-toggle="tooltip" data-placement="top" title="Delete image"></span>
 							            </div>
 							            <div class="center-container">
@@ -218,9 +208,7 @@
 							          <div class="inner-image-container">
 							            <div class="on-image-controls">
 							              <div class="delete-confirm">Confirm deleting!</div>
-							              <span class="fa fa-arrows"></span>
-							              <span class="fa fa-check" data-toggle="tooltip" data-placement="top" title="Pick as primary"></span>
-							              <span class="fa fa-info-circle" data-toggle="tooltip" data-placement="top" title="Image info"></span>
+							              
 							              <span class="fa fa-times" data-toggle="tooltip" data-placement="top" title="Delete image"></span>
 							            </div>
 							            <div class="center-container">
@@ -232,9 +220,7 @@
 							          <div class="inner-image-container">
 							            <div class="on-image-controls">
 							              <div class="delete-confirm">Confirm deleting!</div>
-							              <span class="fa fa-arrows"></span>
-							              <span class="fa fa-check" data-toggle="tooltip" data-placement="top" title="Pick as primary"></span>
-							              <span class="fa fa-info-circle" data-toggle="tooltip" data-placement="top" title="Image info"></span>
+							              
 							              <span class="fa fa-times" data-toggle="tooltip" data-placement="top" title="Delete image"></span>
 							            </div>
 							            <div class="center-container">
@@ -246,9 +232,7 @@
 							          <div class="inner-image-container">
 							            <div class="on-image-controls">
 							              <div class="delete-confirm">Confirm deleting!</div>
-							              <span class="fa fa-arrows"></span>
-							              <span class="fa fa-check" data-toggle="tooltip" data-placement="top" title="Pick as primary"></span>
-							              <span class="fa fa-info-circle" data-toggle="tooltip" data-placement="top" title="Image info"></span>
+							              
 							              <span class="fa fa-times" data-toggle="tooltip" data-placement="top" title="Delete image"></span>
 							            </div>
 							            <div class="center-container">
@@ -260,9 +244,7 @@
 							          <div class="inner-image-container">
 							            <div class="on-image-controls">
 							              <div class="delete-confirm">Confirm deleting!</div>
-							              <span class="fa fa-arrows"></span>
-							              <span class="fa fa-check" data-toggle="tooltip" data-placement="top" title="Pick as primary"></span>
-							              <span class="fa fa-info-circle" data-toggle="tooltip" data-placement="top" title="Image info"></span>
+							              
 							              <span class="fa fa-times" data-toggle="tooltip" data-placement="top" title="Delete image"></span>
 							            </div>
 							            <div class="center-container">
@@ -274,9 +256,7 @@
 							          <div class="inner-image-container">
 							            <div class="on-image-controls">
 							              <div class="delete-confirm">Confirm deleting!</div>
-							              <span class="fa fa-arrows"></span>
-							              <span class="fa fa-check" data-toggle="tooltip" data-placement="top" title="Pick as primary"></span>
-							              <span class="fa fa-info-circle" data-toggle="tooltip" data-placement="top" title="Image info"></span>
+							              
 							              <span class="fa fa-times" data-toggle="tooltip" data-placement="top" title="Delete image"></span>
 							            </div>
 							            <div class="center-container">
