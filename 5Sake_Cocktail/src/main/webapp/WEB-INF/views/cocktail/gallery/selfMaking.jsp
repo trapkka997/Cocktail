@@ -23,9 +23,7 @@
 
 
 <style>
-/* li{
-	display: none;
-} */
+
 .card {
 	flex-direction: inherit;
 }
@@ -37,6 +35,13 @@
 }
 .modal-lg {
     max-width: 70%;
+}
+.small_img{
+    height: 50%;
+    z-index: 57;
+    position: absolute;
+    left: 400px;
+    top: 350px;
 }
 </style>
 </head>
@@ -89,458 +94,40 @@
 									</li>
 								</c:forEach>
 								<!-- for Masonry column width -->
+								<c:forEach begin="0" end="5" varStatus="var">
 								<li>
 									<figure class="tile2 scale-anm brandy all">
 										<div class="profilebox profilebox1">
 											<img class="galleryPhoto" src="./resources/assets/basic/img/カクテルアイコン5.png" alt="img01" />
-										   	<div class="SocialIcons">
-										    	 <a id='icon' href="#"><i class="fas fa-heartbeat"></i></a>
+										   	<div class="SocialIcons" id='icon${var.index}'>
+										    	 <a onclick="hover(${var.index})" href="#">
+										    	 	<i class="fas fa-heartbeat"></i>
+										    	 </a>
 										    </div>
 										</div>
 										<figcaption>
-											<h3>Letterpress asymmetrical01</h3>
+											<h3>Letterpress asymmetrical</h3>
 											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
 										</figcaption>
 									</figure>									
 								</li>	
-								<li>
-									<figure class="tile2 scale-anm brandy all">
-										<div class="profilebox profilebox1">
-											<img class="galleryPhoto" src="./resources/assets/basic/img/カクテルアイコン5.png" alt="img01" />
-										   	<div class="SocialIcons">
-										    	 <a id='icon' href="#"><i class="fas fa-heartbeat"></i></a>
-										    </div>
-										</div>
-										<figcaption>
-											<h3>Letterpress asymmetrical07</h3>
-											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
-										</figcaption>
-									</figure>									
-								</li>
-								<li>
-									<figure class="tile2 scale-anm brandy all">
-										<div class="profilebox profilebox1">
-											<img class="galleryPhoto" src="./resources/assets/basic/img/カクテルアイコン5.png" alt="img01" />
-										   	<div class="SocialIcons">
-										    	 <a id='icon' href="#"><i class="fas fa-heartbeat"></i></a>
-										    </div>
-										</div>
-										<figcaption>
-											<h3>Letterpress asymmetrical08</h3>
-											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
-										</figcaption>
-									</figure>									
-								</li>
-								<li>
-									<figure class="tile2 scale-anm brandy all">
-										<div class="profilebox profilebox1">
-											<img class="galleryPhoto" src="./resources/assets/basic/img/カクテルアイコン5.png" alt="img01" />
-										   	<div class="SocialIcons">
-										    	 <a id='icon' href="#"><i class="fas fa-heartbeat"></i></a>
-										    </div>
-										</div>
-										<figcaption>
-											<h3>Letterpress asymmetrical09</h3>
-											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
-										</figcaption>
-									</figure>									
-								</li>
-								<li>
-									<figure class="tile2 scale-anm brandy all">
-										<div class="profilebox profilebox1">
-											<img class="galleryPhoto" src="./resources/assets/basic/img/カクテルアイコン5.png" alt="img01" />
-										   	<div class="SocialIcons">
-										    	 <a id='icon' href="#"><i class="fas fa-heartbeat"></i></a>
-										    </div>
-										</div>
-										<figcaption>
-											<h3>Letterpress asymmetrical10</h3>
-											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
-										</figcaption>
-									</figure>									
-								</li>
-								<li>
-									<figure class="tile2 scale-anm brandy all">
-										<div class="profilebox profilebox1">
-											<img class="galleryPhoto" src="./resources/assets/basic/img/カクテルアイコン5.png" alt="img01" />
-										   	<div class="SocialIcons">
-										    	 <a id='icon' href="#"><i class="fas fa-heartbeat"></i></a>
-										    </div>
-										</div>
-										<figcaption>
-											<h3>Letterpress asymmetrical11</h3>
-											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
-										</figcaption>
-									</figure>									
-								</li>
-								<li>
-									<figure class="tile2 scale-anm brandy all">
-										<div class="profilebox profilebox1">
-											<img class="galleryPhoto" src="./resources/assets/basic/img/カクテルアイコン5.png" alt="img01" />
-										   	<div class="SocialIcons">
-										    	 <a id='icon' href="#"><i class="fas fa-heartbeat"></i></a>
-										    </div>
-										</div>
-										<figcaption>
-											<h3>Letterpress asymmetrical12</h3>
-											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
-										</figcaption>
-									</figure>									
-								</li>
-								<li>
-									<figure class="tile2 scale-anm brandy all">
-										<div class="profilebox profilebox1">
-											<img class="galleryPhoto" src="./resources/assets/basic/img/カクテルアイコン5.png" alt="img01" />
-										   	<div class="SocialIcons">
-										    	 <a id='icon' href="#"><i class="fas fa-heartbeat"></i></a>
-										    </div>
-										</div>
-										<figcaption>
-											<h3>Letterpress asymmetrical13</h3>
-											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
-										</figcaption>
-									</figure>									
-								</li>
-								<li>
-									<figure class="tile2 scale-anm brandy all">
-										<div class="profilebox profilebox1">
-											<img class="galleryPhoto" src="./resources/assets/basic/img/カクテルアイコン5.png" alt="img01" />
-										   	<div class="SocialIcons">
-										    	 <a id='icon' href="#"><i class="fas fa-heartbeat"></i></a>
-										    </div>
-										</div>
-										<figcaption>
-											<h3>Letterpress asymmetrical14</h3>
-											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
-										</figcaption>
-									</figure>									
-								</li>
-								<li>
-									<figure class="tile2 scale-anm brandy all">
-										<div class="profilebox profilebox1">
-											<img class="galleryPhoto" src="./resources/assets/basic/img/カクテルアイコン5.png" alt="img01" />
-										   	<div class="SocialIcons">
-										    	 <a id='icon' href="#"><i class="fas fa-heartbeat"></i></a>
-										    </div>
-										</div>
-										<figcaption>
-											<h3>Letterpress asymmetrical15</h3>
-											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
-										</figcaption>
-									</figure>									
-								</li>
-								<li>
-									<figure class="tile2 scale-anm brandy all">
-										<div class="profilebox profilebox1">
-											<img class="galleryPhoto" src="./resources/assets/basic/img/カクテルアイコン5.png" alt="img01" />
-										   	<div class="SocialIcons">
-										    	 <a id='icon' href="#"><i class="fas fa-heartbeat"></i></a>
-										    </div>
-										</div>
-										<figcaption>
-											<h3>Letterpress asymmetrical16</h3>
-											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
-										</figcaption>
-									</figure>									
-								</li>
-								<li>
-									<figure class="tile2 scale-anm brandy all">
-										<div class="profilebox profilebox1">
-											<img class="galleryPhoto" src="./resources/assets/basic/img/カクテルアイコン5.png" alt="img01" />
-										   	<div class="SocialIcons">
-										    	 <a id='icon' href="#"><i class="fas fa-heartbeat"></i></a>
-										    </div>
-										</div>
-										<figcaption>
-											<h3>Letterpress asymmetrical17</h3>
-											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
-										</figcaption>
-									</figure>									
-								</li>
-								<li>
-									<figure class="tile2 scale-anm brandy all">
-										<div class="profilebox profilebox1">
-											<img class="galleryPhoto" src="./resources/assets/basic/img/カクテルアイコン5.png" alt="img01" />
-										   	<div class="SocialIcons">
-										    	 <a id='icon' href="#"><i class="fas fa-heartbeat"></i></a>
-										    </div>
-										</div>
-										<figcaption>
-											<h3>Letterpress asymmetrical18</h3>
-											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
-										</figcaption>
-									</figure>									
-								</li>
-								<li>
-									<figure class="tile2 scale-anm brandy all">
-										<div class="profilebox profilebox1">
-											<img class="galleryPhoto" src="./resources/assets/basic/img/カクテルアイコン5.png" alt="img01" />
-										   	<div class="SocialIcons">
-										    	 <a id='icon' href="#"><i class="fas fa-heartbeat"></i></a>
-										    </div>
-										</div>
-										<figcaption>
-											<h3>Letterpress asymmetrical19</h3>
-											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
-										</figcaption>
-									</figure>									
-								</li>
-								<li>
-									<figure class="tile2 scale-anm brandy all">
-										<div class="profilebox profilebox1">
-											<img class="galleryPhoto" src="./resources/assets/basic/img/カクテルアイコン5.png" alt="img01" />
-										   	<div class="SocialIcons">
-										    	 <a id='icon' href="#"><i class="fas fa-heartbeat"></i></a>
-										    </div>
-										</div>
-										<figcaption>
-											<h3>Letterpress asymmetrical20</h3>
-											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
-										</figcaption>
-									</figure>									
-								</li>
-								<li>
-									<figure class="tile2 scale-anm brandy all">
-										<div class="profilebox profilebox1">
-											<img class="galleryPhoto" src="./resources/assets/basic/img/カクテルアイコン5.png" alt="img01" />
-										   	<div class="SocialIcons">
-										    	 <a id='icon' href="#"><i class="fas fa-heartbeat"></i></a>
-										    </div>
-										</div>
-										<figcaption>
-											<h3>Letterpress asymmetrical21</h3>
-											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
-										</figcaption>
-									</figure>									
-								</li>
-								<li>
-									<figure class="tile2 scale-anm brandy all">
-										<div class="profilebox profilebox1">
-											<img class="galleryPhoto" src="./resources/assets/basic/img/カクテルアイコン5.png" alt="img01" />
-										   	<div class="SocialIcons">
-										    	 <a id='icon' href="#"><i class="fas fa-heartbeat"></i></a>
-										    </div>
-										</div>
-										<figcaption>
-											<h3>Letterpress asymmetrical22</h3>
-											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
-										</figcaption>
-									</figure>									
-								</li>
-								<li>
-									<figure class="tile2 scale-anm brandy all">
-										<div class="profilebox profilebox1">
-											<img class="galleryPhoto" src="./resources/assets/basic/img/カクテルアイコン5.png" alt="img01" />
-										   	<div class="SocialIcons">
-										    	 <a id='icon' href="#"><i class="fas fa-heartbeat"></i></a>
-										    </div>
-										</div>
-										<figcaption>
-											<h3>Letterpress asymmetrical23</h3>
-											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
-										</figcaption>
-									</figure>									
-								</li>
-								<li>
-									<figure class="tile2 scale-anm brandy all">
-										<div class="profilebox profilebox1">
-											<img class="galleryPhoto" src="./resources/assets/basic/img/カクテルアイコン5.png" alt="img01" />
-										   	<div class="SocialIcons">
-										    	 <a id='icon' href="#"><i class="fas fa-heartbeat"></i></a>
-										    </div>
-										</div>
-										<figcaption>
-											<h3>Letterpress asymmetrical24</h3>
-											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
-										</figcaption>
-									</figure>									
-								</li>
-								<li>
-									<figure class="tile2 scale-anm brandy all">
-										<div class="profilebox profilebox1">
-											<img class="galleryPhoto" src="./resources/assets/basic/img/カクテルアイコン5.png" alt="img01" />
-										   	<div class="SocialIcons">
-										    	 <a id='icon' href="#"><i class="fas fa-heartbeat"></i></a>
-										    </div>
-										</div>
-										<figcaption>
-											<h3>Letterpress asymmetrical25</h3>
-											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
-										</figcaption>
-									</figure>									
-								</li>
-								<li>
-									<figure class="tile2 scale-anm brandy all">
-										<div class="profilebox profilebox1">
-											<img class="galleryPhoto" src="./resources/assets/basic/img/カクテルアイコン5.png" alt="img01" />
-										   	<div class="SocialIcons">
-										    	 <a id='icon' href="#"><i class="fas fa-heartbeat"></i></a>
-										    </div>
-										</div>
-										<figcaption>
-											<h3>Letterpress asymmetrical26</h3>
-											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
-										</figcaption>
-									</figure>									
-								</li>
-								<li>
-									<figure class="tile2 scale-anm brandy all">
-										<div class="profilebox profilebox1">
-											<img class="galleryPhoto" src="./resources/assets/basic/img/カクテルアイコン5.png" alt="img01" />
-										   	<div class="SocialIcons">
-										    	 <a id='icon' href="#"><i class="fas fa-heartbeat"></i></a>
-										    </div>
-										</div>
-										<figcaption>
-											<h3>Letterpress asymmetrical27</h3>
-											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
-										</figcaption>
-									</figure>									
-								</li>
-								<li>
-									<figure class="tile2 scale-anm brandy all">
-										<div class="profilebox profilebox1">
-											<img class="galleryPhoto" src="./resources/assets/basic/img/カクテルアイコン5.png" alt="img01" />
-										   	<div class="SocialIcons">
-										    	 <a id='icon' href="#"><i class="fas fa-heartbeat"></i></a>
-										    </div>
-										</div>
-										<figcaption>
-											<h3>Letterpress asymmetrical28</h3>
-											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
-										</figcaption>
-									</figure>									
-								</li>
-								<li>
-									<figure class="tile2 scale-anm brandy all">
-										<div class="profilebox profilebox1">
-											<img class="galleryPhoto" src="./resources/assets/basic/img/カクテルアイコン5.png" alt="img01" />
-										   	<div class="SocialIcons">
-										    	 <a id='icon' href="#"><i class="fas fa-heartbeat"></i></a>
-										    </div>
-										</div>
-										<figcaption>
-											<h3>Letterpress asymmetrical29</h3>
-											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
-										</figcaption>
-									</figure>									
-								</li>
-								<li>
-									<figure class="tile2 scale-anm brandy all">
-										<div class="profilebox profilebox1">
-											<img class="galleryPhoto" src="./resources/assets/basic/img/カクテルアイコン5.png" alt="img01" />
-										   	<div class="SocialIcons">
-										    	 <a id='icon' href="#"><i class="fas fa-heartbeat"></i></a>
-										    </div>
-										</div>
-										<figcaption>
-											<h3>Letterpress asymmetrical30</h3>
-											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
-										</figcaption>
-									</figure>									
-								</li>
-								<li>
-									<figure class="tile2 scale-anm brandy all">
-										<div class="profilebox profilebox1">
-											<img class="galleryPhoto" src="./resources/assets/basic/img/カクテルアイコン5.png" alt="img01" />
-										   	<div class="SocialIcons">
-										    	 <a id='icon' href="#"><i class="fas fa-heartbeat"></i></a>
-										    </div>
-										</div>
-										<figcaption>
-											<h3>Letterpress asymmetrical31</h3>
-											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
-										</figcaption>
-									</figure>									
-								</li>
-								<li>
-									<figure class="tile2 scale-anm brandy all">
-										<div class="profilebox profilebox1">
-											<img class="galleryPhoto" src="./resources/assets/basic/img/カクテルアイコン5.png" alt="img01" />
-										   	<div class="SocialIcons">
-										    	 <a id='icon' href="#"><i class="fas fa-heartbeat"></i></a>
-										    </div>
-										</div>
-										<figcaption>
-											<h3>Letterpress asymmetrical32</h3>
-											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
-										</figcaption>
-									</figure>									
-								</li>
-								<li>
-									<figure class="tile2 scale-anm brandy all">
-										<div class="profilebox profilebox1">
-											<img class="galleryPhoto" src="./resources/assets/basic/img/カクテルアイコン5.png" alt="img01" />
-										   	<div class="SocialIcons">
-										    	 <a id='icon' href="#"><i class="fas fa-heartbeat"></i></a>
-										    </div>
-										</div>
-										<figcaption>
-											<h3>Letterpress asymmetrical33</h3>
-											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
-										</figcaption>
-									</figure>									
-								</li>
-								<li>
-									<figure class="tile2 scale-anm brandy all">
-										<div class="profilebox profilebox1">
-											<img class="galleryPhoto" src="./resources/assets/basic/img/カクテルアイコン5.png" alt="img01" />
-										   	<div class="SocialIcons">
-										    	 <a id='icon' href="#"><i class="fas fa-heartbeat"></i></a>
-										    </div>
-										</div>
-										<figcaption>
-											<h3>Letterpress asymmetrical34</h3>
-											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
-										</figcaption>
-									</figure>									
-								</li>
-								<li>
-									<figure class="tile2 scale-anm brandy all">
-										<div class="profilebox profilebox1">
-											<img class="galleryPhoto" src="./resources/assets/basic/img/カクテルアイコン5.png" alt="img01" />
-										   	<div class="SocialIcons">
-										    	 <a id='icon' href="#"><i class="fas fa-heartbeat"></i></a>
-										    </div>
-										</div>
-										<figcaption>
-											<h3>Letterpress asymmetrical35</h3>
-											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
-										</figcaption>
-									</figure>									
-								</li>
-								
+								</c:forEach>
 							</ul>
 						</section>
 						<section class="slideshow">
 						<ul>
+							<c:forEach begin="0" end="5">
 							<li>
 								<figure>
 									<figcaption>
 										<h3>Letterpress asymmetrical</h3>
 										<p>Kale chips lomo biodiesel stumptown Godard Tumblr, mustache sriracha tattooed cray aute slow-carb placeat delectus. Letterpress asymmetrical fanny pack art party est pour-over skateboard anim quis, ullamco craft beer.</p>
 									</figcaption>
-									<img src="./resources/assets/gallery/grid/img/large/1.png" alt="img01"/>
-								</figure>
-							</li>	
-							<li>
-								<figure>
-									<figcaption>
-										<h3>Letterpress asymmetrical</h3>
-										<p>Kale chips lomo biodiesel stumptown Godard Tumblr, mustache sriracha tattooed cray aute slow-carb placeat delectus. Letterpress asymmetrical fanny pack art party est pour-over skateboard anim quis, ullamco craft beer.</p>
-									</figcaption>
-									<img src="./resources/assets/gallery/grid/img/large/1.png" alt="img01"/>
+									<img class="big_img" src="./resources/assets/gallery/grid/img/large/1.png" alt="img01"/>
+									<img class="small_img" style="width: 50%;" src="./resources/assets/gallery/grid/img/large/1.png" alt="img01"/>
 								</figure>
 							</li>
-							<li>
-								<figure>
-									<figcaption>
-										<h3>Letterpress asymmetrical</h3>
-										<p>Kale chips lomo biodiesel stumptown Godard Tumblr, mustache sriracha tattooed cray aute slow-carb placeat delectus. Letterpress asymmetrical fanny pack art party est pour-over skateboard anim quis, ullamco craft beer.</p>
-									</figcaption>
-									<img src="./resources/assets/gallery/grid/img/large/1.png" alt="img01"/>
-								</figure>
-							</li>			
+							</c:forEach>				
 						</ul>
 						<nav>
 							<span class="nav-prev">
@@ -556,12 +143,7 @@
 						<!-- <div class="info-keys icon">Navigate with arrow keys</div> -->
 					</section><!-- // slideshow -->
 				</div>
-			</div>
-			
-			
-
-			<a href="#" id="load">Load More</a>
-			
+			</div>						
 				<div class="plus-button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">+</div>
 
 				<!-- modal1_start -->
@@ -583,7 +165,7 @@
 									<main style="margin-bottom: 50px;">
 									<p>Separate your tags with a comma</p>
 									<div class="tags-input"></div>
-									<h1>
+									<h1 class="h1">
 										<span>Tags</span> Input
 									</h1>
 									</main>
@@ -851,15 +433,15 @@
 				selectAll : true
 			});
 		});
-		$('#icon').on('click',function(e){		
-			$('#icon').css('color', 'red');
-			$('.SocialIcons').css('transform', 'none')
+		function hover(num) {
+			$('#icon'+num).children().children().css('color', 'red');
+			$('#icon'+num).css('transform', 'none')
 			.css('transition', 'none')
 			.css('transform-origin', 'none')
 			.css('opacity', 'inherit')
 			.css('left', '15px');
-			e.stopPropagation();
-		}); 
+			event.stopPropagation();
+		}		
 /* 		$(function(){
 			$("li").slice(0,1).show(); // 최초 10개 선택
 			$("#load").click(function(e){ // Load More를 위한 클릭 이벤트e
