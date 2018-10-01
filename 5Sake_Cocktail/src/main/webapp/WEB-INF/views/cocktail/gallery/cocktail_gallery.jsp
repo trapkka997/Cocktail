@@ -5,7 +5,7 @@
 <html>
 
 <head>
-<title>NEWS FEED</title>
+<title>5sake's cocktail</title>
 <link rel="stylesheet"
    href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
 <link rel="stylesheet"
@@ -138,6 +138,7 @@
                   <!-- Modal content-->
                   <div class="modal-content">
 
+<<<<<<< HEAD
                      <!--  -->
                      <div class="container">
                        <div class="row">
@@ -349,6 +350,199 @@
                      </div>
                      <!--  -->
                   </div>
+=======
+							<!--  -->
+							<div class="container">
+							  <div class="row">
+							    <div class="col-md-12">
+							      <h1>Uploading Pictures</h1>
+							      <div class="product-image-manager" style="text-align: center;">
+							        <div class="image-container">
+							          <div class="inner-image-container">
+							           	<div class="on-image-controls">
+							              <div class="delete-confirm">Confirm deleting!</div>
+							              
+							              <span class="fa fa-times" data-toggle="tooltip" data-placement="top" title="Delete image"></span>
+							            </div>
+							            <div class="center-container">
+							              <img src="https://images.unsplash.com/photo-1446645681877-acde17e336a9?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=846&q=80&cs=tinysrgb">
+							            </div>
+							          </div>
+							        </div>
+							        <div class="image-container">
+							          <div class="inner-image-container">
+							            <div class="on-image-controls">
+							              <div class="delete-confirm">Confirm deleting!</div>
+							              
+							              <span class="fa fa-times" data-toggle="tooltip" data-placement="top" title="Delete image"></span>
+							            </div>
+							            <div class="center-container">
+							              <img src="https://images.unsplash.com/photo-1432139509613-5c4255815697?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=2265&q=80&cs=tinysrgb" id="test">
+							            </div>
+							          </div>
+							        </div>
+							        <div class="image-container">
+							          <div class="inner-image-container">
+							            <div class="on-image-controls">
+							              <div class="delete-confirm">Confirm deleting!</div>
+							              
+							              <span class="fa fa-times" data-toggle="tooltip" data-placement="top" title="Delete image"></span>
+							            </div>
+							            <div class="center-container">
+							              <img src="https://images.unsplash.com/photo-1453831362806-3d5577f014a4?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=1016&q=80&cs=tinysrgb">
+							            </div>
+							          </div>
+							        </div>
+							        <div class="image-container">
+							          <div class="inner-image-container">
+							            <div class="on-image-controls">
+							              <div class="delete-confirm">Confirm deleting!</div>
+							              
+							              <span class="fa fa-times" data-toggle="tooltip" data-placement="top" title="Delete image"></span>
+							            </div>
+							            <div class="center-container">
+							              <img src="https://images.unsplash.com/photo-1441123285228-1448e608f3d5?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb">
+							            </div>
+							          </div>
+							        </div>
+							        <div class="image-container">
+							          <div class="inner-image-container">
+							            <div class="on-image-controls">
+							              <div class="delete-confirm">Confirm deleting!</div>
+							              
+							              <span class="fa fa-times" data-toggle="tooltip" data-placement="top" title="Delete image"></span>
+							            </div>
+							            <div class="center-container">
+							              <img src="https://images.unsplash.com/photo-1471943311424-646960669fbc?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=2250&q=80&cs=tinysrgb">
+							            </div>
+							          </div>
+							        </div>
+							        <div class="image-container">
+							          <div class="inner-image-container">
+							            <div class="on-image-controls">
+							              <div class="delete-confirm">Confirm deleting!</div>
+							              
+							              <span class="fa fa-times" data-toggle="tooltip" data-placement="top" title="Delete image"></span>
+							            </div>
+							            <div class="center-container">
+							              <img src="https://images.unsplash.com/photo-1432752641289-a25fc853fceb?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=996&q=80&cs=tinysrgb">
+							            </div>
+							          </div>
+							        </div>
+							        <div class="image-container">
+							          <div class="inner-image-container">
+							            <div class="on-image-controls">
+							              <div class="delete-confirm">Confirm deleting!</div>
+							              
+							              <span class="fa fa-times" data-toggle="tooltip" data-placement="top" title="Delete image"></span>
+							            </div>
+							            <div class="center-container">
+							              <img src="https://images.unsplash.com/photo-1471253387723-35c53c9f97ca?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=2250&q=80&cs=tinysrgb.jpg">
+							            </div>
+							          </div>
+							        </div>
+							        <div class="image-container">
+							          <div class="inner-image-container">
+							            <div class="on-image-controls">
+							              <div class="delete-confirm">Confirm deleting!</div>
+							              
+							              <span class="fa fa-times" data-toggle="tooltip" data-placement="top" title="Delete image"></span>
+							            </div>
+							            <div class="center-container">
+							              <img src="http://jextensions.com/wp-content/plugins/simple-share-buttons-adder/buttons/somacro/facebook.png">
+							            </div>
+							          </div>
+							        </div>
+							        <div class="image-container">
+							          <div class="inner-image-container">
+							            <div class="on-image-controls">
+							              <div class="delete-confirm">Confirm deleting!</div>
+							              
+							              <span class="fa fa-times" data-toggle="tooltip" data-placement="top" title="Delete image"></span>
+							            </div>
+							            <div class="center-container">
+							              <img src="https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678087-heart-128.png">
+							            </div>
+							          </div>
+							        </div>
+							        <div class="image-container">
+							          <div class="inner-image-container">
+							            <div class="on-image-controls">
+							              <div class="delete-confirm">Confirm deleting!</div>
+							              
+							              <span class="fa fa-times" data-toggle="tooltip" data-placement="top" title="Delete image"></span>
+							            </div>
+							            <div class="center-container">
+							              <img src="http://bendtech.com/wp-content/uploads/Logo.png">
+							            </div>
+							          </div>
+							        </div>
+							      </div>
+							       <div id="dropzone" class="dropzone">Drop files here to upload</div>
+							    </div>
+							   
+							  </div>
+							</div>
+							<div class="modal fade" id="file-modal" tabindex="-1" role="dialog">
+							  <div class="modal-dialog modal-lg" role="document">
+							    <div class="modal-content">
+							      <div class="modal-header">
+							        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							        <h4 class="modal-title">Details for image</h4>
+							      </div>
+							      <div class="modal-body">
+							        <div id="image-preview-modal"></div>
+							        <div class="row image-data-row">
+							          <div class="col-sm-4 static-data">
+							            <ul class="file-info-list">
+							              <li><strong>File name:</strong> <span id="filename"></span></li>
+							              <li><strong>File type:</strong> <span id="file-extension"></span></li>
+							              <li><strong>File size:</strong> <span id="filesize"></span></li>
+							              <li><strong>Dimensions:</strong> <span id="file-dimensions"></span></li>
+							            </ul>
+							            <ul class="file-info-list">
+							              <li><strong>Uploaded by:</strong> <span id="uploader">Kasper</span></li>
+							              <li><strong>Upload date:</strong> <span id="upload-date">28. august 2016</span></li>
+							              <li><strong>Uploaded to:</strong> <span id="upload-folder">Images12</span></li>
+							            </ul>
+							          </div>
+							          <div class="col-sm-8 dynamic-data">
+							            <form class="form-horizontal">
+							              <div class="form-group">
+							                <label for="url" class="col-sm-2 control-label">URL</label>
+							                <div class="col-sm-10">
+							                  <input type="text" class="form-control" id="url" disabled>
+							                </div>
+							              </div>
+							              <div class="form-group">
+							                <label for="title" class="col-sm-2 control-label">Titel</label>
+							                <div class="col-sm-10">
+							                  <input type="password" class="form-control" id="title" placeholder="Titel">
+							                </div>
+							              </div>
+							              <div class="form-group">
+							                <label for="alt" class="col-sm-2 control-label">Alt Texy</label>
+							                <div class="col-sm-10">
+							                  <input type="password" class="form-control" id="alt" placeholder="Alt Text">
+							                </div>
+							              </div>
+							            </form>
+							            <div class="text-right">
+							              <a href="" target="blank" id="full-image-link">Preview on new tab</a> | <a href="#" class="text-danger" id="delete-image">Delete image permantly</a>
+							            </div>
+							          </div>
+							        </div>
+							      </div>
+							      <div class="modal-footer">
+							        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+							        <button type="button" class="btn btn-primary">Save Changes</button>
+							      </div>
+							    </div>
+							  </div>
+							</div>
+							<!--  -->
+						</div>
+>>>>>>> branch 'master' of https://github.com/trapkka997/Cocktail
 
                </div>
             </div>

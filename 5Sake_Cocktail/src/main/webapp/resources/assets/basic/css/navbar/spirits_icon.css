@@ -9,11 +9,12 @@ height: 100px;
 width: 70px;
 display:inline-block;
 padding: 0 0 0 0px;
-/* border-radius:50%; */
+
+border-radius: 10px;
 }
 .spirit_check:checked + label
 {
-background:rgba(0, 128, 255, 0.5);
+background: rgba(230, 225, 220, 0.98);
 height: 100px;
 width: 70px;
 display:inline-block;

@@ -3,9 +3,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+<<<<<<< HEAD
 <title>NEWS FEED</title>
 <link rel="stylesheet"   href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
 <link rel="stylesheet"   href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+=======
+<title>5sake's Cocktail</title>
+<link rel="stylesheet"	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
+<link rel="stylesheet"	href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+>>>>>>> branch 'master' of https://github.com/trapkka997/Cocktail
 
 <link rel="stylesheet"   href="./resources/assets/selfmaking/css/button/button.css">
 <link rel="stylesheet" href="./resources/assets/gallery/css/gallery.css">
@@ -38,9 +44,17 @@
     left: 400px;
     top: 350px;
 }
+
+.selfMaking_h1 {
+    position: relative;
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
 </style>
 </head>
 <body>
+<<<<<<< HEAD
    <div class="container">
       <div class="row">
          <div class="col-md-12">
@@ -122,6 +136,89 @@
             </div>
          </div>                  
             <div class="plus-button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">+</div>
+=======
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="button_container">
+					<div class="outer">
+							<div class="inner">
+								<div id="selfMaking_button">
+									<h1 class = "selfMaking_h1" style="margin-top: 20px;">spirits</h1>
+									<div id="alcole" class="button-group" data-filter-group='alcole' style="margin-top: 20px; margin-bottom: 20px;">
+										<button class="btn fil-cat btn-outline-primary" href="" data-rel="all" >ALL</button>
+										<button class="btn fil-cat btn-outline-primary" href="" data-rel="brandy" >Brandy</button>
+										<button class="btn fil-cat btn-outline-primary" href="" data-rel="whisky" >Whisky</button>
+										<button class="btn fil-cat btn-outline-primary" href="" data-rel="vodka" >Vodka</button>
+										<button class="btn fil-cat btn-outline-primary" href="" data-rel="rum" >Rum</button>
+										<button class="btn fil-cat btn-outline-primary" href="" data-rel="dryjin" >Dry Jin</button>
+										<button class="btn fil-cat btn-outline-primary" href="" data-rel="tequila" >Tequila</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div id="grid-gallery" class="grid-gallery">
+						<section class="grid-wrap">
+						<ul class="grid">
+							<li class="grid-sizer"></li>							
+								<!-- for Masonry column width -->
+								<c:forEach begin="0" end="5" varStatus="var">
+								<li>
+									<figure class="tile2 scale-anm brandy all">
+										<div class="profilebox profilebox1">
+											<img class="galleryPhoto" src="./resources/assets/basic/img/カクテルアイコン5.png" alt="img01" />
+										   	<div class="SocialIcons" id='icon${var.index}'>
+										    	 <a onclick="hover(${var.index})" href="#">
+										    	 	<i class="fas fa-heartbeat"></i>
+										    	 </a>
+										    </div>
+										</div>
+										<figcaption>
+											<h3>Letterpress asymmetrical</h3>
+											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
+										</figcaption>
+									</figure>									
+								</li>	
+								</c:forEach>
+							</ul>
+						</section>
+						<section class="slideshow">
+						<ul>
+							<c:forEach begin="0" end="5">
+							<li>
+								<figure>
+									<figcaption>
+										<h3>Letterpress asymmetrical</h3>
+										<p>Kale chips lomo biodiesel stumptown Godard Tumblr, mustache sriracha tattooed cray aute slow-carb placeat delectus. Letterpress asymmetrical fanny pack art party est pour-over skateboard anim quis, ullamco craft beer.</p>
+									</figcaption>
+									<img class="big_img" src="./resources/assets/gallery/grid/img/large/1.png" alt="img01"/>
+									<img class="small_img" style="width: 50%;" src="./resources/assets/gallery/grid/img/large/1.png" alt="img01"/>
+								</figure>
+							</li>
+							</c:forEach>				
+						</ul>
+						<nav>
+							<span class="nav-prev">
+								<i class="fas fa-angle-left" style="color: white;"></i>
+							</span>
+							<span class="nav-next">
+								<i class="fas fa-angle-right"></i>
+							</span>
+							<span class="nav-close">
+								<i class="fas fa-times"></i>
+							</span>
+						</nav>
+						<!-- <div class="info-keys icon">Navigate with arrow keys</div> -->
+					</section><!-- // slideshow -->
+				</div>
+			</div>						
+				<div class="plus-button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">+</div>
+>>>>>>> branch 'master' of https://github.com/trapkka997/Cocktail
 
             <!-- modal1_start -->
             <div id="myModal" class="modal fade" role="dialog">
@@ -130,14 +227,23 @@
                   <!-- Modal content-->
                   <div class="modal-content">
 
+<<<<<<< HEAD
                      <!--  -->
                      <div class="container_makingCocktail">
                         <header class="header">
                            <h1 class = "cocktailMaker_h1">Cocktail Maker</h1>
                         </header>
+=======
+							<!--  -->
+							<div class="container_makingCocktail">
+								<header class="header">
+									<h1 class = "cocktailMaker_h1" style="font-size: 32px;">Cocktail Maker</h1>
+								</header>
+>>>>>>> branch 'master' of https://github.com/trapkka997/Cocktail
 
                         <div class="column-wrapper">
 
+<<<<<<< HEAD
                            <!-- input_box -->
                            <main style="margin-bottom: 50px;">
                            <p>Separate your tags with a comma</p>
@@ -147,6 +253,17 @@
                            </h1>
                            </main>
                            <!-- input_box_end-->
+=======
+									<!-- input_box -->
+									<main style="margin-bottom: 20px;">
+									<p class = "cocktailMaker_p">Separate your tags with a comma</p>
+									<div class="tags-input"></div>
+									<h1 class="cocktailMaker_h1">
+										<span>Tags</span> Input
+									</h1>
+									</main>
+									<!-- input_box_end-->
+>>>>>>> branch 'master' of https://github.com/trapkka997/Cocktail
 
                            <div class="color-picker" style="text-align: center; margin-bottom: 40px;">
                               <h2 class = "cocktailMaker_h2">Color</h2>
