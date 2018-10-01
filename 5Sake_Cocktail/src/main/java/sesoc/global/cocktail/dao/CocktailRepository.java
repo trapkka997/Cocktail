@@ -84,6 +84,11 @@ public class CocktailRepository {
 		CocktailDAO dao = sqlSession.getMapper(CocktailDAO.class);
 		return dao.getIngredientOfCocktail(map);
 	}
+
+	public List<Cocktail> selectWorldBest() {
+		CocktailDAO dao = sqlSession.getMapper(CocktailDAO.class);
+		return dao.selectWorldBest();
+	}
 	
 	
 

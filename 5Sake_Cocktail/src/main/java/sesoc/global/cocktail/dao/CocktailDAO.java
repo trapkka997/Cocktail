@@ -34,4 +34,6 @@ public interface CocktailDAO {
 
 	public List<HashMap<String,BigDecimal>> getIngredientOfCocktail(HashMap<String, String> map);
 
+	public List<Cocktail> selectWorldBest();
+
 }

@@ -196,6 +196,23 @@ SELECT
 	WHERE
 		USEREMAIL = #{userEmail} AND USERCOCKTAILSEQ = #{userCocktailSeq}
 </select>
+<select id="selectAllUserLikeCocktail" parameterType="String" resultType="cocktail">
+	SELECT
+		c.cocktail_Seq,
+		c.cocktailName,
+		c.cocktailName_EN,
+		c.ingredient,
+		c.recipe,
+		c.imageRink,
+		c.colorValue,
+		c.recommand,
+		c.hitcount
+	FROM
+		USERLIKECOCKTAIL u, Cocktail2 c
+	WHERE
+		u.USERCOCKTAILSEQ = c.cocktail_Seq AND
+		u.USEREMAIL = #{value}
+</select>
 <update id="updateProfilePicture" parameterType="user">
 	UPDATE
 		USERDETAIL
@@ -233,6 +250,39 @@ SELECT
 		#{followUser}
 	)
 </insert>
+
+<insert id="insertUserPhotoLike" parameterType="userPhotoLike">
+	INSERT INTO USERPHOTOLIKE(
+		USEREMAIL,
+		USERPHOTOSEQ
+	)VALUES(
+		#{userEmail},
+		#{userPhotoSeq}
+	)
+</insert>
+<select id="selectAllUserLikePhoto" parameterType="String" resultType="userPhoto">
+	SELECT 
+		u.userPhotoSeq,
+		u.userEmail,
+		u.title,
+		u.contents,
+		u.saveFileName,
+		u.originalFileName,
+		u.writeDate,
+		u.hitcount,
+		u.likecount,
+		u.cocktailName
+	FROM
+		USERPHOTOLIKE p, USERPHOTO u
+	WHERE
+		p.USERPHOTOSEQ = u.USERPHOTOSEQ
+		AND
+		p.USEREMAIL = #{value}
+</select>
+<!-- <select id="selectUserPhotoLikeByUserEmail" parameterType="String" resultType="userPhoto">
+	SELECT 
+</select>
+ -->
 </mapper>
 	
 	

@@ -11,8 +11,10 @@
 	<script>
 	$(document).ready(function() {
 		$('.img_img').on('click', function() {
-			alert("aaa");
-			$("#content").load("/cocktail/cocktailDetail?cocktailSeq=2");
+			$("#content").load("/cocktail/cocktailDetail?cocktailSeq="+$(this).attr('seq_num'));
+		});	
+		$('.img_img_img').on('click', function() {
+			$("#content").load("/cocktail/eachoneProfile?userEmail="+$(this).attr('usr_email'));
 		});	
 	});
 </script>
@@ -61,7 +63,7 @@
 									<c:forEach var="recommandCocktail" items="${ recommandCocktailList}">
 									<td >
 									<%-- <a href="cocktailDetail?cocktailSeq=${recommandCocktail.cocktailSeq }"> --%>
-										<img class="img_img" src="${recommandCocktail.imageRink }"><!-- </a> -->
+										<img class="img_img" seq_num ="${recommandCocktail.cocktailSeq }" src="${recommandCocktail.imageRink }"><!-- </a> -->
 									</td>
 									</c:forEach>
 								</tr>
@@ -88,8 +90,7 @@
 								<tr>
 								<c:forEach var="recommandUserPhoto" items="${recommandUserPhotoList }">
 									<td>
-									<a href="eachoneProfile?userEmail=${recommandUserPhoto.userEmail }">
-									<img src="${path }${recommandUserPhoto.saveFileName}"></a>
+									<img class="img_img_img" usr_email="${recommandUserPhoto.userEmail}"  src="${path }${recommandUserPhoto.saveFileName}"></a>
 									</td>
 								</c:forEach>
 								</tr>

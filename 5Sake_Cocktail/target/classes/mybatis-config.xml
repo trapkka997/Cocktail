@@ -12,6 +12,7 @@
 		<typeAlias type="sesoc.global.cocktail.vo.UserFollow" alias="userFollow"/>
 		<typeAlias type="sesoc.global.cocktail.vo.UserLikeCocktail" alias="userLikeCocktail"/>
 		<typeAlias type="sesoc.global.cocktail.vo.Ingredient" alias="ingredient"/>
+		<typeAlias type="sesoc.global.cocktail.vo.UserPhotoLike" alias="userPhotoLike"/>
 	</typeAliases>
 	<mappers>
 		<mapper resource="mappers/emailMapper.xml"/>

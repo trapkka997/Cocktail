@@ -2,6 +2,7 @@ package sesoc.global.cocktail.dao;
 
 import java.util.List;
 
+import sesoc.global.cocktail.vo.Cocktail;
 import sesoc.global.cocktail.vo.DirectMessage;
 import sesoc.global.cocktail.vo.User;
 import sesoc.global.cocktail.vo.UserFollow;
@@ -29,4 +30,6 @@ public interface MemberDAO {
 	public String getUserFollowerNum(User vo);
 	public UserFollow getUserFollow(UserFollow vo);
 	public int insertUserFollow(UserFollow vo);
+	public List<Cocktail> selectAllUserLikeCocktail(String userEmail);
+	public List<UserPhoto> selectAllUserLikePhoto(String userEmail);
 }

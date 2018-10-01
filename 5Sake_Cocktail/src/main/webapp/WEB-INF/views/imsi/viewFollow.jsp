@@ -11,7 +11,7 @@
 <h1>FOLLOW 보기</h1>
 <c:forEach var="followMember" items="${followMemberList}">
 <div>
-<a href="socketTest?toUserEmail=${followMember}">${followMember}</a>
+<a href="socketTest?toUserEmail=${followMember.userEmail}">${followMember}</a>
 </div>
 
 </c:forEach>

@@ -23,6 +23,7 @@ import sesoc.global.cocktail.test.JsoupExample;
 import sesoc.global.cocktail.test.JsoupExample2;
 import sesoc.global.cocktail.vo.Cocktail;
 import sesoc.global.cocktail.vo.UserLikeCocktail;
+import sesoc.global.cocktail.vo.UserPhoto;
 
 @Controller
 public class CocktailController {
@@ -279,6 +280,26 @@ public class CocktailController {
 	
 	@RequestMapping(value = "/getCocktail", method = RequestMethod.POST)
 	public @ResponseBody List<Cocktail> getCocktail() {
+		List<Cocktail> result = cocktailRepository.getCocktailList();
+		for(Cocktail c : result) {
+			String ingre = c.getIngredient();			
+		}
+	 return result;
+	}
+	@RequestMapping(value = "/sukiSake", method = RequestMethod.POST)
+	public @ResponseBody List<Cocktail> sukiSake(String userEmail) {
+		List<Cocktail> userLikeCocktailList = memberRepository.selectAllUserLikeCocktail(userEmail);
+	
+	 return userLikeCocktailList;
+	}
+	@RequestMapping(value = "/sukisyashin", method = RequestMethod.POST)
+	public @ResponseBody List<UserPhoto> sukisyashin(String userEmail) {
+	List<UserPhoto> userLikePhoto = memberRepository.selectAllUserLikePhoto(userEmail);
+	
+	 return userLikePhoto;
+	}
+	@RequestMapping(value = "/sukikata", method = RequestMethod.POST)
+	public @ResponseBody List<Cocktail> sukikata() {
 		List<Cocktail> result = cocktailRepository.getCocktailList();
 		for(Cocktail c : result) {
 			String ingre = c.getIngredient();			

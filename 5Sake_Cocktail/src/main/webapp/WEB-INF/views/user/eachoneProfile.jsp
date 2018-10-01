@@ -364,7 +364,6 @@
 									</a>
 								</div>
 							</c:forEach>
-
 						</div>
 					</div>
 				</div>
@@ -389,8 +388,8 @@
 									<img src="${path }${follow.savedFilename}" alt="">
 									<div class="title">${follow.userEmail }</div>
 									<button class="sendMessage" type="submit"></button>
-									<a href="#messageModal" data-toggle="modal"
-										data-dismiss="modal"> <i class="fa fa-paper-plane"></i>
+									<a href="#messageModal" data-toggle="modal"> <i
+										class="fa fa-paper-plane"></i>
 									</a>
 								</div>
 							</c:forEach>
@@ -432,8 +431,9 @@
 			<div class="wrapper_tabMenu">
 				<nav class="tabs_tabMenu">
 					<div class="selector_tabMenu"></div>
-					<a href="#" class="active_tabMenu">好き酒</a> <a href="#">好き写真</a> <a
-						href="#">好き方</a>
+					<a href="#" class="active_tabMenu" onclick="sukiSakeBtn()">好き酒</a>
+					<a href="#" onclick="sukisyashinBtn()">好き写真</a> <a href="#"
+						onclick="sukikataBtn()">好き方</a>
 				</nav>
 			</div>
 			<!-- tabMenu_end -->
@@ -446,17 +446,7 @@
 							<ul class="grid">
 								<li class="grid-sizer"></li>
 								<!-- for Masonry column width -->
-								<c:forEach var="photo" items="${photoList }">
-									<li>
-										<figure>
-											<img src="${path }${photo.saveFileName}" alt="img01" />
-											<figcaption>
-												<h3>${photo.title }</h3>
-												<p>${photo.contents }</p>
-											</figcaption>
-										</figure>
-									</li>
-								</c:forEach>
+
 							</ul>
 						</section>
 						<section class="slideshow">
@@ -670,6 +660,35 @@
 	<!--  Profile_image change-->
 	<script>
 		$(document).ready(function() {
+			var followUser = document.getElementById('userEmail').value;
+			$.ajax({
+				method : "post",
+				url : "sukiSake",
+				data : {
+					userEmail : followUser
+				},
+				success : function(resp) {
+					$('.grid-sizer').nextAll().empty();
+					var text = "";
+					resp.forEach(function(value, index, resp) {	
+						text += '<li>';
+						text += '<figure>';
+						text += '<figcaption>';
+						text += '<h3>'+resp[index].cocktailName+'</h3>';
+						text += '<p>'+resp[index].cocktailName+'</p>';
+						text += '</figcaption>';
+						text += '<img src="'+resp[index].imageRink+'" alt="img01" />';
+						text += '</figure>';
+						text += '</li>'
+					});
+					$('.grid-sizer').after(text);
+				},
+				error : function() {
+					alert('err');
+				}
+			});
+			
+			
 			var readURL = function(input) {
 				if (input.files && input.files[0]) {
 					var reader = new FileReader();
@@ -714,6 +733,98 @@
 					alert('err');
 				}
 			});
+		}
+	</script>
+	<script type="text/javascript">
+		function sukiSakeBtn() {
+			var followUser = document.getElementById('userEmail').value;
+			$.ajax({
+				method : "post",
+				url : "sukiSake",
+				data : {
+					userEmail : followUser
+				},
+				success : function(resp) {
+					$('.grid-sizer').nextAll().empty();
+					var text = "";
+					resp.forEach(function(value, index, resp) {	
+						text += '<li>';
+						text += '<figure>';
+						text += '<figcaption>';
+						text += '<h3>'+resp[index].cocktailName+'</h3>';
+						text += '<p>'+resp[index].cocktailName+'</p>';
+						text += '</figcaption>';
+						text += '<img src="'+resp[index].imageRink+'" alt="img01" />';
+						text += '</figure>';
+						text += '</li>'
+					});
+					$('.grid-sizer').after(text);
+				},
+				error : function() {
+					alert('err');
+				}
+			});
+		}
+		function sukisyashinBtn() {
+			var followUser = document.getElementById('userEmail').value;
+			$.ajax({
+				method : "post",
+				url : "sukisyashin",
+				data : {
+					userEmail : followUser
+				},
+				success : function(resp) {
+					console.log(resp);
+					$('.grid-sizer').nextAll().empty();
+					var text = "";
+					resp.forEach(function(value, index, resp) {	
+						text += '<li>';
+						text += '<figure>';
+						text += '<figcaption>';
+						text += '<h3>'+resp[index].title+'</h3>';
+						text += '<p>'+resp[index].contents+'</p>';
+						text += '</figcaption>';
+						text += '<img src="${path}'+resp[index].saveFileName+'" alt="img01" />';
+						text += '</figure>';
+						text += '</li>'
+					});
+					$('.grid-sizer').after(text);
+				},
+				error : function() {
+					alert('err');
+				}
+			});
+		}
+
+		function sukikataBtn() {
+			var followUser = document.getElementById('userEmail').value;
+			$.ajax({
+						method : "post",
+						url : "sukiSake",
+						data : {
+							userEmail : followUser
+						},
+						success : function(resp) {
+							$('.grid-sizer').nextAll().empty();
+							console.log(resp);
+							var text = "";
+							resp.forEach(function(value, index, resp) {	
+								text += '<li>';
+								text += '<figure>';
+								text += '<figcaption>';
+								text += '<h3>'+resp[index].cocktailName+'</h3>';
+								text += '<p>'+resp[index].cocktailName+'</p>';
+								text += '</figcaption>';
+								text += '<img src="'+resp[index].imageRink+'" alt="img01" />';
+								text += '</figure>';
+								text += '</li>'
+							});
+							$('.grid-sizer').after(text);
+						},
+						error : function() {
+							alert('err');
+						}
+					});
 		}
 	</script>
 

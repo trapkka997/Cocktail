@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import sesoc.global.cocktail.vo.Cocktail;
 import sesoc.global.cocktail.vo.DirectMessage;
 import sesoc.global.cocktail.vo.User;
 import sesoc.global.cocktail.vo.UserFollow;
@@ -86,6 +87,15 @@ public class MemberRepository {
 	public int insertUserFollow(UserFollow vo) {
 		MemberDAO dao = sqlSession.getMapper(MemberDAO.class);
 		return dao.insertUserFollow(vo);
+	}
+	public List<Cocktail> selectAllUserLikeCocktail(String userEmail) {
+		MemberDAO dao = sqlSession.getMapper(MemberDAO.class);
+		return dao.selectAllUserLikeCocktail(userEmail);
+		
+	}
+	public List<UserPhoto> selectAllUserLikePhoto(String userEmail) {
+		MemberDAO dao = sqlSession.getMapper(MemberDAO.class);
+		return dao.selectAllUserLikePhoto(userEmail);
 	}
 }
 

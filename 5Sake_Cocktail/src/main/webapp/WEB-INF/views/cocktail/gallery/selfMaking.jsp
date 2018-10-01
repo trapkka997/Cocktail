@@ -17,21 +17,11 @@
 <!-- modal -->
 <link rel="stylesheet" href="./resources/assets/gallery/css/pictureUpload.css">
 <link rel="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 <!-- photo상세 슬라이드 -->
 <script src="./resources/assets/gallery/grid/js/modernizr.custom.js"></script>
 
-=======
->>>>>>> branch 'master' of https://github.com/trapkka997/Cocktail
-=======
 
-<!-- photo상세 슬라이드 -->
-
-<script src="./resources/assets/gallery/grid/js/modernizr.custom.js"></script>
-
-
->>>>>>> branch 'master' of https://github.com/trapkka997/Cocktail
 <style>
 .card {
 	flex-direction: inherit;
@@ -895,10 +885,6 @@
 	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-<<<<<<< HEAD
-	
-=======
->>>>>>> branch 'master' of https://github.com/trapkka997/Cocktail
 	<!-- Modal -->
 	<script src="./resources/assets/gallery/js/cbpGridGallery.js"></script>
 	<!-- Modal -->
@@ -934,14 +920,8 @@
 			});
 			});
 	</script>
-<<<<<<< HEAD
-<<<<<<< HEAD
-	
-=======
->>>>>>> branch 'master' of https://github.com/trapkka997/Cocktail
-=======
 
->>>>>>> branch 'master' of https://github.com/trapkka997/Cocktail
+
 	<script>
 		new CBPGridGallery( document.getElementById( 'grid-gallery' ) );
 	</script>

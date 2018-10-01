@@ -171,4 +171,12 @@
       	
 	</select>
 	
+	<select id="selectWorldBest" resultType="cocktail">
+	select c.cocktail_Seq, c.cocktailName, c.cocktailName_En, c.ingredient, c.recipe, c.imageRink, c.colorValue, c.recommand, c.hitcount
+	 from cocktail2 c, worldbest w  
+	 WHERE
+	 	c.cocktail_seq = w.cocktail_seq AND
+		<![CDATA[ ROWNUM <= 3]]>
+	</select>
+	
 </mapper>

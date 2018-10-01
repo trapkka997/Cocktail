@@ -35,7 +35,9 @@ public class HomeController {
 	 * 고정 메뉴 
 	 */ 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home() {
+	public String home(Model model) {
+		List<Cocktail> worldBestList = cocktailRepository.selectWorldBest();
+		model.addAttribute("worldBestList", worldBestList);
 //		List<Cocktail> cocktailList = cocktailRepository.getCocktailList();
 //		for(Cocktail c : cocktailList) {
 //			String ingre = c.getIngredient();			

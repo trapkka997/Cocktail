@@ -161,6 +161,7 @@ public class UserCocktailController {
 	//좋아요
 	@RequestMapping(value = "/userlikecock", method = RequestMethod.GET)
 	public @ResponseBody String userlikecock(int userCocktailSeq) {
+		System.out.println(userCocktailSeq);
 		userCocktailDAO dao = session.getMapper(userCocktailDAO.class);
 		
 		int result = dao.userlike(userCocktailSeq);

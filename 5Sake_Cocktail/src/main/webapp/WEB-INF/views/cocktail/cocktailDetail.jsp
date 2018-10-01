@@ -25,6 +25,7 @@
 /* 사진 테투리 */
 </style>
 <body>
+	<input type="hidden" id="cocktailSeq" name="cocktailSeq" value="${cocktail.cocktailSeq }">
 	<div class="cocktail_show">
 		<div class="container">
 			<div class="row">
@@ -46,7 +47,7 @@
 									${cocktail.recipe}</div>
 							</div>
 							<div class="product-savebutton">
-								<button type="button">Save</button>
+								<button type="button" onclick="saveBtnn()">Save</button>
 							</div>
 						</div>
 					</div>
@@ -106,7 +107,7 @@
 		<div class="container_cocktail">
 			<div class="col">
 				<div class="cocktail_recommend_title">
-					<h2 class="C_R_title">${aa} 와 함께한 사람들</h2>
+					<h2 class="C_R_title">${aa} 와 함께한 사람들 없음</h2>
 					<small class="C_R_small">${aa} 와 함께한 사람들의 추억을 만나보세요</small>
 				</div>
 			</div>
@@ -157,7 +158,30 @@
     <script src="./resources/assets/product_detail/js/bs-animation.js?h=cc4d20340936b09bec81533dd59db3a8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
     <script src="./resources/assets/basic/js/proflie_slide/classie.js?h=723c75fde6dc7bb3ef0f7f12584655a0"></script>
-    <script src="./resources/assets/basic/js/proflie_slide/modernizr.custom.js?h=97989a57a1e8fb69eff65e5a62de7dfb"></script> 
+    <script src="./resources/assets/basic/js/proflie_slide/modernizr.custom.js?h=97989a57a1e8fb69eff65e5a62de7dfb"></script>
+    <script>
+    function saveBtnn() {
+		var cocktailSeq = document.getElementById('cocktailSeq').value;
+	 	$.ajax({
+			method: "get",
+			url: "recommandCocktail",
+			data: {
+				cocktailSeq : cocktailSeq
+			},
+			success: function(resp) {
+				if(resp == 1){
+					alert('조아연');
+				}else if(resp == 0){
+					alert('이미 좋아요 하셨습니다.');
+				}
+			},
+			error: function () {
+				alert('error');
+			}
+		}); 
+	}	
+    </script> 
+    
 </body>
 
 </html>
