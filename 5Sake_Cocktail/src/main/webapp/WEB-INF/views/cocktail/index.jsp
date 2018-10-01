@@ -237,11 +237,7 @@ h4 {
 						<div id="recommend" class="dropdown-menu"
 							style="margin-left: 150px; margin-right: 150px; right: 0px;">
 							
-							<!-- exit_button -->
-							<button type="button" class="close"	aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
-							<!-- exit_button_end -->
+							
 							
 							<div class="row_drop_userRecommend">
 								<div class="col-md-12">
@@ -945,7 +941,7 @@ h4 {
 		<div class="container">
 			<div class="slide_row" id="slideshow">
 				<div class="col-md-12" id="slideshow" style="margin-top: 30px;">
-					<div class="simple-slider">
+					<div class="simple-slider" style="margin-top: 35px;">
 						<div class="swiper-container">
 							<div class="swiper-wrapper">
 								<div class="swiper-slide"

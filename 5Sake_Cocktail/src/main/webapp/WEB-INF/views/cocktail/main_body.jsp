@@ -24,7 +24,7 @@
 		<div class="container">
 			<div class="slide_row" id="slideshow">
 				<div class="col-md-12" id="slideshow">
-					<div class="simple-slider">
+					<div class="simple-slider" style="margin-top: 35px;">
 						<div class="swiper-container">
 							<div class="swiper-wrapper">
 								<div class="swiper-slide"

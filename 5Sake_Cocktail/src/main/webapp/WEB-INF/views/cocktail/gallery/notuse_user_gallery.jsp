@@ -5,7 +5,7 @@
 <html>
 
 <head>
-<title>NEWS FEED</title>
+<title>5sake's Cocktail</title>
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
 <link rel="stylesheet"
@@ -28,6 +28,11 @@
 
 <!-- photo상세 슬라이드 -->
 <script src="./resources/assets/gallery/grid/js/modernizr.custom.js"></script>
+
+<script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js'></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
+
 <style>
 .card {
 	flex-direction: inherit;
@@ -83,25 +88,6 @@
 							<ul class="grid">
 								<li class="grid-sizer"></li>
 								<!-- for Masonry column width -->
-								<c:forEach var="userPhoto" items="${userPhotos}">
-									<li>
-										<figure class="tile2 scale-anm brandy all">
-											<div class="profilebox profilebox1">
-												<img class="galleryPhoto"
-													src="${path }${userPhoto.saveFileName}"
-													alt="img01" />
-												<div class="SocialIcons">
-													<a href="#"><i class="fas fa-heartbeat"></i></a>
-												</div>
-											</div>
-											<figcaption>
-												<h3>${userPhoto.title}</h3>
-												<p>${userPhoto.contents}</p>
-											</figcaption>
-										</figure>
-									</li>
-								</c:forEach>
-
 								<li>
 									<figure class="tile2 scale-anm brandy all">
 										<div class="profilebox profilebox1">
@@ -113,8 +99,7 @@
 										</div>
 										<figcaption>
 											<h3>Letterpress asymmetrical</h3>
-											<p>Chiaaallwave hoodie ea gentrify aute sriracha
-												consequat.</p>
+											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
 										</figcaption>
 									</figure>
 								</li>
@@ -162,8 +147,8 @@
 							<div class="container">
 							  <div class="row">
 							    <div class="col-md-12">
-							      <h1>Uploading Pictures</h1>
-							      <div class="product-image-manager" style="text-align: center;">
+							      <h1>Product image manager</h1>
+							      <div class="product-image-manager">
 							        <div class="image-container">
 							          <div class="inner-image-container">
 							            <div class="on-image-controls">
@@ -305,9 +290,9 @@
 							          </div>
 							        </div>
 							      </div>
-							       <div id="dropzone" class="dropzone">Drop files here to upload</div>
+							      <div id="dropzone" class="dropzone">Drop files here to upload</div>
 							    </div>
-							   
+							    
 							  </div>
 							</div>
 							<div class="modal fade" id="file-modal" tabindex="-1" role="dialog">
@@ -391,8 +376,8 @@
 	<script	src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>	 
 	<script src="./resources/assets/gallery/js/gallery/cbpGridGallery.js"></script>-->
 
-	<script
-		src="./resources/assets/modal_makingCocktail/js/modal_makingCocktail.js"></script>
+	
+		
 	<!-- 사진 상세 슬라이드 -->
 	<script
 		src="./resources/assets/gallery/grid/js/imagesloaded.pkgd.min.js"></script>
@@ -410,6 +395,13 @@
 	
 	<script>
 		new CBPGridGallery(document.getElementById('grid-gallery'));
+	</script>
+	
+	
+	<script>
+		$('#innerModalClose').click(function(){
+			$('#file-modal').modal('toggle');
+		});
 	</script>
 </body>
 </html>

@@ -23,6 +23,9 @@
 
 
 <style>
+/* li{
+	display: none;
+} */
 .card {
 	flex-direction: inherit;
 }
@@ -95,7 +98,7 @@
 										    </div>
 										</div>
 										<figcaption>
-											<h3>Letterpress asymmetrical</h3>
+											<h3>Letterpress asymmetrical01</h3>
 											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
 										</figcaption>
 									</figure>									
@@ -109,7 +112,7 @@
 										    </div>
 										</div>
 										<figcaption>
-											<h3>Letterpress asymmetrical</h3>
+											<h3>Letterpress asymmetrical07</h3>
 											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
 										</figcaption>
 									</figure>									
@@ -123,7 +126,7 @@
 										    </div>
 										</div>
 										<figcaption>
-											<h3>Letterpress asymmetrical</h3>
+											<h3>Letterpress asymmetrical08</h3>
 											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
 										</figcaption>
 									</figure>									
@@ -137,7 +140,7 @@
 										    </div>
 										</div>
 										<figcaption>
-											<h3>Letterpress asymmetrical</h3>
+											<h3>Letterpress asymmetrical09</h3>
 											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
 										</figcaption>
 									</figure>									
@@ -151,7 +154,7 @@
 										    </div>
 										</div>
 										<figcaption>
-											<h3>Letterpress asymmetrical</h3>
+											<h3>Letterpress asymmetrical10</h3>
 											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
 										</figcaption>
 									</figure>									
@@ -165,7 +168,7 @@
 										    </div>
 										</div>
 										<figcaption>
-											<h3>Letterpress asymmetrical</h3>
+											<h3>Letterpress asymmetrical11</h3>
 											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
 										</figcaption>
 									</figure>									
@@ -179,7 +182,7 @@
 										    </div>
 										</div>
 										<figcaption>
-											<h3>Letterpress asymmetrical</h3>
+											<h3>Letterpress asymmetrical12</h3>
 											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
 										</figcaption>
 									</figure>									
@@ -193,7 +196,7 @@
 										    </div>
 										</div>
 										<figcaption>
-											<h3>Letterpress asymmetrical</h3>
+											<h3>Letterpress asymmetrical13</h3>
 											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
 										</figcaption>
 									</figure>									
@@ -207,7 +210,7 @@
 										    </div>
 										</div>
 										<figcaption>
-											<h3>Letterpress asymmetrical</h3>
+											<h3>Letterpress asymmetrical14</h3>
 											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
 										</figcaption>
 									</figure>									
@@ -221,7 +224,7 @@
 										    </div>
 										</div>
 										<figcaption>
-											<h3>Letterpress asymmetrical</h3>
+											<h3>Letterpress asymmetrical15</h3>
 											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
 										</figcaption>
 									</figure>									
@@ -235,7 +238,7 @@
 										    </div>
 										</div>
 										<figcaption>
-											<h3>Letterpress asymmetrical</h3>
+											<h3>Letterpress asymmetrical16</h3>
 											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
 										</figcaption>
 									</figure>									
@@ -249,7 +252,7 @@
 										    </div>
 										</div>
 										<figcaption>
-											<h3>Letterpress asymmetrical</h3>
+											<h3>Letterpress asymmetrical17</h3>
 											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
 										</figcaption>
 									</figure>									
@@ -263,7 +266,7 @@
 										    </div>
 										</div>
 										<figcaption>
-											<h3>Letterpress asymmetrical</h3>
+											<h3>Letterpress asymmetrical18</h3>
 											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
 										</figcaption>
 									</figure>									
@@ -277,7 +280,7 @@
 										    </div>
 										</div>
 										<figcaption>
-											<h3>Letterpress asymmetrical</h3>
+											<h3>Letterpress asymmetrical19</h3>
 											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
 										</figcaption>
 									</figure>									
@@ -291,7 +294,7 @@
 										    </div>
 										</div>
 										<figcaption>
-											<h3>Letterpress asymmetrical</h3>
+											<h3>Letterpress asymmetrical20</h3>
 											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
 										</figcaption>
 									</figure>									
@@ -305,7 +308,7 @@
 										    </div>
 										</div>
 										<figcaption>
-											<h3>Letterpress asymmetrical</h3>
+											<h3>Letterpress asymmetrical21</h3>
 											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
 										</figcaption>
 									</figure>									
@@ -319,7 +322,7 @@
 										    </div>
 										</div>
 										<figcaption>
-											<h3>Letterpress asymmetrical</h3>
+											<h3>Letterpress asymmetrical22</h3>
 											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
 										</figcaption>
 									</figure>									
@@ -333,7 +336,7 @@
 										    </div>
 										</div>
 										<figcaption>
-											<h3>Letterpress asymmetrical</h3>
+											<h3>Letterpress asymmetrical23</h3>
 											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
 										</figcaption>
 									</figure>									
@@ -347,7 +350,7 @@
 										    </div>
 										</div>
 										<figcaption>
-											<h3>Letterpress asymmetrical</h3>
+											<h3>Letterpress asymmetrical24</h3>
 											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
 										</figcaption>
 									</figure>									
@@ -361,7 +364,7 @@
 										    </div>
 										</div>
 										<figcaption>
-											<h3>Letterpress asymmetrical</h3>
+											<h3>Letterpress asymmetrical25</h3>
 											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
 										</figcaption>
 									</figure>									
@@ -375,7 +378,7 @@
 										    </div>
 										</div>
 										<figcaption>
-											<h3>Letterpress asymmetrical</h3>
+											<h3>Letterpress asymmetrical26</h3>
 											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
 										</figcaption>
 									</figure>									
@@ -389,7 +392,7 @@
 										    </div>
 										</div>
 										<figcaption>
-											<h3>Letterpress asymmetrical</h3>
+											<h3>Letterpress asymmetrical27</h3>
 											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
 										</figcaption>
 									</figure>									
@@ -403,7 +406,7 @@
 										    </div>
 										</div>
 										<figcaption>
-											<h3>Letterpress asymmetrical</h3>
+											<h3>Letterpress asymmetrical28</h3>
 											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
 										</figcaption>
 									</figure>									
@@ -417,7 +420,7 @@
 										    </div>
 										</div>
 										<figcaption>
-											<h3>Letterpress asymmetrical</h3>
+											<h3>Letterpress asymmetrical29</h3>
 											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
 										</figcaption>
 									</figure>									
@@ -431,7 +434,7 @@
 										    </div>
 										</div>
 										<figcaption>
-											<h3>Letterpress asymmetrical</h3>
+											<h3>Letterpress asymmetrical30</h3>
 											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
 										</figcaption>
 									</figure>									
@@ -445,7 +448,7 @@
 										    </div>
 										</div>
 										<figcaption>
-											<h3>Letterpress asymmetrical</h3>
+											<h3>Letterpress asymmetrical31</h3>
 											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
 										</figcaption>
 									</figure>									
@@ -459,7 +462,7 @@
 										    </div>
 										</div>
 										<figcaption>
-											<h3>Letterpress asymmetrical</h3>
+											<h3>Letterpress asymmetrical32</h3>
 											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
 										</figcaption>
 									</figure>									
@@ -473,7 +476,7 @@
 										    </div>
 										</div>
 										<figcaption>
-											<h3>Letterpress asymmetrical</h3>
+											<h3>Letterpress asymmetrical33</h3>
 											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
 										</figcaption>
 									</figure>									
@@ -487,7 +490,7 @@
 										    </div>
 										</div>
 										<figcaption>
-											<h3>Letterpress asymmetrical</h3>
+											<h3>Letterpress asymmetrical34</h3>
 											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
 										</figcaption>
 									</figure>									
@@ -501,77 +504,7 @@
 										    </div>
 										</div>
 										<figcaption>
-											<h3>Letterpress asymmetrical</h3>
-											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
-										</figcaption>
-									</figure>									
-								</li>
-								<li>
-									<figure class="tile2 scale-anm brandy all">
-										<div class="profilebox profilebox1">
-											<img class="galleryPhoto" src="./resources/assets/basic/img/カクテルアイコン5.png" alt="img01" />
-										   	<div class="SocialIcons">
-										    	 <a id='icon' href="#"><i class="fas fa-heartbeat"></i></a>
-										    </div>
-										</div>
-										<figcaption>
-											<h3>Letterpress asymmetrical</h3>
-											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
-										</figcaption>
-									</figure>									
-								</li>
-								<li>
-									<figure class="tile2 scale-anm brandy all">
-										<div class="profilebox profilebox1">
-											<img class="galleryPhoto" src="./resources/assets/basic/img/カクテルアイコン5.png" alt="img01" />
-										   	<div class="SocialIcons">
-										    	 <a id='icon' href="#"><i class="fas fa-heartbeat"></i></a>
-										    </div>
-										</div>
-										<figcaption>
-											<h3>Letterpress asymmetrical</h3>
-											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
-										</figcaption>
-									</figure>									
-								</li>
-								<li>
-									<figure class="tile2 scale-anm brandy all">
-										<div class="profilebox profilebox1">
-											<img class="galleryPhoto" src="./resources/assets/basic/img/カクテルアイコン5.png" alt="img01" />
-										   	<div class="SocialIcons">
-										    	 <a id='icon' href="#"><i class="fas fa-heartbeat"></i></a>
-										    </div>
-										</div>
-										<figcaption>
-											<h3>Letterpress asymmetrical</h3>
-											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
-										</figcaption>
-									</figure>									
-								</li>
-								<li>
-									<figure class="tile2 scale-anm brandy all">
-										<div class="profilebox profilebox1">
-											<img class="galleryPhoto" src="./resources/assets/basic/img/カクテルアイコン5.png" alt="img01" />
-										   	<div class="SocialIcons">
-										    	 <a id='icon' href="#"><i class="fas fa-heartbeat"></i></a>
-										    </div>
-										</div>
-										<figcaption>
-											<h3>Letterpress asymmetrical</h3>
-											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
-										</figcaption>
-									</figure>									
-								</li>
-								<li>
-									<figure class="tile2 scale-anm brandy all">
-										<div class="profilebox profilebox1">
-											<img class="galleryPhoto" src="./resources/assets/basic/img/カクテルアイコン5.png" alt="img01" />
-										   	<div class="SocialIcons">
-										    	 <a id='icon' href="#"><i class="fas fa-heartbeat"></i></a>
-										    </div>
-										</div>
-										<figcaption>
-											<h3>Letterpress asymmetrical</h3>
+											<h3>Letterpress asymmetrical35</h3>
 											<p>Chillwave hoodie ea gentrify aute sriracha consequat.</p>
 										</figcaption>
 									</figure>									
@@ -589,7 +522,25 @@
 									</figcaption>
 									<img src="./resources/assets/gallery/grid/img/large/1.png" alt="img01"/>
 								</figure>
-							</li>				
+							</li>	
+							<li>
+								<figure>
+									<figcaption>
+										<h3>Letterpress asymmetrical</h3>
+										<p>Kale chips lomo biodiesel stumptown Godard Tumblr, mustache sriracha tattooed cray aute slow-carb placeat delectus. Letterpress asymmetrical fanny pack art party est pour-over skateboard anim quis, ullamco craft beer.</p>
+									</figcaption>
+									<img src="./resources/assets/gallery/grid/img/large/1.png" alt="img01"/>
+								</figure>
+							</li>
+							<li>
+								<figure>
+									<figcaption>
+										<h3>Letterpress asymmetrical</h3>
+										<p>Kale chips lomo biodiesel stumptown Godard Tumblr, mustache sriracha tattooed cray aute slow-carb placeat delectus. Letterpress asymmetrical fanny pack art party est pour-over skateboard anim quis, ullamco craft beer.</p>
+									</figcaption>
+									<img src="./resources/assets/gallery/grid/img/large/1.png" alt="img01"/>
+								</figure>
+							</li>			
 						</ul>
 						<nav>
 							<span class="nav-prev">
@@ -629,7 +580,7 @@
 								<div class="column-wrapper">
 
 									<!-- input_box -->
-									<main>
+									<main style="margin-bottom: 50px;">
 									<p>Separate your tags with a comma</p>
 									<div class="tags-input"></div>
 									<h1>
@@ -638,61 +589,61 @@
 									</main>
 									<!-- input_box_end-->
 
-									<div class="color-picker">
+									<div class="color-picker" style="text-align: center; margin-bottom: 40px;">
 										<h2 class = "cocktailMaker_h2">Color</h2>
 										<label class="cream"> <input type="radio" name="color"
 											value="cream">
 											<div class="color_layer"></div>
-											<div class="color_button">
-												<span></span>
+											<div class="color_button" style="width: 20px; height: 20px;">
+												<span style="width: 30px; height: 30px;"></span>
 											</div>
 										</label> <label class="yellow"> <input type="radio"
 											name="color" value="yellow">
 											<div class="color_layer"></div>
-											<div class="color_button">
-												<span></span>
+											<div class="color_button" style="width: 20px; height: 20px;">
+												<span style="width: 30px; height: 30px;"></span>
 											</div>
 										</label> <label class="orange"> <input type="radio"
 											name="color" value="orange">
 											<div class="layer"></div>
-											<div class="color_button">
-												<span></span>
+											<div class="color_button" style="width: 20px; height: 20px;">
+												<span style="width: 30px; height: 30px;"></span>
 											</div>
 										</label> <label class="red"> <input type="radio"
 											name="color" value="red">
 											<div class="layer"></div>
-											<div class="color_button">
-												<span></span>
+											<div class="color_button" style="width: 20px; height: 20px;">
+												<span style="width: 30px; height: 30px;"></span>
 											</div>
 										</label> <label class="brown"> <input type="radio"
 											name="color" value="brown">
 											<div class="layer"></div>
-											<div class="color_button">
-												<span></span>
+											<div class="color_button" style="width: 20px; height: 20px;">
+												<span style="width: 30px; height: 30px;"></span>
 											</div>
 										</label> <label class="green"> <input type="radio"
 											name="color" value="green">
 											<div class="layer"></div>
-											<div class="color_button">
-												<span></span>
+											<div class="color_button" style="width: 20px; height: 20px;">
+												<span style="width: 30px; height: 30px;"></span>
 											</div>
 										</label> <label class="blue"> <input type="radio"
 											name="color" value="blue">
 											<div class="color_layer"></div>
-											<div class="color_button">
-												<span></span>
+											<div class="color_button" style="width: 20px; height: 20px;">
+												<span style="width: 30px; height: 30px;"></span>
 											</div>
 										</label> <label class="pink"> <input type="radio"
 											name="color" value="pink">
 											<div class="color_layer"></div>
-											<div class="color_button">
-												<span></span>
+											<div class="color_button" style="width: 20px; height: 20px;">
+												<span style="width: 30px; height: 30px;"></span>
 											</div>
 										</label> <label class="peach"> <input type="radio"
 											name="color" value="peach">
 											<div class="color_layer"></div>
-											<div class="color_button">
-												<span></span>
+											<div class="color_button" style="width: 20px; height: 20px;">
+												<span style="width: 30px; height: 30px;"></span>
 											</div>
 										</label>
 									</div>
@@ -909,24 +860,25 @@
 			.css('left', '15px');
 			e.stopPropagation();
 		}); 
-		$(function(){
-			$("li").slice(0, 4).show(); // 최초 10개 선택
+/* 		$(function(){
+			$("li").slice(0,1).show(); // 최초 10개 선택
 			$("#load").click(function(e){ // Load More를 위한 클릭 이벤트e
 				e.preventDefault();
-				$("li:hidden").slice(0, 4).show(); // 숨김 설정된 다음 10개를 선택하여 표시
+				$("li:hidden").slice(0,10).show(); // 숨김 설정된 다음 10개를 선택하여 표시
 				if($("li:hidden").length == 0){ // 숨겨진 DIV가 있는지 체크
 					alert("더 이상 항목이 없습니다"); // 더 이상 로드할 항목이 없는 경우 경고
 				}
 			});
-			});
+		}); */
 	</script>
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> branch 'master' of https://github.com/trapkka997/Cocktail
 	<script>
 		new CBPGridGallery( document.getElementById( 'grid-gallery' ) );
 	</script>
-	
-	
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </body>
 </html>
