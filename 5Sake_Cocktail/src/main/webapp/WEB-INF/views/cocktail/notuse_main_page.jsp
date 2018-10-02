@@ -6,51 +6,31 @@
 
 <head>
 <title>5Sake's Cocktail</title>
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
-<link rel="stylesheet"
-	href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
-<link rel="stylesheet"
-	href="./resources/assets/basic/css/navbar/navbar.css">
-<link rel="stylesheet"
-	href="./resources/assets/basic/css/proflie_slide/slide_component.css">
+<link rel="stylesheet"	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
+<link rel="stylesheet"	href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+<link rel="stylesheet"	href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
+<link rel="stylesheet"	href="./resources/assets/basic/css/navbar/navbar.css">
+<link rel="stylesheet"	href="./resources/assets/basic/css/proflie_slide/slide_component.css">
 <!--profile-->
-<link rel="stylesheet"
-	href="https://fonts.googleapis.com/css?family=Open+Sans">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-<link rel="stylesheet"
-	href="./resources/assets/basic/css/profile/default.css">
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
+<link rel="stylesheet"	href="https://fonts.googleapis.com/css?family=Open+Sans">
+<link rel="stylesheet"	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet"	href="./resources/assets/basic/css/profile/default.css">
+<link rel="stylesheet"	href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
 <link rel="stylesheet" href="./resources/assets/tag/css/tag_default.css">
-<link rel="stylesheet"
-	href="./resources/assets/modal_makingCocktail/css/circle-progress-bar.css?h=a3fb9dca43f77251e0f00815d5fb05b2">
-<link rel="stylesheet"
-	href="./resources/assets/modal_makingCocktail/css/ninja-slider.css?h=36ca55b69bec564ac8a55b447db21f87">
-<link rel="stylesheet"
-	href="./resources/assets/modal_makingCocktail/css/thumbnail-slider.css?h=88ea8bccbed24d3703a2b324aaff99fd">
-<link rel="stylesheet"
-	href="./resources/assets/basic/css/modal.css?h=79846acf8bad6d3c01f5f6496c592036">
-<link rel="stylesheet"
-	href="./resources/assets/basic/css/photo_profile.css">
-<link rel="stylesheet"
-	href="./resources/assets/main/css/Simple-Slider.css?h=4617ba6673866be9ca12fcd9ef560578">
-<link rel="stylesheet"
-	href="./resources/assets/main/css/title/title.css?h=1a3fe257ec57297162763eee50f0dff7">
+<link rel="stylesheet"	href="./resources/assets/modal_makingCocktail/css/circle-progress-bar.css?h=a3fb9dca43f77251e0f00815d5fb05b2">
+<link rel="stylesheet"	href="./resources/assets/modal_makingCocktail/css/ninja-slider.css?h=36ca55b69bec564ac8a55b447db21f87">
+<link rel="stylesheet"	href="./resources/assets/modal_makingCocktail/css/thumbnail-slider.css?h=88ea8bccbed24d3703a2b324aaff99fd">
+<link rel="stylesheet"	href="./resources/assets/basic/css/modal.css?h=79846acf8bad6d3c01f5f6496c592036">
+<link rel="stylesheet"	href="./resources/assets/basic/css/photo_profile.css">
+<link rel="stylesheet"	href="./resources/assets/main/css/Simple-Slider.css?h=4617ba6673866be9ca12fcd9ef560578">
+<link rel="stylesheet"	href="./resources/assets/main/css/title/title.css?h=1a3fe257ec57297162763eee50f0dff7">
 <link rel="stylesheet" href="./resources/assets/basic/css/slideshow.css">
 
 <!-- navbar_핵심 -->
-<link rel="stylesheet"
-	href="./resources/assets/basic/css/navbar/color_click.css">
-<link rel="stylesheet"
-	href="./resources/assets/basic/css/navbar/spirits_icon.css">
-<link rel="stylesheet"
-	href="./resources/assets/basic/css/navbar/check_list.css">
-<link rel="stylesheet"
-	href="./resources/assets/basic/css/navbar/userRecommend_Tag.css">
+<link rel="stylesheet"	href="./resources/assets/basic/css/navbar/color_click.css">
+<link rel="stylesheet"	href="./resources/assets/basic/css/navbar/spirits_icon.css">
+<link rel="stylesheet"	href="./resources/assets/basic/css/navbar/check_list.css">
+<link rel="stylesheet"	href="./resources/assets/basic/css/navbar/userRecommend_Tag.css">
 <!-- navbar_핵심, 지우지마세여-->	
 
 <style>
