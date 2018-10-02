@@ -64,10 +64,12 @@ h4 {
 #div_ajax_load_image{
    position:absolute;
    z-index: 9999;
-    margin: 450px 800px;
+   
 }
 #div_ajax_load_image > img{
-   width:400px;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    position: fixed;
 }
 </style>
 
@@ -779,7 +781,7 @@ h4 {
                         $("#div_ajax_load_image").show();
                  } else {
                         $('#loading').append('<div id="div_ajax_load_image">'
-                              +'<img src="https://cdn-images-1.medium.com/max/1600/0*bFV-rtVLhuCf9Ijl.gif"></div>');
+                              +'<img class = "loadingPage" src="https://cdn-images-1.medium.com/max/1600/0*bFV-rtVLhuCf9Ijl.gif"></div>');
                  }         
              }, complete: function () {
                $("#div_ajax_load_image").hide();

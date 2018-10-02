@@ -73,7 +73,7 @@
 					<div class="outer">
 						<div class="inner">
 							<div id="selfMaking_button">
-								<h1 class="selfMaking_h1" style="margin-top: 20px;">spirits</h1>
+								<h1 class="selfMaking_h1" style="margin-top: 20px;">ひとりさけ</h1>
 								<div id="alcole" class="button-group" data-filter-group='alcole'
 									style="margin-top: 20px; margin-bottom: 20px;">
 									<button class="btn fil-cat btn-outline-primary" href=""

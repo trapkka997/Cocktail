@@ -45,8 +45,12 @@
     height: 50%;
     z-index: 57;
     position: absolute;
-    left: 400px;
+    left: 600px;
     top: 350px;
+    
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    -webkit-box-shadow: -7px -6px 5px #0e0d0d66;
 }
 </style>
 <script>
@@ -66,7 +70,7 @@
 						<div class="outer">
 							<div class="inner">
 								<div id="selfMaking_button">
-									<h1 style="margin-top: 20px;">spirits</h1>
+									<h1 style="margin-top: 20px;">みんなのさけ</h1>
 									<div id="alcole" class="button-group"
 										data-filter-group='alcole'
 										style="margin-top: 20px; margin-bottom: 20px;">
@@ -129,7 +133,7 @@
 											</figcaption>
 											<img class="big_img" usr-email="${userPhoto.userEmail }" src="${path }${userPhoto.saveFileName}"
 												alt="img01" />
-											<img class="small_img" style="width: 50%;"
+											<img class="small_img" style = "width : 25%"
 												src="${userPhoto.imageRink}"
 												alt="img01" />
 										</figure>
@@ -185,8 +189,8 @@
 										</div>
 										<form name="uploadForm" id="uploadForm"
 											enctype="multipart/form-data" method="post">
-											<div id="dropzone" class="dropzone">Drop files here to
-												upload</div>
+											<div id="dropzone" class="dropzone">
+											Drop files here to <a href="#" alt="Click" id="upload-link">upload</a></div>
 										</form>
 									</div>
 
@@ -329,6 +333,7 @@
 
 	<!-- 사진 업로드 모달 -->
 	<script src="./resources/assets/gallery/js/pictureUpload.js"></script>
+	<script src="./resources/assets/gallery/js/filestack.js"></script>
 	<!-- 사진 업로드 모달 끝 -->
 
 	<script>
@@ -476,6 +481,21 @@
 				}
 			})
 		}
+	</script>
+	
+	<script>
+		jQuery(document).ready(function() {
+			var pickerOptions = {
+				accept : 'image/*',
+			}
+			var apiKey = 'AB8tiXIh3TPiZmocJNLKPz';
+			var client = filestack.init(apiKey);
+			jQuery("#upload-link").click(function() {
+				client.pick(pickerOptions).then(function(result) {
+					console.log(JSON.stringify(result.filesUploaded))
+				});
+			})
+		})
 	</script>
 </body>
 </html>
