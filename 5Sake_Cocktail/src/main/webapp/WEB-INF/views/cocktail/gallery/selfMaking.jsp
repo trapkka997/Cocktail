@@ -5,33 +5,21 @@
 <html>
 <head>
 <title>5sake's Cocktail</title>
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
-<link rel="stylesheet"
-	href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
-
-<link rel="stylesheet"
-	href="./resources/assets/selfmaking/css/button/button.css">
+<link rel="stylesheet"	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
+<link rel="stylesheet"	href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+<link rel="stylesheet"	href="./resources/assets/selfmaking/css/button/button.css">
 <link rel="stylesheet" href="./resources/assets/gallery/css/gallery.css">
-<link rel="stylesheet"
-	href="./resources/assets/gallery/css/uploadbutton.css">
+<link rel="stylesheet"	href="./resources/assets/gallery/css/uploadbutton.css">
 <link rel="stylesheet" href="./resources/assets/gallery/css/hover.css">
-<link rel="stylesheet"
-	href="./resources/assets/modal_makingCocktail/css/modal_makingCocktail.css">
-<link rel="stylesheet"
-	href="./resources/assets/modal_makingCocktail/css/sumoselect.css">
-
+<link rel="stylesheet"	href="./resources/assets/modal_makingCocktail/css/modal_makingCocktail.css">
+<link rel="stylesheet"	href="./resources/assets/modal_makingCocktail/css/sumoselect.css">
 
 <!-- modal -->
-<link rel="stylesheet"
-	href="./resources/assets/gallery/css/pictureUpload.css">
-<link
-	rel="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet"	href="./resources/assets/gallery/css/pictureUpload.css">
+<link rel="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
 <!-- photo상세 슬라이드 -->
 <script src="./resources/assets/gallery/grid/js/modernizr.custom.js"></script>
-
-
 <style>
 .card {
 	flex-direction: inherit;
@@ -48,15 +36,6 @@
 .modal-lg {
 	max-width: 70%;
 }
-
-.small_img {
-	height: 50%;
-	z-index: 57;
-	position: absolute;
-	left: 400px;
-	top: 350px;
-}
-
 .selfMaking_h1 {
 	position: relative;
 	text-align: center;
@@ -76,20 +55,13 @@
 								<h1 class="selfMaking_h1" style="margin-top: 20px;">ひとりさけ</h1>
 								<div id="alcole" class="button-group" data-filter-group='alcole'
 									style="margin-top: 20px; margin-bottom: 20px;">
-									<button class="btn fil-cat btn-outline-primary" href=""
-										data-rel="all">ALL</button>
-									<button class="btn fil-cat btn-outline-primary" href=""
-										data-rel="brandy">Brandy</button>
-									<button class="btn fil-cat btn-outline-primary" href=""
-										data-rel="whisky">Whisky</button>
-									<button class="btn fil-cat btn-outline-primary" href=""
-										data-rel="vodka">Vodka</button>
-									<button class="btn fil-cat btn-outline-primary" href=""
-										data-rel="rum">Rum</button>
-									<button class="btn fil-cat btn-outline-primary" href=""
-										data-rel="dryjin">Dry Jin</button>
-									<button class="btn fil-cat btn-outline-primary" href=""
-										data-rel="tequila">Tequila</button>
+									<button class="btn fil-cat btn-outline-primary" href="" data-rel="all">ALL</button>
+									<button class="btn fil-cat btn-outline-primary" href="" data-rel="brandy">Brandy</button>
+									<button class="btn fil-cat btn-outline-primary" href="" data-rel="whisky">Whisky</button>
+									<button class="btn fil-cat btn-outline-primary" href="" data-rel="vodka">Vodka</button>
+									<button class="btn fil-cat btn-outline-primary" href="" data-rel="rum">Rum</button>
+									<button class="btn fil-cat btn-outline-primary" href="" data-rel="dryjin">Dry Jin</button>
+									<button class="btn fil-cat btn-outline-primary" href="" data-rel="tequila">Tequila</button>
 								</div>
 							</div>
 						</div>
@@ -104,16 +76,14 @@
 						<ul class="grid">
 							<li class="grid-sizer"></li>
 							<!-- for Masonry column width -->
-							<c:forEach var="userCocktail" items="${userCocktailList}"
-								varStatus="var">
+							<c:forEach var="userCocktail" items="${userCocktailList}" varStatus="var">
 								<li>
 									<figure class="tile2 scale-anm brandy all">
 										<div class="profilebox profilebox1">
-											<img class="galleryPhoto"
-												src="${path }${userCocktail.savefilename}" alt="img01" />
+											<img class="galleryPhoto" src="${path }${userCocktail.savefilename}" alt="img01" />
 											<div class="SocialIcons" id='icon${var.index}'>
-												<a onclick="hover(${var.index})" href="#"> <i
-													class="fas fa-heartbeat"></i>
+												<a onclick="hover(${var.index})" href="#"> 
+													<i class="fas fa-heartbeat"></i>
 												</a>
 											</div>
 										</div>
@@ -138,30 +108,27 @@
 												delectus. Letterpress asymmetrical fanny pack art party est
 												pour-over skateboard anim quis, ullamco craft beer.</p>
 										</figcaption>
-										<img class="big_img"
-											src="./resources/assets/gallery/grid/img/large/1.png"
-											alt="img01" />
-										<img class="small_img" style="width: 50%;"
-											src="./resources/assets/gallery/grid/img/large/1.png"
-											alt="img01" />
+										<img src="./resources/assets/gallery/grid/img/large/1.png" alt="img01" />
 									</figure>
 								</li>
 							</c:forEach>
 						</ul>
 						<nav>
-							<span class="nav-prev"> <i class="fas fa-angle-left"
-								style="color: white;"></i>
-							</span> <span class="nav-next"> <i class="fas fa-angle-right"></i>
-							</span> <span class="nav-close"> <i class="fas fa-times"></i>
+							<span class="nav-prev"> 
+								<i class="fas fa-angle-left"></i>
+							</span> 
+							<span class="nav-next"> 
+								<i class="fas fa-angle-right"></i>
+							</span> 
+							<span class="nav-close" style="color: lightblue;"> 
+								<i class="fas fa-times"></i>
 							</span>
 						</nav>
-						<!-- <div class="info-keys icon">Navigate with arrow keys</div> -->
 					</section>
 					<!-- // slideshow -->
 				</div>
 			</div>
-			<div class="plus-button" class="btn btn-primary" data-toggle="modal"
-				data-target="#myModal">+</div>
+			<div class="plus-button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">+</div>
 
 			<!-- modal1_start -->
 			<div id="myModal" class="modal fade" role="dialog">
@@ -392,8 +359,7 @@
 	<script src="./resources/assets/gallery/js/pictureUpload.js"></script>
 	<!-- 사진 상세 슬라이드 -->
 	<script src="./resources/assets/gallery/grid/js/modernizr.custom.js"></script>
-	<script
-		src="./resources/assets/gallery/grid/js/imagesloaded.pkgd.min.js"></script>
+	<script	src="./resources/assets/gallery/grid/js/imagesloaded.pkgd.min.js"></script>
 	<script src="./resources/assets/gallery/grid/js/masonry.pkgd.min.js"></script>
 	<script src="./resources/assets/gallery/grid/js/classie.js"></script>
 	<script src="./resources/assets/gallery/grid/js/cbpGridGallery.js"></script>
@@ -401,18 +367,14 @@
 
 	<!-- modal -->
 	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-	<script
-		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+	<script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script	src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 	<!-- Modal -->
 	<script src="./resources/assets/gallery/js/cbpGridGallery.js"></script>
 	<!-- Modal -->
 	<!-- 칵테일 만들기 업로드 모달 -->
-	<script
-		src="./resources/assets/modal_makingCocktail/js/modal_makingCocktail.js"></script>
-	<script
-		src="./resources/assets/modal_makingCocktail/js/jquery.sumoselect.js"></script>
+	<script	src="./resources/assets/modal_makingCocktail/js/modal_makingCocktail.js"></script>
+	<script	src="./resources/assets/modal_makingCocktail/js/jquery.sumoselect.js"></script>
 	<!-- 칵테일 만들기 업로드 모달 끝 -->
 	<!-- Latest compiled and minified JavaScript -->
 	<script type="text/javascript">

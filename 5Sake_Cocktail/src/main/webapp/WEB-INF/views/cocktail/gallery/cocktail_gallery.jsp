@@ -6,26 +6,13 @@
 
 <head>
 <title>5sake's cocktail</title>
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
-<link rel="stylesheet"
-	href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
-<!-- css가 깨질경우 주석을 푸른 후 다시 막고 실행해보세요. -->
-<!-- <link rel="stylesheet"	href="./resources/assets/basic/css/navbar/navbar.css"> -->
-<!-- <link rel="stylesheet"	href="./resources/assets/basic/css/proflie_slide/slide_component.css"> -->
-
-<!-- <link rel="stylesheet"	href="./resources/assets/basic/css/profile/default.css"> -->
-<!-- <link rel="stylesheet"	href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css"> -->
-<!-- <link rel="stylesheet" href="./resources/assets/tag/css/tag_default.css"> -->
-
-<link rel="stylesheet"
-	href="./resources/assets/selfmaking/css/button/button.css">
+<link rel="stylesheet"	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
+<link rel="stylesheet"	href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+<link rel="stylesheet"	href="./resources/assets/selfmaking/css/button/button.css">
 <link rel="stylesheet" href="./resources/assets/gallery/css/gallery.css">
-<link rel="stylesheet"
-	href="./resources/assets/gallery/css/uploadbutton.css">
+<link rel="stylesheet"	href="./resources/assets/gallery/css/uploadbutton.css">
 <link rel="stylesheet" href="./resources/assets/gallery/css/hover.css">
-<link rel="stylesheet"
-	href="./resources/assets/gallery/css/pictureUpload.css">
+<link rel="stylesheet"	href="./resources/assets/gallery/css/pictureUpload.css">
 
 <!-- photo상세 슬라이드 -->
 <script src="./resources/assets/gallery/grid/js/modernizr.custom.js"></script>
@@ -102,14 +89,16 @@
 							<ul class="grid">
 								<li class="grid-sizer"></li>
 								<!-- for Masonry column width -->
-								<c:forEach var="userPhoto" items="${userPhotos }">
+								<c:forEach var="userPhoto" items="${userPhotos }" varStatus="var">
 									<li>
 										<figure class="tile2 scale-anm brandy all">
 											<div class="profilebox profilebox1">
 												<img class="galleryPhoto"
 													src="${path }${userPhoto.saveFileName}" alt="img01" />
-												<div class="SocialIcons">
-													<a href="#"><i class="fas fa-heartbeat"></i></a>
+												<div class="SocialIcons" id='icon${var.index}'>
+													<a onclick="hover(${var.index})" href="#">
+														<i class="fas fa-heartbeat"></i>
+													</a>
 												</div>
 											</div>
 											<figcaption>
@@ -142,13 +131,16 @@
 
 							</ul>
 							<nav>
-								<span class="nav-prev"> <i class="fas fa-angle-left"
-									style="color: white;"></i>
-								</span> <span class="nav-next"> <i class="fas fa-angle-right"></i>
-								</span> <span class="nav-close"> <i class="fas fa-times"></i>
-								</span>
-							</nav>
-							<!-- <div class="info-keys icon">Navigate with arrow keys</div> -->
+							<span class="nav-prev"> 
+								<i class="fas fa-angle-left"></i>
+							</span> 
+							<span class="nav-next"> 
+								<i class="fas fa-angle-right"></i>
+							</span> 
+							<span class="nav-close" style="color: lightblue;"> 
+								<i class="fas fa-times"></i>
+							</span>
+						</nav>
 						</section>
 						<!-- // slideshow -->
 					</div>
@@ -307,22 +299,9 @@
 			</div>
 		</div>
 	</div>
-	<!-- 	<script	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script	src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
-	<script	src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/js/bootstrap.bundle.min.js"></script>
-	<script src="./resources/assets/basic/js/proflie_slide/classie.js"></script>
-	<script	src="./resources/assets/basic/js/proflie_slide/modernizr.custom.js"></script>
-	<script src="./resources/assets/tag/js/search_tag.js"></script>
-	<script src="./resources/assets/gallery/js/gallery/gallery_classie.js"></script>
-	<script	src="./resources/assets/gallery/js/gallery/gallery_modernizr.custom.js"></script>
-	<script	src="./resources/assets/gallery/js/gallery/imagesloaded.pkgd.min.js"></script>
-	<script src="./resources/assets/gallery/js/gallery/masonry.pkgd.min.js"></script>
-	<script	src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>	 
-	<script src="./resources/assets/gallery/js/gallery/cbpGridGallery.js"></script>-->
-
-
-	<script
-		src="./resources/assets/gallery/grid/js/imagesloaded.pkgd.min.js"></script>
+	<!-- 사진 상세 슬라이드 -->
+	<script src="./resources/assets/gallery/grid/js/modernizr.custom.js"></script>
+	<script	src="./resources/assets/gallery/grid/js/imagesloaded.pkgd.min.js"></script>
 	<script src="./resources/assets/gallery/grid/js/masonry.pkgd.min.js"></script>
 	<script src="./resources/assets/gallery/grid/js/classie.js"></script>
 	<script src="./resources/assets/gallery/grid/js/cbpGridGallery.js"></script>
@@ -338,6 +317,17 @@
 
 	<script>
 		new CBPGridGallery(document.getElementById('grid-gallery'));
+	</script>
+	<script>
+	function hover(num) {
+		$('#icon'+num).children().children().css('color', 'red');
+		$('#icon'+num).css('transform', 'none')
+		.css('transition', 'none')
+		.css('transform-origin', 'none')
+		.css('opacity', 'inherit')
+		.css('left', '15px');
+		event.stopPropagation();
+	}	
 	</script>
 	<script type="text/javascript">
 		var cocktailList;
