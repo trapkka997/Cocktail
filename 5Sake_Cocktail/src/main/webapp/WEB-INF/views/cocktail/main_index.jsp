@@ -654,31 +654,12 @@ h4 {
                      </div>
 
                      <div class="row_cocktail_fliter">
-                        <div class="grid">      
-                        <!-- scroll -->
-                                  <div id="mCSB_1_scrollbar_vertical"
-                                    class="mCSB_scrollTools mCSB_1_scrollbar mCS-light mCSB_scrollTools_vertical"
-                                    style="display: block;">
-                                    <div class="mCSB_draggerContainer">
-                                       <div id="mCSB_1_dragger_vertical" class="mCSB_dragger"
-                                          style="position: absolute; min-height: 30px; top: 0px; height: 66px; display: block; max-height: 252px;"
-                                          oncontextmenu="return false;">
-                                          <div class="mCSB_dragger_bar" style="line-height: 30px;"></div>
-                                       </div>
-                                       <div class="mCSB_draggerRail"></div>
-                                    </div>
-                                 </div>
-                                 <!-- scroll_end -->                        
-                           <!--  -->
-                           <div class="wrapper_cocktailCard" >
-                              <div class="cols_cocktailCard">
-                                 
-                              </div>
-                           </div>
-                           <!--  -->
-                           
-                        </div>
-                     </div>
+					     <div class="grid">   
+					         <div class="wrapper_cocktailCard">
+					             <div class="cols_cocktailCard" style="max-height:530px; overflow:auto;"></div>
+					        </div>
+					    </div>
+					</div>
                      <!-- cocktail_Fliter -->
                   </div>
                   <!-- dropdax_menu -->
