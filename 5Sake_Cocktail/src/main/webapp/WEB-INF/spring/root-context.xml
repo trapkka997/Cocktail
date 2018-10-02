@@ -69,11 +69,13 @@
         </websocket:handshake-interceptors>
         <websocket:sockjs/>
     </websocket:handlers>
+  
     
    <bean class="org.springframework.web.socket.server.standard.ServletServerContainerFactoryBean">
         <property name="maxTextMessageBufferSize" value="8192"/>
         <property name="maxBinaryMessageBufferSize" value="8192"/>
     </bean> 
+    
 
     <bean id="myHandler" class="sesoc.global.cocktail.test.MyHandler"/>
 	

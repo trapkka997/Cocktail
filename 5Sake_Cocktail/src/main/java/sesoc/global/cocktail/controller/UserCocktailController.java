@@ -1,7 +1,10 @@
 package sesoc.global.cocktail.controller;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Locale;
 import java.util.UUID;
 
@@ -19,9 +22,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import sesoc.global.cocktail.dao.userCocktailDAO;
 import sesoc.global.cocktail.dao.userCocktailRepository;
+import sesoc.global.cocktail.vo.Cocktail;
 import sesoc.global.cocktail.vo.UserCocktail;
 
 
@@ -120,29 +125,36 @@ public class UserCocktailController {
 
 	// 등록 & 업로드
 	@RequestMapping(value = "/usercocktailInsert", method = RequestMethod.POST )
-		public String usercocktailInsert(@RequestParam("uploadFile") MultipartFile file
-		        ,HttpServletRequest request,UserCocktail vo
+		public String usercocktailInsert(MultipartHttpServletRequest multipartRequest
+		        ,UserCocktail vo, HttpSession httpSession
 		        , Model model, HttpServletRequest servletRequest) throws Exception {
-			String userEmail = "email@eami.com";
-			userCocktailDAO mapper = session.getMapper(userCocktailDAO.class);
-			 String originalFilename = file.getOriginalFilename();
-			 vo.setOriginalfilename(originalFilename);
-			 UUID uuid = UUID.randomUUID();
-			 String saveFilename = uuid + "_" + originalFilename;
-			 vo.setSavefilename(saveFilename);
-			 vo.setUseremail(userEmail);
-			 int result = mapper.usercocktailInsert(vo);
-			 String path = servletRequest.getSession().getServletContext().getRealPath("/resources/"+saveFilename);
-			 System.out.println(path);
-		     File f = new File(path);
-		     if(!f.exists()) {
-		    	 System.out.println("aaa");
-		    	 f.mkdirs();
-		     }
-		     file.transferTo(f);
+		String userEmail = (String) httpSession.getAttribute("useremail");
+		Iterator<String> itr = multipartRequest.getFileNames();
+		if(itr.hasNext()) {
+			MultipartFile mpf = multipartRequest.getFile(itr.next());
+			System.out.println(mpf.getOriginalFilename() +" uploaded!"); 
+			String originalFilename = mpf.getOriginalFilename();
+			UUID uuid = UUID.randomUUID();
+			String saveFilename=uuid+"_"+originalFilename;
+			String jsonPath = servletRequest.getSession().getServletContext().getRealPath("/resources/"+saveFilename);
+			System.out.println(jsonPath);
+			File saveFile = new File(jsonPath);
+			vo.setOriginalfilename(originalFilename);
+			vo.setSavefilename(saveFilename);
+			vo.setUseremail(userEmail);
+			try { 
+				mpf.transferTo(saveFile);
+				repository.usercocktailInsert(vo);
+			} catch (IOException e){
+				System.out.println(e.getMessage());
+				e.printStackTrace(); 
+			}
+		}
+	
 		             
 		    return "redirect:/gotousermode";
 		}
+
 
 /*	// 조회수
 	@RequestMapping(value = "/userhitcock", method = RequestMethod.GET)

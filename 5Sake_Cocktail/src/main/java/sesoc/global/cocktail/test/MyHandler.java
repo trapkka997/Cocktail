@@ -2,6 +2,7 @@ package sesoc.global.cocktail.test;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,6 +13,8 @@ import org.springframework.web.socket.TextMessage;
 import org.springframework.web.socket.WebSocketMessage;
 import org.springframework.web.socket.WebSocketSession;
 import org.springframework.web.socket.handler.TextWebSocketHandler;
+
+import sesoc.global.cocktail.vo.User;
 
 public class MyHandler extends TextWebSocketHandler{
 	private static Logger logger = LoggerFactory.getLogger(MyHandler.class);
@@ -38,12 +41,13 @@ public class MyHandler extends TextWebSocketHandler{
 	// 클라이언트가 서버로 메시지를 전송했을 때 실행되는 메서드
 	@Override
 	protected void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
-		// TODO Auto-generated method stub
 		logger.info("{}로 부터 {} 받음", session.getId(), message.getPayload());
+		Map<String, Object> map = session.getAttributes();
+		System.out.println(map.get("useremail"));
+		System.out.println(map.get("savedFileName"));
 		for(WebSocketSession sess : sessionList) {
-			sess.sendMessage(new TextMessage(session.getId() +" : "+ message.getPayload()));
+			sess.sendMessage(new TextMessage(map.get("useremail")+" : "+map.get("savedFileName") +" : "+ message.getPayload()));
 		}
-		super.handleTextMessage(session, message);
 	}
 
 	@Override

@@ -50,6 +50,8 @@
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/css?family=Open+Sans">
 <!-- eachoneProfile_css 중요 -->
+<!-- message_css 중요 -->
+<link rel="stylesheet" href="./resources/assets/chat/css/chat.css">
 <style>
 .modal-dialog .profile {
 	max-width: 500px;
@@ -68,6 +70,9 @@
 <body>
 	<input type="hidden" id="userEmail" name="userEmail"
 		value="${user.userEmail }">
+	<input type="hidden" id="path" name="path"
+		value="${path }">
+			
 	<div>
 		<div class="container">
 			<div class="row">
@@ -93,11 +98,10 @@
 									</div>
 									<div class="col-xs-8 col-sm-10 col-md-8 user-info">
 										<div>
-											<h2 class="full-name">${user.userEmail }</h2>
+											<h2 class="full-name">${user.userNickname }</h2>
 											<ul class="mfe">
 												<li>
-													<button class="btn btn-default" data-toggle="modal"
-														data-target="#messageModal">Message</button>
+													<button class="btn btn-default" onclick="openForm()">Message</button>
 												</li>
 												<li>
 													<button class="btn btn-default" onclick="followBtn()">Follow</button>
@@ -111,8 +115,8 @@
 											</ul>
 										</div>
 										<ul class="ach">
-											<li><span class="ach-count" onclick="postBtn()">${postNum }</span> <span
-												class="ach-label">Posts</span></li>
+											<li><span class="ach-count" onclick="postBtn()">${postNum }</span>
+												<span class="ach-label">Posts</span></li>
 											<li><span class="ach-count">${followerNum }</span> <span
 												class="ach-label" data-toggle="modal"
 												data-target="#followerModal">Followers</span></li>
@@ -134,216 +138,23 @@
 				</div>
 			</div>
 
-			<!-- message_modal -->
-			<div class="modal fade" id="messageModal" tabindex="-1" role="dialog"
-				aria-labelledby="chat" aria-hidden="true">
-				<div class="modal-dialog">
-					<div class="modal__close">
-						<a href="#" class="modal__icon"> <i class="fa fa-times"
-							aria-hidden="true"></i>
-						</a> <span class="modal__note">Закрыть</span>
-					</div>
-					<div class="modal-content chat">
-						<div class="modal__main">
-							<div class="chatbox">
-								<div class="chatbox__row">
-									<div class="head">
-										<div class="head__avatar avatar avatar_larger">
-											<a href="#" class="avatar__wrap"> M </a>
-										</div>
-										<div class="head__title">MaximModus</div>
-									</div>
-								</div>
-								<div class="chatbox__row chatbox__row_fullheight">
-									<div class="chatbox__content">
-										<div class="message">
-											<div class="message__head">
-												<span class="message__note">Princess Murphy</span> <span
-													class="message__note">Вчера, 17:00</span>
-											</div>
-											<div class="message__base">
-												<div class="message__avatar avatar">
-													<a href="#" class="avatar__wrap"> <img
-														class="avatar__img" src="http://placehold.it/35x35"
-														width="35" height="35" alt="avatar image">
-													</a>
-												</div>
-												<div class="message__textbox">
-													<span class="message__text">Hello, Bogdan! Yes,
-														funny smiles</span> <img class="message__smiley"
-														src="http://www.pic4ever.com/images/14k8gag.gif"
-														border="0">
-												</div>
-											</div>
-										</div>
-										<div class="message">
-											<div class="message__head">
-												<span class="message__note">Princess Murphy</span> <span
-													class="message__note">Вчера, 17:00</span>
-											</div>
-											<div class="message__base">
-												<div class="message__avatar avatar">
-													<a href="#" class="avatar__wrap"> <img
-														class="avatar__img" src="http://placehold.it/35x35"
-														width="35" height="35" alt="avatar image">
-													</a>
-												</div>
-												<div class="message__textbox">
-													<span class="message__text">Hello, Bogdan! Yes,
-														funny smiles</span>
-												</div>
-											</div>
-										</div>
-										<div class="message">
-											<div class="message__head">
-												<span class="message__note">Princess Murphy</span> <span
-													class="message__note">Вчера, 17:00</span>
-											</div>
-											<div class="message__base">
-												<div class="message__avatar avatar">
-													<a href="#" class="avatar__wrap"> <img
-														class="avatar__img" src="http://placehold.it/35x35"
-														width="35" height="35" alt="avatar image">
-													</a>
-												</div>
-												<div class="message__textbox">
-													<span class="message__text">Hello, Bogdan! Yes,
-														funny smiles</span>
-												</div>
-											</div>
-										</div>
-										<div class="message">
-											<div class="message__head">
-												<span class="message__note">Princess Murphy</span> <span
-													class="message__note">Вчера, 17:00</span>
-											</div>
-											<div class="message__base">
-												<div class="message__avatar avatar">
-													<a href="#" class="avatar__wrap"> <img
-														class="avatar__img" src="http://placehold.it/35x35"
-														width="35" height="35" alt="avatar image">
-													</a>
-												</div>
-												<div class="message__textbox">
-													<span class="message__text">Hello, Bogdan! Yes,
-														funny smiles</span>
-												</div>
-											</div>
-										</div>
-										<div class="message">
-											<div class="message__head">
-												<span class="message__note">Princess Murphy</span> <span
-													class="message__note">Вчера, 17:00</span>
-											</div>
-											<div class="message__base">
-												<div class="message__avatar avatar">
-													<a href="#" class="avatar__wrap"> <img
-														class="avatar__img" src="http://placehold.it/35x35"
-														width="35" height="35" alt="avatar image">
-													</a>
-												</div>
-												<div class="message__textbox">
-													<span class="message__text">Hello, Bogdan! Yes,
-														funny smiles</span>
-												</div>
-											</div>
-										</div>
-										<div class="message">
-											<div class="message__head">
-												<span class="message__note">Princess Murphy</span> <span
-													class="message__note">Вчера, 17:00</span>
-											</div>
-											<div class="message__base">
-												<div class="message__avatar avatar">
-													<a href="#" class="avatar__wrap"> <img
-														class="avatar__img" src="http://placehold.it/35x35"
-														width="35" height="35" alt="avatar image">
-													</a>
-												</div>
-												<div class="message__textbox">
-													<span class="message__text">Hello, Bogdan! Yes,
-														funny smiles</span>
-												</div>
-											</div>
-										</div>
-										<div class="message">
-											<div class="message__head">
-												<span class="message__note">Princess Murphy</span> <span
-													class="message__note">Вчера, 17:00</span>
-											</div>
-											<div class="message__base">
-												<div class="message__avatar avatar">
-													<a href="#" class="avatar__wrap"> <img
-														class="avatar__img" src="http://placehold.it/35x35"
-														width="35" height="35" alt="avatar image">
-													</a>
-												</div>
-												<div class="message__textbox">
-													<span class="message__text">Hello, Bogdan! Yes,
-														funny smiles</span>
-												</div>
-											</div>
-										</div>
-										<div class="message">
-											<div class="message__head">
-												<span class="message__note">Princess Murphy</span> <span
-													class="message__note">Вчера, 17:00</span>
-											</div>
-											<div class="message__base">
-												<div class="message__avatar avatar">
-													<a href="#" class="avatar__wrap"> <img
-														class="avatar__img" src="http://placehold.it/35x35"
-														width="35" height="35" alt="avatar image">
-													</a>
-												</div>
-												<div class="message__textbox">
-													<span class="message__text">Hello, Bogdan! Yes,
-														funny smiles</span>
-												</div>
-											</div>
-										</div>
-										<div class="message">
-											<div class="message__head">
-												<span class="message__note">Princess Murphy</span> <span
-													class="message__note">Вчера, 17:00</span>
-											</div>
-											<div class="message__base">
-												<div class="message__avatar avatar">
-													<a href="#" class="avatar__wrap"> <img
-														class="avatar__img" src="http://placehold.it/35x35"
-														width="35" height="35" alt="avatar image">
-													</a>
-												</div>
-												<div class="message__textbox">
-													<span class="message__text">Hello, Bogdan! Yes,
-														funny smiles</span> <img class="message__smiley"
-														src="http://www.pic4ever.com/images/245.gif" border="0">
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="chatbox__row">
-									<div class="enter">
-										<div class="enter__submit">
-											<button class="button button_id_submit" type="submit">
-												<i class="fa fa-paper-plane" aria-hidden="true"></i>
-											</button>
-										</div>
-										<div class="enter__textarea">
-											<textarea name="enterMessage" id="enterMessage" cols="30"
-												rows="2" placeholder="Say message..."></textarea>
-										</div>
-									</div>
 
-								</div>
-							</div>
-						</div>
+			<!-- message_modal -->
+
+			<div class="chat-popup" id="myForm">
+				<form class="form-container" onsubmit="return sendBtn()">
+					<h1>Chat</h1>
+					<label for="msg"><b>Message</b></label>
+					<div class="chat_chat">
 					</div>
-				</div>
+
+					<textarea placeholder="Type message.." id="msg" name="msg" required></textarea>
+
+					<button type="submit" class="btn send">Send</button>
+					<button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+				</form>
 			</div>
 			<!-- message_modal_end -->
-
 
 			<!-- #followerModal_modal -->
 			<div class="modal fade" id="followerModal" tabindex="-1"
@@ -411,16 +222,19 @@
 						<form class="profile_edit_form" action="updateUser" method="post">
 							<h1 class="profile_edit_h1">Edit information</h1>
 							<div class="question">
-								<input type="text" id="updateNickname" name="userNickname" required /> <label>NickName</label>
+								<input type="text" id="updateNickname" name="userNickname"
+									required /> <label>NickName</label>
 							</div>
 							<div class="question">
-								<input type="text" id="updateInstagramID" name="userInsta" required /> <label>Instagram ID</label>
+								<input type="text" id="updateInstagramID" name="userInsta"
+									required /> <label>Instagram ID</label>
 							</div>
 							<div class="question">
-								<input type="text" id="updateYourLikes" name="updateYourLikes" required /> <label>Your Likes</label>
+								<input type="text" id="updateYourLikes" name="updateYourLikes"
+									required /> <label>Your Likes</label>
 							</div>
 
-							<button >수 정</button>
+							<button>수 정</button>
 						</form>
 
 					</div>
@@ -657,237 +471,326 @@
 	<script src="./resources/assets/gallery/js/gallery/cbpGridGallery.js"></script>
 	<script src="./resources/assets/gallery/js/circluar_layout.js"></script>
 	<script src="./resources/assets/eachoneProfile/js/tabMenu.js"></script>
-
+	<script
+		src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
+	<script type="text/javascript"></script>
 	<!--  MessageModal-->
 	<!--  Profile_image change-->
 	<script>
-		$(document).ready(function() {
-			var followUser = document.getElementById('userEmail').value;
-			$.ajax({
-						method : "post",
-						url : "selectUserPhoto",
-						data : {
-							userEmail : followUser
-						},
-						success : function(resp) {
-							$('.grid-sizer').nextAll().empty();
-							console.log(resp);
-							var text = "";
-							resp.forEach(function(value, index, resp) {	
-								text += '<li>';
-								text += '<figure>';
-								text += '<figcaption>';
-								text += '<h3>'+resp[index].contents+'</h3>';
-								text += '<p>'+resp[index].contents+'</p>';
-								text += '</figcaption>';
-								text += '<img src=${path}"'+resp[index].saveFileName+'" alt="img01" />';
-								text += '</figure>';
-								text += '</li>'
-							});
-							$('.grid-sizer').after(text);
-						},
-						error : function() {
-							alert('err');
+		 var sock = new SockJS('http://localhost:8888/cocktail/myHandler');
+		  sock.onopen = function() {
+		     console.log('open');
+		 };
+		 sock.onmessage = function(e) {
+		    	var currentTime = Date.now()
+		    	var GMT = -(new Date()).getTimezoneOffset()/60;
+		    	var totalSeconds = Math.floor(currentTime/1000);
+		    	seconds = ('0' + totalSeconds % 60).slice(-2);
+		    	var totalMinutes = Math.floor(totalSeconds/60);
+		    	minutes = ('0' + totalMinutes % 60).slice(-2);
+		    	var totalHours = Math.floor(totalMinutes/60);
+		    	hours = ('0' + (totalHours+GMT) % 24).slice(-2);
+		    	var timeDisplay = hours + ":" + minutes + ":" + seconds;
+		     console.log('message', e.data);
+		     var resp = e.data.split(" : ");
+		     var getData = resp[2];
+		     console.log(resp);
+		     var userId = document.getElementById('userEmail').value;
+		     
+		     var usrPicture = document.getElementById('path').value+resp[1];
+			 var message = "";
+			 message +='<div class="container_chat">';
+			 message +='<img src="'+ usrPicture+'" alt="Avatar" style="width: 100%;">';
+			 message +='<p>'+getData+'</p>';
+			 message +='<span class="time-left">'+timeDisplay+'</span>';
+			 message +='</div>'
+		     $('.chat_chat').append(message);
+			 $('#msg').val('');
+			 //sock.close();
+		 };
+
+		 sock.onclose = function() {
+		     console.log('close');
+		 }; 
+		
+		</script>
+		<script>
+			$(document).ready(function() {
+				
+				var followUser = document.getElementById('userEmail').value;
+				$.ajax({
+							method : "post",
+							url : "selectUserPhoto",
+							data : {
+								userEmail : followUser
+							},
+							success : function(resp) {
+								$('.grid-sizer').nextAll().empty();
+								console.log(resp);
+								var text = "";
+								resp.forEach(function(value, index, resp) {	
+									text += '<li>';
+									text += '<figure>';
+									text += '<figcaption>';
+									text += '<h3>'+resp[index].contents+'</h3>';
+									text += '<p>'+resp[index].contents+'</p>';
+									text += '</figcaption>';
+									text += '<img src=${path}'+resp[index].saveFileName+' alt="img01" />';
+									text += '</figure>';
+									text += '</li>'
+								});
+								$('.grid-sizer').after(text);
+							},
+							error : function() {
+								alert('err');
+							}
+						});	
+
+				var readURL = function(input) {
+					if (input.files && input.files[0]) {
+						console.log(input.files[0]);
+					    var fd = new FormData();
+					    fd.append("file", input.files[0]);
+						  var xhr = new XMLHttpRequest();
+						    xhr.onreadystatechange = function() {
+						       if (this.readyState == 4 && this.status == 200) {
+						          console.log(xhr.response);
+						          $("#content").load("/cocktail/eachoneProfile?userEmail="+followUser);
+						              } else if(this.status == 500){
+						              } else if(this.status == 403){
+						              } else if(this.status == 404){
+						              } 
+						    };
+						    xhr.open("POST", "/cocktail/updateProfilePicture");
+						    xhr.send(fd);
+						    
+						var reader = new FileReader();
+
+						reader.onload = function(e) {
+							
+							
+							$('.profile-pic').attr('src', e.target.result);
 						}
-					});	
-			
-			
-			var readURL = function(input) {
-				if (input.files && input.files[0]) {
-					var reader = new FileReader();
 
-					reader.onload = function(e) {
-						$('.profile-pic').attr('src', e.target.result);
+						reader.readAsDataURL(input.files[0]);
 					}
-
-					reader.readAsDataURL(input.files[0]);
 				}
+
+				$(".file-upload").on('change', function() {
+					readURL(this);
+				});
+
+				$(".upload-button").on('click', function() {
+					$(".file-upload").click();
+				});
+			});
+		</script>
+		<!--  Profile_image change_end -->
+		<script type="text/javascript">
+			 function sendBtn() {
+				 
+				 
+				 alert('몇번 실행이 될까?');
+		    	var sendMessage = $('#msg').val();
+		    	var followUser = document.getElementById('userEmail').value;
+				 $.ajax({
+					method:"get",
+					url:"writeMessage",
+					data:{
+						toUserEmail : followUser,
+						message : sendMessage
+					},
+					success:function(resp){
+						sock.send(JSON.stringify(sendMessage));
+						msg.text = "";
+					},error: function(){
+						alert('err');
+					}
+					
+				}); 
+				return false;
 			}
 
-			$(".file-upload").on('change', function() {
-				readURL(this);
-			});
-
-			$(".upload-button").on('click', function() {
-				$(".file-upload").click();
-			});
-		});
-	</script>
-	<!--  Profile_image change_end -->
-	<script type="text/javascript">
-		function followBtn() {
-			var followUser = document.getElementById('userEmail').value;
-			$.ajax({
-				method : "get",
-				url : "userFollow",
-				data : {
-					followUser : followUser
-				},
-				success : function(resp) {
-					if (resp == '3') {
-						alert("본인은 follow 불가능합니다.");
-					} else if (resp == '2') {
-						alert("이미 follow 한 사람입니다.");
-					} else if (resp == '1') {
-						alert("follow 완료 ");
+			function followBtn() {
+				var followUser = document.getElementById('userEmail').value;
+				$.ajax({
+					method : "get",
+					url : "userFollow",
+					data : {
+						followUser : followUser
+					},
+					success : function(resp) {
+						if (resp == '3') {
+							alert("본인은 follow 불가능합니다.");
+						} else if (resp == '2') {
+							alert("이미 follow 한 사람입니다.");
+						} else if (resp == '1') {
+							alert("follow 완료 ");
+						}
+					},
+					error : function() {
+						alert('err');
 					}
-				},
-				error : function() {
-					alert('err');
-				}
-			});
-		}
-	</script>
-	<script type="text/javascript">
-		function sukiSakeBtn() {
-			var followUser = document.getElementById('userEmail').value;
-			$.ajax({
-				method : "post",
-				url : "sukiSake",
-				data : {
-					userEmail : followUser
-				},
-				success : function(resp) {
-					$('.grid-sizer').nextAll().empty();
-					var text = "";
-					resp.forEach(function(value, index, resp) {	
-						text += '<li>';
-						text += '<figure>';
-						text += '<figcaption>';
-						text += '<h3>'+resp[index].cocktailName+'</h3>';
-						text += '<p>'+resp[index].cocktailName+'</p>';
-						text += '</figcaption>';
-						text += '<img src="'+resp[index].imageRink+'" alt="img01" />';
-						text += '</figure>';
-						text += '</li>'
-					});
-					$('.grid-sizer').after(text);
-				},
-				error : function() {
-					alert('err');
-				}
-			});
-		}
-		function sukisyashinBtn() {
-			var followUser = document.getElementById('userEmail').value;
-			$.ajax({
-				method : "post",
-				url : "sukisyashin",
-				data : {
-					userEmail : followUser
-				},
-				success : function(resp) {
-					console.log(resp);
-					$('.grid-sizer').nextAll().empty();
-					var text = "";
-					resp.forEach(function(value, index, resp) {	
-						text += '<li>';
-						text += '<figure>';
-						text += '<figcaption>';
-						text += '<h3>'+resp[index].title+'</h3>';
-						text += '<p>'+resp[index].contents+'</p>';
-						text += '</figcaption>';
-						text += '<img src="${path}'+resp[index].saveFileName+'" alt="img01" />';
-						text += '</figure>';
-						text += '</li>'
-					});
-					$('.grid-sizer').after(text);
-				},
-				error : function() {
-					alert('err');
-				}
-			});
-		}
+				});
+			}
 
-		function sukikataBtn() {
-			var followUser = document.getElementById('userEmail').value;
-			$.ajax({
-						method : "post",
-						url : "userselectCockList",
-						success : function(resp) {
-							$('.grid-sizer').nextAll().empty();
-							console.log(resp);
-							var text = "";
-							resp.forEach(function(value, index, resp) {	
-								text += '<li>';
-								text += '<figure>';
-								text += '<figcaption>';
-								text += '<h3>'+resp[index].usercocktailname+'</h3>';
-								text += '<p>'+resp[index].usercocktailname+'</p>';
-								text += '</figcaption>';
-								text += '<img src=${path}"'+resp[index].savefilename+'" alt="img01" />';
-								text += '</figure>';
-								text += '</li>'
-							});
-							$('.grid-sizer').after(text);
-						},
-						error : function() {
-							alert('err');
-						}
-					});
-		}
-		function postBtn() {
-			var followUser = document.getElementById('userEmail').value;
-			$.ajax({
-						method : "post",
-						url : "selectUserPhoto",
-						data : {
-							userEmail : followUser
-						},
-						success : function(resp) {
-							$('.grid-sizer').nextAll().empty();
-							console.log(resp);
-							var text = "";
-							resp.forEach(function(value, index, resp) {	
-								text += '<li>';
-								text += '<figure>';
-								text += '<figcaption>';
-								text += '<h3>'+resp[index].contents+'</h3>';
-								text += '<p>'+resp[index].contents+'</p>';
-								text += '</figcaption>';
-								text += '<img src=${path}"'+resp[index].saveFileName+'" alt="img01" />';
-								text += '</figure>';
-								text += '</li>'
-							});
-							$('.grid-sizer').after(text);
-						},
-						error : function() {
-							alert('err');
-						}
-					});
-		}
-		function updateBtn() {
-			$.ajax({
-						method : "post",
-						url : "selectUserPhoto",
-						data : {
-							userEmail : followUser
-						},
-						success : function(resp) {
-							$('.grid-sizer').nextAll().empty();
-							console.log(resp);
-							var text = "";
-							resp.forEach(function(value, index, resp) {	
-								text += '<li>';
-								text += '<figure>';
-								text += '<figcaption>';
-								text += '<h3>'+resp[index].contents+'</h3>';
-								text += '<p>'+resp[index].contents+'</p>';
-								text += '</figcaption>';
-								text += '<img src=${path}"'+resp[index].saveFileName+'" alt="img01" />';
-								text += '</figure>';
-								text += '</li>'
-							});
-							$('.grid-sizer').after(text);
-						},
-						error : function() {
-							alert('err');
-						}
-					});;
-		}
-	</script>
+			function sukiSakeBtn() {
+				var followUser = document.getElementById('userEmail').value;
+				$.ajax({
+					method : "post",
+					url : "sukiSake",
+					data : {
+						userEmail : followUser
+					},
+					success : function(resp) {
+						$('.grid-sizer').nextAll().empty();
+						var text = "";
+						resp.forEach(function(value, index, resp) {	
+							text += '<li>';
+							text += '<figure>';
+							text += '<figcaption>';
+							text += '<h3>'+resp[index].cocktailName+'</h3>';
+							text += '<p>'+resp[index].cocktailName+'</p>';
+							text += '</figcaption>';
+							text += '<img src="'+resp[index].imageRink+'" alt="img01" />';
+							text += '</figure>';
+							text += '</li>'
+						});
+						$('.grid-sizer').after(text);
+					},
+					error : function() {
+						alert('err');
+					}
+				});
+			}
+			function sukisyashinBtn() {
+				var followUser = document.getElementById('userEmail').value;
+				$.ajax({
+					method : "post",
+					url : "sukisyashin",
+					data : {
+						userEmail : followUser
+					},
+					success : function(resp) {
+						console.log(resp);
+						$('.grid-sizer').nextAll().empty();
+						var text = "";
+						resp.forEach(function(value, index, resp) {	
+							text += '<li>';
+							text += '<figure>';
+							text += '<figcaption>';
+							text += '<h3>'+resp[index].title+'</h3>';
+							text += '<p>'+resp[index].contents+'</p>';
+							text += '</figcaption>';
+							text += '<img src=${path}'+resp[index].saveFileName+' alt="img01" />';
+							text += '</figure>';
+							text += '</li>'
+						});
+						$('.grid-sizer').after(text);
+					},
+					error : function() {
+						alert('err');
+					}
+				});
+			}
+
+			function sukikataBtn() {
+				var followUser = document.getElementById('userEmail').value;
+				$.ajax({
+							method : "post",
+							url : "userselectCockList",
+							success : function(resp) {
+								$('.grid-sizer').nextAll().empty();
+								console.log(resp);
+								var text = "";
+								resp.forEach(function(value, index, resp) {	
+									text += '<li>';
+									text += '<figure>';
+									text += '<figcaption>';
+									text += '<h3>'+resp[index].usercocktailname+'</h3>';
+									text += '<p>'+resp[index].usercocktailname+'</p>';
+									text += '</figcaption>';
+									text += '<img src=${path}'+resp[index].savefilename+' alt="img01" />';
+									text += '</figure>';
+									text += '</li>'
+								});
+								$('.grid-sizer').after(text);
+							},
+							error : function() {
+								alert('err');
+							}
+						});
+			}
+			function postBtn() {
+				var followUser = document.getElementById('userEmail').value;
+				$.ajax({
+							method : "post",
+							url : "selectUserPhoto",
+							data : {
+								userEmail : followUser
+							},
+							success : function(resp) {
+								$('.grid-sizer').nextAll().empty();
+								console.log(resp);
+								var text = "";
+								resp.forEach(function(value, index, resp) {	
+									text += '<li>';
+									text += '<figure>';
+									text += '<figcaption>';
+									text += '<h3>'+resp[index].contents+'</h3>';
+									text += '<p>'+resp[index].contents+'</p>';
+									text += '</figcaption>';
+									text += '<img src=${path}'+resp[index].saveFileName+' alt="img01" />';
+									text += '</figure>';
+									text += '</li>'
+								});
+								$('.grid-sizer').after(text);
+							},
+							error : function() {
+								alert('err');
+							}
+						});
+			}
+			function updateBtn() {
+				var followUser = document.getElementById('userEmail').value;
+				$.ajax({
+							method : "post",
+							url : "selectUserPhoto",
+							data : {
+								userEmail : followUser
+							},
+							success : function(resp) {
+								$('.grid-sizer').nextAll().empty();
+								console.log(resp);
+								var text = "";
+								resp.forEach(function(value, index, resp) {	
+									text += '<li>';
+									text += '<figure>';
+									text += '<figcaption>';
+									text += '<h3>'+resp[index].contents+'</h3>';
+									text += '<p>'+resp[index].contents+'</p>';
+									text += '</figcaption>';
+									text += '<img src=${path}'+resp[index].saveFileName+' alt="img01" />';
+									text += '</figure>';
+									text += '</li>'
+								});
+								$('.grid-sizer').after(text);
+							},
+							error : function() {
+								alert('err');
+							}
+						});
+			}
+			function openForm() {
+	      	document.getElementById("myForm").style.display = "block";
+	   	 	}
+	    	function closeForm() {
+	      	document.getElementById("myForm").style.display = "none";
+	    	}
+		</script>
+		<!-- chat-->
+
 	
-
 </body>
 
 </html>

@@ -6,7 +6,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NEWS FEED</title>
+    <title>5Sake's Cocktail</title>
+    
+    
+    <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/nanummyeongjo.css">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alfa+Slab+One&amp;subset=latin-ext">
@@ -15,14 +19,28 @@
     <link rel="stylesheet" href="./resources/assets/product_detail/css/product_detail/product_detail.css?h=583a78a19df08ccbf1a3f2a89dccbf94">
     <link rel="stylesheet" href="./resources/assets/basic/css/proflie_slide/slide_component.css?h=c31784850592eda94811485f90318815">
     <link rel="stylesheet" href="./resources/assets/product_detail/css/recommend/cocktail_recommend_title.css?h=8ba319ea454a344c8bf43dd4d88bcbb9">
-    <link rel="stylesheet" href="./resources/assets/product_detail/css/recommend/recommend_cocktail.css?h=9fdcb590092abd8e204c7b69a22c515a"> 
+    <link rel="stylesheet" href="./resources/assets/product_detail/css/recommend/recommend_cocktail.css?h=9fdcb590092abd8e204c7b69a22c515a">
 </head>
 <style>
+@import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
+@import url(//fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
+
+/* 사진 테두리 */
 [data-aos^=fade][data-aos^=fade].aos-animate {
     opacity: 0;
     transform: translate(0);
 }
 /* 사진 테투리 */
+
+.cocktail_detail{
+
+	font-family: 'Jeju Gothic', sans-serif;
+}
+
+.cocktail_name{
+
+	font-family: 'Jeju Gothic', sans-serif;
+}
 </style>
 <body>
 	<input type="hidden" id="cocktailSeq" name="cocktailSeq" value="${cocktail.cocktailSeq }">
@@ -32,19 +50,25 @@
 				<div class="col-md-12">
 					<div class="product_wrapper" style="width: 750px;">
 						<div class="product-img" style="width: 375px;" >
-							<img data-aos="fade-right" data-aos-duration="650"
-								data-aos-once="true" class="product_detail-img"
+							<img class="product_detail-img"
 								style="opacity:9; background-repeat: no-repeat; background-image:url(&quot;${cocktail.imageRink}&quot;);background-position:center;background-size:contain;width:375px;height:420px;color:rgb(120,133,147);background-color:rgba(255,255,255,0);">
 						</div>
 						<div class="product-info">
 							<div class="product-text">
-									<h1 style="margin-top: -15px; padding-top: 41px; font-family: 'Alfa Slab One', cursive;">${cocktail.cocktailName}</h1>
-								<h2
-									style="font-size: 15px; background-position: top; background-size: auto; background-repeat: no-repeat; margin-bottom: 12px;">Making
-									Yourself</h2>
+							
+								<h1 class = "cocktail_name" style="margin-top: -15px; padding-top: 41px; cursive;">
+									${cocktail.cocktailName}
+								</h1>
+								
+								<h2 class = "cocktail_recipes" style="font-size: 15px; background-position: top; background-size: auto; background-repeat: no-repeat; margin-bottom: 12px;">
+									Cocktail Recipes
+								</h2>
+								
 								<div class="cocktail_detail"
-									style="padding-bottom: 0px; height: 210px;">
-									${cocktail.recipe}</div>
+									style="padding-bottom: 0px; height: 210px; margin-left: 30px; ">
+									${cocktail.recipe}
+								</div>
+								
 							</div>
 							<div class="product-savebutton">
 								<button type="button" onclick="saveBtnn()">Save</button>
@@ -107,7 +131,7 @@
 		<div class="container_cocktail">
 			<div class="col">
 				<div class="cocktail_recommend_title">
-					<h2 class="C_R_title">${aa} 와 함께한 사람들 없음</h2>
+					<h2 class="C_R_title">${aa} 와 함께한 사람들</h2>
 					<small class="C_R_small">${aa} 와 함께한 사람들의 추억을 만나보세요</small>
 				</div>
 			</div>

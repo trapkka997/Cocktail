@@ -116,7 +116,7 @@
 		from 
 			ingredient 
 		where
-			CLASSIFY like 'A_' 
+			CLASSIFY like 'A%' 
 		order by ingredient_seq
 	</select>
 	
@@ -128,7 +128,7 @@
 		from 
 			ingredient 
 		where
-			CLASSIFY like 'F_' 
+			CLASSIFY like 'F%' 
 		order by ingredient_seq
 	</select>
 	
@@ -140,7 +140,7 @@
 		from 
 			ingredient 
 		where
-			CLASSIFY like 'L_' 
+			CLASSIFY like 'L%' 
 		order by ingredient_seq
 	</select>
 	<select id="getIngredientByMaterial" resultType="ingredient">
@@ -151,7 +151,7 @@
 		from 
 			ingredient 
 		where
-			CLASSIFY like 'M_' 
+			CLASSIFY like 'M%' 
 		order by ingredient_seq
 	</select>
 	

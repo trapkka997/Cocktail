@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.Reader;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.UUID;
@@ -23,6 +24,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import sesoc.global.cocktail.dao.MemberDAO;
 import sesoc.global.cocktail.dao.MemberRepository;
@@ -49,7 +51,9 @@ public class MemberController {
 			User login = dao.selectOne(vo);
 			if (login != null) {
 				if(login.getUserAuth().equalsIgnoreCase("Y")) {
+					System.out.println(login);
 					httpSession.setAttribute("useremail", login.getUserEmail());
+					httpSession.setAttribute("savedFileName", login.getSavedFilename());
 					System.out.println("로그인 완료!!");
 				}else if(login.getUserAuth().equalsIgnoreCase("N")) {
 					System.out.println("이메일 인증 필요함");
@@ -76,6 +80,7 @@ public class MemberController {
 			if (login != null) {
 				if(login.getUserAuth().equalsIgnoreCase("Y")) {
 					httpSession.setAttribute("useremail", login.getUserEmail());
+					httpSession.setAttribute("savedFileName", login.getSavedFilename());;
 					return "1";
 				}else {
 					System.out.println("이메일 인증 필요함");
@@ -157,28 +162,35 @@ public class MemberController {
 		 * @author hangyutae
 		 */
 		@RequestMapping(value = "/updateProfilePicture", method = RequestMethod.POST)
-		public String updateProfilePicture(Locale locale,MultipartFile file, Model model,HttpSession httpSession,User vo,HttpServletRequest servletRequest) {
-			System.out.println(file);
+		public @ResponseBody String updateProfilePicture(Locale locale,MultipartHttpServletRequest multipartRequest, Model model,HttpSession httpSession,User vo,HttpServletRequest servletRequest) {
 			String userEmail = (String)httpSession.getAttribute("useremail");
-			vo.setUserEmail(userEmail);
-			String originalFilename = file.getOriginalFilename();
-			UUID uuid = UUID.randomUUID();
-			String savedFilename = uuid+"_"+originalFilename;
-			vo.setOriginalFilename(originalFilename);
-			vo.setSavedFilename(savedFilename);
-			String jsonPath = servletRequest.getSession().getServletContext().getRealPath("/resources/"+savedFilename);
-			File saveFile = new File(jsonPath);
-			if(!saveFile.exists()) {
-				saveFile.mkdirs();
+			Iterator<String> itr = multipartRequest.getFileNames(); 	
+			if(itr.hasNext()) {
+				MultipartFile mpf = multipartRequest.getFile(itr.next());
+				System.out.println(mpf.getOriginalFilename() +" uploaded!"); 
+				String originalFilename =mpf.getOriginalFilename();
+				UUID uuid = UUID.randomUUID();
+				String saveFilename = uuid+"_"+originalFilename;
+				String jsonPath = servletRequest.getSession().getServletContext().getRealPath("/resources/"+saveFilename);
+				System.out.println(jsonPath);
+				File saveFile = new File(jsonPath);
+				vo.setUserEmail(userEmail);
+				vo.setOriginalFilename(originalFilename);
+				vo.setSavedFilename(saveFilename);
+				if(!saveFile.exists()) {
+					saveFile.mkdirs();
+				}
+				try { 
+					mpf.transferTo(saveFile);
+					int result =dao.updateProfilePicture(vo);
+					if(result == 1) return "1";
+					else return "2";
+				} catch (IOException e){
+					System.out.println(e.getMessage());
+					e.printStackTrace(); 
+				}
 			}
-			try { 
-				dao.updateProfilePicture(vo);
-				file.transferTo(saveFile);
-			} catch (IOException e){
-				System.out.println(e.getMessage());
-				e.printStackTrace(); 
-			}
-			return "redirect:updateProfilePicture";
+				return "0";
 		}
 		
 		/**

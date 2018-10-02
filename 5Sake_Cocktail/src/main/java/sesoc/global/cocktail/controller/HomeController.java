@@ -1,5 +1,6 @@
 package sesoc.global.cocktail.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
@@ -17,6 +18,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import sesoc.global.cocktail.dao.CocktailRepository;
 import sesoc.global.cocktail.dao.MemberRepository;
+import sesoc.global.cocktail.test.JsoupExample;
+import sesoc.global.cocktail.test.JsoupExample2;
 import sesoc.global.cocktail.vo.Cocktail;
 import sesoc.global.cocktail.vo.Ingredient;
 import sesoc.global.cocktail.vo.User;
@@ -98,16 +101,30 @@ public class HomeController {
 	 * @return 칵테일화면
 	 */
 	@RequestMapping(value = "/cocktailphoto", method = RequestMethod.GET)
-	public String cocktailphoto(Model model, HttpServletRequest servletRequest) {
+	public String cocktailphoto(Model model,HttpSession httpSession, HttpServletRequest servletRequest) {
 		List<UserPhoto> userPhotos = dao.selectAllUserPhoto();
 		String path = servletRequest.getSession().getServletContext().getRealPath("resources");
 		System.out.println(path);
 		model.addAttribute("userPhotos", userPhotos);
-model.addAttribute("path", "http://localhost:8888/cocktail/resources/");
+		System.out.println(userPhotos);
+		model.addAttribute("path", "http://localhost:8888/cocktail/resources/");
+		
+		String userEmail = (String)httpSession.getAttribute("useremail");
+		JsoupExample2 jsoup = new JsoupExample2();
+		ArrayList<String> urls = new ArrayList<>();
+		try {
+			ArrayList<String> urlList = jsoup.getImg();
+			for(String url : urlList) {
+				JsoupExample js = new JsoupExample();
+				urls.add(js.getImage(url));
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		model.addAttribute("urls",urls);
  
 		return "cocktail/gallery/cocktail_gallery";
- 
-		/*return "cocktail/gallery/cocktail_gallery";*/
  
 	}
 	
@@ -140,8 +157,17 @@ model.addAttribute("path", "http://localhost:8888/cocktail/resources/");
 	public String selfMaking(Model model, User vo, HttpSession httpSession) {
 		String userEmail = (String)httpSession.getAttribute("useremail");
 		vo.setUserEmail(userEmail);
+		List<Ingredient> ingredientByAlcoleList = cocktailRepository.getIngredientByAlcole();
+		List<Ingredient> ingredientByFruitList = cocktailRepository.getIngredientByFruit();
+		List<Ingredient> ingredientByLiqueurList = cocktailRepository.getIngredientByLiqueur();
+		List<Ingredient> ingredientByMaterialList = cocktailRepository.getIngredientByMaterial();
+		model.addAttribute("ingredientByAlcoleList", ingredientByAlcoleList);
+		model.addAttribute("ingredientByFruitList", ingredientByFruitList);
+		model.addAttribute("ingredientByLiqueurList", ingredientByLiqueurList);
+		model.addAttribute("ingredientByMaterialList", ingredientByMaterialList);
 		model.addAttribute("path", "http://localhost:8888/cocktail/resources/");
 		List<UserCocktail> userCocktailList =  cocktailRepository.selectUserCocktail(vo);
+		System.out.println(userCocktailList);
 		model.addAttribute("userCocktailList", userCocktailList);
 		return "cocktail/gallery/selfMaking";
 	}
@@ -174,8 +200,13 @@ model.addAttribute("path", "http://localhost:8888/cocktail/resources/");
 	 * @return
 	 */
 	@RequestMapping(value = "/eachoneProfile", method = RequestMethod.GET)
-	public String eachoneprofile(Model model, User vo) {
- 
+	public String eachoneprofile(Model model, User vo, HttpSession httpSession) {
+		String useremail = (String)httpSession.getAttribute("useremail");
+		User vo2 = new User();
+		vo2.setUserEmail(useremail);
+		System.out.println(vo2);
+		User user2 = memberRepository.selectOne(vo2);
+		model.addAttribute("user2", user2);
 		User user = dao.selectOne(vo);
 		List<User> followList = dao.viewFollow(vo.getUserEmail());
 		List<User> followerList = dao.viewFollower(vo.getUserEmail());

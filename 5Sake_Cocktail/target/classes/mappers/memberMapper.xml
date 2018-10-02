@@ -5,7 +5,7 @@
 <mapper namespace="sesoc.global.cocktail.dao.MemberDAO">
 <select id="selectOne" parameterType="user" resultType="user">
  SELECT 
- 	USEREMAIL, USERPWD, USERAUTHCODE, USERAUTH, ORIGINALFILENAME, SAVEDFILENAME,USERSENTENCE,USERINSTA
+ 	*	
  FROM
  	USERDETAIL
  WHERE
@@ -48,20 +48,23 @@
 
 <select id="selectAllUserPhoto" resultType="userPhoto">
 SELECT 
-		USERPHOTOSEQ,
-		USEREMAIL,
-		TITLE,
-		CONTENTS,
-		SAVEFILENAME,
-		ORIGINALFILENAME,
-		WRITEDATE,
-		HITCOUNT,
-		LIKECOUNT,
-		COCKTAILNAME
+		p.USERPHOTOSEQ,
+		p.USEREMAIL,
+		p.TITLE,
+		p.CONTENTS,
+		p.SAVEFILENAME,
+		p.ORIGINALFILENAME,
+		p.WRITEDATE,
+		p.HITCOUNT,
+		p.LIKECOUNT,
+		p.COCKTAILNAME,
+		c.IMAGERINK
 	FROM
-		USERPHOTO
+		USERPHOTO p, cocktail2 c
+	WHERE
+		p.cocktailname = c.cocktailname 
 	ORDER BY
-		WRITEDATE DESC
+		p.WRITEDATE DESC
 </select>
 
 <insert id="writeBoard" parameterType="userPhoto">
@@ -71,7 +74,7 @@ SELECT
 	)
 	values(
 		USERPHOTOSEQ.nextVal, #{userEmail}, #{title}, #{contents}, #{saveFileName}, #{originalFileName},
-		SYSDATE, 0, 0, 'cocktailname'
+		SYSDATE, 0, 0, #{cocktailName} 
 	)
 </insert>
 
@@ -176,7 +179,7 @@ SELECT
 		 LIKECOUNT DESC
 	)
 	WHERE
-		<![CDATA[ ROWNUM <= 10]]>
+		<![CDATA[ ROWNUM <= 3]]>
 </select>
 <insert id="insertUserLikeCocktail" parameterType="userLikeCocktail">
 	INSERT INTO USERLIKECOCKTAIL(

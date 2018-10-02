@@ -11,7 +11,7 @@
     usercocktailseq
     ,useremail
     ,usercocktailname
-    ,usercocktailname_en
+    ,USERCOCKTAILNAME_EN
     ,userIngredient
     ,userreceipe
     ,savefilename
@@ -22,11 +22,9 @@
 			usercocktailseq.nextval
 			,#{useremail}
 			,#{usercocktailname}
-			,#{usercocktailname_en}
-			,#{useralcole}
-			,#{userliqueur}
-			,#{usermaterial}
-			,#{userreceipe}
+			,'NO ENG NAME'
+			,#{userIngredient}
+			,'레시피가 없습니다.'
 			,#{savefilename}
 			,#{originalfilename}
 			,#{usercolorvalue}

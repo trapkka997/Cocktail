@@ -11,12 +11,14 @@ public class UserPhoto {
 	private String hitcount;
 	private String likecount;
 	private String cocktailName;
+	private String imageRink;
 	public UserPhoto() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	public UserPhoto(String userPhotoSeq, String userEmail, String title, String contents, String saveFileName,
-			String originalFileName, String writeDate, String hitcount, String likecount, String cocktailName) {
+			String originalFileName, String writeDate, String hitcount, String likecount, String cocktailName,
+			String imageRink) {
 		super();
 		this.userPhotoSeq = userPhotoSeq;
 		this.userEmail = userEmail;
@@ -28,6 +30,7 @@ public class UserPhoto {
 		this.hitcount = hitcount;
 		this.likecount = likecount;
 		this.cocktailName = cocktailName;
+		this.imageRink = imageRink;
 	}
 	public String getUserPhotoSeq() {
 		return userPhotoSeq;
@@ -89,13 +92,20 @@ public class UserPhoto {
 	public void setCocktailName(String cocktailName) {
 		this.cocktailName = cocktailName;
 	}
+	public String getImageRink() {
+		return imageRink;
+	}
+	public void setImageRink(String imageRink) {
+		this.imageRink = imageRink;
+	}
 	@Override
 	public String toString() {
 		return "UserPhoto [userPhotoSeq=" + userPhotoSeq + ", userEmail=" + userEmail + ", title=" + title
 				+ ", contents=" + contents + ", saveFileName=" + saveFileName + ", originalFileName=" + originalFileName
 				+ ", writeDate=" + writeDate + ", hitcount=" + hitcount + ", likecount=" + likecount + ", cocktailName="
-				+ cocktailName + "]";
+				+ cocktailName + ", imageRink=" + imageRink + "]";
 	}
+	
 	
 	
 }

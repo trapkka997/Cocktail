@@ -1,4 +1,11 @@
 $(document).ready(function() {
+	var selectedColor ="";
+	$('.color-picker').children().on('click',function(){
+		console.log(this);	
+		selectedColor = $(this).attr('class');
+	});
+	
+	
   // Color Picker Click
   $(".color-picker").on("click", ".color", function() {
     //console.log( $(this).text() );
@@ -193,7 +200,7 @@ var TagsInput = function(element) {
 	var $fileDrop = $('[data-droppable=""]');
 	var $fileInput = $('[data-droppable-input=""]');
 	var $fileImage = $('[data-droppable-image=""]');
-
+	var files;
 	var fileHover = function(ev) {
 	  ev.stopPropagation();
 	  ev.preventDefault();
@@ -206,7 +213,7 @@ var TagsInput = function(element) {
 
 	var fileSelect = function(ev) {
 	  fileHover(ev);
-	  var files = ev.target.files || ev.dataTransfer.files;
+	  files = ev.target.files || ev.dataTransfer.files;
 	  var reader = new FileReader();
 
 	  reader.onload = function(ev) {
@@ -238,6 +245,41 @@ var TagsInput = function(element) {
 			setTimeout(function () {
 				$this.removeClass('loader active');
 				$this.text('Success');
+				console.log($fileImage);
+				console.log(files[0]);
+			    var fd = new FormData();
+			    
+			    fd.append("file", files[0]);
+			    fd.append("usercolorvalue", selectedColor+"Color");
+			    fd.append("usercocktailname", $('.tags-input').text());
+			    var selected ="";
+			    var se1 = $('.select1 option:selected').each(function() {
+			    	selected += $(this).val()+",";
+				});
+			    var se2 = $('.select2 option:selected').each(function() {
+			    	selected += $(this).val()+",";
+				});
+			    var se3 = $('.select3 option:selected').each(function() {
+			    	selected += $(this).val()+",";
+				});
+			   
+			    selected = selected.substr(0, selected.length -1);
+			    console.log(selected);
+			    fd.append("userIngredient", selected);
+			    var xhr = new XMLHttpRequest();
+			    xhr.onreadystatechange = function() {
+			       if (this.readyState == 4 && this.status == 200) {
+			          console.log(xhr.response);
+			          $("#content").load("/cocktail/selfMaking");
+			          $('#myModal').modal('hide');
+			              } else if(this.status == 500){
+			              } else if(this.status == 403){
+			              } else if(this.status == 404){
+			              } 
+			    };
+			    xhr.open("POST", "/cocktail/usercocktailInsert");
+			    xhr.send(fd);
+			           
 				$this.addClass('success animated pulse');
 			}, 1600);
 			setTimeout(function () {
