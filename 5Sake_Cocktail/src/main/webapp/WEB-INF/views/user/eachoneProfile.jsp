@@ -202,7 +202,7 @@
 							<div class="question">
 								<input type="text" id="updateFeeling" name="userFeeling"/><label>Your Thought</label>
 							</div>
-							<button id="updateUser">수 정</button>
+							<button id="updateUser" data-dismiss="modal">수 정</button>
 						</div>
 					</div>
 				</div>
