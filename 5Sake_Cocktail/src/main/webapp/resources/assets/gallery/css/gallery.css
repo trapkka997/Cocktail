@@ -201,7 +201,7 @@
   color:#31373a;
 }
 
-span.nav-prev:before {
+/* span.nav-prev:before {
   content:"\e601";
 }
 
@@ -212,7 +212,7 @@ span.nav-next:before {
 span.nav-close:before {
   content:"\e602";
 }
-
+ */
 .info-keys {
   position:fixed;
   top:10px;
