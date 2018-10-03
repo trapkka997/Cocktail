@@ -25,7 +25,7 @@
 .product-items .product-item .item-wrap {
   /*width:130px;*/
   padding:6px;
-  border:2px solid;
+  /* border:2px solid; */
   position:relative;
 }
 
@@ -38,7 +38,10 @@
   /* opacity:.9; */
   transition:.5s;
   -webkit-transition:.5s;
-  width: 150px;
+  width: 130px;
+  height: 130px;
+      max-width: 130px;
+    max-height: 130px;
 }
 
 .product-items .product-item:hover img {
