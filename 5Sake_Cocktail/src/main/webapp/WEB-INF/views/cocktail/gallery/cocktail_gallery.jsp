@@ -488,7 +488,6 @@
 			console.log(imgSource);
 			console.log(textAreaSource);
 			console.log(cocktailList);
-			alert(' 버튼 클릭 ');
 			$.ajax({
 				method : 'post',
 				url : 'writeBoard',

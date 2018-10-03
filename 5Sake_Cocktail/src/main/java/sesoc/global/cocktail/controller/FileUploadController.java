@@ -133,7 +133,7 @@ public class FileUploadController {
 		System.out.println(path);
 		String colorName = null;
 		setSavedFileName(path);
-		if((colorName = visionColor("https://cdn.filestackcontent.com/zjht1wT1Sl6n687VdMf5")).equals("fail")) {
+		if((colorName = visionColor(path)).equals("fail")) {
 			return null;
 		}
 		List<Cocktail> cocktailList = cocktailRepository.getCocktailByColor(colorName);
