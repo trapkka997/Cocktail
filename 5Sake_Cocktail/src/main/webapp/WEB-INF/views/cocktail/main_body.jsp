@@ -188,7 +188,7 @@
 										items="${recommandUserPhotoList }">
 										<td class = "recommandPhoto_td" style = "text-align: center; border-top: none; ">
 										<img class="recommandPhoto_img" usr_email="${recommandUserPhoto.userEmail}"
-											src="${path }${recommandUserPhoto.saveFileName}">
+											src="${recommandUserPhoto.saveFileName}">
 											<div class="text-box">
 												<p class="content-text" data-edit="true"
 													data-selector="p.content-text">

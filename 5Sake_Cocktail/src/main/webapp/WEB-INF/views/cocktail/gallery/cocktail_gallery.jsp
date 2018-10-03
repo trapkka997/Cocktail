@@ -94,7 +94,7 @@
 										<figure class="tile2 scale-anm brandy all">
 											<div class="profilebox profilebox1">
 												<img class="galleryPhoto"
-													src="${path }${userPhoto.saveFileName}" alt="img01" />
+													src="${userPhoto.saveFileName}" alt="img01" />
 												<div class="SocialIcons" id='icon${var.index}'>
 													<a onclick="hover(${var.index})" href="#">
 														<i class="fas fa-heartbeat"></i>
@@ -120,7 +120,7 @@
 												<h3>${userPhoto.title}</h3>
 												<p>${userPhoto.contents}</p>
 											</figcaption>
-											<img class="big_img" usr-email="${userPhoto.userEmail }" src="${path }${userPhoto.saveFileName}"
+											<img class="big_img" usr-email="${userPhoto.userEmail }" src="${userPhoto.saveFileName}"
 												alt="img01" />
 											<img class="small_img" style = "width : 25%"
 												src="${userPhoto.imageRink}"
@@ -330,9 +330,8 @@
 	}	
 	</script>
 	<script type="text/javascript">
-		var cocktailList;
-		;
-		(function($) {
+		
+		/* ;(function($) {
 			var settings = {
 				url : '/cocktail/vision',
 				toDo : 'OPTIONAL TODO VARIABLE TO SEND TO UPLOAD FILE',
@@ -393,7 +392,7 @@
 				message(item, settings.errorClass, 'Upload failed.', 0);
 			}
 
-			function findFiles(e, item) {
+ 			function findFiles(e, item) {
 				console.log(e);
 				console.log(item);
 				var files = e.originalEvent.dataTransfer.files;
@@ -404,9 +403,9 @@
 					console.log(value);
 					uploadFile(value, item);
 				});
-			}
+			} 
 
-			function setEvents(item) {
+			 function setEvents(item) {
 				$(item).on(
 						'drop dragover dragenter dragleave',
 						function(e) {
@@ -424,9 +423,9 @@
 								console.log(item);
 							}
 						});
-			}
+			} 
 
-			function setOptions(options) {
+ 			function setOptions(options) {
 				$.each(options, function(key, val) {
 					settings[key] = val;
 				});
@@ -439,14 +438,50 @@
 					setEvents(this);
 				});
 				return this;
-			}
-		}(jQuery));
+			} 
+		}(jQuery)); */
 
-		$(document).ready(function() {
+/* 		$(document).ready(function() {
 			// Uses default settings
 			$("#dropzone").dragAndUpload();
-		});
+		}); */
 
+	</script>
+	
+	<script>
+		var cocktailList;
+		jQuery(document).ready(function() {
+			var pickerOptions = {
+				accept : 'image/*',
+			}
+			var apiKey = 'AB8tiXIh3TPiZmocJNLKPz';
+			var client = filestack.init(apiKey);
+			jQuery("#upload-link").click(function() {
+				client.pick(pickerOptions).then(function(result) {
+					console.log(result.filesUploaded[0]);
+					console.log(JSON.stringify(result.filesUploaded))
+					$.ajax({
+						method : "post",
+						url : "vision",
+						data : {
+							path : result.filesUploaded[0].url
+						},
+						dataType : "json",
+						success : function(resp){
+							console.log(resp);
+							cocktailList = resp;
+							$('#modalImgId').attr("src", resp[0].imageRink);
+							$('#getCocktailModal').modal('show');
+						},
+						error : function(){
+							alert('err');
+						}
+					});
+				});
+			});
+
+		})
+		
 		function saveBtn() {
 			var imgSource = $('#modalImgId').attr("src");
 			var textAreaSource = $('#modalTextArea').val();
@@ -471,21 +506,6 @@
 				}
 			})
 		}
-	</script>
-	
-	<script>
-		jQuery(document).ready(function() {
-			var pickerOptions = {
-				accept : 'image/*',
-			}
-			var apiKey = 'AB8tiXIh3TPiZmocJNLKPz';
-			var client = filestack.init(apiKey);
-			jQuery("#upload-link").click(function() {
-				client.pick(pickerOptions).then(function(result) {
-					console.log(JSON.stringify(result.filesUploaded))
-				});
-			})
-		})
 	</script>
 </body>
 </html>
