@@ -110,20 +110,20 @@ public class HomeController {
 		model.addAttribute("path", "http://localhost:8888/cocktail/resources/");
 		
 		String userEmail = (String)httpSession.getAttribute("useremail");
-		/*JsoupExample2 jsoup = new JsoupExample2();
-		ArrayList<String> urls = new ArrayList<>();
-		try {
-			ArrayList<String> urlList = jsoup.getImg();
-			for(String url : urlList) {
-				JsoupExample js = new JsoupExample();
-				urls.add(js.getImage(url));
-			}
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		model.addAttribute("urls",urls);
- */
+//		JsoupExample2 jsoup = new JsoupExample2();
+//		ArrayList<String> urls = new ArrayList<>();
+//		try {
+//			ArrayList<String> urlList = jsoup.getImg();
+//			for(String url : urlList) {
+//				JsoupExample js = new JsoupExample();
+//				urls.add(js.getImage(url));
+//			}
+//		} catch (Exception e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		model.addAttribute("urls",urls);
+// 
 		return "cocktail/gallery/cocktail_gallery";
  
 	}

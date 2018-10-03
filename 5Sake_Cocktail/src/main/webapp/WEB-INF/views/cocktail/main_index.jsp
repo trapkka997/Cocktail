@@ -646,31 +646,12 @@ h4 {
                      </div>
 
                      <div class="row_cocktail_fliter">
-                        <div class="grid">      
-                        <!-- scroll -->
-                                  <div id="mCSB_1_scrollbar_vertical"
-                                    class="mCSB_scrollTools mCSB_1_scrollbar mCS-light mCSB_scrollTools_vertical"
-                                    style="display: block;">
-                                    <div class="mCSB_draggerContainer">
-                                       <div id="mCSB_1_dragger_vertical" class="mCSB_dragger"
-                                          style="position: absolute; min-height: 30px; top: 0px; height: 66px; display: block; max-height: 252px;"
-                                          oncontextmenu="return false;">
-                                          <div class="mCSB_dragger_bar" style="line-height: 30px;"></div>
-                                       </div>
-                                       <div class="mCSB_draggerRail"></div>
-                                    </div>
-                                 </div>
-                                 <!-- scroll_end -->                        
-                           <!--  -->
-                           <div class="wrapper_cocktailCard" >
-                              <div class="cols_cocktailCard">
-                                 
-                              </div>
-                           </div>
-                           <!--  -->
-                           
-                        </div>
-                     </div>
+					     <div class="grid">   
+					         <div class="wrapper_cocktailCard">
+					             <div class="cols_cocktailCard" style="max-height:530px; overflow:auto;"></div>
+					        </div>
+					    </div>
+					</div>
                      <!-- cocktail_Fliter -->
                   </div>
                   <!-- dropdax_menu -->
@@ -697,6 +678,46 @@ h4 {
    <script   src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
    <script src="./resources/assets/tag/js/search_tag.js"></script>
    <script src="./resources/assets/basic/js/photo_profile.js"></script>
+   <script
+		src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
+   <script>
+		 var sock = new SockJS('http://localhost:8888/cocktail/myHandler');
+		  sock.onopen = function() {
+		     console.log('open');
+		 };
+		 sock.onmessage = function(e) {
+		    	var currentTime = Date.now()
+		    	var GMT = -(new Date()).getTimezoneOffset()/60;
+		    	var totalSeconds = Math.floor(currentTime/1000);
+		    	seconds = ('0' + totalSeconds % 60).slice(-2);
+		    	var totalMinutes = Math.floor(totalSeconds/60);
+		    	minutes = ('0' + totalMinutes % 60).slice(-2);
+		    	var totalHours = Math.floor(totalMinutes/60);
+		    	hours = ('0' + (totalHours+GMT) % 24).slice(-2);
+		    	var timeDisplay = hours + ":" + minutes + ":" + seconds;
+		     console.log('message', e.data);
+		     var resp = e.data.split(" : ");
+		     var getData = resp[2];
+		     console.log(resp);
+		     var userId = document.getElementById('userEmail').value;
+		     
+		     var usrPicture = document.getElementById('path').value+resp[1];
+			 var message = "";
+			 message +='<div class="container_chat">';
+			 message +='<img src="'+ usrPicture+'" alt="Avatar" style="width: 100%;">';
+			 message +='<p>'+getData+'</p>';
+			 message +='<span class="time-left">'+timeDisplay+'</span>';
+			 message +='</div>'
+		     $('.chat_chat').append(message);
+			 $('#msg').val('');
+			 //sock.close();
+		 };
+
+		 sock.onclose = function() {
+		     console.log('close');
+		 }; 
+		
+		</script>
    <script>
       $('.dropdown-menu').children('.row_drop_search').children('.col-md-12').on("click.bs.dropdown", function(e) {
          /* console.log(this); */

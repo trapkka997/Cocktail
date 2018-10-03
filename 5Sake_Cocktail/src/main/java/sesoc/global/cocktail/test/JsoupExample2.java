@@ -1,19 +1,11 @@
 package sesoc.global.cocktail.test;
 
-import java.io.IOException;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
-import java.util.StringTokenizer;
 
 import org.jsoup.Jsoup;
-import org.jsoup.nodes.DataNode;
 import org.jsoup.nodes.Document;
-import org.jsoup.select.Elements;
 import org.jsoup.nodes.Element;
 
 public class JsoupExample2 {//	public static void main(String...arg) throws Exception {
@@ -22,7 +14,7 @@ public class JsoupExample2 {//	public static void main(String...arg) throws Exce
 //	}
 	public ArrayList<String> getImg() throws Exception {
 		ArrayList<String> urlList = new ArrayList<String>();
-		Document doc= Jsoup.connect("https://www.instagram.com/sikstaaa/").get();
+		Document doc= Jsoup.connect("https://www.instagram.com/cocktails/").get();
 		Element table = doc.select("script").get(3);
 		String data = table.dataNodes().get(0).getWholeData();
 		String newData = data.substring(21, data.length()-1);

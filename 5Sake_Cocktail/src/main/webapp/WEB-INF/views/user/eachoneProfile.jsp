@@ -479,12 +479,10 @@
 	<script src="./resources/assets/gallery/js/gallery/cbpGridGallery.js"></script>
 	<script src="./resources/assets/gallery/js/circluar_layout.js"></script>
 	<script src="./resources/assets/eachoneProfile/js/tabMenu.js"></script>
-	<script
-		src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
 	<script type="text/javascript"></script>
 	<!--  MessageModal-->
 	<!--  Profile_image change-->
-	<script>
+	<!-- <script>
 		 var sock = new SockJS('http://localhost:8888/cocktail/myHandler');
 		  sock.onopen = function() {
 		     console.log('open');
@@ -521,7 +519,7 @@
 		     console.log('close');
 		 }; 
 		
-		</script>
+		</script> -->
 		<script>
 			$(document).ready(function() {
 				
