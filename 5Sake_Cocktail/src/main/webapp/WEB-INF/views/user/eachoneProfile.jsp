@@ -225,14 +225,22 @@
 								<input type="text" id="updateNickname" name="userNickname"
 									required /> <label>NickName</label>
 							</div>
-							<div class="question">
-								<input type="text" id="updateInstagramID" name="userInsta"
-									required /> <label>Instagram ID</label>
-							</div>
+							
 							<div class="question">
 								<input type="text" id="updateYourLikes" name="updateYourLikes"
 									required /> <label>Your Likes</label>
 							</div>
+							
+							<div class="question">
+								<input type="text" id="updateFeeling" name="userFeeling"
+									required /> <label>Your Thought</label>
+							</div>
+							
+							<!-- <div class="question">
+								<input type="text" id="updateInstagramID" name="userInsta"
+									required /> <label>Instagram ID</label>
+							</div> -->
+							
 
 							<button>수 정</button>
 						</form>
@@ -274,7 +282,7 @@
 												<h3>${photo.title }</h3>
 												<p>${photo.contents }</p>
 											</figcaption>
-											<img src="${path }${photo.saveFileName}" alt="img01" />
+											<img src="${photo.saveFileName}" alt="img01" />
 										</figure>
 									</li>
 								</c:forEach>
@@ -533,7 +541,7 @@
 									text += '<h3>'+resp[index].contents+'</h3>';
 									text += '<p>'+resp[index].contents+'</p>';
 									text += '</figcaption>';
-									text += '<img src=${path}'+resp[index].saveFileName+' alt="img01" />';
+									text += '<img src='+resp[index].saveFileName+' alt="img01" />';
 									text += '</figure>';
 									text += '</li>'
 								});
@@ -680,7 +688,7 @@
 							text += '<h3>'+resp[index].title+'</h3>';
 							text += '<p>'+resp[index].contents+'</p>';
 							text += '</figcaption>';
-							text += '<img src=${path}'+resp[index].saveFileName+' alt="img01" />';
+							text += '<img src='+resp[index].saveFileName+' alt="img01" />';
 							text += '</figure>';
 							text += '</li>'
 						});
@@ -738,7 +746,7 @@
 									text += '<h3>'+resp[index].contents+'</h3>';
 									text += '<p>'+resp[index].contents+'</p>';
 									text += '</figcaption>';
-									text += '<img src=${path}'+resp[index].saveFileName+' alt="img01" />';
+									text += '<img src='+resp[index].saveFileName+' alt="img01" />';
 									text += '</figure>';
 									text += '</li>'
 								});

@@ -38,6 +38,7 @@ import com.google.cloud.vision.v1.EntityAnnotation;
 import com.google.cloud.vision.v1.Feature;
 import com.google.cloud.vision.v1.Image;
 import com.google.cloud.vision.v1.ImageAnnotatorClient;
+import com.google.cloud.vision.v1.ImageSource;
 import com.google.cloud.vision.v1.Feature.Type;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Descriptors.FieldDescriptor;
@@ -82,52 +83,63 @@ public class FileUploadController {
 	@Autowired
 	MemberRepository memberRepository;
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
-	
-	/**
-	 * 사진을 업로드 -> 색깔출력 -> 칵테일 리턴
-	 * @param multipartRequest
-	 * @param servletRequest
-	 * @return cocktailList : 성공,  null : 실패
-	 * @throws Exception
-	 * @author hangyutae
-	 */
-	@RequestMapping(value="vision", method=RequestMethod.POST, produces="application/json")
-	public @ResponseBody List<Cocktail> vision(MultipartHttpServletRequest multipartRequest,HttpServletRequest servletRequest) throws Exception {
-		Iterator<String> itr = multipartRequest.getFileNames(); 
-		String colorName = null;
-		if(itr.hasNext()) {
-			MultipartFile mpf = multipartRequest.getFile(itr.next());
-			System.out.println(mpf.getOriginalFilename() +" uploaded!"); 
-			setOriginalFileName(mpf.getOriginalFilename());
-			int fileLength = mpf.getBytes().length;
-			System.out.println("file 크기 : " + fileLength);
-			UUID uuid = UUID.randomUUID();
-			setSavedFileName(uuid+"_"+getOriginalFileName());
-			String jsonPath = servletRequest.getSession().getServletContext().getRealPath("/resources/"+getSavedFileName());
-			System.out.println(jsonPath);
-			File saveFile = new File(jsonPath);
-			if(!saveFile.exists()) {
-				saveFile.mkdirs();
-			}
-			try { 
-				mpf.transferTo(saveFile);
-			} catch (IOException e){
-				System.out.println(e.getMessage());
-				e.printStackTrace(); 
-			}
-//			if(!visionText(jsonPath)) {
+//	
+//	/**
+//	 * 사진을 업로드 -> 색깔출력 -> 칵테일 리턴
+//	 * @param multipartRequest
+//	 * @param servletRequest
+//	 * @return cocktailList : 성공,  null : 실패
+//	 * @throws Exception
+//	 * @author hangyutae
+//	 */
+//	@RequestMapping(value="vision", method=RequestMethod.POST, produces="application/json")
+//	public @ResponseBody List<Cocktail> vision(MultipartHttpServletRequest multipartRequest,HttpServletRequest servletRequest) throws Exception {
+//		Iterator<String> itr = multipartRequest.getFileNames(); 
+//		String colorName = null;
+//		if(itr.hasNext()) {
+//			MultipartFile mpf = multipartRequest.getFile(itr.next());
+//			System.out.println(mpf.getOriginalFilename() +" uploaded!"); 
+//			setOriginalFileName(mpf.getOriginalFilename());
+//			int fileLength = mpf.getBytes().length;
+//			System.out.println("file 크기 : " + fileLength);
+//			UUID uuid = UUID.randomUUID();
+//			setSavedFileName(uuid+"_"+getOriginalFileName());
+//			String jsonPath = servletRequest.getSession().getServletContext().getRealPath("/resources/"+getSavedFileName());
+//			System.out.println(jsonPath);
+//			File saveFile = new File(jsonPath);
+//			if(!saveFile.exists()) {
+//				saveFile.mkdirs();
+//			}
+//			try { 
+//				mpf.transferTo(saveFile);
+//			} catch (IOException e){
+//				System.out.println(e.getMessage());
+//				e.printStackTrace(); 
+//			}
+////			if(!visionText(jsonPath)) {
+////				return null;
+////			};
+//			if((colorName = visionColor(jsonPath)).equals("fail")) {
 //				return null;
-//			};
-			if((colorName = visionColor(jsonPath)).equals("fail")) {
-				return null;
-			}
-			List<Cocktail> cocktailList = cocktailRepository.getCocktailByColor(colorName);
-			return cocktailList;
-			} else{
+//			}
+//			List<Cocktail> cocktailList = cocktailRepository.getCocktailByColor(colorName);
+//			return cocktailList;
+//			} else{
+//			return null;
+//		}
+//	}
+	@RequestMapping(value="vision", method=RequestMethod.POST, produces="application/json")
+	public @ResponseBody List<Cocktail> vision(String path) throws Exception {
+		System.out.println(path);
+		String colorName = null;
+		setSavedFileName(path);
+		if((colorName = visionColor("https://cdn.filestackcontent.com/zjht1wT1Sl6n687VdMf5")).equals("fail")) {
 			return null;
 		}
-	}
-	
+		List<Cocktail> cocktailList = cocktailRepository.getCocktailByColor(colorName);
+		return cocktailList;
+			
+	}	
 	/**
 	 * UserPhoto에 업로드 함
 	 * 유저 이미지, 글, 칵테일 이미지 모두 받아서 디비에 넣으며 된다
@@ -143,7 +155,6 @@ public class FileUploadController {
 		
 		userPhoto.setTitle(contents);
 		userPhoto.setContents(contents);
-		userPhoto.setOriginalFileName(originalFileName);
 		userPhoto.setSaveFileName(savedFileName);
 		userPhoto.setUserEmail((String)httpSession.getAttribute("useremail"));
 		userPhoto.setCocktailName(cocktailName);
@@ -167,16 +178,17 @@ public class FileUploadController {
 		// Instantiates a client
 		 try (ImageAnnotatorClient vision = ImageAnnotatorClient.create()) {
 
-		   // The path to the image file to annotate
-		   String fileName = jsonPath;
-		   // Reads the image file into memory
-		   Path path = Paths.get(fileName);
-		   byte[] data = Files.readAllBytes(path);
-		   ByteString imgBytes = ByteString.copyFrom(data);
+//		   // The path to the image file to annotate
+//		   String fileName = jsonPath;
+//		   // Reads the image file into memory
+//		   Path path = Paths.get(fileName);
+//		   byte[] data = Files.readAllBytes(path);
+//		   ByteString imgBytes = ByteString.copyFrom(data);
 
 		   // Builds the image annotation request
 		   List<AnnotateImageRequest> requests = new ArrayList<>();
-		   Image img = Image.newBuilder().setContent(imgBytes).build();
+		   ImageSource imgSource = ImageSource.newBuilder().setImageUri(jsonPath).build();	
+		   Image img = Image.newBuilder().setSource(imgSource).build();
 		   Feature feat = Feature.newBuilder().setType(Type.IMAGE_PROPERTIES).build();
 
 		   

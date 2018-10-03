@@ -98,17 +98,14 @@
 					</section>
 					<section class="slideshow">
 						<ul>
-							<c:forEach var="userCocktail" items=" ${userCocktailList}">
+							<c:forEach var="userCocktail" items="${userCocktailList}">
 								<li>
 									<figure>
 										<figcaption>
-											<h3>Letterpress asymmetrical</h3>
-											<p>Kale chips lomo biodiesel stumptown Godard Tumblr,
-												mustache sriracha tattooed cray aute slow-carb placeat
-												delectus. Letterpress asymmetrical fanny pack art party est
-												pour-over skateboard anim quis, ullamco craft beer.</p>
+											<h3>${userCocktail.usercocktailname }</h3>
+											<p>${userCocktail.usercocktailname }</p>
 										</figcaption>
-										<img src="./resources/assets/gallery/grid/img/large/1.png" alt="img01" />
+										<img src="${path }${userCocktail.savefilename}" alt="img01" />
 									</figure>
 								</li>
 							</c:forEach>

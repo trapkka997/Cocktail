@@ -21,10 +21,15 @@
 	background-size: contain;
 }
 .recommandPhoto_img{
-	height: 50%;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: contain;
+	height: 30%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    min-height: 500px;
+    max-width: 200px;
+    min-width: -webkit-fill-available;
+    margin-bottom: 20px;
+    border-radius: 9px;
 }
 .userEL2556141 hr {
 	border: 0;
@@ -161,6 +166,7 @@
 					</div>
 				</div>
 			</div>
+			<!-- line -->
 
 			<div class="row" id="photos">
 				<div class="col-md-12" id="photo_title">
@@ -182,7 +188,7 @@
 										items="${recommandUserPhotoList }">
 										<td class = "recommandPhoto_td" style = "text-align: center; border-top: none; ">
 										<img class="recommandPhoto_img" usr_email="${recommandUserPhoto.userEmail}"
-											src="${path }${recommandUserPhoto.saveFileName}">
+											src="${recommandUserPhoto.saveFileName}">
 											<div class="text-box">
 												<p class="content-text" data-edit="true"
 													data-selector="p.content-text">

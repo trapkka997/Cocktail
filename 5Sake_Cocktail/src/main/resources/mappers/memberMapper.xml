@@ -69,11 +69,11 @@ SELECT
 
 <insert id="writeBoard" parameterType="userPhoto">
 	INSERT INTO USERPHOTO(
-		USERPHOTOSEQ, USEREMAIL, TITLE, CONTENTS, SAVEFILENAME, ORIGINALFILENAME,
+		USERPHOTOSEQ, USEREMAIL, TITLE, CONTENTS, SAVEFILENAME, 
 		WRITEDATE, HITCOUNT, LIKECOUNT, COCKTAILNAME
 	)
 	values(
-		USERPHOTOSEQ.nextVal, #{userEmail}, #{title}, #{contents}, #{saveFileName}, #{originalFileName},
+		USERPHOTOSEQ.nextVal, #{userEmail}, #{title}, #{contents}, #{saveFileName},
 		SYSDATE, 0, 0, #{cocktailName} 
 	)
 </insert>

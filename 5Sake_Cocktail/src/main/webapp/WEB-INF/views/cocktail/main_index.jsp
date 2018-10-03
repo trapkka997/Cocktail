@@ -171,15 +171,7 @@ h4 {
                <div id="search" class="dropdown-menu"
                   style="margin-left: 150px; margin-right: 150px; margin-top: 0px;">
 
-                  <!-- exit_button -->
-                  <div>
-                     <button type="button" class="close" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                     </button>
-                  </div>
-                  <!-- exit_button_end -->
-
-
+                
                   <div class="row_drop_search">
                      <div class="col-md-12" id="bs-megadropdown-tabs">
                         <div class="row">
@@ -689,7 +681,7 @@ h4 {
    <script
 		src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
    <script>
-		 var sock = new SockJS('http://localhost:8888/cocktail/myHandler');
+		 var sock = new SockJS('http://10.10.15.227:8888/cocktail/myHandler');
 		  sock.onopen = function() {
 		     console.log('open');
 		 };
@@ -708,7 +700,6 @@ h4 {
 		     var getData = resp[2];
 		     console.log(resp);
 		     var userId = document.getElementById('userEmail').value;
-		     
 		     var usrPicture = document.getElementById('path').value+resp[1];
 			 var message = "";
 			 message +='<div class="container_chat">';

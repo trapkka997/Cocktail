@@ -37,7 +37,8 @@ public class MemberController {
 	
 	@Autowired MemberRepository dao;
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
-
+	private static final String PATH = "http://localhost:8888/cocktail/resources/";
+	
 		/**
 		 * 로그인후 화면 이동
 		 * 현재는 사용하지 않음
@@ -132,7 +133,7 @@ public class MemberController {
 			String path = servletRequest.getSession().getServletContext().getRealPath("resources");
 			List<UserPhoto> userPhotos = dao.selectUserPhoto(vo);
 			model.addAttribute("userPhotos", userPhotos);
-			model.addAttribute("path", "http://localhost:8888/cocktail/resources/");
+			model.addAttribute("path", PATH);
 			
 			
 			return "imsi/photoLibrary";
@@ -150,7 +151,7 @@ public class MemberController {
 			String path = servletRequest.getSession().getServletContext().getRealPath("resources");
 			System.out.println(path);
 			model.addAttribute("userPhotos", userPhotos);
-			model.addAttribute("path", "http://localhost:8888/cocktail/resources/");
+			model.addAttribute("path", PATH);
 			return "test/grid";
 		}
 		
@@ -183,7 +184,10 @@ public class MemberController {
 				try { 
 					mpf.transferTo(saveFile);
 					int result =dao.updateProfilePicture(vo);
-					if(result == 1) return "1";
+					if(result == 1) {
+						httpSession.setAttribute("savedFileName", saveFilename);
+						return "1";
+					}
 					else return "2";
 				} catch (IOException e){
 					System.out.println(e.getMessage());
@@ -203,7 +207,7 @@ public class MemberController {
 		public String updateProfilePicture(Model model, HttpSession httpSession, User vo) {
 			String userEmail = (String) httpSession.getAttribute("useremail");
 			vo.setUserEmail(userEmail);
-			String path = "http://localhost:8888/cocktail/resources/";
+			String path = PATH;
 			User user = dao.selectOne(vo);
 			System.out.println(user);
 			model.addAttribute("user", user);

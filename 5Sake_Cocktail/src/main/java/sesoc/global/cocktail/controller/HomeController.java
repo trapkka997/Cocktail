@@ -33,6 +33,7 @@ public class HomeController {
 	@Autowired SqlSession sqlSession;
 	@Autowired MemberRepository dao;
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class); 
+	private static final String PATH = "http://localhost:8888/cocktail/resources/";
 	
 	/**
 	 * 고정 메뉴 
@@ -72,7 +73,7 @@ public class HomeController {
 		model.addAttribute("recommandUserPhotoList", recommandUserPhotoList);
 		model.addAttribute("recommandCocktailList", recommandCocktailList);
 		model.addAttribute("userPhotos", userPhotos);
-		model.addAttribute("path", "http://localhost:8888/cocktail/resources/");
+		model.addAttribute("path", PATH);
 		return "cocktail/main_body";
 	}
 	
@@ -88,7 +89,7 @@ public class HomeController {
 		List<Cocktail> cocktailList = cocktailRepository.getCocktailList();
 		model.addAttribute("cocktailList", cocktailList);
 		model.addAttribute("userPhotos", userPhotos);
-		model.addAttribute("path", "http://localhost:8888/cocktail/resources/");
+		model.addAttribute("path", PATH);
  
 		return "cocktail/gallery/user_gallery";
  
@@ -107,7 +108,7 @@ public class HomeController {
 		System.out.println(path);
 		model.addAttribute("userPhotos", userPhotos);
 		System.out.println(userPhotos);
-		model.addAttribute("path", "http://localhost:8888/cocktail/resources/");
+		model.addAttribute("path", PATH);
 		
 		String userEmail = (String)httpSession.getAttribute("useremail");
 //		JsoupExample2 jsoup = new JsoupExample2();
@@ -165,7 +166,7 @@ public class HomeController {
 		model.addAttribute("ingredientByFruitList", ingredientByFruitList);
 		model.addAttribute("ingredientByLiqueurList", ingredientByLiqueurList);
 		model.addAttribute("ingredientByMaterialList", ingredientByMaterialList);
-		model.addAttribute("path", "http://localhost:8888/cocktail/resources/");
+		model.addAttribute("path", PATH);
 		List<UserCocktail> userCocktailList =  cocktailRepository.selectUserCocktail(vo);
 		System.out.println(userCocktailList);
 		model.addAttribute("userCocktailList", userCocktailList);
@@ -218,7 +219,7 @@ public class HomeController {
 		model.addAttribute("postNum", postNum);
 		model.addAttribute("followNum", followNum);
 		model.addAttribute("followerNum", followerNum);
-		model.addAttribute("path", "http://localhost:8888/cocktail/resources/");
+		model.addAttribute("path", PATH);
 		model.addAttribute("photoList", photoList);
 		model.addAttribute("followList", followList);
 		model.addAttribute("followerList", followerList);
