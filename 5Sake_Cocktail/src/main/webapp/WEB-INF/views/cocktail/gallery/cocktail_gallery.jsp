@@ -120,7 +120,7 @@
 												<h3>${userPhoto.title}</h3>
 												<p>${userPhoto.contents}</p>
 											</figcaption>
-											<img class="big_img" usr-email="${userPhoto.userEmail }" src="${path }${userPhoto.saveFileName}"
+											<img class="big_img" usr-email="${userPhoto.userEmail }" src="${userPhoto.saveFileName}"
 												alt="img01" />
 											<img class="small_img" style = "width : 25%"
 												src="${userPhoto.imageRink}"

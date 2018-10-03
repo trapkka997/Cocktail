@@ -340,8 +340,7 @@
 								</div>
 							</div>
 
-
-							<button type="submit"">Upload</button>
+							<button type="submit" data-dismiss="modal">Upload</button>
 							<!--  -->
 						</div>
 						<!-- Modal content_end -->

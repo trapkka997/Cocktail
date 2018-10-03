@@ -271,11 +271,11 @@ var TagsInput = function(element) {
 			       if (this.readyState == 4 && this.status == 200) {
 			          console.log(xhr.response);
 			          $("#content").load("/cocktail/selfMaking");
-			          $('#myModal').modal('hide');
-			              } else if(this.status == 500){
-			              } else if(this.status == 403){
-			              } else if(this.status == 404){
-			              } 
+			          //$('#myModal').modal('hide');
+			       } else if(this.status == 500){
+			       } else if(this.status == 403){
+			       } else if(this.status == 404){
+			       } 
 			    };
 			    xhr.open("POST", "/cocktail/usercocktailInsert");
 			    xhr.send(fd);
