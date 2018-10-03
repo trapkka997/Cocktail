@@ -14,8 +14,7 @@
 	</if>
 	<if test="userPwd == null">
 	USEREMAIL = #{userEmail}
-	</if>		 
-			 
+	</if>		 			 
 </select>
 <select id="selectUserPhoto" parameterType="user" resultType="userPhoto">
 	SELECT 
@@ -285,9 +284,33 @@ SELECT
 <update id="updateUser" parameterType="user">
 	UPDATE
 		USERDETAIL
-	SET
-		USERNICKNAME=#{userNickname},
-		USERINSTA=#{userInsta}
+	SET	
+		<if test="userNickname != null and userSentence != null and userInsta != null">
+			USERNICKNAME=#{userNickname},
+			USERSENTENCE=#{userSentence},
+			USERINSTA=#{userInsta}
+		</if>
+		<if test="userNickname == null and userSentence == null and userInsta != null">
+			USERINSTA=#{userInsta}
+		</if>
+		<if test="userNickname != null and userSentence == null and userInsta == null">
+			USERNICKNAME=#{userNickname}
+		</if>
+		<if test="userNickname == null and userSentence != null and userInsta == null">
+			USERSENTENCE=#{userSentence}
+		</if>
+		<if test="userNickname == null and userSentence != null and userInsta != null">
+			USERSENTENCE=#{userSentence},
+			USERINSTA=#{userInsta}
+		</if>
+		<if test="userNickname != null and userSentence == null and userInsta != null">
+			USERNICKNAME=#{userNickname},
+			USERINSTA=#{userInsta}
+		</if>
+		<if test="userNickname != null and userSentence != null and userInsta == null">
+			USERSENTENCE=#{userSentence},
+			USERNICKNAME=#{userNickname}
+		</if>
 	where
 		USEREMAIL= #{userEmail}
 </update>

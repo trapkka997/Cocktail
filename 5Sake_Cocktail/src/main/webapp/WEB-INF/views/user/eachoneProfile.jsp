@@ -6,49 +6,30 @@
 
 <head>
 <title>5sake's Cocktail</title>
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css?ver=2">
-<link rel="stylesheet"
-	href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
-<link rel="stylesheet"
-	href="./resources/assets/basic/css/navbar/navbar.css">
-<link rel="stylesheet"
-	href="./resources/assets/basic/css/proflie_slide/slide_component.css">
+<link rel="stylesheet"	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css?ver=2">
+<link rel="stylesheet"	href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+<link rel="stylesheet"	href="./resources/assets/basic/css/navbar/navbar.css">
+<link rel="stylesheet"	href="./resources/assets/basic/css/proflie_slide/slide_component.css">
 <!--profile-->
-<link rel="stylesheet"
-	href="https://fonts.googleapis.com/css?family=Open+Sans">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-<link rel="stylesheet"
-	href="./resources/assets/basic/css/profile/default.css">
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
+<link rel="stylesheet"	href="https://fonts.googleapis.com/css?family=Open+Sans">
+<link rel="stylesheet"	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet"	href="./resources/assets/basic/css/profile/default.css">
+<link rel="stylesheet"	href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
 <link rel="stylesheet" href="./resources/assets/tag/css/tag_default.css">
 
-<link rel="stylesheet"
-	href="./resources/assets/selfmaking/css/button/button.css">
+<link rel="stylesheet"	href="./resources/assets/selfmaking/css/button/button.css">
 <link rel="stylesheet" href="./resources/assets/gallery/css/gallery.css">
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
-<link rel="stylesheet"
-	href="./resources/assets/gallery/css/uploadbutton.css">
-<link rel="stylesheet"
-	href="./resources/assets/gallery/css/circluar_layout.css">
+<link rel="stylesheet"	href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
+<link rel="stylesheet"	href="./resources/assets/gallery/css/uploadbutton.css">
+<link rel="stylesheet"	href="./resources/assets/gallery/css/circluar_layout.css">
 <!-- eachoneProfile_css 중요 -->
-<link rel="stylesheet"
-	href="./resources/assets/eachoneProfile/css/eachoneProfile.css">
-<link rel="stylesheet"
-	href="./resources/assets/eachoneProfile/css/tabMenu.css">
-<link rel="stylesheet"
-	href="./resources/assets/eachoneProfile/css/eachoneProfile_modalButton.css">
-<link rel="stylesheet"
-	href="./resources/assets/eachoneProfile/css/eachoneProfile_following_followerModal.css">
-<link rel="stylesheet"
-	href="./resources/assets/eachoneProfile/css/eachoneProfile_profile_editModal.css">
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-<link rel="stylesheet"
-	href="https://fonts.googleapis.com/css?family=Open+Sans">
+<link rel="stylesheet"	href="./resources/assets/eachoneProfile/css/eachoneProfile.css">
+<link rel="stylesheet"	href="./resources/assets/eachoneProfile/css/tabMenu.css">
+<link rel="stylesheet"	href="./resources/assets/eachoneProfile/css/eachoneProfile_modalButton.css">
+<link rel="stylesheet"	href="./resources/assets/eachoneProfile/css/eachoneProfile_following_followerModal.css">
+<link rel="stylesheet"	href="./resources/assets/eachoneProfile/css/eachoneProfile_profile_editModal.css">
+<link rel="stylesheet"	href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet"	href="https://fonts.googleapis.com/css?family=Open+Sans">
 <!-- eachoneProfile_css 중요 -->
 <!-- message_css 중요 -->
 <link rel="stylesheet" href="./resources/assets/chat/css/chat.css">
@@ -77,24 +58,19 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-
 					<div class="userprofile_outer">
 						<div class="userprofile_inner">
 							<!-- profile -->
 							<div class="container profile">
 								<div class="row profile">
 									<div class="col-xs-4 col-sm-2 col-md-offset-2 userpic">
-
 										<div class="p-image">
-											<i class="fa fa-camera upload-button"></i> <input
-												class="file-upload" type="file" accept="image/*" />
+											<i class="fa fa-camera upload-button"></i> 
+											<input class="file-upload" type="file" accept="image/*" />
 										</div>
-
-										<span class="avatar"> <img class="profile-pic"
-											src="${path }${user.savedFilename }" />
-
+										<span class="avatar"> 
+											<img class="profile-pic" src="${path }${user.savedFilename }" />
 										</span>
-
 									</div>
 									<div class="col-xs-8 col-sm-10 col-md-8 user-info">
 										<div>
@@ -211,46 +187,27 @@
 				</div>
 			</div>
 			<!-- followingModal_end -->
-
 			<!-- profile_editModal -->
-
-			<div class="modal fade" id="profile_editModal" tabindex="-1"
-				aria-labelledby="output" role="dialog" aria-hidden="true">
+			<div class="modal fade" id="profile_editModal" tabindex="-1" aria-labelledby="output" role="dialog" aria-hidden="true">
 				<div class="modal-dialog">
 					<div class="modal-content">
-
-						<form class="profile_edit_form" action="updateUser" method="post">
+						<div class="profile_edit_form">
 							<h1 class="profile_edit_h1">Edit information</h1>
 							<div class="question">
-								<input type="text" id="updateNickname" name="userNickname"
-									required /> <label>NickName</label>
-							</div>
-							
+								<input type="text" id="updateNickname" name="userNickname" value=""/> <label>NickName</label>
+							</div>							
 							<div class="question">
-								<input type="text" id="updateYourLikes" name="updateYourLikes"
-									required /> <label>Your Likes</label>
-							</div>
-							
+								<input type="text" id="updateYourLikes" name="updateYourLikes"/> <label>Your Likes</label>
+							</div>							
 							<div class="question">
-								<input type="text" id="updateFeeling" name="userFeeling"
-									required /> <label>Your Thought</label>
+								<input type="text" id="updateFeeling" name="userFeeling"/><label>Your Thought</label>
 							</div>
-							
-							<!-- <div class="question">
-								<input type="text" id="updateInstagramID" name="userInsta"
-									required /> <label>Instagram ID</label>
-							</div> -->
-							
-
-							<button>수 정</button>
-						</form>
-
+							<button id="updateUser">수 정</button>
+						</div>
 					</div>
 				</div>
 			</div>
 			<!-- profile_editModal_end -->
-
-
 			<!-- tabMenu -->
 			<div class="wrapper_tabMenu">
 				<nav class="tabs_tabMenu">
@@ -261,8 +218,6 @@
 				</nav>
 			</div>
 			<!-- tabMenu_end -->
-
-
 			<div class="row">
 				<div class="col-md-12">
 					<div id="grid-gallery" class="grid-gallery">
@@ -288,7 +243,8 @@
 								</c:forEach>
 							</ul>
 							<nav>
-								<span class="icon nav-prev"></span> <span class="icon nav-next"></span>
+								<span class="icon nav-prev"></span> 
+								<span class="icon nav-next"></span>
 								<span class="icon nav-close"></span>
 							</nav>
 							<div class="info-keys icon">Navigate with arrow keys</div>
@@ -464,18 +420,13 @@
 	</div>
 
 
-	<script
-		src="./resources/assets/basic/js/proflie_slide/proflieSlide_slideclassie.js"></script>
-	<script
-		src="./resources/assets/basic/js/proflie_slide/proflieSlide_modernizr.custom.js"></script>
+	<script	src="./resources/assets/basic/js/proflie_slide/proflieSlide_slideclassie.js"></script>
+	<script	src="./resources/assets/basic/js/proflie_slide/proflieSlide_modernizr.custom.js"></script>
 	<script src="./resources/assets/gallery/js/gallery/gallery_classie.js"></script>
-	<script
-		src="./resources/assets/gallery/js/gallery/gallery_modernizr.custom.js"></script>
-	<script
-		src="./resources/assets/gallery/js/gallery/imagesloaded.pkgd.min.js"></script>
+	<script	src="./resources/assets/gallery/js/gallery/gallery_modernizr.custom.js"></script>
+	<script	src="./resources/assets/gallery/js/gallery/imagesloaded.pkgd.min.js"></script>
 	<script src="./resources/assets/gallery/js/gallery/masonry.pkgd.min.js"></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
+	<script	src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
 	<script src="./resources/assets/gallery/js/gallery/cbpGridGallery.js"></script>
 	<script src="./resources/assets/gallery/js/circluar_layout.js"></script>
 	<script src="./resources/assets/eachoneProfile/js/tabMenu.js"></script>
@@ -521,8 +472,7 @@
 		
 		</script> -->
 		<script>
-			$(document).ready(function() {
-				
+			$(document).ready(function() {				
 				var followUser = document.getElementById('userEmail').value;
 				$.ajax({
 							method : "post",
@@ -572,9 +522,7 @@
 						    
 						var reader = new FileReader();
 
-						reader.onload = function(e) {
-							
-							
+						reader.onload = function(e) {							
 							$('.profile-pic').attr('src', e.target.result);
 						}
 
@@ -588,6 +536,28 @@
 
 				$(".upload-button").on('click', function() {
 					$(".file-upload").click();
+				});				
+				$("#updateUser").on('click', function() {
+					var userNickname = $('#updateNickname').val();
+					var updateYourLikes = $('#updateYourLikes').val();
+					var userFeeling = $('#updateFeeling').val();
+					 $.ajax({
+							method:"post",
+							url:"updateUser",
+							dataType: 'json',
+					        data: JSON.stringify({
+								'userNickname' : userNickname,
+								'userInsta' : updateYourLikes,
+								'userSentence' : userFeeling
+							}),
+							contentType:'application/json; charset=utf-8',
+							success:function(resp){
+								$('.bio').text(resp.userSentence);
+								$('.full-name').text(resp.userNickname);						
+							},error: function(){
+								alert('err');
+							}							
+						}); 
 				});
 			});
 		</script>
@@ -665,6 +635,7 @@
 						alert('err');
 					}
 				});
+				
 			}
 			function sukisyashinBtn() {
 				var followUser = document.getElementById('userEmail').value;
@@ -795,8 +766,5 @@
 	    	}
 		</script>
 		<!-- chat-->
-
-	
 </body>
-
 </html>

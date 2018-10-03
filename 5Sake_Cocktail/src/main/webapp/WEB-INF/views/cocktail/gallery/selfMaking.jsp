@@ -76,7 +76,7 @@
 						<ul class="grid">
 							<li class="grid-sizer"></li>
 							<!-- for Masonry column width -->
-							<c:forEach var="userCocktail" items="${userCocktailList}" varStatus="var">
+							<c:forEach var="userCocktail" items="${userCocktailList}" varStatus="var" begin="0" end="7">
 								<li>
 									<figure class="tile2 scale-anm brandy all">
 										<div class="profilebox profilebox1">
@@ -403,8 +403,7 @@
 	<script>
 		new CBPGridGallery( document.getElementById( 'grid-gallery' ) );
 	</script>
-	<script
-		src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script	src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script type="text/javascript">
 		var selectedColor ="";
 		$('.color-picker').children().on('click',function(){
