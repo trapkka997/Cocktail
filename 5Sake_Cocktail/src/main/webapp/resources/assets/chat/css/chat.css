@@ -1,13 +1,14 @@
 
 /* The popup chat - hidden by default */
-.chat-popup {
-      display: none;
-      position: absolute;
-      bottom: 0;
-      right: 15px;
-      border: 3px solid #f1f1f1;
-      z-index: 10;
-    }
+.chat-popup  {
+	position: absolute;
+	bottom: 25px;
+	right: 15px;
+	/* border: 3px solid #f1f1f1; */
+	z-index: 10;
+	box-shadow: -4px 7px 20px 3px rgba(0, 0, 0, .1);
+	border-radius: 20px;
+	}
 
     /* Add styles to the form container */
 
@@ -15,6 +16,7 @@
       max-width: 300px;
       padding: 10px;
       background-color: white;
+      border-radius: 20px;
     }
 
     /* Full-width textarea */
@@ -63,16 +65,28 @@
     }
 
      .container_chat {
-      border: 2px solid #dedede;
-      background-color: #f1f1f1;
-      border-radius: 5px;
+     
       padding: 10px;
-      margin: 10px 0;
+      margin: 13px 17px;
+      width: 200px;
+      font-size: 14px;
+      
+       border: 1px solid grey;
+       border-radius: 12px 12px 0 12px;
+       margin-left: 78px;
     }
  
     .darker {
       border-color: #ccc;
       background-color: #ddd;
+      
+      
+      padding: 10px;
+      margin: 13px 17px;
+      width: 200px;
+      font-size: 14px;
+      border: 1px solid teal;
+      border-radius: 12px 12px 12px 0;
     }
 
     .container_chat::after {

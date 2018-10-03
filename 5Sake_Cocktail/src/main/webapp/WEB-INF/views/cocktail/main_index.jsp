@@ -681,7 +681,7 @@ h4 {
    <script
 		src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
    <script>
-		 var sock = new SockJS('http://localhost:8888/cocktail/myHandler');
+		 var sock = new SockJS('http://10.10.15.227:8888/cocktail/myHandler');
 		  sock.onopen = function() {
 		     console.log('open');
 		 };
@@ -698,19 +698,35 @@ h4 {
 		     console.log('message', e.data);
 		     var resp = e.data.split(" : ");
 		     var getData = resp[2];
+		     var getEmail = resp[0];
 		     console.log(resp);
 		     var userId = document.getElementById('userEmail').value;
+		     	if(userId == getEmail){
+		     		// 본인이 쓴 글
+		     		 var usrPicture = document.getElementById('path').value+resp[1];
+					 var message = "";
+					 message +='<div class="container_chat">';
+					/*  message +='<img src="'+ usrPicture+'" alt="Avatar" style="width: 100%;">'; */
+					 message +='<p>'+getData+'</p>';
+					 message +='<span class="time-left">'+timeDisplay+'</span>';
+					 message +='</div>'
+				     $('.chat_chat').append(message);
+					 $('#msg').val('');
+					 //sock.close();
+		     	}else{
+		     		//다른 사람
+		     		 var usrPicture = document.getElementById('path').value+resp[1];
+					 var message = "";
+					 message +='<div class="darker">';
+					/*  message +='<img src="'+ usrPicture+'" alt="Avatar" style="width: 100%;">'; */
+					 message +='<p>'+getData+'</p>';
+					 message +='<span class="time-left">'+timeDisplay+'</span>';
+					 message +='</div>'
+				     $('.chat_chat').append(message);
+					 $('#msg').val('');
+					 //sock.close();
+		     	}
 		     
-		     var usrPicture = document.getElementById('path').value+resp[1];
-			 var message = "";
-			 message +='<div class="container_chat">';
-			 message +='<img src="'+ usrPicture+'" alt="Avatar" style="width: 100%;">';
-			 message +='<p>'+getData+'</p>';
-			 message +='<span class="time-left">'+timeDisplay+'</span>';
-			 message +='</div>'
-		     $('.chat_chat').append(message);
-			 $('#msg').val('');
-			 //sock.close();
 		 };
 
 		 sock.onclose = function() {
