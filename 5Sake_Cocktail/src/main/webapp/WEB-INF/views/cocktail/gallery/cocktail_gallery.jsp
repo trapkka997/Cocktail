@@ -148,7 +148,7 @@
 				<!-- modal -->
 				<div class="plus-button" class="btn btn-primary" data-toggle="modal"
 					data-target="#myModal">+</div>
-				<!-- modal1_start -->
+				<%-- <!-- modal1_start -->
 				<div id="myModal" class="modal fade" role="dialog">
 					<div class="modal-dialog modal-lg">
 
@@ -267,7 +267,7 @@
 					</div>
 				</div>
 				<!-- modal1_end -->
-				<!-- modal -->
+				<!-- modal --> --%>
 			</div>
 		</div>
 	</div>
@@ -276,7 +276,7 @@
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h4 class="modal-title">Modal Title</h4>
+					<h4 class="modal-title">Matching Cocktail</h4>
 					<button type="button" class="close" data-dismiss="modal"
 						aria-label="Close">
 						<span aria-hidden="true">×</span>
@@ -469,7 +469,7 @@
 			}
 			var apiKey = 'AB8tiXIh3TPiZmocJNLKPz';
 			var client = filestack.init(apiKey);
-			jQuery("#upload-link").click(function() {
+			jQuery(".plus-button").click(function() {
 				client.pick(pickerOptions).then(function(result) {
 					console.log(result.filesUploaded[0]);
 					console.log(JSON.stringify(result.filesUploaded))
