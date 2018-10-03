@@ -171,15 +171,7 @@ h4 {
                <div id="search" class="dropdown-menu"
                   style="margin-left: 150px; margin-right: 150px; margin-top: 0px;">
 
-                  <!-- exit_button -->
-                  <div>
-                     <button type="button" class="close" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                     </button>
-                  </div>
-                  <!-- exit_button_end -->
-
-
+                
                   <div class="row_drop_search">
                      <div class="col-md-12" id="bs-megadropdown-tabs">
                         <div class="row">

@@ -225,14 +225,22 @@
 								<input type="text" id="updateNickname" name="userNickname"
 									required /> <label>NickName</label>
 							</div>
-							<div class="question">
-								<input type="text" id="updateInstagramID" name="userInsta"
-									required /> <label>Instagram ID</label>
-							</div>
+							
 							<div class="question">
 								<input type="text" id="updateYourLikes" name="updateYourLikes"
 									required /> <label>Your Likes</label>
 							</div>
+							
+							<div class="question">
+								<input type="text" id="updateFeeling" name="userFeeling"
+									required /> <label>Your Thought</label>
+							</div>
+							
+							<!-- <div class="question">
+								<input type="text" id="updateInstagramID" name="userInsta"
+									required /> <label>Instagram ID</label>
+							</div> -->
+							
 
 							<button>수 정</button>
 						</form>
