@@ -96,7 +96,7 @@
 												<img class="galleryPhoto"
 													src="${userPhoto.saveFileName}" alt="img01" />
 												<div class="SocialIcons" id='icon${var.index}'>
-													<a onclick="hover(${var.index})" href="#">
+													<a onclick="hover(${var.index},${userPhoto.userPhotoSeq })" href="#">
 														<i class="fas fa-heartbeat"></i>
 													</a>
 												</div>
@@ -319,7 +319,7 @@
 		new CBPGridGallery(document.getElementById('grid-gallery'));
 	</script>
 	<script>
-	function hover(num) {
+	function hover(num,userPhotoSeq) {
 		$('#icon'+num).children().children().css('color', 'red');
 		$('#icon'+num).css('transform', 'none')
 		.css('transition', 'none')
@@ -327,6 +327,19 @@
 		.css('opacity', 'inherit')
 		.css('left', '15px');
 		event.stopPropagation();
+		$.ajax({
+			method:"get",
+			url:"userlikephoto",
+			data:{
+				userPhotoSeq : userPhotoSeq
+			},
+			success:function(resp){
+				alert('좋아요!');
+			},
+			error:function(){
+				alert('err');
+			}
+		});
 	}	
 	</script>
 	<script type="text/javascript">

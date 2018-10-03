@@ -33,7 +33,7 @@ public class HomeController {
 	@Autowired SqlSession sqlSession;
 	@Autowired MemberRepository dao;
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class); 
-	private static final String PATH = "http://localhost:8888/cocktail/resources/";
+	private static final String PATH = "http://10.10.15.227:8888/cocktail/resources/";
 	
 	/**
 	 * 고정 메뉴 

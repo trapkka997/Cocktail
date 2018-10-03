@@ -28,6 +28,7 @@ import sesoc.global.cocktail.dao.userCocktailDAO;
 import sesoc.global.cocktail.dao.userCocktailRepository;
 import sesoc.global.cocktail.vo.Cocktail;
 import sesoc.global.cocktail.vo.UserCocktail;
+import sesoc.global.cocktail.vo.UserPhotoLike;
 
 
 @Controller
@@ -189,6 +190,20 @@ public class UserCocktailController {
 		
 		int result = dao.userlike(userCocktailSeq);
 
+		if(result==1) {
+			return "success";
+		}else {
+			return "fail";
+		}
+	}
+	//좋아요
+	@RequestMapping(value = "/userlikephoto", method = RequestMethod.GET)
+	public @ResponseBody String userlikephoto(UserPhotoLike vo,HttpSession httpSession) {
+		userCocktailDAO dao = session.getMapper(userCocktailDAO.class);
+		String userEmail = (String)httpSession.getAttribute("useremail");
+		vo.setUserEmail(userEmail);
+		int result = dao.UserPhotoLikeInsert(vo);
+		dao.insertUserLikePhoto(vo);
 		if(result==1) {
 			return "success";
 		}else {
