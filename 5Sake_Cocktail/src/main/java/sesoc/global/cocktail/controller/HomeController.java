@@ -39,10 +39,15 @@ public class HomeController {
 	 * 고정 메뉴 
 	 */ 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Model model) {
+	public String home(Model model, HttpSession httpSession) {
 		List<Cocktail> worldBestList = cocktailRepository.selectWorldBest();
+		String userEmail = (String)httpSession.getAttribute("useremail");
+		User vo = new User();
+		vo.setUserEmail(userEmail);
+		User user = memberRepository.selectOne(vo);
 		model.addAttribute("worldBestList", worldBestList);
-
+		model.addAttribute("path",PATH);
+		model.addAttribute("user",user);
 		return "cocktail/main_index";
 	}
 	

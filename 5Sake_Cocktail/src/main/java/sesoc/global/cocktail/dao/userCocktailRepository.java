@@ -81,4 +81,9 @@ public class userCocktailRepository {
 		userCocktailDAO dao = sqlSession.getMapper(userCocktailDAO.class);
 		return dao.UserPhotoLikeInsert(vo);
 	}
+
+	public ArrayList<UserCocktail> usermyselect(String userEmail) {
+		userCocktailDAO dao = sqlSession.getMapper(userCocktailDAO.class);
+		return dao.usermyselect(userEmail);
+	}
 }

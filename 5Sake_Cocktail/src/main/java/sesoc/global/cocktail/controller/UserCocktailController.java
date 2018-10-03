@@ -117,11 +117,22 @@ public class UserCocktailController {
 		ArrayList<UserCocktail> cockList = new ArrayList<>();
 		cockList = repository.userselect();
 
-		System.out.println(cockList.get(0).toString());
 
 		return cockList;
 
 	}
+	
+	// 만든 칵테일
+	@RequestMapping(value = "/usermyselect", method = RequestMethod.POST)
+	public @ResponseBody ArrayList<UserCocktail> usermyselect(String userEmail) {
+		ArrayList<UserCocktail> cockList = new ArrayList<>();
+		cockList = repository.usermyselect(userEmail);
+
+
+		return cockList;
+
+	}
+	
 
 	// 등록 & 업로드
 	@RequestMapping(value = "/usercocktailInsert", method = RequestMethod.POST )
