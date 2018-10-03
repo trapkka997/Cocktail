@@ -594,9 +594,6 @@
 		<!--  Profile_image change_end -->
 		<script type="text/javascript">
 			 function sendBtn() {
-				 
-				 
-				 alert('몇번 실행이 될까?');
 		    	var sendMessage = $('#msg').val();
 		    	var followUser = document.getElementById('userEmail').value;
 				 $.ajax({

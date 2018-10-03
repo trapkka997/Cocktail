@@ -701,7 +701,6 @@ h4 {
 		     var getEmail = resp[0];
 		     console.log(resp);
 		     var userId = document.getElementById('userEmail').value;
-<<<<<<< HEAD
 		     	if(userId == getEmail){
 		     		// 본인이 쓴 글
 		     		 var usrPicture = document.getElementById('path').value+resp[1];
@@ -727,19 +726,7 @@ h4 {
 					 $('#msg').val('');
 					 //sock.close();
 		     	}
-		     
-=======
-		     var usrPicture = document.getElementById('path').value+resp[1];
-			 var message = "";
-			 message +='<div class="container_chat">';
-			 message +='<img src="'+ usrPicture+'" alt="Avatar" style="width: 100%;">';
-			 message +='<p>'+getData+'</p>';
-			 message +='<span class="time-left">'+timeDisplay+'</span>';
-			 message +='</div>'
-		     $('.chat_chat').append(message);
-			 $('#msg').val('');
-			 //sock.close();
->>>>>>> branch 'master' of https://github.com/trapkka997/Cocktail
+	
 		 };
 
 		 sock.onclose = function() {
