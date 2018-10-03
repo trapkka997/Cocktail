@@ -213,8 +213,8 @@
 				<nav class="tabs_tabMenu">
 					<div class="selector_tabMenu"></div>
 					<a href="#" class="active_tabMenu" onclick="sukiSakeBtn()">好き酒</a>
-					<a href="#" onclick="sukisyashinBtn()">好き写真</a> <a href="#"
-						onclick="sukikataBtn()">好き方</a>
+					<a href="#" onclick="sukisyashinBtn()">好き写真</a> 
+					<a href="#" onclick="sukikataBtn()">好き方</a>
 				</nav>
 			</div>
 			<!-- tabMenu_end -->
@@ -225,7 +225,6 @@
 							<ul class="grid">
 								<li class="grid-sizer"></li>
 								<!-- for Masonry column width -->
-
 							</ul>
 						</section>
 						<section class="slideshow">

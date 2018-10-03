@@ -42,7 +42,23 @@
 	margin-bottom: 20px;
 	padding-bottom: 20px;
 }
+li{
+	display: none;
+}
+.slideshow >ul> li{
+	display: block;
+}
 </style>
+<script>
+$(function(){
+	$("li").slice(0,2).show(); // 최초 10개 선택
+	 $("#load").click(function(e){ // Load More를 위한 클릭 이벤트e
+		e.preventDefault();
+		$("li:hidden").slice(0,2).show(); // 숨김 설정된 다음 10개를 선택하여 표시
+		new CBPGridGallery(document.getElementById('grid-gallery'));
+	}); 
+});
+</script>
 </head>
 <body>
 	<div class="container">
@@ -125,6 +141,7 @@
 					<!-- // slideshow -->
 				</div>
 			</div>
+			<a href="#" id="load">Load More</a>
 			<div class="plus-button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">+</div>
 
 			<!-- modal1_start -->
@@ -389,16 +406,6 @@
 			.css('left', '15px');
 			event.stopPropagation();
 		}		
-/* 		$(function(){
-			$("li").slice(0,1).show(); // 최초 10개 선택
-			$("#load").click(function(e){ // Load More를 위한 클릭 이벤트e
-				e.preventDefault();
-				$("li:hidden").slice(0,10).show(); // 숨김 설정된 다음 10개를 선택하여 표시
-				if($("li:hidden").length == 0){ // 숨겨진 DIV가 있는지 체크
-					alert("더 이상 항목이 없습니다"); // 더 이상 로드할 항목이 없는 경우 경고
-				}
-			});
-		}); */
 	</script>
 	<script>
 		new CBPGridGallery( document.getElementById( 'grid-gallery' ) );
