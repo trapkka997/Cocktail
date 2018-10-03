@@ -136,7 +136,7 @@
 											<div class="text-box">
 												<p class="content-text" data-edit="true"
 													data-selector="p.content-text">
-													<b>Chateau Minuty</b>
+													<b>${recommandCocktail.cocktailName }</b>
 												</p>
 												<hr class="divider" data-selector="hr.divider"
 													data-border="true" data-title="선 색상">
@@ -192,12 +192,12 @@
 											<div class="text-box">
 												<p class="content-text" data-edit="true"
 													data-selector="p.content-text">
-													<b>Chateau Minuty</b>
+													<b>${recommandUserPhoto.title }</b>
 												</p>
 												<hr class="divider" data-selector="hr.divider"
 													data-border="true" data-title="선 색상">
 												<p class="cate-text" data-edit="true"
-													data-selector="p.cate-text">Party</p>
+													data-selector="p.cate-text">${recommandUserPhoto.cocktailName }</p>
 											</div>
 											
 											</td>

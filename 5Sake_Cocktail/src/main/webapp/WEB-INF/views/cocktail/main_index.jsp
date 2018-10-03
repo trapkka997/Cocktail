@@ -661,7 +661,7 @@ h4 {
 
             <div class="navbar-avatar" style="margin-left: 19px;">
                <a href="" onclick="return false;" class="navbar-item is-avatar" @click.prevent="showProfilePanel"> 
-                  <img src="https://unsplash.it/200/200?image=1005" alt="Avatar" />
+                  <img src="${path }${user.savedFilename }" alt="Avatar" />
                </a>
             </div>
 

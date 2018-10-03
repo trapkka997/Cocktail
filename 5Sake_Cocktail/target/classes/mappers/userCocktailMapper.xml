@@ -36,6 +36,12 @@
   select *  from usercocktail
   </select>
   
+   <select id="usermyselect" resultType="userCocktail">
+  select *  from usercocktail
+  where 
+  	USEREMAIL = #{value}
+  </select>
+  
   <update id="usercocktailUpdate" parameterType="userCocktail">
   update
   	usercocktail

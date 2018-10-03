@@ -704,7 +704,10 @@
 				var followUser = document.getElementById('userEmail').value;
 				$.ajax({
 							method : "post",
-							url : "userselectCockList",
+							url : "usermyselect",
+							data : {
+								userEmail : followUser
+							},
 							success : function(resp) {
 								$('.grid-sizer').nextAll().empty();
 								console.log(resp);
