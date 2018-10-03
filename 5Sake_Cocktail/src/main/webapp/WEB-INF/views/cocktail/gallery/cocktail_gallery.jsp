@@ -32,7 +32,7 @@
     height: 50%;
     z-index: 57;
     position: absolute;
-    left: 600px;
+    left: 540px;
     top: 350px;
     
     border-bottom-left-radius: 40px;
