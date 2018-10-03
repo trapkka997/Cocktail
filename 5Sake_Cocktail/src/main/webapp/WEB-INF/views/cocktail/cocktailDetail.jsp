@@ -83,7 +83,7 @@
 		<div class="container_cocktail">
 			<div class="col">
 				<div class="cocktail_recommend_title">
-					<h2 class="C_R_title">${aa}와 어울리는 칵테일</h2>
+					<h2 class="C_R_title">함께하면 좋은 칵테일</h2>
 					<small class="C_R_small">당신을 위한 더 많은 칵테일 추천</small>
 				</div>
 			</div>
@@ -91,38 +91,38 @@
 				<div class="product-items">
 					<div class="product-item">
 						<div class="item-wrap">
-							<img src="./resources/assets/product_detail/img/no_cocktail.jpg" />
+							<img src="./resources/assets/product_detail/img/cocktail/cocktail1.jpg" />
 							<div class="wrap-qtt">
 								<div class="wrap-qtt-field-qtt"></div>
 							</div>
 						</div>
 						<div class="item-info">
-							<div class="item-title">Cocktail Name</div>
-							<div class="item-price" data-price="45">tag</div>
+							<div class="item-title">샴록</div>
+							<div class="item-price" data-price="45">행운을 찾아보세요</div>
 						</div>
 					</div>
 					<div class="product-item">
 						<div class="item-wrap">
-							<img src="./resources/assets/product_detail/img/no_cocktail.jpg" />
+							<img src="./resources/assets/product_detail/img/cocktail/cocktail2.jpg" />
 							<div class="wrap-qtt">
 								<div class="wrap-qtt-field-qtt"></div>
 							</div>
 						</div>
 						<div class="item-info">
-							<div class="item-title">Cocktail Name</div>
-							<div class="item-price" data-price="45">tag</div>
+							<div class="item-title">모히토</div>
+							<div class="item-price" data-price="45">헤밍웨이가 즐긴</div>
 						</div>
 					</div>
 					<div class="product-item">
 						<div class="item-wrap">
-							<img src="./resources/assets/product_detail/img/no_cocktail.jpg" />
+							<img src="./resources/assets/product_detail/img/cocktail/cocktail3.jpg" />
 							<div class="wrap-qtt">
 								<div class="wrap-qtt-field-qtt"></div>
 							</div>
 						</div>
 						<div class="item-info">
-							<div class="item-title">Cocktail Name</div>
-							<div class="item-price" data-price="45">tag</div>
+							<div class="item-title">카루소</div>
+							<div class="item-price" data-price="45">오페라의 중후함</div>
 						</div>
 					</div>
 				</div>
@@ -131,46 +131,46 @@
 		<div class="container_cocktail">
 			<div class="col">
 				<div class="cocktail_recommend_title">
-					<h2 class="C_R_title">${aa} 와 함께한 사람들</h2>
-					<small class="C_R_small">${aa} 와 함께한 사람들의 추억을 만나보세요</small>
+					<h2 class="C_R_title">함께한 순간들</h2>
+					<small class="C_R_small">함께한 사람들의 추억을 만나보세요</small>
 				</div>
 			</div>
 			<div class="row" style="width: 80%; margin: 30px auto;">
 				<div class="product-items">
 					<div class="product-item">
 						<div class="item-wrap">
-							<img src="./resources/assets/product_detail/img/no_cocktail.jpg" />
+							<img src="./resources/assets/product_detail/img/simple1.jpg" />
 							<div class="wrap-qtt">
 								<div class="wrap-qtt-field-qtt"></div>
 							</div>
 						</div>
 						<div class="item-info">
-							<div class="item-title">Cocktail Name</div>
-							<div class="item-price" data-price="45">tag</div>
+							<div class="item-title">마로니에</div>
+							<div class="item-price" data-price="45">추억, 여행</div>
 						</div>
 					</div>
 					<div class="product-item">
 						<div class="item-wrap">
-							<img src="./resources/assets/product_detail/img/no_cocktail.jpg" />
+							<img src="./resources/assets/product_detail/img/simple2.jpg" />
 							<div class="wrap-qtt">
 								<div class="wrap-qtt-field-qtt"></div>
 							</div>
 						</div>
 						<div class="item-info">
-							<div class="item-title">Cocktail Name</div>
-							<div class="item-price" data-price="45">tag</div>
+							<div class="item-title">내친구는아서</div>
+							<div class="item-price" data-price="45">드라이마티니존맛</div>
 						</div>
 					</div>
 					<div class="product-item">
 						<div class="item-wrap">
-							<img src="./resources/assets/product_detail/img/no_cocktail.jpg" />
+							<img src="./resources/assets/product_detail/img/simple3.jpg" />
 							<div class="wrap-qtt">
 								<div class="wrap-qtt-field-qtt"></div>
 							</div>
 						</div>
 						<div class="item-info">
-							<div class="item-title">Cocktail Name</div>
-							<div class="item-price" data-price="45">tag</div>
+							<div class="item-title">머핀칵테일</div>
+							<div class="item-price" data-price="45">드라이마티니와 함께<div>
 						</div>
 					</div>
 				</div>

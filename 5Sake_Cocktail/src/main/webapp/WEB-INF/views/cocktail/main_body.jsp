@@ -27,6 +27,7 @@
     background-size: contain;
     min-height: 500px;
     max-width: 200px;
+    max-height: 500px;
     min-width: -webkit-fill-available;
     margin-bottom: 20px;
     border-radius: 9px;
