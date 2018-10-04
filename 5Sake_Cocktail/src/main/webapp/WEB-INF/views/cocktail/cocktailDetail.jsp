@@ -71,7 +71,7 @@
 								
 							</div>
 							<div class="product-savebutton">
-								<button type="button" onclick="saveBtnn()">Save</button>
+								<button type="button" onclick="saveBtnn()">Like!</button>
 							</div>
 						</div>
 					</div>

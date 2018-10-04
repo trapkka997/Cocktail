@@ -39,12 +39,26 @@
     border-bottom-right-radius: 40px;
     -webkit-box-shadow: -7px -6px 5px #0e0d0d66;
 }
+li{
+	display: none;
+}
+.slideshow >ul> li{
+	display: block;
+}
 </style>
 <script>
 	$(document).ready(function() {
 		$('.big_img').on('click', function() {
 			$("#content").load("/cocktail/eachoneProfile?userEmail="+$(this).attr('usr-email'));
 		});	
+	});
+	$(function(){
+		$("li").slice(0,9).show(); // 최초 10개 선택
+		 $("#load").click(function(e){ // Load More를 위한 클릭 이벤트e
+			e.preventDefault();
+			$("li:hidden").slice(0,9).show(); // 숨김 설정된 다음 10개를 선택하여 표시
+			new CBPGridGallery(document.getElementById('grid-gallery'));
+		}); 
 	});
 </script>
 </head>
@@ -108,7 +122,6 @@
 										</figure>
 									</li>
 								</c:forEach>
-
 							</ul>
 						</section>
 						<section class="slideshow">
@@ -145,6 +158,7 @@
 						<!-- // slideshow -->
 					</div>
 				</div>
+				<a href="#" id="load">Load More</a>
 				<!-- modal -->
 				<div class="plus-button" class="btn btn-primary" data-toggle="modal"
 					data-target="#myModal">+</div>
@@ -271,8 +285,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="modal fade" role="dialog" tabindex="-1"
-		id="getCocktailModal">
+	<div class="modal fade" role="dialog" tabindex="-1"	id="getCocktailModal">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -282,13 +295,13 @@
 						<span aria-hidden="true">×</span>
 					</button>
 				</div>
-				<div class="modal-body">
-					<p>The content of your modal.</p>
+				<div class="modal-body" style="text-align: center;">
+					<p>Share Your Memories</p>
 					<div>
 						<img id="modalImgId">
 					</div>
 					<div>
-						<textarea id="modalTextArea"></textarea>
+						<textarea id="modalTextArea" style="width: -webkit-fill-available;"></textarea>
 					</div>
 				</div>
 				<div class="modal-footer">
@@ -299,6 +312,7 @@
 			</div>
 		</div>
 	</div>
+	
 	<!-- 사진 상세 슬라이드 -->
 	<script src="./resources/assets/gallery/grid/js/modernizr.custom.js"></script>
 	<script	src="./resources/assets/gallery/grid/js/imagesloaded.pkgd.min.js"></script>
@@ -319,6 +333,7 @@
 		new CBPGridGallery(document.getElementById('grid-gallery'));
 	</script>
 	<script>
+
 	function hover(num,userPhotoSeq) {
 		$('#icon'+num).children().children().css('color', 'red');
 		$('#icon'+num).css('transform', 'none')
@@ -343,7 +358,7 @@
 	}	
 	</script>
 	<script type="text/javascript">
-		
+	 
 		/* ;(function($) {
 			var settings = {
 				url : '/cocktail/vision',

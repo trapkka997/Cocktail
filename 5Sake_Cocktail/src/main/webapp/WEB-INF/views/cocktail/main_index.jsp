@@ -39,11 +39,6 @@ h4 {
 .img {
    width: 98px;
 }
-/* .p {
-	margin-top: 0;
-	width: 150px;
-	
-} */
 /*위치에 있던 .tile .flip css -> tag_default.css로 옮김 */
 .mCSB_scrollTools {
   margin: 1px -3px 1px 0;
@@ -60,7 +55,6 @@ h4 {
     font-family: 'Nanum Pen Script', cursive;
     text-shadow: -2px 1px #000000;
 }
-
 #div_ajax_load_image{
    position:absolute;
    z-index: 9999;
@@ -158,7 +152,6 @@ h4 {
             <!-- navbar-center-->
             <div class="navbar-center">
                <i id='cock_gallery' class="fas fa-glass-martini icon"   style="margin-right: 20px;"></i> 
-               <!-- <i id='user_gallery' class="fab fa-microsoft icon" style="margin-left: 20px; margin-right: 20px;"></i>  -->
                <i id='self_making' class="fas fa-user-alt"   style="margin-left: 20px; margin-right: 30px;"></i>
             </div>
 
@@ -168,11 +161,8 @@ h4 {
                   <i class="fas fa-search"></i>
                </a>
 
-               <div id="search" class="dropdown-menu"
-                  style="margin-left: 150px; margin-right: 150px; margin-top: 0px;">
-
-                
-                  <div class="row_drop_search">
+               <div id="search" class="dropdown-menu" style="margin-left: 150px; margin-right: 150px; margin-top: 0px;">
+				  <div class="row_drop_search">
                      <div class="col-md-12" id="bs-megadropdown-tabs">
                         <div class="row">
                            <div class="card-group">
@@ -180,7 +170,6 @@ h4 {
                                  <div class="card-body" id="filter1">
                                     <!-- style="border-right: 1px solid #e8dfdf6e;" -->
                                     <h4 class="card-title">BASE SPIRITS</h4>
-
                                     <div style="float: left;">
                                        <input class="spirit_check" type='checkbox' name='all'
                                           value='valuable' id="all" /> <label for="all"> <img
@@ -215,14 +204,10 @@ h4 {
                                           class="spirits_img"
                                           src="./resources/assets/basic/img/spirit_icon/icon_etc.png" />
                                        </label>
-                                    </div>
-                                    
+                                    </div>                                    
                                  </div>
-
                               </div>
-
                               <!-- BASE SPIRITS -->
-
                               <div class="card col-md-3">
                                  <div class="card-body" id="filter4">
                                     <h4 class="card-title">Color</h4>
@@ -284,23 +269,7 @@ h4 {
                                              <span></span>
                                           </div>
                                        </label>
-
                                     </div>
-
-                                    <!-- <div id="color" class="button-group"
-                                    data-filter-group='color'
-                                    style="border-right: 1px solid #e8dfdf6e;">
-                                    <ul class="nav-list list-inline">
-                                       <li><button class="button is-checked" data-filter="*">All</button></li>
-                                       <li><button class="button" data-filter=".시럽">Red</button></li>
-                                       <li><button class="button" data-filter=".레몬">Blue</button></li>
-                                       <li><button class="button" data-filter=".사과">Green</button></li>
-                                       <li><button class="button" data-filter=".체리">Pink</button></li>
-                                       <li><button class="button" data-filter=".파인애플">Orenge</button></li>
-                                       <li><button class="button" data-filter=".라임">Yellow</button></li>
-                                    </ul>
-                                 </div> -->
-
                                  </div>
                                  <!-- Color -->
                               </div>
@@ -309,10 +278,8 @@ h4 {
                                  <div class="card-body" id="filter2">
                                     <h4 class="card-title">liqueur</h4>
                                     <div class="row_checkBox">
-
                                        <div class="CheckBox_wrapper_liqueur"
                                           style="margin-left: 25px; margin-top: 10px;">
-
                                           <div>
                                              <input type="checkbox" id="check_liqueur_all" /> <label
                                                 class="label_liqueur" for="check_liqueur_all">
@@ -330,7 +297,6 @@ h4 {
                                                 </div>Wine
                                              </label>
                                           </div>
-
                                           <div>
                                              <input type="checkbox" id="check_liqueur_bitters" /> <label
                                                 class="label_liqueur" for="check_liqueur_bitters">
@@ -339,7 +305,6 @@ h4 {
                                                 </div>Bitters
                                              </label>
                                           </div>
-
                                           <div>
                                              <input type="checkbox" id="check_liqueur_beer" /> <label
                                                 class="label_liqueur" for="check_liqueur_beer">
@@ -348,7 +313,6 @@ h4 {
                                                 </div>Beer
                                              </label>
                                           </div>
-
                                           <div>
                                              <input type="checkbox" id="check_liqueur_liqueur" /> <label
                                                 class="label_liqueur" for="check_liqueur_liqueur">
@@ -359,8 +323,6 @@ h4 {
                                           </div>
                                        </div>
                                        <!-- CheckBox_wrapper_end -->
-
-
                                        <div class="CheckBox_wrapper_liqueur2"
                                           style="margin-right: 15px; margin-top: 10px;">
 
@@ -402,35 +364,15 @@ h4 {
                                           </div>
                                        </div>
                                        <!-- CheckBox_wrapper2_end -->
-
                                     </div>
-
-                                    <!-- <div id="liqueur" class="button-group"
-                                       data-filter-group='liqueur'>
-                                       <ul class="nav-list list-inline">
-                                          <li><button class="button is-checked" data-filter="*">All</button></li>
-                                          <li><button class="button" data-filter=".와인">Wine</button></li>
-                                          <li><button class="button" data-filter=".비터스">Bitters</button></li>
-                                          <li><button class="button" data-filter=".비어">Beer</button></li>
-                                          <li><button class="button" data-filter=".리큐르">Liqueur</button></li>
-                                          <li><button class="button" data-filter=".크레임">Cemeliqueur</button></li>
-                                          <li><button class="button" data-filter=".쉐리">Sherry</button></li>
-                                          <li><button class="button" data-filter=".베르무트">Vermouth</button></li>
-                                          <li><button class="button" data-filter=".아마레또">Amaretto</button></li>
-                                       </ul>
-                                    </div> -->
                                  </div>
                                  <!-- liqueur -->
                               </div>
-
                               <div class="card col-md-3">
                                  <div class="card-body" id="filter3">
                                     <h4 class="card-title">material</h4>
                                     <div class="row_checkBox">
-
-                                       <div class="CheckBox_wrapper_material"
-                                          style="margin-top: 10px; margin-right: 27px;">
-
+                                       <div class="CheckBox_wrapper_material" style="margin-top: 10px; margin-right: 27px;">
                                           <div>
                                              <input type="checkbox" id="check_material_all" /> <label
                                                 class="label_material" for="check_material_all">
@@ -612,32 +554,6 @@ h4 {
                                        <!-- CheckBox_wrapper3_end -->
                                     </div>
                                     <!-- checkbox_end -->
-
-                                    <!-- <div id="material" class="button-group"
-                                       data-filter-group='material'>
-                                       <ul class="nav-list list-inline">
-                                          
-                                          <li class="button" data-filter=".시럽">Syrup</li>
-                                          
-                                          
-                                          
-                                          <li class="button" data-filter=".파인애플">Pineapple</li>/
-                                          
-                                          
-                                          
-                                          <li class="button" data-filter=".토마토">Tomato</li>/
-                                          
-                                          
-                                          <li class="button" data-filter=".계란">Egg</li>
-                                          <li class="button" data-filter=".스파이시">Spicy</li>
-                                          <li class="button" data-filter=".설탕">Sugar</li>
-                                          <li class="button" data-filter=".우유">Milk</li>
-                                          
-                                          <li class="button" data-filter=".탄산수">Soda</li>
-                                          <li class="button" data-filter=".진저에일">Gingerale</li>
-                                       </ul>
-                                    </div> -->
-
                                  </div>
                               </div>
                               <!--material-->
@@ -648,7 +564,7 @@ h4 {
                      <div class="row_cocktail_fliter">
 					     <div class="grid">   
 					         <div class="wrapper_cocktailCard">
-					             <div class="cols_cocktailCard" style="max-height:530px; overflow:auto;"></div>
+					             <div class="cols_cocktailCard" style="max-height:400px; overflow:auto;"></div>
 					        </div>
 					    </div>
 					</div>
@@ -657,8 +573,6 @@ h4 {
                   <!-- dropdax_menu -->
                </div>
             </div>
-
-
             <div class="navbar-avatar" style="margin-left: 19px;">
                <a href="" onclick="return false;" class="navbar-item is-avatar" @click.prevent="showProfilePanel"> 
                   <img src="${path }${user.savedFilename }" alt="Avatar" />
@@ -669,17 +583,15 @@ h4 {
       </div>
       <!-- container -->
    </div>
-   <div id="content"></div>
-   
-   <script   src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+   <div id="content"></div>   
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-   <script   src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
-   <script   src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/js/bootstrap.bundle.min.js"></script>
-   <script   src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
+   <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/js/bootstrap.bundle.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
    <script src="./resources/assets/tag/js/search_tag.js"></script>
    <script src="./resources/assets/basic/js/photo_profile.js"></script>
-   <script
-		src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
    <script>
 		 var sock = new SockJS('http://10.10.15.227:8888/cocktail/myHandler');
 		  sock.onopen = function() {
