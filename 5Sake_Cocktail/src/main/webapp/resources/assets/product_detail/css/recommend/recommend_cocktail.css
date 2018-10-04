@@ -40,8 +40,8 @@
   -webkit-transition:.5s;
   width: 130px;
   height: 130px;
-      max-width: 130px;
-    max-height: 130px;
+  max-width: 130px;
+  max-height: 130px;
 }
 
 .product-items .product-item:hover img {

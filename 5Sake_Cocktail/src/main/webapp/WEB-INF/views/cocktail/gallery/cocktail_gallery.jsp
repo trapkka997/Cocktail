@@ -282,13 +282,13 @@
 						<span aria-hidden="true">×</span>
 					</button>
 				</div>
-				<div class="modal-body">
-					<p>The content of your modal.</p>
+				<div class="modal-body" style="text-align: center;">
+					<p>Share Your Memories</p>
 					<div>
 						<img id="modalImgId">
 					</div>
 					<div>
-						<textarea id="modalTextArea"></textarea>
+						<textarea id="modalTextArea" style="width: -webkit-fill-available;"></textarea>
 					</div>
 				</div>
 				<div class="modal-footer">
