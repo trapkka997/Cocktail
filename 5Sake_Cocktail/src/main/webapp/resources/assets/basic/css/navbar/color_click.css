@@ -44,8 +44,11 @@ input {
   transition: ease .3s;
 }
 
-.color_button span:hover {
+/* .color_button span:hover {
   padding: 10px;
+} */
+.color_button span i {
+  padding: 8px;
 }
 
 .blue .color_button span {

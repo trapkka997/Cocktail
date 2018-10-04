@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
@@ -13,7 +12,7 @@
 <link rel="stylesheet"	href="./resources/assets/gallery/css/uploadbutton.css">
 <link rel="stylesheet" href="./resources/assets/gallery/css/hover.css">
 <link rel="stylesheet"	href="./resources/assets/gallery/css/pictureUpload.css">
-
+<link rel="stylesheet"	href="./resources/assets/gallery/css/button.css">
 <!-- photo상세 슬라이드 -->
 <script src="./resources/assets/gallery/grid/js/modernizr.custom.js"></script>
 <style>
@@ -42,7 +41,7 @@
 li{
 	display: none;
 }
-.slideshow >ul> li{
+.slideshow > ul> li{
 	display: block;
 }
 </style>
@@ -158,10 +157,19 @@ li{
 						<!-- // slideshow -->
 					</div>
 				</div>
-				<a href="#" id="load">Load More</a>
+				
+				
+				<!-- load_button -->
+				<div class="col-md-12" style="text-align: center;">
+					<a href="#" id="load">Load More</a>
+				</div>
+				<!-- load_button -->
+				
+				
 				<!-- modal -->
 				<div class="plus-button" class="btn btn-primary" data-toggle="modal"
-					data-target="#myModal">+</div>
+					 data-target="#myModal">+</div>
+					
 				<%-- <!-- modal1_start -->
 				<div id="myModal" class="modal fade" role="dialog">
 					<div class="modal-dialog modal-lg">

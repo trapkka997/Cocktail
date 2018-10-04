@@ -8,11 +8,12 @@
 <link rel="stylesheet"	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
 <link rel="stylesheet"	href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
 <link rel="stylesheet"	href="./resources/assets/selfmaking/css/button/button.css">
-<link rel="stylesheet" href="./resources/assets/gallery/css/gallery.css">
+<link rel="stylesheet"  href="./resources/assets/gallery/css/gallery.css">
 <link rel="stylesheet"	href="./resources/assets/gallery/css/uploadbutton.css">
-<link rel="stylesheet" href="./resources/assets/gallery/css/hover.css">
+<link rel="stylesheet"  href="./resources/assets/gallery/css/hover.css">
 <link rel="stylesheet"	href="./resources/assets/modal_makingCocktail/css/modal_makingCocktail.css">
 <link rel="stylesheet"	href="./resources/assets/modal_makingCocktail/css/sumoselect.css">
+<link rel="stylesheet"	href="./resources/assets/gallery/css/button.css">
 
 <!-- modal -->
 <link rel="stylesheet"	href="./resources/assets/gallery/css/pictureUpload.css">
@@ -20,6 +21,8 @@
 
 <!-- photo상세 슬라이드 -->
 <script src="./resources/assets/gallery/grid/js/modernizr.custom.js"></script>
+
+
 <style>
 .card {
 	flex-direction: inherit;
@@ -141,7 +144,11 @@ $(function(){
 					<!-- // slideshow -->
 				</div>
 			</div>
-			<a href="#" id="load">Load More</a>
+			<!-- load_button -->
+				<div class="col-md-12" style="text-align: center;">
+					<a href="#" id="load">Load More</a>
+				</div>
+				<!-- load_button -->
 			<div class="plus-button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">+</div>
 
 			<!-- modal1_start -->
@@ -170,62 +177,61 @@ $(function(){
 								</main>
 								<!-- input_box_end-->
 
-								<div class="color-picker"
-									style="text-align: center; margin-bottom: 40px;">
+								<div class="color-picker" style="text-align: center; margin-bottom: 40px;">
 									<h2 class="cocktailMaker_h2">Color</h2>
-									<label class="cream"> <input type="radio" name="color"
-										value="cream">
+									<label class="cream"> <input type="radio" name="color" value="cream">
 										<div class="color_layer"></div>
 										<div class="color_button" style="width: 20px; height: 20px;">
-											<span style="width: 30px; height: 30px;"></span>
+											<span class='pic' style="width: 30px; height: 30px;"></span>
 										</div>
-									</label> <label class="yellow"> <input type="radio"
-										name="color" value="yellow">
+									</label> 
+									<label class="yellow"> 
+										<input type="radio"	name="color" value="yellow">
 										<div class="color_layer"></div>
 										<div class="color_button" style="width: 20px; height: 20px;">
-											<span style="width: 30px; height: 30px;"></span>
+											<span class='pic' style="width: 30px; height: 30px;"></span>
 										</div>
 									</label> <label class="orange"> <input type="radio"
 										name="color" value="orange">
 										<div class="layer"></div>
 										<div class="color_button" style="width: 20px; height: 20px;">
-											<span style="width: 30px; height: 30px;"></span>
+											<span class='pic' style="width: 30px; height: 30px;"></span>
 										</div>
 									</label> <label class="red"> <input type="radio" name="color"
 										value="red">
 										<div class="layer"></div>
 										<div class="color_button" style="width: 20px; height: 20px;">
-											<span style="width: 30px; height: 30px;"></span>
+											<span class='pic' style="width: 30px; height: 30px;"></span>
 										</div>
 									</label> <label class="brown"> <input type="radio" name="color"
 										value="brown">
 										<div class="layer"></div>
 										<div class="color_button" style="width: 20px; height: 20px;">
-											<span style="width: 30px; height: 30px;"></span>
+											<span class='pic' style="width: 30px; height: 30px;"></span>
 										</div>
 									</label> <label class="green"> <input type="radio" name="color"
 										value="green">
 										<div class="layer"></div>
 										<div class="color_button" style="width: 20px; height: 20px;">
-											<span style="width: 30px; height: 30px;"></span>
+											<span class='pic' style="width: 30px; height: 30px;"></span>
 										</div>
 									</label> <label class="blue"> <input type="radio" name="color"
 										value="blue">
 										<div class="color_layer"></div>
 										<div class="color_button" style="width: 20px; height: 20px;">
-											<span style="width: 30px; height: 30px;"></span>
+											<span class='pic' style="width: 30px; height: 30px;"></span>
 										</div>
 									</label> <label class="pink"> <input type="radio" name="color"
 										value="pink">
 										<div class="color_layer"></div>
 										<div class="color_button" style="width: 20px; height: 20px;">
-											<span style="width: 30px; height: 30px;"></span>
+											<span class='pic' style="width: 30px; height: 30px;"></span>
 										</div>
 									</label> <label class="peach"> <input type="radio" name="color"
 										value="peach">
 										<div class="color_layer"></div>
 										<div class="color_button" style="width: 20px; height: 20px;">
-											<span style="width: 30px; height: 30px;"></span>
+											<span class='pic' style="width: 30px; height: 30px;"></span>
 										</div>
 									</label>
 								</div>
@@ -414,10 +420,23 @@ $(function(){
 	<script type="text/javascript">
 		var selectedColor ="";
 		$('.color-picker').children().on('click',function(){
-			console.log(this);	
+			//alert("aaa");
+			//console.log(this);	
 			selectedColor = $(this).attr('class');
+			var txt = '<i class="fa fa-check"></i>';
+			$(this).children().children('.pic').html(txt);
 		});
-		
 	</script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
