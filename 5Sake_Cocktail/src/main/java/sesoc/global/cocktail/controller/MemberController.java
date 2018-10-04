@@ -2,8 +2,6 @@ package sesoc.global.cocktail.controller;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.Reader;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
@@ -12,21 +10,18 @@ import java.util.UUID;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import org.apache.ibatis.session.SqlSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
-import sesoc.global.cocktail.dao.MemberDAO;
 import sesoc.global.cocktail.dao.MemberRepository;
 import sesoc.global.cocktail.vo.User;
 import sesoc.global.cocktail.vo.UserFollow;
@@ -243,11 +238,22 @@ public class MemberController {
 			return photoList;
 		}
 		@RequestMapping(value = "/updateUser", method = RequestMethod.POST)
-		public String updateUser(User vo, HttpSession httpSession) {
+		public @ResponseBody User updateUser(HttpSession httpSession,@RequestBody User vo) {
 			String userEmail = (String) httpSession.getAttribute("useremail");
-			vo.setUserEmail(userEmail);
-			int result = dao.updateUser(vo);
-			return "redirect:/";
-		}
-		
+			vo.setUserEmail(userEmail);			
+			System.out.println(vo);
+			if(vo.getUserNickname().length()==0) {
+				vo.setUserNickname(null);				
+			}	
+			if(vo.getUserInsta().length()==0) {
+				vo.setUserInsta(null);				
+			}	
+			if(vo.getUserSentence().length()==0) {
+				vo.setUserSentence(null);				
+			}	
+			dao.updateUser(vo);
+			vo = dao.selectOne(vo);
+			System.out.println(vo);
+			return vo;
+		}		
 }
