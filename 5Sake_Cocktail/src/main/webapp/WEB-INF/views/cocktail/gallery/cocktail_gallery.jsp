@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
@@ -13,7 +12,7 @@
 <link rel="stylesheet"	href="./resources/assets/gallery/css/uploadbutton.css">
 <link rel="stylesheet" href="./resources/assets/gallery/css/hover.css">
 <link rel="stylesheet"	href="./resources/assets/gallery/css/pictureUpload.css">
-
+<link rel="stylesheet"	href="./resources/assets/gallery/css/button.css">
 <!-- photo상세 슬라이드 -->
 <script src="./resources/assets/gallery/grid/js/modernizr.custom.js"></script>
 <style>
@@ -42,89 +41,9 @@
 li{
 	display: none;
 }
-.slideshow >ul> li{
+.slideshow > ul> li{
 	display: block;
 }
-
-/* button */
-/* #load {
-  padding: 0.75em 2em;
-  text-align: center;
-  text-decoration: none;
-  color: #2194E0;
-  border: 2px solid #2194E0;
-  font-size: 24px;
-  display: inline-block;
-  border-radius: 0.3em;
-  transition: all 0.2s ease-in-out;
-  position: relative;
-  overflow: hidden;
-}
-#load:before {
-  content: "";
-  background-color: rgba(255, 255, 255, 0.5);
-  height: 100%;
-  width: 3em;
-  display: block;
-  position: absolute;
-  top: 0;
-  left: -4.5em;
-  -webkit-transform: skewX(-45deg) translateX(0);
-          transform: skewX(-45deg) translateX(0);
-  transition: none;
-}
-#load:hover {
-  background-color: #2194E0;
-  color: #fff;
-  border-bottom: 4px solid #1977b5;
-}
-#load:hover:before {
-  -webkit-transform: skewX(-45deg) translateX(13.5em);
-          transform: skewX(-45deg) translateX(13.5em);
-  transition: all 0.5s ease-in-out;
-} */
-#load {
-  display: inline-block;
-  text-decoration: none;
-  color: #44d3dd;
-  font-weight: bold;
-  font-size: 1.25em;
-  position: relative;
-  padding: 1em 3em;
-  overflow: hidden;
-  transition: 0.3s ease;
-}
-#load:before {
-  content: '';
-  display: block;
-  height: 1em;
-  width: 1em;
-  border-bottom: 2px solid #44d3dd;
-  border-left: 2px solid #44d3dd;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  transition: 0.3s ease;
-}
-#load:after {
-  content: '';
-  display: block;
-  height: 1em;
-  width: 1em;
-  border-top: 2px solid #44d3dd;
-  border-right: 2px solid #44d3dd;
-  position: absolute;
-  right: 0;
-  top: 0;
-  transition: 0.3s ease;
-}
-#load:hover:before,
-#load:hover:after {
-  width: 100%;
-  height: 100%;
-}
-
-/* button_end */
 </style>
 <script>
 	$(document).ready(function() {
@@ -249,7 +168,8 @@ li{
 				
 				<!-- modal -->
 				<div class="plus-button" class="btn btn-primary" data-toggle="modal"
-					data-target="#myModal">+</div>
+					 data-target="#myModal">+</div>
+					
 				<%-- <!-- modal1_start -->
 				<div id="myModal" class="modal fade" role="dialog">
 					<div class="modal-dialog modal-lg">
