@@ -475,7 +475,7 @@ $(function(){
                                        class="fa fa-camera fa-2x image-select__icon"></i>
                                     <div class="image-select__message"></div>
                                     <div class="bg-image aspect-square"
-                                       style="background-image: url('http://placekitten.com/g/300/300');"
+                                       style="background-image: url('./resources/NoImage.jpeg');"
                                        data-droppable-image=""></div>
                                  </form>
                               </label>

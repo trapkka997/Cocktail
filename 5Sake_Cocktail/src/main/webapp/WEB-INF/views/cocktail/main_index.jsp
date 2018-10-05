@@ -129,8 +129,7 @@ h4 {
                                  <div class="card-body">
                                     <h4 class="card-title">${worldBests[0].cocktailName }</h4>
                                     <p class="card-text">
-                                       <img src='${worldBests[0].imageRink }' onclick="worldClick(${worldBests[0].cocktailSeq})"
-                                          class='img world-img' />
+                                       <img src="${worldBests[0].imageRink }" onclick="worldClick(${worldBests[0].cocktailSeq})" class='img world-img'>
                                     </p>
 
                                     <p>
