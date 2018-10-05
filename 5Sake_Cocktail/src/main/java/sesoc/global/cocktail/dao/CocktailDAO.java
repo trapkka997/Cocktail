@@ -9,6 +9,7 @@ import sesoc.global.cocktail.vo.Cocktail;
 import sesoc.global.cocktail.vo.Ingredient;
 import sesoc.global.cocktail.vo.User;
 import sesoc.global.cocktail.vo.UserCocktail;
+import sesoc.global.cocktail.vo.WorldBest;
 
 public interface CocktailDAO {
 
@@ -34,6 +35,6 @@ public interface CocktailDAO {
 
 	public List<HashMap<String,BigDecimal>> getIngredientOfCocktail(HashMap<String, String> map);
 
-	public List<Cocktail> selectWorldBest();
+	public List<WorldBest> selectWorldBest();
 
 }

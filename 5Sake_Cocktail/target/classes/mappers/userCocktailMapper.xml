@@ -87,5 +87,37 @@ where
      userCocktailSeq = #{userCocktailSeq}  
 	
 </update>
+<update id="UserPhotoLikeInsert" parameterType="userPhotoLike">
+update
+  	userphoto
+  set HITCOUNT  = HITCOUNT + 1
+where
+     USERPHOTOSEQ = #{userPhotoSeq}  
 
+</update>
+
+<insert id="insertUserLikePhoto" parameterType="userPhotoLike">
+insert into USERPHOTOLIKE
+values(
+#{userEmail},
+#{userPhotoSeq}
+)
+</insert>
+<select id="selectUserLikePhoto" parameterType="String" resultType="userPhoto">
+select
+	p.userPhotoSeq,
+	p.userEmail,
+	p.title,
+	p.contents,
+	p.saveFileName,
+	p.originalFileName,
+	p.writeDate,
+	p.hitcount,
+	p.likecount,
+	p.cocktailName,
+	p.imageRink
+from USERPHOTOLIKE u, USERPHOTO p
+WHERE
+	u.userEmail = p.userEmail
+</select>
 </mapper>

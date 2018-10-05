@@ -29,7 +29,7 @@ public interface userCocktailDAO {
 		public int UserLikeCocktailInsert(UserLikeCocktail vo); 
 		//유저가 라이브러리 사진에 좋아요 눌렀을때
 		public int UserPhotoLikeInsert(UserPhotoLike vo);
-		public ArrayList<UserCocktail> usermyselect(String userEmail); 
-		
+		public ArrayList<UserCocktail> usermyselect(String userEmail);
+		public int insertUserLikePhoto(UserPhotoLike vo);
 
 }

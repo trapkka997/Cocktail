@@ -39,7 +39,7 @@
     -webkit-box-shadow: -7px -6px 5px #0e0d0d66;
 }
 li{
-	display: none;
+ 	display: none;
 }
 .slideshow > ul> li{
 	display: block;
@@ -75,19 +75,19 @@ li{
 										data-filter-group='alcole'
 										style="margin-top: 20px; margin-bottom: 20px;">
 										<button class="btn fil-cat btn-outline-primary" href=""
-											data-rel="all">ALL</button>
+											data-rel="AA">ALL</button>
 										<button class="btn fil-cat btn-outline-primary" href=""
-											data-rel="brandy">Brandy</button>
+											data-rel="AB">Brandy</button>
 										<button class="btn fil-cat btn-outline-primary" href=""
-											data-rel="whisky">Whisky</button>
+											data-rel="AW">Whisky</button>
 										<button class="btn fil-cat btn-outline-primary" href=""
-											data-rel="vodka">Vodka</button>
+											data-rel="AV">Vodka</button>
 										<button class="btn fil-cat btn-outline-primary" href=""
-											data-rel="rum">Rum</button>
+											data-rel="AR">Rum</button>
 										<button class="btn fil-cat btn-outline-primary" href=""
-											data-rel="dryjin">Dry Jin</button>
+											data-rel="AJ">Dry Jin</button>
 										<button class="btn fil-cat btn-outline-primary" href=""
-											data-rel="tequila">Tequila</button>
+											data-rel="AT">Tequila</button>
 									</div>
 								</div>
 							</div>
@@ -99,7 +99,7 @@ li{
 				<div class="col-md-12">
 					<div id="grid-gallery" class="grid-gallery">
 						<section class="grid-wrap">
-							<ul class="grid">
+							<ul class="grid grid-hello">
 								<li class="grid-sizer"></li>
 								<!-- for Masonry column width -->
 								<c:forEach var="userPhoto" items="${userPhotos }" varStatus="var">
@@ -109,7 +109,7 @@ li{
 												<img class="galleryPhoto"
 													src="${userPhoto.saveFileName}" alt="img01" />
 												<div class="SocialIcons" id='icon${var.index}'>
-													<a onclick="hover(${var.index})" href="#">
+													<a onclick="hover(${var.index},${userPhoto.userPhotoSeq })" href="#">
 														<i class="fas fa-heartbeat"></i>
 													</a>
 												</div>
@@ -120,7 +120,7 @@ li{
 											</figcaption>
 										</figure>
 									</li>
-								</c:forEach>
+								</c:forEach> 
 							</ul>
 						</section>
 						<section class="slideshow">
@@ -340,9 +340,73 @@ li{
 	<script>
 		new CBPGridGallery(document.getElementById('grid-gallery'));
 	</script>
-	<script>
+	<!-- <script>
+		$(".btn-outline-primary").on('click', function(){
+			var data = $(this).attr("data-rel");
+			 $.ajax({
+				method: "get",
+				url:"selectUserPhoto",
+				data:{
+					data : data
+				},
+				success: function(resp){
+					console.log(resp);
+					var msg = '<li class="grid-sizer"></li>';
+					resp.forEach(function(value, index, resp) {   
+						msg += '<li>';
+						msg +=	'<figure class="tile2 scale-anm brandy all">';
+						msg +=		'<div class="profilebox profilebox1">';
+	 					msg +=			'<img class="galleryPhoto" src="${userPhoto.saveFileName}" alt="img01" />';
+	 					msg +=			'<div class="SocialIcons" id="icon${var.index}">';	
+						msg +=				'<a onclick="hover(${var.index},${userPhoto.userPhotoSeq })" href="#">';
+						msg +=					'<i class="fas fa-heartbeat"></i>';
+						msg +=				'</a>';
+						msg += 			'</div>';
+						msg += 		'</div>';
+						msg += 	'<figcaption>';
+						msg += 	'<h3>${userPhoto.title}</h3>';
+						msg +=	'<p>${userPhoto.contents}</p>';					
+						msg += 	'</figcaption>'; 
+						msg +=	'</figure>';
+						msg += '</li>';
+					});
+					$('.grid-hello *').remove();
+					$('.grid-hello').html(msg);
+				},
+				error: function(){
+					alert('error');
+				}
+			}); 
 	
-	function hover(num) {
+		});
+		
+		
+	</script> -->
+	<script>
+	$(".btn-outline-primary").on('click', function(){
+		var data = $(this).attr("data-rel");
+		
+		if(data == "AA"){
+			$("#content").load("/cocktail/cocktailphotoAll");
+		}else if(data == "AB"){
+			$("#content").load("/cocktail/cocktailphotoB");
+		}else if(data == "AW"){
+			$("#content").load("/cocktail/cocktailphotoW");
+		}else if(data == "AV"){
+			$("#content").load("/cocktail/cocktailphotoV");
+		}else if(data == "AR"){
+			$("#content").load("/cocktail/cocktailphotoR");
+		}else if(data == "AJ"){
+			$("#content").load("/cocktail/cocktailphotoJ");
+		}else if(data == "AT"){
+			$("#content").load("/cocktail/cocktailphotoT");
+		}
+	});
+	</script>
+	
+	<script>
+
+	function hover(num,userPhotoSeq) {
 		$('#icon'+num).children().children().css('color', 'red');
 		$('#icon'+num).css('transform', 'none')
 		.css('transition', 'none')
@@ -350,124 +414,22 @@ li{
 		.css('opacity', 'inherit')
 		.css('left', '15px');
 		event.stopPropagation();
+		$.ajax({
+			method:"get",
+			url:"userlikephoto",
+			data:{
+				userPhotoSeq : userPhotoSeq
+			},
+			success:function(resp){
+				alert('좋아요!');
+			},
+			error:function(){
+				alert('err');
+			}
+		});
 	}	
 	</script>
 	<script type="text/javascript">
-	 
-		/* ;(function($) {
-			var settings = {
-				url : '/cocktail/vision',
-				toDo : 'OPTIONAL TODO VARIABLE TO SEND TO UPLOAD FILE',
-				hoverClass : 'dragAndUploadActive',
-				uploadingClass : 'dragAndUploadUploading',
-				errorClass : 'dragAndUploadFailure',
-				successClass : 'dragAndUploadSuccess',
-				statusField : '#dragAndUploadStatus',
-				classChangeDelay : 750,
-				maxSize : 5242880
-			};
-
-			function message(item, newClass, text, removeClass) {
-				$(settings.statusField).html(text);
-				$(item).removeClass(
-						settings.hoverClass + ' ' + settings.uploadingClass)
-						.addClass(newClass).delay(settings.classChangeDelay)
-						.promise().done(function() {
-							if (removeClass === 1) {
-								$(this).removeClass(newClass);
-							}
-						});
-			}
-
-			function uploadFile(file, item) {
-				if (file.size <= settings.maxSize) {
-					var fd = new FormData();
-					fd.append("file", file);
-					var xhr = new XMLHttpRequest();
-					xhr.onreadystatechange = function() {
-						if (this.readyState == 4 && this.status == 200) {
-							succFunction(this, item, xhr.response);
-							console.log(xhr.response);
-						} else if (this.status == 500) {
-							failFunction(this, item, xhr.response);
-						} else if (this.status == 403) {
-							failFunction(this, item, xhr.response);
-						} else if (this.status == 404) {
-							failFunction(this, item, xhr.response);
-						}
-					};
-					xhr.open("POST", "/cocktail/vision");
-					xhr.send(fd);
-
-				} else {
-					message(item, settings.errorClass, 'File is too large.', 0);
-				}
-			}
-			function succFunction(xhttp, item, resp) {
-				var arr = JSON.parse(resp);
-				cocktailList = arr;
-				message(item, settings.successClass,
-						'File successfully uploaded.', 0);
-				$('#modalImgId').attr("src", arr[0].imageRink);
-				$('#getCocktailModal').modal('show');
-			}
-			function failFunction(xhttp, item, resp) {
-				message(item, settings.errorClass, 'Upload failed.', 0);
-			}
-
- 			function findFiles(e, item) {
-				console.log(e);
-				console.log(item);
-				var files = e.originalEvent.dataTransfer.files;
-				console.log(files);
-				$(item).addClass(settings.uploadingClass);
-				$.each(files, function(key, value) {
-					console.log(key);
-					console.log(value);
-					uploadFile(value, item);
-				});
-			} 
-
-			 function setEvents(item) {
-				$(item).on(
-						'drop dragover dragenter dragleave',
-						function(e) {
-							$(this).removeClass(
-									settings.errorClass + ' '
-											+ settings.successClass);
-							e.stopPropagation();
-							e.preventDefault();
-							if (e.type !== 'dragover') {
-								$(this).toggleClass(settings.hoverClass);
-							}
-							if (e.type === 'drop') {
-								findFiles(e, item);
-								console.log(e);
-								console.log(item);
-							}
-						});
-			} 
-
- 			function setOptions(options) {
-				$.each(options, function(key, val) {
-					settings[key] = val;
-				});
-			}
-
-			$.fn.dragAndUpload = function(options) {
-				if (options !== undefined)
-					setOptions(options);
-				this.each(function() {
-					setEvents(this);
-				});
-				return this;
-			} 
-		}(jQuery)); */
-
-/* 		$(document).ready(function() {
-			// Uses default settings
-			$("#dropzone").dragAndUpload();
-		}); */
 
 	</script>
 	

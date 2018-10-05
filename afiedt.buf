@@ -1,0 +1,2 @@
+update userdetail set SAVEDFILENAME='' where useremail='gkstmdgur2@naver.com'
+/

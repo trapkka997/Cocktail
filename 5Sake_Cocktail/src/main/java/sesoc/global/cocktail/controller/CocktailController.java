@@ -131,7 +131,6 @@ public class CocktailController {
 	public @ResponseBody ArrayList<Cocktail> cocktailTagSearch(String color, String[] spilits, String[] liqueur,String[] material, int num) {
 		String regexp = "";
 		String s="";
-		color += "Color";
 		System.out.println("�깋源� : "+ color);
 		if(spilits != null) {
 			for(String sTemp : spilits) {
@@ -268,10 +267,8 @@ public class CocktailController {
 		
 		ArrayList<Cocktail> tempCockList = new ArrayList<Cocktail>();
 		for(HashMap<String,BigDecimal> ingredient: ingredientOfCocktailList) {
-			if(ingredient.get("COUNT").intValue() >= num ) {
 				Cocktail tempCock = cocktailRepository.selectCocktail(ingredient.get("COCKTAIL_SEQ").toString());
 				tempCockList.add(tempCock);
-			}
 			
 		}
 		

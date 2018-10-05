@@ -1,6 +1,7 @@
 package sesoc.global.cocktail.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import sesoc.global.cocktail.vo.Cocktail;
 import sesoc.global.cocktail.vo.DirectMessage;
@@ -15,7 +16,7 @@ public interface MemberDAO {
 	public User selectOne(User vo);
 	public List<User> selectAll();
 	public List<UserPhoto> selectUserPhoto(User vo);
-	public List<UserPhoto> selectAllUserPhoto();	
+	public List<UserPhoto> selectAllUserPhoto(Map<String,String> map);	
 	public int writeBoard(UserPhoto vo);
 	public String getUserFollowNum(User vo);
 	public String selectUserPhotoNum(User vo);

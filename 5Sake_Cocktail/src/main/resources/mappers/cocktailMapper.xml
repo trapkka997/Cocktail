@@ -65,8 +65,11 @@
 		USERRECOMMAND	
 	FROM
 		USERCOCKTAIL
-	WHERE
+	<where>
+		<if test="userEmail != null">
 		USEREMAIL = #{userEmail}
+		</if>
+	</where>
 	</select>
 	<select id="getRecommandCocktailList" resultType="cocktail">
 	SELECT
@@ -156,27 +159,40 @@
 	</select>
 	
 	<select id="getIngredientOfCocktail" parameterType="HashMap" resultType="HashMap">
-      	SELECT cocktail_seq, count(*) COUNT
-        FROM(
-                select  i.COCKTAIL_SEQ, i.INGREDIENT
-                        from(
-                                select cocktail_seq, cocktailname from cocktail2 where colorvalue = '${color}' 
-                ) test, COCKTAIL_INGREDIENT i
-                WHERE 	test.cocktail_seq = i.cocktail_seq
-                      	AND
-        				REGEXP_LIKE(i.INGREDIENT, '${regexp}')
-		)
-		group by
-        	cocktail_seq
+   SELECT cocktail_seq, count(*) COUNT
+FROM(
+        select  i.COCKTAIL_SEQ, i.INGREDIENT, n.classify
+                from(
+                        select cocktail_seq, cocktailname from cocktail2
+                        <where>
+                       	 	<if test="color != null">
+   								colorvalue = '${color}'
+ 							</if>  
+ 						</where>
+        ) test, COCKTAIL_INGREDIENT i, INGREDIENT n
+        WHERE 	test.cocktail_seq = i.cocktail_seq
+                AND
+                i.ingredient = n.ingredient_seq
+                AND
+                REGEXP_LIKE(n.classify, '${regexp}')
+)
+group by
+    cocktail_seq
       	
 	</select>
 	
-	<select id="selectWorldBest" resultType="cocktail">
+	<select id="selectWorldBest" resultType="worldBest">
+	select c.cocktailname,c.imagerink, c.cocktail_seq cocktailSeq, n.ingredient from (
 	select c.cocktail_Seq, c.cocktailName, c.cocktailName_En, c.ingredient, c.recipe, c.imageRink, c.colorValue, c.recommand, c.hitcount
 	 from cocktail2 c, worldbest w  
 	 WHERE
 	 	c.cocktail_seq = w.cocktail_seq AND
-		<![CDATA[ ROWNUM <= 3]]>
+        <![CDATA[ ROWNUM <= 3]]>
+        ) c, COCKTAIL_INGREDIENT i, INGREDIENT n
+	where  
+    c.cocktail_seq = i.cocktail_seq   
+    AND 
+    i.ingredient = n.ingredient_seq
 	</select>
 	
 </mapper>
