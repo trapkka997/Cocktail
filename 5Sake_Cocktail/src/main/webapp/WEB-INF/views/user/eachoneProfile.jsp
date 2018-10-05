@@ -31,6 +31,8 @@
 <link rel="stylesheet"	href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <link rel="stylesheet"	href="https://fonts.googleapis.com/css?family=Open+Sans">
 <!-- eachoneProfile_css 중요 -->
+<link rel="stylesheet"  href="./resources/assets/eachoneProfile/css/gallery/hover.css">
+
 <!-- message_css 중요 -->
 <link rel="stylesheet" href="./resources/assets/chat/css/chat.css">
 <style>
@@ -237,7 +239,7 @@
 						</section>
 						<section class="slideshow">
 							<ul>
-								<c:forEach var="photo" items="${photoList }">
+								<c:forEach var="photo" items="${photoList }" varStatus="var">
 									<li>
 										<figure>
 											<figcaption>
@@ -438,46 +440,13 @@
 	<script src="./resources/assets/gallery/js/circluar_layout.js"></script>
 	<script src="./resources/assets/eachoneProfile/js/tabMenu.js"></script>
 	<script type="text/javascript"></script>
-	<!--  MessageModal-->
-	<!--  Profile_image change-->
-	<!-- <script>
-		 var sock = new SockJS('http://localhost:8888/cocktail/myHandler');
-		  sock.onopen = function() {
-		     console.log('open');
-		 };
-		 sock.onmessage = function(e) {
-		    	var currentTime = Date.now()
-		    	var GMT = -(new Date()).getTimezoneOffset()/60;
-		    	var totalSeconds = Math.floor(currentTime/1000);
-		    	seconds = ('0' + totalSeconds % 60).slice(-2);
-		    	var totalMinutes = Math.floor(totalSeconds/60);
-		    	minutes = ('0' + totalMinutes % 60).slice(-2);
-		    	var totalHours = Math.floor(totalMinutes/60);
-		    	hours = ('0' + (totalHours+GMT) % 24).slice(-2);
-		    	var timeDisplay = hours + ":" + minutes + ":" + seconds;
-		     console.log('message', e.data);
-		     var resp = e.data.split(" : ");
-		     var getData = resp[2];
-		     console.log(resp);
-		     var userId = document.getElementById('userEmail').value;
-		     
-		     var usrPicture = document.getElementById('path').value+resp[1];
-			 var message = "";
-			 message +='<div class="container_chat">';
-			 message +='<img src="'+ usrPicture+'" alt="Avatar" style="width: 100%;">';
-			 message +='<p>'+getData+'</p>';
-			 message +='<span class="time-left">'+timeDisplay+'</span>';
-			 message +='</div>'
-		     $('.chat_chat').append(message);
-			 $('#msg').val('');
-			 //sock.close();
-		 };
-
-		 sock.onclose = function() {
-		     console.log('close');
-		 }; 
-		
-		</script> -->
+		<script type="text/javascript">
+		function hover(num) {
+			alert(num);
+			$('#icon'+num).children().children().css('color', 'red');
+			$('#icon'+num).parent().parent().css('display', 'none');			
+		}		
+		</script>
 		<script>
 			$(document).ready(function() {			
 				var followUser = document.getElementById('userEmail').value;
@@ -498,9 +467,15 @@
 									text += '<h3>'+resp[index].contents+'</h3>';
 									text += '<p>'+resp[index].contents+'</p>';
 									text += '</figcaption>';
+									text += '<div class="profilebox profilebox1">';
 									text += '<img src='+resp[index].saveFileName+' alt="img01" />';
+									text += '<div class="SocialIcons" id="icon'+index+'">';
+									text += '<a onclick="hover('+index+')" href="#" >';
+									text += '<i class="fas fa-times"></i>';
+									text += '</a>';
+									text += '</div></div>';
 									text += '</figure>';
-									text += '</li>'
+									text += '</li>';								
 								});
 								$('.grid-sizer').after(text);
 							},
@@ -632,7 +607,13 @@
 							text += '<h3>'+resp[index].cocktailName+'</h3>';
 							text += '<p>'+resp[index].cocktailName+'</p>';
 							text += '</figcaption>';
+							text += '<div class="profilebox profilebox1">';
 							text += '<img src="'+resp[index].imageRink+'" alt="img01" />';
+							text += '<div class="SocialIcons" id="icon'+index+'">';
+							text += '<a onclick="hover('+index+')" href="#" >';
+							text += '<i class="fas fa-times"></i>';
+							text += '</a>';
+							text += '</div></div>';
 							text += '</figure>';
 							text += '</li>'
 						});
@@ -663,7 +644,13 @@
 							text += '<h3>'+resp[index].title+'</h3>';
 							text += '<p>'+resp[index].contents+'</p>';
 							text += '</figcaption>';
+							text += '<div class="profilebox profilebox1">';
 							text += '<img src='+resp[index].saveFileName+' alt="img01" />';
+							text += '<div class="SocialIcons" id="icon'+index+'">';
+							text += '<a onclick="hover('+index+')" href="#" >';
+							text += '<i class="fas fa-times"></i>';
+							text += '</a>';
+							text += '</div></div>';
 							text += '</figure>';
 							text += '</li>'
 						});
@@ -694,7 +681,13 @@
 									text += '<h3>'+resp[index].usercocktailname+'</h3>';
 									text += '<p>'+resp[index].usercocktailname+'</p>';
 									text += '</figcaption>';
+									text += '<div class="profilebox profilebox1">';
 									text += '<img src=${path}'+resp[index].savefilename+' alt="img01" />';
+									text += '<div class="SocialIcons" id="icon'+index+'">';
+									text += '<a onclick="hover('+index+')" href="#" >';
+									text += '<i class="fas fa-times"></i>';
+									text += '</a>';
+									text += '</div></div>';
 									text += '</figure>';
 									text += '</li>'
 								});
@@ -724,7 +717,13 @@
 									text += '<h3>'+resp[index].contents+'</h3>';
 									text += '<p>'+resp[index].contents+'</p>';
 									text += '</figcaption>';
+									text += '<div class="profilebox profilebox1">';
 									text += '<img src='+resp[index].saveFileName+' alt="img01" />';
+									text += '<div class="SocialIcons" id="icon'+index+'">';
+									text += '<a onclick="hover('+index+')" href="#" >';
+									text += '<i class="fas fa-times"></i>';
+									text += '</a>';
+									text += '</div></div>';
 									text += '</figure>';
 									text += '</li>'
 								});
@@ -754,7 +753,13 @@
 									text += '<h3>'+resp[index].contents+'</h3>';
 									text += '<p>'+resp[index].contents+'</p>';
 									text += '</figcaption>';
+									text += '<div class="profilebox profilebox1">';
 									text += '<img src=${path}'+resp[index].saveFileName+' alt="img01" />';
+									text += '<div class="SocialIcons" id="icon'+index+'">';
+									text += '<a onclick="hover('+index+')" href="#" >';
+									text += '<i class="fas fa-times"></i>';
+									text += '</a>';
+									text += '</div></div>';
 									text += '</figure>';
 									text += '</li>'
 								});
