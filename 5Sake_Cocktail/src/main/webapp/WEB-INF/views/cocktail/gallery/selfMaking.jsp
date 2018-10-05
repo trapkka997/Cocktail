@@ -363,6 +363,7 @@ $(function(){
 								</div>
 							</div>
 
+<<<<<<< HEAD
 							<button type="submit" data-dismiss="modal">Upload</button>
 							<!--  -->
 						</div>
@@ -370,6 +371,94 @@ $(function(){
 					</div>
 				</div>
 				<!-- modal1_end -->
+=======
+
+                              </select>
+                              <!-- <p class="CaptionCont SelectBox" title=" Ferrari, Hyundai ">
+                                    <span> Ferrari, Hyundai </span><label><i></i></label>
+                                 </p> -->
+                              <div class="optWrapper okCancelInMulti selall multiple">
+                                 <p class="select-all partial">
+                                    <span><i></i></span><label>Select All</label>
+                                 </p>
+                                 <ul class="options">
+                                    <c:forEach var="ingredientByLiqueur"
+                                       items="${ingredientByLiqueurList}">
+                                       <li class="opt"><span><i></i></span><label>${ingredientByLiqueur.ingredient }</label></li>
+                                    </c:forEach>
+                                 </ul>
+                                 <div class="MultiControls">
+                                    <p tabindex="0" class="btnOk">OK</p>
+                                    <p tabindex="0" class="btnCancel">Cancel</p>
+                                 </div>
+                              </div>
+                           </div>
+
+                        </div> --%>
+
+<%-- 
+                        <div class="style-picker_material">
+                           <h2 class="cocktailMaker_h2" style="margin-top: 20px;">Material</h2>
+
+                           <div class="SumoSelect sumo_somename4" tabindex="0"
+                              role="button" aria-expanded="true">
+                              <select multiple="multiple" name="somename4"
+                                 class="select3 SumoUnder" tabindex="-1">
+                                 <c:forEach var="ingredientByFruit"
+                                    items="${ingredientByFruitList}">
+                                    <option value="${ingredientByFruit.ingredientSeq }">${ingredientByFruit.ingredient }</option>
+                                 </c:forEach>
+
+                              </select>
+                              <!-- <p class="CaptionCont SelectBox" title=" Ferrari, Hyundai ">
+                                    <span> Ferrari, Hyundai </span><label><i></i></label>
+                                 </p> -->
+                              <div class="optWrapper okCancelInMulti selall multiple">
+                                 <p class="select-all partial">
+                                    <span><i></i></span><label>Select All</label>
+                                 </p>
+                                 <ul class="options">
+                                    <c:forEach var="ingredientByFruit"
+                                       items="${ingredientByFruitList}">
+                                       <li class="opt"><span><i></i></span><label>${ingredientByFruit.ingredient }</label></li>
+                                    </c:forEach>
+                                 </ul>
+                                 <div class="MultiControls">
+                                    <p tabindex="0" class="btnOk">OK</p>
+                                    <p tabindex="0" class="btnCancel">Cancel</p>
+                                 </div>
+                              </div>
+                           </div>
+
+                        </div> --%>
+
+                     </div>
+                     <!-- /.column-wrapper -->
+                     <div class="column-wrapper">
+                        <div class="panel">
+                           <div class="panel-content">
+                              <label for="image" style="display: unset;">
+                                 <form action="" class="image-select" data-droppable="">
+                                    <input id="image" type="file" data-droppable-input="" /> <i
+                                       class="fa fa-camera fa-2x image-select__icon"></i>
+                                    <div class="image-select__message"></div>
+                                    <div class="bg-image aspect-square"
+                                       style="background-image: url('./resources/NoImage.jpeg');"
+                                       data-droppable-image=""></div>
+                                 </form>
+                              </label>
+                           </div>
+                        </div>
+                     </div>
+
+                     <button type="submit" data-dismiss="modal">Upload</button>
+                     <!--  -->
+                  </div>
+                  <!-- Modal content_end -->
+               </div>
+            </div>
+            <!-- modal1_end -->
+>>>>>>> branch 'master' of https://github.com/trapkka997/Cocktail/
 
 			</div>
 		</div>
