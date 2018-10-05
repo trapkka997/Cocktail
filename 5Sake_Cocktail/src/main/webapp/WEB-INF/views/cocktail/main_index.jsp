@@ -120,18 +120,18 @@ h4 {
                                  </div>
                               </div>
                               <!-- user picture here -->
-							  <c:forEach var="worldBest" items="${worldBestList }">
+							  <c:forEach var="worldBests" items="${worldBestList }">
 							  <div class="card">
                                  <div class="card-body">
-                                    <h4 class="card-title">${worldBest.cocktailName }</h4>
+                                    <h4 class="card-title">${worldBests[0].cocktailName }</h4>
                                     <p class="card-text">
-                                       <img src='${worldBest.imageRink }' 
-                                          class='img' />
+                                       <img src='${worldBests[0].imageRink }' onclick="worldClick(${worldBests[0].cocktailSeq})"
+                                          class='img world-img' />
                                     </p>
 
                                     <p>
-                                       <label class="tag">#tag</label> <label class="tag">#tag</label>
-                                       <label class="tag">#tag</label>
+                                       <label class="tag">#${worldBests[0].ingredient}</label> <label class="tag">#${worldBests[1].ingredient}</label>
+                                       <label class="tag">#${worldBests[2].ingredient}</label>
                                     </p>
 
                                  </div>
@@ -171,35 +171,35 @@ h4 {
                                     <!-- style="border-right: 1px solid #e8dfdf6e;" -->
                                     <h4 class="card-title">BASE SPIRITS</h4>
                                     <div style="float: left;">
-                                       <input class="spirit_check" type='checkbox' name='all'
+                                       <input class="spirit_check" ingre-num="A" type='checkbox' name='all'
                                           value='valuable' id="all" /> <label for="all"> <img
                                           class="spirits_img"
                                           src="./resources/assets/basic/img/spirit_icon/icon_all.png" />
-                                       </label> <input class="spirit_check" type='checkbox' name='brandy'
+                                       </label> <input class="spirit_check" ingre-num="AB" type='checkbox' name='brandy'
                                           value='valuable' id="brandy" /> <label for="brandy">
                                           <img class="spirits_img"
                                           src="./resources/assets/basic/img/spirit_icon/icon_brandy.png" />
-                                       </label> <input class="spirit_check" type='checkbox' name='whisky'
+                                       </label> <input class="spirit_check" ingre-num="AW"  type='checkbox' name='whisky'
                                           value='valuable' id="whisky" /> <label for="whisky">
                                           <img class="spirits_img"
                                           src="./resources/assets/basic/img/spirit_icon/icon_whisky.png" />
-                                       </label> <input class="spirit_check" type='checkbox' name='vodka'
+                                       </label> <input class="spirit_check" ingre-num="AV"  type='checkbox' name='vodka'
                                           value='valuable' id="vodka" /> <label for="vodka">
                                           <img class="spirits_img"
                                           src="./resources/assets/basic/img/spirit_icon/icon_vodka.png" />
-                                       </label> <input class="spirit_check" type='checkbox' name='rum'
+                                       </label> <input class="spirit_check" ingre-num="AR"  type='checkbox' name='rum'
                                           value='valuable' id="rum" /> <label for="rum"> <img
                                           class="spirits_img"
                                           src="./resources/assets/basic/img/spirit_icon/icon_rum.png" />
-                                       </label> <input class="spirit_check" type='checkbox' name='jin'
+                                       </label> <input class="spirit_check" ingre-num="AJ" type='checkbox' name='jin'
                                           value='valuable' id="jin" /> <label for="jin"> <img
                                           class="spirits_img"
                                           src="./resources/assets/basic/img/spirit_icon/icon_jin.png" />
-                                       </label> <input class="spirit_check" type='checkbox' name='tequila'
+                                       </label> <input class="spirit_check" ingre-num="AT"  type='checkbox' name='tequila'
                                           value='valuable' id="tequila" /> <label for="tequila">
                                           <img class="spirits_img"
                                           src="./resources/assets/basic/img/spirit_icon/icon_tequila.png" />
-                                       </label> <input class="spirit_check" type='checkbox' name='ETC'
+                                       </label> <input class="spirit_check" ingre-num="AT" type='checkbox' name='ETC'
                                           value='valuable' id="ETC" /> <label for="ETC"> <img
                                           class="spirits_img"
                                           src="./resources/assets/basic/img/spirit_icon/icon_etc.png" />
@@ -282,7 +282,7 @@ h4 {
                                           style="margin-left: 25px; margin-top: 10px;">
                                           <div>
                                              <input type="checkbox" id="check_liqueur_all" /> <label
-                                                class="label_liqueur" for="check_liqueur_all">
+                                                class="label_liqueur" ingre-num="L" for="check_liqueur_all">
                                                 <div>
                                                    <i class="fa fa-check"></i>
                                                 </div>All
@@ -291,7 +291,7 @@ h4 {
 
                                           <div>
                                              <input type="checkbox" id="check_liqueur_wine" /> <label
-                                                class="label_liqueur" for="check_liqueur_wine">
+                                                class="label_liqueur" ingre-num="LW" for="check_liqueur_wine">
                                                 <div>
                                                    <i class="fa fa-check"></i>
                                                 </div>Wine
@@ -299,7 +299,7 @@ h4 {
                                           </div>
                                           <div>
                                              <input type="checkbox" id="check_liqueur_bitters" /> <label
-                                                class="label_liqueur" for="check_liqueur_bitters">
+                                                class="label_liqueur" ingre-num="LB" for="check_liqueur_bitters">
                                                 <div>
                                                    <i class="fa fa-check"></i>
                                                 </div>Bitters
@@ -307,7 +307,7 @@ h4 {
                                           </div>
                                           <div>
                                              <input type="checkbox" id="check_liqueur_beer" /> <label
-                                                class="label_liqueur" for="check_liqueur_beer">
+                                                class="label_liqueur" ingre-num="LM" for="check_liqueur_beer">
                                                 <div>
                                                    <i class="fa fa-check"></i>
                                                 </div>Beer
@@ -315,7 +315,7 @@ h4 {
                                           </div>
                                           <div>
                                              <input type="checkbox" id="check_liqueur_liqueur" /> <label
-                                                class="label_liqueur" for="check_liqueur_liqueur">
+                                                class="label_liqueur" ingre-num="LL" for="check_liqueur_liqueur">
                                                 <div>
                                                    <i class="fa fa-check"></i>
                                                 </div>Liqueur
@@ -328,7 +328,7 @@ h4 {
 
                                           <div>
                                              <input type="checkbox" id="check_liqueur_cremeliqueur" />
-                                             <label class="label_liqueur"
+                                             <label class="label_liqueur" ingre-num="LC"
                                                 for="check_liqueur_cremeliqueur">
                                                 <div>
                                                    <i class="fa fa-check"></i>
@@ -338,7 +338,7 @@ h4 {
 
                                           <div>
                                              <input type="checkbox" id="check_liqueur_sherry" /> <label
-                                                class="label_liqueur" for="check_liqueur_sherry">
+                                                class="label_liqueur" ingre-num="LS" for="check_liqueur_sherry">
                                                 <div>
                                                    <i class="fa fa-check"></i>
                                                 </div>Sherry
@@ -347,7 +347,7 @@ h4 {
 
                                           <div>
                                              <input type="checkbox" id="check_liqueur_vermouth" /> <label
-                                                class="label_liqueur" for="check_liqueur_vermouth">
+                                                class="label_liqueur" ingre-num="LV" for="check_liqueur_vermouth">
                                                 <div>
                                                    <i class="fa fa-check"></i>
                                                 </div>Vermouth
@@ -356,7 +356,7 @@ h4 {
 
                                           <div>
                                              <input type="checkbox" id="check_liqueur_amaretto" /> <label
-                                                class="label_liqueur" for="check_liqueur_amaretto">
+                                                class="label_liqueur" ingre-num="LA" for="check_liqueur_amaretto">
                                                 <div>
                                                    <i class="fa fa-check"></i>
                                                 </div>Amaretto
@@ -375,7 +375,7 @@ h4 {
                                        <div class="CheckBox_wrapper_material" style="margin-top: 10px; margin-right: 27px;">
                                           <div>
                                              <input type="checkbox" id="check_material_all" /> <label
-                                                class="label_material" for="check_material_all">
+                                                class="label_material" ingre-num="M" for="check_material_all">
                                                 <div>
                                                    <i class="fa fa-check"></i>
                                                 </div>All
@@ -384,7 +384,7 @@ h4 {
 
                                           <div>
                                              <input type="checkbox" id="check_material_apple" /> <label
-                                                class="label_material" for="check_material_apple">
+                                                class="label_material" ingre-num="FA" for="check_material_apple">
                                                 <div>
                                                    <i class="fa fa-check"></i>
                                                 </div>Apple
@@ -393,7 +393,7 @@ h4 {
 
                                           <div>
                                              <input type="checkbox" id="check_material_cherry" /> <label
-                                                class="label_material" for="check_material_cherry">
+                                                class="label_material" ingre-num="FC" for="check_material_cherry">
                                                 <div>
                                                    <i class="fa fa-check"></i>
                                                 </div>Cherry
@@ -402,7 +402,7 @@ h4 {
 
                                           <div>
                                              <input type="checkbox" id="check_material_coconut" /> <label
-                                                class="label_material" for="check_material_coconut">
+                                                class="label_material" ingre-num="FK" for="check_material_coconut">
                                                 <div>
                                                    <i class="fa fa-check"></i>
                                                 </div>Coconut
@@ -411,7 +411,7 @@ h4 {
 
                                           <div>
                                              <input type="checkbox" id="check_material_grapefruit" />
-                                             <label class="label_material"
+                                             <label class="label_material" ingre-num="FG"
                                                 for="check_material_grapefruit">
                                                 <div>
                                                    <i class="fa fa-check"></i>
@@ -421,7 +421,7 @@ h4 {
 
                                           <div>
                                              <input type="checkbox" id="check_material_lemon" /> <label
-                                                class="label_material" for="check_material_lemon">
+                                                class="label_material" ingre-num="FL" for="check_material_lemon">
                                                 <div>
                                                    <i class="fa fa-check"></i>
                                                 </div>Lemon
@@ -434,7 +434,7 @@ h4 {
                                           style="margin-top: 10px;">
                                           <div>
                                              <input type="checkbox" id="check_material_lime" /> <label
-                                                class="label_material" for="check_material_lime">
+                                                class="label_material" ingre-num="FI" for="check_material_lime">
                                                 <div>
                                                    <i class="fa fa-check"></i>
                                                 </div>Lime
@@ -443,7 +443,7 @@ h4 {
 
                                           <div>
                                              <input type="checkbox" id="check_material_raspberry" />
-                                             <label class="label_material"
+                                             <label class="label_material" ingre-num="FR"
                                                 for="check_material_raspberry">
                                                 <div>
                                                    <i class="fa fa-check"></i>
@@ -453,7 +453,7 @@ h4 {
 
                                           <div>
                                              <input type="checkbox" id="check_material_orange" /> <label
-                                                class="label_material" for="check_material_orange">
+                                                class="label_material" ingre-num="FO" for="check_material_orange">
                                                 <div>
                                                    <i class="fa fa-check"></i>
                                                 </div>Orange
@@ -462,7 +462,7 @@ h4 {
 
                                           <div>
                                              <input type="checkbox" id="check_material_peach" /> <label
-                                                class="label_material" for="check_material_peach">
+                                                class="label_material" ingre-num="FP" for="check_material_peach">
                                                 <div>
                                                    <i class="fa fa-check"></i>
                                                 </div>Peach
@@ -471,7 +471,7 @@ h4 {
 
                                           <div>
                                              <input type="checkbox" id="check_material_pineapple" />
-                                             <label class="label_material"
+                                             <label class="label_material" ingre-num="FF"
                                                 for="check_material_pineapple">
                                                 <div>
                                                    <i class="fa fa-check"></i>
@@ -481,7 +481,7 @@ h4 {
 
                                           <div>
                                              <input type="checkbox" id="check_material_tomato" /> <label
-                                                class="label_material" for="check_material_tomato">
+                                                class="label_material" ingre-num="FT" for="check_material_tomato">
                                                 <div>
                                                    <i class="fa fa-check"></i>
                                                 </div>Tomato
@@ -497,7 +497,7 @@ h4 {
 
                                           <div>
                                              <input type="checkbox" id="check_material_egg" /> <label
-                                                class="label_material" for="check_material_egg">
+                                                class="label_material" ingre-num="ME" for="check_material_egg">
                                                 <div>
                                                    <i class="fa fa-check"></i>
                                                 </div>Egg
@@ -506,7 +506,7 @@ h4 {
 
                                           <div>
                                              <input type="checkbox" id="check_material_gingerale" />
-                                             <label class="label_material"
+                                             <label class="label_material" ingre-num="MT"
                                                 for="check_material_gingerale">
                                                 <div>
                                                    <i class="fa fa-check"></i>
@@ -516,7 +516,7 @@ h4 {
 
                                           <div>
                                              <input type="checkbox" id="check_material_milk" /> <label
-                                                class="label_material" for="check_material_milk">
+                                                class="label_material" ingre-num="MM" for="check_material_milk">
                                                 <div>
                                                    <i class="fa fa-check"></i>
                                                 </div>Milk
@@ -525,7 +525,7 @@ h4 {
 
                                           <div>
                                              <input type="checkbox" id="check_material_sugar" /> <label
-                                                class="label_material" for="check_material_sugar">
+                                                class="label_material" ingre-num="MC" for="check_material_sugar">
                                                 <div>
                                                    <i class="fa fa-check"></i>
                                                 </div>Sugar
@@ -534,7 +534,7 @@ h4 {
 
                                           <div>
                                              <input type="checkbox" id="check_material_spicy" /> <label
-                                                class="label_material" for="check_material_spicy">
+                                                class="label_material" ingre-num="MS" for="check_material_spicy">
                                                 <div>
                                                    <i class="fa fa-check"></i>
                                                 </div>Spicy
@@ -543,7 +543,7 @@ h4 {
 
                                           <div>
                                              <input type="checkbox" id="check_material_syrup" /> <label
-                                                class="label_material" for="check_material_syrup">
+                                                class="label_material" ingre-num="MC" for="check_material_syrup">
                                                 <div>
                                                    <i class="fa fa-check"></i>
                                                 </div>Syrup
@@ -575,7 +575,7 @@ h4 {
             </div>
             <div class="navbar-avatar" style="margin-left: 19px;">
                <a href="" onclick="return false;" class="navbar-item is-avatar" @click.prevent="showProfilePanel"> 
-                  <img src="${path }${user.savedFilename }" alt="Avatar" />
+                  <img class="pro-img-link" src="${path }${user.savedFilename }" alt="Avatar" />
                </a>
             </div>
 
@@ -696,13 +696,10 @@ h4 {
    var material =[];
    var color;
    $('.recommandCocktail').children('label').on('click', function() {
-      color = $(this).attr('class');
+      color = $(this).attr('class')+"Color";
       console.log(spilits);
       console.log(JSON.stringify(spilits));
 
-      spilits = [];
-      liqueur = [];
-      material = [];
       num = 0;
       $.ajax({
          method : "post",
@@ -734,12 +731,10 @@ h4 {
    });
    
    $('.spirit_check').on('click', function(){
-      console.log(this);
+      console.log($(this).attr('ingre-num'));
       console.log(spilits);
       console.log(JSON.stringify(spilits));
-      spilits = [];
-      liqueur = [];
-      material = [];
+      spilits = [$(this).attr('ingre-num')];
       num = 0;
       $.ajax({
          method : "post",
@@ -770,6 +765,81 @@ h4 {
          
       })
    });   
+   
+   $('.label_liqueur').on('click', function(){
+	      console.log($(this).attr('ingre-num'));
+	      console.log(liqueur);
+	      console.log(JSON.stringify(liqueur));
+	      liqueur = [$(this).attr('ingre-num')];
+	      num = 0;
+	      $.ajax({
+	         method : "post",
+	         url : "cocktailTagSearch",
+	         traditional : true,
+	         data : {
+	            "num" : num,
+	            "color" : color,
+	            "spilits" : spilits,
+	            "liqueur" : liqueur,
+	            "material" : material
+	         },
+	         success : searchCocktail
+	         /* 아작스 추가 */
+	         ,beforeSend: function () {
+	                 if($("#div_ajax_load_image").length != 0) {
+	                        $("#div_ajax_load_image").show();
+	                 } else {
+	                        $('#loading').append('<div id="div_ajax_load_image">'
+	                              +'<img src="https://cdn-images-1.medium.com/max/1600/0*bFV-rtVLhuCf9Ijl.gif"></div>');
+	                 }         
+	             }, complete: function () {
+	               $("#div_ajax_load_image").hide();
+	             }/* 아작스 추가 */
+	         ,error : function(){
+	            alert('error');
+	         }   
+	         
+	      })
+	   });   
+   
+   $('.label_material').on('click', function(){
+	      console.log($(this).attr('ingre-num'));
+	      console.log(material);
+	      console.log(JSON.stringify(material));
+	      material = [$(this).attr('ingre-num')];
+	      num = 0;
+	      $.ajax({
+	         method : "post",
+	         url : "cocktailTagSearch",
+	         traditional : true,
+	         data : {
+	            "num" : num,
+	            "color" : color,
+	            "spilits" : spilits,
+	            "liqueur" : liqueur,
+	            "material" : material
+	         },
+	         success : searchCocktail
+	         /* 아작스 추가 */
+	         ,beforeSend: function () {
+	                 if($("#div_ajax_load_image").length != 0) {
+	                        $("#div_ajax_load_image").show();
+	                 } else {
+	                        $('#loading').append('<div id="div_ajax_load_image">'
+	                              +'<img src="https://cdn-images-1.medium.com/max/1600/0*bFV-rtVLhuCf9Ijl.gif"></div>');
+	                 }         
+	             }, complete: function () {
+	               $("#div_ajax_load_image").hide();
+	             }/* 아작스 추가 */
+	         ,error : function(){
+	            alert('error');
+	         }   
+	         
+	      })
+	   });   
+   		function worldClick(num){
+   			$("#content").load("/cocktail/cocktailDetail?cocktailSeq="+num); 
+   		}
    </script>   
 </body>
 </html>

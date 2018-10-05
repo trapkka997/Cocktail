@@ -44,6 +44,10 @@
 	border: none;
 	display: unset;
 }
+
+#myForm{
+	display: none;
+}
 </style>
 
 </head>
@@ -64,10 +68,12 @@
 							<div class="container profile">
 								<div class="row profile">
 									<div class="col-xs-4 col-sm-2 col-md-offset-2 userpic">
+										<c:if test="${sessionScope.useremail eq  user.userEmail}">
 										<div class="p-image">
 											<i class="fa fa-camera upload-button"></i> 
 											<input class="file-upload" type="file" accept="image/*" />
-										</div>
+										</div>	
+										</c:if>
 										<span class="avatar"> 
 											<img class="profile-pic" src="${path }${user.savedFilename }" />
 										</span>
@@ -76,12 +82,14 @@
 										<div>
 											<h2 class="full-name">${user.userNickname }</h2>
 											<ul class="mfe">
-												<li>
-													<button class="btn btn-default" onclick="openForm()">Message</button>
-												</li>
-												<li>
-													<button class="btn btn-default" onclick="followBtn()">Follow</button>
-												</li>
+												<c:if test="${sessionScope.useremail ne  user.userEmail}">
+													<li>
+														<button class="btn btn-default" onclick="openForm()">Message</button>
+													</li>
+													<li>
+														<button class="btn btn-default" onclick="followBtn()">Follow</button>
+													</li>
+												</c:if>
 												<c:if test="${sessionScope.useremail eq  user.userEmail}">
 													<li>
 														<button class="btn btn-default" data-toggle="modal"
@@ -471,7 +479,7 @@
 		
 		</script> -->
 		<script>
-			$(document).ready(function() {				
+			$(document).ready(function() {			
 				var followUser = document.getElementById('userEmail').value;
 				$.ajax({
 							method : "post",
@@ -505,12 +513,11 @@
 					if (input.files && input.files[0]) {
 						console.log(input.files[0]);
 					    var fd = new FormData();
-					    fd.append("file", input.files[0]);
+					    fd.append("file", input.files[0]); 
 						  var xhr = new XMLHttpRequest();
 						    xhr.onreadystatechange = function() {
 						       if (this.readyState == 4 && this.status == 200) {
-						          console.log(xhr.response);
-						          $("#content").load("/cocktail/eachoneProfile?userEmail="+followUser);
+						          console.log(input.files[0]);
 						              } else if(this.status == 500){
 						              } else if(this.status == 403){
 						              } else if(this.status == 404){
@@ -523,6 +530,7 @@
 
 						reader.onload = function(e) {							
 							$('.profile-pic').attr('src', e.target.result);
+							$(".pro-img-link").attr('src', e.target.result);
 						}
 
 						reader.readAsDataURL(input.files[0]);

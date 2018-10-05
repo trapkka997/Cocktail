@@ -1,6 +1,7 @@
 package sesoc.global.cocktail.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,10 +26,10 @@ public class MemberRepository {
 		MemberDAO dao =sqlSession.getMapper(MemberDAO.class);
 		return dao.selectUserPhoto(vo);
 	}
-	public List<UserPhoto> selectAllUserPhoto() {
+	public List<UserPhoto> selectAllUserPhoto(Map<String,String> map) {
 		MemberDAO dao = sqlSession.getMapper(MemberDAO.class);
 		
-		return dao.selectAllUserPhoto();
+		return dao.selectAllUserPhoto(map);
 	}
 	
 	public int writeBoard(UserPhoto vo) {

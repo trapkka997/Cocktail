@@ -13,6 +13,7 @@
 		<typeAlias type="sesoc.global.cocktail.vo.UserLikeCocktail" alias="userLikeCocktail"/>
 		<typeAlias type="sesoc.global.cocktail.vo.Ingredient" alias="ingredient"/>
 		<typeAlias type="sesoc.global.cocktail.vo.UserPhotoLike" alias="userPhotoLike"/>
+		<typeAlias type="sesoc.global.cocktail.vo.WorldBest" alias="worldBest"/>
 	</typeAliases>
 	<mappers>
 		<mapper resource="mappers/emailMapper.xml"/>

@@ -13,6 +13,7 @@ import sesoc.global.cocktail.vo.Cocktail;
 import sesoc.global.cocktail.vo.Ingredient;
 import sesoc.global.cocktail.vo.User;
 import sesoc.global.cocktail.vo.UserCocktail;
+import sesoc.global.cocktail.vo.WorldBest;
 
 @Repository
 public class CocktailRepository {
@@ -85,7 +86,7 @@ public class CocktailRepository {
 		return dao.getIngredientOfCocktail(map);
 	}
 
-	public List<Cocktail> selectWorldBest() {
+	public List<WorldBest> selectWorldBest() {
 		CocktailDAO dao = sqlSession.getMapper(CocktailDAO.class);
 		return dao.selectWorldBest();
 	}

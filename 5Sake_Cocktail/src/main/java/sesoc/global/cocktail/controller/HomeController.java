@@ -1,8 +1,13 @@
 package sesoc.global.cocktail.controller;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.Locale;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -15,6 +20,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import sesoc.global.cocktail.dao.CocktailRepository;
 import sesoc.global.cocktail.dao.MemberRepository;
@@ -25,6 +31,7 @@ import sesoc.global.cocktail.vo.Ingredient;
 import sesoc.global.cocktail.vo.User;
 import sesoc.global.cocktail.vo.UserCocktail;
 import sesoc.global.cocktail.vo.UserPhoto;
+import sesoc.global.cocktail.vo.WorldBest;
 
 @Controller
 public class HomeController {
@@ -40,12 +47,26 @@ public class HomeController {
 	 */ 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Model model, HttpSession httpSession) {
-		List<Cocktail> worldBestList = cocktailRepository.selectWorldBest();
+		List<WorldBest> worldBestList = cocktailRepository.selectWorldBest();
+		System.out.println(worldBestList);
+		ArrayList<WorldBest> worldBestList1[] =new ArrayList[3];
+		for(int i=0; i<3; i++) {
+			worldBestList1[i] = new ArrayList<WorldBest>();
+		}
+		String seq = worldBestList.get(0).getCocktailSeq();
+		int x =0;
+		for(WorldBest world : worldBestList) {
+			if(!seq.equals(world.getCocktailSeq())) {
+				seq= world.getCocktailSeq();
+				x++;
+			}
+			worldBestList1[x].add(world);
+		}
 		String userEmail = (String)httpSession.getAttribute("useremail");
 		User vo = new User();
 		vo.setUserEmail(userEmail);
 		User user = memberRepository.selectOne(vo);
-		model.addAttribute("worldBestList", worldBestList);
+		model.addAttribute("worldBestList", worldBestList1);
 		model.addAttribute("path",PATH);
 		model.addAttribute("user",user);
 		return "cocktail/main_index";
@@ -77,7 +98,6 @@ public class HomeController {
 		System.out.println(recommandUserPhotoList);
 		model.addAttribute("recommandUserPhotoList", recommandUserPhotoList);
 		model.addAttribute("recommandCocktailList", recommandCocktailList);
-		model.addAttribute("userPhotos", userPhotos);
 		model.addAttribute("path", PATH);
 		return "cocktail/main_body";
 	}
@@ -88,7 +108,8 @@ public class HomeController {
 	 */
 	@RequestMapping(value = "/userphoto", method = RequestMethod.GET)
 	public String userphoto(Model model, HttpServletRequest servletRequest) {
-		List<UserPhoto> userPhotos = dao.selectAllUserPhoto();
+		Map map = new HashMap<>();
+		List<UserPhoto> userPhotos = dao.selectAllUserPhoto(map);
 		String path = servletRequest.getSession().getServletContext().getRealPath("resources");
 		System.out.println(path);
 		List<Cocktail> cocktailList = cocktailRepository.getCocktailList();
@@ -108,7 +129,8 @@ public class HomeController {
 	 */
 	@RequestMapping(value = "/cocktailphoto", method = RequestMethod.GET)
 	public String cocktailphoto(Model model,HttpSession httpSession, HttpServletRequest servletRequest) {
-		List<UserPhoto> userPhotos = dao.selectAllUserPhoto();
+		Map map = new HashMap<>();
+		List<UserPhoto> userPhotos = dao.selectAllUserPhoto(map);
 		String path = servletRequest.getSession().getServletContext().getRealPath("resources");
 		System.out.println(path);
 		model.addAttribute("userPhotos", userPhotos);
@@ -116,22 +138,154 @@ public class HomeController {
 		model.addAttribute("path", PATH);
 		
 		String userEmail = (String)httpSession.getAttribute("useremail");
-//		JsoupExample2 jsoup = new JsoupExample2();
-//		ArrayList<String> urls = new ArrayList<>();
-//		try {
-//			ArrayList<String> urlList = jsoup.getImg();
-//			for(String url : urlList) {
-//				JsoupExample js = new JsoupExample();
-//				urls.add(js.getImage(url));
-//			}
-//		} catch (Exception e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		model.addAttribute("urls",urls);
-// 
 		return "cocktail/gallery/cocktail_gallery";
- 
+	}
+	
+	/**
+	 * 유저들의 올린 칵테일 All 라이브러리 화면
+	 * @return 칵테일화면
+	 */
+	@RequestMapping(value = "/cocktailphotoAll", method = RequestMethod.GET)
+	public String cocktailphotoAll(Model model,HttpSession httpSession, HttpServletRequest servletRequest,String data) {
+		Map map = new HashMap<>();
+		List<UserPhoto> userPhotos = dao.selectAllUserPhoto(map);
+		String path = servletRequest.getSession().getServletContext().getRealPath("resources");
+		System.out.println(path);
+		model.addAttribute("userPhotos", userPhotos);
+		System.out.println(userPhotos);
+		model.addAttribute("path", PATH);
+		
+		String userEmail = (String)httpSession.getAttribute("useremail");
+		return "cocktail/gallery/cocktail_gallery";
+	}
+	/**
+	 * 유저들의 올린 칵테일 브랜디 라이브러리 화면
+	 * @return 칵테일화면
+	 */
+	@RequestMapping(value = "/cocktailphotoB", method = RequestMethod.GET)
+	public String cocktailphotoB(Model model,HttpSession httpSession, HttpServletRequest servletRequest,String data) {
+		data = "AB";
+		Map<String, String> map = new HashMap<>();
+		map.put("data", data);
+		List<UserPhoto> userPhotos = dao.selectAllUserPhoto(map);
+		String path = servletRequest.getSession().getServletContext().getRealPath("resources");
+		System.out.println(path);
+		model.addAttribute("userPhotos", userPhotos);
+		System.out.println(userPhotos);
+		model.addAttribute("path", PATH);
+		
+		String userEmail = (String)httpSession.getAttribute("useremail");
+		return "cocktail/gallery/cocktail_gallery";
+	}
+	/**
+	 * 유저들의 올린 칵테일 All 라이브러리 화면
+	 * @return 칵테일화면
+	 */
+	@RequestMapping(value = "/cocktailphotoW", method = RequestMethod.GET)
+	public String cocktailphotoW(Model model,HttpSession httpSession, HttpServletRequest servletRequest) {
+		String data = "AW";
+		Map<String, String> map = new HashMap<>();
+		map.put("data", data);
+		List<UserPhoto> userPhotos = dao.selectAllUserPhoto(map);
+		String path = servletRequest.getSession().getServletContext().getRealPath("resources");
+		System.out.println(path);
+		model.addAttribute("userPhotos", userPhotos);
+		System.out.println(userPhotos);
+		model.addAttribute("path", PATH);
+		
+		String userEmail = (String)httpSession.getAttribute("useremail");
+		return "cocktail/gallery/cocktail_gallery";
+	}
+	/**
+	 * 유저들의 올린 칵테일 All 라이브러리 화면
+	 * @return 칵테일화면
+	 */
+	@RequestMapping(value = "/cocktailphotoV", method = RequestMethod.GET)
+	public String cocktailphotoV(Model model,HttpSession httpSession, HttpServletRequest servletRequest) {
+		String data = "AV";
+		Map<String, String> map = new HashMap<>();
+		map.put("data", data);
+		List<UserPhoto> userPhotos = dao.selectAllUserPhoto(map);
+		String path = servletRequest.getSession().getServletContext().getRealPath("resources");
+		System.out.println(path);
+		model.addAttribute("userPhotos", userPhotos);
+		System.out.println(userPhotos);
+		model.addAttribute("path", PATH);
+		
+		String userEmail = (String)httpSession.getAttribute("useremail");
+		return "cocktail/gallery/cocktail_gallery";
+	}
+	/**
+	 * 유저들의 올린 칵테일 All 라이브러리 화면
+	 * @return 칵테일화면
+	 */
+	@RequestMapping(value = "/cocktailphotoR", method = RequestMethod.GET)
+	public String cocktailphotoR(Model model,HttpSession httpSession, HttpServletRequest servletRequest) {
+		String data = "AR";
+		Map<String, String> map = new HashMap<>();
+		map.put("data", data);
+		List<UserPhoto> userPhotos = dao.selectAllUserPhoto(map);
+		String path = servletRequest.getSession().getServletContext().getRealPath("resources");
+		System.out.println(path);
+		model.addAttribute("userPhotos", userPhotos);
+		System.out.println(userPhotos);
+		model.addAttribute("path", PATH);
+		
+		String userEmail = (String)httpSession.getAttribute("useremail");
+		return "cocktail/gallery/cocktail_gallery";
+	}
+	/**
+	 * 유저들의 올린 칵테일 All 라이브러리 화면
+	 * @return 칵테일화면
+	 */
+	@RequestMapping(value = "/cocktailphotoJ", method = RequestMethod.GET)
+	public String cocktailphotoJ(Model model,HttpSession httpSession, HttpServletRequest servletRequest) {
+		String data = "AJ";
+		Map<String, String> map = new HashMap<>();
+		map.put("data", data);
+		List<UserPhoto> userPhotos = dao.selectAllUserPhoto(map);
+		String path = servletRequest.getSession().getServletContext().getRealPath("resources");
+		System.out.println(path);
+		model.addAttribute("userPhotos", userPhotos);
+		System.out.println(userPhotos);
+		model.addAttribute("path", PATH);
+		
+		String userEmail = (String)httpSession.getAttribute("useremail");
+		return "cocktail/gallery/cocktail_gallery";
+	}
+	/**
+	 * 유저들의 올린 칵테일 All 라이브러리 화면
+	 * @return 칵테일화면
+	 */
+	@RequestMapping(value = "/cocktailphotoT", method = RequestMethod.GET)
+	public String cocktailphotoT(Model model,HttpSession httpSession, HttpServletRequest servletRequest) {
+		String data = "AT";
+		Map<String, String> map = new HashMap<>();
+		map.put("data", data);
+		List<UserPhoto> userPhotos = dao.selectAllUserPhoto(map);
+		String path = servletRequest.getSession().getServletContext().getRealPath("resources");
+		System.out.println(path);
+		model.addAttribute("userPhotos", userPhotos);
+		System.out.println(userPhotos);
+		model.addAttribute("path", PATH);
+		
+		String userEmail = (String)httpSession.getAttribute("useremail");
+		return "cocktail/gallery/cocktail_gallery";
+	}
+	
+	@RequestMapping(value = "/selectUserPhoto", method = RequestMethod.GET)
+	public @ResponseBody List<UserPhoto> selectUserPhoto(HttpSession httpSession, HttpServletRequest servletRequest,String data) {
+		Map<String,String> map = new HashMap<>();
+		if(!data.equals("")) {
+			map.put("data", data);
+		}
+		List<UserPhoto> userPhotos = dao.selectAllUserPhoto(map);
+		String path = servletRequest.getSession().getServletContext().getRealPath("resources");
+		System.out.println(path);
+		System.out.println(userPhotos);
+		
+		String userEmail = (String)httpSession.getAttribute("useremail");
+		return userPhotos;
 	}
 	
 	/**
@@ -161,8 +315,115 @@ public class HomeController {
 	 */
 	@RequestMapping(value = "/selfMaking", method = RequestMethod.GET)
 	public String selfMaking(Model model, User vo, HttpSession httpSession) {
-		String userEmail = (String)httpSession.getAttribute("useremail");
-		vo.setUserEmail(userEmail);
+		List<Ingredient> ingredientByAlcoleList = cocktailRepository.getIngredientByAlcole();
+		List<Ingredient> ingredientByFruitList = cocktailRepository.getIngredientByFruit();
+		List<Ingredient> ingredientByLiqueurList = cocktailRepository.getIngredientByLiqueur();
+		List<Ingredient> ingredientByMaterialList = cocktailRepository.getIngredientByMaterial();
+		model.addAttribute("ingredientByAlcoleList", ingredientByAlcoleList);
+		model.addAttribute("ingredientByFruitList", ingredientByFruitList);
+		model.addAttribute("ingredientByLiqueurList", ingredientByLiqueurList);
+		model.addAttribute("ingredientByMaterialList", ingredientByMaterialList);
+		model.addAttribute("path", PATH);
+		List<UserCocktail> userCocktailList =  cocktailRepository.selectUserCocktail(vo);
+		System.out.println(userCocktailList);
+		model.addAttribute("userCocktailList", userCocktailList);
+		return "cocktail/gallery/selfMaking";
+	}
+	@RequestMapping(value = "/selfMakingB", method = RequestMethod.GET)
+	public String selfMakingB(Model model, User vo, HttpSession httpSession) {
+		String data = "AB";
+		vo.setUserNickname(data);
+		List<Ingredient> ingredientByAlcoleList = cocktailRepository.getIngredientByAlcole();
+		List<Ingredient> ingredientByFruitList = cocktailRepository.getIngredientByFruit();
+		List<Ingredient> ingredientByLiqueurList = cocktailRepository.getIngredientByLiqueur();
+		List<Ingredient> ingredientByMaterialList = cocktailRepository.getIngredientByMaterial();
+		model.addAttribute("ingredientByAlcoleList", ingredientByAlcoleList);
+		model.addAttribute("ingredientByFruitList", ingredientByFruitList);
+		model.addAttribute("ingredientByLiqueurList", ingredientByLiqueurList);
+		model.addAttribute("ingredientByMaterialList", ingredientByMaterialList);
+		model.addAttribute("path", PATH);
+		List<UserCocktail> userCocktailList =  cocktailRepository.selectUserCocktail(vo);
+		System.out.println(userCocktailList);
+		model.addAttribute("userCocktailList", userCocktailList);
+		return "cocktail/gallery/selfMaking";
+	}
+	@RequestMapping(value = "/selfMakingW", method = RequestMethod.GET)
+	public String selfMakingW(Model model, User vo, HttpSession httpSession) {
+		String data = "AW";
+		vo.setUserNickname(data);
+		List<Ingredient> ingredientByAlcoleList = cocktailRepository.getIngredientByAlcole();
+		List<Ingredient> ingredientByFruitList = cocktailRepository.getIngredientByFruit();
+		List<Ingredient> ingredientByLiqueurList = cocktailRepository.getIngredientByLiqueur();
+		List<Ingredient> ingredientByMaterialList = cocktailRepository.getIngredientByMaterial();
+		model.addAttribute("ingredientByAlcoleList", ingredientByAlcoleList);
+		model.addAttribute("ingredientByFruitList", ingredientByFruitList);
+		model.addAttribute("ingredientByLiqueurList", ingredientByLiqueurList);
+		model.addAttribute("ingredientByMaterialList", ingredientByMaterialList);
+		model.addAttribute("path", PATH);
+		List<UserCocktail> userCocktailList =  cocktailRepository.selectUserCocktail(vo);
+		System.out.println(userCocktailList);
+		model.addAttribute("userCocktailList", userCocktailList);
+		return "cocktail/gallery/selfMaking";
+	}
+	@RequestMapping(value = "/selfMakingV", method = RequestMethod.GET)
+	public String selfMakingV(Model model, User vo, HttpSession httpSession) {
+		String data = "AV";
+		vo.setUserNickname(data);
+		List<Ingredient> ingredientByAlcoleList = cocktailRepository.getIngredientByAlcole();
+		List<Ingredient> ingredientByFruitList = cocktailRepository.getIngredientByFruit();
+		List<Ingredient> ingredientByLiqueurList = cocktailRepository.getIngredientByLiqueur();
+		List<Ingredient> ingredientByMaterialList = cocktailRepository.getIngredientByMaterial();
+		model.addAttribute("ingredientByAlcoleList", ingredientByAlcoleList);
+		model.addAttribute("ingredientByFruitList", ingredientByFruitList);
+		model.addAttribute("ingredientByLiqueurList", ingredientByLiqueurList);
+		model.addAttribute("ingredientByMaterialList", ingredientByMaterialList);
+		model.addAttribute("path", PATH);
+		List<UserCocktail> userCocktailList =  cocktailRepository.selectUserCocktail(vo);
+		System.out.println(userCocktailList);
+		model.addAttribute("userCocktailList", userCocktailList);
+		return "cocktail/gallery/selfMaking";
+	}
+	@RequestMapping(value = "/selfMakingR", method = RequestMethod.GET)
+	public String selfMakingR(Model model, User vo, HttpSession httpSession) {
+		String data = "AR";
+		vo.setUserNickname(data);
+		List<Ingredient> ingredientByAlcoleList = cocktailRepository.getIngredientByAlcole();
+		List<Ingredient> ingredientByFruitList = cocktailRepository.getIngredientByFruit();
+		List<Ingredient> ingredientByLiqueurList = cocktailRepository.getIngredientByLiqueur();
+		List<Ingredient> ingredientByMaterialList = cocktailRepository.getIngredientByMaterial();
+		model.addAttribute("ingredientByAlcoleList", ingredientByAlcoleList);
+		model.addAttribute("ingredientByFruitList", ingredientByFruitList);
+		model.addAttribute("ingredientByLiqueurList", ingredientByLiqueurList);
+		model.addAttribute("ingredientByMaterialList", ingredientByMaterialList);
+		model.addAttribute("path", PATH);
+		List<UserCocktail> userCocktailList =  cocktailRepository.selectUserCocktail(vo);
+		System.out.println(userCocktailList);
+		model.addAttribute("userCocktailList", userCocktailList);
+		return "cocktail/gallery/selfMaking";
+	}
+	@RequestMapping(value = "/selfMakingJ", method = RequestMethod.GET)
+	public String selfMakingJ(Model model, User vo, HttpSession httpSession) {
+		String data = "AJ";
+		vo.setUserNickname(data);
+		List<Ingredient> ingredientByAlcoleList = cocktailRepository.getIngredientByAlcole();
+		List<Ingredient> ingredientByFruitList = cocktailRepository.getIngredientByFruit();
+		List<Ingredient> ingredientByLiqueurList = cocktailRepository.getIngredientByLiqueur();
+		List<Ingredient> ingredientByMaterialList = cocktailRepository.getIngredientByMaterial();
+		model.addAttribute("ingredientByAlcoleList", ingredientByAlcoleList);
+		model.addAttribute("ingredientByFruitList", ingredientByFruitList);
+		model.addAttribute("ingredientByLiqueurList", ingredientByLiqueurList);
+		model.addAttribute("ingredientByMaterialList", ingredientByMaterialList);
+		model.addAttribute("path", PATH);
+		List<UserCocktail> userCocktailList =  cocktailRepository.selectUserCocktail(vo);
+		System.out.println(userCocktailList);
+		model.addAttribute("userCocktailList", userCocktailList);
+		return "cocktail/gallery/selfMaking";
+	}
+	@RequestMapping(value = "/selfMakingT", method = RequestMethod.GET)
+	public String selfMakingT(Model model, User vo, HttpSession httpSession) {		
+		String data = "AT";
+		vo.setUserNickname(data);
+	
 		List<Ingredient> ingredientByAlcoleList = cocktailRepository.getIngredientByAlcole();
 		List<Ingredient> ingredientByFruitList = cocktailRepository.getIngredientByFruit();
 		List<Ingredient> ingredientByLiqueurList = cocktailRepository.getIngredientByLiqueur();

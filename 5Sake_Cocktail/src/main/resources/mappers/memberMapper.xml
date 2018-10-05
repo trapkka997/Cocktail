@@ -45,7 +45,22 @@
 </select>
 
 
-<select id="selectAllUserPhoto" resultType="userPhoto">
+<select id="selectAllUserPhoto" resultType="userPhoto" parameterType="map">
+select *
+from(
+SELECT 
+    USERPHOTOSEQ,
+    USEREMAIL,
+	TITLE,	
+    CONTENTS,
+    SAVEFILENAME,
+	ORIGINALFILENAME,
+	WRITEDATE,
+	HITCOUNT,
+	LIKECOUNT,
+	COCKTAILNAME,
+	IMAGERINK 		
+FROM(
 SELECT 
 		p.USERPHOTOSEQ,
 		p.USEREMAIL,
@@ -57,13 +72,43 @@ SELECT
 		p.HITCOUNT,
 		p.LIKECOUNT,
 		p.COCKTAILNAME,
-		c.IMAGERINK
+		c.IMAGERINK,
+        ci.ingredient,
+    	classify
 	FROM
-		USERPHOTO p, cocktail2 c
+		USERPHOTO p, cocktail2 c, cocktail_ingredient ci, ingredient i
 	WHERE
+        ci.cocktail_seq = c.cocktail_seq
+        AND
+        ci.ingredient = i.ingredient_seq
+        AND
 		p.cocktailname = c.cocktailname 
+		<if test="data != null ">
+			AND
+       	 	REGEXP_LIKE(i.classify, '${data}')
+		</if>
 	ORDER BY
 		p.WRITEDATE DESC
+)
+GROUP BY
+       USERPHOTOSEQ,
+    USEREMAIL,
+	TITLE,	
+    CONTENTS,
+    SAVEFILENAME,
+	ORIGINALFILENAME,
+	WRITEDATE,
+	HITCOUNT,
+	LIKECOUNT,
+	COCKTAILNAME,
+	IMAGERINK
+	<if test="data != null ">
+		,
+    classify
+	</if>
+)
+	ORDER BY
+		WRITEDATE DESC
 </select>
 
 <insert id="writeBoard" parameterType="userPhoto">

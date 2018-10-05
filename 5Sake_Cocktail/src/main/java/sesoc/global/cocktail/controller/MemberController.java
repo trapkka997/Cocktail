@@ -2,9 +2,11 @@ package sesoc.global.cocktail.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
@@ -142,7 +144,8 @@ public class MemberController {
 		 */
 		@RequestMapping(value = "/gallery", method = RequestMethod.GET)
 		public String main(Locale locale, Model model,HttpServletRequest servletRequest) {
-			List<UserPhoto> userPhotos = dao.selectAllUserPhoto();
+			Map<String, String> map = new HashMap<>();
+			List<UserPhoto> userPhotos = dao.selectAllUserPhoto(map);
 			String path = servletRequest.getSession().getServletContext().getRealPath("resources");
 			System.out.println(path);
 			model.addAttribute("userPhotos", userPhotos);
