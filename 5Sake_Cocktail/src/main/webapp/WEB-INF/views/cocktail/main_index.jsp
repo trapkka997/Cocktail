@@ -65,6 +65,10 @@ h4 {
     height: -webkit-fill-available;
     position: fixed;
 }
+.picbig{
+	font-size : xx-large;
+	text-align: center;
+}
 </style>
 
 <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -218,55 +222,55 @@ h4 {
                                           name="color" value="cream">
                                           <div class="color_layer"></div>
                                           <div class="color_button">
-                                             <span></span>
+                                             <span class='picbig'></span>
                                           </div>
                                        </label> <label class="yellow"> <input type="radio"
                                           name="color" value="yellow">
                                           <div class="color_layer"></div>
                                           <div class="color_button">
-                                             <span></span>
+                                             <span class='picbig'></span>
                                           </div>
                                        </label> <label class="orange"> <input type="radio"
                                           name="color" value="orange">
                                           <div class="layer"></div>
                                           <div class="color_button">
-                                             <span></span>
+                                             <span class='picbig'></span>
                                           </div>
                                        </label> <label class="red"> <input type="radio"
                                           name="color" value="red">
                                           <div class="layer"></div>
                                           <div class="color_button">
-                                             <span></span>
+                                             <span class='picbig'></span>
                                           </div>
                                        </label> <label class="brown"> <input type="radio"
                                           name="color" value="brown">
                                           <div class="layer"></div>
                                           <div class="color_button">
-                                             <span></span>
+                                             <span class='picbig'></span>
                                           </div>
                                        </label> <label class="green"> <input type="radio"
                                           name="color" value="green">
                                           <div class="layer"></div>
                                           <div class="color_button">
-                                             <span></span>
+                                             <span class='picbig'></span>
                                           </div>
                                        </label> <label class="blue"> <input type="radio"
                                           name="color" value="blue">
                                           <div class="color_layer"></div>
                                           <div class="color_button">
-                                             <span></span>
+                                             <span class='picbig'></span>
                                           </div>
                                        </label> <label class="pink"> <input type="radio"
                                           name="color" value="pink">
                                           <div class="color_layer"></div>
                                           <div class="color_button">
-                                             <span></span>
+                                             <span class='picbig'></span>
                                           </div>
                                        </label> <label class="peach"> <input type="radio"
                                           name="color" value="peach">
                                           <div class="color_layer"></div>
                                           <div class="color_button">
-                                             <span></span>
+                                             <span class='picbig'></span>
                                           </div>
                                        </label>
                                     </div>
@@ -699,6 +703,9 @@ h4 {
       color = $(this).attr('class');
       console.log(spilits);
       console.log(JSON.stringify(spilits));
+      
+      var txt = '<i class="fa fa-check"></i>';
+	  $(this).children().children('.picbig').html(txt);
 
       spilits = [];
       liqueur = [];
