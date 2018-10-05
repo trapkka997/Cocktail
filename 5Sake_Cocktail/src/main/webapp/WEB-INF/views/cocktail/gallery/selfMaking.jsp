@@ -48,10 +48,6 @@
 li{
 	display: none;
 }
-
-.opt{
-	display: flex;
-}
 .slideshow >ul> li{
 	display: block;
 }
@@ -78,13 +74,13 @@ $(function(){
 								<h1 class="selfMaking_h1" style="margin-top: 20px;">ひとりさけ</h1>
 								<div id="alcole" class="button-group" data-filter-group='alcole'
 									style="margin-top: 20px; margin-bottom: 20px;">
-									<button class="btn fil-cat btn-outline-primary" href="" data-rel="AA">ALL</button>
-									<button class="btn fil-cat btn-outline-primary" href="" data-rel="AB">Brandy</button>
-									<button class="btn fil-cat btn-outline-primary" href="" data-rel="AW">Whisky</button>
-									<button class="btn fil-cat btn-outline-primary" href="" data-rel="AV">Vodka</button>
-									<button class="btn fil-cat btn-outline-primary" href="" data-rel="AR">Rum</button>
-									<button class="btn fil-cat btn-outline-primary" href="" data-rel="AJ">Dry Jin</button>
-									<button class="btn fil-cat btn-outline-primary" href="" data-rel="AT">Tequila</button>
+									<button class="btn fil-cat btn-outline-primary" href="" data-rel="all">ALL</button>
+									<button class="btn fil-cat btn-outline-primary" href="" data-rel="brandy">Brandy</button>
+									<button class="btn fil-cat btn-outline-primary" href="" data-rel="whisky">Whisky</button>
+									<button class="btn fil-cat btn-outline-primary" href="" data-rel="vodka">Vodka</button>
+									<button class="btn fil-cat btn-outline-primary" href="" data-rel="rum">Rum</button>
+									<button class="btn fil-cat btn-outline-primary" href="" data-rel="dryjin">Dry Jin</button>
+									<button class="btn fil-cat btn-outline-primary" href="" data-rel="tequila">Tequila</button>
 								</div>
 							</div>
 						</div>
@@ -99,13 +95,13 @@ $(function(){
 						<ul class="grid">
 							<li class="grid-sizer"></li>
 							<!-- for Masonry column width -->
-							<c:forEach var="userCocktail" items="${userCocktailList}" varStatus="var">
+							<c:forEach var="userCocktail" items="${userCocktailList}" varStatus="var" begin="0" end="7">
 								<li>
 									<figure class="tile2 scale-anm brandy all">
 										<div class="profilebox profilebox1">
 											<img class="galleryPhoto" src="${path }${userCocktail.savefilename}" alt="img01" />
 											<div class="SocialIcons" id='icon${var.index}'>
-												<a onclick="hover(${var.index})" href="#" > 
+												<a onclick="hover(${var.index})" href="#"> 
 													<i class="fas fa-heartbeat"></i>
 												</a>
 											</div>
@@ -239,257 +235,141 @@ $(function(){
 										</div>
 									</label>
 								</div>
-								                        <div class="style-picker_liqueur">
-                           <h2 class="cocktailMaker_h2" style="margin-top: 20px;">BASE
-                              SPIRITS</h2>
 
-                           <div class="SumoSelect sumo_somename4" tabindex="0"
-                              role="button" aria-expanded="true">
-                              <select multiple="multiple" name="somename4"
-                                 class="select1 SumoUnder" tabindex="-1">
-                                 <c:forEach var="ingredientByAlcole"
-                                    items="${ingredientByAlcoleList}">
-                                    <option value="${ingredientByAlcole.ingredientSeq }">${ingredientByAlcole.ingredient }</option>
-                                 </c:forEach>
+								<div class="style-picker_liqueur">
+									<h2 class="cocktailMaker_h2" style="margin-top: 20px;">BASE
+										SPIRITS</h2>
 
-                              </select>
-                              <!-- <p class="CaptionCont SelectBox" title=" Ferrari, Hyundai ">
-                                    <span> Ferrari, Hyundai </span><label><i></i></label>
-                                 </p> -->
-                              <div class="optWrapper okCancelInMulti selall multiple">
-                                 <p class="select-all partial">
-                                    <span><i></i></span><label>Select All</label>
-                                 </p>
-                                 <ul class="options">
-                                    <c:forEach var="ingredientByAlcole"
-                                       items="${ingredientByAlcoleList}">
-                                       <li class="opt"><span><i></i></span><label>${ingredientByAlcole.ingredient }</label></li>
-                                    </c:forEach>
-                                 </ul>
-                                 <div class="MultiControls">
-                                    <p tabindex="0" class="btnOk">OK</p>
-                                    <p tabindex="0" class="btnCancel">Cancel</p>
-                                 </div>
-                              </div>
-                           </div>
+									<div class="SumoSelect sumo_somename4" tabindex="0"
+										role="button" aria-expanded="true">
+										<select multiple="multiple" name="somename4"
+											class="select1 SumoUnder" tabindex="-1">
+											<c:forEach var="ingredientByAlcole"
+												items="${ingredientByAlcoleList}">
+												<option value="${ingredientByAlcole.ingredientSeq }">${ingredientByAlcole.ingredient }</option>
+											</c:forEach>
 
-                        </div>
-                        
-                        <div class="style-picker_spirits">
-										<h2 class = "cocktailMaker_h2" style="margin-top: 20px;">Liqueur</h2>
+										</select>
+										<!-- <p class="CaptionCont SelectBox" title=" Ferrari, Hyundai ">
+												<span> Ferrari, Hyundai </span><label><i></i></label>
+											</p> -->
+										<div class="optWrapper okCancelInMulti selall multiple">
+											<p class="select-all partial">
+												<span><i></i></span><label>Select All</label>
+											</p>
+											<ul class="options">
+												<c:forEach var="ingredientByAlcole"
+													items="${ingredientByAlcoleList}">
+													<li class="opt"><span><i></i></span><label>${ingredientByAlcole.ingredient }</label></li>
+												</c:forEach>
+											</ul>
+											<div class="MultiControls">
+												<p tabindex="0" class="btnOk">OK</p>
+												<p tabindex="0" class="btnCancel">Cancel</p>
+											</div>
+										</div>
+									</div>
 
-										<div class="SumoSelect sumo_somename4" tabindex="0"
-											role="button" aria-expanded="true">
-											<select multiple="multiple" name="somename4"
-												class="select1 SumoUnder" tabindex="-1">
-<!-- 												<option value="Wine">Wine</option>
-												<option value="Bitters">Bitters</option>
-												<option value="Beer">Beer</option>
-												<option value="Liqueur">Liqueur</option>
-												<option value="Creme_liqueur">Creme liqueur</option>
-												<option value="Sherry">Sherry</option>
-												<option value="Vermouth">Vermouth</option>
-												<option value="Amaretto">Amaretto</option> -->
+								</div>
+
+								<div class="style-picker_spirits">
+									<h2 class="cocktailMaker_h2" style="margin-top: 20px;">Liqueur</h2>
+
+									<div class="SumoSelect sumo_somename4" tabindex="0"
+										role="button" aria-expanded="true">
+										<select multiple="multiple" name="somename4"
+											class="select2 SumoUnder" tabindex="-1">
+											<c:forEach var="ingredientByLiqueur"
+												items="${ingredientByLiqueurList}">
+												<option value="${ingredientByLiqueur.ingredientSeq }">${ingredientByLiqueur.ingredient }</option>
+											</c:forEach>
+
+
+										</select>
+										<!-- <p class="CaptionCont SelectBox" title=" Ferrari, Hyundai ">
+												<span> Ferrari, Hyundai </span><label><i></i></label>
+											</p> -->
+										<div class="optWrapper okCancelInMulti selall multiple">
+											<p class="select-all partial">
+												<span><i></i></span><label>Select All</label>
+											</p>
+											<ul class="options">
 												<c:forEach var="ingredientByLiqueur"
-                                   					 items="${ingredientByLiqueurList}">
-                                   					 <option value="${ingredientByLiqueur.ingredientSeq }">${ingredientByLiqueur.ingredient }</option>
-                                 				</c:forEach>
-														
-											</select>
-											<!-- <p class="CaptionCont SelectBox" title=" Ferrari, Hyundai ">
-												<span> Ferrari, Hyundai </span><label><i></i></label>
-											</p> -->
-											<div class="optWrapper okCancelInMulti selall multiple">
-												<p class="select-all partial">
-													<span><i></i></span><label>Select All</label>
-												</p>
-												<ul class="options">
-											<!-- 		<li class="opt"><span><i></i></span><label>Wine</label></li>
-													<li class="opt"><span><i></i></span><label>Bitters</label></li>
-													<li class="opt"><span><i></i></span><label>Beer</label></li>
-													<li class="opt"><span><i></i></span><label>Liqueur</label></li>
-													<li class="opt"><span><i></i></span><label>Creme liqueur</label></li>
-													<li class="opt"><span><i></i></span><label>Sherry</label></li>
-													<li class="opt"><span><i></i></span><label>Vermouth</label></li>
-													<li class="opt"><span><i></i></span><label>Amaretto</label></li> -->
-													<c:forEach var="ingredientByLiqueur"
-                                       					items="${ingredientByLiqueurList}">
-                                      					 <li class="opt"><span><i></i></span><label>${ingredientByLiqueur.ingredient }</label></li>
-                                   					 </c:forEach>
-												</ul>
-												<div class="MultiControls">
-													<p tabindex="0" class="btnOk">OK</p>
-													<p tabindex="0" class="btnCancel">Cancel</p>
-												</div>
+													items="${ingredientByLiqueurList}">
+													<li class="opt"><span><i></i></span><label>${ingredientByLiqueur.ingredient }</label></li>
+												</c:forEach>
+											</ul>
+											<div class="MultiControls">
+												<p tabindex="0" class="btnOk">OK</p>
+												<p tabindex="0" class="btnCancel">Cancel</p>
 											</div>
 										</div>
-
 									</div>
-									
-									
-									<div class="style-picker_material">
-										<h2 class = "cocktailMaker_h2" style="margin-top: 20px;">Material</h2>
 
-										<div class="SumoSelect sumo_somename4" tabindex="0"
-											role="button" aria-expanded="true">
-											<select multiple="multiple" name="somename4"
-												class="select1 SumoUnder" tabindex="-1">
-										<!-- 		<option value="Apple">Apple</option>
-												<option value="Cherry">Cherry</option>
-												<option value="Coconut">Coconut</option>
-												<option value="Grape_Fruit">Grape Fruit</option>
-												<option value="Lemon">Lemon</option>
-												<option value="Lime">Lime</option>
-												<option value="Raspberry">Raspberry</option>
-												<option value="Orange">Orange</option>
-												<option value="Peach">Peach</option>
-												<option value="Pineapple">Pineapple</option>
-												<option value="Tomato">Tomato</option>
-												<option value="Egg">Egg</option>
-												<option value="Gingerale">Gingerale</option>
-												<option value="Milk">Milk</option>
-												<option value="Sugar">Sugar</option>
-												<option value="Spicy">Spicy</option>
-												<option value="Syrup">Syrup</option>  -->
-											    <c:forEach var="ingredientByFruit" items="${ingredientByFruitList}">
-                                    				<option value="${ingredientByFruit.ingredientSeq }">${ingredientByFruit.ingredient }</option>
-                                			 	</c:forEach>	
-											</select>
-											<!-- <p class="CaptionCont SelectBox" title=" Ferrari, Hyundai ">
+								</div>
+
+
+								<div class="style-picker_material">
+									<h2 class="cocktailMaker_h2" style="margin-top: 20px;">Material</h2>
+
+									<div class="SumoSelect sumo_somename4" tabindex="0"
+										role="button" aria-expanded="true">
+										<select multiple="multiple" name="somename4"
+											class="select3 SumoUnder" tabindex="-1">
+											<c:forEach var="ingredientByFruit"
+												items="${ingredientByFruitList}">
+												<option value="${ingredientByFruit.ingredientSeq }">${ingredientByFruit.ingredient }</option>
+											</c:forEach>
+
+										</select>
+										<!-- <p class="CaptionCont SelectBox" title=" Ferrari, Hyundai ">
 												<span> Ferrari, Hyundai </span><label><i></i></label>
 											</p> -->
-											<div class="optWrapper okCancelInMulti selall multiple">
-												<p class="select-all partial">
-													<span><i></i></span><label>Select All</label>
-												</p>
-												<ul class="options">
-											<!-- 		<li class="opt"><span><i></i></span><label>Apple</label></li>
-													<li class="opt"><span><i></i></span><label>Cherry</label></li>
-													<li class="opt"><span><i></i></span><label>Coconut</label></li>
-													<li class="opt"><span><i></i></span><label>Grape Fruit</label></li>
-													<li class="opt"><span><i></i></span><label>Lemon</label></li>
-													<li class="opt"><span><i></i></span><label>Lime</label></li>
-													<li class="opt"><span><i></i></span><label>Orange</label></li>
-													<li class="opt"><span><i></i></span><label>Peach</label></li>
-													<li class="opt"><span><i></i></span><label>Pineapple</label></li>
-													<li class="opt"><span><i></i></span><label>Tomato</label></li>
-													<li class="opt"><span><i></i></span><label>Egg</label></li>
-													<li class="opt"><span><i></i></span><label>Gingerale</label></li>
-													<li class="opt"><span><i></i></span><label>Milk</label></li>
-													<li class="opt"><span><i></i></span><label>Sugar</label></li>
-													<li class="opt"><span><i></i></span><label>Spicy</label></li>
-													<li class="opt"><span><i></i></span><label>Syrup</label></li> -->
-													<c:forEach var="ingredientByFruit" items="${ingredientByFruitList}">
-                                       					<li class="opt"><span><i></i></span><label>${ingredientByFruit.ingredient }</label></li>
-                                   				 	</c:forEach>
-												</ul>
-												<div class="MultiControls">
-													<p tabindex="0" class="btnOk">OK</p>
-													<p tabindex="0" class="btnCancel">Cancel</p>
-												</div>
+										<div class="optWrapper okCancelInMulti selall multiple">
+											<p class="select-all partial">
+												<span><i></i></span><label>Select All</label>
+											</p>
+											<ul class="options">
+												<c:forEach var="ingredientByFruit"
+													items="${ingredientByFruitList}">
+													<li class="opt"><span><i></i></span><label>${ingredientByFruit.ingredient }</label></li>
+												</c:forEach>
+											</ul>
+											<div class="MultiControls">
+												<p tabindex="0" class="btnOk">OK</p>
+												<p tabindex="0" class="btnCancel">Cancel</p>
 											</div>
 										</div>
-
 									</div>
 
-                        <%-- <div class="style-picker_spirits">
-                           <h2 class="cocktailMaker_h2" style="margin-top: 20px;">Liqueur</h2>
+								</div>
 
-                           <div class="SumoSelect sumo_somename4" tabindex="0"
-                              role="button" aria-expanded="true">
-                              <select multiple="multiple" name="somename4"
-                                 class="select2 SumoUnder" tabindex="-1">
-                                 <c:forEach var="ingredientByLiqueur"
-                                    items="${ingredientByLiqueurList}">
-                                    <option value="${ingredientByLiqueur.ingredientSeq }">${ingredientByLiqueur.ingredient }</option>
-                                 </c:forEach>
+							</div>
+							<!-- /.column-wrapper -->
+							<div class="column-wrapper">
+								<div class="panel">
+									<div class="panel-content">
+										<label for="image" style="display: unset;">
+											<form action="" class="image-select" data-droppable="">
+												<input id="image" type="file" data-droppable-input="" /> <i
+													class="fa fa-camera fa-2x image-select__icon"></i>
+												<div class="image-select__message"></div>
+												<div class="bg-image aspect-square"
+													style="background-image: url('http://placekitten.com/g/300/300');"
+													data-droppable-image=""></div>
+											</form>
+										</label>
+									</div>
+								</div>
+							</div>
 
-
-                              </select>
-                              <!-- <p class="CaptionCont SelectBox" title=" Ferrari, Hyundai ">
-                                    <span> Ferrari, Hyundai </span><label><i></i></label>
-                                 </p> -->
-                              <div class="optWrapper okCancelInMulti selall multiple">
-                                 <p class="select-all partial">
-                                    <span><i></i></span><label>Select All</label>
-                                 </p>
-                                 <ul class="options">
-                                    <c:forEach var="ingredientByLiqueur"
-                                       items="${ingredientByLiqueurList}">
-                                       <li class="opt"><span><i></i></span><label>${ingredientByLiqueur.ingredient }</label></li>
-                                    </c:forEach>
-                                 </ul>
-                                 <div class="MultiControls">
-                                    <p tabindex="0" class="btnOk">OK</p>
-                                    <p tabindex="0" class="btnCancel">Cancel</p>
-                                 </div>
-                              </div>
-                           </div>
-
-                        </div> --%>
-
-<%-- 
-                        <div class="style-picker_material">
-                           <h2 class="cocktailMaker_h2" style="margin-top: 20px;">Material</h2>
-
-                           <div class="SumoSelect sumo_somename4" tabindex="0"
-                              role="button" aria-expanded="true">
-                              <select multiple="multiple" name="somename4"
-                                 class="select3 SumoUnder" tabindex="-1">
-                                 <c:forEach var="ingredientByFruit"
-                                    items="${ingredientByFruitList}">
-                                    <option value="${ingredientByFruit.ingredientSeq }">${ingredientByFruit.ingredient }</option>
-                                 </c:forEach>
-
-                              </select>
-                              <!-- <p class="CaptionCont SelectBox" title=" Ferrari, Hyundai ">
-                                    <span> Ferrari, Hyundai </span><label><i></i></label>
-                                 </p> -->
-                              <div class="optWrapper okCancelInMulti selall multiple">
-                                 <p class="select-all partial">
-                                    <span><i></i></span><label>Select All</label>
-                                 </p>
-                                 <ul class="options">
-                                    <c:forEach var="ingredientByFruit"
-                                       items="${ingredientByFruitList}">
-                                       <li class="opt"><span><i></i></span><label>${ingredientByFruit.ingredient }</label></li>
-                                    </c:forEach>
-                                 </ul>
-                                 <div class="MultiControls">
-                                    <p tabindex="0" class="btnOk">OK</p>
-                                    <p tabindex="0" class="btnCancel">Cancel</p>
-                                 </div>
-                              </div>
-                           </div>
-
-                        </div> --%>
-
-                     </div>
-                     <!-- /.column-wrapper -->
-                     <div class="column-wrapper">
-                        <div class="panel">
-                           <div class="panel-content">
-                              <label for="image" style="display: unset;">
-                                 <form action="" class="image-select" data-droppable="">
-                                    <input id="image" type="file" data-droppable-input="" /> <i
-                                       class="fa fa-camera fa-2x image-select__icon"></i>
-                                    <div class="image-select__message"></div>
-                                    <div class="bg-image aspect-square"
-                                       style="background-image: url('http://placekitten.com/g/300/300');"
-                                       data-droppable-image=""></div>
-                                 </form>
-                              </label>
-                           </div>
-                        </div>
-                     </div>
-
-                     <button type="submit" data-dismiss="modal">Upload</button>
-                     <!--  -->
-                  </div>
-                  <!-- Modal content_end -->
-               </div>
-            </div>
-            <!-- modal1_end -->
+							<button type="submit" data-dismiss="modal">Upload</button>
+							<!--  -->
+						</div>
+						<!-- Modal content_end -->
+					</div>
+				</div>
+				<!-- modal1_end -->
 
 			</div>
 		</div>
@@ -546,26 +426,6 @@ $(function(){
 			var txt = '<i class="fa fa-check"></i>';
 			$(this).children().children('.pic').html(txt);
 		});
-	</script>
-	<script>
-	$(".btn-outline-primary").on('click', function(){
-		var data = $(this).attr("data-rel");
-		if(data == "AA"){
-			$("#content").load("/cocktail/selfMaking");
-		}else if(data == "AB"){
-			$("#content").load("/cocktail/selfMakingB");
-		}else if(data == "AW"){
-			$("#content").load("/cocktail/selfMakingW");
-		}else if(data == "AV"){
-			$("#content").load("/cocktail/selfMakingV");
-		}else if(data == "AR"){
-			$("#content").load("/cocktail/selfMakingR");
-		}else if(data == "AJ"){
-			$("#content").load("/cocktail/selfMakingJ");
-		}else if(data == "AT"){
-			$("#content").load("/cocktail/selfMakingJ");
-		}
-	});
 	</script>
 </body>
 </html>
