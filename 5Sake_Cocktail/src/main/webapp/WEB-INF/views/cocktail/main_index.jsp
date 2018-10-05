@@ -174,35 +174,35 @@ h4 {
                                     <!-- style="border-right: 1px solid #e8dfdf6e;" -->
                                     <h4 class="card-title">BASE SPIRITS</h4>
                                     <div style="float: left;">
-                                       <input class="spirit_check" ingre-num="A" type='checkbox' name='all'
+                                       <input class="spirit_check" ingre-num="A" type='radio' name='spirit'
                                           value='valuable' id="all" /> <label for="all"> <img
                                           class="spirits_img"
                                           src="./resources/assets/basic/img/spirit_icon/icon_all.png" />
-                                       </label> <input class="spirit_check" ingre-num="AB" type='checkbox' name='brandy'
+                                       </label> <input class="spirit_check" ingre-num="AB" type='radio' name='spirit'
                                           value='valuable' id="brandy" /> <label for="brandy">
                                           <img class="spirits_img"
                                           src="./resources/assets/basic/img/spirit_icon/icon_brandy.png" />
-                                       </label> <input class="spirit_check" ingre-num="AW"  type='checkbox' name='whisky'
+                                       </label> <input class="spirit_check" ingre-num="AW"  type='radio' name='spirit'
                                           value='valuable' id="whisky" /> <label for="whisky">
                                           <img class="spirits_img"
                                           src="./resources/assets/basic/img/spirit_icon/icon_whisky.png" />
-                                       </label> <input class="spirit_check" ingre-num="AV"  type='checkbox' name='vodka'
+                                       </label> <input class="spirit_check" ingre-num="AV"  type='radio' name='spirit'
                                           value='valuable' id="vodka" /> <label for="vodka">
                                           <img class="spirits_img"
                                           src="./resources/assets/basic/img/spirit_icon/icon_vodka.png" />
-                                       </label> <input class="spirit_check" ingre-num="AR"  type='checkbox' name='rum'
+                                       </label> <input class="spirit_check" ingre-num="AR"  type='radio' name='spirit'
                                           value='valuable' id="rum" /> <label for="rum"> <img
                                           class="spirits_img"
                                           src="./resources/assets/basic/img/spirit_icon/icon_rum.png" />
-                                       </label> <input class="spirit_check" ingre-num="AJ" type='checkbox' name='jin'
+                                       </label> <input class="spirit_check" ingre-num="AJ" type='radio' name='spirit'
                                           value='valuable' id="jin" /> <label for="jin"> <img
                                           class="spirits_img"
                                           src="./resources/assets/basic/img/spirit_icon/icon_jin.png" />
-                                       </label> <input class="spirit_check" ingre-num="AT"  type='checkbox' name='tequila'
+                                       </label> <input class="spirit_check" ingre-num="AT"  type='radio' name='spirit'
                                           value='valuable' id="tequila" /> <label for="tequila">
                                           <img class="spirits_img"
                                           src="./resources/assets/basic/img/spirit_icon/icon_tequila.png" />
-                                       </label> <input class="spirit_check" ingre-num="AT" type='checkbox' name='ETC'
+                                       </label> <input class="spirit_check" ingre-num="AT" type='radio' name='spirit'
                                           value='valuable' id="ETC" /> <label for="ETC"> <img
                                           class="spirits_img"
                                           src="./resources/assets/basic/img/spirit_icon/icon_etc.png" />
@@ -284,7 +284,7 @@ h4 {
                                        <div class="CheckBox_wrapper_liqueur"
                                           style="margin-left: 25px; margin-top: 10px;">
                                           <div>
-                                             <input type="checkbox" id="check_liqueur_all" /> <label
+                                             <input name = "liqueur" type="radio" id="check_liqueur_all" /> <label
                                                 class="label_liqueur" ingre-num="L" for="check_liqueur_all">
                                                 <div>
                                                    <i class="fa fa-check"></i>
@@ -293,7 +293,7 @@ h4 {
                                           </div>
 
                                           <div>
-                                             <input type="checkbox" id="check_liqueur_wine" /> <label
+                                             <input name = "liqueur" type="radio" id="check_liqueur_wine" /> <label
                                                 class="label_liqueur" ingre-num="LW" for="check_liqueur_wine">
                                                 <div>
                                                    <i class="fa fa-check"></i>
@@ -301,7 +301,7 @@ h4 {
                                              </label>
                                           </div>
                                           <div>
-                                             <input type="checkbox" id="check_liqueur_bitters" /> <label
+                                             <input name = "liqueur" type="radio" id="check_liqueur_bitters" /> <label
                                                 class="label_liqueur" ingre-num="LB" for="check_liqueur_bitters">
                                                 <div>
                                                    <i class="fa fa-check"></i>
@@ -309,7 +309,7 @@ h4 {
                                              </label>
                                           </div>
                                           <div>
-                                             <input type="checkbox" id="check_liqueur_beer" /> <label
+                                             <input name = "liqueur" type="radio" id="check_liqueur_beer" /> <label
                                                 class="label_liqueur" ingre-num="LM" for="check_liqueur_beer">
                                                 <div>
                                                    <i class="fa fa-check"></i>
@@ -317,7 +317,7 @@ h4 {
                                              </label>
                                           </div>
                                           <div>
-                                             <input type="checkbox" id="check_liqueur_liqueur" /> <label
+                                             <input name = "liqueur" type="radio" id="check_liqueur_liqueur" /> <label
                                                 class="label_liqueur" ingre-num="LL" for="check_liqueur_liqueur">
                                                 <div>
                                                    <i class="fa fa-check"></i>
@@ -330,7 +330,7 @@ h4 {
                                           style="margin-right: 15px; margin-top: 10px;">
 
                                           <div>
-                                             <input type="checkbox" id="check_liqueur_cremeliqueur" />
+                                             <input name = "liqueur" type="radio" id="check_liqueur_cremeliqueur" />
                                              <label class="label_liqueur" ingre-num="LC"
                                                 for="check_liqueur_cremeliqueur">
                                                 <div>
@@ -340,7 +340,7 @@ h4 {
                                           </div>
 
                                           <div>
-                                             <input type="checkbox" id="check_liqueur_sherry" /> <label
+                                             <input name = "liqueur" type="radio" id="check_liqueur_sherry" /> <label
                                                 class="label_liqueur" ingre-num="LS" for="check_liqueur_sherry">
                                                 <div>
                                                    <i class="fa fa-check"></i>
@@ -349,7 +349,7 @@ h4 {
                                           </div>
 
                                           <div>
-                                             <input type="checkbox" id="check_liqueur_vermouth" /> <label
+                                             <input name = "liqueur" type="radio" id="check_liqueur_vermouth" /> <label
                                                 class="label_liqueur" ingre-num="LV" for="check_liqueur_vermouth">
                                                 <div>
                                                    <i class="fa fa-check"></i>
@@ -358,7 +358,7 @@ h4 {
                                           </div>
 
                                           <div>
-                                             <input type="checkbox" id="check_liqueur_amaretto" /> <label
+                                             <input name = "liqueur" type="radio" id="check_liqueur_amaretto" /> <label
                                                 class="label_liqueur" ingre-num="LA" for="check_liqueur_amaretto">
                                                 <div>
                                                    <i class="fa fa-check"></i>
@@ -377,7 +377,7 @@ h4 {
                                     <div class="row_checkBox">
                                        <div class="CheckBox_wrapper_material" style="margin-top: 10px; margin-right: 27px;">
                                           <div>
-                                             <input type="checkbox" id="check_material_all" /> <label
+                                             <input name = "material" type="radio" id="check_material_all" /> <label
                                                 class="label_material" ingre-num="M" for="check_material_all">
                                                 <div>
                                                    <i class="fa fa-check"></i>
@@ -386,7 +386,7 @@ h4 {
                                           </div>
 
                                           <div>
-                                             <input type="checkbox" id="check_material_apple" /> <label
+                                             <input name = "material" type="radio" id="check_material_apple" /> <label
                                                 class="label_material" ingre-num="FA" for="check_material_apple">
                                                 <div>
                                                    <i class="fa fa-check"></i>
@@ -395,7 +395,7 @@ h4 {
                                           </div>
 
                                           <div>
-                                             <input type="checkbox" id="check_material_cherry" /> <label
+                                             <input name = "material" type="radio" id="check_material_cherry" /> <label
                                                 class="label_material" ingre-num="FC" for="check_material_cherry">
                                                 <div>
                                                    <i class="fa fa-check"></i>
@@ -404,7 +404,7 @@ h4 {
                                           </div>
 
                                           <div>
-                                             <input type="checkbox" id="check_material_coconut" /> <label
+                                             <input name = "material" type="radio" id="check_material_coconut" /> <label
                                                 class="label_material" ingre-num="FK" for="check_material_coconut">
                                                 <div>
                                                    <i class="fa fa-check"></i>
@@ -413,7 +413,7 @@ h4 {
                                           </div>
 
                                           <div>
-                                             <input type="checkbox" id="check_material_grapefruit" />
+                                             <input name = "material" type="radio" id="check_material_grapefruit" />
                                              <label class="label_material" ingre-num="FG"
                                                 for="check_material_grapefruit">
                                                 <div>
@@ -423,7 +423,7 @@ h4 {
                                           </div>
 
                                           <div>
-                                             <input type="checkbox" id="check_material_lemon" /> <label
+                                             <input name = "material" type="radio" id="check_material_lemon" /> <label
                                                 class="label_material" ingre-num="FL" for="check_material_lemon">
                                                 <div>
                                                    <i class="fa fa-check"></i>
@@ -436,7 +436,7 @@ h4 {
                                        <div class="CheckBox_wrapper_material2"
                                           style="margin-top: 10px;">
                                           <div>
-                                             <input type="checkbox" id="check_material_lime" /> <label
+                                             <input  name = "material" type="radio" id="check_material_lime" /> <label
                                                 class="label_material" ingre-num="FI" for="check_material_lime">
                                                 <div>
                                                    <i class="fa fa-check"></i>
@@ -445,7 +445,7 @@ h4 {
                                           </div>
 
                                           <div>
-                                             <input type="checkbox" id="check_material_raspberry" />
+                                             <input name = "material" type="radio" id="check_material_raspberry" />
                                              <label class="label_material" ingre-num="FR"
                                                 for="check_material_raspberry">
                                                 <div>
@@ -455,7 +455,7 @@ h4 {
                                           </div>
 
                                           <div>
-                                             <input type="checkbox" id="check_material_orange" /> <label
+                                             <input name = "material" type="radio" id="check_material_orange" /> <label
                                                 class="label_material" ingre-num="FO" for="check_material_orange">
                                                 <div>
                                                    <i class="fa fa-check"></i>
@@ -464,7 +464,7 @@ h4 {
                                           </div>
 
                                           <div>
-                                             <input type="checkbox" id="check_material_peach" /> <label
+                                             <input name = "material" type="radio" id="check_material_peach" /> <label
                                                 class="label_material" ingre-num="FP" for="check_material_peach">
                                                 <div>
                                                    <i class="fa fa-check"></i>
@@ -473,7 +473,7 @@ h4 {
                                           </div>
 
                                           <div>
-                                             <input type="checkbox" id="check_material_pineapple" />
+                                             <input name = "material" type="radio" id="check_material_pineapple" />
                                              <label class="label_material" ingre-num="FF"
                                                 for="check_material_pineapple">
                                                 <div>
@@ -483,7 +483,7 @@ h4 {
                                           </div>
 
                                           <div>
-                                             <input type="checkbox" id="check_material_tomato" /> <label
+                                             <input name = "material" type="radio" id="check_material_tomato" /> <label
                                                 class="label_material" ingre-num="FT" for="check_material_tomato">
                                                 <div>
                                                    <i class="fa fa-check"></i>
@@ -499,7 +499,7 @@ h4 {
                                           style="margin-top: 10px;">
 
                                           <div>
-                                             <input type="checkbox" id="check_material_egg" /> <label
+                                             <input name = "material" type="radio" id="check_material" /> <label
                                                 class="label_material" ingre-num="ME" for="check_material_egg">
                                                 <div>
                                                    <i class="fa fa-check"></i>
@@ -508,7 +508,7 @@ h4 {
                                           </div>
 
                                           <div>
-                                             <input type="checkbox" id="check_material_gingerale" />
+                                             <input name = "material" type="radio" id="check_material" />
                                              <label class="label_material" ingre-num="MT"
                                                 for="check_material_gingerale">
                                                 <div>
@@ -518,7 +518,7 @@ h4 {
                                           </div>
 
                                           <div>
-                                             <input type="checkbox" id="check_material_milk" /> <label
+                                             <input name = "material" type="radio" id="check_material" /> <label
                                                 class="label_material" ingre-num="MM" for="check_material_milk">
                                                 <div>
                                                    <i class="fa fa-check"></i>
@@ -527,7 +527,7 @@ h4 {
                                           </div>
 
                                           <div>
-                                             <input type="checkbox" id="check_material_sugar" /> <label
+                                             <input name = "material" type="radio" id="check_material" /> <label
                                                 class="label_material" ingre-num="MC" for="check_material_sugar">
                                                 <div>
                                                    <i class="fa fa-check"></i>
@@ -536,7 +536,7 @@ h4 {
                                           </div>
 
                                           <div>
-                                             <input type="checkbox" id="check_material_spicy" /> <label
+                                             <input name = "material" type="radio" id="check_material" /> <label
                                                 class="label_material" ingre-num="MS" for="check_material_spicy">
                                                 <div>
                                                    <i class="fa fa-check"></i>
@@ -545,7 +545,7 @@ h4 {
                                           </div>
 
                                           <div>
-                                             <input type="checkbox" id="check_material_syrup" /> <label
+                                             <input name = "material" type="radio" id="check_material" /> <label
                                                 class="label_material" ingre-num="MC" for="check_material_syrup">
                                                 <div>
                                                    <i class="fa fa-check"></i>

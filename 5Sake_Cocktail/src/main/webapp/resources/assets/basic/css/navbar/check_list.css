@@ -1,10 +1,10 @@
 /* hide checkbox */
-input[type="checkbox"] {
+input[type="radio"] {
   display: none;
 }
 
 /* if checkbox is checked, then do these things */
-input[type="checkbox"]:checked + label {
+input[type="radio"]:checked + label {
   color: #F15A24;
 }
 
