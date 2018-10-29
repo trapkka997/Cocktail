@@ -84,10 +84,10 @@
 										<div>
 											<h2 class="full-name">${user.userNickname }</h2>
 											<ul class="mfe">
+												<li>
+													<button class="btn btn-default" onclick="openForm()">Message</button>
+												</li>
 												<c:if test="${sessionScope.useremail ne  user.userEmail}">
-													<li>
-														<button class="btn btn-default" onclick="openForm()">Message</button>
-													</li>
 													<li>
 														<button class="btn btn-default" onclick="followBtn()">Follow</button>
 													</li>
@@ -154,9 +154,9 @@
 							</div>
 							<c:forEach var="follower" items="${followerList }">
 								<div class="row friend" data-toggle="tooltip"
-									data-placement="right">
+									data-placement="right" onclick="">
 									<img src="${path }${follower.savedFilename}" alt="">
-									<div class="title">${follower.userEmail }</div>
+									<div class="title" data-dismiss="modal" onclick="clickFoller('${follower.userEmail}')">${follower.userEmail }</div>
 									<button class="sendMessage" type="submit"></button>
 									<a href="#messageModal" data-toggle="modal"> <i
 										class="fa fa-paper-plane"></i>
@@ -185,7 +185,7 @@
 								<div class="row friend" data-toggle="tooltip"
 									data-placement="right">
 									<img src="${path }${follow.savedFilename}" alt="">
-									<div class="title">${follow.userEmail }</div>
+									<div class="title" data-dismiss="modal" onclick="clickFollerr('${follow.userEmail}')">${follow.userEmail }</div>
 									<button class="sendMessage" type="submit"></button>
 									<a href="#messageModal" data-toggle="modal"> <i
 										class="fa fa-paper-plane"></i>
@@ -442,7 +442,6 @@
 	<script type="text/javascript"></script>
 		<script type="text/javascript">
 		function hover(num) {
-			alert(num);
 			$('#icon'+num).children().children().css('color', 'red');
 			$('#icon'+num).parent().parent().css('display', 'none');			
 		}		
@@ -607,7 +606,7 @@
 							text += '<h3>'+resp[index].cocktailName+'</h3>';
 							text += '<p>'+resp[index].cocktailName+'</p>';
 							text += '</figcaption>';
-							text += '<div class="profilebox profilebox1">';
+							text += '<div class="profilebox profilebox1 sukiSakeBtnBtn" onclick="sukiSakeBtnBtn('+resp[index].cocktailSeq+')">';
 							text += '<img src="'+resp[index].imageRink+'" alt="img01" />';
 							text += '<div class="SocialIcons" id="icon'+index+'">';
 							text += '<a onclick="hover('+index+')" href="#" >';
@@ -615,7 +614,7 @@
 							text += '</a>';
 							text += '</div></div>';
 							text += '</figure>';
-							text += '</li>'
+							text += '</li>';
 						});
 						$('.grid-sizer').after(text);
 					},
@@ -644,7 +643,9 @@
 							text += '<h3>'+resp[index].title+'</h3>';
 							text += '<p>'+resp[index].contents+'</p>';
 							text += '</figcaption>';
-							text += '<div class="profilebox profilebox1">';
+							text += '<div class="profilebox profilebox1" onclick="sukisyashinBtnBtn(';
+							text += "'"+resp[index].userEmail+"'";
+							text += ')">';
 							text += '<img src='+resp[index].saveFileName+' alt="img01" />';
 							text += '<div class="SocialIcons" id="icon'+index+'">';
 							text += '<a onclick="hover('+index+')" href="#" >';
@@ -775,6 +776,22 @@
 	   	 	}
 	    	function closeForm() {
 	      	document.getElementById("myForm").style.display = "none";
+	    	}
+	    	
+	    	function sukiSakeBtnBtn(seq){
+	    		$("#content").load("/cocktail/cocktailDetail?cocktailSeq="+seq);
+	    	}
+	    	
+	    	function sukisyashinBtnBtn(userEmail){
+	    		$("#content").load("/cocktail/eachoneProfile?userEmail="+userEmail);
+	    	}
+	    	
+	    	function clickFoller(userEmail){
+	    		$("#content").load("/cocktail/eachoneProfile?userEmail="+userEmail);	
+	    	}
+	    	
+	    	function clickFollerr(userEmail){
+	    		$("#content").load("/cocktail/eachoneProfile?userEmail="+userEmail);	
 	    	}
 		</script>
 		<!-- chat-->

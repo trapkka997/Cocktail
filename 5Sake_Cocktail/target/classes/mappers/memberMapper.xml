@@ -245,9 +245,9 @@ GROUP BY
 </select>
 <select id="selectAllUserLikeCocktail" parameterType="String" resultType="cocktail">
 	SELECT
-		c.cocktail_Seq,
+		c.cocktail_Seq cocktailSeq,
 		c.cocktailName,
-		c.cocktailName_EN,
+		c.cocktailName_EN cocktailNameEn,
 		c.ingredient,
 		c.recipe,
 		c.imageRink,

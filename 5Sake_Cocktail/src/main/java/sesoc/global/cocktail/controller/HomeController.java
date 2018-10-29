@@ -40,7 +40,7 @@ public class HomeController {
 	@Autowired SqlSession sqlSession;
 	@Autowired MemberRepository dao;
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class); 
-	private static final String PATH = "http://10.10.15.227:8888/cocktail/resources/";
+	private static final String PATH = "http://10.10.8.165:8888/cocktail/resources/";
 	
 	/**
 	 * 고정 메뉴 
@@ -49,9 +49,12 @@ public class HomeController {
 	public String home(Model model, HttpSession httpSession) {
 		List<WorldBest> worldBestList = cocktailRepository.selectWorldBest();
 		System.out.println(worldBestList);
+		for(WorldBest world : worldBestList) {
+			System.out.println(world.getCocktailSeq());
+		}
 		ArrayList<WorldBest> worldBestList1[] =new ArrayList[3];
 		for(int i=0; i<3; i++) {
-			worldBestList1[i] = new ArrayList<WorldBest>();
+			worldBestList1[i] = new ArrayList<>();
 		}
 		String seq = worldBestList.get(0).getCocktailSeq();
 		int x =0;
@@ -324,6 +327,7 @@ public class HomeController {
 		model.addAttribute("ingredientByLiqueurList", ingredientByLiqueurList);
 		model.addAttribute("ingredientByMaterialList", ingredientByMaterialList);
 		model.addAttribute("path", PATH);
+		vo = new User();
 		List<UserCocktail> userCocktailList =  cocktailRepository.selectUserCocktail(vo);
 		System.out.println(userCocktailList);
 		model.addAttribute("userCocktailList", userCocktailList);

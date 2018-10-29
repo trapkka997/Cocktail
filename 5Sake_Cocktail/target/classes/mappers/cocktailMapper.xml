@@ -193,6 +193,8 @@ group by
     c.cocktail_seq = i.cocktail_seq   
     AND 
     i.ingredient = n.ingredient_seq
+    ORDER BY
+    c.cocktail_seq
 	</select>
 	
 </mapper>

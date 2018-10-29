@@ -113,11 +113,11 @@ h4 {
                                  <div class="card-body"
                                     style="border-right: 1px solid #e8dfdf6e;">
                                     <p class="card-text">
-                                       <img src='./resources/assets/basic/img/カクテルアイコン5.png'
+                                       <img src='${path }${user.savedFilename }'
                                           class='img' />
                                     </p>
                                     <label>
-                                       <h2>UserID</h2>
+                                       <h2>${user.userNickname }</h2>
                                     </label>
                                     <p>
                                        <label>추천칵테일</label>
@@ -596,7 +596,7 @@ h4 {
    <script src="./resources/assets/basic/js/photo_profile.js"></script>
    <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
    <script>
-		 var sock = new SockJS('http://10.10.15.227:8888/cocktail/myHandler');
+		 var sock = new SockJS('http://10.10.8.165:8888/cocktail/myHandler');
 		  sock.onopen = function() {
 		     console.log('open');
 		 };
